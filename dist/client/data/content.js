@@ -9,16 +9,22 @@ window.ATLAS_STORIES = [
     tileZoom: 8,
     mapAsset: "assets/guanzhong-relief.webp",
     view: { lonMin: 102.0, lonMax: 112.2, latMin: 31.2, latMax: 37.2 },
-    mapNote: "卫星影像显示地形、植被与可见水体；额外定位点仅用于解释空间关系。",
+    mapNote: "地图只标注关中平原、山脉与河流等自然地理要素，不叠加现代行政区名称。",
     features: [
-      { type: "area", label: "关中平原／渭河谷地", lon: 108.5, lat: 34.45, rx: 1.55, ry: 0.55, dx: -18, dy: -2 },
-      { type: "ridge", label: "秦岭", points: [[105.8, 33.55], [107.5, 33.45], [109.2, 33.55], [111.0, 33.75]], dy: 7 },
-      { type: "river", label: "渭河", points: [[106.9, 34.35], [108.0, 34.35], [109.1, 34.45], [110.25, 34.55]], dy: -3 },
-      { type: "gate", label: "函谷／潼关方向", lon: 110.25, lat: 34.55, dx: 1, dy: -2 },
-      { type: "place", label: "长安／西安", lon: 108.94, lat: 34.34, dx: 1, dy: 8 },
-      { type: "place", label: "陇西方向", lon: 104.7, lat: 35.1, dx: 1 },
-      { type: "place", label: "汉中方向", lon: 107.0, lat: 33.05, dx: 1 }
+      { type: "area", kind: "plain", label: "关中平原", lon: 108.2, lat: 34.45, rx: 2.25, ry: 0.62, dy: -8 },
+      { type: "ridge", label: "秦岭", points: [[104.4, 33.65], [106.2, 33.45], [108.2, 33.5], [110.0, 33.75], [111.1, 33.9]], dy: 28 },
+      { type: "ridge", label: "北山", points: [[105.2, 35.45], [107.2, 35.75], [109.2, 35.65], [110.3, 35.35]], dy: -18 },
+      { type: "river", label: "渭河", points: [[104.2, 34.55], [106.0, 34.4], [107.6, 34.35], [109.1, 34.45], [110.25, 34.55]], dy: -16 },
+      { type: "river", label: "泾河", points: [[107.5, 36.0], [107.8, 35.3], [108.2, 34.75], [108.55, 34.45]], dx: 20, dy: -10 },
+      { type: "river", label: "黄河", points: [[110.2, 36.5], [110.45, 35.7], [110.25, 34.55], [110.7, 33.65], [111.25, 32.9]], dx: 24, dy: 6 }
     ],
+    geography: {
+      sourceTitle: "Wikipedia：Guanzhong（Geography / Climate）",
+      sourceUrl: "https://en.wikipedia.org/wiki/Guanzhong#Geography",
+      topography: "关中是秦岭以北、北山山系以南的弧形盆地。盆地中央为渭河下游及其支流堆积形成的冲积平原，平均海拔约300—700米；渭河自西向东贯穿平原，并在东部汇入黄河。",
+      geology: "关中盆地属于晋陕盆地带和山西裂谷系的一部分，基本形态是断陷盆地。山前物质与渭河水系长期搬运、堆积，塑造了平原和阶地，也使盆地边缘与内部地貌存在明显高差。",
+      climate: "区域年平均气温约13°C，年降水约400—900毫米、平均约600毫米。降水年际波动和较强蒸发共同作用，使原生植被呈森林与草原交错特征；今天看到的广阔农田则是长期人类改造的结果。"
+    },
     sections: [
       {
         heading: "地理事实",
@@ -108,16 +114,23 @@ window.ATLAS_STORIES = [
     tileZoom: 8,
     mapAsset: "assets/hexi-relief.webp",
     view: { lonMin: 92.2, lonMax: 104.8, latMin: 35.6, latMax: 42.2 },
-    mapNote: "卫星影像显示山地、荒漠、绿洲与可见水体；额外地点用于说明绿洲链的空间次序。",
+    mapNote: "地图只标注走廊、山地、荒漠与主要内流河，不叠加现代城市或行政区名称。",
     features: [
-      { type: "corridor", label: "绿洲链／主要通行方向", points: [[102.64, 37.93], [100.45, 38.93], [98.49, 39.73], [94.66, 40.14]], dy: -4 },
-      { type: "place", label: "武威", lon: 102.64, lat: 37.93, dx: 1, dy: 7 },
-      { type: "place", label: "张掖", lon: 100.45, lat: 38.93, dx: 1, dy: -2 },
-      { type: "place", label: "酒泉", lon: 98.49, lat: 39.73, dx: 1, dy: 7 },
-      { type: "place", label: "敦煌", lon: 94.66, lat: 40.14, dx: 1, dy: -2 },
-      { type: "ridge", label: "祁连山", points: [[94.0, 37.4], [97.0, 37.0], [100.0, 37.2], [103.0, 37.4]], dy: 8 },
-      { type: "area", label: "北侧戈壁与荒漠", lon: 99.2, lat: 41.0, rx: 4.2, ry: 0.7, dy: -2 }
+      { type: "area", kind: "plain", label: "河西走廊", lon: 99.2, lat: 39.25, rx: 4.8, ry: 0.62, dy: -8 },
+      { type: "area", kind: "desert", label: "巴丹吉林沙漠", lon: 101.1, lat: 41.05, rx: 2.1, ry: 0.72, dy: -4 },
+      { type: "ridge", label: "祁连山", points: [[93.5, 37.3], [96.0, 36.85], [98.5, 36.95], [100.8, 37.15], [103.3, 37.55]], dy: 30 },
+      { type: "ridge", label: "龙首山—合黎山", points: [[96.2, 40.9], [98.6, 40.55], [100.5, 40.0], [102.5, 39.3]], dy: -18 },
+      { type: "river", label: "石羊河", points: [[102.2, 37.25], [102.55, 37.9], [102.8, 38.6], [103.1, 39.25]], dx: 18, dy: -8 },
+      { type: "river", label: "黑河", points: [[99.6, 37.1], [100.0, 38.0], [100.45, 38.95], [100.1, 40.0], [99.5, 41.0]], dx: 20, dy: -8 },
+      { type: "river", label: "疏勒河", points: [[96.2, 37.5], [96.0, 38.4], [95.4, 39.2], [94.6, 40.0]], dx: -22, dy: -8 }
     ],
+    geography: {
+      sourceTitle: "Wikipedia：Hexi Corridor（Geography / Geology / Climate）",
+      sourceUrl: "https://en.wikipedia.org/wiki/Hexi_Corridor#Geography",
+      topography: "河西走廊是一条夹在祁连山与北侧山地、荒漠之间的狭长低地，长约1100公里、典型宽度约40—100公里，地势大体由东南约1500米降至西北约1000米。石羊河、黑河和疏勒河主要接受祁连山冰雪融水，形成冲积扇、内流盆地和间隔分布的绿洲。",
+      geology: "走廊是青藏高原抬升、地壳缩短和向北推进形成的新生代前陆盆地，受西北走向逆断层控制，地震活动较强。内部隆起把它分成多个凹陷，凹陷中堆积了厚层第四纪河流与湖相沉积物。",
+      climate: "主体属于温带半干旱与温带干旱气候，年平均气温约4—10°C，年降水通常不足200毫米并总体由西南向东北减少。这里处在东部季风影响与西部西风带影响的过渡地带，水源和绿洲范围会随长期气候波动而改变。"
+    },
     sections: [
       {
         heading: "地理事实",
@@ -194,25 +207,33 @@ window.ATLAS_STORIES = [
   },
   {
     id: "sichuan",
-    shortTitle: "四川",
+    shortTitle: "四川盆地",
     eyebrow: "中国与内亚 · 盆地",
-    title: "四川",
+    title: "四川盆地",
     thesis: "四川盆地把“内部资源丰富”和“跨山对外投射困难”结合在一起：这有利于维持区域政权，却不保证能向全国扩张。",
     confidence: "中等偏高",
     tileZoom: 8,
     mapAsset: "assets/sichuan-relief.webp",
     view: { lonMin: 100.5, lonMax: 112.2, latMin: 26.7, latMax: 34.6 },
-    mapNote: "卫星影像显示盆地、山地、植被与可见水体；额外定位点仅用于说明空间关系。",
+    mapNote: "地图只标注盆地、平原、山脉与主要河流，不叠加现代城市或行政区名称。",
     features: [
-      { type: "area", label: "四川盆地", lon: 105.4, lat: 30.2, rx: 2.65, ry: 1.65, dy: 10 },
-      { type: "area", label: "成都平原", lon: 103.8, lat: 30.7, rx: 0.9, ry: 0.65, dy: -2 },
-      { type: "place", label: "成都", lon: 104.07, lat: 30.67, dx: 1, dy: 7 },
-      { type: "place", label: "重庆", lon: 106.55, lat: 29.56, dx: 1, dy: 7 },
-      { type: "place", label: "汉中", lon: 107.0, lat: 33.05, dx: 1, dy: -2 },
-      { type: "ridge", label: "秦岭—大巴山屏障", points: [[103.5, 33.5], [106.0, 33.2], [108.5, 32.4], [110.2, 32.2]], dy: -2 },
-      { type: "corridor", label: "北方入蜀方向", points: [[107.0, 33.05], [106.4, 32.2], [105.5, 31.5], [104.4, 30.9]], dx: 8, dy: -2 },
-      { type: "corridor", label: "长江东向出口", points: [[106.55, 29.56], [108.0, 30.0], [109.5, 30.6], [111.0, 30.8]], dy: 8 }
+      { type: "area", kind: "basin", label: "四川盆地", lon: 105.9, lat: 30.35, rx: 3.15, ry: 2.05, dy: 14 },
+      { type: "area", kind: "plain", label: "成都平原", lon: 103.85, lat: 30.75, rx: 0.82, ry: 0.72, dx: -10, dy: -8 },
+      { type: "ridge", label: "龙门山", points: [[102.7, 32.5], [103.2, 31.7], [103.55, 30.7], [103.4, 29.7]], dx: -25, dy: -6 },
+      { type: "ridge", label: "大巴山", points: [[106.2, 32.7], [108.0, 32.5], [109.7, 32.2], [110.6, 31.7]], dy: -18 },
+      { type: "ridge", label: "巫山", points: [[109.2, 31.5], [109.4, 30.8], [110.0, 30.3], [110.3, 29.7]], dx: 20, dy: -6 },
+      { type: "river", label: "长江", points: [[104.6, 28.75], [105.7, 28.9], [106.55, 29.55], [107.8, 30.0], [109.0, 30.55], [110.8, 30.8]], dy: 22 },
+      { type: "river", label: "岷江", points: [[103.6, 32.2], [103.65, 31.2], [103.95, 30.7], [103.85, 29.6], [104.0, 28.85]], dx: -22, dy: -8 },
+      { type: "river", label: "嘉陵江", points: [[106.0, 33.0], [106.1, 32.0], [106.3, 31.0], [106.7, 30.2], [106.55, 29.55]], dx: 22, dy: -8 },
+      { type: "river", label: "大渡河", points: [[102.1, 31.1], [102.6, 30.4], [103.1, 29.7], [103.75, 29.55]], dx: -20, dy: 12 }
     ],
+    geography: {
+      sourceTitle: "Wikipedia：Sichuan Basin（Geography / Geology / Climate）",
+      sourceUrl: "https://en.wikipedia.org/wiki/Sichuan_Basin#Geography",
+      topography: "四川盆地是一片四周被山地包围的低地区域，内部并非完全平坦，而以低丘和起伏地形为主。西部成都平原由岷江等河流进入盆地后形成的冲积扇组成；长江上游及岷江、嘉陵江、大渡河等支流共同排泄整个盆地。",
+      geology: "盆地位于扬子板块坚硬的西北缘。印度板块与欧亚板块碰撞造成的挤压集中在西缘龙门山断裂带，东缘则形成显著褶皱；盆地广泛出露红色砂岩，因此又有“红色盆地”之称。",
+      climate: "盆地以湿润、常多云的四季气候为主，冬季凉到温和，夏季炎热潮湿，东部通常更暖更湿，整体属于湿润亚热带。周围山地容易形成逆温，使雾和低云较常见。"
+    },
     sections: [
       {
         heading: "地理事实",

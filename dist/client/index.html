@@ -17,28 +17,28 @@
           <p>为什么历史发生在这里</p>
         </div>
       </div>
-      <div class="top-note">第一版只验证三个机制：核心区、通道、盆地。现代边界仅用于定位。</div>
+      <div class="top-note">第一版只验证三个机制：核心区、通道、盆地。地图不叠加现代行政边界。</div>
     </header>
 
     <main class="layout">
       <section class="map-column" aria-label="交互地图">
         <div id="story-tabs" class="story-tabs" role="tablist" aria-label="选择历史地理问题"></div>
         <div class="map-frame">
-          <svg id="atlas-map" viewBox="0 0 1440 840" preserveAspectRatio="none" role="img" aria-label="可横向拖动的世界平面地图，叠加当前历史地理故事的教学定位">
+          <svg id="atlas-map" viewBox="0 0 1440 840" preserveAspectRatio="none" role="img" aria-label="可缩放拖动并切换底图的自然地理地图">
             <g id="tile-layer" class="tile-layer"></g>
             <g id="vector-layer" class="vector-layer"></g>
             <g id="map-overlay" class="map-overlay"></g>
           </svg>
           <div id="world-map-tools" class="world-map-tools" hidden>
-            <div class="map-mode-switch" role="group" aria-label="选择世界地图底图">
+            <div class="map-mode-switch" role="group" aria-label="选择地图底图">
               <button type="button" data-world-style="satellite" aria-pressed="true">卫星</button>
               <button type="button" data-world-style="vector" aria-pressed="false">地理简图</button>
             </div>
-            <div class="world-map-actions">
+            <div id="map-view-actions" class="world-map-actions">
               <button id="zoom-world-out" type="button" aria-label="缩小世界地图">−</button>
               <output id="world-zoom-level" aria-live="polite">1×</output>
               <button id="zoom-world-in" type="button" aria-label="放大世界地图">＋</button>
-              <button id="reset-world-map" type="button">东亚</button>
+              <button id="reset-world-map" type="button">重置</button>
             </div>
           </div>
           <div id="map-caption" class="map-caption"></div>
