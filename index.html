@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从世界尺度进入，以地理机制理解历史为何在特定地点展开的交互式图谱。">
+  <title>山河与历史 · 原型</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">山</div>
+        <div>
+          <h1>山河与历史</h1>
+          <p>为什么历史发生在这里</p>
+        </div>
+      </div>
+      <div class="top-note">第一版只验证三个机制：核心区、通道、盆地。现代边界仅用于定位。</div>
+    </header>
+
+    <main class="layout">
+      <section class="map-column" aria-label="交互地图">
+        <div id="story-tabs" class="story-tabs" role="tablist" aria-label="选择历史地理问题"></div>
+        <div class="map-frame">
+          <svg id="atlas-map" viewBox="0 0 1440 840" preserveAspectRatio="none" role="img" aria-label="可横向拖动的世界平面地图，叠加当前历史地理故事的教学定位">
+            <g id="tile-layer" class="tile-layer"></g>
+            <g id="map-overlay" class="map-overlay"></g>
+          </svg>
+          <div id="world-map-tools" class="world-map-tools" hidden>
+            <span><i aria-hidden="true">↔</i>平面世界图 · 仅横向移动</span>
+            <button id="reset-world-map" type="button">定位东亚</button>
+          </div>
+          <div id="map-caption" class="map-caption"></div>
+        </div>
+      </section>
+
+      <article id="story-content" class="reading-column" aria-live="polite"></article>
+    </main>
+  </div>
+  <script src="data/content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

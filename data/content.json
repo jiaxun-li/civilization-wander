@@ -1,0 +1,5 @@
+{
+  "note": "The browser prototype loads data/content.js so it can also work when index.html is opened directly. This JSON file is retained as the future content schema.",
+  "schema_version": 1,
+  "content_source": "data/content.js"
+}
