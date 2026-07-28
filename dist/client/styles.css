@@ -91,6 +91,7 @@ button { cursor: pointer; }
   cursor: grab;
   touch-action: pan-y;
 }
+.map-frame.is-vector svg { background: #a9cbd1; }
 .map-frame.is-dragging svg {
   cursor: grabbing;
   user-select: none;
@@ -101,6 +102,23 @@ button { cursor: pointer; }
 }
 .map-image { image-rendering: auto; }
 .tile-layer image { filter: saturate(1.12) brightness(1.06) contrast(0.96); }
+.vector-layer { pointer-events: none; }
+.vector-land {
+  fill: #eee7d7;
+  stroke: #6f7970;
+  stroke-width: 1.15;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.vector-graticule line {
+  stroke: rgba(62, 93, 94, 0.28);
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+}
+.vector-graticule .vector-equator {
+  stroke: rgba(62, 93, 94, 0.48);
+  stroke-width: 1.2;
+}
 .map-overlay { pointer-events: none; }
 .overview-marker { pointer-events: auto; cursor: pointer; }
 .overview-marker circle {
@@ -125,35 +143,58 @@ button { cursor: pointer; }
   pointer-events: none;
 }
 .world-map-tools[hidden] { display: none; }
-.world-map-tools span,
-.world-map-tools button {
+.map-mode-switch,
+.world-map-actions {
+  display: flex;
+  align-items: center;
+  padding: 3px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   background: rgba(28, 34, 31, 0.78);
-  color: rgba(255, 255, 255, 0.94);
   box-shadow: 0 7px 22px rgba(15, 20, 18, 0.16);
   backdrop-filter: blur(7px);
-}
-.world-map-tools span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 11px;
-  font-size: 12px;
-}
-.world-map-tools i {
-  font-size: 15px;
-  font-style: normal;
-  line-height: 1;
+  pointer-events: auto;
 }
 .world-map-tools button {
-  padding: 8px 11px;
-  pointer-events: auto;
+  min-width: 34px;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.91);
+  font-size: 12px;
+}
+.map-mode-switch button[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.94);
+  color: #222a26;
+}
+.world-map-actions output {
+  min-width: 34px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 11px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.world-map-actions #reset-world-map {
+  min-width: auto;
+  padding-inline: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 999px 999px 0;
 }
 .world-map-tools button:hover,
 .world-map-tools button:focus-visible {
   background: rgba(156, 77, 45, 0.92);
+  color: white;
   outline: none;
+}
+.world-map-tools button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.world-map-tools button:disabled:hover { background: transparent; }
+.map-frame.is-vector .feature-label {
+  fill: #27332f;
+  stroke: rgba(250, 247, 238, 0.96);
 }
 .map-credit { opacity: 0.78; white-space: nowrap; }
 .map-caption {
@@ -294,10 +335,17 @@ button { cursor: pointer; }
 @media (max-width: 520px) {
   .topbar, .map-column, .reading-column { padding-left: 15px; padding-right: 15px; }
   .map-frame { min-height: 0; aspect-ratio: 4 / 3; border-radius: 16px; }
-  .world-map-tools { top: 9px; left: 9px; right: 9px; }
-  .world-map-tools span { padding: 7px 9px; }
-  .world-map-tools button { padding: 7px 9px; }
-  .map-caption { left: 9px; right: 9px; bottom: 9px; }
+  .world-map-tools { top: 9px; left: 9px; right: 9px; gap: 7px; }
+  .world-map-tools button { min-width: 30px; padding: 5px 7px; font-size: 11px; }
+  .world-map-actions output { min-width: 27px; }
+  .map-caption {
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+    padding: 7px 9px;
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
   .map-credit { display: block; margin-top: 3px; white-space: normal; }
   .feature-label { font-size: var(--map-label-size, 8px); }
   .story-title { font-size: 30px; }

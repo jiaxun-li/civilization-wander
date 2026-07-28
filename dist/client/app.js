@@ -5,23 +5,34 @@
   const svg = document.getElementById('atlas-map');
   const mapFrame = document.querySelector('.map-frame');
   const tileLayer = document.getElementById('tile-layer');
+  const vectorLayer = document.getElementById('vector-layer');
   const overlay = document.getElementById('map-overlay');
   const mapCaption = document.getElementById('map-caption');
   const article = document.getElementById('story-content');
   const worldMapTools = document.getElementById('world-map-tools');
   const resetWorldMap = document.getElementById('reset-world-map');
+  const zoomWorldOut = document.getElementById('zoom-world-out');
+  const zoomWorldIn = document.getElementById('zoom-world-in');
+  const worldZoomLevel = document.getElementById('world-zoom-level');
+  const worldStyleButtons = worldMapTools.querySelectorAll('[data-world-style]');
+  const worldVector = window.ATLAS_WORLD_VECTOR || {};
 
   let activeZoom = 5;
   let isWorldOverview = false;
   let worldCenterX = 0;
+  let worldZoom = 2;
+  let worldStyle = 'satellite';
+  let worldTileKey = '';
   let dragState = null;
   let suppressMarkerClickUntil = 0;
 
   const worldOverview = {
-    zoom: 2,
+    minZoom: 2,
+    maxZoom: 4,
     viewWidth: 820,
     viewHeight: 560,
-    centerLon: 105
+    centerLon: 105,
+    centerLat: 30
   };
 
   function xy(lon, lat, zoom = activeZoom) {
@@ -67,19 +78,28 @@
   }
 
   function renderWorldTiles() {
-    tileLayer.innerHTML = '';
-    const zoom = worldOverview.zoom;
-    const tileCount = 2 ** zoom;
+    if (worldStyle !== 'satellite') return;
+    const zoom = worldZoom;
+    const tileCount = 2 ** worldZoom;
     const worldSize = TILE_SIZE * tileCount;
-    const yTop = (worldSize - worldOverview.viewHeight) / 2;
+    const xLeft = worldCenterX - worldOverview.viewWidth / 2;
+    const xRight = worldCenterX + worldOverview.viewWidth / 2;
+    const yTop = worldViewportTop();
     const yBottom = yTop + worldOverview.viewHeight;
+    const xMin = Math.floor(xLeft / TILE_SIZE) - 1;
+    const xMax = Math.floor(xRight / TILE_SIZE) + 1;
     const yMin = Math.max(0, Math.floor(yTop / TILE_SIZE));
     const yMax = Math.min(tileCount - 1, Math.floor(yBottom / TILE_SIZE));
+    const nextTileKey = `${zoom}/${xMin}/${xMax}/${yMin}/${yMax}`;
+    if (nextTileKey === worldTileKey) return;
 
+    worldTileKey = nextTileKey;
+    tileLayer.innerHTML = '';
     for (let tileY = yMin; tileY <= yMax; tileY += 1) {
-      for (let tileX = 0; tileX < tileCount * 3; tileX += 1) {
+      for (let tileX = xMin; tileX <= xMax; tileX += 1) {
+        const sourceX = ((tileX % tileCount) + tileCount) % tileCount;
         tileLayer.appendChild(svgEl('image', {
-          href: `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${zoom}/${tileY}/${tileX % tileCount}`,
+          href: `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${zoom}/${tileY}/${sourceX}`,
           x: tileX * TILE_SIZE - 0.5,
           y: tileY * TILE_SIZE - 0.5,
           width: TILE_SIZE + 1,
@@ -87,6 +107,60 @@
         }));
       }
     }
+  }
+
+  function worldViewportTop() {
+    const worldSize = TILE_SIZE * (2 ** worldZoom);
+    const centerY = xy(0, worldOverview.centerLat, worldZoom).y;
+    return Math.max(
+      0,
+      Math.min(worldSize - worldOverview.viewHeight, centerY - worldOverview.viewHeight / 2)
+    );
+  }
+
+  function renderWorldVector() {
+    vectorLayer.innerHTML = '';
+    if (worldStyle !== 'vector' || !worldVector.landPath) return;
+
+    const worldSize = TILE_SIZE * (2 ** worldZoom);
+    const sourceSize = worldVector.size || 1024;
+    const scale = worldSize / sourceSize;
+
+    for (let copyIndex = 0; copyIndex < 3; copyIndex += 1) {
+      const landGroup = svgEl('g', {
+        transform: `translate(${copyIndex * worldSize} 0) scale(${scale})`
+      });
+      landGroup.appendChild(svgEl('path', {
+        d: worldVector.landPath,
+        class: 'vector-land',
+        'fill-rule': 'evenodd'
+      }));
+      vectorLayer.appendChild(landGroup);
+    }
+
+    const graticule = svgEl('g', { class: 'vector-graticule' });
+    for (let copyIndex = 0; copyIndex < 3; copyIndex += 1) {
+      for (let longitude = -150; longitude <= 180; longitude += 30) {
+        const x = xy(longitude, 0, worldZoom).x + copyIndex * worldSize;
+        graticule.appendChild(svgEl('line', {
+          x1: x,
+          x2: x,
+          y1: 0,
+          y2: worldSize
+        }));
+      }
+      for (let latitude = -60; latitude <= 60; latitude += 20) {
+        const y = xy(0, latitude, worldZoom).y;
+        graticule.appendChild(svgEl('line', {
+          x1: copyIndex * worldSize,
+          x2: (copyIndex + 1) * worldSize,
+          y1: y,
+          y2: y,
+          class: latitude === 0 ? 'vector-equator' : ''
+        }));
+      }
+    }
+    vectorLayer.appendChild(graticule);
   }
 
   function label(text, x, y, anchor = 'start', dx = 0, dy = 0) {
@@ -188,6 +262,12 @@
     isWorldOverview = enabled;
     mapFrame.classList.toggle('is-world', enabled);
     worldMapTools.hidden = !enabled;
+    if (!enabled) {
+      vectorLayer.innerHTML = '';
+      mapFrame.classList.remove('is-vector', 'is-dragging');
+      dragState = null;
+      worldTileKey = '';
+    }
     svg.setAttribute('role', enabled ? 'group' : 'img');
     svg.setAttribute('tabindex', enabled ? '0' : '-1');
     svg.setAttribute(
@@ -196,6 +276,40 @@
         ? '可循环横向拖动的世界平面地图。上下方向固定，红色节点标出当前可进入的历史地理区域。'
         : '区域卫星影像地图与历史地理教学标注'
     );
+  }
+
+  function updateWorldControls() {
+    worldStyleButtons.forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.worldStyle === worldStyle));
+    });
+    zoomWorldOut.disabled = worldZoom === worldOverview.minZoom;
+    zoomWorldIn.disabled = worldZoom === worldOverview.maxZoom;
+    worldZoomLevel.value = `${2 ** (worldZoom - worldOverview.minZoom)}×`;
+    worldZoomLevel.textContent = worldZoomLevel.value;
+  }
+
+  function updateWorldCaption() {
+    const source = worldStyle === 'satellite'
+      ? '<span class="map-credit">影像：Esri、Maxar、Earthstar Geographics、GIS User Community</span>'
+      : '<span class="map-credit">简图数据：Natural Earth 1:110m（公共领域）</span>';
+    const vectorCaveat = worldStyle === 'vector'
+      ? '简图为概化海陆，不是历史疆界。'
+      : '';
+    mapCaption.innerHTML = `Web Mercator · 可缩放 · 仅横向循环 · 南北固定。${vectorCaveat}红点为近似定位。${source}`;
+  }
+
+  function renderWorldBase() {
+    mapFrame.classList.toggle('is-vector', worldStyle === 'vector');
+    worldTileKey = '';
+    if (worldStyle === 'satellite') {
+      vectorLayer.innerHTML = '';
+      renderWorldTiles();
+    } else {
+      tileLayer.innerHTML = '';
+      renderWorldVector();
+    }
+    updateWorldControls();
+    updateWorldCaption();
   }
 
   function selectStory(id) {
@@ -223,7 +337,7 @@
   }
 
   function wrapWorldCenter(value) {
-    const worldSize = TILE_SIZE * (2 ** worldOverview.zoom);
+    const worldSize = TILE_SIZE * (2 ** worldZoom);
     let wrapped = value;
     while (wrapped < worldSize) wrapped += worldSize;
     while (wrapped >= worldSize * 2) wrapped -= worldSize;
@@ -231,9 +345,9 @@
   }
 
   function updateWorldViewBox() {
-    const worldSize = TILE_SIZE * (2 ** worldOverview.zoom);
     const x = worldCenterX - worldOverview.viewWidth / 2;
-    const y = (worldSize - worldOverview.viewHeight) / 2;
+    const y = worldViewportTop();
+    renderWorldTiles();
     svg.setAttribute(
       'viewBox',
       `${x} ${y} ${worldOverview.viewWidth} ${worldOverview.viewHeight}`
@@ -241,18 +355,19 @@
   }
 
   function resetWorldPosition(focusMap = false) {
-    const worldSize = TILE_SIZE * (2 ** worldOverview.zoom);
-    worldCenterX = xy(worldOverview.centerLon, 0, worldOverview.zoom).x + worldSize;
+    const worldSize = TILE_SIZE * (2 ** worldZoom);
+    worldCenterX = xy(worldOverview.centerLon, 0, worldZoom).x + worldSize;
+    renderWorldBase();
     updateWorldViewBox();
     if (focusMap) svg.focus({ preventScroll: true });
   }
 
   function renderWorldMarker(story, copyIndex) {
-    const worldSize = TILE_SIZE * (2 ** worldOverview.zoom);
+    const worldSize = TILE_SIZE * (2 ** worldZoom);
     const center = xy(
       (story.view.lonMin + story.view.lonMax) / 2,
       (story.view.latMin + story.view.latMax) / 2,
-      worldOverview.zoom
+      worldZoom
     );
     const offsets = {
       hexi: { dx: -15, dy: -14, anchor: 'end' },
@@ -286,27 +401,54 @@
     overlay.appendChild(group);
   }
 
+  function renderWorldMarkers() {
+    overlay.innerHTML = '';
+    stories.forEach(story => {
+      [0, 1, 2].forEach(copyIndex => renderWorldMarker(story, copyIndex));
+    });
+  }
+
+  function zoomWorld(direction) {
+    const nextZoom = Math.max(
+      worldOverview.minZoom,
+      Math.min(worldOverview.maxZoom, worldZoom + direction)
+    );
+    if (nextZoom === worldZoom) return;
+
+    const oldWorldSize = TILE_SIZE * (2 ** worldZoom);
+    const longitudeRatio = (worldCenterX - oldWorldSize) / oldWorldSize;
+    worldZoom = nextZoom;
+    activeZoom = worldZoom;
+    const newWorldSize = TILE_SIZE * (2 ** worldZoom);
+    worldCenterX = newWorldSize + longitudeRatio * newWorldSize;
+    renderWorldBase();
+    renderWorldMarkers();
+    updateWorldViewBox();
+  }
+
+  function switchWorldStyle(nextStyle) {
+    if (!['satellite', 'vector'].includes(nextStyle) || nextStyle === worldStyle) return;
+    worldStyle = nextStyle;
+    renderWorldBase();
+    updateWorldViewBox();
+  }
+
   function renderOverview() {
-    activeZoom = worldOverview.zoom;
+    activeZoom = worldZoom;
     setWorldMode(true);
     overlay.style.setProperty('--map-label-size', '15px');
     overlay.style.setProperty('--map-label-stroke', '4px');
     tabs.querySelectorAll('button').forEach(button => {
       button.setAttribute('aria-selected', String(button.dataset.story === 'overview'));
     });
-    overlay.innerHTML = '';
-    renderWorldTiles();
     mapFrame.style.aspectRatio = String(worldOverview.viewWidth / worldOverview.viewHeight);
-    stories.forEach(story => {
-      [0, 1, 2].forEach(copyIndex => renderWorldMarker(story, copyIndex));
-    });
+    renderWorldMarkers();
     resetWorldPosition();
 
-    mapCaption.innerHTML = 'Web Mercator 平面投影；拖动只改变经度，世界地图可水平循环。红点为近似教学定位，不表示精确边界。<span class="map-credit">影像：Esri、Maxar、Earthstar Geographics、GIS User Community</span>';
     article.innerHTML = `
       <div class="eyebrow">山河与历史 · 世界总览</div>
       <h1 class="story-title">从世界尺度进入</h1>
-      <p class="thesis">横向拖动平面世界图，在全球尺度上定位区域；再进入当地，区分可观察的地理事实、机制推论、历史实例与限制。</p>
+      <p class="thesis">在卫星影像与地理简图之间切换，缩放并横向浏览世界；再进入当地，区分可观察的地理事实、机制推论、历史实例与限制。</p>
       <section class="section">
         <h2>当前策展区域</h2>
         <div class="overview-list">
@@ -366,6 +508,11 @@
 
   svg.addEventListener('wheel', event => {
     if (!isWorldOverview) return;
+    if (event.ctrlKey || event.metaKey) {
+      event.preventDefault();
+      zoomWorld(event.deltaY > 0 ? -1 : 1);
+      return;
+    }
     const horizontalDelta = event.shiftKey ? event.deltaY : event.deltaX;
     if (!event.shiftKey && Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
     event.preventDefault();
@@ -382,7 +529,15 @@
     const step = worldOverview.viewWidth * 0.08;
     if (event.key === 'ArrowLeft') worldCenterX = wrapWorldCenter(worldCenterX - step);
     else if (event.key === 'ArrowRight') worldCenterX = wrapWorldCenter(worldCenterX + step);
-    else if (event.key === 'Home') {
+    else if (event.key === '+' || event.key === '=') {
+      zoomWorld(1);
+      event.preventDefault();
+      return;
+    } else if (event.key === '-' || event.key === '_') {
+      zoomWorld(-1);
+      event.preventDefault();
+      return;
+    } else if (event.key === 'Home') {
       resetWorldPosition();
       event.preventDefault();
       return;
@@ -392,6 +547,11 @@
   });
 
   resetWorldMap.addEventListener('click', () => resetWorldPosition(true));
+  zoomWorldOut.addEventListener('click', () => zoomWorld(-1));
+  zoomWorldIn.addEventListener('click', () => zoomWorld(1));
+  worldStyleButtons.forEach(button => {
+    button.addEventListener('click', () => switchWorldStyle(button.dataset.worldStyle));
+  });
 
   [{ id: 'overview', shortTitle: '总览' }, ...stories].forEach((story, index) => {
     const button = document.createElement('button');

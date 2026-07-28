@@ -26,11 +26,20 @@
         <div class="map-frame">
           <svg id="atlas-map" viewBox="0 0 1440 840" preserveAspectRatio="none" role="img" aria-label="可横向拖动的世界平面地图，叠加当前历史地理故事的教学定位">
             <g id="tile-layer" class="tile-layer"></g>
+            <g id="vector-layer" class="vector-layer"></g>
             <g id="map-overlay" class="map-overlay"></g>
           </svg>
           <div id="world-map-tools" class="world-map-tools" hidden>
-            <span><i aria-hidden="true">↔</i>平面世界图 · 仅横向移动</span>
-            <button id="reset-world-map" type="button">定位东亚</button>
+            <div class="map-mode-switch" role="group" aria-label="选择世界地图底图">
+              <button type="button" data-world-style="satellite" aria-pressed="true">卫星</button>
+              <button type="button" data-world-style="vector" aria-pressed="false">地理简图</button>
+            </div>
+            <div class="world-map-actions">
+              <button id="zoom-world-out" type="button" aria-label="缩小世界地图">−</button>
+              <output id="world-zoom-level" aria-live="polite">1×</output>
+              <button id="zoom-world-in" type="button" aria-label="放大世界地图">＋</button>
+              <button id="reset-world-map" type="button">东亚</button>
+            </div>
           </div>
           <div id="map-caption" class="map-caption"></div>
         </div>
@@ -39,6 +48,7 @@
       <article id="story-content" class="reading-column" aria-live="polite"></article>
     </main>
   </div>
+  <script src="data/world-physical.js"></script>
   <script src="data/content.js"></script>
   <script src="app.js"></script>
 </body>

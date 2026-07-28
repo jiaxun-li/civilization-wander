@@ -18,7 +18,7 @@
 - 防止地理决定论的限制；
 - 参考来源。
 
-首页采用二级地图交互：先显示可循环横向拖动的 Web Mercator 世界平面图，点击关中、河西走廊或四川后进入区域详情。世界层固定南北视野，只允许水平移动；顶部“总览”可返回第一层并重新定位东亚。
+首页采用二级地图交互：先显示可缩放、可循环横向拖动的 Web Mercator 世界平面图，点击关中、河西走廊或四川后进入区域详情。世界层固定南北中心，只允许水平移动；顶部“总览”可返回第一层并重新定位东亚。
 
 三个主题现在还包含一条经过策展的重大历史事件年表：
 
@@ -56,8 +56,9 @@ python -m http.server 8000
 ## 地图和内容说明
 
 - 底图由 Python Basemap 内置 ETOPO 地形影像及海岸、国界、河流图层生成。
-- 当前主地图使用 Esri World Imagery 卫星影像，不叠加行政区划、道路或地名参考层。世界总览采用 Web Mercator 平面投影和横向循环，固定南北视野；区域详情仍使用相同投影的精细影像。河流、湖泊、植被与地貌以影像中可见内容为准。地图需要联网加载，正文和交互代码仍可直接从 `file://` 运行。
+- 当前默认底图使用 Esri World Imagery 卫星影像，不叠加行政区划、道路或地名参考层。世界总览另提供“地理简图”选项，使用 Natural Earth 1:110m 公共领域陆地数据生成本地 SVG 矢量层；它不是历史疆界图。两种世界底图都可三级缩放、横向循环，并固定南北中心。区域详情仍使用卫星影像。
 - 影像署名：Esri、Maxar、Earthstar Geographics 与 GIS User Community。参见 [Esri World Imagery 文档](https://developers.arcgis.com/openlayers/maps/display-multiple-basemap-layers/)。
+- 简图数据：Natural Earth 1:110m land，公共领域。参见 [Natural Earth 使用条款](https://www.naturalearthdata.com/about/terms-of-use/)。
 - `generate_highres_terrain.py` 和本地区域高程图保留为离线备用方案，不是当前主地图。
 - 桌面端固定左侧地图，只滚动右侧内容；窄屏设备恢复普通页面滚动。
 - 世界层红色节点和区域层高亮标注都是近似教学定位，不代表精确地貌边界、历史疆界或唯一古道。
