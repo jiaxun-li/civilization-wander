@@ -174,11 +174,7 @@ for feature in load("terrain")["features"]:
     rank = int(number_property(properties, "SCALERANK", "scalerank", default=9))
     if not kind or rank > 5:
         continue
-    path = geometry_path(feature["geometry"])
-    if not path:
-        continue
     terrain.append({
-        "d": path,
         "kind": kind,
         "rank": rank,
         "name": properties.get("NAME_ZH") or properties.get("NAME_EN") or properties.get("NAME") or "",
@@ -203,6 +199,6 @@ OUTPUT.write_text(
 )
 print(
     f"generated {OUTPUT.name}: "
-    f"{len(land_parts)} land rings, {len(terrain)} terrain areas, "
+    f"{len(land_parts)} land rings, {len(terrain)} terrain labels, "
     f"{len(rivers)} rivers, {len(lakes)} lakes"
 )

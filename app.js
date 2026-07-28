@@ -17,6 +17,11 @@
   const worldZoomLevel = document.getElementById('world-zoom-level');
   const worldStyleButtons = worldMapTools.querySelectorAll('[data-world-style]');
   const worldVector = window.ATLAS_WORLD_VECTOR || {};
+  const regionHydro = window.ATLAS_REGION_HYDRO || {};
+  const TILE_SERVICES = {
+    satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile',
+    vector: 'https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile'
+  };
 
   let activeZoom = 5;
   let isWorldOverview = false;
@@ -59,7 +64,7 @@
     return node;
   }
 
-  function renderTiles(view, zoom) {
+  function renderTiles(view, zoom, style = 'satellite') {
     tileLayer.innerHTML = '';
     const topLeft = xy(view.lonMin, view.latMax, zoom);
     const bottomRight = xy(view.lonMax, view.latMin, zoom);
@@ -70,18 +75,18 @@
     for (let tileY = yMin; tileY <= yMax; tileY += 1) {
       for (let tileX = xMin; tileX <= xMax; tileX += 1) {
         tileLayer.appendChild(svgEl('image', {
-          href: `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${zoom}/${tileY}/${tileX}`,
+          href: `${TILE_SERVICES[style]}/${zoom}/${tileY}/${tileX}`,
           x: tileX * TILE_SIZE - 0.5,
           y: tileY * TILE_SIZE - 0.5,
           width: TILE_SIZE + 1,
-          height: TILE_SIZE + 1
+          height: TILE_SIZE + 1,
+          class: style === 'vector' ? 'hillshade-tile' : 'satellite-tile'
         }));
       }
     }
   }
 
   function renderWorldTiles() {
-    if (worldStyle !== 'satellite') return;
     const zoom = worldZoom;
     const tileCount = 2 ** worldZoom;
     const worldSize = TILE_SIZE * tileCount;
@@ -93,7 +98,7 @@
     const xMax = Math.floor(xRight / TILE_SIZE) + 1;
     const yMin = Math.max(0, Math.floor(yTop / TILE_SIZE));
     const yMax = Math.min(tileCount - 1, Math.floor(yBottom / TILE_SIZE));
-    const nextTileKey = `${zoom}/${xMin}/${xMax}/${yMin}/${yMax}`;
+    const nextTileKey = `${worldStyle}/${zoom}/${xMin}/${xMax}/${yMin}/${yMax}`;
     if (nextTileKey === worldTileKey) return;
 
     worldTileKey = nextTileKey;
@@ -102,11 +107,12 @@
       for (let tileX = xMin; tileX <= xMax; tileX += 1) {
         const sourceX = ((tileX % tileCount) + tileCount) % tileCount;
         tileLayer.appendChild(svgEl('image', {
-          href: `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${zoom}/${tileY}/${sourceX}`,
+          href: `${TILE_SERVICES[worldStyle]}/${zoom}/${tileY}/${sourceX}`,
           x: tileX * TILE_SIZE - 0.5,
           y: tileY * TILE_SIZE - 0.5,
           width: TILE_SIZE + 1,
-          height: TILE_SIZE + 1
+          height: TILE_SIZE + 1,
+          class: worldStyle === 'vector' ? 'hillshade-tile' : 'satellite-tile'
         }));
       }
     }
@@ -123,7 +129,6 @@
     const worldSize = TILE_SIZE * (2 ** worldZoom);
     const sourceSize = worldVector.size || 4096;
     const scale = worldSize / sourceSize;
-    const terrainRankLimit = Math.max(1, worldZoom - 1);
 
     const appendScaledCopies = (features, className, predicate) => {
       for (let copyIndex = 0; copyIndex < 3; copyIndex += 1) {
@@ -155,11 +160,6 @@
       vectorLayer.appendChild(landGroup);
     }
 
-    appendScaledCopies(
-      worldVector.terrain || [],
-      feature => `vector-terrain vector-terrain--${feature.kind}`,
-      feature => feature.rank <= terrainRankLimit
-    );
     appendScaledCopies(
       worldVector.lakes || [],
       'vector-lake',
@@ -237,30 +237,26 @@
   }
 
   function renderFeature(feature) {
+    let point = null;
     if (feature.type === 'area') {
-      const p = xy(feature.lon, feature.lat);
-      const rx = Math.abs(xy(feature.lon + feature.rx, feature.lat).x - p.x);
-      const ry = Math.abs(xy(feature.lon, feature.lat - feature.ry).y - p.y);
-      overlay.appendChild(svgEl('ellipse', {
-        cx: p.x,
-        cy: p.y,
-        rx,
-        ry,
-        class: `feature-area feature-area--${feature.kind || 'plain'}`
-      }));
-      overlay.appendChild(label(feature.label, p.x, p.y, feature.anchor || 'middle', feature.dx, feature.dy));
-      return;
+      point = xy(feature.lon, feature.lat);
     }
 
     if (['ridge', 'river'].includes(feature.type)) {
       const pts = feature.points.map(([lon, lat]) => xy(lon, lat));
-      overlay.appendChild(svgEl('polyline', {
-        points: pts.map(point => `${point.x},${point.y}`).join(' '),
-        class: `feature-${feature.type}`,
-        'vector-effect': 'non-scaling-stroke'
-      }));
-      const mid = pts[Math.floor(pts.length / 2)];
-      overlay.appendChild(label(feature.label, mid.x, mid.y, feature.anchor || 'middle', feature.dx, feature.dy));
+      point = pts[Math.floor(pts.length / 2)];
+    }
+
+    if (point) {
+      overlay.appendChild(label(
+        feature.label,
+        point.x,
+        point.y,
+        feature.anchor || 'middle',
+        feature.dx,
+        feature.dy,
+        `feature-label feature-label--${feature.type}`
+      ));
     }
   }
 
@@ -398,57 +394,77 @@
   function updateWorldCaption() {
     const source = worldStyle === 'satellite'
       ? '<span class="map-credit">影像：Esri、Maxar、Earthstar Geographics、GIS User Community</span>'
-      : '<span class="map-credit">海陆、地形区、河流与湖泊：Natural Earth 1:50m（公共领域）</span>';
+      : '<span class="map-credit">地形阴影：Esri World Hillshade；海陆与水系：Natural Earth 1:50m</span>';
     const vectorCaveat = worldStyle === 'vector'
-      ? '简图为概化自然地理，不含历史或现代疆界。'
+      ? '简图只呈现自然地形与水系，不含历史或现代疆界。'
       : '';
-    mapCaption.innerHTML = `Web Mercator · 1×—16× · 可上下左右拖动 · 东西循环。${vectorCaveat}红点为近似定位。${source}`;
+    mapCaption.innerHTML = `Web Mercator · 1×—16× · 拖动平移 · Ctrl/Command + 滚轮缩放 · 东西循环。${vectorCaveat}红点为近似定位。${source}`;
   }
 
   function renderWorldBase() {
     mapFrame.classList.toggle('is-vector', worldStyle === 'vector');
     worldTileKey = '';
-    if (worldStyle === 'satellite') {
-      vectorLayer.innerHTML = '';
-      renderWorldTiles();
-    } else {
-      tileLayer.innerHTML = '';
-      renderWorldVector();
-    }
+    renderWorldTiles();
+    if (worldStyle === 'satellite') vectorLayer.innerHTML = '';
+    else renderWorldVector();
     updateWorldControls();
     updateWorldCaption();
   }
 
   function renderRegionVector(story) {
     vectorLayer.innerHTML = '';
-    const box = viewBox(story.view).split(' ').map(Number);
-    const [x, y, width, height] = box;
-    vectorLayer.appendChild(svgEl('rect', {
-      x,
-      y,
-      width,
-      height,
-      class: 'region-vector-land'
-    }));
+    if (!worldVector.landPath) return;
 
-    const graticule = svgEl('g', { class: 'region-graticule' });
-    for (let longitude = Math.ceil(story.view.lonMin); longitude <= story.view.lonMax; longitude += 1) {
-      const lineX = xy(longitude, 0).x;
-      graticule.appendChild(svgEl('line', { x1: lineX, x2: lineX, y1: y, y2: y + height }));
-    }
-    for (let latitude = Math.ceil(story.view.latMin); latitude <= story.view.latMax; latitude += 1) {
-      const lineY = xy(0, latitude).y;
-      graticule.appendChild(svgEl('line', { x1: x, x2: x + width, y1: lineY, y2: lineY }));
-    }
-    vectorLayer.appendChild(graticule);
+    const worldSize = TILE_SIZE * (2 ** activeZoom);
+    const sourceSize = worldVector.size || 4096;
+    const scale = worldSize / sourceSize;
+    const physicalGroup = svgEl('g', { transform: `scale(${scale})` });
+
+    physicalGroup.appendChild(svgEl('path', {
+      d: worldVector.landPath,
+      class: 'vector-land region-vector-land',
+      'fill-rule': 'evenodd'
+    }));
+    (worldVector.lakes || []).forEach(feature => {
+      physicalGroup.appendChild(svgEl('path', {
+        d: feature.d,
+        class: 'vector-lake',
+        'fill-rule': 'evenodd'
+      }));
+    });
+    (worldVector.rivers || []).forEach(feature => {
+      physicalGroup.appendChild(svgEl('path', {
+        d: feature.d,
+        class: 'vector-river'
+      }));
+    });
+    vectorLayer.appendChild(physicalGroup);
+
+    const detailedRivers = regionHydro.rivers || {};
+    const riverNames = story.features
+      .filter(feature => feature.type === 'river')
+      .map(feature => feature.label);
+    const detailGroup = svgEl('g', {
+      transform: `scale(${worldSize / (regionHydro.size || 4096)})`
+    });
+    riverNames.forEach(name => {
+      (detailedRivers[name] || []).forEach(path => {
+        detailGroup.appendChild(svgEl('path', {
+          d: path,
+          class: 'region-river-data',
+          'data-river': name
+        }));
+      });
+    });
+    vectorLayer.appendChild(detailGroup);
   }
 
   function updateRegionCaption(story) {
     const source = worldStyle === 'satellite'
       ? '<span class="map-credit">影像：Esri、Maxar、Earthstar Geographics、GIS User Community</span>'
-      : '<span class="map-credit">自然地理参照：Natural Earth 与区域百科资料</span>';
+      : '<span class="map-credit">地形阴影：Esri；水系：Natural Earth 与 <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a></span>';
     const note = worldStyle === 'vector'
-      ? '地理简图中的地形面、山脉与河流为概化教学示意，不表示精确边界。'
+      ? '山名定位于地形阴影，河名对应真实水系数据；不绘制教学椭圆、山形线或近似河线。'
       : story.mapNote;
     mapCaption.innerHTML = `${note} ${source}`;
   }
@@ -458,9 +474,9 @@
     updateMapStyleControls();
     if (worldStyle === 'satellite') {
       vectorLayer.innerHTML = '';
-      renderTiles(story.view, activeZoom);
+      renderTiles(story.view, activeZoom, 'satellite');
     } else {
-      tileLayer.innerHTML = '';
+      renderTiles(story.view, activeZoom, 'vector');
       renderRegionVector(story);
     }
     updateRegionCaption(story);
@@ -616,7 +632,7 @@
     article.innerHTML = `
       <div class="eyebrow">山河与历史 · 世界总览</div>
       <h1 class="story-title">从世界尺度进入</h1>
-      <p class="thesis">在卫星影像与保留山脉、地形区、河流和湖泊的地理简图之间切换；地图可放大至16倍并上下左右浏览，再进入区域理解地理机制与历史实例。</p>
+      <p class="thesis">在卫星影像与山川纹理地理简图之间切换；地图可放大至16倍并拖动浏览，再进入区域理解地理机制与历史实例。</p>
       <section class="section">
         <h2>当前策展区域</h2>
         <div class="overview-list">
@@ -681,24 +697,9 @@
   svg.addEventListener('pointercancel', finishWorldDrag);
 
   svg.addEventListener('wheel', event => {
-    if (!isWorldOverview) return;
-    if (event.ctrlKey || event.metaKey) {
-      event.preventDefault();
-      zoomWorld(event.deltaY > 0 ? -1 : 1);
-      return;
-    }
+    if (!isWorldOverview || (!event.ctrlKey && !event.metaKey)) return;
     event.preventDefault();
-    const bounds = svg.getBoundingClientRect();
-    if (!bounds.width || !bounds.height) return;
-    const horizontalDelta = event.shiftKey ? event.deltaY : event.deltaX;
-    const verticalDelta = event.shiftKey ? 0 : event.deltaY;
-    worldCenterX = wrapWorldCenter(
-      worldCenterX + horizontalDelta * (worldOverview.viewWidth / bounds.width)
-    );
-    worldCenterY = clampWorldCenterY(
-      worldCenterY + verticalDelta * (worldOverview.viewHeight / bounds.height)
-    );
-    updateWorldViewBox();
+    zoomWorld(event.deltaY > 0 ? -1 : 1);
   }, { passive: false });
 
   svg.addEventListener('keydown', event => {

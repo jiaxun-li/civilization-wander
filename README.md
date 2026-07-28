@@ -16,7 +16,7 @@
 - 地理与历史：地缘政治机制、历史实例和防止地理决定论的限制；
 - 历史：经过策展的重大历史事件年表。
 
-首页采用二级地图交互：先显示 Web Mercator 世界平面图，点击关中、河西走廊或四川后进入区域详情。世界层支持 1×、2×、4×、8×、16× 缩放，东西方向循环，上下方向在地图范围内移动；顶部“总览”可返回第一层并重新定位东亚。
+首页采用二级地图交互：先显示 Web Mercator 世界平面图，点击关中、河西走廊或四川后进入区域详情。世界层支持 1×、2×、4×、8×、16× 缩放，东西方向循环，上下方向在地图范围内拖动；普通滚轮交还页面滚动，Ctrl/Command + 滚轮用于地图缩放。顶部“总览”可返回第一层并重新定位东亚。
 
 三个主题现在还包含一条经过策展的重大历史事件年表：
 
@@ -45,19 +45,25 @@ python -m http.server 8000
 - `styles.css`：界面样式
 - `app.js`：地图投影、交互和内容渲染
 - `data/content.js`：当前三篇人工策展内容
+- `data/world-physical.js`：Natural Earth 海陆与水系的本地 SVG 路径
+- `data/region-hydro.js`：当前标注河流的本地 OpenStreetMap 几何
 - `data/content.json`：未来 JSON 内容结构的占位文件
 - `assets/east-asia-relief.png`：中国及周边地形底图
 - `generate_map.py`：重新生成底图
+- `generate_world_vector.py`：重新生成世界物理矢量数据
+- `generate_region_hydro.py`：重新获取并生成区域真实河道数据
 - `AGENTS.md`：交给 Codex 或其他编码代理时的项目规则
 - `CODEX_NEXT_TASK.md`：下一轮开发任务提示词
 
 ## 地图和内容说明
 
-- 底图由 Python Basemap 内置 ETOPO 地形影像及海岸、国界、河流图层生成。
 - 当前默认底图使用 Esri World Imagery 卫星影像，不叠加行政区划、道路或地名参考层。世界总览和区域详情都可切换到“地理简图”。
-- 世界地理简图使用 Natural Earth 1:50m 公共领域海陆、自然地理区、河流与湖泊数据生成本地 SVG 矢量层；区域简图叠加人工策展的概化山脉、河流与地形面。所有简图都不是历史疆界图，也不表示精确地貌边界。
+- 地理简图以 Esri World Hillshade 的浅色地形阴影呈现山川纹理，并叠加 Natural Earth 1:50m 公共领域海陆、河流与湖泊数据；不再绘制彩色地形块。
+- 区域简图使用相同的地形阴影和 Natural Earth 水系，并以 OpenStreetMap 真实河道几何补齐当前地图标注的渭河、泾河、河西内流河和四川主要支流。山名落在真实地形纹理上，河名对应真实水系；不绘制人工椭圆、山形线或近似河线。
 - 影像署名：Esri、Maxar、Earthstar Geographics 与 GIS User Community。参见 [Esri World Imagery 文档](https://developers.arcgis.com/openlayers/maps/display-multiple-basemap-layers/)。
+- 地形阴影：Esri World Hillshade。参见 [World Hillshade 文档](https://doc.arcgis.com/en/data-appliance/latest/imagery-elevation/world-hillshade.htm)。
 - 简图数据：Natural Earth 1:50m physical vectors，公共领域。参见 [Natural Earth 使用条款](https://www.naturalearthdata.com/about/terms-of-use/)。
+- 区域河道数据：© OpenStreetMap contributors，ODbL。参见 [OpenStreetMap 版权与许可](https://www.openstreetmap.org/copyright)。
 - `generate_highres_terrain.py` 和本地区域高程图保留为离线备用方案，不是当前主地图。
 - 桌面端固定左侧地图，只滚动右侧内容；窄屏设备恢复普通页面滚动。
 - 世界层红色节点和区域层自然地理标注都是近似教学定位；区域地图只保留山脉、河流、盆地、平原、走廊和荒漠等自然地理名称，不显示现代城市或行政区名称。

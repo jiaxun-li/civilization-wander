@@ -91,7 +91,7 @@ button { cursor: pointer; }
   cursor: grab;
   touch-action: none;
 }
-.map-frame.is-vector svg { background: #a9cbd1; }
+.map-frame.is-vector svg { background: #d8e5e3; }
 .map-frame.is-dragging svg {
   cursor: grabbing;
   user-select: none;
@@ -101,31 +101,25 @@ button { cursor: pointer; }
   outline-offset: -6px;
 }
 .map-image { image-rendering: auto; }
-.tile-layer image { filter: saturate(1.12) brightness(1.06) contrast(0.96); }
+.tile-layer image.satellite-tile {
+  filter: saturate(1.12) brightness(1.06) contrast(0.96);
+}
+.tile-layer image.hillshade-tile {
+  filter: grayscale(1) sepia(0.18) contrast(0.88) brightness(1.1);
+  opacity: 0.82;
+  mix-blend-mode: multiply;
+}
 .vector-layer { pointer-events: none; }
 .vector-land {
-  fill: #eee7d7;
-  stroke: #6f7970;
-  stroke-width: 1.15;
+  fill: rgba(244, 239, 222, 0.52);
+  stroke: rgba(93, 105, 98, 0.78);
+  stroke-width: 0.9;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
-.vector-terrain {
-  stroke: rgba(106, 91, 70, 0.28);
-  stroke-width: 0.65;
-  vector-effect: non-scaling-stroke;
-}
-.vector-terrain--range { fill: #b8a083; }
-.vector-terrain--foothills { fill: #c7b294; }
-.vector-terrain--plateau { fill: #cab592; }
-.vector-terrain--desert { fill: #e1c990; }
-.vector-terrain--plain,
-.vector-terrain--lowland { fill: #d9d9b6; }
-.vector-terrain--basin,
-.vector-terrain--valley { fill: #d4cfa8; }
 .vector-lake {
-  fill: #9fc8d1;
-  stroke: #6e9ea9;
+  fill: rgba(137, 190, 204, 0.72);
+  stroke: rgba(89, 145, 160, 0.88);
   stroke-width: 0.75;
   vector-effect: non-scaling-stroke;
 }
@@ -137,10 +131,13 @@ button { cursor: pointer; }
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
-.region-vector-land { fill: #e8e1cf; }
-.region-graticule line {
-  stroke: rgba(77, 105, 102, 0.17);
-  stroke-width: 0.7;
+.region-vector-land { fill: rgba(246, 241, 224, 0.42); }
+.region-river-data {
+  fill: none;
+  stroke: rgba(59, 126, 153, 0.92);
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
 .vector-graticule line {
@@ -245,6 +242,7 @@ button { cursor: pointer; }
   stroke: rgba(250, 247, 238, 0.96);
 }
 .map-credit { opacity: 0.78; white-space: nowrap; }
+.map-credit a { color: inherit; }
 .map-caption {
   position: absolute;
   left: 14px; right: 14px; bottom: 12px;
@@ -265,29 +263,13 @@ button { cursor: pointer; }
   stroke-linejoin: round;
   fill: #18211f;
 }
-.feature-area {
-  fill: rgba(205, 199, 151, 0.30);
-  stroke: rgba(91, 81, 57, 0.72);
-  stroke-width: 1.5;
-  stroke-dasharray: 5 4;
-  vector-effect: non-scaling-stroke;
+.feature-label--ridge {
+  fill: #5c493d;
+  letter-spacing: 0.08em;
 }
-.feature-area--desert { fill: rgba(224, 193, 119, 0.32); }
-.feature-area--basin { fill: rgba(197, 176, 125, 0.28); }
-.feature-ridge {
-  fill: none;
-  stroke: #6d5242;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 8 5;
-}
-.feature-river {
-  fill: none;
-  stroke: #2f7895;
-  stroke-width: 2.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.feature-label--river {
+  fill: #286f8a;
+  font-style: italic;
 }
 
 .reading-column {
