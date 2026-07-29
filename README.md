@@ -39,10 +39,6 @@ python -m http.server 8000
 
 然后在浏览器打开 `http://localhost:8000`。
 
-## GitHub Pages
-
-仓库包含 `.github/workflows/pages.yml`。推送到 GitHub 的 `main` 分支并在仓库设置中选择 GitHub Actions 作为 Pages 发布源后，工作流会把 `dist/client` 作为静态网站发布。
-
 ## 文件结构
 
 - `index.html`：页面骨架
