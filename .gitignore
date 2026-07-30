@@ -1,0 +1,4 @@
+.worktrees/
+test-results/
+playwright-report/
+
