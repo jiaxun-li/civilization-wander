@@ -27,3 +27,8 @@
 - 真实浏览器桌面与移动控制台均为 0 error / 0 warning。
 - 完成 `docs/V3_ACCEPTANCE_REPORT.md`，结论 PASS。
 - 下一检查点：提交集成分支、合并至 `codex/v3-refactor`、推送并创建 Draft PR。
+- 提交 `eff50f0 INTEGRATION_READY: wire V3 atlas and QA`，合并为最终 `5680f98`。
+- 在最终集成树上再次执行全量测试，46/46 通过。
+- 推送 `codex/v3-refactor`，远端 HEAD 与本地 `5680f98` 一致。
+- GitHub connector 没有已安装账号，PR 写入返回 403；内置浏览器也未登录。已记录精确阻塞原因并准备 `docs/V3_PR_BODY.md`。
+- 唯一剩余交付：连接 GitHub 写入会话并创建 Draft PR；不得合并或部署。

@@ -1,7 +1,9 @@
 # 文明漫游 V3 验收报告
 
-> 验收日期：2026-07-31  
-> 最终分支：`codex/v3-refactor`  
+> 验收日期：2026-07-31
+> 最终分支：`codex/v3-refactor`
+> 集成 HEAD：`5680f98fe92576aa7407f2cd6ae9fbde7b7075be`
+> 远端状态：已推送至 `origin/codex/v3-refactor`
 > 结论：**PASS**
 
 ## 1. 结论
@@ -37,7 +39,8 @@ V3 数据、Card/Scene 连续阅读、统一导航、本地 Natural Earth 地图
 - 数据架构：`0bd016a DATA_SCHEMA_READY: implement V3 data model`
 - Card / Scene UI：`c225c1d CARD_UI_READY: implement V3 card reader`
 - Natural Earth 地图：`91dd62c MAP_READY: implement local Natural Earth map`
-- 集成与 QA：最终集成 commit 在合并后回填
+- 集成与 QA：`eff50f0 INTEGRATION_READY: wire V3 atlas and QA`
+- 最终集成：`5680f98 Merge INTEGRATION_READY into V3 refactor`
 
 ## 5. 自动化测试
 
@@ -145,4 +148,9 @@ legacy 文件仍为旧内容保留，但 `index.html` 不再加载。
 
 ## 11. Draft PR
 
-创建后回填 URL；PR 必须保持 Draft，且不合并 `main`。
+分支已推送，但 Draft PR 尚未创建。2026-07-31 的两条可用创建路径均缺少 GitHub 写入会话：
+
+- GitHub connector：没有已安装账号，创建 PR 返回 `403 Resource not accessible by integration`。
+- Codex 内置浏览器：GitHub 页面处于未登录状态。
+
+待 GitHub App 连接到 `jiaxun-li/history-geography` 且获得 Pull requests 写权限后，使用 `docs/V3_PR_BODY.md` 创建 Draft PR，并在此处回填 URL。不得合并 `main` 或部署生产。
