@@ -3,66 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="以地图和时间轴探索地理、文明与思想如何共同塑造世界。">
-  <title>山河与文明 · 互动文明图谱</title>
+  <meta name="description" content="从一个人物、信仰或政治实体出发，沿着经过策展的关联连续阅读人类文明。">
+  <meta name="theme-color" content="#f1ede3">
+  <title>文明漫游 · 连续阅读文明知识网络</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/v3/cards.css">
+  <link rel="stylesheet" href="styles/v3/map.css">
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true">山</div>
-        <div>
-          <h1>山河与文明</h1>
-          <p>为什么历史会在这个地方以这种方式展开？</p>
-        </div>
-      </div>
-      <nav class="site-nav" aria-label="主要导航">
-        <a href="#home" data-route-link="home">首页</a>
-        <a href="#map" data-route-link="map">地图</a>
-        <a href="#explorations" data-route-link="explorations">探索</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-brand" href="#home" data-home-link aria-label="文明漫游首页">
+        <span class="site-brand__mark" aria-hidden="true">游</span>
+        <span>
+          <strong data-brand-name>文明漫游</strong>
+          <small data-brand-tagline>沿着关联漫游人类文明</small>
+        </span>
+      </a>
+      <nav class="reading-path" aria-label="当前阅读路径">
+        <span>阅读路径</span>
+        <ol id="reading-path-list">
+          <li aria-current="page">首页</li>
+        </ol>
       </nav>
     </header>
 
-    <main class="layout">
-      <section class="map-column" aria-label="交互地图">
-        <nav id="story-tabs" class="story-tabs" aria-label="图集导航"></nav>
-        <section id="mobile-context-lead" class="mobile-context-lead" hidden aria-live="polite"></section>
-        <div class="map-frame">
-          <svg id="atlas-map" viewBox="0 0 1440 840" preserveAspectRatio="none" role="img" aria-label="可缩放拖动并切换底图的自然地理地图">
-            <g id="tile-layer" class="tile-layer"></g>
-            <g id="vector-layer" class="vector-layer"></g>
-            <g id="map-overlay" class="map-overlay"></g>
-          </svg>
-          <div id="map-ui-overlay" class="map-ui-overlay" aria-label="地图地点节点"></div>
-          <div id="world-map-tools" class="world-map-tools" hidden>
-            <div class="map-mode-switch" role="group" aria-label="选择地图底图">
-              <button type="button" data-world-style="satellite" aria-pressed="true">卫星</button>
-              <button type="button" data-world-style="vector" aria-pressed="false">地理简图</button>
-            </div>
-            <div id="map-view-actions" class="world-map-actions">
-              <button id="zoom-world-out" type="button" aria-label="缩小世界地图">−</button>
-              <output id="world-zoom-level" aria-live="polite">1×</output>
-              <button id="zoom-world-in" type="button" aria-label="放大世界地图">＋</button>
-              <button id="reset-world-map" type="button">重置</button>
-            </div>
-          </div>
-          <div id="map-caption" class="map-caption"></div>
-          <aside id="entity-preview-card" class="entity-preview-card" hidden aria-live="polite"></aside>
+    <main>
+      <section id="home-view" class="home-view" aria-labelledby="home-title">
+        <div class="home-hero">
+          <p class="home-hero__eyebrow">连续阅读 · 连续点击</p>
+          <h1 id="home-title" tabindex="-1">从一个人物、信仰或政治实体出发。</h1>
+          <p class="home-hero__lead">向下滚动阅读一张 Card；点击经过策展的关联，进入下一张 Card。地图只负责安静地补充空间背景。</p>
+          <a class="home-primary-action" href="#card/buddhism-overview/buddhism-origins"
+            data-start-card="buddhism-overview">从佛教开始阅读 <span aria-hidden="true">→</span></a>
         </div>
-        <section id="entity-timeline" class="entity-timeline" hidden aria-label="实体时间轴"></section>
+        <section class="home-entities" aria-labelledby="home-entities-title">
+          <header>
+            <p class="home-hero__eyebrow">第一批文明实体</p>
+            <h2 id="home-entities-title">四个入口，一张相互连接的网络</h2>
+          </header>
+          <div id="home-card-grid" class="home-card-grid"></div>
+        </section>
+        <aside class="home-method">
+          <p>地图范围、路线与节点为明确标注的近似教学表达；它们呈现历史发生的空间条件，不主张地理决定历史结果。</p>
+        </aside>
       </section>
 
-      <article id="story-content" class="reading-column" aria-live="polite"></article>
+      <section id="card-view" class="card-view" hidden>
+        <div id="card-root" role="region" aria-label="当前文明 Card"></div>
+      </section>
     </main>
   </div>
+
+  <noscript>此原型需要 JavaScript 来激活连续 Scene、地图状态和 Card 导航。</noscript>
+
   <script src="data/world-physical.js"></script>
-  <script src="data/region-hydro.js"></script>
-  <script src="data/content.js"></script>
-  <script src="data/knowledge.js"></script>
-  <script src="data/curation.js"></script>
-  <script src="data/entity-network.js"></script>
-  <script src="data/entity-queries.js"></script>
+  <script src="data/v3/atlas-data.js"></script>
+  <script src="data/v3/queries.js"></script>
+  <script src="ui/v3/cards.js"></script>
+  <script src="ui/v3/card-reader.js"></script>
+  <script src="assets/natural-earth/base.js"></script>
+  <script src="map/v3/map-renderer.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

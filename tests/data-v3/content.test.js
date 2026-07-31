@@ -36,3 +36,13 @@ test('every relationship fact lives in StructuralEdge', () => {
   assert.equal(data.structureViews.find(view => view.family === 'context').query.edgeFamilies.length > 1, true);
 });
 
+test('map navigation does not point back to the card already being read', () => {
+  const ashokaScene = data.scenes.find(scene => scene.id === 'ashoka-emperor');
+  const ashokaMap = data.mapStates.find(mapState => mapState.id === ashokaScene.mapStateId);
+  assert.ok(ashokaMap.layerIds.some(layer => layer.navigationId === 'nav-ashoka-maurya'));
+
+  const mauryaScene = data.scenes.find(scene => scene.id === 'maurya-formation');
+  const mauryaMap = data.mapStates.find(mapState => mapState.id === mauryaScene.mapStateId);
+  assert.equal(mauryaMap.layerIds.some(layer => layer.navigationId), false);
+});
+

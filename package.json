@@ -1,0 +1,19 @@
+{
+  "name": "civilization-wander-v3",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Dependency-free static civilization knowledge network.",
+  "scripts": {
+    "test": "node --test tests/data-v3/*.test.js tests/ui-v3/*.test.js tests/map-v3/*.test.js tests/integration/*.test.js tests/e2e/*.test.js",
+    "test:data": "node --test tests/data-v3/*.test.js",
+    "test:ui": "node --test tests/ui-v3/*.test.js",
+    "test:map": "node --test tests/map-v3/*.test.js",
+    "test:integration": "node --test tests/integration/*.test.js",
+    "test:e2e": "node --test tests/e2e/*.test.js",
+    "check:syntax": "node --check data/v3/atlas-data.js && node --check data/v3/queries.js && node --check ui/v3/cards.js && node --check ui/v3/card-reader.js && node --check assets/natural-earth/base.js && node --check map/v3/map-renderer.js && node --check app.js",
+    "check:pages": "node --test tests/integration/pages.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
