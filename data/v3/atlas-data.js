@@ -344,7 +344,7 @@
     ['shakyamuni-ganges', 'shakyamuni-overview', 2, '恒河中游', '移动的教师与多国环境', ['城镇和道路让教师、门徒与赞助者相遇，但环境只是条件，不是思想内容的决定者。'], 'map-buddhism-origins', ['view-buddhism-context'], []],
     ['shakyamuni-teaching', 'shakyamuni-overview', 3, '教说与实践', '共同体围绕实践形成', ['教说、戒律与共同生活让传统获得可延续的形式。'], 'map-buddhism-community', ['view-buddhism-network'], ['nav-shakyamuni-buddhism']],
     ['shakyamuni-memory', 'shakyamuni-overview', 4, '后世记忆', '历史人物也是传统记忆的中心', ['传记传统表达宗教意义，不应与可直接验证的历史细节混为一谈；地理环境不会自动决定一种教说如何被记忆。'], 'map-shakyamuni', ['view-buddhism-network'], []],
-    ['ashoka-emperor', 'ashoka-overview', 1, '约公元前268年起', '阿育王首先是孔雀帝国君主', ['他的行动依赖既有的王朝、交通与行政网络，不能把帝国写成个人的谱系后代。'], 'map-maurya', ['view-ashoka-context'], ['nav-ashoka-maurya']],
+    ['ashoka-emperor', 'ashoka-overview', 1, '约公元前268年起', '阿育王首先是孔雀帝国君主', ['他的行动依赖既有的王朝、交通与行政网络，不能把帝国写成个人的谱系后代。'], 'map-ashoka-emperor', ['view-ashoka-context'], ['nav-ashoka-maurya']],
     ['ashoka-edicts', 'ashoka-overview', 2, '在位时期', '敕令进入公共空间', ['岩刻与柱刻分布在帝国不同区域，以不同语言和文字面向多样人群。'], 'map-ashoka-edicts', ['view-ashoka-context'], []],
     ['ashoka-dhamma', 'ashoka-overview', 3, '治理主张', '“法”不是单一宗派宣言', ['敕令强调克制、照护和对多种群体的尊重。把它们等同于佛教教义会缩窄其政治语境。'], 'map-ashoka-edicts', ['view-ashoka-context'], []],
     ['ashoka-buddhism', 'ashoka-overview', 4, '王权与僧团', '支持佛教，但并非只服务佛教', ['传统与碑铭共同表明阿育王和佛教关系密切；证据仍要求区分政治表达和宗教记忆。'], 'map-ashoka-network', ['view-ashoka-context'], ['nav-ashoka-buddhism']],
@@ -504,7 +504,8 @@
     ['map-buddhism-community', [82.5, 26], 5.7, ['geometry-ganges-heartland'], ['buddhism'], []],
     ['map-ashoka-network', [80, 24], 3.9, ['geometry-maurya-extent', 'geometry-ashoka-edicts', 'geometry-buddhist-network'], ['ashoka', 'maurya', 'buddhism'], ['nav-buddhism-ashoka', 'nav-ashoka-maurya']],
     ['map-buddhism-network', [82, 25], 4.3, ['geometry-buddhist-network'], ['buddhism', 'shakyamuni', 'maurya'], []],
-    ['map-maurya', [79, 23], 4, ['geometry-maurya-extent'], ['maurya', 'ashoka'], ['nav-ashoka-maurya']],
+    ['map-ashoka-emperor', [79, 23], 4, ['geometry-maurya-extent'], ['maurya', 'ashoka'], ['nav-ashoka-maurya']],
+    ['map-maurya', [79, 23], 4, ['geometry-maurya-extent'], ['maurya', 'ashoka'], []],
     ['map-ashoka-edicts', [78, 24], 4.2, ['geometry-maurya-extent', 'geometry-ashoka-edicts'], ['ashoka'], []],
     ['map-maurya-administration', [79, 23], 4.1, ['geometry-maurya-extent'], ['maurya', 'maurya-administration'], ['nav-maurya-administration']],
     ['map-language-lineage', [70, 35], 3.2, ['geometry-language-lineage'], ['indo-european', 'indo-iranian'], ['nav-indo-european-indo-iranian']]
