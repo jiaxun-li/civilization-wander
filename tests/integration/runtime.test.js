@@ -120,11 +120,14 @@ test('left-column images crossfade while unchanged images remain stable', () => 
   assert.match(cardCss, /is-media-image-leaving-active[\s\S]*opacity: 0/);
   assert.match(app, /incomingImage\.decoding = 'async'/);
   assert.match(app, /incomingImage\.fetchPriority = 'high'/);
+  assert.match(app, /waitForImageReady\(incomingImage\)\.then/);
+  assert.match(app, /preloadAdjacentSceneImages\(context\?\.cardId, scene\?\.id, asset\.id\)/);
+  assert.match(app, /image\.fetchPriority = 'low'/);
   assert.match(cardsJs, /loading="lazy" decoding="async"/);
 });
 
 test('same-Card image presentations preserve the map DOM underneath', () => {
-  const imageRenderer = app.match(/function renderImagePresentation\(presentation\)[\s\S]*?\n    }\n\n    reader =/)?.[0] || '';
+  const imageRenderer = app.match(/function renderImagePresentation\(presentation, scene, context\)[\s\S]*?\n    }\n\n    reader =/)?.[0] || '';
   assert.doesNotMatch(imageRenderer, /map\?\.destroy\(\)|map = null|nextContainer\.innerHTML/);
   assert.match(imageRenderer, /nextContainer\.append\(incomingImage\)/);
   assert.match(imageRenderer, /setAttribute\('aria-hidden', 'true'\)/);

@@ -48,9 +48,9 @@ test('gods, heroes, Iliad, and Odyssey entrances are live', () => {
   assert.ok(cardById.has('odyssey-name-and-home'));
 });
 
-test('both new entities use the approved Religous_and_Myth type and myth scenes suppress dates', () => {
+test('both new entities use the approved religionAndMyth type and myth scenes suppress dates', () => {
   const newEntities = aegean.entities.filter(entity => ['greek-divine-tradition', 'greek-heroic-tradition'].includes(entity.id));
-  assert.deepEqual(newEntities.map(entity => entity.type), ['Religous_and_Myth', 'Religous_and_Myth']);
+  assert.deepEqual(newEntities.map(entity => entity.type), ['religionAndMyth', 'religionAndMyth']);
   const mythSceneIds = [
     ...cardById.get('greek-gods-leave-palaces').sceneIds.slice(2),
     ...cardById.get('greek-heroes-live-in-song').sceneIds.slice(2)

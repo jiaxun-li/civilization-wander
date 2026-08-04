@@ -20,7 +20,7 @@ test('Ancient Egypt exposes the civilization overview, three kingdom stories, an
       ['egypt-middle-kingdom', 'polity'],
       ['egypt-new-kingdom', 'polity'],
       ['egypt-pyramids', 'wonder'],
-      ['egyptian-religion', 'Religous_and_Myth'],
+      ['egyptian-religion', 'religionAndMyth'],
       ['egyptian-art', 'artStyle'],
       ['egyptian-hieroglyphs', 'writingSystem']
     ]

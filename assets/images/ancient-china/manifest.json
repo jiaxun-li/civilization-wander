@@ -6,8 +6,8 @@
       "assetId": "asset-western-zhou-investiture-teaching",
       "file": "assets/images/ancient-china/western-zhou-investiture-teaching.webp",
       "origin": "aiGenerated",
-      "creator": "OpenAI image generation, edited and reviewed for Civilization Wander",
-      "license": "needs review",
+      "creator": "OpenAI image generation, directed and reviewed for Civilization Wander",
+      "license": "Project-generated AI output; no third-party image license",
       "sourceUrl": "https://www.chnmuseum.cn/zl/zlhg/201812/t20181220_32409.shtml",
       "sourceIds": [
         "source-generated-western-zhou-investiture",
@@ -18,10 +18,10 @@
       "originalHeight": 1024,
       "encodedWidth": 1536,
       "encodedHeight": 1024,
-      "byteSize": 799412,
+      "byteSize": 294536,
       "format": "webp",
-      "sha256": "26d5583d77b32db56bfcc848fd7689b4eb8b94535745bbf0c6dbee025f52f25f",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "b19cc16932f1c1c95eecda6fd9b3448249c0e48b7e34db8c34619296ae9dfb96",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-erlitou-turquoise-bronze-plaque",
@@ -78,30 +78,30 @@
       "originalHeight": 1200,
       "encodedWidth": 1800,
       "encodedHeight": 1200,
-      "byteSize": 525784,
+      "byteSize": 482738,
       "format": "webp",
-      "sha256": "15718263ec426cc851c5f57517403bf39a16452a31eee50e6df6e13fb4495e14",
+      "sha256": "5e6eb697505a39153fc67e0d7380b27a08ec82b1bfa7805317de9e44514c86e9",
       "reviewStatus": "needsMetadataAudit"
     },
     {
       "assetId": "asset-yinxu-royal-tombs",
       "file": "assets/images/ancient-china/yinxu-royal-tombs.webp",
-      "origin": "unclassified",
-      "creator": "河南省文化和旅游厅",
-      "license": "needs review",
-      "sourceUrl": "https://hct.henan.gov.cn/2023/04-05/2719750.html",
+      "origin": "historical",
+      "creator": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yinxu_Royal_Tombs_(53565371094).jpg",
       "sourceIds": [
-        "source-henan-yinxu-royal-tombs-aerial",
+        "source-wikimedia-yinxu-royal-tombs-exhibit",
         "source-unesco-yinxu"
       ],
-      "originalWidth": 1080,
-      "originalHeight": 609,
-      "encodedWidth": 1080,
-      "encodedHeight": 609,
-      "byteSize": 116742,
+      "originalWidth": 1024,
+      "originalHeight": 721,
+      "encodedWidth": 1024,
+      "encodedHeight": 721,
+      "byteSize": 231954,
       "format": "webp",
-      "sha256": "e6584f1d3cf110305478d45e5a759124750fb07d4003e9b7353ddd1664eecfad",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "29f96b43ec596f15b096332a05fbe42c9afd3f097111f018921db8bef00e3367",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-shang-bronze-gu",
@@ -226,21 +226,22 @@
     {
       "assetId": "asset-guoji-zibai-pan",
       "file": "assets/images/ancient-china/guoji-zibai-pan.webp",
-      "origin": "unclassified",
-      "creator": "National Museum of China",
-      "license": "needs review",
-      "sourceUrl": "https://www.chnmuseum.cn/zp/zpml/csp/202008/t20200826_247376.shtml",
+      "origin": "historical",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Western_Zhou_Bronze_Pan_(9830469116).jpg",
       "sourceIds": [
+        "source-wikimedia-guoji-zibai-pan",
         "source-national-museum-guoji-zibai-pan"
       ],
-      "originalWidth": 1400,
-      "originalHeight": 1400,
-      "encodedWidth": 1400,
-      "encodedHeight": 1400,
-      "byteSize": 130694,
+      "originalWidth": 5184,
+      "originalHeight": 3456,
+      "encodedWidth": 2560,
+      "encodedHeight": 1707,
+      "byteSize": 192400,
       "format": "webp",
-      "sha256": "3a9877d0191dd5419a22ed5fe8041ab9f73885f9518c792566a966606d86b34c",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "b93cfad98e259a65c31da896947d8d2db00bd7a35a55d73ed97d671187e608e4",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-shang-oracle-pit-marks",
@@ -405,22 +406,22 @@
     {
       "assetId": "asset-sxd-bronze-tree",
       "file": "assets/images/ancient-china/sanxingdui-bronze-tree.webp",
-      "origin": "unclassified",
-      "creator": "三星堆博物馆",
-      "license": "needs review",
-      "sourceUrl": "https://www.sxd.cn/relics/",
+      "origin": "historical",
+      "creator": "Siyuwj",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:三星堆出土青铜神树,_2017-09-17.jpg",
       "sourceIds": [
-        "source-sxd-museum-bronze-tree",
+        "source-wikimedia-sxd-bronze-tree",
         "source-sxd-antiquity-2022"
       ],
-      "originalWidth": 720,
-      "originalHeight": 736,
-      "encodedWidth": 720,
-      "encodedHeight": 736,
-      "byteSize": 54114,
+      "originalWidth": 4016,
+      "originalHeight": 6016,
+      "encodedWidth": 1709,
+      "encodedHeight": 2560,
+      "byteSize": 280754,
       "format": "webp",
-      "sha256": "9ad27361cbcc70edf8cc79ec46e8c974c1bfd51a31d9dd613829a0f6bdafcee0",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "6799a58d868a75520170545d4593b2329d15b1c2a1403ea849f5688f19d53864",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-sxd-ivory-tusk",

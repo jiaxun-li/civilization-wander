@@ -26,8 +26,8 @@
       "assetId": "asset-iane-iron-bloomery",
       "file": "assets/images/iron-age-near-east/iron-bloomery-teaching.webp",
       "origin": "aiGenerated",
-      "creator": "OpenAI image generation, edited and reviewed for Civilization Wander",
-      "license": "needs review",
+      "creator": "OpenAI image generation, directed and reviewed for Civilization Wander",
+      "license": "Project-generated AI output; no third-party image license",
       "sourceUrl": "https://link.springer.com/article/10.1007/s10814-019-09129-6",
       "sourceIds": [
         "source-generated-iron-teaching",
@@ -37,17 +37,17 @@
       "originalHeight": 1024,
       "encodedWidth": 1536,
       "encodedHeight": 1024,
-      "byteSize": 893606,
+      "byteSize": 366800,
       "format": "webp",
-      "sha256": "6edd6ddf3e8befabaf6c2c40e95276508beb27dc4c4c53b77d1210e6d5ca0cc0",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "3c7fe6f72ce7cf04f8c30aff5cda159471f85b798d0760efe1373c9470bedfb9",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-kbo-1-14",
       "file": "assets/images/iron-age-near-east/kbo-1-14-iron-letter-facsimile.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "H. H. Figulla and E. F. Weidner",
-      "license": "needs review",
+      "license": "Public domain",
       "sourceUrl": "https://etana.org/sites/default/files/coretexts/14865.pdf",
       "sourceIds": [
         "source-kbo-1-14",
@@ -55,19 +55,19 @@
       ],
       "originalWidth": 1910,
       "originalHeight": 2709,
-      "encodedWidth": 1805,
-      "encodedHeight": 2560,
-      "byteSize": 549586,
+      "encodedWidth": 1551,
+      "encodedHeight": 2200,
+      "byteSize": 278492,
       "format": "webp",
-      "sha256": "5e8937ec339ad1f8f36ee5f3f645fe73c33350a7d4958c2cc8f497c7595ace78",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "e717482eaf356140b417cd7393f78aab819d882364924c4416a681a90ff6f137",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-assyrian-trade-tablet",
       "file": "assets/images/iron-age-near-east/assyrian-trade-tablet.webp",
-      "origin": "unclassified",
-      "creator": "Wikimedia Commons",
-      "license": "needs review",
+      "origin": "historical",
+      "creator": "Los Angeles County Museum of Art",
+      "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cuneiform_Tablet_from_an_Assyrian_Trading_Post_LACMA_M.84.31.6_(2_of_2).jpg",
       "sourceIds": [
         "source-wikimedia-assyrian-trade-tablet"
@@ -79,7 +79,7 @@
       "byteSize": 297466,
       "format": "webp",
       "sha256": "a85a6e8a63e90259c937febf98b122b7dad62c5df879db1c78da14fbe7b94440",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-assyrian-siege",
@@ -150,11 +150,11 @@
       ],
       "originalWidth": 1280,
       "originalHeight": 1779,
-      "encodedWidth": 1152,
-      "encodedHeight": 1601,
-      "byteSize": 752966,
+      "encodedWidth": 1151,
+      "encodedHeight": 1600,
+      "byteSize": 492316,
       "format": "webp",
-      "sha256": "c4ddb2cc2d335d4cb88f89fe9ed5ee4442690cecbc037cd65a09f52547238183",
+      "sha256": "df2eacaaac9b709357ec9f50caedccd807f46ad7ab47f83f37bec6a3e5539165",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -217,9 +217,9 @@
     {
       "assetId": "asset-iane-phoenician-tribute-gate",
       "file": "assets/images/iron-age-near-east/phoenician-tribute-balawat.webp",
-      "origin": "unclassified",
-      "creator": "Walters Art Museum / Wikimedia Commons",
-      "license": "needs review",
+      "origin": "historical",
+      "creator": "Anonymous; Walters Art Museum",
+      "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Assyrian_-_Fragments_of_Bands_from_a_Gate_-_Walters_542335_-_View_A.jpg",
       "sourceIds": [
         "source-wikimedia-phoenician-tribute-gate"
@@ -228,10 +228,10 @@
       "originalHeight": 1251,
       "encodedWidth": 1800,
       "encodedHeight": 1251,
-      "byteSize": 695508,
+      "byteSize": 490100,
       "format": "webp",
-      "sha256": "f8b495172d68a0747c5de21388d559d39c4c9116a5e65bd93a965e36c1748961",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "4888f3a7f43ab68c33d00e4d6dd9f564d6a230212c491ee352cd1009c8286ea7",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-carthage-punic-ports",
@@ -245,11 +245,11 @@
       ],
       "originalWidth": 1920,
       "originalHeight": 1440,
-      "encodedWidth": 1920,
-      "encodedHeight": 1440,
-      "byteSize": 988314,
+      "encodedWidth": 1800,
+      "encodedHeight": 1350,
+      "byteSize": 492536,
       "format": "webp",
-      "sha256": "72a7e3c1a169ba8924ebbeb22e24967a53f1ca6c9b36511fa04a8c7150c86a98",
+      "sha256": "6e9a4a71eb911f0b3c36d284f8a53b8f4b9f6f8cac429b207335451f1f411c81",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -293,9 +293,9 @@
     {
       "assetId": "asset-iane-assyrian-scribes",
       "file": "assets/images/iron-age-near-east/aramaic-assyrian-scribes.webp",
-      "origin": "unclassified",
-      "creator": "Wikimedia Commons",
-      "license": "needs review",
+      "origin": "historical",
+      "creator": "Unknown author",
+      "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Assyrian_scribes.jpg",
       "sourceIds": [
         "source-wikimedia-assyrian-scribes",
@@ -305,17 +305,17 @@
       "originalHeight": 1468,
       "encodedWidth": 1073,
       "encodedHeight": 1468,
-      "byteSize": 650468,
+      "byteSize": 487676,
       "format": "webp",
-      "sha256": "9192ec24ff15daf7c5fdf5e2bc3ae3dbaf7804dd9d405de0bf733930bf632ef8",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "d8156f7b23f852b2abdcd54d3d4d44fd2119fc4b6b281cce0f656c6d243af1be",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-esarhaddon-prism",
       "file": "assets/images/iron-age-near-east/babylon-esarhaddon-prism.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/321907",
       "sourceIds": [
         "source-met-esarhaddon-prism"
@@ -327,14 +327,14 @@
       "byteSize": 49442,
       "format": "webp",
       "sha256": "eeae6a10626a4a99eee062d8b3624ae6486b036c1d6e21ee39317e4e22010a19",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-babylon-lion",
       "file": "assets/images/iron-age-near-east/babylon-striding-lion.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/322585",
       "sourceIds": [
         "source-met-babylon-lion"
@@ -346,14 +346,14 @@
       "byteSize": 70236,
       "format": "webp",
       "sha256": "3f4a0c661ec2a433e755912b1af515e13d5ccfef93ab344e0d583372079af934",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-nebuchadnezzar-cylinder",
       "file": "assets/images/iron-age-near-east/babylon-nebuchadnezzar-cylinder.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/321614",
       "sourceIds": [
         "source-met-nebuchadnezzar-cylinder"
@@ -365,7 +365,7 @@
       "byteSize": 31730,
       "format": "webp",
       "sha256": "c757a8fb3c52fa860da1683cfdcae338cfea2a62c4bc42221c0e22e34713a0ae",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-iane-cyrus-cylinder",
@@ -409,9 +409,9 @@
     {
       "assetId": "asset-iane-croesus-gold-stater",
       "file": "assets/images/iron-age-near-east/lydia-croesus-gold-stater.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/252456",
       "sourceIds": [
         "source-met-croesus-stater"
@@ -423,7 +423,7 @@
       "byteSize": 18156,
       "format": "webp",
       "sha256": "21f29e8df35a8289106111e18e6baea3773708bfd1f257596f5da1ba6b47ca49",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     }
   ]
 }

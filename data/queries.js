@@ -74,7 +74,7 @@
     peopleGroup: '人群',
     culturalTradition: '文化传统',
     languageSystem: '语言系统',
-    Religous_and_Myth: '宗教与神话',
+    religionAndMyth: '宗教与神话',
     region: '地区',
     routeNetwork: '路线网络',
     technologyPractice: '技术实践',

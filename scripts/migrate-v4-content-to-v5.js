@@ -17,6 +17,10 @@ const moduleNames = [
   'iron-age-near-east'
 ];
 
+const entityTypeRenames = new Map([
+  ['Religous_and_Myth', 'religionAndMyth']
+]);
+
 const eventKinds = {
   'event-old-kingdom-fragmentation': 'historicalProcess',
   'event-middle-kingdom-reunification': 'historicalProcess',
@@ -242,4 +246,15 @@ for (const moduleName of moduleNames) {
   fs.writeFileSync(modulePath, source, 'utf8');
 }
 
-console.log(`Migrated ${moduleNames.length} content modules and ${sceneEventIds.size} explicit Scene mappings to V5.`);
+// Normalize the one misspelled V4 type token before V5 is published. Aegean
+// was migrated directly, so it participates only in this focused type pass.
+for (const moduleName of ['ancient-egypt', 'aegean']) {
+  const modulePath = path.join(projectRoot, 'data', `${moduleName}.js`);
+  let source = fs.readFileSync(modulePath, 'utf8');
+  for (const [oldType, newType] of entityTypeRenames) {
+    source = source.replaceAll(`type: '${oldType}'`, `type: '${newType}'`);
+  }
+  fs.writeFileSync(modulePath, source, 'utf8');
+}
+
+console.log(`Migrated ${moduleNames.length} content modules, ${sceneEventIds.size} explicit Scene mappings, and normalized V5 Entity type names.`);

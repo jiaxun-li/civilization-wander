@@ -92,9 +92,9 @@
       "originalHeight": 1510,
       "encodedWidth": 1920,
       "encodedHeight": 1510,
-      "byteSize": 570318,
+      "byteSize": 482688,
       "format": "webp",
-      "sha256": "6e6e4cd62d10d629f754c2cfb7940912dc4aaf39494b8416e4ed4299eb50a141",
+      "sha256": "e2cf420ced7c0ff8f1319f23181ca1c77f90ab1019e10ab232b08d9ef964a32f",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -223,11 +223,11 @@
       ],
       "originalWidth": 1920,
       "originalHeight": 1430,
-      "encodedWidth": 1920,
-      "encodedHeight": 1430,
-      "byteSize": 955810,
+      "encodedWidth": 1800,
+      "encodedHeight": 1341,
+      "byteSize": 488506,
       "format": "webp",
-      "sha256": "3e856c3d8d31933605f108ccc37ce4943c2cda8a84e1177352a5b36e8243e190",
+      "sha256": "d3135673efed297687aa0940aa1b3460d8ffc22e27d9c21cec902b15493c50c4",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -282,9 +282,9 @@
       "originalHeight": 2000,
       "encodedWidth": 1441,
       "encodedHeight": 2000,
-      "byteSize": 532704,
+      "byteSize": 488930,
       "format": "webp",
-      "sha256": "f35c3347519e82deb341b7273118330578eb77c7f2152e7fb5760f6a016e52dc",
+      "sha256": "33af806ae935fc48275817ac6422c2b9539cfca994e4728e8f6ada5dcd450df4",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -318,11 +318,11 @@
       ],
       "originalWidth": 3840,
       "originalHeight": 2555,
-      "encodedWidth": 2304,
-      "encodedHeight": 1533,
-      "byteSize": 880696,
+      "encodedWidth": 2200,
+      "encodedHeight": 1464,
+      "byteSize": 491172,
       "format": "webp",
-      "sha256": "94cb427653b94b53c05ce27d0e9d708cdf9e929703ec994fc9d94911a1081411",
+      "sha256": "f7bbfd83fb8f968e95d4e7d20ca102a77449bad52885e624950f4800a28b3a2e",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -356,11 +356,11 @@
       ],
       "originalWidth": 1920,
       "originalHeight": 2560,
-      "encodedWidth": 1555,
-      "encodedHeight": 2074,
-      "byteSize": 850874,
+      "encodedWidth": 1350,
+      "encodedHeight": 1800,
+      "byteSize": 491350,
       "format": "webp",
-      "sha256": "8f0ebfadc2fd92370300214f7ea2bd5dc9b701ffd0ab5b15e6d99984be7b44d1",
+      "sha256": "f629a3a32d2ae604f93b078668ab42a4810630e55820e8f0c9e786e47de5d393",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -394,11 +394,11 @@
       ],
       "originalWidth": 1920,
       "originalHeight": 2529,
-      "encodedWidth": 1920,
-      "encodedHeight": 2529,
-      "byteSize": 844842,
+      "encodedWidth": 1670,
+      "encodedHeight": 2200,
+      "byteSize": 490124,
       "format": "webp",
-      "sha256": "40682c50260e0f5246c59948d190b8ade1f4b5bc3e9a8b778029749e4bd026b4",
+      "sha256": "fa611df38e64d574ea1be309ada88dceacf1be2114978c714454140af6328922",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -413,11 +413,11 @@
       ],
       "originalWidth": 1920,
       "originalHeight": 3763,
-      "encodedWidth": 1306,
-      "encodedHeight": 2560,
-      "byteSize": 688230,
+      "encodedWidth": 1122,
+      "encodedHeight": 2200,
+      "byteSize": 484480,
       "format": "webp",
-      "sha256": "cb429027dfd8d5869adfcc1632870993887d9c304914fbb39c49db5ae4fc8c04",
+      "sha256": "057d94a9a738881c08b16eaeb1dda878fbbad86b57a8a975bc5ef5640a49f4bd",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -491,9 +491,9 @@
       "originalHeight": 2190,
       "encodedWidth": 1600,
       "encodedHeight": 2190,
-      "byteSize": 583026,
+      "byteSize": 478132,
       "format": "webp",
-      "sha256": "ca81d72d1445f097af29bd344c07f7b7a347ac7ce1a0a2545012b79214d04636",
+      "sha256": "f349cf7f7f6060fe1c89a919ad4f47ac13cc111048348b9d6f9c1c9f3bcbe4fd",
       "reviewStatus": "needsMetadataAudit"
     },
     {

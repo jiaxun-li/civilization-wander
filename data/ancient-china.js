@@ -82,7 +82,8 @@
     { id: 'source-wikimedia-erlitou-plaque', title: 'Erlitou turquoise-inlaid bronze plaque photograph, CC BY-SA 4.0', author: 'Siyuwj', year: 2024, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:嵌绿松石铜牌饰（87VIM57）,_2024-06-22.jpg' },
     { id: 'source-wikimedia-erlitou-dragon', title: 'Erlitou turquoise dragon-form artifact and bronze bell photograph, CC BY-SA 4.0', author: 'Siyuwj', year: 2024, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:绿松石龙形器及铜铃,_2024-06-23.jpg' },
     { id: 'source-wikimedia-erlitou-site', title: 'Erlitou archaeological site photograph, CC BY-SA 4.0', author: 'Windmemories', year: 2024, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:20240815_Erlitou_Site_01.jpg' },
-    { id: 'source-henan-yinxu-royal-tombs-aerial', title: '殷墟文化丨一起走近我国目前已知最早、最完整的王陵墓葬群', author: '河南省文化和旅游厅', year: 2023, publisher: '河南省文化和旅游厅', url: 'https://hct.henan.gov.cn/2023/04-05/2719750.html' },
+    { id: 'source-wikimedia-guoji-zibai-pan', title: 'Western Zhou bronze pan photograph, CC0', author: 'Gary Todd', year: 2013, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Western_Zhou_Bronze_Pan_(9830469116).jpg' },
+    { id: 'source-wikimedia-yinxu-royal-tombs-exhibit', title: 'Yinxu Royal Tombs exhibit photograph, CC BY 2.0', author: 'xiquinhosilva', year: 2019, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Yinxu_Royal_Tombs_(53565371094).jpg' },
     { id: 'source-wikimedia-shang-gu', title: 'Shang bronze gu wine vessel photograph, CC BY-SA 3.0', publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Gu_wine_vessel_from_the_Shang_Dynasty.jpg' },
     { id: 'source-wikimedia-oracle-bones', title: 'Shang inscribed ox scapula photograph, CC0', author: 'Gary Lee Todd', year: 2013, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Shang_Inscribed_Ox_Scapula_(for_divination).jpg' },
     { id: 'source-wikimedia-fu-hao-tomb', title: 'Reconstructed Tomb of Fu Hao photograph, CC0', author: 'Gary Lee Todd', year: 2008, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Fu_Hao_Tomb,_c._1200_BC,_Reign_of_King_Wu_Ding,_Shang_Dynasty_(10197552004).jpg' },
@@ -102,7 +103,7 @@
   { id: 'source-sxd-southwest-exchange-2024', title: 'The Southwest Silk Road: Artistic Exchange and Transmission in Early China', year: 2024, publisher: 'Bulletin of the School of Oriental and African Studies', url: 'https://doi.org/10.1017/S0041977X24000120' },
     { id: 'source-sxd-writing-2021', title: 'New Archeological Marvels of Ancient Shu Civilization', author: 'Weijie Zhao', year: 2021, publisher: 'National Science Review', url: 'https://doi.org/10.1093/nsr/nwab071' },
     { id: 'source-wikimedia-sxd-gold-mask-head', title: 'Sanxingdui bronze head with gold foil mask photograph, CC BY 2.0', author: 'momo', year: 2011, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Gold_Mask_(黄金面罩).jpg' },
-    { id: 'source-sxd-museum-bronze-tree', title: '青铜神树（馆藏图）', author: '三星堆博物馆', publisher: '三星堆博物馆', url: 'https://www.sxd.cn/relics/' },
+    { id: 'source-wikimedia-sxd-bronze-tree', title: '三星堆出土青铜神树 photograph, CC BY-SA 4.0', author: 'Siyuwj', year: 2017, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:三星堆出土青铜神树,_2017-09-17.jpg' },
     { id: 'source-wikimedia-sxd-ivory-tusk', title: 'Sanxingdui ivory tusk photograph, CC0', author: 'Gary Lee Todd', year: 2008, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Sanxingdui_Ivory_Tusk_(9950882376).jpg' },
     { id: 'source-wikimedia-jinsha-sun-bird', title: 'Jinsha gold sun-bird disc photograph, CC0', author: 'Gary Lee Todd', year: 2014, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:2014_Jinsha_Gold_Sun-Bird_Disc.jpg' },
     { id: 'source-western-zhou-domain', title: 'Archaeological Perspectives on the Western Zhou State and Its Domain', year: 2018, publisher: 'Archaeological Research in Asia', url: 'https://www.sciencedirect.com/science/article/pii/S2352226717300570' },
@@ -784,7 +785,7 @@
       timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [interpretation('shang-dead-remain-in-family-interpretation', '在晚商王室，死亡并不等于离开家族。祖先按世代和亲疏被排列，王在不同日子向他们献祭，并询问收成、天气、疾病和战争。死者仍占有位置：他们是被供奉的家人，也是可能降下帮助或灾祸的力量。', ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-liu-shang-ancestors'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-yinxu-royal-tombs' },
-      sourceIds: ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-liu-shang-ancestors', 'source-henan-yinxu-royal-tombs-aerial']
+      sourceIds: ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-liu-shang-ancestors', 'source-wikimedia-yinxu-royal-tombs-exhibit']
     },
     {
       id: 'shang-meal-for-ancestors',
@@ -979,7 +980,7 @@
         interpretation('sanxingdui-people-tree-birds-interpretation', '研究者常把树、鸟与人的组合理解为连接人间和高处世界的仪式图景：人抬头观看，鸟沿枝条上升，树把目光引向上方。但它们讲述的究竟是哪一个故事，至今没有被破译。', ['source-sxd-antiquity-2022', 'source-sxd-southwest-exchange-2024', 'source-sxd-writing-2021'])
       ],
       presentation: { kind: 'imageAndText', assetId: 'asset-sxd-bronze-tree' },
-      sourceIds: ['source-sxd-antiquity-2022', 'source-sxd-southwest-exchange-2024', 'source-sxd-museum-bronze-tree']
+      sourceIds: ['source-sxd-antiquity-2022', 'source-sxd-southwest-exchange-2024', 'source-wikimedia-sxd-bronze-tree']
     },
     {
       id: 'sanxingdui-materials-meet',
@@ -1404,14 +1405,14 @@
     { id: 'asset-erlitou-turquoise-bronze-plaque', type: 'image', src: 'assets/images/ancient-china/erlitou-turquoise-bronze-plaque.webp', title: '嵌绿松石青铜兽面牌饰', alt: '二里头出土的嵌绿松石青铜兽面牌饰完整正面，铜胎上密集排列数百枚蓝绿色小片。', sourceIds: ['source-wikimedia-erlitou-plaque', 'source-erlitou-cass-report'] },
     { id: 'asset-erlitou-turquoise-dragon-bell', type: 'image', src: 'assets/images/ancient-china/erlitou-turquoise-dragon-bell.webp', title: '绿松石龙形器及铜铃', alt: '展柜中完整陈列的二里头绿松石龙形器与铜铃，细小绿松石片组成弯曲的长形器物。', sourceIds: ['source-wikimedia-erlitou-dragon', 'source-erlitou-turquoise-restoration'] },
     { id: 'asset-erlitou-site', type: 'image', src: 'assets/images/ancient-china/erlitou-site.webp', title: '二里头遗址', alt: '二里头遗址的完整现场照片，平坦田野间保留考古遗址标识与远处村落。', sourceIds: ['source-wikimedia-erlitou-site', 'source-erlitou-cass-report'] },
-    { id: 'asset-yinxu-royal-tombs', type: 'image', src: 'assets/images/ancient-china/yinxu-royal-tombs.webp', title: '殷墟王陵区航拍', alt: '从空中俯瞰殷墟王陵区，修整后的绿篱清楚勾勒出大型墓葬的方形墓室和向外延伸的长墓道。', sourceIds: ['source-henan-yinxu-royal-tombs-aerial', 'source-unesco-yinxu'] },
+    { id: 'asset-yinxu-royal-tombs', type: 'image', src: 'assets/images/ancient-china/yinxu-royal-tombs.webp', title: '殷墟王陵区墓坑陈列', alt: '从上方俯瞰殷墟王陵区的一处墓坑陈列，一件四足青铜器模型置于下沉的方形坑内。', sourceIds: ['source-wikimedia-yinxu-royal-tombs-exhibit', 'source-unesco-yinxu'] },
     { id: 'asset-shang-bronze-gu', type: 'image', src: 'assets/images/ancient-china/shang-bronze-gu.webp', title: '商代青铜觚', alt: '一件完整的商代青铜觚，喇叭形口沿、细长器身和表面纹饰清晰可见。', sourceIds: ['source-wikimedia-shang-gu', 'source-met-shang-zhou-bronze'] },
     { id: 'asset-shang-oracle-bones', type: 'image', src: 'assets/images/ancient-china/shang-oracle-bones.webp', title: '商代牛肩胛骨卜辞', alt: '一块完整陈列的晚商牛肩胛骨卜辞，骨面可见裂纹和密集刻写的文字。', sourceIds: ['source-wikimedia-oracle-bones', 'source-unesco-oracle-bones'] },
     { id: 'asset-fu-hao-tomb', type: 'image', src: 'assets/images/ancient-china/fu-hao-tomb.webp', title: '妇好墓', alt: '从上方向下俯瞰妇好墓的墓坑复原陈列，墓壁、青铜礼器和其他随葬品的位置清晰可见。', sourceIds: ['source-wikimedia-fu-hao-tomb', 'source-smarthistory-fu-hao'] },
     { id: 'asset-shang-bronze-dagger-axes', type: 'image', src: 'assets/images/ancient-china/shang-bronze-dagger-axes.webp', title: '殷墟出土青铜戈', alt: '多件殷墟出土的商代青铜戈并排完整陈列，长条形援部与内部纹饰清晰可见。', sourceIds: ['source-wikimedia-shang-dagger-axes', 'source-campbell-violence-kinship'] },
     { id: 'asset-shang-pottery-workshop', type: 'image', src: 'assets/images/ancient-china/shang-pottery-workshop.webp', title: '殷墟制陶作坊陈列', alt: '殷墟博物馆中制陶作坊相关陶器与生产遗物的完整陈列照片。', sourceIds: ['source-wikimedia-shang-pottery', 'source-smithsonian-anyang-neighborhood'] },
     { id: 'asset-li-gui', type: 'image', src: 'assets/images/ancient-china/li-gui.webp', title: '利簋', alt: '早期西周利簋的完整正面照片，圆腹双耳的青铜器置于方形底座之上。', sourceIds: ['source-wikimedia-li-gui', 'source-national-museum-li-gui'] },
-    { id: 'asset-guoji-zibai-pan', type: 'image', src: 'assets/images/ancient-china/guoji-zibai-pan.webp', title: '虢季子白盘', alt: '虢季子白盘的完整正面照片，长方形青铜盘以四足承托，器壁环绕窃曲纹并设有兽首衔环。', sourceIds: ['source-national-museum-guoji-zibai-pan'] },
+    { id: 'asset-guoji-zibai-pan', type: 'image', src: 'assets/images/ancient-china/guoji-zibai-pan.webp', title: '虢季子白盘', alt: '博物馆展柜中的虢季子白盘完整斜侧面，长方形青铜盘以四足承托，器壁环绕纹饰并设有兽首衔环。', sourceIds: ['source-wikimedia-guoji-zibai-pan', 'source-national-museum-guoji-zibai-pan'] },
     { id: 'asset-shang-oracle-pit-marks', type: 'image', src: 'assets/images/ancient-china/shang-oracle-pit-marks.webp', title: '背面带钻凿坑的商代卜骨', alt: '一块商代牛肩胛骨卜骨的完整背面，沿骨面排列的圆形钻凿坑清晰可见。', sourceIds: ['source-wikimedia-oracle-pit-marks', 'source-keightley-shang-history'] },
     { id: 'asset-shang-huayuanzhuang-plastron', type: 'image', src: 'assets/images/ancient-china/shang-huayuanzhuang-plastron.webp', title: '花园庄东地龟腹甲卜辞', alt: '一块晚商龟腹甲的完整正面，骨面分布多组刻辞，可见同一甲面上的多次占问。', sourceIds: ['source-wikimedia-huayuanzhuang-plastron', 'source-schwartz-huayuanzhuang'] },
     { id: 'asset-shang-oracle-eclipse', type: 'image', src: 'assets/images/ancient-china/shang-oracle-eclipse.webp', title: '记录占问的晚商牛骨刻辞', alt: '一块竖直陈列的晚商牛骨刻辞，骨面上的成行文字与缺损边缘完整可见。', sourceIds: ['source-wikimedia-oracle-eclipse', 'source-keightley-shang-history'] },
@@ -1420,7 +1421,7 @@
     { id: 'asset-shang-bronze-pottery-mould', type: 'image', src: 'assets/images/ancient-china/shang-bronze-pottery-mould.webp', title: '商代青铜器陶范', alt: '一块商代铸造青铜器使用的陶范完整陈列，内壁凹下的纹饰和器形轮廓清晰可见。', sourceIds: ['source-wikimedia-bronze-mould', 'source-smithsonian-bronze-casting'] },
     { id: 'asset-shang-bronze-vessel-set', type: 'image', src: 'assets/images/ancient-china/shang-bronze-vessel-set.webp', title: '妇好墓出土青铜炊食器组合', alt: '多件妇好墓出土的商代青铜炊食器成组陈列，鼎、甗等不同器形并置可见。', sourceIds: ['source-wikimedia-fuhao-cooking-vessels', 'source-smarthistory-fu-hao'] },
     { id: 'asset-sxd-gold-mask-head', type: 'image', src: 'assets/images/ancient-china/sanxingdui-gold-mask-head.webp', title: '金面青铜人头像', alt: '三星堆遗址二号坑出土的一件青铜人头像，面部覆盖金箔面罩，眼睛、鼻梁和耳朵的轮廓清晰可见。', sourceIds: ['source-wikimedia-sxd-gold-mask-head', 'source-sxd-antiquity-2022'] },
-    { id: 'asset-sxd-bronze-tree', type: 'image', src: 'assets/images/ancient-china/sanxingdui-bronze-tree.webp', title: '青铜神树', alt: '三星堆博物馆发布的青铜神树正面图，细长树干向上伸展，枝头可见花与鸟形构件。', sourceIds: ['source-sxd-museum-bronze-tree', 'source-sxd-antiquity-2022'] },
+    { id: 'asset-sxd-bronze-tree', type: 'image', src: 'assets/images/ancient-china/sanxingdui-bronze-tree.webp', title: '三星堆一号青铜神树', alt: '三星堆博物馆展柜内的一号青铜神树正面全景，底座、细长树干、三层枝条以及枝头的鸟形构件完整可见。', sourceIds: ['source-wikimedia-sxd-bronze-tree', 'source-sxd-antiquity-2022'] },
     { id: 'asset-sxd-ivory-tusk', type: 'image', src: 'assets/images/ancient-china/sanxingdui-ivory-tusk.webp', title: '三星堆出土象牙', alt: '展柜中横向陈列的一枚三星堆象牙，弧形牙体与保存后的表面纹理清晰可见。', sourceIds: ['source-wikimedia-sxd-ivory-tusk', 'source-sxd-antiquity-2022'] },
     { id: 'asset-jinsha-sun-bird-disc', type: 'image', src: 'assets/images/ancient-china/jinsha-gold-sun-bird-disc.webp', title: '金沙遗址太阳神鸟金饰', alt: '一枚圆形金饰，中央是太阳形纹样，周围环绕四只飞行的鸟。', sourceIds: ['source-wikimedia-jinsha-sun-bird', 'source-sxd-southwest-exchange-2024'] }
   ];

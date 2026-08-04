@@ -35,9 +35,9 @@
       "originalHeight": 2079,
       "encodedWidth": 1280,
       "encodedHeight": 2079,
-      "byteSize": 567128,
+      "byteSize": 479786,
       "format": "webp",
-      "sha256": "9c62cca1c7758d40971c397d2e4cea99177152482c1c2269f0d47807177594f8",
+      "sha256": "6f8fcf1ed0ba448270d5bca6b35b52a45a54fb2d0c71ec32afb22f264a0a108b",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -62,9 +62,9 @@
     {
       "assetId": "asset-lba-hittite-hattusa-ruins",
       "file": "assets/images/late-bronze-age/hittite-hattusa-ruins.webp",
-      "origin": "unclassified",
-      "creator": "Wikimedia Commons",
-      "license": "needs review",
+      "origin": "historical",
+      "creator": "Rita1234",
+      "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hattusa_B%C3%BCy%C3%BCkkaya.JPG",
       "sourceIds": [
         "source-wikimedia-hattusa-ruins"
@@ -76,7 +76,7 @@
       "byteSize": 277544,
       "format": "webp",
       "sha256": "ac5da77a5eff9d4b8e29ecf7a6d6cd417c4c8da971d57cc2b44b1d3a45199af6",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-lba-ugarit-palace",
@@ -138,9 +138,9 @@
     {
       "assetId": "asset-lba-ugarit-administrative-tablet",
       "file": "assets/images/late-bronze-age/ugarit-administrative-tablet.webp",
-      "origin": "unclassified",
-      "creator": "Wikimedia Commons",
-      "license": "needs review",
+      "origin": "historical",
+      "creator": "Zunkir",
+      "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tablette_administrative_Ugarit_AO19967.jpg",
       "sourceIds": [
         "source-wikimedia-ugarit-admin-tablet"
@@ -152,7 +152,7 @@
       "byteSize": 258242,
       "format": "webp",
       "sha256": "5f859105cd22b1d1f02afad50d8859566318981126135cbc1e66c2b796d6b01f",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-lba-pylos-linear-b-tablet",
@@ -187,9 +187,9 @@
       "originalHeight": 1278,
       "encodedWidth": 1920,
       "encodedHeight": 1278,
-      "byteSize": 678460,
+      "byteSize": 494502,
       "format": "webp",
-      "sha256": "f85988a2d785cadfe8bc4e25887113773b8d08399e0e27f04087c6dc7d79f62c",
+      "sha256": "dd5230d0e265513c4d37b38709d3c3e3d7f0924c5edd2addb150bb44814ea425",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -253,9 +253,9 @@
     {
       "assetId": "asset-lba-kadesh-treaty-tablet",
       "file": "assets/images/late-bronze-age/kadesh-treaty-tablet.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "Giovanni Dall’Orto",
-      "license": "needs review",
+      "license": "Copyrighted free use with attribution",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Istanbul_-_Museo_archeol._-_Trattato_di_Qadesh_fra_ittiti_ed_egizi_(1269_a.C.)_-_Foto_G._Dall%27Orto_28-5-2006.jpg",
       "sourceIds": [
         "source-wikimedia-kadesh-treaty"
@@ -267,7 +267,7 @@
       "byteSize": 88384,
       "format": "webp",
       "sha256": "90ba7ca8f6f818b4ab1b1beea75dfc14260ce8f6833d02c79d2705814328cf36",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-lba-amarna-mail-carrier",
@@ -321,17 +321,17 @@
       "originalHeight": 1698,
       "encodedWidth": 960,
       "encodedHeight": 1698,
-      "byteSize": 501364,
+      "byteSize": 490698,
       "format": "webp",
-      "sha256": "a684548087f60bc0416bc042774454e0777a53b6cc218a28c79dfa4f338d6db0",
+      "sha256": "cbcd6ed3415d46bb41c6137cb33e49a4591964394fe1ba2035e8fa756606b039",
       "reviewStatus": "needsMetadataAudit"
     },
     {
       "assetId": "asset-lba-medinet-habu-temple",
       "file": "assets/images/late-bronze-age/medinet-habu-temple.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "Walaa",
-      "license": "needs review",
+      "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Medinet_Habu,_Egypt003.jpg",
       "sourceIds": [
         "source-wikimedia-medinet-habu-temple"
@@ -343,7 +343,7 @@
       "byteSize": 477134,
       "format": "webp",
       "sha256": "d6486a6f047f419d62030f947a5308ae39c9d4174f110d8a7580e340d630f46e",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-lba-medinet-habu-naval-battle",
@@ -359,9 +359,9 @@
       "originalHeight": 863,
       "encodedWidth": 1920,
       "encodedHeight": 863,
-      "byteSize": 589114,
+      "byteSize": 483138,
       "format": "webp",
-      "sha256": "212667e39c271d3d7957828d68633ec50a5250e10e07bb1086126a903a310392",
+      "sha256": "aea30229878f4280b1d6aedd2aa29fd18138d3f57e556a1042b565da30455cb0",
       "reviewStatus": "needsMetadataAudit"
     },
     {
@@ -377,11 +377,11 @@
       ],
       "originalWidth": 3507,
       "originalHeight": 2763,
-      "encodedWidth": 2560,
-      "encodedHeight": 2017,
-      "byteSize": 740340,
+      "encodedWidth": 2200,
+      "encodedHeight": 1733,
+      "byteSize": 480606,
       "format": "webp",
-      "sha256": "57bcea81aaeea3c9df09ef3e8ed08e0fcdebd5f5918c30f3c765b57af12df0a7",
+      "sha256": "42122e63f8fe57bccbc604a0c81bce22ad98c0f45e684f71f26cba1b473be3d6",
       "reviewStatus": "needsMetadataAudit"
     }
   ]

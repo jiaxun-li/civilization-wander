@@ -113,7 +113,7 @@ npm run report:counts
 |  | `year` | 否 | 非零整数。 |
 | `Asset` | `id`, `type`, `src`, `title`, `alt`, `sourceIds` | 是 | `type` 仅 `data`/`image`，路径须为编码安全的项目内相对路径，禁止协议、绝对路径、盘符与 `..`。Scene 图片统一引用本地 WebP；Node 校验还验证真实文件存在。 |
 
-运行时 Asset 保持精简；creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、格式、SHA-256 与审核状态保存在 `assets/images/<module>/manifest.json`，不扩充运行时 schema。manifest 使用 version 2；自动生成的旧素材记录可标记 `needsMetadataAudit`，新模块门禁只接受人工核对后的 `approved`。Scene WebP 必须小于 1,000,000 bytes，编码后任一边不超过 2560 像素。
+运行时 Asset 保持精简；creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、格式、SHA-256 与审核状态保存在 `assets/images/<module>/manifest.json`，不扩充运行时 schema。manifest 使用 version 2；自动生成的旧素材记录可标记 `needsMetadataAudit`，新模块门禁只接受人工核对后的 `approved`。Scene WebP 必须小于 500,000 bytes，编码后任一边不超过 2560 像素。
 
 ### 4.2 知识、事件、关系与故事对象
 
@@ -153,7 +153,7 @@ npm run report:counts
 
 | 对象 | 字段 | 必填 | 责任、消费者与关键约束 |
 |---|---|---:|---|
-| `NavigationOption` | `id`, `target`, `basis`, `label`, `description` | 是 | 复用跳转身份与文案，不拥有出现位置或排序。所有 Option 必须至少被一个 Placement 使用。 |
+| `NavigationOption` | `id`, `target`, `basis`, `label`, `description` | 是 | 复用跳转身份与文案，不拥有出现位置或排序。所有 Option 必须至少被一个 Placement 使用。可选 `entry: {kind:'targetScene'}` 仅用于已经明确批准的直达段落特例，并要求 `target.sceneId`。 |
 | `target` | `cardId`, `sceneId?` | 是/否 | Card 必须存在；Scene 若有必须属于该目标 Card。 |
 | `basis` | 见下 | 是 | 四选一严格联合：`{kind:'structuralEdge', structuralEdgeId}`、`{kind:'event', eventId}`、`{kind:'relatedCard', cardId}`、`{kind:'editorial', sourceIds}`。 |
 | `NavigationPlacement` | `id`, `navigationOptionId`, `owner`, `slot`, `rank`, `visible`, `interactive` | 是 | 拥有局部出现位置和顺序。`rank` 为正整数，按 owner+slot 从 1 连续且不重复；布尔显示/交互标记由 Cards/Map 消费。 |
@@ -271,7 +271,7 @@ sequenceDiagram
 
 首次 `renderCard()` 会先写 markup、绑定导航/预览、通知 Card 变化，再创建 IntersectionObserver 并激活 direct/fallback Scene，必要时聚焦 `h1`。普通滚动只重新执行 `announceScene()`。Observer 以视口约 44% 处为阅读锚，使用 `rootMargin: -28% 0 -52%` 与阈值 0/0.2/0.6；不支持 IntersectionObserver 时使用直接回退。
 
-`deriveSceneDirection()` 和激活 context 在运行时派生 `forward/backward/stationary` 方向与 `scroll/direct/navigation/history` 触发原因；`inheritedMedia`、`presentationScene` 等也只存在于 Reader state/callback context，绝不进入 V5 Scene schema。同 Card 的 `textOnly` 继承最近前序有效媒体，直接链接到它也按相同顺序解析；跨 Card 由 `onCardChange` 销毁媒体，全 text-only Card 或此前无媒体保持单栏。同 Card 内地图实例保持常驻，图片作为覆盖层渐显，回到地图时覆盖层渐隐并移除，相同图片保持原 DOM，reduced motion 时立即切换。公共正文保持连续排版：historical case、mechanism 等仍有语义化 markup，但不再卡片化；Scene 内只有策展导航卡片保留边框/背景。
+`deriveSceneDirection()` 和激活 context 在运行时派生 `forward/backward/stationary` 方向与 `scroll/direct/navigation/history` 触发原因；`inheritedMedia`、`presentationScene` 等也只存在于 Reader state/callback context，绝不进入 V5 Scene schema。同 Card 的 `textOnly` 继承最近前序有效媒体，直接链接到它也按相同顺序解析；跨 Card 由 `onCardChange` 销毁媒体，全 text-only Card 或此前无媒体保持单栏。同 Card 内地图实例保持常驻，图片作为覆盖层渐显，回到地图时覆盖层渐隐并移除，相同图片保持原 DOM，reduced motion 时立即切换。Reader 仅预加载当前 Scene 前后最近的不同图片，不预取全库；图片切换保留当前媒体，直到新图完成加载和解码后才开始淡入。公共正文保持连续排版：historical case、mechanism 等仍有语义化 markup，但不再卡片化；Scene 内只有策展导航卡片保留边框/背景。
 
 Reader 用生命周期 `generation`、前进入场 `sequence` 和逐次渲染 `renderSequence` 守卫异步工作。`destroy()` 先使生命周期失效，再断开 observer、清理 timer/preview/替换状态；旧 rAF、timer、preview 与 scroll restore 回调随后即使被调度也不能再写 DOM 或滚动页面。新的 Card render 还会使较早 history restore rAF 的 `renderSequence` 失效。
 
@@ -302,10 +302,10 @@ flowchart LR
     P --> UI{"placement slot"}
     UI -->|inline| L["正文短链接"]
     UI -->|closing| CL["Card 结尾选择"]
-    UI -->|map| MN["地图节点"]
+    UI -->|map| MN["内部地图 placement\n当前公共 UI 隐藏"]
     L --> F["Reader.followNavigation"]
     CL --> F
-    MN --> F
+    MN -. "未来公开呈现时才接入" .-> F
     F --> S["保存来源 card/scene/scrollY\nreplaceState"]
     S --> NS["写入 navigationStack 来源项"]
     NS --> PS["pushState 目标 atlasV5 快照"]

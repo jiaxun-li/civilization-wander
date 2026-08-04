@@ -39,7 +39,7 @@ test('every active Asset has a non-runtime metadata record with a current digest
       assert.equal(entry.format, 'webp', asset.id);
       assert.ok(asset.src.endsWith('.webp'), asset.id);
       assert.equal(entry.byteSize, fs.statSync(path.resolve(root, asset.src)).size, asset.id);
-      assert.ok(entry.byteSize < 1_000_000, asset.id);
+      assert.ok(entry.byteSize < 500_000, asset.id);
       const digest = crypto.createHash('sha256').update(fs.readFileSync(path.resolve(root, asset.src))).digest('hex');
       assert.equal(entry.sha256, digest, asset.id);
     }
@@ -51,8 +51,20 @@ test('active AI-generated images remain explicitly identified after WebP convers
     const manifest = JSON.parse(fs.readFileSync(path.resolve(root, `assets/images/${moduleName}/manifest.json`), 'utf8'));
     return manifest.assets.filter(entry => entry.origin === 'aiGenerated');
   });
-  assert.equal(aiEntries.length, 3);
+  assert.equal(aiEntries.length, 11);
   for (const entry of aiEntries) {
     assert.equal(entry.format, 'webp', entry.assetId);
+    assert.equal(entry.reviewStatus, 'approved', entry.assetId);
+    assert.notEqual(entry.license, 'needs review', entry.assetId);
   }
+});
+
+test('completed V5 metadata audit leaves no unresolved image licenses', () => {
+  const unresolved = modules.flatMap(moduleName => {
+    const manifest = JSON.parse(fs.readFileSync(path.resolve(root, `assets/images/${moduleName}/manifest.json`), 'utf8'));
+    return manifest.assets
+      .filter(entry => entry.license === 'needs review')
+      .map(entry => entry.assetId);
+  }).sort();
+  assert.deepEqual(unresolved, []);
 });

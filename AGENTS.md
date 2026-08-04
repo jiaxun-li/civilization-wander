@@ -184,11 +184,11 @@ position.
 - A Scene should not be a mechanical slice of a long article.
 - Events, participants, causes, consequences, institutions, and competing
   perspectives may lead to other Cards.
-- A navigation destination must have a `targetCardId`. It may also have an
-  optional `targetSceneId` to identify the most relevant section.
+- A navigation destination must have `target: { cardId }`. Its target may also
+  include an optional `sceneId` to identify the most relevant section.
 - Public navigation opens at the target Card's first Scene by default. Only an
   explicitly approved `entry: { kind: 'targetScene' }` exception may open at
-  `targetSceneId`.
+  `target.sceneId`.
 - A Scene ID may be used to restore reading position or address a section, but
   Card identity remains the primary route and product identity.
 - Navigation copy must explain the value of the next perspective without
@@ -203,18 +203,20 @@ position.
 
 ## Event rules
 
-An Event should be independently addressable and may include:
+An Event should be independently queryable and contains:
 
 - a stable ID;
 - a concise declarative title;
 - a normalized time span;
 - participant entity IDs;
-- relevant predecessor or consequence relationships;
 - evidence or claim blocks;
-- related Card IDs;
-- navigation options;
 - source IDs;
 - internal editorial review.
+
+Predecessor, consequence, and other reusable Event relationships belong in
+typed `StructuralEdge` objects. Card relevance is derived from Scene Event
+references, and public jumps use separate `NavigationOption` and
+`NavigationPlacement` objects; these are not fields on the Event itself.
 
 V5 requires an Event `kind`: `historicalEvent`, `historicalProcess`,
 `textualTradition`, or `traditionalNarrative`. Use the last two for the
@@ -383,16 +385,19 @@ For a new or parallel staging module, run:
 node scripts/validate-content-module.js data/<module>.js docs/content-packs/<module>.handoff.json
 ```
 
-The handoff file is machine-readable. Active-atlas references are discovered
-automatically; only references to not-yet-integrated sibling modules are
-declared manually. Existing active modules are not required to pass this
-isolated gate retroactively when no staging boundary exists.
+The handoff file is machine-readable and uses `handoffVersion: 2`. The gate
+compares its module path, exported browser global, new IDs, active-atlas reuse,
+pending sibling references, check results, and frozen state with the submitted
+module. Active-atlas references are discovered automatically; only references
+to not-yet-integrated sibling modules are declared manually. Existing active
+modules are not required to pass this isolated gate retroactively when no
+staging boundary exists.
 
 Each module image directory also owns a non-runtime, version-2 `manifest.json`.
 New Assets require reviewed creator, license, source URL, original dimensions,
 encoded dimensions, encoded byte size, WebP format, origin, digest, and
 approval status. Runtime Scene images must be local `.webp` files, smaller than
-1,000,000 bytes, and no more than 2560 pixels on either encoded axis. Conversion
+500,000 bytes, and no more than 2560 pixels on either encoded axis. Conversion
 must preserve the approved crop, aspect ratio, and narrative content; inspect
 the actual encoded image at desktop and mobile sizes. Do not keep a second
 JPEG/PNG runtime copy after references and validation pass. Each Scene's

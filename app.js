@@ -105,6 +105,48 @@
     return activeMediaCardId !== nextCardId;
   }
 
+  function adjacentSceneImageAssets(queries, readerModule, cardId, sceneId, excludedAssetId = null) {
+    const card = queries?.getCard?.(cardId);
+    const sceneIndex = card?.sceneIds.indexOf(sceneId) ?? -1;
+    if (!card || sceneIndex < 0 || !readerModule?.resolveSceneMedia) return [];
+    const assets = [];
+    const seen = new Set(excludedAssetId ? [excludedAssetId] : []);
+    for (const direction of [-1, 1]) {
+      for (let index = sceneIndex + direction;
+        index >= 0 && index < card.sceneIds.length;
+        index += direction) {
+        const resolved = readerModule.resolveSceneMedia(queries, cardId, card.sceneIds[index]);
+        const presentation = resolved?.presentation;
+        if (presentation?.kind !== 'image' && presentation?.kind !== 'imageAndText') continue;
+        const asset = queries.getAsset(presentation.assetId);
+        if (!asset || asset.type !== 'image' || seen.has(asset.id)) continue;
+        seen.add(asset.id);
+        assets.push(asset);
+        break;
+      }
+    }
+    return assets;
+  }
+
+  async function waitForImageReady(image) {
+    if (!image) throw new TypeError('image is required');
+    if (!image.complete) {
+      await new Promise((resolve, reject) => {
+        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('error', () => reject(new Error('Image failed to load')), { once: true });
+      });
+    }
+    if (!image.naturalWidth) throw new Error('Image failed to load');
+    if (typeof image.decode === 'function') {
+      try {
+        await image.decode();
+      } catch (_error) {
+        if (!image.complete || !image.naturalWidth) throw _error;
+      }
+    }
+    return image;
+  }
+
   function storyBackMode(historyState) {
     return historyState?.entrySource === 'card' ? 'story' : 'home';
   }
@@ -130,6 +172,8 @@
     saveCardSnapshotBeforeTransition,
     pushHistoryEntryAfterSavingCard,
     shouldResetMediaCard,
+    adjacentSceneImageAssets,
+    waitForImageReady,
     storyBackMode,
     storyTrailEntityNames
   });
@@ -166,8 +210,11 @@
     let mapContainer = null;
     let activeMediaCardId = null;
     let activeImageAssetId = null;
+    let mediaImageRequestSequence = 0;
     let mediaImageTransitionSequence = 0;
     let mediaImageTransitionTimer = null;
+    const imagePreloads = new Map();
+    const preloadedImageAssetIds = new Set();
     let homeResumeSnapshot = null;
 
     documentRef.querySelector('[data-brand-name]').textContent = BRAND_CONFIG.name;
@@ -303,6 +350,32 @@
       cardRoot.querySelectorAll?.('[data-media-image-transition]').forEach(node => node.remove?.());
     }
 
+    function invalidateMediaImageRequest() {
+      mediaImageRequestSequence += 1;
+    }
+
+    function preloadImageAsset(asset) {
+      if (!asset || asset.type !== 'image' || activeImageAssetId === asset.id ||
+          preloadedImageAssetIds.has(asset.id) || imagePreloads.has(asset.id)) return;
+      const image = documentRef.createElement('img');
+      image.decoding = 'async';
+      image.fetchPriority = 'low';
+      image.addEventListener('load', () => {
+        imagePreloads.delete(asset.id);
+        preloadedImageAssetIds.add(asset.id);
+        image.decode?.().catch?.(() => {});
+      }, { once: true });
+      image.addEventListener('error', () => imagePreloads.delete(asset.id), { once: true });
+      imagePreloads.set(asset.id, image);
+      image.src = asset.src;
+    }
+
+    function preloadAdjacentSceneImages(cardId, sceneId, currentAssetId) {
+      if (root.navigator?.connection?.saveData) return;
+      adjacentSceneImageAssets(queries, readerModule, cardId, sceneId, currentAssetId)
+        .forEach(preloadImageAsset);
+    }
+
     function transitionMediaImage(container, incomingImage, outgoingImage) {
       clearMediaImageTransition();
       if (!incomingImage && !outgoingImage) return;
@@ -338,6 +411,7 @@
     }
 
     function ensureMap() {
+      invalidateMediaImageRequest();
       const nextContainer = cardRoot.querySelector('[data-map-slot]');
       if (!nextContainer) return null;
       if (map && mapContainer === nextContainer) {
@@ -380,26 +454,35 @@
       media.hidden = !hasMedia;
     }
 
-    function renderImagePresentation(presentation) {
+    function renderImagePresentation(presentation, scene, context) {
       const asset = queries.getAsset(presentation.assetId);
       const nextContainer = cardRoot.querySelector('[data-map-slot]');
       if (!asset || asset.type !== 'image' || !nextContainer) return;
+      preloadAdjacentSceneImages(context?.cardId, scene?.id, asset.id);
       if (activeImageAssetId === asset.id && mapContainer === nextContainer) return;
       const outgoingImage = activeImageAssetId
         ? directMediaImage(nextContainer)
         : null;
+      const outgoingAssetId = activeImageAssetId;
       mapContainer = nextContainer;
       activeImageAssetId = asset.id;
+      const requestSequence = ++mediaImageRequestSequence;
       const incomingImage = documentRef.createElement('img');
       incomingImage.src = asset.src;
       incomingImage.alt = asset.alt;
       incomingImage.decoding = 'async';
       incomingImage.fetchPriority = 'high';
-      nextContainer.append(incomingImage);
-      nextContainer.querySelector('[data-v4-map]')?.setAttribute('aria-hidden', 'true');
-      transitionMediaImage(nextContainer, incomingImage, outgoingImage);
-      const caption = cardRoot.querySelector('[data-media-caption]');
-      if (caption) caption.textContent = asset.title;
+      waitForImageReady(incomingImage).then(() => {
+        if (requestSequence !== mediaImageRequestSequence || activeImageAssetId !== asset.id) return;
+        nextContainer.append(incomingImage);
+        nextContainer.querySelector('[data-v4-map]')?.setAttribute('aria-hidden', 'true');
+        transitionMediaImage(nextContainer, incomingImage, outgoingImage);
+        const caption = cardRoot.querySelector('[data-media-caption]');
+        if (caption) caption.textContent = asset.title;
+      }).catch(() => {
+        if (requestSequence !== mediaImageRequestSequence || activeImageAssetId !== asset.id) return;
+        activeImageAssetId = outgoingAssetId;
+      });
     }
 
     reader = readerModule.createCardReader({
@@ -408,13 +491,14 @@
       components,
       root: cardRoot,
       windowRef: root,
-      onPresentationChange(presentation) {
+      onPresentationChange(presentation, scene, context) {
         setMediaVisibility(presentation);
         if (presentation.kind === 'textOnly') {
+          invalidateMediaImageRequest();
           const caption = cardRoot.querySelector('[data-media-caption]');
           if (caption) caption.textContent = '';
         } else if (presentation.kind === 'image' || presentation.kind === 'imageAndText') {
-          renderImagePresentation(presentation);
+          renderImagePresentation(presentation, scene, context);
         }
       },
       onMapStateChange(mapState, scene, mapConfig, context) {
@@ -440,6 +524,7 @@
       },
       onCardChange(card) {
         if (shouldResetMediaCard(activeMediaCardId, card.id)) {
+          invalidateMediaImageRequest();
           clearMediaImageTransition();
           map?.destroy();
           map = null;

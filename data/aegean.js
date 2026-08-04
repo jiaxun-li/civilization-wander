@@ -143,13 +143,13 @@
       tags: ['爱琴海', '希腊黑暗时代', '早期铁器时代'], sourceIds: ['source-cambridge-mycenaean-transformation', 'source-cambridge-greek-iron-age-pottery']
     },
     {
-      id: 'greek-divine-tradition', type: 'Religous_and_Myth', name: '希腊诸神传统', alternativeNames: ['Greek divine tradition'],
+      id: 'greek-divine-tradition', type: 'religionAndMyth', name: '希腊诸神传统', alternativeNames: ['Greek divine tradition'],
       canonicalSummary: '由迈锡尼宫殿泥版中的神名、地方祭祀与长期口头传讲共同留下的多神传统；其完整叙事主要见于较晚成文的诗歌。',
       timeSpan: timeSpan(-1450, -800, '约公元前1450—前800年', true),
       tags: ['爱琴海', '希腊神话', '奥林匹斯众神'], sourceIds: ['source-cambridge-mycenaean-religion', 'source-rutherford-greek-religion-lba-eia', 'source-cambridge-companion-greek-mythology']
     },
     {
-      id: 'greek-heroic-tradition', type: 'Religous_and_Myth', name: '希腊英雄传统', alternativeNames: ['Greek heroic tradition'],
+      id: 'greek-heroic-tradition', type: 'religionAndMyth', name: '希腊英雄传统', alternativeNames: ['Greek heroic tradition'],
       canonicalSummary: '以神裔、战士、远航者与受诅咒家族为中心的口头叙事传统，把青铜时代遗迹、后宫殿社会经验与神话谱系组织成共同过去。',
       timeSpan: timeSpan(-1600, -800, '约公元前1600—前800年', true),
       tags: ['爱琴海', '希腊神话', '英雄时代'], sourceIds: ['source-cambridge-guide-homer', 'source-cambridge-guide-mycenae', 'source-cambridge-companion-greek-mythology']

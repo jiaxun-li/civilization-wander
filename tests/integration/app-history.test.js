@@ -9,6 +9,8 @@ const {
   parseLastReadSnapshot,
   pushHistoryEntryAfterSavingCard,
   shouldResetMediaCard,
+  adjacentSceneImageAssets,
+  waitForImageReady,
   storyBackMode,
   storyTrailEntityNames
 } = globalThis.ATLAS_V5_APP_INTERNALS;
@@ -197,4 +199,34 @@ test('App retains media within one Card and resets it across Cards', () => {
   assert.equal(shouldResetMediaCard('sumer-measuring-land-time', 'sumer-measuring-land-time'), false);
   assert.equal(shouldResetMediaCard('sumer-measuring-land-time', 'akkadian-empire-overview'), true);
   assert.equal(shouldResetMediaCard(null, 'sumer-measuring-land-time'), true);
+});
+
+test('App selects only the nearest distinct image in each Scene direction for preloading', () => {
+  const readerModule = require('../../ui/v4/card-reader.js');
+  const assets = adjacentSceneImageAssets(
+    queries,
+    readerModule,
+    'sanxingdui-ritual-world',
+    'sanxingdui-people-tree-birds',
+    'asset-sxd-bronze-tree'
+  );
+  assert.deepEqual(assets.map(asset => asset.id), [
+    'asset-sxd-gold-mask-head',
+    'asset-sxd-ivory-tusk'
+  ]);
+});
+
+test('App waits for image decoding and rejects a completed broken image', async () => {
+  let decoded = false;
+  const ready = await waitForImageReady({
+    complete: true,
+    naturalWidth: 1200,
+    async decode() { decoded = true; }
+  });
+  assert.equal(ready.naturalWidth, 1200);
+  assert.equal(decoded, true);
+  await assert.rejects(
+    waitForImageReady({ complete: true, naturalWidth: 0 }),
+    /failed to load/
+  );
 });

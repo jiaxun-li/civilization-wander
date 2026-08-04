@@ -43,9 +43,9 @@
     {
       "assetId": "asset-egypt-old-mitry-statue",
       "file": "assets/images/ancient-egypt/old-kingdom-mitry-statue.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/543872",
       "sourceIds": [
         "source-met-mitry-statue"
@@ -57,7 +57,7 @@
       "byteSize": 88678,
       "format": "webp",
       "sha256": "283b167a706682515f55b488c575124fd001b2fa26155ae68cfe23f8d1659387",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-middle-sinuhe-papyrus",
@@ -81,9 +81,9 @@
     {
       "assetId": "asset-egypt-new-hatshepsut",
       "file": "assets/images/ancient-egypt/new-kingdom-hatshepsut.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/544450",
       "sourceIds": [
         "source-met-hatshepsut"
@@ -95,14 +95,14 @@
       "byteSize": 41306,
       "format": "webp",
       "sha256": "0a5e6247043767bf8a5d936176fd4b2b4e64c39986a47eaa89325b66d02d8551",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-new-amarna-letter",
       "file": "assets/images/ancient-egypt/new-kingdom-amarna-letter.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/544695",
       "sourceIds": [
         "source-met-amarna-letter-object"
@@ -114,14 +114,14 @@
       "byteSize": 125048,
       "format": "webp",
       "sha256": "ba443e15854e505fd3d9f50980d248544af49612109d53104846e11c5e4857bb",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-new-akhenaten",
       "file": "assets/images/ancient-egypt/new-kingdom-akhenaten.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/544056",
       "sourceIds": [
         "source-met-akhenaten-duck"
@@ -133,26 +133,26 @@
       "byteSize": 208262,
       "format": "webp",
       "sha256": "1a2931f3de3bcaabbf1b867443a4f507db6dfe8c6223489b343ec180a6584094",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-new-strike-papyrus",
       "file": "assets/images/ancient-egypt/new-kingdom-strike-papyrus.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "Museo Egizio",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://collezioni.museoegizio.it/en-GB/material/Cat_1880",
       "sourceIds": [
         "source-turin-strike-papyrus"
       ],
       "originalWidth": 6941,
       "originalHeight": 3431,
-      "encodedWidth": 2560,
-      "encodedHeight": 1265,
-      "byteSize": 588048,
+      "encodedWidth": 2200,
+      "encodedHeight": 1087,
+      "byteSize": 435554,
       "format": "webp",
-      "sha256": "2bc03ee984927649595170b1b0a1b25b6e18cc0c04a55b35388fa6053c9df070",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "c01e5b16b094b77df93d5b0bcbe89f99441db41c88e0e8df3471f696a7e78037",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-pyramid-djoser-step",
@@ -234,9 +234,9 @@
     {
       "assetId": "asset-egypt-pyramid-offering-bearers",
       "file": "assets/images/ancient-egypt/old-kingdom-offering-bearers.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/547738",
       "sourceIds": [
         "source-met-offering-bearers"
@@ -248,14 +248,14 @@
       "byteSize": 34126,
       "format": "webp",
       "sha256": "58d9d0e81df5fb508ca33dcc179b8f5a666f679647d053ee356a2fb69d9f29ad",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-false-door-neferiu",
       "file": "assets/images/ancient-egypt/false-door-neferiu.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/543863",
       "sourceIds": [
         "source-met-neferiu-false-door"
@@ -267,14 +267,14 @@
       "byteSize": 81956,
       "format": "webp",
       "sha256": "d1500e36d9c23117775a531efdaafabd72d7973ca037521a54fc98311bf2cc99",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-afterlife-wah-statuette",
       "file": "assets/images/ancient-egypt/statuette-of-wah.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/545111",
       "sourceIds": [
         "source-met-wah-statuette"
@@ -286,14 +286,14 @@
       "byteSize": 17190,
       "format": "webp",
       "sha256": "2aee091e6b310f391c8473daeaf003281226ca72db32a48839a0b8d3c2dedd3f",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-afterlife-heart-scarab",
       "file": "assets/images/ancient-egypt/heart-scarab.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/550986",
       "sourceIds": [
         "source-met-heart-scarab"
@@ -305,33 +305,33 @@
       "byteSize": 19896,
       "format": "webp",
       "sha256": "5892d959994200645ed0d34a85e6e87581b11a2f8cadd61c31c0272497039c4b",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-afterlife-ukhhotep-coffin",
       "file": "assets/images/ancient-egypt/ukhhotep-0.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/546303",
       "sourceIds": [
         "source-met-ukhhotep-coffin"
       ],
       "originalWidth": 3782,
       "originalHeight": 2467,
-      "encodedWidth": 2560,
-      "encodedHeight": 1670,
-      "byteSize": 615640,
+      "encodedWidth": 2200,
+      "encodedHeight": 1435,
+      "byteSize": 492208,
       "format": "webp",
-      "sha256": "441daba39bf2c5b01ded319a5b271f978e8d98045f0534461c0e3b49e6f6771b",
-      "reviewStatus": "needsMetadataAudit"
+      "sha256": "b34418ff0ca6f6d5aed9d9470471ad0390aac4fef6de6f3a438cdfc8b05b378b",
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-afterlife-nesiamun-book-dead",
       "file": "assets/images/ancient-egypt/book-of-dead-nesiamun-original.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/550820",
       "sourceIds": [
         "source-met-nesiamun-book-dead"
@@ -343,14 +343,14 @@
       "byteSize": 423046,
       "format": "webp",
       "sha256": "f7d7756e021ad517af1bf50dfb4e095a24d7db5e5de6198f69b79ba00da5dc28",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-afterlife-hatnefer-osiris",
       "file": "assets/images/ancient-egypt/osiris-figure-hatnefer.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/548954",
       "sourceIds": [
         "source-met-hatnefer-osiris"
@@ -362,14 +362,14 @@
       "byteSize": 48136,
       "format": "webp",
       "sha256": "7eabf5aff983ab02dac134c8b4a561c2625eade8dedcf1019d8d0704c833de6e",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-afterlife-anubis-weighing-heart",
       "file": "assets/images/ancient-egypt/anubis-weighing-heart.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/557830",
       "sourceIds": [
         "source-met-anubis-weighing-heart"
@@ -381,14 +381,14 @@
       "byteSize": 98816,
       "format": "webp",
       "sha256": "0e54af8b960a575bb36a3d27821bfeb5e2a81f6654d5b0aeb6a592430af72071",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-afterlife-seti-shabti",
       "file": "assets/images/ancient-egypt/shabti-seti-i.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/544763",
       "sourceIds": [
         "source-met-seti-i-shabti"
@@ -400,14 +400,14 @@
       "byteSize": 25812,
       "format": "webp",
       "sha256": "0ccff62229c200952d8dbe97b73041e6d6b2244e4759052eae4ee838ca893f7a",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-art-anubis-facsimile",
       "file": "assets/images/ancient-egypt/anubis-weighing-heart.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/557830",
       "sourceIds": [
         "source-met-anubis-weighing-heart"
@@ -419,14 +419,14 @@
       "byteSize": 98816,
       "format": "webp",
       "sha256": "0e54af8b960a575bb36a3d27821bfeb5e2a81f6654d5b0aeb6a592430af72071",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-art-sahure",
       "file": "assets/images/ancient-egypt/old-kingdom-sahure-statue.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/543882",
       "sourceIds": [
         "source-met-sahure-statue"
@@ -438,7 +438,7 @@
       "byteSize": 202556,
       "format": "webp",
       "sha256": "acd04def960b07a3ab86a407e4f8c1393f7080c6a4ad97f418299ef95731fa3c",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-art-abu-simbel-color",
@@ -473,17 +473,17 @@
       "originalHeight": 2048,
       "encodedWidth": 1367,
       "encodedHeight": 2048,
-      "byteSize": 549948,
+      "byteSize": 473616,
       "format": "webp",
-      "sha256": "49c80aa92e50f209900be8497b6d752ca3200d71a2a25b8bb8a6cb0ea2dbff7d",
+      "sha256": "a3fe7a034c83ac2cf435cd3474b325cf52a6d9936a3226a91acf45e4dcd44014",
       "reviewStatus": "needsMetadataAudit"
     },
     {
       "assetId": "asset-egypt-hieroglyph-coptic",
       "file": "assets/images/ancient-egypt/hieroglyph-coptic-manuscript.webp",
-      "origin": "unclassified",
+      "origin": "historical",
       "creator": "The Metropolitan Museum of Art",
-      "license": "needs review",
+      "license": "CC0",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/475055",
       "sourceIds": [
         "source-met-coptic-manuscript"
@@ -495,7 +495,7 @@
       "byteSize": 185498,
       "format": "webp",
       "sha256": "5b18756a5e6f5b36f16d358af14c1422f05dc325db5ca5a682e4618c1775d919",
-      "reviewStatus": "needsMetadataAudit"
+      "reviewStatus": "approved"
     },
     {
       "assetId": "asset-egypt-hieroglyph-champollion-table",

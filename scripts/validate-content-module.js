@@ -36,6 +36,68 @@ const referenceFields = new Map([
 const mediaDecisionKinds = new Set([
   'newHistoricalAsset', 'approvedReuse', 'map', 'aiGenerated', 'textOnly'
 ]);
+const moduleObjectRules = {
+  sources: {
+    allowed: ['id', 'title', 'author', 'year', 'publisher', 'url'],
+    required: ['id', 'title']
+  },
+  entities: {
+    allowed: ['id', 'type', 'level', 'name', 'alternativeNames', 'canonicalSummary', 'timeSpan', 'tags', 'sourceIds'],
+    required: ['id', 'type', 'name', 'canonicalSummary', 'sourceIds']
+  },
+  events: {
+    allowed: ['id', 'kind', 'title', 'timeSpan', 'participantEntityIds', 'evidenceBlocks', 'sourceIds', 'editorialReview'],
+    required: ['id', 'kind', 'title', 'timeSpan', 'participantEntityIds', 'evidenceBlocks', 'sourceIds', 'editorialReview']
+  },
+  structuralEdges: {
+    allowed: ['id', 'family', 'type', 'source', 'target', 'timeSpan', 'label', 'summaries', 'qualifiers', 'sourceIds'],
+    required: ['id', 'family', 'type', 'source', 'target', 'label', 'summaries', 'sourceIds']
+  },
+  cards: {
+    allowed: ['id', 'kind', 'primaryEntityId', 'relatedEntityIds', 'title', 'editorialPurpose', 'introduction', 'thesis', 'timeSpan', 'sceneIds', 'sourceIds', 'editorialReview'],
+    required: ['id', 'kind', 'primaryEntityId', 'relatedEntityIds', 'title', 'editorialPurpose', 'introduction', 'thesis', 'timeSpan', 'sceneIds', 'sourceIds', 'editorialReview']
+  },
+  scenes: {
+    allowed: ['id', 'title', 'eyebrow', 'timeDisplay', 'timeSpan', 'eventIds', 'contentBlocks', 'presentation', 'sourceIds'],
+    required: ['id', 'title', 'timeSpan', 'eventIds', 'contentBlocks', 'presentation', 'sourceIds']
+  },
+  structureViews: {
+    allowed: ['id', 'family', 'title', 'query', 'maxVisible', 'includeEntityIds', 'display', 'depth'],
+    required: ['id', 'family', 'title', 'query', 'maxVisible', 'display']
+  },
+  navigationOptions: {
+    allowed: ['id', 'target', 'entry', 'basis', 'label', 'description'],
+    required: ['id', 'target', 'basis', 'label', 'description']
+  },
+  navigationPlacements: {
+    allowed: ['id', 'navigationOptionId', 'owner', 'slot', 'rank', 'visible', 'interactive'],
+    required: ['id', 'navigationOptionId', 'owner', 'slot', 'rank', 'visible', 'interactive']
+  },
+  cameraPresets: {
+    allowed: ['id', 'center', 'scale'],
+    required: ['id', 'center', 'scale']
+  },
+  mapStates: {
+    allowed: ['id', 'cameraPresetId', 'layers'],
+    required: ['id', 'cameraPresetId', 'layers']
+  },
+  geometries: {
+    allowed: ['id', 'geometry', 'timeSpan', 'approximate', 'label', 'sourceIds'],
+    required: ['id', 'geometry', 'timeSpan', 'approximate', 'label', 'sourceIds']
+  },
+  mapAnnotations: {
+    allowed: ['id', 'subject', 'anchor', 'anchorMeaning', 'approximate', 'sourceIds', 'placement', 'label'],
+    required: ['id', 'subject', 'anchor', 'anchorMeaning', 'approximate', 'sourceIds', 'placement']
+  },
+  assets: {
+    allowed: ['id', 'type', 'src', 'title', 'alt', 'sourceIds'],
+    required: ['id', 'type', 'src', 'title', 'alt', 'sourceIds']
+  }
+};
+const handoffCheckNames = [
+  'syntax', 'moduleExport', 'duplicateIds', 'provenance',
+  'internalReferences', 'negativeTests'
+];
 
 function readJson(filename) {
   return JSON.parse(fs.readFileSync(filename, 'utf8'));
@@ -43,6 +105,40 @@ function readJson(filename) {
 
 function sha256(filename) {
   return crypto.createHash('sha256').update(fs.readFileSync(filename)).digest('hex');
+}
+
+function projectPath(filename) {
+  return path.relative(projectRoot, filename).replaceAll('\\', '/');
+}
+
+function isNonEmptyString(value) {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function sameSortedStrings(left, right) {
+  return JSON.stringify([...(left || [])].sort()) === JSON.stringify([...(right || [])].sort());
+}
+
+function checkStringArrayMap(value, field, errors) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    errors.push(`${field} must be an object containing all fourteen collections`);
+    return Object.fromEntries(collections.map(collection => [collection, []]));
+  }
+  const result = {};
+  for (const collection of collections) {
+    const ids = value[collection];
+    if (!Array.isArray(ids) || ids.some(id => !isNonEmptyString(id))) {
+      errors.push(`${field}.${collection} must be an array of non-empty IDs`);
+      result[collection] = [];
+    } else {
+      result[collection] = ids;
+      if (new Set(ids).size !== ids.length) errors.push(`${field}.${collection} contains duplicates`);
+    }
+  }
+  for (const key of Object.keys(value)) {
+    if (!collections.includes(key)) errors.push(`${field}.${key} is not a referenceable collection`);
+  }
+  return result;
 }
 
 function addReference(refs, collection, id, location) {
@@ -89,6 +185,47 @@ function main() {
   const activeAtlas = require(path.resolve(projectRoot, 'data/atlas-data.js'));
   const handoff = readJson(handoffFile);
   const errors = [];
+  const normalizedModuleArg = projectPath(moduleFile);
+  const expectedModuleName = path.basename(moduleFile, '.js');
+  const moduleSource = fs.readFileSync(moduleFile, 'utf8');
+
+  if (handoff.handoffVersion !== 2) errors.push('handoff.handoffVersion must be 2');
+  if (handoff.module !== expectedModuleName) errors.push(`handoff.module must be ${expectedModuleName}`);
+  if (!isNonEmptyString(handoff.moduleFile) || handoff.moduleFile.replaceAll('\\', '/') !== normalizedModuleArg) {
+    errors.push(`handoff.moduleFile must be ${normalizedModuleArg}`);
+  }
+  if (!isNonEmptyString(handoff.exportedGlobal)) {
+    errors.push('handoff.exportedGlobal must be a non-empty string');
+  } else if (!moduleSource.includes(`root.${handoff.exportedGlobal} = data`)) {
+    errors.push(`module does not initialize browser global ${handoff.exportedGlobal}`);
+  }
+  if (!isNonEmptyString(handoff.expectedLoadingPosition)) {
+    errors.push('handoff.expectedLoadingPosition must be a non-empty string');
+  }
+  if (!Array.isArray(handoff.proposedOutboundNavigation)) {
+    errors.push('handoff.proposedOutboundNavigation must be an array');
+  }
+  if (!Array.isArray(handoff.requiredReciprocalNavigation)) {
+    errors.push('handoff.requiredReciprocalNavigation must be an array');
+  }
+  if (!Array.isArray(handoff.unresolvedIntegrationQuestions)) {
+    errors.push('handoff.unresolvedIntegrationQuestions must be an array');
+  }
+  if (handoff.contentAgentFrozen !== true) {
+    errors.push('handoff.contentAgentFrozen must be true before integration handoff');
+  }
+  if (!handoff.moduleChecks || typeof handoff.moduleChecks !== 'object' || Array.isArray(handoff.moduleChecks)) {
+    errors.push('handoff.moduleChecks must record the isolated check results');
+  } else {
+    for (const checkName of handoffCheckNames) {
+      if (handoff.moduleChecks[checkName] !== 'passed') {
+        errors.push(`handoff.moduleChecks.${checkName} must be passed`);
+      }
+    }
+    for (const key of Object.keys(handoff.moduleChecks)) {
+      if (!handoffCheckNames.includes(key)) errors.push(`handoff.moduleChecks.${key} is unknown`);
+    }
+  }
 
   const moduleKeys = Object.keys(moduleData).sort();
   const expectedKeys = [...collections].sort();
@@ -113,27 +250,32 @@ function main() {
         allLocalIds.set(item.id, `${collection}[${index}]`);
       }
       localIds[collection].add(item.id);
-    }
-  }
-
-  if (!handoff.pendingExternalRefs || typeof handoff.pendingExternalRefs !== 'object') {
-    errors.push('handoff.pendingExternalRefs is required');
-  }
-  const pending = {};
-  for (const collection of collections) {
-    const values = handoff.pendingExternalRefs?.[collection];
-    if (!Array.isArray(values)) {
-      errors.push(`handoff.pendingExternalRefs.${collection} must be an array`);
-      pending[collection] = new Set();
-    } else {
-      pending[collection] = new Set(values);
-      if (pending[collection].size !== values.length) {
-        errors.push(`handoff.pendingExternalRefs.${collection} contains duplicates`);
+      const rule = moduleObjectRules[collection];
+      for (const key of Object.keys(item)) {
+        if (!rule.allowed.includes(key)) errors.push(`${collection}[${index}].${key} is an unknown V5 field`);
+      }
+      for (const key of rule.required) {
+        if (!Object.prototype.hasOwnProperty.call(item, key)) errors.push(`${collection}[${index}].${key} is required by V5`);
       }
     }
   }
-  for (const key of Object.keys(handoff.pendingExternalRefs || {})) {
-    if (!collections.includes(key)) errors.push(`handoff.pendingExternalRefs.${key} is not a referenceable collection`);
+
+  if ((moduleData.cards || []).length === 0 || (moduleData.scenes || []).length === 0) {
+    errors.push('a staged content module must contain at least one Card and one Scene');
+  }
+
+  const declaredNewIds = checkStringArrayMap(handoff.newTopLevelIds, 'handoff.newTopLevelIds', errors);
+  for (const collection of collections) {
+    if (!sameSortedStrings(declaredNewIds[collection], [...localIds[collection]])) {
+      errors.push(`handoff.newTopLevelIds.${collection} does not match module exports`);
+    }
+  }
+
+  const pendingValues = checkStringArrayMap(handoff.pendingExternalRefs, 'handoff.pendingExternalRefs', errors);
+  const declaredReused = checkStringArrayMap(handoff.reusedExternalIds, 'handoff.reusedExternalIds', errors);
+  const pending = {};
+  for (const collection of collections) {
+    pending[collection] = new Set(pendingValues[collection]);
   }
 
   const activeIds = Object.fromEntries(collections.map(collection => [
@@ -171,11 +313,18 @@ function main() {
         errors.push(`handoff.pendingExternalRefs.${collection} declares unused ID ${id}`);
       }
     }
+    if (!sameSortedStrings(declaredReused[collection], [...activeExternalRefs[collection]])) {
+      errors.push(`handoff.reusedExternalIds.${collection} does not match active-atlas references`);
+    }
   }
 
   const assetDirectory = handoff.assetDirectory;
   if (typeof assetDirectory !== 'string' || !assetDirectory) {
     errors.push('handoff.assetDirectory must be a non-empty project-relative path');
+  } else if (path.isAbsolute(assetDirectory) || assetDirectory.split(/[\\/]/).includes('..')) {
+    errors.push('handoff.assetDirectory must stay inside the project');
+  } else if (normalizedModuleArg.startsWith('data/') && assetDirectory !== `assets/images/${expectedModuleName}`) {
+    errors.push(`handoff.assetDirectory must be assets/images/${expectedModuleName}`);
   }
   const assetManifestFile = assetDirectory
     ? path.resolve(projectRoot, assetDirectory, 'manifest.json')
@@ -203,8 +352,8 @@ function main() {
     if (!asset.src.toLowerCase().endsWith('.webp')) {
       errors.push(`Asset ${asset.id} must use a local WebP file`);
     }
-    if (fs.statSync(assetFile).size >= 1_000_000) {
-      errors.push(`Asset ${asset.id} must be smaller than 1,000,000 bytes`);
+    if (fs.statSync(assetFile).size >= 500_000) {
+      errors.push(`Asset ${asset.id} must be smaller than 500,000 bytes`);
     }
     const metadata = metadataById.get(asset.id);
     if (!metadata) {
@@ -289,7 +438,7 @@ function main() {
     .filter(([, ids]) => ids.length));
   console.log(JSON.stringify({
     valid: true,
-    module: path.relative(projectRoot, moduleFile).replaceAll('\\', '/'),
+    module: normalizedModuleArg,
     activeExternalRefs: activeSummary,
     pendingExternalRefs: pendingSummary
   }, null, 2));

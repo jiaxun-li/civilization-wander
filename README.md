@@ -7,7 +7,7 @@
 V5 以 Card-first 的连续阅读为核心，地图只是按需出现的支持媒体。产品只有两个核心动作：
 
 1. 向下滚动，连续阅读当前 Card 的 Scenes；Scene 激活时，地图和结构视图自动更新。
-2. 点击正文、地图节点或推荐小卡片，统一通过 NavigationOption 进入下一张 Card。
+2. 点击正文入口或推荐小卡片，统一通过 NavigationOption 进入下一张 Card。
 
 滚动不会自动换页；点击才进入下一张 Card。浏览器返回会恢复上一张 Card 的 Scene 和滚动位置。
 
@@ -51,7 +51,7 @@ python -m http.server 8000
 - `Card`：围绕有限问题策展一个 Entity 的关系子图；
 - `Scene`：Card 内的连续叙事段落；每个 Scene 明确关联至少一个时间相交的 Event，Card 的 Event 集合由其 Scenes 推导；
 - `StructureView`：Lineage、Composition、Context 或 Historical Network；
-- `NavigationOption`：正文、地图节点和推荐卡共用的跳转；
+- `NavigationOption`：正文入口和推荐卡共用的跳转身份；地图 placement 目前仅保留内部数据路径，不作为公开入口；
 - `NavigationPlacement`：一个跳转在特定 Scene/Card 中的本地展示位置与顺序；
 - `CameraPreset`：可复用的地图视口；
 - `MapState`：Scene 驱动的相机和图层引用；
@@ -71,7 +71,9 @@ V5 是当前数据契约；本次升级没有重写已经稳定的表现层，�
 - `ui/v4/card-reader.js`：IntersectionObserver、Scene 激活、媒体继承、统一导航、hash 路由及返回恢复；
 - `styles/v4/cards.css`：桌面 sticky 媒体/正文双栏，以及移动端普通纵向阅读。
 
-运行时 Scene 图片统一为本地 WebP，单图严格小于 1 MB，编码后任一边不超过 2560 像素；模块级门禁同时检查格式、体积和 version-2 Asset manifest。
+运行时 Scene 图片统一为本地 WebP，单图严格小于 500 KB（500,000 bytes），编码后任一边不超过 2560 像素；模块级门禁同时检查格式、体积和 version-2 Asset manifest。
+阅读器只预加载当前故事前后最近的不同图片；切换时保留旧媒体，直到新图片下载并解码完成后再淡入，避免把网络等待暴露为空白画面。
+阅读器只预加载当前故事前后最近的不同图片；切换时保留旧媒体，直到新图片下载并解码完成后再淡入，避免把网络等待暴露为空白画面。
 
 桌面通过 hover/focus 打开 Preview。粗指针设备不依赖 hover：第一次点击打开 Preview 并保留在当前 Card，第二次点击同一入口才进入目标 Card。
 
@@ -109,10 +111,10 @@ V5 是当前数据契约；本次升级没有重写已经稳定的表现层，�
 
 1. 先按 `docs/CONTENT_PACK_AND_AUTHORING_WORKFLOW.md` 与用户确认数据存放文件，以及新建还是复用现有文件。
 2. 在获批准的数据文件中增加 `type: 'person'` 的 Entity，提供稳定 ID、摘要和可信 `sourceIds`；不要在 Entity 上保存默认 Card。
-3. 创建以该人物为 `primaryEntityId` 的 Card，提出一个精确问题，并按完整叙事需要组织 `3–11` 个 Scenes，不机械凑数或压缩。人物索引由这些 Card 关系反向生成。
+3. 创建以该人物为 `primaryEntityId` 的 Card，提出一个精确问题，并按完整叙事需要组织 Scenes；通常为 `3–11` 个，但不是数量门禁，不得机械凑数或压缩。人物索引由这些 Card 关系反向生成。
 4. 创建 Scenes：每个 Scene 包含叙事、来源和非空 `eventIds`；至少一个 Event 的时间必须与 Scene 相交。可按需要使用 MapState、StructureView 或 NavigationOption。
 5. 用 StructuralEdge 建立人物与其他 Entity 的关系。不要把角色、赞助或传播误写成 lineage。
-6. 创建 NavigationOptions；正文、地图节点和结尾推荐都引用这些对象。
+6. 创建 NavigationOptions；正文和结尾推荐引用这些对象。地图 placement 当前可以保留在数据中供校验和未来呈现使用，但不构成公开可点击入口。
 7. 创建 MapStates，并引用独立 Geometry。教学覆盖必须 `approximate: true`，标签明确写“近似/示意”。
 8. 在每张 Card 的非公开 `editorialReview` 中加入可信的限制、反例、不确定性或替代解释；不要默认渲染为公共模块。
 9. 运行全部测试。
@@ -126,10 +128,10 @@ V5 是当前数据契约；本次升级没有重写已经稳定的表现层，�
   id: 'edge-example',
   family: 'role',
   type: 'ruled',
-  sourceId: 'person-id',
-  targetId: 'polity-id',
+  source: { kind: 'entity', id: 'person-id' },
+  target: { kind: 'entity', id: 'polity-id' },
   label: { forward: '统治', reverse: '由其统治' },
-  canonicalSummary: '统一的关系事实。',
+  summaries: { canonical: '统一的关系事实。' },
   sourceIds: ['source-id']
 }
 ```
