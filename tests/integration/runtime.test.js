@@ -2,34 +2,40 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const data = require('../../data/v3/atlas-data.js');
-const queryModule = require('../../data/v3/queries.js');
+const data = require('../../data/atlas-data.js');
+const queryModule = require('../../data/queries.js');
 
 const root = path.resolve(__dirname, '../..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const html = read('index.html');
 const app = read('app.js');
 const globalCss = read('styles.css');
-const cardCss = read('styles/v3/cards.css');
-const mapCss = read('styles/v3/map.css');
-const mapJs = read('map/v3/map-renderer.js');
+const cardCss = read('styles/v4/cards.css');
+const mapCss = read('styles/v4/map.css');
+const mapJs = read('map/v4/map-renderer.js');
 
-test('entrypoint loads only the V3 main path in dependency order', () => {
+test('entrypoint loads only the V4 main path in dependency order', () => {
   const scripts = [...html.matchAll(/<script src="([^"]+)"/g)].map(match => match[1]);
   assert.deepEqual(scripts, [
     'data/world-physical.js',
-    'data/v3/atlas-data.js',
-    'data/v3/queries.js',
-    'ui/v3/cards.js',
-    'ui/v3/card-reader.js',
+    'data/mesopotamia.js',
+    'data/ancient-egypt.js',
+    'data/ancient-india.js',
+    'data/ancient-china.js',
+    'data/late-bronze-age.js',
+    'data/aegean.js',
+    'data/iron-age-near-east.js',
+    'data/atlas-data.js',
+    'data/queries.js',
+    'ui/v4/cards.js',
+    'ui/v4/card-reader.js',
     'assets/natural-earth/base.js',
-    'map/v3/map-renderer.js',
+    'map/v4/map-renderer.js',
     'app.js'
   ]);
-  assert.doesNotMatch(html, /data\/(?:content|knowledge|curation|entity-network|entity-queries)\.js/);
 });
 
-test('runtime contains no legacy timeline or interactive basemap state', () => {
+test('runtime contains no timeline or interactive basemap state', () => {
   const runtime = [html, app, globalCss, cardCss, mapCss, mapJs].join('\n');
   for (const forbidden of [
     'server.arcgisonline.com',
@@ -48,33 +54,102 @@ test('runtime contains no legacy timeline or interactive basemap state', () => {
   assert.doesNotMatch(mapJs, /addEventListener\(['"](?:wheel|pointerdown|pointermove|mousedown|touchmove)/);
 });
 
-test('V3 validation proves all references and objects are complete', () => {
-  const result = queryModule.createAtlasQueries(data).validateAtlasData();
+test('V4 validation proves all references and objects are complete', () => {
+  const result = queryModule.createQueries(data).validateAtlasData();
   assert.equal(result.valid, true, result.errors.join('\n'));
   assert.deepEqual(result.errors, []);
-  for (const count of Object.values(result.counts)) assert.ok(count > 0);
+  assert.equal(result.counts.assets, data.assets.length);
+  for (const [collection, count] of Object.entries(result.counts)) {
+    if (collection !== 'structureViews') assert.ok(count > 0, collection);
+  }
 });
 
 test('brand and default experience are centralized and editorial', () => {
   assert.match(app, /const BRAND_CONFIG = Object\.freeze/);
+  assert.match(app, /const HOME_SECTIONS = Object\.freeze/);
   assert.match(app, /name: '文明漫游'/);
-  assert.match(app, /defaultCardId: 'buddhism-overview'/);
-  assert.match(html, /连续阅读 · 连续点击/);
-  assert.match(html, /地图只负责安静地补充空间背景/);
+  assert.match(app, /defaultCardId: 'sumer-measuring-land-time'/);
+  assert.match(app, /eyebrow: '四个古代世界'[\s\S]*title: '从一个文明开始'/);
+  assert.match(app, /eyebrow: '史诗与神话'[\s\S]*title: '从一个故事开始'/);
+  assert.match(app, /eyebrow: '遗物与奇观'[\s\S]*title: '从一个遗存开始'/);
+  assert.match(app, /'tower-of-babel-story-and-etemenanki'/);
+  assert.match(html, /data-start-card="sumer-measuring-land-time"/);
+  assert.match(html, /data-start-card="odyssey-name-and-home"/);
+  assert.match(html, /data-start-card="egypt-pyramids-kingdom-at-work"/);
+  assert.match(html, /class="home-primary-actions"/);
+  assert.match(html, /从苏美尔开始[\s\S]*从《奥德赛》开始[\s\S]*从金字塔开始/);
+  assert.match(html, /data-home-sections/);
+  assert.match(html, /历史的线索/);
+  assert.match(html, /从一个故事出发，走进彼此相连的历史/);
+  assert.match(html, /一个人物、一座城市、一件器物或一部作品，都承载着具体的时代与生活/);
+  assert.doesNotMatch(html, /连续阅读 · 连续点击|下一种历史视角/);
+  assert.doesNotMatch(html, /第一批文明实体|政治实体|地图范围、路线与节点/);
   assert.doesNotMatch(html, /山河与文明|为什么历史会在这个地方/);
 });
 
 test('map and body are Scene-driven through one callback chain', () => {
-  assert.match(app, /onMapStateChange\(mapState, scene\)/);
-  assert.match(app, /renderMapState\(mapState, scene\)/);
-  assert.match(app, /onStructureViewsChange\(views, scene\)/);
-  assert.match(app, /setStructureViews\(views, scene\)/);
+  assert.match(app, /onMapStateChange\(mapState, scene, mapConfig, context\)/);
+  assert.match(app, /renderMapState\([\s\S]*context\?\.presentationScene \|\| scene,[\s\S]*mapConfig,[\s\S]*context[\s\S]*\)/);
+  assert.match(app, /onStructureViewsChange\(views, scene, context\)/);
+  assert.match(app, /setStructureViews\([\s\S]*views,[\s\S]*context\.presentationScene,[\s\S]*context[\s\S]*\)/);
   assert.match(app, /onNavigate\(navigationId\)[\s\S]*reader\.followNavigation\(navigationId\)/);
 });
 
+test('desktop media retains the available reader height below the sticky back bar', () => {
+  assert.match(cardCss, /\.v4-main-card__media\s*\{[^}]*top:\s*var\(--story-back-bar-height\);[^}]*height:\s*calc\(100vh - var\(--story-back-bar-height\)\)/s);
+  assert.doesNotMatch(cardCss, /data-card-id="sumer-uruk-city"/);
+});
+
+test('left-column images crossfade while unchanged images remain stable', () => {
+  assert.match(app, /activeImageAssetId === asset\.id && mapContainer === nextContainer/);
+  assert.match(app, /cloneNode\(true\)/);
+  assert.match(app, /is-media-image-entering-active/);
+  assert.match(app, /is-media-image-leaving-active/);
+  assert.match(cardCss, /is-media-image-entering[\s\S]*opacity: 0/);
+  assert.match(cardCss, /is-media-image-entering-active[\s\S]*opacity: 1/);
+  assert.match(cardCss, /is-media-image-leaving-active[\s\S]*opacity: 0/);
+});
+
+test('same-Card image presentations preserve the map DOM underneath', () => {
+  const imageRenderer = app.match(/function renderImagePresentation\(presentation\)[\s\S]*?\n    }\n\n    reader =/)?.[0] || '';
+  assert.doesNotMatch(imageRenderer, /map\?\.destroy\(\)|map = null|nextContainer\.innerHTML/);
+  assert.match(imageRenderer, /nextContainer\.append\(incomingImage\)/);
+  assert.match(imageRenderer, /setAttribute\('aria-hidden', 'true'\)/);
+  assert.match(app, /removeAttribute\('aria-hidden'\)/);
+});
+
+test('all images stay centered and fully visible against the map land color', () => {
+  assert.match(cardCss, /\.v4-main-card__map-slot > img\s*\{[^}]*position:\s*absolute;[^}]*object-fit:\s*contain;[^}]*object-position:\s*center;[^}]*background:\s*#c8cbbb/s);
+  assert.match(cardCss, /\.v4-scene__asset img\s*\{[^}]*object-fit:\s*contain;[^}]*object-position:\s*center;[^}]*background:\s*#c8cbbb/s);
+});
+
+test('media captions stay above both incoming and outgoing images', () => {
+  assert.match(cardCss, /\.v4-main-card__media-caption\s*\{[^}]*z-index:\s*4;/s);
+  assert.match(cardCss, /\.v4-main-card__map-slot > img\s*\{[^}]*z-index:\s*2;/s);
+  assert.match(cardCss, /\.v4-main-card__map-slot > img\.is-media-image-leaving\s*\{[^}]*z-index:\s*3;/s);
+});
+
+test('map cards and approximation copy are visually hidden without deleting their data path', () => {
+  assert.match(
+    mapCss,
+    /\.v4-map__nodes,\s*\.v4-map__legend,\s*\.v4-map__approximation\s*\{\s*display: none;/
+  );
+  assert.match(mapJs, /data-map-nodes/);
+  assert.match(mapJs, /data-map-legend/);
+  assert.match(mapJs, /近似教学示意 · 非精确疆界或路线/);
+});
+
+test('SVG camera transform is not shifted by a second CSS transform origin', () => {
+  const mapCss = fs.readFileSync(path.resolve(__dirname, '../../styles/v4/map.css'), 'utf8');
+  assert.doesNotMatch(mapCss, /\.v4-map__camera\s*\{[^}]*transform-origin/);
+});
+
 test('accessibility landmarks and reduced motion are present', () => {
-  assert.match(html, /aria-label="当前阅读路径"/);
-  assert.match(html, /aria-label="当前文明 Card"/);
+  assert.match(html, /data-story-back/);
+  assert.match(html, /data-story-trail[^>]*aria-label="漫游足迹"/);
+  assert.doesNotMatch(html, /reading-path/);
+  assert.match(html, /aria-label="当前历史故事"/);
+  assert.match(globalCss, /\.story-back-bar\s*\{[^}]*position:\s*sticky;[^}]*top:\s*0;/s);
   assert.match(cardCss, /:focus-visible/);
   assert.match(mapCss, /:focus-visible/);
   assert.match(globalCss, /@media \(prefers-reduced-motion: reduce\)/);

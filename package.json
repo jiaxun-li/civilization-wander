@@ -1,17 +1,18 @@
 {
-  "name": "civilization-wander-v3",
-  "version": "3.0.0",
+  "name": "civilization-wander-v4",
+  "version": "4.0.0",
   "private": true,
   "description": "Dependency-free static civilization knowledge network.",
   "scripts": {
-    "test": "node --test tests/data-v3/*.test.js tests/ui-v3/*.test.js tests/map-v3/*.test.js tests/integration/*.test.js tests/e2e/*.test.js",
-    "test:data": "node --test tests/data-v3/*.test.js",
-    "test:ui": "node --test tests/ui-v3/*.test.js",
-    "test:map": "node --test tests/map-v3/*.test.js",
+    "test": "node --test tests/data-v4/*.test.js tests/ui-v4/*.test.js tests/map-v4/*.test.js tests/integration/*.test.js tests/e2e/*.test.js",
+    "test:data": "node --test tests/data-v4/*.test.js",
+    "test:ui": "node --test tests/ui-v4/*.test.js",
+    "test:map": "node --test tests/map-v4/*.test.js",
     "test:integration": "node --test tests/integration/*.test.js",
     "test:e2e": "node --test tests/e2e/*.test.js",
-    "check:syntax": "node --check data/v3/atlas-data.js && node --check data/v3/queries.js && node --check ui/v3/cards.js && node --check ui/v3/card-reader.js && node --check assets/natural-earth/base.js && node --check map/v3/map-renderer.js && node --check app.js",
-    "check:pages": "node --test tests/integration/pages.test.js"
+    "check:syntax": "node --check data/mesopotamia.js && node --check data/ancient-egypt.js && node --check data/ancient-india.js && node --check data/ancient-china.js && node --check data/late-bronze-age.js && node --check data/aegean.js && node --check data/iron-age-near-east.js && node --check data/atlas-data.js && node --check data/queries.js && node --check scripts/report-atlas-counts.js && node --check ui/v4/cards.js && node --check ui/v4/card-reader.js && node --check assets/natural-earth/base.js && node --check map/v4/map-renderer.js && node --check app.js",
+    "check:pages": "node --test tests/integration/pages.test.js",
+    "report:counts": "node scripts/report-atlas-counts.js"
   },
   "engines": {
     "node": ">=20"
