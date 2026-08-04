@@ -3,66 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="以地图和时间轴探索地理、文明与思想如何共同塑造世界。">
-  <title>山河与文明 · 互动文明图谱</title>
+  <meta name="description" content="从一个故事出发，走进彼此相连的历史。一个人物、一座城市、一件器物或一部作品，都承载着具体的时代与生活。">
+  <meta name="theme-color" content="#f1ede3">
+  <title>文明漫游 · 连续阅读文明知识网络</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/v4/cards.css">
+  <link rel="stylesheet" href="styles/v4/map.css">
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true">山</div>
-        <div>
-          <h1>山河与文明</h1>
-          <p>为什么历史会在这个地方以这种方式展开？</p>
-        </div>
-      </div>
-      <nav class="site-nav" aria-label="主要导航">
-        <a href="#home" data-route-link="home">首页</a>
-        <a href="#map" data-route-link="map">地图</a>
-        <a href="#explorations" data-route-link="explorations">探索</a>
-      </nav>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-brand" href="#home" data-home-link aria-label="文明漫游首页">
+        <span class="site-brand__mark" aria-hidden="true">游</span>
+        <span>
+          <strong data-brand-name>文明漫游</strong>
+          <small data-brand-tagline>沿着关联漫游人类文明</small>
+        </span>
+      </a>
     </header>
 
-    <main class="layout">
-      <section class="map-column" aria-label="交互地图">
-        <nav id="story-tabs" class="story-tabs" aria-label="图集导航"></nav>
-        <section id="mobile-context-lead" class="mobile-context-lead" hidden aria-live="polite"></section>
-        <div class="map-frame">
-          <svg id="atlas-map" viewBox="0 0 1440 840" preserveAspectRatio="none" role="img" aria-label="可缩放拖动并切换底图的自然地理地图">
-            <g id="tile-layer" class="tile-layer"></g>
-            <g id="vector-layer" class="vector-layer"></g>
-            <g id="map-overlay" class="map-overlay"></g>
-          </svg>
-          <div id="map-ui-overlay" class="map-ui-overlay" aria-label="地图地点节点"></div>
-          <div id="world-map-tools" class="world-map-tools" hidden>
-            <div class="map-mode-switch" role="group" aria-label="选择地图底图">
-              <button type="button" data-world-style="satellite" aria-pressed="true">卫星</button>
-              <button type="button" data-world-style="vector" aria-pressed="false">地理简图</button>
-            </div>
-            <div id="map-view-actions" class="world-map-actions">
-              <button id="zoom-world-out" type="button" aria-label="缩小世界地图">−</button>
-              <output id="world-zoom-level" aria-live="polite">1×</output>
-              <button id="zoom-world-in" type="button" aria-label="放大世界地图">＋</button>
-              <button id="reset-world-map" type="button">重置</button>
-            </div>
-          </div>
-          <div id="map-caption" class="map-caption"></div>
-          <aside id="entity-preview-card" class="entity-preview-card" hidden aria-live="polite"></aside>
+    <main>
+      <section id="home-view" class="home-view" aria-labelledby="home-title">
+        <div class="home-hero">
+          <p class="home-hero__eyebrow">历史的线索</p>
+          <h1 id="home-title" tabindex="-1">从一个故事出发，走进彼此相连的历史。</h1>
+          <p class="home-hero__lead">一个人物、一座城市、一件器物或一部作品，都承载着具体的时代与生活。</p>
+          <nav class="home-primary-actions" aria-label="推荐阅读起点">
+            <a class="home-primary-action" href="#card/sumer-measuring-land-time/sumer-water-network"
+              data-home-primary-action data-start-card="sumer-measuring-land-time">从苏美尔开始 <span aria-hidden="true">→</span></a>
+            <a class="home-primary-action" href="#card/odyssey-name-and-home/odyssey-return-songs-become-poem"
+              data-start-card="odyssey-name-and-home">从《奥德赛》开始 <span aria-hidden="true">→</span></a>
+            <a class="home-primary-action" href="#card/egypt-pyramids-kingdom-at-work/egypt-pyramid-stone-grows"
+              data-start-card="egypt-pyramids-kingdom-at-work">从金字塔开始 <span aria-hidden="true">→</span></a>
+          </nav>
         </div>
-        <section id="entity-timeline" class="entity-timeline" hidden aria-label="实体时间轴"></section>
+        <div id="home-sections" data-home-sections></div>
       </section>
 
-      <article id="story-content" class="reading-column" aria-live="polite"></article>
+      <section id="card-view" class="card-view" hidden>
+        <div class="story-back-bar" data-story-back-bar hidden>
+          <button class="story-back" type="button" data-story-back>
+            <span aria-hidden="true">←</span>
+            <span class="story-back__desktop" data-story-back-desktop>返回上一个故事</span>
+            <span class="story-back__mobile" data-story-back-mobile>返回</span>
+          </button>
+          <p class="story-trail" data-story-trail hidden aria-label="漫游足迹"></p>
+        </div>
+        <div id="card-root" role="region" aria-label="当前历史故事"></div>
+      </section>
     </main>
   </div>
+
+  <noscript>此原型需要 JavaScript 来激活连续阅读、可选地图和故事导航。</noscript>
+
   <script src="data/world-physical.js"></script>
-  <script src="data/region-hydro.js"></script>
-  <script src="data/content.js"></script>
-  <script src="data/knowledge.js"></script>
-  <script src="data/curation.js"></script>
-  <script src="data/entity-network.js"></script>
-  <script src="data/entity-queries.js"></script>
+  <script src="data/mesopotamia.js"></script>
+  <script src="data/ancient-egypt.js"></script>
+  <script src="data/ancient-india.js"></script>
+  <script src="data/ancient-china.js"></script>
+  <script src="data/late-bronze-age.js"></script>
+  <script src="data/aegean.js"></script>
+  <script src="data/iron-age-near-east.js"></script>
+  <script src="data/atlas-data.js"></script>
+  <script src="data/queries.js"></script>
+  <script src="ui/v4/cards.js"></script>
+  <script src="ui/v4/card-reader.js"></script>
+  <script src="assets/natural-earth/base.js"></script>
+  <script src="map/v4/map-renderer.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

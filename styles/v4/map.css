@@ -1,0 +1,280 @@
+.v4-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 52% 44%, rgba(255, 255, 255, 0.36), transparent 46%),
+    #dfe1d6;
+  color: #34382f;
+  user-select: none;
+}
+
+.v4-map svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.v4-map__land {
+  fill: #c8cbbb;
+  stroke: rgba(73, 81, 68, 0.34);
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.v4-map__lakes path {
+  fill: #d9e1dd;
+  stroke: rgba(81, 105, 107, 0.26);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.v4-map__rivers path {
+  fill: none;
+  stroke: rgba(78, 109, 114, 0.34);
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+
+.v4-map__historical,
+.v4-map__nodes,
+.v4-map__legend {
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+
+.v4-map__historical.is-overlay-leaving,
+.v4-map__historical.is-overlay-entering,
+.v4-map__nodes.is-overlay-leaving,
+.v4-map__nodes.is-overlay-entering,
+.v4-map__legend.is-overlay-leaving,
+.v4-map__legend.is-overlay-entering {
+  opacity: 0;
+}
+
+.v4-map__geometry {
+  fill: rgba(153, 102, 68, 0.2);
+  stroke: rgba(116, 72, 50, 0.82);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.v4-map__geometry--multilinestring,
+.v4-map__geometry--linestring {
+  fill: none;
+  stroke-width: 3;
+  stroke-dasharray: 7 6;
+}
+
+.v4-map__geometry--multipoint,
+.v4-map__geometry--point {
+  fill: #9b6448;
+  stroke: #f5eee3;
+  stroke-width: 1.5;
+}
+
+.v4-map__geometry.is-approximate {
+  stroke-dasharray: 8 6;
+}
+
+.v4-map.is-lineage .v4-map__geometry {
+  fill: none;
+  stroke: #5c6e69;
+}
+
+.v4-map.is-composition .v4-map__geometry {
+  fill: rgba(113, 124, 92, 0.24);
+  stroke: #67745b;
+  stroke-dasharray: none;
+}
+
+.v4-map.is-context .v4-map__geometry:nth-child(3n + 1) {
+  fill: rgba(155, 100, 72, 0.2);
+  stroke: #8f5c45;
+}
+
+.v4-map.is-context .v4-map__geometry:nth-child(3n + 2) {
+  fill: rgba(77, 107, 112, 0.18);
+  stroke: #536f73;
+}
+
+.v4-map.is-historicalNetwork .v4-map__geometry--multilinestring,
+.v4-map.is-historicalNetwork .v4-map__geometry--linestring {
+  marker-end: url("#v4-map-arrow");
+  stroke: #8c5943;
+  stroke-dasharray: 4 5;
+}
+
+.v4-map marker path {
+  fill: #8c5943;
+}
+
+.v4-map__nodes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.v4-map__node {
+  position: absolute;
+  top: var(--node-top);
+  left: var(--node-left);
+  display: grid;
+  gap: 0.08rem;
+  max-width: 170px;
+  padding: 0.48rem 0.62rem;
+  border: 1px solid rgba(47, 52, 44, 0.2);
+  border-radius: 2px;
+  background: rgba(246, 242, 232, 0.9);
+  color: #34382f;
+  font: inherit;
+  line-height: 1.25;
+  text-align: left;
+  transform: translate(-8%, -50%);
+  box-shadow: 0 3px 12px rgba(52, 56, 47, 0.09);
+}
+
+.v4-map__node.is-geographic {
+  border-color: rgba(83, 111, 115, 0.62);
+}
+
+button.v4-map__node {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+button.v4-map__node:hover,
+button.v4-map__node:focus-visible {
+  border-color: #8c5943;
+  outline: 3px solid rgba(140, 89, 67, 0.22);
+  outline-offset: 2px;
+}
+
+.v4-map__node span {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.v4-map__node.is-context {
+  opacity: 0.68;
+}
+
+.v4-map__node.is-noninteractive {
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.v4-map__legend {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  max-width: min(230px, 42%);
+  gap: 0.45rem;
+  pointer-events: none;
+}
+
+.v4-map__legend-item {
+  display: grid;
+  padding: 0.55rem 0.65rem;
+  border-left: 3px solid #8c5943;
+  background: rgba(246, 242, 232, 0.82);
+  font-size: 0.7rem;
+}
+
+.v4-map__legend-item small {
+  color: rgba(52, 56, 47, 0.62);
+}
+
+.v4-map__legend-item--lineage {
+  border-color: #5c6e69;
+}
+
+.v4-map__legend-item--composition {
+  border-color: #67745b;
+}
+
+.v4-map__legend-item--context {
+  border-color: #536f73;
+}
+
+.v4-map__approximation {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.8rem;
+  margin: 0;
+  padding: 0.3rem 0.45rem;
+  background: rgba(223, 225, 214, 0.8);
+  color: rgba(52, 56, 47, 0.66);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+@media (max-width: 780px) {
+  .v4-map__legend {
+    max-width: 55%;
+  }
+
+  .v4-map__node {
+    max-width: 145px;
+  }
+
+  .v4-map__rivers path {
+    stroke-width: 1.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v4-map__camera,
+  .v4-map__historical,
+  .v4-map__nodes,
+  .v4-map__legend {
+    transition: none !important;
+  }
+}
+
+/* Keep map overlay data and renderer output available, but remove card-like map UI. */
+.v4-map__nodes,
+.v4-map__legend,
+.v4-map__approximation {
+  display: none;
+}
+
+/* Geographic labels are plain map labels, not the hidden card-like overlays. */
+.v4-map.has-geographic-labels .v4-map__nodes {
+  display: block;
+}
+
+.v4-map.has-geographic-labels .v4-map__node.is-context.is-geographic {
+  max-width: none;
+  padding: 0.2rem 0.38rem;
+  border: 0;
+  background: rgba(246, 242, 232, 0.88);
+  box-shadow: none;
+  opacity: 0.94;
+  text-align: center;
+  white-space: nowrap;
+  transform: translate(-50%, -145%);
+}
+
+.v4-map.has-geographic-labels .v4-map__node.is-context.is-geographic span {
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+.v4-map.has-geographic-labels .v4-map__node.is-context.is-geographic.is-placement-left {
+  transform: translate(-108%, -50%);
+}
+
+.v4-map.has-geographic-labels .v4-map__node.is-context.is-geographic.is-placement-right {
+  transform: translate(8%, -50%);
+}
+
+.v4-map.has-geographic-labels .v4-map__node.is-context.is-geographic.is-placement-below {
+  transform: translate(-50%, 45%);
+}

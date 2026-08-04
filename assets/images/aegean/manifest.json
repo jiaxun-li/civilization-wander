@@ -1,0 +1,804 @@
+{
+  "manifestVersion": 2,
+  "module": "aegean",
+  "assets": [
+    {
+      "assetId": "asset-aegean-knossos-central-court",
+      "file": "assets/images/aegean/crete-knossos-central-court.webp",
+      "origin": "unclassified",
+      "creator": "C messier",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Knossos_Central_Court_Panoramic.JPG",
+      "sourceIds": [
+        "source-wikimedia-knossos-central-court"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 507,
+      "encodedWidth": 1920,
+      "encodedHeight": 507,
+      "byteSize": 190998,
+      "format": "webp",
+      "sha256": "4a57136b43a47fcd25f1faf842bf2a540f059ae95d2dcf963e3bc15a68ed5bff",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-linear-a-tablets",
+      "file": "assets/images/aegean/crete-linear-a-tablets.webp",
+      "origin": "unclassified",
+      "creator": "Portum",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Linear_A_tablets.jpg",
+      "sourceIds": [
+        "source-wikimedia-linear-a-akrotiri"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 859,
+      "encodedWidth": 1280,
+      "encodedHeight": 859,
+      "byteSize": 106996,
+      "format": "webp",
+      "sha256": "aa81e9282cafa899f9efbe16997ef69fcdd1d1ea56b850b7150778c3e63f88be",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-akrotiri-flotilla",
+      "file": "assets/images/aegean/crete-akrotiri-flotilla.webp",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minoan_fresco,_showing_a_fleet_and_settlement_Akrotiri.jpg",
+      "sourceIds": [
+        "source-wikimedia-akrotiri-flotilla"
+      ],
+      "originalWidth": 640,
+      "originalHeight": 432,
+      "encodedWidth": 640,
+      "encodedHeight": 432,
+      "byteSize": 125282,
+      "format": "webp",
+      "sha256": "cccec24a70942bbd967c9d499855bac6839755b1223db107ce085affbe52e262",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-knossos-linear-b",
+      "file": "assets/images/aegean/crete-knossos-linear-b.webp",
+      "origin": "unclassified",
+      "creator": "vintagedept",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clay_Tablet_inscribed_with_Linear_B_script.jpg",
+      "sourceIds": [
+        "source-wikimedia-knossos-linear-b"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 785,
+      "encodedWidth": 1920,
+      "encodedHeight": 785,
+      "byteSize": 478160,
+      "format": "webp",
+      "sha256": "b4109e352e37135b451594d2d722dff98ec1a2ec255e1798a8b958ac6da4df14",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-crete-postpalatial-krater",
+      "file": "assets/images/aegean/crete-postpalatial-krater.webp",
+      "origin": "unclassified",
+      "creator": "ArchaiOptix",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:LM_IIIC_dark_on_light_ware_krater_from_Mouliana_-_Herakleion_AM_-_01.jpg",
+      "sourceIds": [
+        "source-wikimedia-mouliana-krater"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1510,
+      "encodedWidth": 1920,
+      "encodedHeight": 1510,
+      "byteSize": 482688,
+      "format": "webp",
+      "sha256": "e2cf420ced7c0ff8f1319f23181ca1c77f90ab1019e10ab232b08d9ef964a32f",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-mycenae-gold-mask",
+      "file": "assets/images/aegean/mycenae-grave-circle-mask.webp",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold_death-mask_known_as_%E2%80%98Mask_of_Agamemnon,%E2%80%99_Mycenae,_Grave_Circle_A,_Grave_V,_16th_cent._BC._%2828423089016%29.jpg",
+      "sourceIds": [
+        "source-wikimedia-mycenae-gold-mask"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1280,
+      "encodedWidth": 1920,
+      "encodedHeight": 1280,
+      "byteSize": 323600,
+      "format": "webp",
+      "sha256": "66fe327fc4a0edcb429defb338ea8636ed34e4ece324ca7dc763d7f2a024f85a",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-mycenae-athena-tablet",
+      "file": "assets/images/aegean/mycenae-athena-linear-b.webp",
+      "origin": "unclassified",
+      "creator": "Zde",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Linear_B_tablet,_AM_of_Mycenae,_201725.jpg",
+      "sourceIds": [
+        "source-wikimedia-mycenae-athena-tablet"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1277,
+      "encodedWidth": 1920,
+      "encodedHeight": 1277,
+      "byteSize": 308888,
+      "format": "webp",
+      "sha256": "b05ae8f9b0d57b95a6296aa48abd87052cc97d5278c2219c8dd077ada8a60c10",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-mycenae-warrior-krater",
+      "file": "assets/images/aegean/mycenae-warrior-krater.webp",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mycenaean_Ceramic_Krater_depicting_Warriors_departing_for_battle,_from_Mycenae_Acropolis,_c._1200_BC.jpg",
+      "sourceIds": [
+        "source-wikimedia-mycenae-warrior-krater"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1280,
+      "encodedWidth": 1920,
+      "encodedHeight": 1280,
+      "byteSize": 224932,
+      "format": "webp",
+      "sha256": "54784b99e42d7182ef20ecad6458ddad5b597693f378aad20c61e4a7f5d02d89",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-protogeometric-amphora",
+      "file": "assets/images/aegean/dark-age-protogeometric-amphora.webp",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ancient_Greek_Protogeometric_Pottery_Amphora_%2827856941833%29.jpg",
+      "sourceIds": [
+        "source-wikimedia-protogeometric-amphora"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2880,
+      "encodedWidth": 1707,
+      "encodedHeight": 2560,
+      "byteSize": 350624,
+      "format": "webp",
+      "sha256": "bbba3ef6177a69fbbf25771fd35b938ae9f4b982e28c7593d9458b9c9cad988c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-naxos-geometric-pottery",
+      "file": "assets/images/aegean/dark-age-naxos-geometric-pottery.webp",
+      "origin": "unclassified",
+      "creator": "Zde",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Geometric_pottery,_830-800_BC,_AM_Naxos,_143284.jpg",
+      "sourceIds": [
+        "source-wikimedia-naxos-geometric-pottery"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1280,
+      "encodedWidth": 1920,
+      "encodedHeight": 1280,
+      "byteSize": 483722,
+      "format": "webp",
+      "sha256": "e01ebc7c172ef83e34c1d55edecc3bdf9111a816a94cb665aad7ce150b244976",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-gods-rhea-cronus",
+      "file": "assets/images/aegean/gods-rhea-cronus.webp",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhea_presenting_Cronus_the_stone_wrapped_in_cloth.jpg",
+      "sourceIds": [
+        "source-wikimedia-rhea-cronus"
+      ],
+      "originalWidth": 900,
+      "originalHeight": 884,
+      "encodedWidth": 900,
+      "encodedHeight": 884,
+      "byteSize": 134906,
+      "format": "webp",
+      "sha256": "da68657659f1160e4eac18cd8a2ac80dea28b29f184716587916aaf4661911d2",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-gods-three-realms",
+      "file": "assets/images/aegean/gods-three-realms.webp",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art / Wikimedia Commons",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jupiter,_Neptune_and_Pluto_dividing_the_universe_MET_DP812462.jpg",
+      "sourceIds": [
+        "source-wikimedia-three-realms"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1430,
+      "encodedWidth": 1800,
+      "encodedHeight": 1341,
+      "byteSize": 488506,
+      "format": "webp",
+      "sha256": "d3135673efed297687aa0940aa1b3460d8ffc22e27d9c21cec902b15493c50c4",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-gods-council-met",
+      "file": "assets/images/aegean/gods-council-met.webp",
+      "origin": "unclassified",
+      "creator": "Jacopo Zoboli",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Council_of_the_Gods_MET_DP331998.jpg",
+      "sourceIds": [
+        "source-wikimedia-council-gods-met"
+      ],
+      "originalWidth": 3840,
+      "originalHeight": 1447,
+      "encodedWidth": 2560,
+      "encodedHeight": 965,
+      "byteSize": 439736,
+      "format": "webp",
+      "sha256": "c7414ad9f919044135fe086afc73c20cfed96c6f4becea09427d44125caca5fd",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-gods-zeus-libation",
+      "file": "assets/images/aegean/gods-zeus-libation.webp",
+      "origin": "unclassified",
+      "creator": "Tangopaso",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zeus_et_Iris_dans_une_sc%C3%A8ne_de_libation_(Louvre,_Cp_699).jpg",
+      "sourceIds": [
+        "source-wikimedia-zeus-iris-libation"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2560,
+      "encodedWidth": 1920,
+      "encodedHeight": 2560,
+      "byteSize": 346566,
+      "format": "webp",
+      "sha256": "8d0832de578f779ecbb5d2b3e51be81748aa091f5e0da1599d73f433f46f0aef",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-gods-demeter-persephone",
+      "file": "assets/images/aegean/gods-demeter-persephone.webp",
+      "origin": "unclassified",
+      "creator": "John Dickson Batten",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Demeter_and_Persephone).jpg",
+      "sourceIds": [
+        "source-wikimedia-demeter-persephone-batten"
+      ],
+      "originalWidth": 1441,
+      "originalHeight": 2000,
+      "encodedWidth": 1441,
+      "encodedHeight": 2000,
+      "byteSize": 488930,
+      "format": "webp",
+      "sha256": "33af806ae935fc48275817ac6422c2b9539cfca994e4728e8f6ada5dcd450df4",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-gods-athena-achilles",
+      "file": "assets/images/aegean/gods-athena-achilles.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Athene_suppressing_the_fury_of_Achilles.jpg",
+      "sourceIds": [
+        "source-wikimedia-athena-achilles-illustration"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1014,
+      "encodedWidth": 1600,
+      "encodedHeight": 1014,
+      "byteSize": 262980,
+      "format": "webp",
+      "sha256": "e2ab7e9d96857be66af9ff80d5be56998381be587c6d9ec6f9264c0e28f779c4",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-mycenae-lion-gate-clear",
+      "file": "assets/images/aegean/heroes-mycenae-lion-gate-clear.webp",
+      "origin": "unclassified",
+      "creator": "Zde",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lion_Gate,_Mycenae,_201505.jpg",
+      "sourceIds": [
+        "source-wikimedia-mycenae-lion-gate-clear"
+      ],
+      "originalWidth": 3840,
+      "originalHeight": 2555,
+      "encodedWidth": 2200,
+      "encodedHeight": 1464,
+      "byteSize": 491172,
+      "format": "webp",
+      "sha256": "f7bbfd83fb8f968e95d4e7d20ca102a77449bad52885e624950f4800a28b3a2e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-demodocus",
+      "file": "assets/images/aegean/heroes-demodocus.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseyDemodokos.png",
+      "sourceIds": [
+        "source-wikimedia-demodocus-flaxman"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1211,
+      "encodedWidth": 1920,
+      "encodedHeight": 1211,
+      "byteSize": 342310,
+      "format": "webp",
+      "sha256": "ed4703dab151ce6737d7da31fffb9fe8e2b696a4e0318dcc32052e180faa52b8",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-achilles-thetis",
+      "file": "assets/images/aegean/heroes-achilles-thetis.webp",
+      "origin": "unclassified",
+      "creator": "Friedrich Preller the Younger",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Preller_Achilles_and_Thetis.jpg",
+      "sourceIds": [
+        "source-wikimedia-achilles-thetis-preller"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2560,
+      "encodedWidth": 1350,
+      "encodedHeight": 1800,
+      "byteSize": 491350,
+      "format": "webp",
+      "sha256": "f629a3a32d2ae604f93b078668ab42a4810630e55820e8f0c9e786e47de5d393",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-heracles-lion",
+      "file": "assets/images/aegean/heroes-heracles-lion.webp",
+      "origin": "unclassified",
+      "creator": "Jastrow",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herakles_Nemean_lion_BM_B621.jpg",
+      "sourceIds": [
+        "source-wikimedia-heracles-lion-bm"
+      ],
+      "originalWidth": 1400,
+      "originalHeight": 2120,
+      "encodedWidth": 1400,
+      "encodedHeight": 2120,
+      "byteSize": 224158,
+      "format": "webp",
+      "sha256": "5af6b3ef90fe19e81af4aba098efa6d16dc79d56892592539afa64f88a992a7c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-argonauts-leaving-colchis",
+      "file": "assets/images/aegean/heroes-argonauts-leaving-colchis.webp",
+      "origin": "unclassified",
+      "creator": "Ercole de’ Roberti",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roberti_-_The_Argonauts_Leaving_Colchis,_ca._1480,_344_(1934.41).jpg",
+      "sourceIds": [
+        "source-wikimedia-argonauts-roberti"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2529,
+      "encodedWidth": 1670,
+      "encodedHeight": 2200,
+      "byteSize": 490124,
+      "format": "webp",
+      "sha256": "fa611df38e64d574ea1be309ada88dceacf1be2114978c714454140af6328922",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-oedipus-sphinx",
+      "file": "assets/images/aegean/heroes-oedipus-sphinx.webp",
+      "origin": "unclassified",
+      "creator": "Gustave Moreau",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oedipus_and_the_Sphinx_1864.jpg",
+      "sourceIds": [
+        "source-wikimedia-oedipus-sphinx-moreau"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 3763,
+      "encodedWidth": 1122,
+      "encodedHeight": 2200,
+      "byteSize": 484480,
+      "format": "webp",
+      "sha256": "057d94a9a738881c08b16eaeb1dda878fbbad86b57a8a975bc5ef5640a49f4bd",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-achilles-hector",
+      "file": "assets/images/aegean/heroes-achilles-hector.webp",
+      "origin": "unclassified",
+      "creator": "Léonce Legendre",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Achilles_doodt_Hector,_circa_1831_-_circa_1893,_Groeningemuseum,_0041065000.jpg",
+      "sourceIds": [
+        "source-wikimedia-achilles-hector-groeninge"
+      ],
+      "originalWidth": 823,
+      "originalHeight": 639,
+      "encodedWidth": 823,
+      "encodedHeight": 639,
+      "byteSize": 103456,
+      "format": "webp",
+      "sha256": "5b53994af03fd65e11b96b8629fd6ab5676b41c305d70555499da5d59607b78c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-heroes-odysseus-return",
+      "file": "assets/images/aegean/heroes-odysseus-return.webp",
+      "origin": "unclassified",
+      "creator": "Pinturicchio",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pinturicchio,_Return_of_Odysseus.jpg",
+      "sourceIds": [
+        "source-wikimedia-odysseus-return-pinturicchio"
+      ],
+      "originalWidth": 877,
+      "originalHeight": 740,
+      "encodedWidth": 877,
+      "encodedHeight": 740,
+      "byteSize": 193966,
+      "format": "webp",
+      "sha256": "d0780c22d1eca389346e7022231127da532bf70e1fa0b5951da688f5f03b748d",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-troy-vi-walls",
+      "file": "assets/images/aegean/troy-vi-walls.webp",
+      "origin": "unclassified",
+      "creator": "Jorge Láscar",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Legendary_walls_of_Troy_(8708672267).jpg",
+      "sourceIds": [
+        "source-wikimedia-troy-vi-walls"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1063,
+      "encodedWidth": 1600,
+      "encodedHeight": 1063,
+      "byteSize": 268666,
+      "format": "webp",
+      "sha256": "e0123432881fc6df74f058b242695c02409573d89ad69a955e22d6bdc20fb3dc",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-troy-wilusa-treaty",
+      "file": "assets/images/aegean/troy-wilusa-treaty.webp",
+      "origin": "unclassified",
+      "creator": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Troy_Museum_Hittite_Treaty_0022.jpg",
+      "sourceIds": [
+        "source-wikimedia-troy-wilusa-treaty"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 2190,
+      "encodedWidth": 1600,
+      "encodedHeight": 2190,
+      "byteSize": 478132,
+      "format": "webp",
+      "sha256": "f349cf7f7f6060fe1c89a919ad4f47ac13cc111048348b9d6f9c1c9f3bcbe4fd",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-iliad-flaxman-title",
+      "file": "assets/images/aegean/iliad-flaxman-title.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli; photograph by H.-P. Haack",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(0)_Flaxman_Ilias_Kupferstiche_1795,_Titelblatt,_182_x_251_mm.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-title"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1191,
+      "encodedWidth": 1600,
+      "encodedHeight": 1191,
+      "byteSize": 125970,
+      "format": "webp",
+      "sha256": "214c46bee715cbcb15341b0235f58e865a2f3beba6b1a247da43f4c581ee3aa2",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-iliad-thetis-zeus",
+      "file": "assets/images/aegean/iliad-thetis-zeus.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(2)_Flaxman_Ilias_1793,_gestochen_1795,_185_x_251_mm.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-thetis-zeus"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1192,
+      "encodedWidth": 1600,
+      "encodedHeight": 1192,
+      "byteSize": 324000,
+      "format": "webp",
+      "sha256": "5fab0e216a1f1a8e603880153999c7d52e6efe7d22887c96d91bb0717199732e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-iliad-embassy-achilles",
+      "file": "assets/images/aegean/iliad-embassy-achilles.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(14)_Flaxman_Ilias_1795,_Zeichnung_1793,_185_x_296_mm.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-embassy"
+      ],
+      "originalWidth": 800,
+      "originalHeight": 501,
+      "encodedWidth": 800,
+      "encodedHeight": 501,
+      "byteSize": 86594,
+      "format": "webp",
+      "sha256": "485212fdfd523dab819107ed109d4362245e90c50ad570365ed8aabb733dc64a",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-iliad-patroclus-body",
+      "file": "assets/images/aegean/iliad-patroclus-body.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(22)_Flaxman_Ilias_1795,_Zeichnung_1793,_188_x_344_mm.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-patroclus"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 915,
+      "encodedWidth": 1600,
+      "encodedHeight": 915,
+      "byteSize": 236256,
+      "format": "webp",
+      "sha256": "4e3ec6114bf75620bba625526dcee2ef644da8bf94c306ab881aef853a93cc6e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-iliad-new-armor",
+      "file": "assets/images/aegean/iliad-new-armor.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(27)_Flaxman_Ilias_1795,_Zeichnung_1793,_189_x_284_mm.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-armor"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1099,
+      "encodedWidth": 1600,
+      "encodedHeight": 1099,
+      "byteSize": 180436,
+      "format": "webp",
+      "sha256": "c5c6a26613ea3d2c0e9fa7462a41d7d3d27af6ffbb5bf4055f22cd5f49206c42",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-iliad-hector-body",
+      "file": "assets/images/aegean/iliad-hector-body.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(30)_Flaxman_Ilias_1793,_gestochen_1795,_187_x_256.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-hector"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1186,
+      "encodedWidth": 1600,
+      "encodedHeight": 1186,
+      "byteSize": 298730,
+      "format": "webp",
+      "sha256": "88018ecf14bf28866e5e144bcb1283fa499b2daa77e4f20457eae0c5374e4c3e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-iliad-priam-achilles",
+      "file": "assets/images/aegean/iliad-priam-achilles.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(33)_Flaxman_Ilias_1793,_gestochen_1795,_184_x_340_mm.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-priam"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 889,
+      "encodedWidth": 1600,
+      "encodedHeight": 889,
+      "byteSize": 246796,
+      "format": "webp",
+      "sha256": "7dcffcf3070bb5840fab892738ed676951471dcf419e935158c7c290a6ed3740",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-troy-hector-funeral",
+      "file": "assets/images/aegean/troy-hector-funeral.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman; engraving by Tommaso Piroli",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:(34)_Flaxman_Ilias_1793,_gestochen_1795,_184_x_346_mm.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-iliad-funeral"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 875,
+      "encodedWidth": 1600,
+      "encodedHeight": 875,
+      "byteSize": 218326,
+      "format": "webp",
+      "sha256": "a23edf321e152154c1cc0fb9ca62df4a48c8832c98c66a2e31a839a768ed5631",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-suitors",
+      "file": "assets/images/aegean/odyssey-suitors.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseySuitors.png",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-suitors"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1166,
+      "encodedWidth": 1600,
+      "encodedHeight": 1166,
+      "byteSize": 351442,
+      "format": "webp",
+      "sha256": "9bb0022bab6ff6bfe817272ebefd61c1cd353d00e8d9fd2034e00bd1081e5adc",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-calypso-release",
+      "file": "assets/images/aegean/odyssey-calypso-release.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseyHermes.png",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-hermes"
+      ],
+      "originalWidth": 1884,
+      "originalHeight": 1488,
+      "encodedWidth": 1884,
+      "encodedHeight": 1488,
+      "byteSize": 46662,
+      "format": "webp",
+      "sha256": "897d2ec7a79a8123ca77e4ff4dd20bda043766884f89f410286c684c7906d282",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-nausicaa",
+      "file": "assets/images/aegean/odyssey-nausicaa.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseyNausikaa.png",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-nausicaa"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1091,
+      "encodedWidth": 1600,
+      "encodedHeight": 1091,
+      "byteSize": 331182,
+      "format": "webp",
+      "sha256": "7513cc7eb2319907c78c4fce06d4cc80e708d09198645dfb41c6404e4ecbac02",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-polyphemus",
+      "file": "assets/images/aegean/odyssey-polyphemus.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseyPolyphemos.png",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-polyphemus"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1232,
+      "encodedWidth": 1600,
+      "encodedHeight": 1232,
+      "byteSize": 304078,
+      "format": "webp",
+      "sha256": "3c3f27fc9dbe0e4ab00d0ddd7e5eb913c2cadb0a33d2ae5bf379c0d4c4c13a6f",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-laestrygonians",
+      "file": "assets/images/aegean/odyssey-laestrygonians.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseyAntiphates.png",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-antiphates"
+      ],
+      "originalWidth": 2148,
+      "originalHeight": 1656,
+      "encodedWidth": 2148,
+      "encodedHeight": 1656,
+      "byteSize": 51882,
+      "format": "webp",
+      "sha256": "aa6bd17a8a27bc4df8b982846bf3ba95deb072e471d028c5647e8788c9853116",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-circe",
+      "file": "assets/images/aegean/odyssey-circe.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseyCirce.png",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-circe"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1035,
+      "encodedWidth": 1600,
+      "encodedHeight": 1035,
+      "byteSize": 238284,
+      "format": "webp",
+      "sha256": "26a99fa6dd61284d37e12550683772a0b4ff5ba597d67107b860217e853309e6",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-sirens",
+      "file": "assets/images/aegean/odyssey-sirens.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OdysseySirens.png",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-sirens"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1064,
+      "encodedWidth": 1600,
+      "encodedHeight": 1064,
+      "byteSize": 214140,
+      "format": "webp",
+      "sha256": "f446a0cf2d9f443c6bead282c0eaf864696cdfbe3706f3e1267fe7b31af4ceef",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-aegean-odyssey-argus",
+      "file": "assets/images/aegean/odyssey-argus.webp",
+      "origin": "unclassified",
+      "creator": "John Flaxman",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flaxman_Odyssey_Ulysses_and_his_dog.jpg",
+      "sourceIds": [
+        "source-wikimedia-flaxman-odyssey-argus"
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1200,
+      "encodedWidth": 1600,
+      "encodedHeight": 1200,
+      "byteSize": 83778,
+      "format": "webp",
+      "sha256": "879ba271ba664374e4924e13b4ba11f4030c6700047b7698e05147a4ccaa5825",
+      "reviewStatus": "needsMetadataAudit"
+    }
+  ]
+}

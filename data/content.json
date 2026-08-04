@@ -1,8 +1,0 @@
-{
-  "note": "The browser prototype loads plain JavaScript so it also works from file://. Legacy region stories remain in content.js; the extensible Entity/Relation/Story model is in knowledge.js.",
-  "schema_version": 2,
-  "content_sources": [
-    "data/content.js",
-    "data/knowledge.js"
-  ]
-}

@@ -1,0 +1,429 @@
+{
+  "manifestVersion": 2,
+  "module": "iron-age-near-east",
+  "assets": [
+    {
+      "assetId": "asset-iane-tutankhamun-dagger",
+      "file": "assets/images/iron-age-near-east/tutankhamun-meteorite-dagger.webp",
+      "origin": "unclassified",
+      "creator": "Olaf Tausch",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kairo_Museum_Eisendolch_Tutanchamun_01.jpg",
+      "sourceIds": [
+        "source-wikimedia-tutankhamun-dagger",
+        "source-matsui-tutankhamun-dagger"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 211,
+      "encodedWidth": 960,
+      "encodedHeight": 211,
+      "byteSize": 39346,
+      "format": "webp",
+      "sha256": "7bfe1a7e22485d567814f3f618b15328ffc923d2ba1f423b543e3ebb8b0d0448",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-iron-bloomery",
+      "file": "assets/images/iron-age-near-east/iron-bloomery-teaching.webp",
+      "origin": "aiGenerated",
+      "creator": "OpenAI image generation, directed and reviewed for Civilization Wander",
+      "license": "Project-generated AI output; no third-party image license",
+      "sourceUrl": "https://link.springer.com/article/10.1007/s10814-019-09129-6",
+      "sourceIds": [
+        "source-generated-iron-teaching",
+        "source-erb-satullo-iron-adoption"
+      ],
+      "originalWidth": 1536,
+      "originalHeight": 1024,
+      "encodedWidth": 1536,
+      "encodedHeight": 1024,
+      "byteSize": 366800,
+      "format": "webp",
+      "sha256": "3c7fe6f72ce7cf04f8c30aff5cda159471f85b798d0760efe1373c9470bedfb9",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-kbo-1-14",
+      "file": "assets/images/iron-age-near-east/kbo-1-14-iron-letter-facsimile.webp",
+      "origin": "historical",
+      "creator": "H. H. Figulla and E. F. Weidner",
+      "license": "Public domain",
+      "sourceUrl": "https://etana.org/sites/default/files/coretexts/14865.pdf",
+      "sourceIds": [
+        "source-kbo-1-14",
+        "source-cdli-kbo-1-14"
+      ],
+      "originalWidth": 1910,
+      "originalHeight": 2709,
+      "encodedWidth": 1551,
+      "encodedHeight": 2200,
+      "byteSize": 278492,
+      "format": "webp",
+      "sha256": "e717482eaf356140b417cd7393f78aab819d882364924c4416a681a90ff6f137",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-assyrian-trade-tablet",
+      "file": "assets/images/iron-age-near-east/assyrian-trade-tablet.webp",
+      "origin": "historical",
+      "creator": "Los Angeles County Museum of Art",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cuneiform_Tablet_from_an_Assyrian_Trading_Post_LACMA_M.84.31.6_(2_of_2).jpg",
+      "sourceIds": [
+        "source-wikimedia-assyrian-trade-tablet"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1606,
+      "encodedWidth": 1280,
+      "encodedHeight": 1606,
+      "byteSize": 297466,
+      "format": "webp",
+      "sha256": "a85a6e8a63e90259c937febf98b122b7dad62c5df879db1c78da14fbe7b94440",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-assyrian-siege",
+      "file": "assets/images/iron-age-near-east/assyrian-siege.webp",
+      "origin": "unclassified",
+      "creator": "ChrisO",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Assyrian_siege.jpg",
+      "sourceIds": [
+        "source-wikimedia-assyrian-siege"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1147,
+      "encodedWidth": 1280,
+      "encodedHeight": 1147,
+      "byteSize": 388292,
+      "format": "webp",
+      "sha256": "6f4e307b42d4e9341b5d8b8b404aaa99bc0cb1cd30a4ef5ed9f60e7ca12d195e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-ashurbanipal-library-tablet",
+      "file": "assets/images/iron-age-near-east/ashurbanipal-library-tablet.webp",
+      "origin": "unclassified",
+      "creator": "BabelStone",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:British_Museum_Flood_Tablet.jpg",
+      "sourceIds": [
+        "source-wikimedia-flood-tablet"
+      ],
+      "originalWidth": 1005,
+      "originalHeight": 1137,
+      "encodedWidth": 1005,
+      "encodedHeight": 1137,
+      "byteSize": 316092,
+      "format": "webp",
+      "sha256": "77886dea6bc789cef2be65133b86900295ecdecdf7fee3777fc5e96728ccebdb",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-lachish-captives",
+      "file": "assets/images/iron-age-near-east/judah-lachish-captives.webp",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lachishsiege1.PNG",
+      "sourceIds": [
+        "source-wikimedia-lachish-captives"
+      ],
+      "originalWidth": 612,
+      "originalHeight": 408,
+      "encodedWidth": 612,
+      "encodedHeight": 408,
+      "byteSize": 195392,
+      "format": "webp",
+      "sha256": "258cfdc1bcf4ef438d84315ee055fb8c271fd709307d2b66b5c3834a4ed22698",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-jacob-wrestling",
+      "file": "assets/images/iron-age-near-east/israel-jacob-wrestling.webp",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art / Wikimedia Commons",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacob_wrestling_the_angel_Met_DP885515.jpg",
+      "sourceIds": [
+        "source-wikimedia-jacob-wrestling"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1779,
+      "encodedWidth": 1151,
+      "encodedHeight": 1600,
+      "byteSize": 492316,
+      "format": "webp",
+      "sha256": "df2eacaaac9b709357ec9f50caedccd807f46ad7ab47f83f37bec6a3e5539165",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-israel-judah-map",
+      "file": "assets/images/iron-age-near-east/israel-judah-kingdoms-map.webp",
+      "origin": "unclassified",
+      "creator": "FinnWikiNo and Richardprins",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kingdoms_of_Israel_and_Judah_map_830.svg",
+      "sourceIds": [
+        "source-wikimedia-israel-judah-map"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1528,
+      "encodedWidth": 1280,
+      "encodedHeight": 1528,
+      "byteSize": 133570,
+      "format": "webp",
+      "sha256": "3796658d645b70940535b23049c7894c39e009c6a07016dc883fdffe02cb29d5",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-babylonian-chronicle",
+      "file": "assets/images/iron-age-near-east/judah-babylonian-chronicle.webp",
+      "origin": "unclassified",
+      "creator": "Jona Lendering",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:ABC_05_Early_Years_of_Nebuchadnezzar_chronicle.jpg",
+      "sourceIds": [
+        "source-wikimedia-babylonian-chronicle"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1566,
+      "encodedWidth": 1200,
+      "encodedHeight": 1566,
+      "byteSize": 187344,
+      "format": "webp",
+      "sha256": "f5410be7e1c2183b739babd92bc276e21ce536bceb4a0d5827bd60a12360cd73",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-phoenician-bronze-bowl",
+      "file": "assets/images/iron-age-near-east/phoenician-bronze-bowl.webp",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art / Wikimedia Commons",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bronze_bowl_MET_DP20119.jpg",
+      "sourceIds": [
+        "source-wikimedia-phoenician-bronze-bowl"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1819,
+      "encodedWidth": 1920,
+      "encodedHeight": 1819,
+      "byteSize": 284000,
+      "format": "webp",
+      "sha256": "5d37071cd338f4f12c28e13c78341e6147c6a1fe8debe86d5d4ebc7611aa9114",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-phoenician-tribute-gate",
+      "file": "assets/images/iron-age-near-east/phoenician-tribute-balawat.webp",
+      "origin": "historical",
+      "creator": "Anonymous; Walters Art Museum",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Assyrian_-_Fragments_of_Bands_from_a_Gate_-_Walters_542335_-_View_A.jpg",
+      "sourceIds": [
+        "source-wikimedia-phoenician-tribute-gate"
+      ],
+      "originalWidth": 1800,
+      "originalHeight": 1251,
+      "encodedWidth": 1800,
+      "encodedHeight": 1251,
+      "byteSize": 490100,
+      "format": "webp",
+      "sha256": "4888f3a7f43ab68c33d00e4d6dd9f564d6a230212c491ee352cd1009c8286ea7",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-carthage-punic-ports",
+      "file": "assets/images/iron-age-near-east/carthage-punic-ports.webp",
+      "origin": "unclassified",
+      "creator": "Citizen59",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:PortsPuniquesCarthage.JPG",
+      "sourceIds": [
+        "source-wikimedia-carthage-punic-ports"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1440,
+      "encodedWidth": 1800,
+      "encodedHeight": 1350,
+      "byteSize": 492536,
+      "format": "webp",
+      "sha256": "6e9a4a71eb911f0b3c36d284f8a53b8f4b9f6f8cac429b207335451f1f411c81",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-jehoiachin-ration-tablet",
+      "file": "assets/images/iron-age-near-east/jehoiachin-ration-tablet.webp",
+      "origin": "unclassified",
+      "creator": "Scallaham",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jehoiachin_Ration_Tablet.JPG",
+      "sourceIds": [
+        "source-wikimedia-jehoiachin-ration-tablet"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 942,
+      "encodedWidth": 1280,
+      "encodedHeight": 942,
+      "byteSize": 70788,
+      "format": "webp",
+      "sha256": "f629c21f4d6a4d7eb90fbcdb0e33adcbec4626f191bd47c36cf9a616e5e1e738",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-bar-rakib-stele",
+      "file": "assets/images/iron-age-near-east/aramaic-bar-rakib-stele.webp",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basalt_Stele_Bas-Relief_of_King_Bar-Rakib_and_His_Scribe,_Sam%27al,_Anatolia,_c._730_BC.jpg",
+      "sourceIds": [
+        "source-wikimedia-bar-rakib"
+      ],
+      "originalWidth": 5184,
+      "originalHeight": 3456,
+      "encodedWidth": 2560,
+      "encodedHeight": 1707,
+      "byteSize": 323404,
+      "format": "webp",
+      "sha256": "e57e22194ab51e5732ef2ea354d265f9d17ea61c1dc6cd05406585c7b545c268",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-assyrian-scribes",
+      "file": "assets/images/iron-age-near-east/aramaic-assyrian-scribes.webp",
+      "origin": "historical",
+      "creator": "Unknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Assyrian_scribes.jpg",
+      "sourceIds": [
+        "source-wikimedia-assyrian-scribes",
+        "source-oracc-aramaic-hebrew"
+      ],
+      "originalWidth": 1073,
+      "originalHeight": 1468,
+      "encodedWidth": 1073,
+      "encodedHeight": 1468,
+      "byteSize": 487676,
+      "format": "webp",
+      "sha256": "d8156f7b23f852b2abdcd54d3d4d44fd2119fc4b6b281cce0f656c6d243af1be",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-esarhaddon-prism",
+      "file": "assets/images/iron-age-near-east/babylon-esarhaddon-prism.webp",
+      "origin": "historical",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/321907",
+      "sourceIds": [
+        "source-met-esarhaddon-prism"
+      ],
+      "originalWidth": 599,
+      "originalHeight": 556,
+      "encodedWidth": 599,
+      "encodedHeight": 556,
+      "byteSize": 49442,
+      "format": "webp",
+      "sha256": "eeae6a10626a4a99eee062d8b3624ae6486b036c1d6e21ee39317e4e22010a19",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-babylon-lion",
+      "file": "assets/images/iron-age-near-east/babylon-striding-lion.webp",
+      "origin": "historical",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/322585",
+      "sourceIds": [
+        "source-met-babylon-lion"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 260,
+      "encodedWidth": 600,
+      "encodedHeight": 260,
+      "byteSize": 70236,
+      "format": "webp",
+      "sha256": "3f4a0c661ec2a433e755912b1af515e13d5ccfef93ab344e0d583372079af934",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-nebuchadnezzar-cylinder",
+      "file": "assets/images/iron-age-near-east/babylon-nebuchadnezzar-cylinder.webp",
+      "origin": "historical",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/321614",
+      "sourceIds": [
+        "source-met-nebuchadnezzar-cylinder"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 466,
+      "encodedWidth": 600,
+      "encodedHeight": 466,
+      "byteSize": 31730,
+      "format": "webp",
+      "sha256": "c757a8fb3c52fa860da1683cfdcae338cfea2a62c4bc42221c0e22e34713a0ae",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-iane-cyrus-cylinder",
+      "file": "assets/images/iron-age-near-east/babylon-cyrus-cylinder.webp",
+      "origin": "unclassified",
+      "creator": "Marco Prins",
+      "license": "CC0",
+      "sourceUrl": "https://www.livius.org/pictures/a/tablets/cyrus-cylinder/",
+      "sourceIds": [
+        "source-livius-cyrus-cylinder",
+        "source-bm-cyrus-cylinder"
+      ],
+      "originalWidth": 800,
+      "originalHeight": 412,
+      "encodedWidth": 800,
+      "encodedHeight": 412,
+      "byteSize": 93894,
+      "format": "webp",
+      "sha256": "7c2eb9f66f653b71be193897ac06e4f43c504674123afa2597bb01a883623932",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-lydian-electrum-lions",
+      "file": "assets/images/iron-age-near-east/lydia-electrum-lion-coins.webp",
+      "origin": "unclassified",
+      "creator": "brewbooks",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lydian_electrum_Lion_coins_-_Flickr_-_brewbooks.jpg",
+      "sourceIds": [
+        "source-wikimedia-lydian-electrum-lions"
+      ],
+      "originalWidth": 1241,
+      "originalHeight": 1135,
+      "encodedWidth": 1241,
+      "encodedHeight": 1135,
+      "byteSize": 440946,
+      "format": "webp",
+      "sha256": "8e296f167d781cc3d3f23e14ea699b1b565ecd39a8f5968c1e0ca3dd2453dbe8",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-iane-croesus-gold-stater",
+      "file": "assets/images/iron-age-near-east/lydia-croesus-gold-stater.webp",
+      "origin": "historical",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/252456",
+      "sourceIds": [
+        "source-met-croesus-stater"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 450,
+      "encodedWidth": 600,
+      "encodedHeight": 450,
+      "byteSize": 18156,
+      "format": "webp",
+      "sha256": "21f29e8df35a8289106111e18e6baea3773708bfd1f257596f5da1ba6b47ca49",
+      "reviewStatus": "approved"
+    }
+  ]
+}

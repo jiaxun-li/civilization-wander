@@ -1,0 +1,388 @@
+{
+  "manifestVersion": 2,
+  "module": "late-bronze-age",
+  "assets": [
+    {
+      "assetId": "asset-lba-hittite-hattusa-wall",
+      "file": "assets/images/late-bronze-age/hittite-hattusa-wall.webp",
+      "origin": "unclassified",
+      "creator": "Bernard Gagnon",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hattusa_-_Hittite_city_wall_01.jpg",
+      "sourceIds": [
+        "source-wikimedia-hattusa-wall"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 893,
+      "encodedWidth": 1280,
+      "encodedHeight": 893,
+      "byteSize": 365988,
+      "format": "webp",
+      "sha256": "c423698219b87889d89dbcfe4cb555b47bf7ccb2720dae1a80be6f3c3e47a6a3",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-hittite-inandik-vase",
+      "file": "assets/images/late-bronze-age/hittite-inandik-vase.webp",
+      "origin": "unclassified",
+      "creator": "Carole Raddato",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_%C4%B0nand%C4%B1k_vase%2C_a_Hittite_four-handled_large_terracota_vase_with_scenes_in_relief_depicting_a_sacred_wedding_ceremony%2C_mid_17th_century%2C_found_in_%C4%B0nand%C4%B1ktepe%2C_Museum_of_Anatolian_Civilizations%2C_Ankara_%2826167755270%29.jpg",
+      "sourceIds": [
+        "source-wikimedia-inandik-vase"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 2079,
+      "encodedWidth": 1280,
+      "encodedHeight": 2079,
+      "byteSize": 479786,
+      "format": "webp",
+      "sha256": "6f8fcf1ed0ba448270d5bca6b35b52a45a54fb2d0c71ec32afb22f264a0a108b",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-hittite-aleppo-treaty",
+      "file": "assets/images/late-bronze-age/hittite-aleppo-treaty.webp",
+      "origin": "unclassified",
+      "creator": "Zunkir",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aleppo_treaty_-_Hittites.jpg",
+      "sourceIds": [
+        "source-wikimedia-aleppo-treaty"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 1242,
+      "encodedWidth": 960,
+      "encodedHeight": 1242,
+      "byteSize": 368790,
+      "format": "webp",
+      "sha256": "7381f166495c830b89b7b17d27505d513beb461a02af7dff409f9a917b2fafd3",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-hittite-hattusa-ruins",
+      "file": "assets/images/late-bronze-age/hittite-hattusa-ruins.webp",
+      "origin": "historical",
+      "creator": "Rita1234",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hattusa_B%C3%BCy%C3%BCkkaya.JPG",
+      "sourceIds": [
+        "source-wikimedia-hattusa-ruins"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 855,
+      "encodedWidth": 1280,
+      "encodedHeight": 855,
+      "byteSize": 277544,
+      "format": "webp",
+      "sha256": "ac5da77a5eff9d4b8e29ecf7a6d6cd417c4c8da971d57cc2b44b1d3a45199af6",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-lba-ugarit-palace",
+      "file": "assets/images/late-bronze-age/ugarit-royal-palace.webp",
+      "origin": "unclassified",
+      "creator": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ugarit_Royal_Tombs_3928.jpg",
+      "sourceIds": [
+        "source-wikimedia-ugarit-palace"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 852,
+      "encodedWidth": 1280,
+      "encodedHeight": 852,
+      "byteSize": 423864,
+      "format": "webp",
+      "sha256": "6078a60f7282d5d3ef359e43c660205ab13b9120db6b76816066c6f15bd49d07",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-ugarit-law-tablet",
+      "file": "assets/images/late-bronze-age/ugarit-royal-law-tablet.webp",
+      "origin": "unclassified",
+      "creator": "ALFGRN",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Text_of_Law_in_Akkadian_by_King_Niqmepa_with_dynastic_seal_Ras_Shamra_Louvre_Museum.jpg",
+      "sourceIds": [
+        "source-wikimedia-ugarit-law-tablet"
+      ],
+      "originalWidth": 1130,
+      "originalHeight": 1301,
+      "encodedWidth": 1130,
+      "encodedHeight": 1301,
+      "byteSize": 257874,
+      "format": "webp",
+      "sha256": "6e78090c72e4b93a9f161d31366f6c4e88d38d9f11f666e049cad21d7db693c3",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-ugarit-uluburun-reconstruction",
+      "file": "assets/images/late-bronze-age/ugarit-uluburun-reconstruction.webp",
+      "origin": "unclassified",
+      "creator": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bodrum_Museum_Uluburun_shipwreck_reconstruction_in_2015_3704_Panorama.jpg",
+      "sourceIds": [
+        "source-wikimedia-uluburun-reconstruction"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 664,
+      "encodedWidth": 1920,
+      "encodedHeight": 664,
+      "byteSize": 487520,
+      "format": "webp",
+      "sha256": "63d20b76d22bc95f2feb11bbd97d76bdad78d11fcfa485915247df0247633575",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-ugarit-administrative-tablet",
+      "file": "assets/images/late-bronze-age/ugarit-administrative-tablet.webp",
+      "origin": "historical",
+      "creator": "Zunkir",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tablette_administrative_Ugarit_AO19967.jpg",
+      "sourceIds": [
+        "source-wikimedia-ugarit-admin-tablet"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 972,
+      "encodedWidth": 1280,
+      "encodedHeight": 972,
+      "byteSize": 258242,
+      "format": "webp",
+      "sha256": "5f859105cd22b1d1f02afad50d8859566318981126135cbc1e66c2b796d6b01f",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-lba-pylos-linear-b-tablet",
+      "file": "assets/images/late-bronze-age/pylos-linear-b-tablet.webp",
+      "origin": "unclassified",
+      "creator": "Sharon Mollerus",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAMA_Linear_B_tablet_of_Pylos.jpg",
+      "sourceIds": [
+        "source-wikimedia-pylos-linear-b-tablet"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 854,
+      "encodedWidth": 1920,
+      "encodedHeight": 854,
+      "byteSize": 341380,
+      "format": "webp",
+      "sha256": "9fd31e20165e0c21f1b71fe2856bf684b56ddc84608d1737bdd07bb63d8abcfc",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-ugarit-throne-hall",
+      "file": "assets/images/late-bronze-age/ugarit-palace-throne-hall.webp",
+      "origin": "unclassified",
+      "creator": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ugarit_Royal_Palace_throne_hall_3909.jpg",
+      "sourceIds": [
+        "source-wikimedia-ugarit-throne-hall"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1278,
+      "encodedWidth": 1920,
+      "encodedHeight": 1278,
+      "byteSize": 494502,
+      "format": "webp",
+      "sha256": "dd5230d0e265513c4d37b38709d3c3e3d7f0924c5edd2addb150bb44814ea425",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-kadesh-spies-relief",
+      "file": "assets/images/late-bronze-age/kadesh-spies-relief.webp",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ancient_carving_-_Shasu_spies_being_beaten_by_Egyptians.png",
+      "sourceIds": [
+        "source-wikimedia-kadesh-spies"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 604,
+      "encodedWidth": 1200,
+      "encodedHeight": 604,
+      "byteSize": 473974,
+      "format": "webp",
+      "sha256": "9593714768a91e7b43dab8084a7572e5e7bc87b86a2c72e5951cfe895a5cb910",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-kadesh-surprise-map",
+      "file": "assets/images/late-bronze-age/kadesh-surprise-attack.webp",
+      "origin": "unclassified",
+      "creator": "Zunkir; English adaptation by Civilization Wander",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qadesh_-_attaque_hittite.svg",
+      "sourceIds": [
+        "source-wikimedia-kadesh-attack-map",
+        "source-spalinger-war-egypt"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1500,
+      "encodedWidth": 1200,
+      "encodedHeight": 1500,
+      "byteSize": 81350,
+      "format": "webp",
+      "sha256": "3317d0f8e62e664ec1f647aa3f1411e21320990b829cd7e76e7fb0f8389d7fd4",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-kadesh-ramesses-relief",
+      "file": "assets/images/late-bronze-age/kadesh-ramesses-relief.webp",
+      "origin": "unclassified",
+      "creator": "Mustang Joe",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ramesses_II_relief_in_the_tomb_at_Abu_Simbel.jpg",
+      "sourceIds": [
+        "source-wikimedia-kadesh-relief"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 855,
+      "encodedWidth": 1280,
+      "encodedHeight": 855,
+      "byteSize": 435176,
+      "format": "webp",
+      "sha256": "12ba583a89d67ac68757a11c5dc8162023e12e4a39f0892e585bacf672c37df5",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-kadesh-treaty-tablet",
+      "file": "assets/images/late-bronze-age/kadesh-treaty-tablet.webp",
+      "origin": "historical",
+      "creator": "Giovanni Dall’Orto",
+      "license": "Copyrighted free use with attribution",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Istanbul_-_Museo_archeol._-_Trattato_di_Qadesh_fra_ittiti_ed_egizi_(1269_a.C.)_-_Foto_G._Dall%27Orto_28-5-2006.jpg",
+      "sourceIds": [
+        "source-wikimedia-kadesh-treaty"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 1280,
+      "encodedWidth": 960,
+      "encodedHeight": 1280,
+      "byteSize": 88384,
+      "format": "webp",
+      "sha256": "90ba7ca8f6f818b4ab1b1beea75dfc14260ce8f6833d02c79d2705814328cf36",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-lba-amarna-mail-carrier",
+      "file": "assets/images/late-bronze-age/amarna-mail-carrier-1915.webp",
+      "origin": "unclassified",
+      "creator": "Nordisk familjebok / Project Runeberg",
+      "license": "public domain",
+      "sourceUrl": "https://runeberg.org/nfcb/0040.html",
+      "sourceIds": [
+        "source-runeberg-egypt-mail-carrier"
+      ],
+      "originalWidth": 390,
+      "originalHeight": 317,
+      "encodedWidth": 390,
+      "encodedHeight": 317,
+      "byteSize": 14538,
+      "format": "webp",
+      "sha256": "738304d3a4ed57bc830f0e8af8a98e6bf6a0ee8ac34456d83364fe1df5019157",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-amarna-four-foreign-rulers",
+      "file": "assets/images/late-bronze-age/amarna-four-foreign-rulers.webp",
+      "origin": "unclassified",
+      "creator": "Norman de Garis Davies",
+      "license": "public domain",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/544596",
+      "sourceIds": [
+        "source-met-four-foreign-rulers"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 677,
+      "encodedWidth": 1200,
+      "encodedHeight": 677,
+      "byteSize": 166344,
+      "format": "webp",
+      "sha256": "ab56a64ff212b4ab461b38702398b9f0e4d716aa9c03148e107ce20d14cb1a0b",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-amarna-tushratta-marriage-letter",
+      "file": "assets/images/late-bronze-age/amarna-tushratta-marriage-letter.webp",
+      "origin": "unclassified",
+      "creator": "Osama Shukir Muhammed Amin",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amarna_letter._Letter_from_Tushratta_king_of_Mitanni_to_Amenhotep_III._From_Tell_el-Amarna,_Egypt._1st_half_of_the_14th_century_BCE._British_Museum.jpg",
+      "sourceIds": [
+        "source-wikimedia-tushratta-marriage-letter"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 1698,
+      "encodedWidth": 960,
+      "encodedHeight": 1698,
+      "byteSize": 490698,
+      "format": "webp",
+      "sha256": "cbcd6ed3415d46bb41c6137cb33e49a4591964394fe1ba2035e8fa756606b039",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-medinet-habu-temple",
+      "file": "assets/images/late-bronze-age/medinet-habu-temple.webp",
+      "origin": "historical",
+      "creator": "Walaa",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Medinet_Habu,_Egypt003.jpg",
+      "sourceIds": [
+        "source-wikimedia-medinet-habu-temple"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1440,
+      "encodedWidth": 1920,
+      "encodedHeight": 1440,
+      "byteSize": 477134,
+      "format": "webp",
+      "sha256": "d6486a6f047f419d62030f947a5308ae39c9d4174f110d8a7580e340d630f46e",
+      "reviewStatus": "approved"
+    },
+    {
+      "assetId": "asset-lba-medinet-habu-naval-battle",
+      "file": "assets/images/late-bronze-age/medinet-habu-naval-battle.webp",
+      "origin": "unclassified",
+      "creator": "Museo Egizio Photo Archive",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theban_region,_Medinet_Habu,_19th_century_pictures,_1870-1896,_photo_44_of_51_-_Archivio_fotografico_Museo_Egizio,_Turin_INV10_001_cropped.JPG",
+      "sourceIds": [
+        "source-wikimedia-medinet-habu-naval"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 863,
+      "encodedWidth": 1920,
+      "encodedHeight": 863,
+      "byteSize": 483138,
+      "format": "webp",
+      "sha256": "aea30229878f4280b1d6aedd2aa29fd18138d3f57e556a1042b565da30455cb0",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-lba-medinet-habu-ox-carts",
+      "file": "assets/images/late-bronze-age/medinet-habu-ox-carts.webp",
+      "origin": "unclassified",
+      "creator": "The Epigraphic Survey",
+      "license": "public domain",
+      "sourceUrl": "https://isac.uchicago.edu/research/projects/epigraphic-survey-bibliography",
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-wikimedia-medinet-habu-land-battle"
+      ],
+      "originalWidth": 3507,
+      "originalHeight": 2763,
+      "encodedWidth": 2200,
+      "encodedHeight": 1733,
+      "byteSize": 480606,
+      "format": "webp",
+      "sha256": "42122e63f8fe57bccbc604a0c81bce22ad98c0f45e684f71f26cba1b473be3d6",
+      "reviewStatus": "needsMetadataAudit"
+    }
+  ]
+}
