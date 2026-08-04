@@ -100,7 +100,7 @@
           if (asset.type === 'image') {
             return `
               <figure class="v4-scene__asset">
-                <img src="${escapeHtml(asset.src)}" alt="${escapeHtml(asset.alt)}">
+                <img src="${escapeHtml(asset.src)}" alt="${escapeHtml(asset.alt)}" loading="lazy" decoding="async">
                 ${block.caption ? `<figcaption>${escapeHtml(block.caption)}</figcaption>` : ''}
               </figure>`;
           }

@@ -840,14 +840,14 @@
   ];
 
   const assets = [
-    { id: 'asset-mohenjo-daro-well', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-well.jpg', title: '摩亨佐-达罗砖砌水井', alt: '摩亨佐-达罗遗址中的圆形砖砌水井俯视照片，井口由多层弧形砖围成。', sourceIds: ['source-wikimedia-mohenjo-well', 'source-jansen-mohenjo-water'] },
-    { id: 'asset-mohenjo-daro-street', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-street.jpg', title: '摩亨佐-达罗的街道与砖墙', alt: '摩亨佐-达罗遗址中的狭长街道，两侧保留高低不一的砖砌住宅墙体。', sourceIds: ['source-wikimedia-mohenjo-street', 'source-green-indus-public-goods'] },
-    { id: 'asset-mohenjo-daro-great-bath', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-great-bath.jpg', title: '摩亨佐-达罗大浴池', alt: '摩亨佐-达罗大浴池完整全景，长方形砖池、两端台阶和周边砖墙清晰可见。', sourceIds: ['source-wikimedia-mohenjo-great-bath', 'source-unesco-mohenjo-daro', 'source-jansen-mohenjo-water'] },
-    { id: 'asset-mohenjo-daro-overview', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-overview.jpg', title: '摩亨佐-达罗已发掘遗址', alt: '摩亨佐-达罗已发掘遗址全景，前景是大浴池与周边砖墙，远处可见层叠建筑遗迹和后建佛塔。', sourceIds: ['source-wikimedia-mohenjo-overview', 'source-unesco-mohenjo-daro'] },
-    { id: 'asset-cemetery-h-pottery', type: 'image', src: 'assets/images/ancient-india/cemetery-h-pottery.png', title: '哈拉帕墓地H时期彩绘陶器', alt: '新德里国家博物馆陈列的两件哈拉帕墓地H时期大型彩绘陶罐，罐肩可见动物、植物与几何纹样。', sourceIds: ['source-wikimedia-cemetery-h-pottery'] },
-    { id: 'asset-indus-unicorn-seal', type: 'image', src: 'assets/images/ancient-india/indus-unicorn-seal.jpg', title: '独角兽印章与现代压印', alt: '一枚带短行符号和独角兽图像的印度河印章与它的现代压印并列展示。', sourceIds: ['source-met-indus-unicorn-seal', 'source-kenoyer-indus-seals'] },
-    { id: 'asset-indus-carnelian-bead', type: 'image', src: 'assets/images/ancient-india/indus-carnelian-bead.jpg', title: '两河流域出土的印度河文化红玉髓珠', alt: '一颗桶形红玉髓珠的完整正面照片，红褐色表面分布着多组白色圆环纹样。', sourceIds: ['source-met-indus-carnelian-bead', 'source-kenoyer-kish-carnelian'] },
-    { id: 'asset-vedic-recitation-teaching', type: 'image', src: 'assets/images/ancient-india/vedic-recitation-teaching.png', title: '祭火旁的早期吠陀吟诵教学图', alt: '教学插图：夜色中的河岸营地，吟诵者与听众围坐在小型祭火旁，远处可见牛群和轻轮车辆；画面不含现代文字。', sourceIds: ['source-generated-vedic-recitation', 'source-jamison-brereton-rigveda'] }
+    { id: 'asset-mohenjo-daro-well', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-well.webp', title: '摩亨佐-达罗砖砌水井', alt: '摩亨佐-达罗遗址中的圆形砖砌水井俯视照片，井口由多层弧形砖围成。', sourceIds: ['source-wikimedia-mohenjo-well', 'source-jansen-mohenjo-water'] },
+    { id: 'asset-mohenjo-daro-street', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-street.webp', title: '摩亨佐-达罗的街道与砖墙', alt: '摩亨佐-达罗遗址中的狭长街道，两侧保留高低不一的砖砌住宅墙体。', sourceIds: ['source-wikimedia-mohenjo-street', 'source-green-indus-public-goods'] },
+    { id: 'asset-mohenjo-daro-great-bath', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-great-bath.webp', title: '摩亨佐-达罗大浴池', alt: '摩亨佐-达罗大浴池完整全景，长方形砖池、两端台阶和周边砖墙清晰可见。', sourceIds: ['source-wikimedia-mohenjo-great-bath', 'source-unesco-mohenjo-daro', 'source-jansen-mohenjo-water'] },
+    { id: 'asset-mohenjo-daro-overview', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-overview.webp', title: '摩亨佐-达罗已发掘遗址', alt: '摩亨佐-达罗已发掘遗址全景，前景是大浴池与周边砖墙，远处可见层叠建筑遗迹和后建佛塔。', sourceIds: ['source-wikimedia-mohenjo-overview', 'source-unesco-mohenjo-daro'] },
+    { id: 'asset-cemetery-h-pottery', type: 'image', src: 'assets/images/ancient-india/cemetery-h-pottery.webp', title: '哈拉帕墓地H时期彩绘陶器', alt: '新德里国家博物馆陈列的两件哈拉帕墓地H时期大型彩绘陶罐，罐肩可见动物、植物与几何纹样。', sourceIds: ['source-wikimedia-cemetery-h-pottery'] },
+    { id: 'asset-indus-unicorn-seal', type: 'image', src: 'assets/images/ancient-india/indus-unicorn-seal.webp', title: '独角兽印章与现代压印', alt: '一枚带短行符号和独角兽图像的印度河印章与它的现代压印并列展示。', sourceIds: ['source-met-indus-unicorn-seal', 'source-kenoyer-indus-seals'] },
+    { id: 'asset-indus-carnelian-bead', type: 'image', src: 'assets/images/ancient-india/indus-carnelian-bead.webp', title: '两河流域出土的印度河文化红玉髓珠', alt: '一颗桶形红玉髓珠的完整正面照片，红褐色表面分布着多组白色圆环纹样。', sourceIds: ['source-met-indus-carnelian-bead', 'source-kenoyer-kish-carnelian'] },
+    { id: 'asset-vedic-recitation-teaching', type: 'image', src: 'assets/images/ancient-india/vedic-recitation-teaching.webp', title: '祭火旁的早期吠陀吟诵教学图', alt: '教学插图：夜色中的河岸营地，吟诵者与听众围坐在小型祭火旁，远处可见牛群和轻轮车辆；画面不含现代文字。', sourceIds: ['source-generated-vedic-recitation', 'source-jamison-brereton-rigveda'] }
   ];
 
   return {

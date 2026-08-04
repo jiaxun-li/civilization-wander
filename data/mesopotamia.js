@@ -454,7 +454,7 @@
     {
       id: 'asset-sumer-uruk-public-center',
       type: 'image',
-      src: 'assets/images/mesopotamia/sumer-uruk-public-center.jpg',
+      src: 'assets/images/mesopotamia/sumer-uruk-public-center.webp',
       title: '乌鲁克白庙台基遗址',
       alt: '乌鲁克白庙所在的泥砖高台遗址照片，层层风化的土色台基从平原上隆起。',
       sourceIds: ['source-wikimedia-uruk-white-temple-ziggurat', 'source-dai-uruk']
@@ -462,7 +462,7 @@
     {
       id: 'asset-sumer-uruk-proto-cuneiform-tablet',
       type: 'image',
-      src: 'assets/images/mesopotamia/sumer-uruk-proto-cuneiform-tablet.jpg',
+      src: 'assets/images/mesopotamia/sumer-uruk-proto-cuneiform-tablet.webp',
       title: '记录谷物分配的原始楔形文字泥板',
       alt: '一块小型浅褐色泥板，表面分栏刻画谷穗等图形，并压有圆形数字记号。',
       sourceIds: ['source-met-grain-tablet']
@@ -470,7 +470,7 @@
     {
       id: 'asset-sumer-uruk-warka-vase',
       type: 'image',
-      src: 'assets/images/mesopotamia/sumer-uruk-warka-vase.jpg',
+      src: 'assets/images/mesopotamia/sumer-uruk-warka-vase.webp',
       title: '乌鲁克瓶上的搬运队列',
       alt: '乌鲁克瓶中层的局部照片，赤裸的搬运者依次托举篮筐与器皿向前行进。',
       sourceIds: ['source-wikimedia-warka-vase-360', 'source-morgan-warka-vase', 'source-smarthistory-warka-vase']
@@ -478,7 +478,7 @@
     {
       id: 'asset-sumer-ushumgal-stele',
       type: 'image',
-      src: 'assets/images/mesopotamia/sumer-ushumgal-stele.jpg',
+      src: 'assets/images/mesopotamia/sumer-ushumgal-stele.webp',
       title: '乌舒姆伽尔与莎拉伊吉齐阿布石碑',
       alt: '一件圆顶石碑的完整正面，中央人物双手交握，人物上方与衣裙刻有早期苏美尔文字，侧面还能看到交易见证人。',
       sourceIds: ['source-met-ushumgal-stele']
@@ -486,7 +486,7 @@
     {
       id: 'asset-sumer-balanced-account-dugga',
       type: 'image',
-      src: 'assets/images/mesopotamia/sumer-balanced-account-dugga.jpg',
+      src: 'assets/images/mesopotamia/sumer-balanced-account-dugga.webp',
       title: '杜伽的平衡账目泥板',
       alt: '一块公元前2039年的长方形泥板完整正面，横向分栏内密集记录牲畜账目，并写有阿马尔辛八年一月二十五日。',
       sourceIds: ['source-met-ur-iii-dugga-account']
@@ -3373,41 +3373,41 @@
   ];
 
   const assets = [
-    { id: 'asset-akkadian-naram-sin-victory-stele', type: 'image', src: 'assets/images/mesopotamia/akkadian-naram-sin-victory-stele.jpg', title: '纳拉姆辛胜利碑', alt: '粉褐色石碑浮雕中，头戴角冠的阿卡德国王纳拉姆辛持弓站在山坡高处，士兵沿山势向上推进，战败者倒下或求饶。', sourceIds: ['source-wikimedia-naram-sin-victory-stele', 'source-louvre-naram-sin-victory-stele'] },
-    { id: 'asset-kassite-kurigalzu-kudurru', type: 'image', src: 'assets/images/mesopotamia/kassite-kurigalzu-kudurru.jpg', title: '刻有库里加尔祖二世名字的库杜鲁', alt: '一块深灰色不规则石碑完整入镜，表面刻有密集楔形文字和图像；它记录加喜特国王库里加尔祖二世作出的土地赠予，原本保存在神庙中。', sourceIds: ['source-wikimedia-kurigalzu-kudurru', 'source-met-kassite-period'] },
-    { id: 'asset-mesopotamian-temple-ur-ziggurat', type: 'image', src: 'assets/images/mesopotamia/mesopotamian-temple-ur-ziggurat.jpg', title: '今天的乌尔塔庙遗址', alt: '夕阳下的乌尔塔庙遗址照片，宽阔阶梯通向经过修复的泥砖台基。', sourceIds: ['source-wikimedia-ur-ziggurat-photo', 'source-met-ur-ziggurat'] },
-    { id: 'asset-mesopotamian-temple-uruk-eanna-plan', type: 'image', src: 'assets/images/mesopotamia/mesopotamian-temple-uruk-eanna-plan.jpg', title: '乌鲁克 Eanna IVb 神庙区平面示意图', alt: '乌鲁克 Eanna IVb 神庙区平面示意图，多个大厅、庭院与神庙建筑分布在围合空间内；淡色叠加部分是后期建筑参照。', sourceIds: ['source-wikimedia-eanna-4b-plan', 'source-dai-uruk'] },
-    { id: 'asset-mesopotamian-temple-old-babylonian', type: 'image', src: 'assets/images/mesopotamia/mesopotamian-temple-old-babylonian.jpg', title: '埃特曼安吉塔庙研究重建示意图', alt: '依据现代研究绘制的埃特曼安吉塔庙重建示意图，多层阶梯式台基逐级升高，顶端设有神殿；它不是遗址原貌照片。', sourceIds: ['source-wikimedia-etemenanki-reconstruction', 'source-british-museum-etemenanki-tablet'] },
-    { id: 'asset-cuneiform-proto-account-seal', type: 'image', src: 'assets/images/mesopotamia/cuneiform-proto-account-seal.jpg', title: '记录大麦分配并带有滚印的早期泥板', alt: '一块浅褐色早期行政泥板，表面分栏刻有谷穗、容器等图形和圆形数量记号，下方还保留人物、猎犬与野猪的滚筒印章图案。', sourceIds: ['source-wikimedia-proto-cuneiform-barley-tablet-pd'] },
-    { id: 'asset-cuneiform-stylus', type: 'image', src: 'assets/images/mesopotamia/cuneiform-student-exercise.jpg', title: '古巴比伦书吏练习泥板', alt: '一块狭长的古巴比伦练习泥板，表面可见书吏反复压出的楔形笔画。', sourceIds: ['source-met-student-exercise-object', 'source-british-museum-cuneiform'] },
-    { id: 'asset-cuneiform-sound', type: 'image', src: 'assets/images/mesopotamia/cuneiform-student-exercise-reverse.jpg', title: '书吏练习泥板的另一面', alt: '古巴比伦练习泥板的另一面，楔形符号用于练习能够表示词与声音的写法。', sourceIds: ['source-met-student-exercise-object', 'source-isac-writing-early-mesopotamia'] },
-    { id: 'asset-cuneiform-genres', type: 'image', src: 'assets/images/mesopotamia/cuneiform-gilgamesh-flood-tablet.jpg', title: '《吉尔伽美什史诗》洪水泥板', alt: '英国博物馆所藏《吉尔伽美什史诗》第十一泥板，密集楔形文字写在不规则褐色泥板表面。', sourceIds: ['source-wikimedia-gilgamesh-flood-tablet', 'source-british-museum-gilgamesh-tablet-i'] },
-    { id: 'asset-cuneiform-many-languages', type: 'image', src: 'assets/images/mesopotamia/cuneiform-sumerian-akkadian-grammar.jpg', title: '苏美尔语与阿卡德语语法泥板', alt: '一块晚期巴比伦语法泥板，左栏列苏美尔语条目，右栏记录阿卡德语翻译。', sourceIds: ['source-met-grammatical-text-object', 'source-british-museum-cuneiform'] },
-    { id: 'asset-akkadian-sargon-memory', type: 'image', src: 'assets/images/mesopotamia/akkadian-ruler-head.jpg', title: '常被称作萨尔贡的阿卡德王头像', alt: '尼尼微出土的阿卡德时期青铜王头像完整正面，眼部受损，编结胡须与头发仍清晰可见；它常被称为萨尔贡头像，也可能表现纳拉姆辛。', sourceIds: ['source-wikimedia-akkadian-ruler-head'] },
-    { id: 'asset-akkadian-administration', type: 'image', src: 'assets/images/mesopotamia/akkadian-enheduanna-disk.jpg', title: '恩赫杜安娜圆盘', alt: '恩赫杜安娜圆盘的完整照片，圆盘中央浮雕表现一列人物参加祭祀，恩赫杜安娜是其中身着层叠长袍的女性。', sourceIds: ['source-wikimedia-enheduanna-disk', 'source-british-museum-enheduanna'] },
-    { id: 'asset-akkadian-fragmentation', type: 'image', src: 'assets/images/mesopotamia/ur-nammu-foundation-figure.jpg', title: '乌尔那木奠基像', alt: '乌尔那木头顶泥土篮子的铜合金奠基像，表现国王作为神庙建造者的身份。', sourceIds: ['source-met-ur-nammu-foundation-figure-object', 'source-met-ur-ziggurat'] },
-    { id: 'asset-ur-iii-administrative-tablet', type: 'image', src: 'assets/images/mesopotamia/ur-iii-administrative-tablet.jpg', title: '伊比辛时期行政泥板', alt: '一块公元前2026年的乌尔第三王朝行政泥板，褐色泥面分栏刻有密集的楔形文字。', sourceIds: ['source-wikimedia-ur-iii-administrative-tablet', 'source-british-museum-ur-iii-fields-yields'] },
-    { id: 'asset-ur-iii-lament-for-ur', type: 'image', src: 'assets/images/mesopotamia/ur-iii-lament-for-ur.jpg', title: '后世抄写的《乌尔哀歌》残片', alt: '宾夕法尼亚大学博物馆所藏《乌尔哀歌》泥板残片，浅褐色表面分栏写有苏美尔语楔形文字；这是王朝结束后抄写的文学文本。', sourceIds: ['source-wikimedia-lament-for-ur-penn', 'source-cambridge-ur-iii-old-babylonian-transition'] },
-    { id: 'asset-gilgamesh-old-babylonian-fragments', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-old-babylonian-fragments.jpg', title: '古巴比伦《吉尔伽美什》泥板残片', alt: '芝加哥大学所藏的三块古巴比伦《吉尔伽美什》泥板残片，照片经纯几何裁切后以上二下一的方式排列，泥板裂口、楔形笔画与展架均保持原貌。', sourceIds: ['source-wikimedia-gilgamesh-old-babylonian-fragments', 'source-george-babylonian-gilgamesh-epic'] },
-    { id: 'asset-gilgamesh-uruk-kingship', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-uruk-kingship.jpg', title: '吉尔伽美什统治乌鲁克（AI生成）', alt: 'AI 生成图中的吉尔伽美什坐在泥砖大厅的低台木座上，一名居民俯身放下谷物和椰枣，另一人呈上织物，持长流嘴陶壶的侍者站在一旁。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-tablet-i'] },
-    { id: 'asset-gilgamesh-rivals-become-friends', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-rivals-become-friends.jpg', title: '吉尔伽美什与恩奇都搏斗（AI生成）', alt: 'AI 生成图中的吉尔伽美什与恩奇都在乌鲁克泥砖门道中压低重心、锁住手臂激烈角力，脚下扬起尘土，门后居民紧张观望。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh'] },
-    { id: 'asset-gilgamesh-cedar-forest', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-cedar-forest.jpg', title: '洪巴巴在雪松林中求饶（AI生成）', alt: 'AI 生成图中的洪巴巴被强风困在弯曲的雪松之间，跪地伸手求饶；吉尔伽美什垂下斧头犹豫，恩奇都在一旁催促。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-etcsl-gilgamesh-stories'] },
-    { id: 'asset-gilgamesh-worlds-end', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-worlds-end.jpg', title: '吉尔伽美什进入双峰间的黑暗（AI生成）', alt: 'AI 生成图中的吉尔伽美什披着旅途斗篷，独自走向两座山之间漆黑的入口；两名蝎人守卫在入口两侧举起手掌。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-soas-gilgamesh-old-babylonian-x'] },
-    { id: 'asset-gilgamesh-immortality-lost', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-immortality-lost.jpg', title: '蛇带走恢复青春的植物（AI生成）', alt: 'AI 生成图中的蛇衔着带刺植物从水边爬走，旁边留下浅色蜕皮；水中的吉尔伽美什伸手追赶，却已经来不及。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh', 'source-met-gilgamesh-overview'] },
-    { id: 'asset-gilgamesh-bull-of-heaven', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-bull-of-heaven.jpg', title: '天牛冲向吉尔伽美什与恩奇都（AI生成）', alt: 'AI 生成图中的巨大天牛低头猛烈冲撞，前蹄击碎地面；吉尔伽美什贴近牛角闪避，恩奇都从后方拉住牛尾，城中居民躲在泥砖墙后。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-tablet-vi'] },
-    { id: 'asset-gilgamesh-enkidu-dies', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-enkidu-dies.jpg', title: '吉尔伽美什哀悼恩奇都（AI生成）', alt: 'AI 生成图中的恩奇都安静躺在编织床上，吉尔伽美什握住他的手臂含泪呼唤；几名哀悼者站在摆有油灯、陶器、织物与树枝的泥砖房间后方。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-soas-gilgamesh-old-babylonian-grief'] },
-    { id: 'asset-gilgamesh-flood-survivor', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-flood-survivor.jpg', title: '乌特纳比什提姆讲述洪水（AI生成）', alt: 'AI 生成图中的乌特纳比什提姆与旅途中的吉尔伽美什在水边对坐交谈；乌特纳比什提姆身旁的无文字叙事框中，大船正穿过暴雨与巨浪。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-flood-tablet', 'source-soas-gilgamesh-xi-flood'] },
-    { id: 'asset-old-babylonian-hammurabi-letter', type: 'image', src: 'assets/images/mesopotamia/old-babylonian-hammurabi-letter.jpg', title: '汉谟拉比命令地方官召集船工', alt: '一块竖长的浅褐色泥板，正面密布横向排列的楔形文字；信中汉谟拉比要求地方官召集船工前往巴比伦。', sourceIds: ['source-wikimedia-hammurabi-letter'] },
-    { id: 'asset-hammurabi-code-stele', type: 'image', src: 'assets/images/mesopotamia/hammurabi-code-stele.jpg', title: '汉谟拉比法典石碑', alt: '一块高大的黑色石碑立在展厅中，顶部为汉谟拉比面对公正之神的浮雕，下方刻满密集楔形文字。', sourceIds: ['source-wikimedia-hammurabi-full-stele', 'source-louvre-hammurabi-code'] },
-    { id: 'asset-hammurabi-code-relief', type: 'image', src: 'assets/images/mesopotamia/hammurabi-code-relief.jpg', title: '汉谟拉比面对公正之神', alt: '法典石碑顶部浮雕近景，汉谟拉比站在左侧，右侧戴角冠的神坐在宝座上并伸出权力象征。', sourceIds: ['source-wikimedia-hammurabi-stele', 'source-louvre-hammurabi-code'] },
-    { id: 'asset-hammurabi-code-equal-retaliation', type: 'image', src: 'assets/images/mesopotamia/hammurabi-trial-1915.jpg', title: '《汉谟拉比面前的审判》', alt: '1915年的历史插画中，汉谟拉比高坐庭中，当事人在他面前申诉，卫兵和围观者分立两侧；这是近代插画家对古代审判的想象，不是现场记录。', sourceIds: ['source-wikimedia-hammurabi-trial-1915'] },
-    { id: 'asset-hammurabi-code-status-penalties', type: 'image', src: 'assets/images/mesopotamia/hammurabi-trial-status-crop-1915.jpg', title: '审判庭上的身份与位置', alt: '《汉谟拉比面前的审判》局部：高坐的国王、阶前的申诉者与两侧不同装束的人群构成鲜明层级；这是1915年历史插画的裁切，不是古代图像证据。', sourceIds: ['source-wikimedia-hammurabi-trial-1915'] },
-    { id: 'asset-hammurabi-code-property-welfare', type: 'image', src: 'assets/images/mesopotamia/hammurabi-babylonian-canals-1898.jpg', title: '田地与灌溉渠道', alt: '1898年的历史插画中，灌溉渠道穿过巴比伦的田地，农人在水边劳作；这是近代对古代农田水利的想象图。', sourceIds: ['source-wikimedia-babylonian-canals-1898'] },
-    { id: 'asset-hammurabi-code-discovery', type: 'image', src: 'assets/images/mesopotamia/hammurabi-code-discovery.jpg', title: '苏萨发掘中的法典石碑', alt: '一张早期黑白发掘照片，数名工作人员站在出土的黑色石碑旁。', sourceIds: ['source-wikimedia-hammurabi-discovery', 'source-louvre-hammurabi-code'] },
-    { id: 'asset-babel-tower-bruegel', type: 'image', src: 'assets/images/mesopotamia/babel-tower-bruegel.jpg', title: '勃鲁盖尔想象的巴别塔', alt: '一座尚未完工的巨大圆形高塔耸立在城市与港口之间，大量工人在不同楼层施工；这是十六世纪画家的故事想象。', sourceIds: ['source-wikimedia-bruegel-babel', 'source-sefaria-genesis-11'] },
-    { id: 'asset-babel-confusion-dore', type: 'image', src: 'assets/images/mesopotamia/babel-confusion-dore.png', title: '多雷笔下的语言混乱', alt: '高塔下的人群彼此呼喊、争执和转身离去，原本共同施工的秩序已经瓦解；这是十九世纪的故事插图。', sourceIds: ['source-wikimedia-dore-confusion', 'source-sefaria-genesis-11'] },
-    { id: 'asset-babel-esagil-tablet', type: 'image', src: 'assets/images/mesopotamia/babel-esagil-tablet.jpg', title: '记录埃特曼安吉尺寸的泥板残片', alt: '一块不规则的深褐色泥板残片，正面保存数列楔形文字；文字记录了埃特曼安吉的尺寸。', sourceIds: ['source-wikimedia-esagil-tablet', 'source-george-tower-of-babel'] },
-    { id: 'asset-babel-etemenanki-ruins', type: 'image', src: 'assets/images/mesopotamia/babel-etemenanki-ruins.jpg', title: '埃特曼安吉地基遗址', alt: '平坦遗址中残留一片积水和低矮土层，昔日高塔已不再直立。', sourceIds: ['source-wikimedia-etemenanki-ruins', 'source-george-tower-of-babel'] }
+    { id: 'asset-akkadian-naram-sin-victory-stele', type: 'image', src: 'assets/images/mesopotamia/akkadian-naram-sin-victory-stele.webp', title: '纳拉姆辛胜利碑', alt: '粉褐色石碑浮雕中，头戴角冠的阿卡德国王纳拉姆辛持弓站在山坡高处，士兵沿山势向上推进，战败者倒下或求饶。', sourceIds: ['source-wikimedia-naram-sin-victory-stele', 'source-louvre-naram-sin-victory-stele'] },
+    { id: 'asset-kassite-kurigalzu-kudurru', type: 'image', src: 'assets/images/mesopotamia/kassite-kurigalzu-kudurru.webp', title: '刻有库里加尔祖二世名字的库杜鲁', alt: '一块深灰色不规则石碑完整入镜，表面刻有密集楔形文字和图像；它记录加喜特国王库里加尔祖二世作出的土地赠予，原本保存在神庙中。', sourceIds: ['source-wikimedia-kurigalzu-kudurru', 'source-met-kassite-period'] },
+    { id: 'asset-mesopotamian-temple-ur-ziggurat', type: 'image', src: 'assets/images/mesopotamia/mesopotamian-temple-ur-ziggurat.webp', title: '今天的乌尔塔庙遗址', alt: '夕阳下的乌尔塔庙遗址照片，宽阔阶梯通向经过修复的泥砖台基。', sourceIds: ['source-wikimedia-ur-ziggurat-photo', 'source-met-ur-ziggurat'] },
+    { id: 'asset-mesopotamian-temple-uruk-eanna-plan', type: 'image', src: 'assets/images/mesopotamia/mesopotamian-temple-uruk-eanna-plan.webp', title: '乌鲁克 Eanna IVb 神庙区平面示意图', alt: '乌鲁克 Eanna IVb 神庙区平面示意图，多个大厅、庭院与神庙建筑分布在围合空间内；淡色叠加部分是后期建筑参照。', sourceIds: ['source-wikimedia-eanna-4b-plan', 'source-dai-uruk'] },
+    { id: 'asset-mesopotamian-temple-old-babylonian', type: 'image', src: 'assets/images/mesopotamia/mesopotamian-temple-old-babylonian.webp', title: '埃特曼安吉塔庙研究重建示意图', alt: '依据现代研究绘制的埃特曼安吉塔庙重建示意图，多层阶梯式台基逐级升高，顶端设有神殿；它不是遗址原貌照片。', sourceIds: ['source-wikimedia-etemenanki-reconstruction', 'source-british-museum-etemenanki-tablet'] },
+    { id: 'asset-cuneiform-proto-account-seal', type: 'image', src: 'assets/images/mesopotamia/cuneiform-proto-account-seal.webp', title: '记录大麦分配并带有滚印的早期泥板', alt: '一块浅褐色早期行政泥板，表面分栏刻有谷穗、容器等图形和圆形数量记号，下方还保留人物、猎犬与野猪的滚筒印章图案。', sourceIds: ['source-wikimedia-proto-cuneiform-barley-tablet-pd'] },
+    { id: 'asset-cuneiform-stylus', type: 'image', src: 'assets/images/mesopotamia/cuneiform-student-exercise.webp', title: '古巴比伦书吏练习泥板', alt: '一块狭长的古巴比伦练习泥板，表面可见书吏反复压出的楔形笔画。', sourceIds: ['source-met-student-exercise-object', 'source-british-museum-cuneiform'] },
+    { id: 'asset-cuneiform-sound', type: 'image', src: 'assets/images/mesopotamia/cuneiform-student-exercise-reverse.webp', title: '书吏练习泥板的另一面', alt: '古巴比伦练习泥板的另一面，楔形符号用于练习能够表示词与声音的写法。', sourceIds: ['source-met-student-exercise-object', 'source-isac-writing-early-mesopotamia'] },
+    { id: 'asset-cuneiform-genres', type: 'image', src: 'assets/images/mesopotamia/cuneiform-gilgamesh-flood-tablet.webp', title: '《吉尔伽美什史诗》洪水泥板', alt: '英国博物馆所藏《吉尔伽美什史诗》第十一泥板，密集楔形文字写在不规则褐色泥板表面。', sourceIds: ['source-wikimedia-gilgamesh-flood-tablet', 'source-british-museum-gilgamesh-tablet-i'] },
+    { id: 'asset-cuneiform-many-languages', type: 'image', src: 'assets/images/mesopotamia/cuneiform-sumerian-akkadian-grammar.webp', title: '苏美尔语与阿卡德语语法泥板', alt: '一块晚期巴比伦语法泥板，左栏列苏美尔语条目，右栏记录阿卡德语翻译。', sourceIds: ['source-met-grammatical-text-object', 'source-british-museum-cuneiform'] },
+    { id: 'asset-akkadian-sargon-memory', type: 'image', src: 'assets/images/mesopotamia/akkadian-ruler-head.webp', title: '常被称作萨尔贡的阿卡德王头像', alt: '尼尼微出土的阿卡德时期青铜王头像完整正面，眼部受损，编结胡须与头发仍清晰可见；它常被称为萨尔贡头像，也可能表现纳拉姆辛。', sourceIds: ['source-wikimedia-akkadian-ruler-head'] },
+    { id: 'asset-akkadian-administration', type: 'image', src: 'assets/images/mesopotamia/akkadian-enheduanna-disk.webp', title: '恩赫杜安娜圆盘', alt: '恩赫杜安娜圆盘的完整照片，圆盘中央浮雕表现一列人物参加祭祀，恩赫杜安娜是其中身着层叠长袍的女性。', sourceIds: ['source-wikimedia-enheduanna-disk', 'source-british-museum-enheduanna'] },
+    { id: 'asset-akkadian-fragmentation', type: 'image', src: 'assets/images/mesopotamia/ur-nammu-foundation-figure.webp', title: '乌尔那木奠基像', alt: '乌尔那木头顶泥土篮子的铜合金奠基像，表现国王作为神庙建造者的身份。', sourceIds: ['source-met-ur-nammu-foundation-figure-object', 'source-met-ur-ziggurat'] },
+    { id: 'asset-ur-iii-administrative-tablet', type: 'image', src: 'assets/images/mesopotamia/ur-iii-administrative-tablet.webp', title: '伊比辛时期行政泥板', alt: '一块公元前2026年的乌尔第三王朝行政泥板，褐色泥面分栏刻有密集的楔形文字。', sourceIds: ['source-wikimedia-ur-iii-administrative-tablet', 'source-british-museum-ur-iii-fields-yields'] },
+    { id: 'asset-ur-iii-lament-for-ur', type: 'image', src: 'assets/images/mesopotamia/ur-iii-lament-for-ur.webp', title: '后世抄写的《乌尔哀歌》残片', alt: '宾夕法尼亚大学博物馆所藏《乌尔哀歌》泥板残片，浅褐色表面分栏写有苏美尔语楔形文字；这是王朝结束后抄写的文学文本。', sourceIds: ['source-wikimedia-lament-for-ur-penn', 'source-cambridge-ur-iii-old-babylonian-transition'] },
+    { id: 'asset-gilgamesh-old-babylonian-fragments', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-old-babylonian-fragments.webp', title: '古巴比伦《吉尔伽美什》泥板残片', alt: '芝加哥大学所藏的三块古巴比伦《吉尔伽美什》泥板残片，照片经纯几何裁切后以上二下一的方式排列，泥板裂口、楔形笔画与展架均保持原貌。', sourceIds: ['source-wikimedia-gilgamesh-old-babylonian-fragments', 'source-george-babylonian-gilgamesh-epic'] },
+    { id: 'asset-gilgamesh-uruk-kingship', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-uruk-kingship.webp', title: '吉尔伽美什统治乌鲁克（AI生成）', alt: 'AI 生成图中的吉尔伽美什坐在泥砖大厅的低台木座上，一名居民俯身放下谷物和椰枣，另一人呈上织物，持长流嘴陶壶的侍者站在一旁。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-tablet-i'] },
+    { id: 'asset-gilgamesh-rivals-become-friends', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-rivals-become-friends.webp', title: '吉尔伽美什与恩奇都搏斗（AI生成）', alt: 'AI 生成图中的吉尔伽美什与恩奇都在乌鲁克泥砖门道中压低重心、锁住手臂激烈角力，脚下扬起尘土，门后居民紧张观望。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh'] },
+    { id: 'asset-gilgamesh-cedar-forest', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-cedar-forest.webp', title: '洪巴巴在雪松林中求饶（AI生成）', alt: 'AI 生成图中的洪巴巴被强风困在弯曲的雪松之间，跪地伸手求饶；吉尔伽美什垂下斧头犹豫，恩奇都在一旁催促。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-etcsl-gilgamesh-stories'] },
+    { id: 'asset-gilgamesh-worlds-end', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-worlds-end.webp', title: '吉尔伽美什进入双峰间的黑暗（AI生成）', alt: 'AI 生成图中的吉尔伽美什披着旅途斗篷，独自走向两座山之间漆黑的入口；两名蝎人守卫在入口两侧举起手掌。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-soas-gilgamesh-old-babylonian-x'] },
+    { id: 'asset-gilgamesh-immortality-lost', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-immortality-lost.webp', title: '蛇带走恢复青春的植物（AI生成）', alt: 'AI 生成图中的蛇衔着带刺植物从水边爬走，旁边留下浅色蜕皮；水中的吉尔伽美什伸手追赶，却已经来不及。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh', 'source-met-gilgamesh-overview'] },
+    { id: 'asset-gilgamesh-bull-of-heaven', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-bull-of-heaven.webp', title: '天牛冲向吉尔伽美什与恩奇都（AI生成）', alt: 'AI 生成图中的巨大天牛低头猛烈冲撞，前蹄击碎地面；吉尔伽美什贴近牛角闪避，恩奇都从后方拉住牛尾，城中居民躲在泥砖墙后。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-tablet-vi'] },
+    { id: 'asset-gilgamesh-enkidu-dies', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-enkidu-dies.webp', title: '吉尔伽美什哀悼恩奇都（AI生成）', alt: 'AI 生成图中的恩奇都安静躺在编织床上，吉尔伽美什握住他的手臂含泪呼唤；几名哀悼者站在摆有油灯、陶器、织物与树枝的泥砖房间后方。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-soas-gilgamesh-old-babylonian-grief'] },
+    { id: 'asset-gilgamesh-flood-survivor', type: 'image', src: 'assets/images/mesopotamia/gilgamesh-flood-survivor.webp', title: '乌特纳比什提姆讲述洪水（AI生成）', alt: 'AI 生成图中的乌特纳比什提姆与旅途中的吉尔伽美什在水边对坐交谈；乌特纳比什提姆身旁的无文字叙事框中，大船正穿过暴雨与巨浪。', sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-flood-tablet', 'source-soas-gilgamesh-xi-flood'] },
+    { id: 'asset-old-babylonian-hammurabi-letter', type: 'image', src: 'assets/images/mesopotamia/old-babylonian-hammurabi-letter.webp', title: '汉谟拉比命令地方官召集船工', alt: '一块竖长的浅褐色泥板，正面密布横向排列的楔形文字；信中汉谟拉比要求地方官召集船工前往巴比伦。', sourceIds: ['source-wikimedia-hammurabi-letter'] },
+    { id: 'asset-hammurabi-code-stele', type: 'image', src: 'assets/images/mesopotamia/hammurabi-code-stele.webp', title: '汉谟拉比法典石碑', alt: '一块高大的黑色石碑立在展厅中，顶部为汉谟拉比面对公正之神的浮雕，下方刻满密集楔形文字。', sourceIds: ['source-wikimedia-hammurabi-full-stele', 'source-louvre-hammurabi-code'] },
+    { id: 'asset-hammurabi-code-relief', type: 'image', src: 'assets/images/mesopotamia/hammurabi-code-relief.webp', title: '汉谟拉比面对公正之神', alt: '法典石碑顶部浮雕近景，汉谟拉比站在左侧，右侧戴角冠的神坐在宝座上并伸出权力象征。', sourceIds: ['source-wikimedia-hammurabi-stele', 'source-louvre-hammurabi-code'] },
+    { id: 'asset-hammurabi-code-equal-retaliation', type: 'image', src: 'assets/images/mesopotamia/hammurabi-trial-1915.webp', title: '《汉谟拉比面前的审判》', alt: '1915年的历史插画中，汉谟拉比高坐庭中，当事人在他面前申诉，卫兵和围观者分立两侧；这是近代插画家对古代审判的想象，不是现场记录。', sourceIds: ['source-wikimedia-hammurabi-trial-1915'] },
+    { id: 'asset-hammurabi-code-status-penalties', type: 'image', src: 'assets/images/mesopotamia/hammurabi-trial-status-crop-1915.webp', title: '审判庭上的身份与位置', alt: '《汉谟拉比面前的审判》局部：高坐的国王、阶前的申诉者与两侧不同装束的人群构成鲜明层级；这是1915年历史插画的裁切，不是古代图像证据。', sourceIds: ['source-wikimedia-hammurabi-trial-1915'] },
+    { id: 'asset-hammurabi-code-property-welfare', type: 'image', src: 'assets/images/mesopotamia/hammurabi-babylonian-canals-1898.webp', title: '田地与灌溉渠道', alt: '1898年的历史插画中，灌溉渠道穿过巴比伦的田地，农人在水边劳作；这是近代对古代农田水利的想象图。', sourceIds: ['source-wikimedia-babylonian-canals-1898'] },
+    { id: 'asset-hammurabi-code-discovery', type: 'image', src: 'assets/images/mesopotamia/hammurabi-code-discovery.webp', title: '苏萨发掘中的法典石碑', alt: '一张早期黑白发掘照片，数名工作人员站在出土的黑色石碑旁。', sourceIds: ['source-wikimedia-hammurabi-discovery', 'source-louvre-hammurabi-code'] },
+    { id: 'asset-babel-tower-bruegel', type: 'image', src: 'assets/images/mesopotamia/babel-tower-bruegel.webp', title: '勃鲁盖尔想象的巴别塔', alt: '一座尚未完工的巨大圆形高塔耸立在城市与港口之间，大量工人在不同楼层施工；这是十六世纪画家的故事想象。', sourceIds: ['source-wikimedia-bruegel-babel', 'source-sefaria-genesis-11'] },
+    { id: 'asset-babel-confusion-dore', type: 'image', src: 'assets/images/mesopotamia/babel-confusion-dore.webp', title: '多雷笔下的语言混乱', alt: '高塔下的人群彼此呼喊、争执和转身离去，原本共同施工的秩序已经瓦解；这是十九世纪的故事插图。', sourceIds: ['source-wikimedia-dore-confusion', 'source-sefaria-genesis-11'] },
+    { id: 'asset-babel-esagil-tablet', type: 'image', src: 'assets/images/mesopotamia/babel-esagil-tablet.webp', title: '记录埃特曼安吉尺寸的泥板残片', alt: '一块不规则的深褐色泥板残片，正面保存数列楔形文字；文字记录了埃特曼安吉的尺寸。', sourceIds: ['source-wikimedia-esagil-tablet', 'source-george-tower-of-babel'] },
+    { id: 'asset-babel-etemenanki-ruins', type: 'image', src: 'assets/images/mesopotamia/babel-etemenanki-ruins.webp', title: '埃特曼安吉地基遗址', alt: '平坦遗址中残留一片积水和低矮土层，昔日高塔已不再直立。', sourceIds: ['source-wikimedia-etemenanki-ruins', 'source-george-tower-of-babel'] }
   ];
 
   return {

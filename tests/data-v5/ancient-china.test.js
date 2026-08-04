@@ -136,7 +136,7 @@ test('Ancient China owns twenty-three reviewed local images', () => {
     assert.ok(asset.src.startsWith('assets/images/ancient-china/'), asset.id);
     const filePath = path.resolve(root, asset.src);
     assert.equal(fs.existsSync(filePath), true, asset.src);
-    assert.ok(fs.statSync(filePath).size > 50_000, asset.src);
+    assert.ok(fs.statSync(filePath).size > 1_000, asset.src);
     assert.ok(asset.alt.length >= 15, asset.id);
   }
   assert.equal(sceneById.get('western-zhou-muye-victory').presentation.assetId, 'asset-li-gui');

@@ -388,13 +388,18 @@ automatically; only references to not-yet-integrated sibling modules are
 declared manually. Existing active modules are not required to pass this
 isolated gate retroactively when no staging boundary exists.
 
-Each module image directory also owns a non-runtime `manifest.json`. New
-Assets require reviewed creator, license, source URL, original dimensions,
-origin, digest, and approval status. Each Scene's handoff must record its media
-decision. Selecting new historical media or reusing an existing image requires
-at least two actually inspected candidates and a reason for the choice. AI
-media and text-only exceptions require explicit user approval. AI images must
-be smaller than 1,000,000 bytes.
+Each module image directory also owns a non-runtime, version-2 `manifest.json`.
+New Assets require reviewed creator, license, source URL, original dimensions,
+encoded dimensions, encoded byte size, WebP format, origin, digest, and
+approval status. Runtime Scene images must be local `.webp` files, smaller than
+1,000,000 bytes, and no more than 2560 pixels on either encoded axis. Conversion
+must preserve the approved crop, aspect ratio, and narrative content; inspect
+the actual encoded image at desktop and mobile sizes. Do not keep a second
+JPEG/PNG runtime copy after references and validation pass. Each Scene's
+handoff must record its media decision. Selecting new historical media or
+reusing an existing image requires at least two actually inspected candidates
+and a reason for the choice. AI media and text-only exceptions require explicit
+user approval.
 
 ### Integration handoff
 

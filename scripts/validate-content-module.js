@@ -185,6 +185,9 @@ function main() {
     errors.push('asset manifest is missing from <assetDirectory>/manifest.json');
   } else {
     assetManifest = readJson(assetManifestFile);
+    if (assetManifest.manifestVersion !== 2) {
+      errors.push('asset manifest must use manifestVersion 2');
+    }
   }
   const metadataById = new Map((assetManifest.assets || []).map(entry => [entry.assetId, entry]));
   for (const asset of moduleData.assets || []) {
@@ -196,6 +199,12 @@ function main() {
     if (!fs.existsSync(assetFile)) {
       errors.push(`Asset ${asset.id} references missing file ${asset.src}`);
       continue;
+    }
+    if (!asset.src.toLowerCase().endsWith('.webp')) {
+      errors.push(`Asset ${asset.id} must use a local WebP file`);
+    }
+    if (fs.statSync(assetFile).size >= 1_000_000) {
+      errors.push(`Asset ${asset.id} must be smaller than 1,000,000 bytes`);
     }
     const metadata = metadataById.get(asset.id);
     if (!metadata) {
@@ -218,11 +227,19 @@ function main() {
         !Number.isInteger(metadata.originalHeight) || metadata.originalHeight <= 0) {
       errors.push(`Asset ${asset.id} manifest original dimensions are required`);
     }
+    if (!Number.isInteger(metadata.encodedWidth) || metadata.encodedWidth <= 0 ||
+        !Number.isInteger(metadata.encodedHeight) || metadata.encodedHeight <= 0) {
+      errors.push(`Asset ${asset.id} manifest encoded dimensions are required`);
+    }
+    if (metadata.encodedWidth > 2560 || metadata.encodedHeight > 2560) {
+      errors.push(`Asset ${asset.id} encoded dimensions must not exceed 2560 pixels`);
+    }
+    if (metadata.byteSize !== fs.statSync(assetFile).size) {
+      errors.push(`Asset ${asset.id} manifest byteSize is stale`);
+    }
+    if (metadata.format !== 'webp') errors.push(`Asset ${asset.id} manifest format must be webp`);
     if (metadata.sha256 !== sha256(assetFile)) errors.push(`Asset ${asset.id} manifest sha256 is stale`);
     if (metadata.reviewStatus !== 'approved') errors.push(`Asset ${asset.id} manifest reviewStatus must be approved`);
-    if (metadata.origin === 'aiGenerated' && fs.statSync(assetFile).size >= 1_000_000) {
-      errors.push(`AI Asset ${asset.id} must be smaller than 1,000,000 bytes`);
-    }
   }
   for (const entry of assetManifest.assets || []) {
     if (!localIds.assets.has(entry.assetId)) errors.push(`asset manifest declares unused Asset ${entry.assetId}`);

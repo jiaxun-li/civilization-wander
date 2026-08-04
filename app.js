@@ -393,6 +393,8 @@
       const incomingImage = documentRef.createElement('img');
       incomingImage.src = asset.src;
       incomingImage.alt = asset.alt;
+      incomingImage.decoding = 'async';
+      incomingImage.fetchPriority = 'high';
       nextContainer.append(incomingImage);
       nextContainer.querySelector('[data-v4-map]')?.setAttribute('aria-hidden', 'true');
       transitionMediaImage(nextContainer, incomingImage, outgoingImage);

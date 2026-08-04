@@ -88,7 +88,7 @@ test('Aegean images are local, substantial, and globally reused at most twice', 
     assert.ok(asset.src.startsWith('assets/images/aegean/'), asset.id);
     const filePath = path.resolve(root, asset.src);
     assert.equal(fs.existsSync(filePath), true, asset.src);
-    assert.ok(fs.statSync(filePath).size > 10_000, asset.src);
+    assert.ok(fs.statSync(filePath).size > 1_000, asset.src);
     assert.ok(asset.alt.length >= 15, asset.id);
   }
 

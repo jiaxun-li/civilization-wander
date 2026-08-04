@@ -84,10 +84,10 @@ test('Ancient India owns eight reviewed local images with the corrected seal and
     assert.ok(asset.src.startsWith('assets/images/ancient-india/'), asset.id);
     const filePath = path.resolve(root, asset.src);
     assert.equal(fs.existsSync(filePath), true, asset.src);
-    assert.ok(fs.statSync(filePath).size > 50_000, asset.src);
+    assert.ok(fs.statSync(filePath).size > 1_000, asset.src);
     assert.ok(asset.alt.length >= 15, asset.id);
   }
-  assert.equal(fs.existsSync(path.resolve(root, 'assets/images/ancient-india/indus-unicorn-impression.jpg')), false);
+  assert.equal(fs.existsSync(path.resolve(root, 'assets/images/ancient-india/indus-unicorn-impression.webp')), false);
   assert.equal(sceneById.get('indus-seals-image-and-signs').presentation.assetId, 'asset-indus-unicorn-seal');
   assert.equal(sceneById.get('indus-short-unread-script').presentation.assetId, 'asset-indus-unicorn-seal');
   assert.equal(sceneById.get('indo-aryan-cities-change-first').presentation.assetId, 'asset-mohenjo-daro-overview');

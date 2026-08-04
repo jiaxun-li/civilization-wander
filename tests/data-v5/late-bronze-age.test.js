@@ -80,7 +80,7 @@ test('Late Bronze Age media is local, substantial, and not over-reused', () => {
     assert.ok(asset.src.startsWith('assets/images/late-bronze-age/'), asset.id);
     const filePath = path.resolve(root, asset.src);
     assert.equal(fs.existsSync(filePath), true, asset.src);
-    assert.ok(fs.statSync(filePath).size > 10_000, asset.src);
+    assert.ok(fs.statSync(filePath).size > 1_000, asset.src);
     assert.ok(asset.alt.length >= 15, asset.id);
   }
   for (const scene of lateBronzeAge.scenes.filter(item => item.presentation.kind === 'imageAndText')) {

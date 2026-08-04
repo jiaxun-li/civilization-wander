@@ -276,7 +276,7 @@ Scene 还必须满足：
 node scripts/validate-content-module.js data/<module>.js docs/content-packs/<module>.handoff.json
 ```
 
-每个 `assets/images/<module>/` 还必须包含非运行时 `manifest.json`，为 Asset 保存 creator、license、sourceUrl、origin、原始宽高、SHA-256、来源 ID 和审核状态。现存 V4 迁移到 V5 的素材可以诚实标为 `needsMetadataAudit`，但新模块必须在门禁前完成审核，不得猜测许可或创作者。
+每个 `assets/images/<module>/` 还必须包含非运行时、`manifestVersion: 2` 的 `manifest.json`，为 Asset 保存 creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、`webp` 格式、SHA-256、来源 ID 和审核状态。现存 V4 迁移到 V5 的素材可以诚实标为 `needsMetadataAudit`，但新模块必须在门禁前完成审核，不得猜测许可或创作者。
 
 Integration Agent 接手后必须先确认当前主运行时有效，再接入入口和聚合器、解决全局重复 ID 与外部引用、置入反向导航、更新加载顺序测试，随后运行完整 validator、语法检查、全量测试和浏览器验收，并同步 README、架构文档和受影响工作规范。
 
@@ -305,9 +305,11 @@ Integration Agent 接手后必须先确认当前主运行时有效，再接入�
 
 图片正式置入前必须确认来源、许可、真实宽高、alt、title 和必要 caption，并下载为项目内本地文件，运行时不得请求远程 URL。后世艺术形象不得暗示为历史人物的同时代肖像。
 
+运行时 Scene 图片统一使用本地 `.webp`。每张编码后文件必须严格小于 `1,000,000 bytes`，编码后的任一边不得超过 `2560` 像素；转换不得改变已经批准的裁切范围、宽高比、构图或叙事内容。照片、线稿、地图和带透明区域的插画不得机械使用同一个质量参数，必须检查实际 WebP 在 desktop 与 mobile 媒体栏中的细节、文字、细线、透明背景和色彩。引用、manifest 与测试全部通过后，应删除同目录中不再使用的 JPEG／PNG 运行时副本，避免仓库和部署产物同时保存两份。
+
 同一张物理图片在整个当前 V5 中最多用于两个 Scene。重复次数按原始图像和本地 `src` 判断；不同 Asset ID、title、alt、裁切或转码不能绕过上限。置入与验证阶段必须用自动化检查拒绝超出上限的内容。
 
-所有置入项目资产目录的 AI 生成图片，单个文件必须严格小于 `1,000,000 bytes`（十进制 `1 MB`）。生成原图超出上限时，必须先压缩或转换格式，再写入 Asset；压缩不得擅自改变已批准的构图、宽高比或叙事内容，并须检查实际界面显示质量。
+AI 生成图片同样遵守上述 WebP、尺寸和体积规则。生成原图超出上限时，必须先压缩或转换格式，再写入 Asset；压缩不得擅自改变已批准的构图、宽高比或叙事内容，并须检查实际界面显示质量。
 
 所有 Scene 图片都按原始比例完整显示并在媒体栏居中，不得为填满容器而裁切；图片之外的余白统一使用地图大陆色 `#c8cbbb`。这一规则须同时验证 desktop 和 mobile。
 

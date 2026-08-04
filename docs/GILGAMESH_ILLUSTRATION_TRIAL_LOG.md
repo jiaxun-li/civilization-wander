@@ -9,15 +9,15 @@
 
 | 资产 | 用途 | 实际尺寸 | 状态 |
 | --- | --- | --- | --- |
-| `gilgamesh-old-babylonian-fragments.jpg` | Scene 1 古巴比伦泥板残片 | 1122 × 1402 | CC0 文物照片几何拼版；已置入左侧媒体栏 |
-| `gilgamesh-uruk-kingship.jpg` | Scene 2 王座与进贡 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
-| `gilgamesh-rivals-become-friends.jpg` | Scene 3 高张力格斗 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
-| `gilgamesh-cedar-forest.jpg` | Scene 4 洪巴巴求饶 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
-| `gilgamesh-bull-of-heaven.jpg` | Scene 5 天牛冲撞 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
-| `gilgamesh-enkidu-dies.jpg` | Scene 6 哀悼恩奇都 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
-| `gilgamesh-worlds-end.jpg` | Scene 7 进入双峰黑暗 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
-| `gilgamesh-flood-survivor.jpg` | Scene 8 对话与洪水叙事框 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
-| `gilgamesh-immortality-lost.jpg` | Scene 9 永生再次失去 | 1122 × 1402 | 用户批准；JPEG 质量 90；小于 1 MB |
+| `gilgamesh-old-babylonian-fragments.webp` | Scene 1 古巴比伦泥板残片 | 1122 × 1402 | CC0 文物照片几何拼版；已置入左侧媒体栏 |
+| `gilgamesh-uruk-kingship.webp` | Scene 2 王座与进贡 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
+| `gilgamesh-rivals-become-friends.webp` | Scene 3 高张力格斗 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
+| `gilgamesh-cedar-forest.webp` | Scene 4 洪巴巴求饶 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
+| `gilgamesh-bull-of-heaven.webp` | Scene 5 天牛冲撞 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
+| `gilgamesh-enkidu-dies.webp` | Scene 6 哀悼恩奇都 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
+| `gilgamesh-worlds-end.webp` | Scene 7 进入双峰黑暗 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
+| `gilgamesh-flood-survivor.webp` | Scene 8 对话与洪水叙事框 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
+| `gilgamesh-immortality-lost.webp` | Scene 9 永生再次失去 | 1122 × 1402 | 用户批准；原始 JPEG 经审核后转换为 WebP；小于 1 MB |
 
 2026-08-02 已清理试稿、重复母版和其他未被运行时引用的图片；提示词与编辑判断仍保留在本文档中。
 

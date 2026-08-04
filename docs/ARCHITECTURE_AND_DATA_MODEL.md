@@ -111,9 +111,9 @@ npm run report:counts
 | `Source` | `id`, `title` | 是 | 全局唯一 ID、非空标题。 |
 |  | `author`, `publisher`, `url` | 否 | 非空字符串；`url` 只是元数据，运行时不会请求。 |
 |  | `year` | 否 | 非零整数。 |
-| `Asset` | `id`, `type`, `src`, `title`, `alt`, `sourceIds` | 是 | `type` 仅 `data`/`image`，路径须为编码安全的项目内相对路径，禁止协议、绝对路径、盘符与 `..`，扩展名须匹配类型。Node 校验还验证真实文件存在。 |
+| `Asset` | `id`, `type`, `src`, `title`, `alt`, `sourceIds` | 是 | `type` 仅 `data`/`image`，路径须为编码安全的项目内相对路径，禁止协议、绝对路径、盘符与 `..`。Scene 图片统一引用本地 WebP；Node 校验还验证真实文件存在。 |
 
-运行时 Asset 保持精简；creator、license、sourceUrl、origin、原始宽高、SHA-256 与审核状态保存在 `assets/images/<module>/manifest.json`，不扩充运行时 schema。自动生成的旧素材记录可标记 `needsMetadataAudit`，新模块门禁只接受人工核对后的 `approved`。
+运行时 Asset 保持精简；creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、格式、SHA-256 与审核状态保存在 `assets/images/<module>/manifest.json`，不扩充运行时 schema。manifest 使用 version 2；自动生成的旧素材记录可标记 `needsMetadataAudit`，新模块门禁只接受人工核对后的 `approved`。Scene WebP 必须小于 1,000,000 bytes，编码后任一边不超过 2560 像素。
 
 ### 4.2 知识、事件、关系与故事对象
 
@@ -440,13 +440,13 @@ npm run report:counts
 - 不得为核心内容请求远程地图、字体、API 或图片。Source URL 只是元数据。
 - URL 主身份保持 `#card/<cardId>/<optionalSceneId>`；Scene ID 用于区段定位和恢复，不成为全局故事节点。
 - GitHub Pages 可直接托管根目录；`.nojekyll` 避免 Jekyll 处理。
-- 当前地图产物是 `data/world-physical.js` 和 `assets/natural-earth/base.js`：前者保存本地 Natural Earth 矢量数据，后者负责筛选、冻结和缓存。两者都是受版本控制的运行时产物；内容图片位于 `assets/images/`，当前仓库不包含地图上游原料或构建链。
+- 当前地图产物是 `data/world-physical.js` 和 `assets/natural-earth/base.js`：前者保存本地 Natural Earth 矢量数据，后者负责筛选、冻结和缓存。两者都是受版本控制的运行时产物；运行时内容图片位于 `assets/images/` 并统一编码为 WebP，当前仓库不包含地图上游原料或构建链。
 
 ## 19. 已知限制与未来演进方向
 
 1. Event 已是一级数据和查询对象，但没有独立公共路由或 Event 页面；当前通过 Card 与关系被发现。
 2. 来源已下沉到 ClaimBlock/证据/地图对象，公共 UI 尚未显示行内 citation 或来源面板。
-3. 新增图片仍须使用本地 Asset，并通过文件存在性、alt 与 provenance 校验；Scene 媒体按原比例居中完整显示，余白使用 `#c8cbbb`。
+3. 新增图片仍须使用本地 WebP Asset，并通过文件存在性、体积、尺寸、alt 与 provenance 校验；Scene 媒体按原比例居中完整显示，余白使用 `#c8cbbb`。
 4. MapAnnotation 必须保持 `locatedAt`、`associatedWith` 与 `screenCallout` 的语义区分；新增地理锚点仍需人工史料审查。
 5. StructureView 查询结果目前只驱动 Geometry family 样式和隐藏 legend 的内部计数，不逐 edge 绘制；`depth` 与 `display` 没有进一步运行语义。
 6. V5 validator 对一般 Entity.type、Card.kind、StructuralEdge family/type、StructureView family/display 仍主要做非空字符串检查；但 Card 主 Entity 的类型必须存在于公共类型标签表，Event.kind 已收紧为显式 enum。Map 对未知 family 不会提供完整语义样式。未来若其余类型集合稳定，应收紧为显式 enum 并加迁移/负测。
@@ -479,9 +479,9 @@ npm run report:counts
 | `scripts/report-atlas-counts.js` | 只读加载聚合数据并报告当前 schema 与各集合数量，不修改数据或文档。 |
 | `scripts/check-runtime-manifests.js` | 只读比较入口、聚合器和语法检查中的内容模块顺序，防止加载清单漂移。 |
 | `scripts/validate-content-module.js` | 对 staging 模块执行精确接口、局部 ID／引用、pending sibling 声明、Asset manifest 与媒体决策门禁。 |
-| `scripts/generate-asset-manifests.js` | 从现有运行时 Asset 生成非运行时元数据清单骨架、尺寸和摘要；自动结果保持待审，不猜测许可。 |
+| `scripts/generate-asset-manifests.js` | 从现有运行时 Asset 更新 version-2 非运行时元数据清单、编码尺寸、体积和摘要；保留既有审核字段，不猜测许可。 |
 | `scripts/migrate-v4-content-to-v5.js` | 记录 V4→V5 的显式字段删除、Event kind 和逐 Scene Event 映射。 |
-| `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始尺寸、origin、SHA-256 与审核状态。 |
+| `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始与编码尺寸、体积、WebP 格式、origin、SHA-256 与审核状态。 |
 | `ui/v4/cards.js` | 语义化/转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML。 |
 | `ui/v4/card-reader.js` | Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫。 |
 | `map/v4/map-renderer.js` | 本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理。 |
@@ -496,7 +496,7 @@ npm run report:counts
 | `tests/data-v5/content.test.js` | 完整 Card、Scene Event、Claim 来源、review 隔离、Natural Earth provenance、图片放置与 Annotation 内容。 |
 | `tests/data-v5/queries.test.js` | Scene 顺序、派生 Entity/Card 与 Card/Event、edge、Placement、时间、StructureView。 |
 | `tests/data-v5/validation.test.js` | 畸形数据、未知字段、Scene Event、所有权、review、时间、地图、资产等系统负测。 |
-| `tests/data-v5/asset-manifest.test.js` | Asset manifest 覆盖、文件摘要、尺寸与 AI 图片大小上限。 |
+| `tests/data-v5/asset-manifest.test.js` | Asset manifest 覆盖、WebP 格式、文件摘要、编码尺寸与全体图片大小上限。 |
 | `tests/ui-v4/cards.test.js` | V4 Cards/Reader、正文视觉、同 Card 媒体继承、方向派生、前进/恢复、destroy 竞态、hash/history/scroll。 |
 | `tests/map-v4/map.test.js` | 投影/路径、direct/history/相邻 Scene camera、overlay 差量/crossfade/反转、reduced motion、竞态清理。 |
 | `tests/e2e/v5-flows.test.js` | V5 两次返回、textOnly 直链继承前序媒体、全部现有故事可读。 |

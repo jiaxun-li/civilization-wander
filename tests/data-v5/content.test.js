@@ -642,7 +642,7 @@ test('assets are local, relative, and present in the project', () => {
   );
   assert.equal(data.assets.every(asset => asset.type === 'image'), true);
   assert.ok(data.assets.every(asset => !asset.src.endsWith('.svg')));
-  assert.ok(mesopotamia.assets.every(asset => /\.(?:jpg|png)$/.test(asset.src)));
+  assert.ok(data.assets.every(asset => asset.src.endsWith('.webp')));
   const approvedSchematics = new Set([
     'asset-mesopotamian-temple-uruk-eanna-plan',
     'asset-mesopotamian-temple-old-babylonian',

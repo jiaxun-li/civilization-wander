@@ -13,6 +13,7 @@ const globalCss = read('styles.css');
 const cardCss = read('styles/v4/cards.css');
 const mapCss = read('styles/v4/map.css');
 const mapJs = read('map/v4/map-renderer.js');
+const cardsJs = read('ui/v4/cards.js');
 
 test('entrypoint, aggregator, and syntax manifest keep one content-module order', () => {
   const { spawnSync } = require('node:child_process');
@@ -117,6 +118,9 @@ test('left-column images crossfade while unchanged images remain stable', () => 
   assert.match(cardCss, /is-media-image-entering[\s\S]*opacity: 0/);
   assert.match(cardCss, /is-media-image-entering-active[\s\S]*opacity: 1/);
   assert.match(cardCss, /is-media-image-leaving-active[\s\S]*opacity: 0/);
+  assert.match(app, /incomingImage\.decoding = 'async'/);
+  assert.match(app, /incomingImage\.fetchPriority = 'high'/);
+  assert.match(cardsJs, /loading="lazy" decoding="async"/);
 });
 
 test('same-Card image presentations preserve the map DOM underneath', () => {

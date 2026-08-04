@@ -71,6 +71,8 @@ V5 是当前数据契约；本次升级没有重写已经稳定的表现层，�
 - `ui/v4/card-reader.js`：IntersectionObserver、Scene 激活、媒体继承、统一导航、hash 路由及返回恢复；
 - `styles/v4/cards.css`：桌面 sticky 媒体/正文双栏，以及移动端普通纵向阅读。
 
+运行时 Scene 图片统一为本地 WebP，单图严格小于 1 MB，编码后任一边不超过 2560 像素；模块级门禁同时检查格式、体积和 version-2 Asset manifest。
+
 桌面通过 hover/focus 打开 Preview。粗指针设备不依赖 hover：第一次点击打开 Preview 并保留在当前 Card，第二次点击同一入口才进入目标 Card。
 
 ### 地图层

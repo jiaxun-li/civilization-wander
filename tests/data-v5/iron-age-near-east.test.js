@@ -93,7 +93,7 @@ test('all forty-one scenes have sourced non-text media and local licensed images
     assert.ok(asset.src.startsWith('assets/images/iron-age-near-east/'), asset.id);
     const file = path.resolve(root, asset.src);
     assert.equal(fs.existsSync(file), true, asset.src);
-    assert.ok(fs.statSync(file).size > 10_000, asset.src);
+    assert.ok(fs.statSync(file).size > 1_000, asset.src);
   }
   for (const card of moduleData.cards) {
     for (const sceneId of card.sceneIds) assert.equal(sceneById.has(sceneId), true, `${card.id}:${sceneId}`);

@@ -237,13 +237,17 @@
 
 **图片展示方式：** 按原始比例完整展示，不裁切、不放大填充、不以局部截取代替完整画面
 
+**WebP 交付：** 文件名 _____；编码后 _____ × _____ px；_____ bytes；必须为 `.webp`、严格小于 `1,000,000 bytes`，且任一边不超过 `2560` px
+
+**编码后视觉检查：** desktop／mobile；细节、文字、细线、透明背景与色彩是否保持；不得改变已批准裁切、宽高比、构图或叙事内容
+
 **拟用 title：**
 
 **拟用 alt：**
 
 **必要 caption：**
 
-**AI 图片大小（使用 AI 生成图时）：** _____ bytes；必须严格小于 `1,000,000 bytes`，超出时须在置入前压缩且不得改变已批准的构图、宽高比或叙事内容
+**AI 图片标记（使用 AI 生成图时）：** 已明确标注并提交实际画面审核；同样遵守上述 WebP、尺寸和体积规则
 
 **地图图形编码（使用地图时）：** 逐项列出点／线／箭头／色块／纹理及其含义
 
@@ -308,7 +312,7 @@
 
 **Source、Asset provenance 与本地文件检查：**
 
-**Asset manifest：** `assets/images/<module>/manifest.json`；新 Asset 的 creator、license、sourceUrl、origin、原始宽高、SHA-256 与 `reviewStatus: approved` 已齐全
+**Asset manifest：** `assets/images/<module>/manifest.json`；使用 `manifestVersion: 2`，新 Asset 的 creator、license、sourceUrl、origin、原始宽高、编码后宽高、字节数、`format: webp`、SHA-256 与 `reviewStatus: approved` 已齐全
 
 **模块内部引用检查：**
 

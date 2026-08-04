@@ -172,8 +172,7 @@ test('Ancient Egypt owns active local assets and preserves reserved future-story
     assert.ok(asset.src.startsWith('assets/images/ancient-egypt/'), asset.id);
     const filePath = path.resolve(root, asset.src);
     assert.equal(fs.existsSync(filePath), true, asset.src);
-    const minimumSize = path.extname(asset.src) === '.svg' ? 1_000 : 10_000;
-    assert.ok(fs.statSync(filePath).size > minimumSize, asset.src);
+    assert.ok(fs.statSync(filePath).size > 1_000, asset.src);
     assert.ok(asset.alt.length >= 15, asset.id);
   }
   const nefertitiSource = ancientEgypt.sources.find(source => source.id === 'source-smb-nefertiti-image-cc-by-sa');
@@ -182,15 +181,15 @@ test('Ancient Egypt owns active local assets and preserves reserved future-story
   assert.match(ancientEgypt.assets.find(asset => asset.id === 'asset-egypt-art-anubis-facsimile').title, /现代1:1摹本/);
   assert.match(ancientEgypt.assets.find(asset => asset.id === 'asset-egypt-art-abu-simbel-color').alt, /四尊.*拉美西斯二世坐像/);
   for (const relativePath of [
-    'assets/images/ancient-egypt/old-kingdom-sahure-statue.jpg',
-    'assets/images/ancient-egypt/middle-kingdom-senwosret-iii.jpg',
-    'assets/images/ancient-egypt/new-kingdom-nefertiti.jpg',
-    'assets/images/ancient-egypt/new-kingdom-amun-head.jpg',
-    'assets/images/ancient-egypt/new-kingdom-abu-simbel.jpg'
+    'assets/images/ancient-egypt/old-kingdom-sahure-statue.webp',
+    'assets/images/ancient-egypt/middle-kingdom-senwosret-iii.webp',
+    'assets/images/ancient-egypt/new-kingdom-nefertiti.webp',
+    'assets/images/ancient-egypt/new-kingdom-amun-head.webp',
+    'assets/images/ancient-egypt/new-kingdom-abu-simbel.webp'
   ]) {
     const filePath = path.resolve(root, relativePath);
     assert.equal(fs.existsSync(filePath), true, relativePath);
-    assert.ok(fs.statSync(filePath).size > 10_000, relativePath);
+    assert.ok(fs.statSync(filePath).size > 1_000, relativePath);
   }
 });
 
