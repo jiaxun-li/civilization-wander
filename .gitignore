@@ -1,4 +1,8 @@
 .worktrees/
+node_modules/
+.pnpm-store/
+tmp/
 test-results/
 playwright-report/
-
+coverage/
+*.log
