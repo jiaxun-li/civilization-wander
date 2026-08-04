@@ -1,6 +1,6 @@
-# Civilization Wander V4 内容包空白模板
+# Civilization Wander V5 内容包空白模板
 
-使用前先阅读 `AGENTS.md` 与 `docs/CONTENT_PACK_AND_AUTHORING_WORKFLOW.md`。严格按三阶段推进；每个阶段结束后停止并等待用户批准。第二阶段内部依次完成证据整理、故事写作和公共文字删减，再把完整正文与内部证据附录合并提交、等待一次批准；第二阶段获批并进入第三阶段后，连续完成媒体、置入、验证与复盘。
+使用前先阅读 `AGENTS.md` 与 `docs/CONTENT_PACK_AND_AUTHORING_WORKFLOW.md`。严格按三阶段推进；第一、第二阶段结束后停止并等待用户批准。第二阶段内部依次完成证据整理、故事写作和公共文字删减，再把完整正文与内部证据附录合并提交、等待一次批准；第二阶段获批并进入第三阶段后，默认连续完成媒体、置入、验证与复盘，仅在媒体缺口、AI／示意图需要明确批准或结构无法表达时暂停相关部分。
 
 每轮将“内容产物”和“流程改进建议”分开。流程建议只使用以下标签：通用规则、当前选题特例、实现问题、尚待验证。
 
@@ -110,6 +110,10 @@
 
 **允许进入公共正文的 Claim ID：**
 
+**Event ID 与 `kind`：** 至少一项；`historicalEvent`／`historicalProcess`／`textualTradition`／`traditionalNarrative`
+
+**时间相交核对：** 至少一个所引 Event 的规范化时间与本 Scene 相交；可与其他 Scene 复用同一 Event，不为本 Scene 虚构一次性 Event
+
 **完整正文：**
 
 **来源 ID：**
@@ -168,7 +172,7 @@
 
 **内部编辑目的：**
 
-**相关 Event：**
+**由各 Scene 推导的相关 Event：** Card 不手写 `eventIds`；按 Scene 顺序列出并去重
 
 **相关 Entity／StructuralEdge：**
 
@@ -203,7 +207,7 @@
 
 ### 内容产物
 
-> 只为第二阶段已经批准的正文选择媒体，不在本阶段改写正文。除非用户特别说明，否则不制作示意图；优先复用现有本地素材，其次寻找来源与许可清楚的历史素材。媒体确定后直接置入并验证，不另设审批点。图片须在最终验收中列明实际画面、来源与许可，并按原始比例完整展示。同一张物理图片在整个当前 V4 中最多用于两个 Scene；不同 Asset ID、title、alt、裁切或转码不能绕过上限。
+> 只为第二阶段已经批准的正文选择媒体，不在本阶段改写正文。必须先实际检索；新选历史素材或复用既有图片都至少比较两个合适候选并记录理由，不得把“优先复用”当作跳过检索。第三阶段默认连续执行，只有媒体缺口、AI／示意图需批准或结构无法忠实表达时暂停。图片须在最终验收中列明实际画面、来源与许可，并按原始比例完整展示。同一张物理图片在整个当前 V5 中最多用于两个 Scene；不同 Asset ID、title、alt、裁切或转码不能绕过上限。
 
 ### Scene 1／与第二阶段 Scene 一一对应
 
@@ -214,6 +218,12 @@
 **媒体的理解目的：**
 
 **素材方式：** 复用现有本地素材／寻找现成历史素材／用户明确批准的示意图
+
+**媒体决策类型：** `newHistoricalAsset`／`approvedReuse`／`map`／`aiGenerated`／`textOnly`
+
+**实际查看的候选（新素材或复用至少两项）：** 逐项填写 URL、机构、许可、画面是否对应本 Scene，以及选择／不选择理由
+
+**选择或复用理由：** 不得只写“已有”或“方便”；说明它为何最能帮助理解当前 Scene
 
 **实际图片：** 使用图片时在此提交实际画面，不得只写网址或文字描述
 
@@ -284,7 +294,11 @@
 
 **既有模块所需反向导航及建议位置：** 只由 Integration Agent 实际修改
 
-**显式外部引用：** Entity／Event／Source／Asset／NavigationOption／Card；逐项列出
+**机器可读交接文件：** `docs/content-packs/<module>.handoff.json`；以 `docs/content-packs/module-handoff.example.json` 为结构起点
+
+**pending sibling 外部引用：** 在全部十四个顶层集合下逐项列出；当前活动 atlas 已有引用由门禁自动发现，不手工重复
+
+**模块门禁命令：** `node scripts/validate-content-module.js data/<module>.js docs/content-packs/<module>.handoff.json`
 
 **模块级语法检查：**
 
@@ -293,6 +307,8 @@
 **模块内部重复 ID 检查：**
 
 **Source、Asset provenance 与本地文件检查：**
+
+**Asset manifest：** `assets/images/<module>/manifest.json`；新 Asset 的 creator、license、sourceUrl、origin、原始宽高、SHA-256 与 `reviewStatus: approved` 已齐全
 
 **模块内部引用检查：**
 
@@ -315,9 +331,9 @@
 - 实现问题：
 - 尚待验证：
 
-**媒体状态：** 已核对后继续置入，不暂停等待额外批准。
+**媒体状态：** 默认连续置入；仅媒体缺口、AI／示意图待批或结构无法表达时暂停，并在此记录具体例外。
 
-### 置入 V4
+### 置入 V5
 
 ### 批准范围
 

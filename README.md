@@ -1,10 +1,10 @@
-# 文明漫游 V4
+# 文明漫游 V5
 
 这是一个依赖为零、可以直接通过 `file://` 或 GitHub Pages 打开的静态文明知识网络原型。
 
 > 从一个人物、城市、信仰或作品出发，沿着经过策展的关联漫游人类文明。
 
-V4 以 Card-first 的连续阅读为核心，地图只是按需出现的支持媒体。产品只有两个核心动作：
+V5 以 Card-first 的连续阅读为核心，地图只是按需出现的支持媒体。产品只有两个核心动作：
 
 1. 向下滚动，连续阅读当前 Card 的 Scenes；Scene 激活时，地图和结构视图自动更新。
 2. 点击正文、地图节点或推荐小卡片，统一通过 NavigationOption 进入下一张 Card。
@@ -43,13 +43,13 @@ python -m http.server 8000
 
 ### 数据层
 
-`data/atlas-data.js` 汇总 V4 内容模块并输出 `schemaVersion: 4` 的十四类对象。各内容模块在主数据文件之前加载，再由主数据文件合并；实际加载顺序以 `index.html` 为唯一权威来源：
+`data/atlas-data.js` 汇总 V5 内容模块并输出 `schemaVersion: 5` 的十四类对象。各内容模块在主数据文件之前加载，再由主数据文件合并。`index.html` 是实际入口，聚合器与语法清单必须保持同序；`npm run check:manifests` 会只读检查三者是否漂移：
 
-- `Entity`：稳定知识身份；
+- `Entity`：稳定知识身份，不保存默认 Card；需要索引时由 Card 的主/相关 Entity 反向推导；
 - `StructuralEdge`：关系事实的唯一来源；
-- `Event`：可独立查询、带证据与内部审校的历史事件；
+- `Event`：可独立查询、带类型、证据与内部审校的历史事件、过程或文本传统；
 - `Card`：围绕有限问题策展一个 Entity 的关系子图；
-- `Scene`：Card 内的连续叙事段落；
+- `Scene`：Card 内的连续叙事段落；每个 Scene 明确关联至少一个时间相交的 Event，Card 的 Event 集合由其 Scenes 推导；
 - `StructureView`：Lineage、Composition、Context 或 Historical Network；
 - `NavigationOption`：正文、地图节点和推荐卡共用的跳转；
 - `NavigationPlacement`：一个跳转在特定 Scene/Card 中的本地展示位置与顺序；
@@ -64,6 +64,8 @@ python -m http.server 8000
 `docs/ARCHITECTURE_AND_DATA_MODEL.md`。
 
 ### 阅读层
+
+V5 是当前数据契约；本次升级没有重写已经稳定的表现层，因此 `ui/v4`、`map/v4` 与 `styles/v4` 目录名暂时保留，不能据此把运行时误判为 schema V4。
 
 - `ui/v4/cards.js`：Small Card、Preview Card、Main Card；
 - `ui/v4/card-reader.js`：IntersectionObserver、Scene 激活、媒体继承、统一导航、hash 路由及返回恢复；
@@ -82,7 +84,7 @@ python -m http.server 8000
 
 ### 集成层
 
-- `index.html`：唯一 V4 静态入口；
+- `index.html`：唯一 V5 静态入口；
 - `app.js`：品牌配置、首页策展与继续阅读、Card reader 与地图连接；
 - `styles.css`：全局编辑视觉；
 - `tests/integration/**`：运行时、资源与 GitHub Pages 检查；
@@ -104,9 +106,9 @@ python -m http.server 8000
 ### 添加新人物 Entity
 
 1. 先按 `docs/CONTENT_PACK_AND_AUTHORING_WORKFLOW.md` 与用户确认数据存放文件，以及新建还是复用现有文件。
-2. 在获批准的数据文件中增加 `type: 'person'` 的 Entity，提供稳定 ID、摘要、`defaultCardId` 和可信 `sourceIds`。
-3. 创建默认 Card，提出一个精确问题，并按完整叙事需要组织 `3–11` 个 Scenes，不机械凑数或压缩。
-4. 创建 Scenes：每个 Scene 包含叙事与来源，可按需要使用 MapState、StructureView 或 NavigationOption。
+2. 在获批准的数据文件中增加 `type: 'person'` 的 Entity，提供稳定 ID、摘要和可信 `sourceIds`；不要在 Entity 上保存默认 Card。
+3. 创建以该人物为 `primaryEntityId` 的 Card，提出一个精确问题，并按完整叙事需要组织 `3–11` 个 Scenes，不机械凑数或压缩。人物索引由这些 Card 关系反向生成。
+4. 创建 Scenes：每个 Scene 包含叙事、来源和非空 `eventIds`；至少一个 Event 的时间必须与 Scene 相交。可按需要使用 MapState、StructureView 或 NavigationOption。
 5. 用 StructuralEdge 建立人物与其他 Entity 的关系。不要把角色、赞助或传播误写成 lineage。
 6. 创建 NavigationOptions；正文、地图节点和结尾推荐都引用这些对象。
 7. 创建 MapStates，并引用独立 Geometry。教学覆盖必须 `approximate: true`，标签明确写“近似/示意”。
@@ -144,6 +146,7 @@ npm run test:map
 npm run test:integration
 npm run test:e2e
 npm run check:syntax
+npm run check:manifests
 npm run check:pages
 ```
 

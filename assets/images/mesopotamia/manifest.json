@@ -1,0 +1,640 @@
+{
+  "manifestVersion": 1,
+  "module": "mesopotamia",
+  "assets": [
+    {
+      "assetId": "asset-sumer-uruk-public-center",
+      "file": "assets/images/mesopotamia/sumer-uruk-public-center.jpg",
+      "origin": "unclassified",
+      "creator": "tobeytravels",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_Temple_ziggurat_in_Uruk.jpg",
+      "sourceIds": [
+        "source-wikimedia-uruk-white-temple-ziggurat",
+        "source-dai-uruk"
+      ],
+      "originalWidth": 1952,
+      "originalHeight": 1158,
+      "sha256": "826a2c34f5d3c126eba1ea61c034c64b8166df81f062ef9275dbaed06ca89934",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-sumer-uruk-proto-cuneiform-tablet",
+      "file": "assets/images/mesopotamia/sumer-uruk-proto-cuneiform-tablet.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/327384",
+      "sourceIds": [
+        "source-met-grain-tablet"
+      ],
+      "originalWidth": 468,
+      "originalHeight": 624,
+      "sha256": "3ffca68dbe23b6d10d5482888dfc8551ff3a03ba0e206cb9d35e467d3c3507f7",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-sumer-uruk-warka-vase",
+      "file": "assets/images/mesopotamia/sumer-uruk-warka-vase.jpg",
+      "origin": "unclassified",
+      "creator": "Osama Shukir Muhammed Amin",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Warka_vase_(360).jpg",
+      "sourceIds": [
+        "source-wikimedia-warka-vase-360",
+        "source-morgan-warka-vase",
+        "source-smarthistory-warka-vase"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2033,
+      "sha256": "cbf987b37f135c60edd8b962906c0bfbecf36bbe640257f8b265990ec6960f39",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-sumer-ushumgal-stele",
+      "file": "assets/images/mesopotamia/sumer-ushumgal-stele.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/329079",
+      "sourceIds": [
+        "source-met-ushumgal-stele"
+      ],
+      "originalWidth": 900,
+      "originalHeight": 1200,
+      "sha256": "9a19655a75f053066767adfbd3c78321c7d4692c64503d18a8cc4639afdcd2ec",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-sumer-balanced-account-dugga",
+      "file": "assets/images/mesopotamia/sumer-balanced-account-dugga.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/322447",
+      "sourceIds": [
+        "source-met-ur-iii-dugga-account"
+      ],
+      "originalWidth": 451,
+      "originalHeight": 800,
+      "sha256": "bc75291c7c6a3dd37bc6c95dc9d3d4173b32bebfa11e3d039607b27689c5613e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-akkadian-naram-sin-victory-stele",
+      "file": "assets/images/mesopotamia/akkadian-naram-sin-victory-stele.jpg",
+      "origin": "unclassified",
+      "creator": "Rama",
+      "license": "CC BY-SA",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victory_stele_of_Naram_Sin_9065.jpg",
+      "sourceIds": [
+        "source-wikimedia-naram-sin-victory-stele",
+        "source-louvre-naram-sin-victory-stele"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 1434,
+      "sha256": "5c4694cd594e21aa6f742f37b380b00bd932d53eeb493285af1642d66e7be8ec",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-kassite-kurigalzu-kudurru",
+      "file": "assets/images/mesopotamia/kassite-kurigalzu-kudurru.jpg",
+      "origin": "unclassified",
+      "creator": "Osama Shukir Muhammed Amin",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kudurru_mentioning_the_name_of_the_Kassite_king_Kurigalzu_II,_from_Nippur,_Iraq,_Ancient_Orient_Museum.jpg",
+      "sourceIds": [
+        "source-wikimedia-kurigalzu-kudurru",
+        "source-met-kassite-period"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1947,
+      "sha256": "3e06620c23a70ddac3b9589385cbc2003047aa48c5cb1dd3a32878a846953321",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-mesopotamian-temple-ur-ziggurat",
+      "file": "assets/images/mesopotamia/mesopotamian-temple-ur-ziggurat.jpg",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%B2%D9%82%D9%88%D8%B1%D8%A9_%D8%A7%D9%88%D8%B1_%D8%A7%D9%84%D8%A7%D8%AB%D8%B1%D9%8A%D8%A9.jpg",
+      "sourceIds": [
+        "source-wikimedia-ur-ziggurat-photo",
+        "source-met-ur-ziggurat"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1280,
+      "sha256": "d48e3bf61131a2ec5d2ec84016661e4da5b7f983c12f38b3e35d4bb2565eac0f",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-mesopotamian-temple-uruk-eanna-plan",
+      "file": "assets/images/mesopotamia/mesopotamian-temple-uruk-eanna-plan.jpg",
+      "origin": "unclassified",
+      "creator": "Lamassu Design",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eanna4b.svg",
+      "sourceIds": [
+        "source-wikimedia-eanna-4b-plan",
+        "source-dai-uruk"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1387,
+      "sha256": "08ae7f15fdd2749cf1aaef4a6a15affe9e4da8dfde4a8ee1187f2b9dbe044767",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-mesopotamian-temple-old-babylonian",
+      "file": "assets/images/mesopotamia/mesopotamian-temple-old-babylonian.jpg",
+      "origin": "unclassified",
+      "creator": "Jona Lendering",
+      "license": "Public Domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Etemenanki_drawing.gif",
+      "sourceIds": [
+        "source-wikimedia-etemenanki-reconstruction",
+        "source-british-museum-etemenanki-tablet"
+      ],
+      "originalWidth": 832,
+      "originalHeight": 716,
+      "sha256": "ff92c6ceffbe553af233154d6c67f6dbc084ad9f30d47810f3d9ec3b67a7ffb3",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-cuneiform-proto-account-seal",
+      "file": "assets/images/mesopotamia/cuneiform-proto-account-seal.jpg",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons / The Metropolitan Museum of Art",
+      "license": "Public Domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cuneiform_tablet-_administrative_account_of_barley_distribution_with_cylinder_seal_impression_of_a_male_figure,_hunting_dogs,_and_boars_MET_DT847.jpg",
+      "sourceIds": [
+        "source-wikimedia-proto-cuneiform-barley-tablet-pd"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1159,
+      "sha256": "13ff0f4f5ccab7220589e70fca67d1cffe014f47036ea488da0130a58da7d62f",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-cuneiform-stylus",
+      "file": "assets/images/mesopotamia/cuneiform-student-exercise.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/321878",
+      "sourceIds": [
+        "source-met-student-exercise-object",
+        "source-british-museum-cuneiform"
+      ],
+      "originalWidth": 575,
+      "originalHeight": 624,
+      "sha256": "c157e072c4393dd31415351d2423f194734be1ee6d4e99342c772268e2e80172",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-cuneiform-sound",
+      "file": "assets/images/mesopotamia/cuneiform-student-exercise-reverse.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/321878",
+      "sourceIds": [
+        "source-met-student-exercise-object",
+        "source-isac-writing-early-mesopotamia"
+      ],
+      "originalWidth": 3519,
+      "originalHeight": 3821,
+      "sha256": "9481e0bbaa31a0d2574e33eaaadd0135f31bd2a2a355644a8ad8446b5700466f",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-cuneiform-genres",
+      "file": "assets/images/mesopotamia/cuneiform-gilgamesh-flood-tablet.jpg",
+      "origin": "unclassified",
+      "creator": "BabelStone",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:British_Museum_Flood_Tablet.jpg",
+      "sourceIds": [
+        "source-wikimedia-gilgamesh-flood-tablet",
+        "source-british-museum-gilgamesh-tablet-i"
+      ],
+      "originalWidth": 1005,
+      "originalHeight": 1137,
+      "sha256": "cc70d4fe386de388dd6f8e2567bfea082ecaddebb08a7e89f89bd8a7138c733c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-cuneiform-many-languages",
+      "file": "assets/images/mesopotamia/cuneiform-sumerian-akkadian-grammar.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/321677",
+      "sourceIds": [
+        "source-met-grammatical-text-object",
+        "source-british-museum-cuneiform"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 450,
+      "sha256": "4437e65c17818b2ab3e5acb5652053e2a7d07cb2a564da7b8752398016c89ca5",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-akkadian-sargon-memory",
+      "file": "assets/images/mesopotamia/akkadian-ruler-head.jpg",
+      "origin": "unclassified",
+      "creator": "Unknown photographer",
+      "license": "needs review",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sargon_of_Akkad.jpg",
+      "sourceIds": [
+        "source-wikimedia-akkadian-ruler-head"
+      ],
+      "originalWidth": 800,
+      "originalHeight": 1400,
+      "sha256": "7d688e958a09ccf03dd3cbdbbee04399290a13daf1190b8157cd1910045bb5c6",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-akkadian-administration",
+      "file": "assets/images/mesopotamia/akkadian-enheduanna-disk.jpg",
+      "origin": "unclassified",
+      "creator": "Mefman00",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Disk_of_Enheduanna.JPG",
+      "sourceIds": [
+        "source-wikimedia-enheduanna-disk",
+        "source-british-museum-enheduanna"
+      ],
+      "originalWidth": 3000,
+      "originalHeight": 2000,
+      "sha256": "0de610b686ab8e0f9d9f76c713d337772a1e0a2482c31caf2ddd6559cca9ccaa",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-akkadian-fragmentation",
+      "file": "assets/images/mesopotamia/ur-nammu-foundation-figure.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/329067",
+      "sourceIds": [
+        "source-met-ur-nammu-foundation-figure-object",
+        "source-met-ur-ziggurat"
+      ],
+      "originalWidth": 332,
+      "originalHeight": 625,
+      "sha256": "cd802d4469a098a1ea1d9880031e8ad4ca2c03574491727a34f234fc62f12c72",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-ur-iii-administrative-tablet",
+      "file": "assets/images/mesopotamia/ur-iii-administrative-tablet.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Administrative_Tablet,_Third_Dynasty_of_Ur,_2026_BC.jpg",
+      "sourceIds": [
+        "source-wikimedia-ur-iii-administrative-tablet",
+        "source-british-museum-ur-iii-fields-yields"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1280,
+      "sha256": "27f3d43aa1b5a3875b109ba6e90373d051c4933839f7661d9da5b3a5c72e7cd6",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-ur-iii-lament-for-ur",
+      "file": "assets/images/mesopotamia/ur-iii-lament-for-ur.jpg",
+      "origin": "unclassified",
+      "creator": "Onceinawhile",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:CBS7080_Lament_for_Ur_Penn_Museum.jpg",
+      "sourceIds": [
+        "source-wikimedia-lament-for-ur-penn",
+        "source-cambridge-ur-iii-old-babylonian-transition"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2159,
+      "sha256": "2ec1b6cc0676c2137b9ac9a8f7715d0893a79cc8fe75c693d6eaa0a376db4ad2",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-old-babylonian-fragments",
+      "file": "assets/images/mesopotamia/gilgamesh-old-babylonian-fragments.jpg",
+      "origin": "unclassified",
+      "creator": "Daderot",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Epic_of_Gilgamesh,_three_fragments_-_Oriental_Institute_Museum,_University_of_Chicago_-_DSC07124.JPG",
+      "sourceIds": [
+        "source-wikimedia-gilgamesh-old-babylonian-fragments",
+        "source-george-babylonian-gilgamesh-epic"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "13b1a5ba9aeb1b8ccf845e60e3e343ca69f00bd7db85e91eed8194543e486df9",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-uruk-kingship",
+      "file": "assets/images/mesopotamia/gilgamesh-uruk-kingship.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://www.britishmuseum.org/collection/object/W_1880-0617-913",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-british-museum-gilgamesh-tablet-i"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "840e71d50e61856f2fb94b94fb45575638ac286485d76ff5b85ef9104a566b8c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-rivals-become-friends",
+      "file": "assets/images/mesopotamia/gilgamesh-rivals-become-friends.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://doi.org/10.1093/acrefore/9780199381135.013.9025",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "9ff4a738910f84ca599795dc956f70b89c147eb4ec7fd92396850eb5aa1f3a68",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-cedar-forest",
+      "file": "assets/images/mesopotamia/gilgamesh-cedar-forest.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://etcsl.orinst.ox.ac.uk/catalogue/catalogue1.htm",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-etcsl-gilgamesh-stories"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "f8e7906f76b3b5743095306b3fdc205a9f9307fc630cca82312ec79adac64da3",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-worlds-end",
+      "file": "assets/images/mesopotamia/gilgamesh-worlds-end.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://www.soas.ac.uk/baplar/recordings/gilgamesh-x-read-john-huehnergard",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-soas-gilgamesh-old-babylonian-x"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "f608612a15fbfdf66ecccb74601f197042e6ba73c3bab5a9922ca834e886b15c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-immortality-lost",
+      "file": "assets/images/mesopotamia/gilgamesh-immortality-lost.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://doi.org/10.1093/acrefore/9780199381135.013.9025",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh",
+        "source-met-gilgamesh-overview"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "87d08c702c8224f750e1dc1acee76b2f98388ee16fa3a548832ac3810e47277b",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-bull-of-heaven",
+      "file": "assets/images/mesopotamia/gilgamesh-bull-of-heaven.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://www.britishmuseum.org/collection/object/W_K-231",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-british-museum-gilgamesh-tablet-vi"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "d4c77841babb3e9429280d78b44e7f1b3afc1bb0932a667a6d65c46e5fb9e0d9",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-enkidu-dies",
+      "file": "assets/images/mesopotamia/gilgamesh-enkidu-dies.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://www.soas.ac.uk/baplar/recordings/epic-gilgamesh-old-babylonian-version-part-vabm-tablet-read-martin-west",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-soas-gilgamesh-old-babylonian-grief"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "63a5d80f6534cbee2a4c9c69601dccb9886d28fdf7c708e802a010d349e24822",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-gilgamesh-flood-survivor",
+      "file": "assets/images/mesopotamia/gilgamesh-flood-survivor.jpg",
+      "origin": "unclassified",
+      "creator": "Andrew R. George",
+      "license": "needs review",
+      "sourceUrl": "https://www.britishmuseum.org/collection/object/W_K-3375",
+      "sourceIds": [
+        "source-george-babylonian-gilgamesh-epic",
+        "source-british-museum-gilgamesh-flood-tablet",
+        "source-soas-gilgamesh-xi-flood"
+      ],
+      "originalWidth": 1122,
+      "originalHeight": 1402,
+      "sha256": "bf90aca67e560c5e5d3f88c495138f34df471db548c1d2754fa652a8aaaabc3b",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-old-babylonian-hammurabi-letter",
+      "file": "assets/images/mesopotamia/old-babylonian-hammurabi-letter.jpg",
+      "origin": "unclassified",
+      "creator": "Zunkir",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lettre_de_Hammurabi_a_Sin-iddinam_AO_5420.jpg",
+      "sourceIds": [
+        "source-wikimedia-hammurabi-letter"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2528,
+      "sha256": "990c2c50d067eaf0f53b722cc5016bfc1650fd98f36b54ccf25eac994532d775",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-hammurabi-code-stele",
+      "file": "assets/images/mesopotamia/hammurabi-code-stele.jpg",
+      "origin": "unclassified",
+      "creator": "Rlunaro",
+      "license": "needs review",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hammurabi_code.jpg",
+      "sourceIds": [
+        "source-wikimedia-hammurabi-full-stele",
+        "source-louvre-hammurabi-code"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2880,
+      "sha256": "3a5aa6f4d1e98fcdeaf5b855245d7c004fdb4292894ded67b338741b868fcde6",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-hammurabi-code-relief",
+      "file": "assets/images/mesopotamia/hammurabi-code-relief.jpg",
+      "origin": "unclassified",
+      "creator": "Urko Dorronsoro",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Code_Of_Hammurabi.jpg",
+      "sourceIds": [
+        "source-wikimedia-hammurabi-stele",
+        "source-louvre-hammurabi-code"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2206,
+      "sha256": "3977592958e2e6eb5e2453670ac923e5eb50504bbaf34e96bb77d26ee127ea72",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-hammurabi-code-equal-retaliation",
+      "file": "assets/images/mesopotamia/hammurabi-trial-1915.jpg",
+      "origin": "unclassified",
+      "creator": "Anonymous",
+      "license": "needs review",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trial_Before_Hammurabi.jpg",
+      "sourceIds": [
+        "source-wikimedia-hammurabi-trial-1915"
+      ],
+      "originalWidth": 1398,
+      "originalHeight": 1088,
+      "sha256": "6cc81ffb84de6c5008beec55c29512e14f553e31ca21da8437c3c7ef27e8781c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-hammurabi-code-status-penalties",
+      "file": "assets/images/mesopotamia/hammurabi-trial-status-crop-1915.jpg",
+      "origin": "unclassified",
+      "creator": "Anonymous",
+      "license": "needs review",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trial_Before_Hammurabi.jpg",
+      "sourceIds": [
+        "source-wikimedia-hammurabi-trial-1915"
+      ],
+      "originalWidth": 840,
+      "originalHeight": 620,
+      "sha256": "e7ecaf189af426ebd63eda95c568aded04d3ef67dcf4130ce6d3e8471866cf25",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-hammurabi-code-property-welfare",
+      "file": "assets/images/mesopotamia/hammurabi-babylonian-canals-1898.jpg",
+      "origin": "unclassified",
+      "creator": "Unknown",
+      "license": "needs review",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ancient_Babylonian_canals.jpg",
+      "sourceIds": [
+        "source-wikimedia-babylonian-canals-1898"
+      ],
+      "originalWidth": 1434,
+      "originalHeight": 1260,
+      "sha256": "2222749d194c0dffdc6283b6dd85fa5f5d6a00a2b244cfc0382102cc3e93301c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-hammurabi-code-discovery",
+      "file": "assets/images/mesopotamia/hammurabi-code-discovery.jpg",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons / Musée du Louvre",
+      "license": "needs review",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Code_of_Hammurabi_104.jpg",
+      "sourceIds": [
+        "source-wikimedia-hammurabi-discovery",
+        "source-louvre-hammurabi-code"
+      ],
+      "originalWidth": 1500,
+      "originalHeight": 1107,
+      "sha256": "43197ed72442694c687669de1799302b80119d28057c69efd3d04b47f052aa28",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-babel-tower-bruegel",
+      "file": "assets/images/mesopotamia/babel-tower-bruegel.jpg",
+      "origin": "unclassified",
+      "creator": "Pieter Bruegel the Elder",
+      "license": "Public Domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project.jpg",
+      "sourceIds": [
+        "source-wikimedia-bruegel-babel",
+        "source-sefaria-genesis-11"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1405,
+      "sha256": "8d7238dcf8ad591fa819cc5dd47ca4dd91d1b6676423c8e6fa76e2dd7ee35de5",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-babel-confusion-dore",
+      "file": "assets/images/mesopotamia/babel-confusion-dore.png",
+      "origin": "unclassified",
+      "creator": "Gustave Doré",
+      "license": "Public Domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Confusion_of_Tongues.png",
+      "sourceIds": [
+        "source-wikimedia-dore-confusion",
+        "source-sefaria-genesis-11"
+      ],
+      "originalWidth": 515,
+      "originalHeight": 597,
+      "sha256": "fab1fdacf1ba1980add18008e60f9f86bc3de069af26c1b0251f2a2e46167984",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-babel-esagil-tablet",
+      "file": "assets/images/mesopotamia/babel-esagil-tablet.jpg",
+      "origin": "unclassified",
+      "creator": "Zunkir",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esagil_tablet_fragment_BM_40813.jpg",
+      "sourceIds": [
+        "source-wikimedia-esagil-tablet",
+        "source-george-tower-of-babel"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 2111,
+      "sha256": "127e76be619ed1575a036affe969af9741cc535986643767806f96d737ded65a",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-babel-etemenanki-ruins",
+      "file": "assets/images/mesopotamia/babel-etemenanki-ruins.jpg",
+      "origin": "unclassified",
+      "creator": "Marjon Verburg",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Remains_of_the_foundations_of_the_Etemnanki_Zigurat.jpg",
+      "sourceIds": [
+        "source-wikimedia-etemenanki-ruins",
+        "source-george-tower-of-babel"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 400,
+      "sha256": "e0445866740b7b26319fedca18290d1283cc19edc6e7f30859d7f9724fd8040b",
+      "reviewStatus": "needsMetadataAudit"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-(function exposeAncientIndiaV4(root, factory) {
+(function exposeAncientIndiaV5(root, factory) {
   const data = factory();
-  if (root) root.ATLAS_V4_ANCIENT_INDIA = data;
+  if (root) root.ATLAS_V5_ANCIENT_INDIA = data;
   if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createAncientIndiaV4Data() {
+}(typeof window !== 'undefined' ? window : globalThis, function createAncientIndiaV5Data() {
   'use strict';
 
   function timeSpan(start, end, label, approximate) {
@@ -85,7 +85,7 @@
       alternativeNames: ['Indus Civilization', 'Harappan Civilization'],
       canonicalSummary: '约公元前3300—前1300年，分布在今天巴基斯坦与印度西北部，以城市、标准化器物、印章和广域交换网络留下重要考古证据的文化传统。',
       timeSpan: timeSpan(-3300, -1300, '约公元前3300—前1300年', true),
-      defaultCardId: 'indus-civilization-network',
+
       tags: ['南亚', '文化传统', '早期城市'],
       sourceIds: ['source-wright-ancient-indus', 'source-kenoyer-indus-civilisation']
     },
@@ -96,7 +96,7 @@
       alternativeNames: ['Mohenjo-daro', 'Moenjodaro'],
       canonicalSummary: '位于今天巴基斯坦南部的印度河文明城市遗址；街道、砖砌水井、住宅用水空间和大浴池保存了成熟期城市生活的重要证据。',
       timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
-      defaultCardId: 'mohenjo-daro-urban-order',
+
       tags: ['南亚', '聚落遗址', '印度河文明'],
       sourceIds: ['source-unesco-mohenjo-daro', 'source-wright-ancient-indus']
     },
@@ -107,7 +107,7 @@
       alternativeNames: ['Early Vedic Tradition'],
       canonicalSummary: '约公元前1500—前500年，在南亚西北部逐渐形成，以早期印度—雅利安语言、口传赞歌、祭火仪式和牧农生活留下深远影响的文化传统。',
       timeSpan: timeSpan(-1500, -500, '约公元前1500—前500年', true),
-      defaultCardId: 'indo-aryan-enters-south-asia',
+
       tags: ['南亚', '文化传统', '吠陀'],
       sourceIds: ['source-jamison-brereton-rigveda', 'source-oxford-vedic-oral-tradition', 'source-singh-ancient-india']
     }
@@ -115,7 +115,7 @@
 
   const events = [
     {
-      id: 'event-steppe-related-ancestry-enters-south-asia',
+      id: 'event-steppe-related-ancestry-enters-south-asia', kind: 'historicalProcess',
       title: '草原相关人群进入南亚',
       timeSpan: timeSpan(-2000, -1500, '约公元前2000—前1500年', true),
       participantEntityIds: ['vedic-tradition'],
@@ -132,7 +132,7 @@
       )
     },
     {
-      id: 'event-rigveda-composed-transmitted',
+      id: 'event-rigveda-composed-transmitted', kind: 'textualTradition',
       title: '《梨俱吠陀》赞歌形成并口传',
       timeSpan: timeSpan(-1500, -1000, '约公元前1500—前1000年', true),
       participantEntityIds: ['vedic-tradition'],
@@ -149,7 +149,7 @@
       )
     },
     {
-      id: 'event-indus-mesopotamia-exchange',
+      id: 'event-indus-mesopotamia-exchange', kind: 'historicalProcess',
       title: '印度河与两河流域开展海上交换',
       timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
       participantEntityIds: ['indus-civilization', 'akkadian-empire'],
@@ -166,7 +166,7 @@
       )
     },
     {
-      id: 'event-indus-urban-transformation',
+      id: 'event-indus-urban-transformation', kind: 'historicalProcess',
       title: '印度河大城市网络转型',
       timeSpan: timeSpan(-2000, -1300, '约公元前2000—前1300年', true),
       participantEntityIds: ['indus-civilization', 'mohenjo-daro'],
@@ -217,7 +217,7 @@
       kind: 'overview',
       primaryEntityId: 'mohenjo-daro',
       relatedEntityIds: ['indus-civilization'],
-      eventIds: ['event-indus-urban-transformation'],
+
       title: '水流过印度河古城',
       editorialPurpose: '沿着取水、用水和排水的过程，让读者看见城市秩序怎样进入日常生活，并把无法确认的治理形式留在内部审查层。',
       introduction: '一座四千多年前的砖城，没有留下国王的名字，却留下了水井、浴室和排水沟。沿着水的去向，我们走进摩亨佐-达罗的日常生活。',
@@ -253,7 +253,7 @@
       kind: 'overview',
       primaryEntityId: 'indus-civilization',
       relatedEntityIds: ['mohenjo-daro', 'akkadian-empire'],
-      eventIds: ['event-indus-mesopotamia-exchange', 'event-indus-urban-transformation'],
+
       title: '相同的砖，远行的珠子',
       editorialPurpose: '通过砖块、砝码、印章、文字和远行物品，让读者看见多座城市之间的联系，而不是把文明写成王朝名单或概念百科。',
       introduction: '从一块方砖、一枚小印章和一颗远行的红色珠子出发，我们会看见许多城市曾彼此相连。那是印度河文明留下的世界，也是一个至今没有自己开口讲述的世界。',
@@ -293,7 +293,7 @@
       kind: 'overview',
       primaryEntityId: 'vedic-tradition',
       relatedEntityIds: ['indus-civilization'],
-      eventIds: ['event-indus-urban-transformation', 'event-steppe-related-ancestry-enters-south-asia', 'event-rigveda-composed-transmitted'],
+
       title: '大城市缩小，赞歌在河流间响起',
       editorialPurpose: '从印度河城市体系的区域化开始，连接人口移动、语言传播与吠陀赞歌的形成，呈现早期吠陀社会由多种人群长期相遇而成。',
       introduction: '印度河大城市缩小之后，地方社区继续生活，来自草原和中亚方向的人群也陆续进入西北部。在持续数代的相遇中，新的语言、赞歌与社会关系逐渐形成。',
@@ -319,7 +319,7 @@
       id: 'mohenjo-daro-partial-city',
       title: '一座尚未完全看见的城市',
       eyebrow: '约公元前2600—1900年',
-      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
+      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [fact('mohenjo-daro-partial-city-fact', '约四千五百年前，今天巴基斯坦南部出现了一座大砖城。它没有留下可读的法令和城市档案，街道与房屋只能替居民讲述往事。今天揭开的仍只是遗址的一部分：主街在一次次重建中延续，小巷和院墙则不断调整。房屋倒下又建起，道路被一代代人继续使用，城市的形状也在生活中一点点长了出来。', ['source-unesco-mohenjo-daro', 'source-green-indus-public-goods'])],
       presentation: {
         kind: 'mapAndText',
@@ -339,7 +339,7 @@
       id: 'mohenjo-daro-neighborhood-wells',
       title: '水井进入街区和住宅',
       eyebrow: '城市里的每日取水',
-      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
+      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [fact('mohenjo-daro-neighborhood-wells-fact', '每天，居民都要把水从砖井里提起，再搬进院落和房间。这样的井在城里发现了数百口，有些开在街边，有些紧靠住宅，让许多人不必走很远就能取水。水随后被带到铺砖的平台，用于洗浴、清洁和其他日常活动。一桶桶水在人与井之间移动，把供水变成了街区生活中反复上演的动作。', ['source-jansen-mohenjo-water'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-mohenjo-daro-well' },
       sourceIds: ['source-jansen-mohenjo-water', 'source-wikimedia-mohenjo-well']
@@ -348,7 +348,7 @@
       id: 'mohenjo-daro-water-leaves-home',
       title: '用过的水流出房屋',
       eyebrow: '住宅与街道之间',
-      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
+      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [synthesis('mohenjo-daro-water-leaves-home-synthesis', '水进了家门，也要离开。不少住宅里，人们在铺砖平台上洗身或用水，水从略有坡度的地面流进短渠，再进入渗水设施或街边砖沟。一户人家的日常用水，就这样穿过墙脚，汇入门外的街道。砖沟需要清理，出口需要疏通，住宅里的生活也因此同街区的共同维护连在了一起。', ['source-jansen-mohenjo-water', 'source-nakamura-mohenjo-drainage', 'source-green-indus-public-goods'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-mohenjo-daro-street' },
       sourceIds: ['source-jansen-mohenjo-water', 'source-nakamura-mohenjo-drainage', 'source-green-indus-public-goods', 'source-wikimedia-mohenjo-street']
@@ -357,7 +357,7 @@
       id: 'mohenjo-daro-great-bath',
       title: '大浴池留下功能空白',
       eyebrow: '城中较高的建筑区',
-      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
+      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [interpretation('mohenjo-daro-great-bath-interpretation', '沿着城中较高的区域行走，会遇到一座由砖墙围起的长方形水池。人可以从两端台阶走到池底，池壁经过防水处理，旁边还有供水和排水设施。建造者为它投入了大量材料与工夫，显然期待许多人长期使用。可是没有文字告诉我们，人们为何来到这里。池水的痕迹保存下来，当年的活动却消失了。', ['source-unesco-mohenjo-daro', 'source-jansen-mohenjo-water'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-mohenjo-daro-great-bath' },
       sourceIds: ['source-unesco-mohenjo-daro', 'source-jansen-mohenjo-water', 'source-wikimedia-mohenjo-great-bath']
@@ -366,7 +366,7 @@
       id: 'mohenjo-daro-unnamed-managers',
       title: '城市秩序没有留下管理者的名字',
       eyebrow: '长期维护与城市转型',
-      timeSpan: timeSpan(-2600, -1800, '约公元前2600—前1800年', true),
+      timeSpan: timeSpan(-2600, -1800, '约公元前2600—前1800年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [synthesis('mohenjo-daro-unnamed-managers-synthesis', '砖沟不会自己保持畅通，井壁和街面也不会自己修好。几代人在原有道路旁重建房屋，说明清理、修补和协调一直有人承担。工作可能从一户人家开始，也可能由整个街区共同完成；城市里却没有留下能够辨认的管理者。我们看得见秩序怎样运转，却看不见谁在发出命令。约公元前1900年后，大城逐渐收缩，这套生活秩序也随之改变。', ['source-green-priest-king', 'source-green-indus-public-goods', 'source-giosan-harappan-transformation'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-mohenjo-daro-overview' },
       sourceIds: ['source-green-priest-king', 'source-green-indus-public-goods', 'source-giosan-harappan-transformation', 'source-wikimedia-mohenjo-overview']
@@ -375,7 +375,7 @@
       id: 'indus-shared-measures',
       title: '多座城市共享一种尺度',
       eyebrow: '约公元前2600—1900年',
-      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
+      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true), eventIds: ['event-indus-mesopotamia-exchange'],
       contentBlocks: [synthesis('indus-shared-measures-synthesis', '约四千五百年前，从海边到内陆，许多聚落相隔很远，却重复着相似的做法：工匠烧制比例相近的砖，人们用成套的小石块称量货物，雕刻者制作形状相似的印章。旅行者带着物品穿过平原和河道，也把技艺与习惯带进下一座城市。共同的尺度让陌生人可以建造、称量和交换，把分散的聚落连成一个广阔世界。', ['source-wright-ancient-indus', 'source-kenoyer-indus-civilisation', 'source-kenoyer-harappan-measurement'])],
       presentation: {
         kind: 'mapAndText',
@@ -396,7 +396,7 @@
       id: 'indus-seals-image-and-signs',
       title: '印章把图像和符号放在一起',
       eyebrow: '掌心大小的物件',
-      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
+      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true), eventIds: ['event-indus-mesopotamia-exchange'],
       contentBlocks: [fact('indus-seals-image-and-signs-fact', '一枚印章只有掌心大小，正面常刻着一只动物，上方挤着几个细小符号，背面的圆钮可以握住或穿系。有人把印面压进湿泥，于是图像和符号留在封口或物品上。不同城市的人反复制作、携带和使用这些小物件，让它们进入货物与身份交会的时刻。印章保存了动作，却没有留下使用说明。', ['source-kenoyer-indus-seals', 'source-kenoyer-inscribed-objects', 'source-met-indus-unicorn-seal'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-indus-unicorn-seal' },
       sourceIds: ['source-kenoyer-indus-seals', 'source-kenoyer-inscribed-objects', 'source-met-indus-unicorn-seal']
@@ -405,7 +405,7 @@
       id: 'indus-short-unread-script',
       title: '短短的文字仍无法读懂',
       eyebrow: '数千条短铭文',
-      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true),
+      timeSpan: timeSpan(-2600, -1900, '约公元前2600—前1900年', true), eventIds: ['event-indus-mesopotamia-exchange'],
       contentBlocks: [interpretation('indus-short-unread-script-interpretation', '最让人着迷的，是印章上那一小行符号。人们已经找到数千条铭文，可多数短得像标签，平均只有约五个符号。某些符号常出现在开头，另一些习惯留在末尾，说明排列遵循着某种规则。然而，没有双语对照，也没有长篇记录帮助猜词。直到今天，这些符号仍停在可以辨认、却无法阅读的边缘。', ['source-rao-indus-script', 'source-farmer-indus-script', 'source-parpola-indus-script'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-indus-unicorn-seal' },
       sourceIds: ['source-rao-indus-script', 'source-farmer-indus-script', 'source-parpola-indus-script', 'source-met-indus-unicorn-seal']
@@ -414,7 +414,7 @@
       id: 'indus-carnelian-goes-west',
       title: '红玉髓走向西方',
       eyebrow: '印度河与两河流域之间',
-      timeSpan: timeSpan(-2900, -1900, '约公元前2900—前1900年', true),
+      timeSpan: timeSpan(-2900, -1900, '约公元前2900—前1900年', true), eventIds: ['event-indus-mesopotamia-exchange'],
       contentBlocks: [synthesis('indus-carnelian-goes-west-synthesis', '一颗红色珠子可以走得比大多数人更远。在两河流域的古城遗址里，人们发现了带有印度河工艺特征的红玉髓珠；检测石料，又把其中一些指向印度西部。工匠先把石料磨成长珠，再用特殊方法留下白色纹样。珠子随后穿过海岸和港口，有些还可能在异乡完成加工。一颗小珠子，就这样把石料、手艺和人的移动串在了一起。', ['source-kenoyer-kish-carnelian', 'source-met-indus-carnelian-bead'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-indus-carnelian-bead' },
       sourceIds: ['source-kenoyer-kish-carnelian', 'source-met-indus-carnelian-bead']
@@ -423,7 +423,7 @@
       id: 'indus-meluhha-ships',
       title: '梅鲁哈的船来到阿卡德',
       eyebrow: '海湾港口与远方船只',
-      timeSpan: timeSpan(-2334, -2154, '约公元前2334—前2154年', true),
+      timeSpan: timeSpan(-2334, -2154, '约公元前2334—前2154年', true), eventIds: ['event-indus-mesopotamia-exchange'],
       contentBlocks: [synthesis('indus-meluhha-ships-synthesis', '一位两河国王命人把功绩刻进文字，夸耀来自梅鲁哈等远方的船停在自己的都城。这个遥远名字大概指向印度河一带。沿途岛屿和港口发现的印章，既有印度河的动物与符号，也带着当地人的做法。有人可能随船远行，更多货物则在港口换船、转手，再进入下一段航程。大海把几片文明连接成一条接力完成的贸易网络。', ['source-oracc-sargon-meluhha', 'source-possehl-indus-mesopotamia', 'source-bm-gulf-seal-ur', 'source-laursen-dilmun-seals'])],
       presentation: {
         kind: 'mapAndText',
@@ -444,7 +444,7 @@
       id: 'indus-network-changes-shape',
       title: '城市网络改变了形状',
       eyebrow: '约公元前1900年以后',
-      timeSpan: timeSpan(-2100, -1300, '约公元前2100—前1300年', true),
+      timeSpan: timeSpan(-2100, -1300, '约公元前2100—前1300年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [synthesis('indus-network-changes-shape-synthesis', '约公元前1900年后，大城里的生活慢慢换了样子。宽阔街区不再像过去那样维持，常见的小印章和短铭文停止使用，越来越多人住进规模较小、彼此分散的聚落。河流改道、降雨变化和远方贸易的减弱，一起改变了生活的重心。印度河文明没有在某一天突然消失，而是从庞大的城市网络转入了各不相同的地方生活。', ['source-wright-ancient-indus', 'source-kenoyer-indus-civilisation', 'source-giosan-harappan-transformation'])],
       presentation: {
         kind: 'mapAndText',
@@ -465,7 +465,7 @@
       id: 'indo-aryan-cities-change-first',
       title: '大城市先改变了',
       eyebrow: '约公元前1900年以后',
-      timeSpan: timeSpan(-1900, -1700, '约公元前1900—前1700年', true),
+      timeSpan: timeSpan(-1900, -1700, '约公元前1900—前1700年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [fact('indo-aryan-cities-change-first-fact', '约公元前1900年后，摩亨佐-达罗、哈拉帕等大城市逐渐缩小。过去常见的标准化砝码、印章和短铭文越来越少，一些街道、排水设施和大型建筑不再按照原来的规模维护。河流与降雨发生变化，远方贸易减弱，城市生产和管理也随之调整。不同地区以不同速度离开旧有城市体系，印度河文明原本统一而醒目的城市面貌逐渐分散。', ['source-wright-ancient-indus', 'source-kenoyer-indus-civilisation', 'source-giosan-harappan-transformation'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-mohenjo-daro-overview' },
       sourceIds: ['source-wright-ancient-indus', 'source-kenoyer-indus-civilisation', 'source-giosan-harappan-transformation', 'source-wikimedia-mohenjo-overview', 'source-unesco-mohenjo-daro']
@@ -474,7 +474,7 @@
       id: 'indo-aryan-local-settlements',
       title: '生活转入地方聚落',
       eyebrow: '旧城之外的新重心',
-      timeSpan: timeSpan(-1900, -1300, '约公元前1900—前1300年', true),
+      timeSpan: timeSpan(-1900, -1300, '约公元前1900—前1300年', true), eventIds: ['event-indus-urban-transformation'],
       contentBlocks: [synthesis('indo-aryan-local-settlements-synthesis', '一些家庭留在缩小的旧城，另一些人迁往村落和区域中心。新的聚落更多分布在印度河支流、季节性河道与恒河上游方向。人们继续种植小麦、大麦和当地作物，也制作陶器、珠饰与金属工具。哈拉帕墓地H时期的彩绘陶器沿用制陶传统，又形成新的器形与纹样。过去依赖大城市连接的社会，转变成许多规模较小、联系更加地方化的社区。', ['source-wright-ancient-indus', 'source-giosan-harappan-transformation', 'source-singh-ancient-india', 'source-wikimedia-cemetery-h-pottery'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-cemetery-h-pottery' },
       sourceIds: ['source-wright-ancient-indus', 'source-giosan-harappan-transformation', 'source-singh-ancient-india', 'source-wikimedia-cemetery-h-pottery']
@@ -483,7 +483,7 @@
       id: 'indo-aryan-steppe-groups-move-south',
       title: '草原人群向南移动',
       eyebrow: '经过中亚与山口',
-      timeSpan: timeSpan(-2000, -1500, '约公元前2000—前1500年', true),
+      timeSpan: timeSpan(-2000, -1500, '约公元前2000—前1500年', true), eventIds: ['event-steppe-related-ancestry-enters-south-asia'],
       contentBlocks: [interpretation('indo-aryan-steppe-groups-move-south-interpretation', '青铜时代晚期，欧亚草原上的一些牧民群体向中亚移动。他们饲养牛羊和马匹，使用车辆，也与中亚绿洲居民交换金属、牲畜和农产品。其中一部分人继续经过山口和河谷，进入南亚西北部。古代基因研究显示，公元前二千纪中叶以后，南亚人群中开始出现来自草原方向的新祖源。这些移动持续了许多代，沿途形成新的家庭、联盟与社区。', ['source-narasimhan-south-central-asia', 'source-singh-ancient-india'])],
       presentation: {
         kind: 'mapAndText',
@@ -504,7 +504,7 @@
       id: 'indo-aryan-language-enters-northwest',
       title: '印度—雅利安语进入西北部',
       eyebrow: '语言随着人群传播',
-      timeSpan: timeSpan(-1700, -1200, '约公元前1700—前1200年', true),
+      timeSpan: timeSpan(-1700, -1200, '约公元前1700—前1200年', true), eventIds: ['event-steppe-related-ancestry-enters-south-asia'],
       contentBlocks: [synthesis('indo-aryan-language-enters-northwest-synthesis', '这些人群中的一部分说着早期印度—雅利安语。它属于印度—伊朗语支，后来发展出的梵语及许多南亚语言，都与它有历史联系。“雅利安”在这里指这组古代语言及使用它们的文化社群。马、牛群和轻轮战车在他们的社会中十分重要，首领通过宴饮、赠礼和战争召集追随者。语言随着这些人群进入南亚，也在与当地居民的长期交往中吸收新的词语和经验。', ['source-jamison-brereton-rigveda', 'source-narasimhan-south-central-asia', 'source-singh-ancient-india'])],
       presentation: {
         kind: 'mapAndText',
@@ -524,7 +524,7 @@
       id: 'indo-aryan-poets-sing-rivers-fire',
       title: '诗人歌唱河流与祭火',
       eyebrow: '《梨俱吠陀》的口传世界',
-      timeSpan: timeSpan(-1500, -1000, '约公元前1500—前1000年', true),
+      timeSpan: timeSpan(-1500, -1000, '约公元前1500—前1000年', true), eventIds: ['event-rigveda-composed-transmitted'],
       contentBlocks: [fact('indo-aryan-poets-sing-rivers-fire-fact', '诗人在祭火旁创作赞歌，用早期吠陀梵语歌颂神灵、首领和祖先。他们吟唱印度河支流与旁遮普的河流，也歌唱牛群、战车、饮宴、联盟和战斗。这些赞歌由祭司家族记忆和传诵，后来被整理为《梨俱吠陀》。诗歌中的雷神因陀罗帮助战士取得胜利，火神阿耆尼把祭品带给诸神。语言、祭火和吟诵共同维系着早期吠陀社群。', ['source-jamison-brereton-rigveda', 'source-oxford-vedic-oral-tradition', 'source-cambridge-veda-before-print'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-vedic-recitation-teaching' },
       sourceIds: ['source-jamison-brereton-rigveda', 'source-oxford-vedic-oral-tradition', 'source-cambridge-veda-before-print', 'source-generated-vedic-recitation']
@@ -533,7 +533,7 @@
       id: 'indo-aryan-new-society-forms',
       title: '相遇形成新的社会',
       eyebrow: '早期吠陀世界',
-      timeSpan: timeSpan(-1500, -1000, '约公元前1500—前1000年', true),
+      timeSpan: timeSpan(-1500, -1000, '约公元前1500—前1000年', true), eventIds: ['event-steppe-related-ancestry-enters-south-asia', 'event-rigveda-composed-transmitted'],
       contentBlocks: [synthesis('indo-aryan-new-society-forms-synthesis', '进入南亚的人群与当地居民共同生活。家庭通过婚姻连接，牧民学习当地农业，地方居民也参与新的联盟、宴饮和祭祀。语言、作物、神灵和仪式在交往中不断改变。几代之后，新的社会已经同时包含印度河文明之后的地方传统、中亚方向带来的语言文化，以及南亚各地区自己的生活经验。早期吠陀世界由这些相遇逐渐形成，并继续向恒河上游扩展。', ['source-narasimhan-south-central-asia', 'source-jamison-brereton-rigveda', 'source-singh-ancient-india'])],
       presentation: {
         kind: 'mapAndText',

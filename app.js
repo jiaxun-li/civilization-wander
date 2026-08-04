@@ -1,7 +1,7 @@
 (function startCivilizationAtlas(root, documentRef) {
   'use strict';
 
-  const LAST_READ_STORAGE_KEY = 'civilization-wander:v4:last-read';
+  const LAST_READ_STORAGE_KEY = 'civilization-wander:v5:last-read';
   const HOME_SECTIONS = Object.freeze([
     Object.freeze({
       eyebrow: '四个古代世界',
@@ -39,11 +39,11 @@
     name: '文明漫游',
     tagline: '从一个人物、城市、信仰或作品出发，沿着关联漫游人类文明。',
     shortTagline: '沿着关联漫游人类文明',
-    defaultCardId: 'sumer-measuring-land-time'
+    startCardId: 'sumer-measuring-land-time'
   });
 
   function normalizeLastReadSnapshot(snapshot, queries) {
-    if (!snapshot?.atlasV4 || !queries) return null;
+    if (!snapshot?.atlasV5 || !queries) return null;
     const card = queries.getCard(snapshot.cardId);
     const scene = queries.getScene(snapshot.sceneId);
     if (!card || !scene || !card.sceneIds.includes(scene.id)) return null;
@@ -60,7 +60,7 @@
       }))
       : [];
     return {
-      atlasV4: true,
+      atlasV5: true,
       cardId: card.id,
       sceneId: scene.id,
       scrollY: Number.isFinite(snapshot.scrollY) && snapshot.scrollY >= 0 ? snapshot.scrollY : 0,
@@ -81,7 +81,7 @@
     return Boolean(
       cardView &&
       cardView.hidden === false &&
-      historyState?.atlasV4
+      historyState?.atlasV5
     );
   }
 
@@ -122,7 +122,7 @@
       .filter(Boolean);
   }
 
-  root.ATLAS_V4_APP_INTERNALS = Object.freeze({
+  root.ATLAS_V5_APP_INTERNALS = Object.freeze({
     homeSections: HOME_SECTIONS,
     normalizeLastReadSnapshot,
     parseLastReadSnapshot,
@@ -136,17 +136,17 @@
   if (!documentRef) return;
 
   function initialize() {
-    const data = root.ATLAS_V4_DATA;
-    const queries = root.ATLAS_V4_QUERIES;
-    const cardsModule = root.ATLAS_V4_CARDS;
-    const readerModule = root.ATLAS_V4_CARD_READER;
-    const mapModule = root.ATLAS_V4_MAP;
+    const data = root.ATLAS_V5_DATA;
+    const queries = root.ATLAS_V5_QUERIES;
+    const cardsModule = root.ATLAS_V5_CARDS;
+    const readerModule = root.ATLAS_V5_CARD_READER;
+    const mapModule = root.ATLAS_V5_MAP;
     const naturalEarth = root.ATLAS_NATURAL_EARTH?.base;
     if (!data || !queries || !cardsModule || !readerModule || !mapModule || !naturalEarth) {
-      throw new Error('V4 runtime modules failed to load');
+      throw new Error('V5 runtime modules failed to load');
     }
     const validation = queries.validateAtlasData();
-    if (!validation.valid) throw new Error(`V4 data validation failed: ${validation.errors.join('; ')}`);
+    if (!validation.valid) throw new Error(`V5 data validation failed: ${validation.errors.join('; ')}`);
 
     const homeView = documentRef.getElementById('home-view');
     const cardView = documentRef.getElementById('card-view');
@@ -232,7 +232,7 @@
     function currentReadingSnapshot() {
       if (!readerStarted || cardView.hidden || !reader?.state.activeCardId) return null;
       return normalizeLastReadSnapshot({
-        atlasV4: true,
+        atlasV5: true,
         cardId: reader.state.activeCardId,
         sceneId: reader.state.activeSceneId,
         scrollY: Number(root.scrollY || 0),
@@ -244,7 +244,7 @@
       homeResumeSnapshot = normalizeLastReadSnapshot(snapshot, queries);
       const card = homeResumeSnapshot
         ? queries.getCard(homeResumeSnapshot.cardId)
-        : queries.getCard(BRAND_CONFIG.defaultCardId);
+        : queries.getCard(BRAND_CONFIG.startCardId);
       const sceneId = homeResumeSnapshot?.sceneId || card.sceneIds[0];
       homePrimaryAction.href = readerModule.buildCardHash(card.id, sceneId);
       homePrimaryAction.dataset.startCard = card.id;
@@ -468,7 +468,7 @@
       const hash = readerModule.buildCardHash(card.id, resolvedSceneId);
       const enteringFromHome = cardView.hidden;
       const nextState = {
-        atlasV4: true,
+        atlasV5: true,
         cardId: card.id,
         sceneId: resolvedSceneId,
         scrollY,
@@ -541,7 +541,7 @@
     root.addEventListener('popstate', event => {
       if (event.state?.atlasHome || root.location.hash === '#home' || !root.location.hash) {
         showHome();
-      } else if (event.state?.atlasV4 || readerModule.parseCardHash(root.location.hash)) {
+      } else if (event.state?.atlasV5 || readerModule.parseCardHash(root.location.hash)) {
         homeView.hidden = true;
         cardView.hidden = false;
       }
@@ -560,7 +560,7 @@
 
     const direct = readerModule.parseCardHash(root.location.hash);
     if (direct && queries.getCard(direct.cardId)) {
-      reader.start(BRAND_CONFIG.defaultCardId);
+      reader.start(BRAND_CONFIG.startCardId);
       readerStarted = true;
     } else {
       showHome();
@@ -581,7 +581,7 @@
         mapStateId: map?.getActiveMapState()?.id || null
       })
     };
-    root.ATLAS_V4_APP = api;
+    root.ATLAS_V5_APP = api;
     return api;
   }
 

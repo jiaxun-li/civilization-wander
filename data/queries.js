@@ -1,4 +1,4 @@
-(function exposeAtlasV4Queries(root, factory) {
+(function exposeAtlasV5Queries(root, factory) {
   const nodeValidationRuntime = typeof module === 'object' && module.exports
     ? {
         fs: module['require']('node:fs'),
@@ -7,13 +7,13 @@
       }
     : null;
   const api = factory(
-    root?.ATLAS_V4_DATA ||
+    root?.ATLAS_V5_DATA ||
     (typeof module === 'object' && module.exports ? require('./atlas-data.js') : null),
     nodeValidationRuntime
   );
-  if (root) root.ATLAS_V4_QUERIES = api;
+  if (root) root.ATLAS_V5_QUERIES = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
-}(typeof window !== 'undefined' ? window : globalThis, function createAtlasV4QueriesModule(defaultData, nodeValidationRuntime) {
+}(typeof window !== 'undefined' ? window : globalThis, function createAtlasV5QueriesModule(defaultData, nodeValidationRuntime) {
   'use strict';
 
   const TOP_LEVEL_KEYS = [
@@ -59,6 +59,12 @@
     'historicalCase',
     'interpretation',
     'mechanism'
+  ]);
+  const EVENT_KINDS = new Set([
+    'historicalEvent',
+    'historicalProcess',
+    'textualTradition',
+    'traditionalNarrative'
   ]);
   const ASSET_TYPES = new Set(['data', 'image']);
   const ENTITY_TYPE_LABELS = Object.freeze({
@@ -156,9 +162,25 @@
       );
     }
 
-    function getTargetCardForEntity(entityId) {
-      const entity = get('entities', entityId);
-      return entity ? get('cards', entity.defaultCardId) : null;
+    function getPrimaryCardsForEntity(entityId) {
+      return data.cards.filter(card => card.primaryEntityId === entityId);
+    }
+
+    function getRelatedCardsForEntity(entityId) {
+      return data.cards.filter(card => card.relatedEntityIds.includes(entityId));
+    }
+
+    function getEventsForScene(sceneId) {
+      const scene = get('scenes', sceneId);
+      return scene ? scene.eventIds.map(eventId => get('events', eventId)).filter(Boolean) : [];
+    }
+
+    function getEventsForCard(cardId) {
+      const eventIds = new Set();
+      getScenesForCard(cardId).forEach(scene => {
+        scene.eventIds.forEach(eventId => eventIds.add(eventId));
+      });
+      return Array.from(eventIds, eventId => get('events', eventId)).filter(Boolean);
     }
 
     function getNavigationEntrySceneId(navigationOrId) {
@@ -254,7 +276,10 @@
       getOwnerCardForScene,
       getScenesForCard,
       getCardsForEntity,
-      getTargetCardForEntity,
+      getPrimaryCardsForEntity,
+      getRelatedCardsForEntity,
+      getEventsForScene,
+      getEventsForCard,
       getNavigationEntrySceneId,
       getStructuralEdge: id => get('structuralEdges', id),
       getEdgesForEndpoint,
@@ -350,7 +375,7 @@
     TOP_LEVEL_KEYS.forEach(key => {
       if (!Object.prototype.hasOwnProperty.call(data, key)) error(`atlas.${key}`, 'is required');
     });
-    if (data.schemaVersion !== 4) error('atlas.schemaVersion', 'must equal 4');
+    if (data.schemaVersion !== 5) error('atlas.schemaVersion', 'must equal 5');
     COLLECTION_KEYS.forEach(key => {
       if (!Array.isArray(data[key])) error(`atlas.${key}`, 'must be an array');
     });
@@ -608,8 +633,8 @@
       const path = `entities[${index}]`;
       checkKeys(
         entity,
-        ['id', 'type', 'level', 'name', 'alternativeNames', 'canonicalSummary', 'timeSpan', 'defaultCardId', 'tags', 'sourceIds'],
-        ['id', 'type', 'name', 'canonicalSummary', 'defaultCardId', 'sourceIds'],
+        ['id', 'type', 'level', 'name', 'alternativeNames', 'canonicalSummary', 'timeSpan', 'tags', 'sourceIds'],
+        ['id', 'type', 'name', 'canonicalSummary', 'sourceIds'],
         path
       );
       ['id', 'type', 'name', 'canonicalSummary'].forEach(key => checkString(entity[key], `${path}.${key}`));
@@ -617,23 +642,22 @@
       if (entity.alternativeNames !== undefined) checkStringArray(entity.alternativeNames, `${path}.alternativeNames`);
       if (entity.tags !== undefined) checkStringArray(entity.tags, `${path}.tags`);
       if (entity.timeSpan !== undefined) checkTimeSpan(entity.timeSpan, `${path}.timeSpan`);
-      checkRef('cards', entity.defaultCardId, `${path}.defaultCardId`);
       checkSourceIds(entity.sourceIds, `${path}.sourceIds`, true);
-      const defaultCard = maps.cards.get(entity.defaultCardId);
-      if (defaultCard && defaultCard.primaryEntityId !== entity.id) {
-        error(`${path}.defaultCardId`, 'default Card must use the Entity as primaryEntityId');
-      }
     });
 
     data.events.forEach((event, index) => {
       const path = `events[${index}]`;
       checkKeys(
         event,
-        ['id', 'title', 'timeSpan', 'participantEntityIds', 'evidenceBlocks', 'sourceIds', 'editorialReview'],
-        ['id', 'title', 'timeSpan', 'participantEntityIds', 'evidenceBlocks', 'sourceIds', 'editorialReview'],
+        ['id', 'kind', 'title', 'timeSpan', 'participantEntityIds', 'evidenceBlocks', 'sourceIds', 'editorialReview'],
+        ['id', 'kind', 'title', 'timeSpan', 'participantEntityIds', 'evidenceBlocks', 'sourceIds', 'editorialReview'],
         path
       );
       checkString(event.id, `${path}.id`);
+      checkString(event.kind, `${path}.kind`);
+      if (!EVENT_KINDS.has(event.kind)) {
+        error(`${path}.kind`, `must be one of ${Array.from(EVENT_KINDS).join(', ')}`);
+      }
       checkString(event.title, `${path}.title`);
       checkTimeSpan(event.timeSpan, `${path}.timeSpan`);
       checkRefArray('entities', event.participantEntityIds, `${path}.participantEntityIds`, { nonEmpty: true });
@@ -707,8 +731,8 @@
       const path = `cards[${index}]`;
       checkKeys(
         card,
-        ['id', 'kind', 'primaryEntityId', 'relatedEntityIds', 'eventIds', 'title', 'editorialPurpose', 'introduction', 'thesis', 'timeSpan', 'sceneIds', 'sourceIds', 'editorialReview'],
-        ['id', 'kind', 'primaryEntityId', 'relatedEntityIds', 'eventIds', 'title', 'editorialPurpose', 'introduction', 'thesis', 'timeSpan', 'sceneIds', 'sourceIds', 'editorialReview'],
+        ['id', 'kind', 'primaryEntityId', 'relatedEntityIds', 'title', 'editorialPurpose', 'introduction', 'thesis', 'timeSpan', 'sceneIds', 'sourceIds', 'editorialReview'],
+        ['id', 'kind', 'primaryEntityId', 'relatedEntityIds', 'title', 'editorialPurpose', 'introduction', 'thesis', 'timeSpan', 'sceneIds', 'sourceIds', 'editorialReview'],
         path
       );
       ['id', 'kind', 'title', 'editorialPurpose', 'introduction'].forEach(key => checkString(card[key], `${path}.${key}`));
@@ -719,7 +743,6 @@
       }
       checkRefArray('entities', card.relatedEntityIds, `${path}.relatedEntityIds`);
       if (card.primaryEntityId && card.relatedEntityIds.includes(card.primaryEntityId)) error(`${path}.relatedEntityIds`, 'must not duplicate primaryEntityId');
-      checkRefArray('events', card.eventIds, `${path}.eventIds`);
       if (checkKeys(card.thesis, ['text', 'sourceIds'], ['text', 'sourceIds'], `${path}.thesis`)) {
         checkString(card.thesis.text, `${path}.thesis.text`);
         checkSourceIds(card.thesis.sourceIds, `${path}.thesis.sourceIds`, true);
@@ -742,8 +765,8 @@
       const path = `scenes[${index}]`;
       checkKeys(
         scene,
-        ['id', 'title', 'eyebrow', 'timeDisplay', 'timeSpan', 'contentBlocks', 'presentation', 'sourceIds'],
-        ['id', 'title', 'timeSpan', 'contentBlocks', 'presentation', 'sourceIds'],
+        ['id', 'title', 'eyebrow', 'timeDisplay', 'timeSpan', 'eventIds', 'contentBlocks', 'presentation', 'sourceIds'],
+        ['id', 'title', 'timeSpan', 'eventIds', 'contentBlocks', 'presentation', 'sourceIds'],
         path
       );
       checkString(scene.id, `${path}.id`);
@@ -753,6 +776,7 @@
         error(`${path}.timeDisplay`, 'must be year or undatedNarrative');
       }
       checkTimeSpan(scene.timeSpan, `${path}.timeSpan`);
+      checkRefArray('events', scene.eventIds, `${path}.eventIds`, { nonEmpty: true });
       if (!Array.isArray(scene.contentBlocks) || scene.contentBlocks.length === 0) error(`${path}.contentBlocks`, 'must be a non-empty array');
       else scene.contentBlocks.forEach((block, blockIndex) => checkClaimBlock(
         block,
@@ -774,6 +798,10 @@
       if (owners.length !== 1) error(`scenes[${index}].id`, `must belong to exactly one Card; found ${owners.length}`);
       const ownerCard = owners.length === 1 ? maps.cards.get(owners[0].cardId) : null;
       if (ownerCard && !timeSpanOverlaps(ownerCard.timeSpan, scene.timeSpan)) error(`scenes[${index}].timeSpan`, 'must overlap owner Card timeSpan');
+      const linkedEvents = arrayOrEmpty(scene.eventIds).map(eventId => maps.events.get(eventId)).filter(Boolean);
+      if (linkedEvents.length > 0 && !linkedEvents.some(event => timeSpanOverlaps(scene.timeSpan, event.timeSpan))) {
+        error(`scenes[${index}].eventIds`, 'must include at least one Event whose timeSpan overlaps the Scene');
+      }
     });
 
     data.cards.forEach((card, index) => {
@@ -1108,12 +1136,12 @@
       const used = new Set();
       callback(used);
       data[collectionName].forEach((item, index) => {
-        if (!used.has(item.id)) error(`${collectionName}[${index}].id`, 'orphan object is not referenced by active V4 data');
+        if (!used.has(item.id)) error(`${collectionName}[${index}].id`, 'orphan object is not referenced by active V5 data');
       });
     }
 
     referencedIds('events', used => {
-      data.cards.forEach(card => arrayOrEmpty(card.eventIds).forEach(id => used.add(id)));
+      data.scenes.forEach(scene => arrayOrEmpty(scene.eventIds).forEach(id => used.add(id)));
       data.structuralEdges.forEach(edge => {
         if (edge.source.kind === 'event') used.add(edge.source.id);
         if (edge.target.kind === 'event') used.add(edge.target.id);

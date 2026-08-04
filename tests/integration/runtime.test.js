@@ -14,7 +14,16 @@ const cardCss = read('styles/v4/cards.css');
 const mapCss = read('styles/v4/map.css');
 const mapJs = read('map/v4/map-renderer.js');
 
-test('entrypoint loads only the V4 main path in dependency order', () => {
+test('entrypoint, aggregator, and syntax manifest keep one content-module order', () => {
+  const { spawnSync } = require('node:child_process');
+  const result = spawnSync(process.execPath, ['scripts/check-runtime-manifests.js'], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  assert.equal(result.status, 0, result.stderr || result.stdout);
+});
+
+test('entrypoint loads only the V5 main path in dependency order', () => {
   const scripts = [...html.matchAll(/<script src="([^"]+)"/g)].map(match => match[1]);
   assert.deepEqual(scripts, [
     'data/world-physical.js',
@@ -54,7 +63,7 @@ test('runtime contains no timeline or interactive basemap state', () => {
   assert.doesNotMatch(mapJs, /addEventListener\(['"](?:wheel|pointerdown|pointermove|mousedown|touchmove)/);
 });
 
-test('V4 validation proves all references and objects are complete', () => {
+test('V5 validation proves all references and objects are complete', () => {
   const result = queryModule.createQueries(data).validateAtlasData();
   assert.equal(result.valid, true, result.errors.join('\n'));
   assert.deepEqual(result.errors, []);
@@ -68,7 +77,7 @@ test('brand and default experience are centralized and editorial', () => {
   assert.match(app, /const BRAND_CONFIG = Object\.freeze/);
   assert.match(app, /const HOME_SECTIONS = Object\.freeze/);
   assert.match(app, /name: '文明漫游'/);
-  assert.match(app, /defaultCardId: 'sumer-measuring-land-time'/);
+  assert.match(app, /startCardId: 'sumer-measuring-land-time'/);
   assert.match(app, /eyebrow: '四个古代世界'[\s\S]*title: '从一个文明开始'/);
   assert.match(app, /eyebrow: '史诗与神话'[\s\S]*title: '从一个故事开始'/);
   assert.match(app, /eyebrow: '遗物与奇观'[\s\S]*title: '从一个遗存开始'/);

@@ -1,29 +1,29 @@
-(function exposeAtlasV4(root, factory) {
-  const mesopotamiaData = root && root.ATLAS_V4_MESOPOTAMIA
-    ? root.ATLAS_V4_MESOPOTAMIA
+(function exposeAtlasV5(root, factory) {
+  const mesopotamiaData = root && root.ATLAS_V5_MESOPOTAMIA
+    ? root.ATLAS_V5_MESOPOTAMIA
     : (typeof module === 'object' && module.exports ? require('./mesopotamia.js') : null);
-  const ancientEgyptData = root && root.ATLAS_V4_ANCIENT_EGYPT
-    ? root.ATLAS_V4_ANCIENT_EGYPT
+  const ancientEgyptData = root && root.ATLAS_V5_ANCIENT_EGYPT
+    ? root.ATLAS_V5_ANCIENT_EGYPT
     : (typeof module === 'object' && module.exports ? require('./ancient-egypt.js') : null);
-  const ancientIndiaData = root && root.ATLAS_V4_ANCIENT_INDIA
-    ? root.ATLAS_V4_ANCIENT_INDIA
+  const ancientIndiaData = root && root.ATLAS_V5_ANCIENT_INDIA
+    ? root.ATLAS_V5_ANCIENT_INDIA
     : (typeof module === 'object' && module.exports ? require('./ancient-india.js') : null);
-  const ancientChinaData = root && root.ATLAS_V4_ANCIENT_CHINA
-    ? root.ATLAS_V4_ANCIENT_CHINA
+  const ancientChinaData = root && root.ATLAS_V5_ANCIENT_CHINA
+    ? root.ATLAS_V5_ANCIENT_CHINA
     : (typeof module === 'object' && module.exports ? require('./ancient-china.js') : null);
-  const lateBronzeAgeData = root && root.ATLAS_V4_LATE_BRONZE_AGE
-    ? root.ATLAS_V4_LATE_BRONZE_AGE
+  const lateBronzeAgeData = root && root.ATLAS_V5_LATE_BRONZE_AGE
+    ? root.ATLAS_V5_LATE_BRONZE_AGE
     : (typeof module === 'object' && module.exports ? require('./late-bronze-age.js') : null);
-  const aegeanData = root && root.ATLAS_V4_AEGEAN
-    ? root.ATLAS_V4_AEGEAN
+  const aegeanData = root && root.ATLAS_V5_AEGEAN
+    ? root.ATLAS_V5_AEGEAN
     : (typeof module === 'object' && module.exports ? require('./aegean.js') : null);
-  const ironAgeNearEastData = root && root.ATLAS_V4_IRON_AGE_NEAR_EAST
-    ? root.ATLAS_V4_IRON_AGE_NEAR_EAST
+  const ironAgeNearEastData = root && root.ATLAS_V5_IRON_AGE_NEAR_EAST
+    ? root.ATLAS_V5_IRON_AGE_NEAR_EAST
     : (typeof module === 'object' && module.exports ? require('./iron-age-near-east.js') : null);
   const data = factory(mesopotamiaData, ancientEgyptData, ancientIndiaData, ancientChinaData, lateBronzeAgeData, aegeanData, ironAgeNearEastData);
-  if (root) root.ATLAS_V4_DATA = data;
+  if (root) root.ATLAS_V5_DATA = data;
   if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createAtlasV4Data(mesopotamiaData, ancientEgyptData, ancientIndiaData, ancientChinaData, lateBronzeAgeData, aegeanData, ironAgeNearEastData) {
+}(typeof window !== 'undefined' ? window : globalThis, function createAtlasV5Data(mesopotamiaData, ancientEgyptData, ancientIndiaData, ancientChinaData, lateBronzeAgeData, aegeanData, ironAgeNearEastData) {
   'use strict';
 
   if (!mesopotamiaData) throw new Error('data/mesopotamia.js must load before data/atlas-data.js');
@@ -34,9 +34,38 @@
   if (!aegeanData) throw new Error('data/aegean.js must load before data/atlas-data.js');
   if (!ironAgeNearEastData) throw new Error('data/iron-age-near-east.js must load before data/atlas-data.js');
 
-  const modules = [mesopotamiaData, ancientEgyptData, ancientIndiaData, ancientChinaData, lateBronzeAgeData, aegeanData, ironAgeNearEastData];
+  const moduleCollections = [
+    'sources', 'entities', 'events', 'structuralEdges', 'cards', 'scenes',
+    'structureViews', 'navigationOptions', 'navigationPlacements',
+    'cameraPresets', 'mapStates', 'geometries', 'mapAnnotations', 'assets'
+  ];
+  const modules = [
+    ['mesopotamia', mesopotamiaData],
+    ['ancient-egypt', ancientEgyptData],
+    ['ancient-india', ancientIndiaData],
+    ['ancient-china', ancientChinaData],
+    ['late-bronze-age', lateBronzeAgeData],
+    ['aegean', aegeanData],
+    ['iron-age-near-east', ironAgeNearEastData]
+  ];
+  modules.forEach(([moduleName, moduleData]) => {
+    const keys = Object.keys(moduleData);
+    moduleCollections.forEach(collection => {
+      if (!Object.prototype.hasOwnProperty.call(moduleData, collection)) {
+        throw new Error(`data/${moduleName}.js is missing required collection ${collection}`);
+      }
+      if (!Array.isArray(moduleData[collection])) {
+        throw new TypeError(`data/${moduleName}.js collection ${collection} must be an array`);
+      }
+    });
+    keys.forEach(key => {
+      if (!moduleCollections.includes(key)) {
+        throw new Error(`data/${moduleName}.js exports unknown collection ${key}`);
+      }
+    });
+  });
   const combine = collection => modules.reduce(
-    (items, moduleData) => items.concat(moduleData[collection] || []),
+    (items, [, moduleData]) => items.concat(moduleData[collection]),
     []
   );
 
@@ -50,7 +79,7 @@
   };
 
   return {
-    schemaVersion: 4,
+    schemaVersion: 5,
     entities: combine('entities'),
     events: combine('events'),
     structuralEdges: combine('structuralEdges'),

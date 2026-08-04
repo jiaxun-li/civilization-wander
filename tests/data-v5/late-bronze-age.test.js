@@ -12,14 +12,14 @@ const sceneById = new Map(lateBronzeAge.scenes.map(scene => [scene.id, scene]));
 
 test('the Late Bronze Age module contains both approved three-card batches', () => {
   assert.deepEqual(
-    lateBronzeAge.entities.map(entity => [entity.id, entity.type, entity.defaultCardId]),
+    lateBronzeAge.entities.map(entity => [entity.id, entity.type]),
     [
-      ['hittite-empire', 'polity', 'hittite-syria-treaties'],
-      ['ugarit-kingdom', 'polity', 'ugarit-kings-trade'],
-      ['battle-of-kadesh-war', 'war', 'kadesh-did-not-end-war'],
-      ['amarna-letters-corpus', 'TextDocument', 'amarna-kings-write-world'],
-      ['medinet-habu-war-records', 'CulturalObject', 'medinet-habu-sea-raiders'],
-      ['late-bronze-palace-system', 'institution', 'late-bronze-palaces-go-dark']
+      ['hittite-empire', 'polity'],
+      ['ugarit-kingdom', 'polity'],
+      ['battle-of-kadesh-war', 'war'],
+      ['amarna-letters-corpus', 'TextDocument'],
+      ['medinet-habu-war-records', 'CulturalObject'],
+      ['late-bronze-palace-system', 'institution']
     ]
   );
   assert.deepEqual(
@@ -279,10 +279,10 @@ test('Kadesh reuses the existing Event while exposing the approved war Entity', 
   const event = data.events.find(item => item.id === 'event-battle-of-kadesh');
   assert.deepEqual(event.participantEntityIds, ['egypt-new-kingdom', 'hittite-empire']);
   assert.equal(data.entities.find(entity => entity.id === 'battle-of-kadesh-war').type, 'war');
-  assert.deepEqual(cardById.get('kadesh-did-not-end-war').eventIds, [
-    'event-battle-of-kadesh',
-    'event-egypt-hatti-treaty'
-  ]);
+  assert.deepEqual(
+    [...new Set(cardById.get('kadesh-did-not-end-war').sceneIds.flatMap(sceneId => sceneById.get(sceneId).eventIds))],
+    ['event-battle-of-kadesh', 'event-egypt-hatti-treaty']
+  );
 });
 
 test('the Kadesh surprise-attack diagram uses the approved English adaptation', () => {

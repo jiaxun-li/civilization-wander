@@ -1,0 +1,134 @@
+{
+  "manifestVersion": 1,
+  "module": "ancient-india",
+  "assets": [
+    {
+      "assetId": "asset-mohenjo-daro-well",
+      "file": "assets/images/ancient-india/mohenjo-daro-well.jpg",
+      "origin": "unclassified",
+      "creator": "Najamuddin Shahwani",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monejodaro_well_-_panoramio.jpg",
+      "sourceIds": [
+        "source-wikimedia-mohenjo-well",
+        "source-jansen-mohenjo-water"
+      ],
+      "originalWidth": 2592,
+      "originalHeight": 1944,
+      "sha256": "b2166e9af69d5a0acb4cbe2b7ef4fa921c927add168ee923cc17b5176ced2a75",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-mohenjo-daro-street",
+      "file": "assets/images/ancient-india/mohenjo-daro-street.jpg",
+      "origin": "unclassified",
+      "creator": "Saqib Qayyum",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Street_-_Mohenjodaro.JPG",
+      "sourceIds": [
+        "source-wikimedia-mohenjo-street",
+        "source-green-indus-public-goods"
+      ],
+      "originalWidth": 2736,
+      "originalHeight": 3648,
+      "sha256": "15044a501d635ca94a24d1802c9655b8ed58433775d2bf8e6666e023cadc31aa",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-mohenjo-daro-great-bath",
+      "file": "assets/images/ancient-india/mohenjo-daro-great-bath.jpg",
+      "origin": "unclassified",
+      "creator": "Soban",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Bath_of_Mohenjo-daro.jpg",
+      "sourceIds": [
+        "source-wikimedia-mohenjo-great-bath",
+        "source-unesco-mohenjo-daro",
+        "source-jansen-mohenjo-water"
+      ],
+      "originalWidth": 5184,
+      "originalHeight": 3456,
+      "sha256": "85d951b73d2b528afb01bbaae7a9765425c5e6c623e0f7ea4fba856cc29854f8",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-mohenjo-daro-overview",
+      "file": "assets/images/ancient-india/mohenjo-daro-overview.jpg",
+      "origin": "unclassified",
+      "creator": "Saqib Qayyum",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mohenjo-daro.jpg",
+      "sourceIds": [
+        "source-wikimedia-mohenjo-overview",
+        "source-unesco-mohenjo-daro"
+      ],
+      "originalWidth": 3648,
+      "originalHeight": 2736,
+      "sha256": "9f4dfd0dd8493ae685c2394980369de369e930d1269e7f747cb991c12da6ce42",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-cemetery-h-pottery",
+      "file": "assets/images/ancient-india/cemetery-h-pottery.png",
+      "origin": "unclassified",
+      "creator": "Avantiputra7",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cemetery_H_Pottery.png",
+      "sourceIds": [
+        "source-wikimedia-cemetery-h-pottery"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 588,
+      "sha256": "65c2c0de7755fd30ba128bc188dfe64dbbc9d7df194adcfe16bf5dcd5d1715c0",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-indus-unicorn-seal",
+      "file": "assets/images/ancient-india/indus-unicorn-seal.jpg",
+      "origin": "unclassified",
+      "creator": "Jonathan Mark Kenoyer",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/324062",
+      "sourceIds": [
+        "source-met-indus-unicorn-seal",
+        "source-kenoyer-indus-seals"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1199,
+      "sha256": "08e2a91a055a4a6d624a9545fe0c0fdbcc47ce14abf8f4f93e134166540b0101",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-indus-carnelian-bead",
+      "file": "assets/images/ancient-india/indus-carnelian-bead.jpg",
+      "origin": "unclassified",
+      "creator": "Jonathan Mark Kenoyer et al.",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/324872",
+      "sourceIds": [
+        "source-met-indus-carnelian-bead",
+        "source-kenoyer-kish-carnelian"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 900,
+      "sha256": "536ef787cbf9de0dfa44ce930d260ce2fb0d37a7a45281999282884e68e76e6a",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-vedic-recitation-teaching",
+      "file": "assets/images/ancient-india/vedic-recitation-teaching.png",
+      "origin": "aiGenerated",
+      "creator": "Stephanie W. Jamison and Joel P. Brereton",
+      "license": "needs review",
+      "sourceUrl": "https://academic.oup.com/book/33632",
+      "sourceIds": [
+        "source-generated-vedic-recitation",
+        "source-jamison-brereton-rigveda"
+      ],
+      "originalWidth": 1536,
+      "originalHeight": 1024,
+      "sha256": "82ac70b4fe30520f061aea3fb313080666ee6c2c243e12908f10c717759d7fc9",
+      "reviewStatus": "needsMetadataAudit"
+    }
+  ]
+}

@@ -52,7 +52,7 @@ function harness(hash) {
   return { reader, windowRef, presentationChanges, mapChanges };
 }
 
-test('V4 flow: story-opening navigation to Akkadian and Ur III with two restorations', () => {
+test('V5 flow: story-opening navigation to Akkadian and Ur III with two restorations', () => {
   const { reader, windowRef } = harness('#card/sumer-measuring-land-time/sumer-methods-outlast-dynasties');
   windowRef.scrollY = 960;
   reader.followNavigation('nav-sumer-akkadian-empire');
@@ -76,7 +76,7 @@ test('V4 flow: story-opening navigation to Akkadian and Ur III with two restorat
   ]);
 });
 
-test('V4 flow: Aegean direct link crosses Crete, Mycenae, and the Dark Age with restoration', () => {
+test('V5 flow: Aegean direct link crosses Crete, Mycenae, and the Dark Age with restoration', () => {
   const { reader, windowRef } = harness('#card/crete-through-palatial-age/crete-tablets-change-language');
   windowRef.scrollY = 740;
   reader.followNavigation('nav-crete-mycenae');
@@ -100,7 +100,7 @@ test('V4 flow: Aegean direct link crosses Crete, Mycenae, and the Dark Age with 
   ]);
 });
 
-test('V4 flow: textOnly direct link inherits prior same-story media across refresh', () => {
+test('V5 flow: textOnly direct link inherits prior same-story media across refresh', () => {
   const hash = '#card/sumer-measuring-land-time/sumer-methods-outlast-dynasties';
   const first = harness(hash);
   const refreshed = harness(hash);
@@ -109,7 +109,7 @@ test('V4 flow: textOnly direct link inherits prior same-story media across refre
   assert.deepEqual(refreshed.reader.state, first.reader.state);
 });
 
-test('V4 flow: every active story remains readable', () => {
+test('V5 flow: every active story remains readable', () => {
   for (const card of data.cards) {
     const instance = harness(`#card/${card.id}/${card.sceneIds[0]}`);
     assert.equal(instance.reader.state.activeCardId, card.id);

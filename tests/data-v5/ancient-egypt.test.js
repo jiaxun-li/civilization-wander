@@ -13,16 +13,16 @@ const sceneById = new Map(ancientEgypt.scenes.map(scene => [scene.id, scene]));
 
 test('Ancient Egypt exposes the civilization overview, three kingdom stories, and four thematic stories', () => {
   assert.deepEqual(
-    ancientEgypt.entities.map(entity => [entity.id, entity.type, entity.defaultCardId]),
+    ancientEgypt.entities.map(entity => [entity.id, entity.type]),
     [
-      ['ancient-egypt-civilization', 'culturalTradition', 'ancient-egypt-gift-of-nile'],
-      ['egypt-old-kingdom', 'polity', 'egypt-old-kingdom-overview'],
-      ['egypt-middle-kingdom', 'polity', 'egypt-middle-kingdom-overview'],
-      ['egypt-new-kingdom', 'polity', 'egypt-new-kingdom-overview'],
-      ['egypt-pyramids', 'wonder', 'egypt-pyramids-kingdom-at-work'],
-      ['egyptian-religion', 'Religous_and_Myth', 'egypt-afterlife-journey'],
-      ['egyptian-art', 'artStyle', 'egyptian-art-identity-eternity'],
-      ['egyptian-hieroglyphs', 'writingSystem', 'egyptian-hieroglyphs-words-sounds']
+      ['ancient-egypt-civilization', 'culturalTradition'],
+      ['egypt-old-kingdom', 'polity'],
+      ['egypt-middle-kingdom', 'polity'],
+      ['egypt-new-kingdom', 'polity'],
+      ['egypt-pyramids', 'wonder'],
+      ['egyptian-religion', 'Religous_and_Myth'],
+      ['egyptian-art', 'artStyle'],
+      ['egyptian-hieroglyphs', 'writingSystem']
     ]
   );
   assert.deepEqual(
@@ -328,7 +328,7 @@ test('navigation preserves existing paths and connects the civilization overview
   );
 });
 
-test('the aggregated V4 atlas validates with Ancient Egypt included', () => {
+test('the aggregated V5 atlas validates with Ancient Egypt included', () => {
   const result = queries.createQueries(data).validateAtlasData();
   assert.equal(result.valid, true, result.errors.join('\n'));
   assert.ok(data.cards.some(card => card.id === 'egypt-new-kingdom-overview'));

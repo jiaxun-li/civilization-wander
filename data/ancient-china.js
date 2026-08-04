@@ -1,8 +1,8 @@
-(function exposeAncientChinaV4(root, factory) {
+(function exposeAncientChinaV5(root, factory) {
   const data = factory();
-  if (root) root.ATLAS_V4_ANCIENT_CHINA = data;
+  if (root) root.ATLAS_V5_ANCIENT_CHINA = data;
   if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createAncientChinaV4Data() {
+}(typeof window !== 'undefined' ? window : globalThis, function createAncientChinaV5Data() {
   'use strict';
 
   function timeSpan(start, end, label, approximate) {
@@ -121,7 +121,7 @@
       alternativeNames: ['Western Zhou'],
       canonicalSummary: '约公元前1046—前771年，周王室以关中宗周和洛阳附近成周为重要中心，通过亲族与盟友、册命、军事义务和祖先祭祀连接多个区域政治中心。',
       timeSpan: timeSpan(-1046, -771, '约公元前1046—前771年', true),
-      defaultCardId: 'western-zhou-bronze-commands',
+
       tags: ['古中国', '政治实体', '青铜时代'],
       sourceIds: ['source-national-museum-li-gui', 'source-western-zhou-domain', 'source-cook-western-zhou-rites']
     },
@@ -132,7 +132,7 @@
       alternativeNames: ['Early Bronze Age China'],
       canonicalSummary: '约公元前1900—前771年，黄河、长江及周边地区的城市和区域传统以青铜铸造、礼仪、祖先祭祀与远距离材料交换，形成彼此联系又不完全相同的文化世界。',
       timeSpan: timeSpan(-1900, -771, '约公元前1900—前771年', true),
-      defaultCardId: 'china-early-bronze-connected-worlds',
+
       tags: ['古中国', '文化传统', '青铜时代'],
       sourceIds: ['source-liu-chen-archaeology-china', 'source-met-shang-zhou-bronze', 'source-unesco-liangzhu']
     },
@@ -143,7 +143,7 @@
       alternativeNames: ['Erlitou'],
       canonicalSummary: '约公元前二千纪前半叶位于洛阳盆地的大型聚落遗址；道路、中央建筑区、专业作坊和差异化墓葬保存了早期城市秩序的重要证据。',
       timeSpan: timeSpan(-1900, -1500, '约公元前1900—前1500年', true),
-      defaultCardId: 'erlitou-ritual-world',
+
       tags: ['古中国', '聚落遗址', '早期青铜时代'],
       sourceIds: ['source-erlitou-cass-report', 'source-zhao-erlitou-settlement', 'source-erlitou-radiocarbon']
     },
@@ -154,7 +154,7 @@
       alternativeNames: ['Shang civilization', '商'],
       canonicalSummary: '约公元前1600—前1000年，由商王室统领的政治实体，以城市、青铜礼器、甲骨文字、祖先祭祀和跨区域联系留下丰富材料。其政治控制的范围和方式会随时期与地点而变化。',
       timeSpan: timeSpan(-1600, -1000, '约公元前1600—前1000年', true),
-      defaultCardId: 'shang-ancestors-world',
+
       tags: ['古中国', '政治实体', '青铜时代'],
       sourceIds: ['source-bagley-shang-archaeology', 'source-keightley-ancestral-landscape', 'source-unesco-yinxu']
     },
@@ -165,7 +165,7 @@
       alternativeNames: ['oracle-bone inscriptions', '甲骨文'],
       canonicalSummary: '晚商王室在牛肩胛骨和龟甲上留下的占卜文字，记录日期、所问之事、判断与部分结果。',
       timeSpan: timeSpan(-1250, -1046, '晚商时期', true),
-      defaultCardId: 'shang-oracle-bones-record',
+
       tags: ['古中国', '文字', '占卜'],
       sourceIds: ['source-keightley-shang-history', 'source-unesco-oracle-bones', 'source-schwartz-huayuanzhuang']
     },
@@ -176,7 +176,7 @@
       alternativeNames: ['Shang ritual bronzes', '青铜礼器'],
       canonicalSummary: '由商代工匠以陶范铸造、用于酒食祭献并常随主人入墓的一组青铜器物。',
       timeSpan: timeSpan(-1600, -1000, '约公元前1600—前1000年', true),
-      defaultCardId: 'shang-bronzes-ancestor-feast',
+
       tags: ['古中国', '青铜器', '祖先礼仪'],
       sourceIds: ['source-bagley-shang-archaeology', 'source-met-shang-zhou-bronze', 'source-smithsonian-bronze-casting']
     },
@@ -187,7 +187,7 @@
       alternativeNames: ['Sanxingdui'],
       canonicalSummary: '位于今天四川广汉、在青铜时代长期发展的遗址。城址与集中埋藏的青铜、金、玉、象牙等材料，共同保存了成都平原一种独特的仪式世界。',
       timeSpan: timeSpan(-1800, -1000, '约公元前1800—前1000年', true),
-      defaultCardId: 'sanxingdui-ritual-world',
+
       tags: ['古中国', '聚落遗址', '青铜时代', '成都平原'],
       sourceIds: ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023']
     }
@@ -195,25 +195,37 @@
 
   const events = [
     {
-      id: 'event-western-zhou-eastern-expansion', title: '西周建设东方政治中心', timeSpan: timeSpan(-1045, -1000, '约公元前1045—前1000年', true), participantEntityIds: ['western-zhou'],
+      id: 'event-early-china-regional-centers-emerge', kind: 'historicalProcess', title: '中国多地大型聚落与区域中心形成', timeSpan: timeSpan(-3300, -1900, '约公元前3300—前1900年', true), participantEntityIds: ['china-early-bronze-world'],
+      evidenceBlocks: [fact('event-early-china-centers-evidence', '青铜冶铸成为王权技术以前，中国不同区域已经出现城墙、大型建筑、手工业分区与远距离交换网络。', ['source-unesco-liangzhu', 'source-liu-chen-archaeology-china'])],
+      sourceIds: ['source-unesco-liangzhu', 'source-liu-chen-archaeology-china'],
+      editorialReview: review([limitation('event-early-china-centers-difference', '不同区域中心的规模、组织方式与延续时间并不相同，不能合并成一个统一国家。', ['source-liu-chen-archaeology-china'])], [], [], [], ['source-unesco-liangzhu', 'source-liu-chen-archaeology-china'])
+    },
+    {
+      id: 'event-shang-bronze-production-and-ritual-use', kind: 'historicalProcess', title: '商代青铜生产进入祖先礼仪', timeSpan: timeSpan(-1600, -1000, '约公元前1600—前1000年', true), participantEntityIds: ['shang-bronze-ritual-vessels', 'shang-civilization'],
+      evidenceBlocks: [fact('event-shang-bronze-ritual-evidence', '商代工匠用陶范组织青铜器生产，礼器随后进入酒食祭献、身份展示和墓葬随葬。', ['source-bagley-shang-archaeology', 'source-smithsonian-bronze-casting', 'source-met-shang-zhou-bronze'])],
+      sourceIds: ['source-bagley-shang-archaeology', 'source-smithsonian-bronze-casting', 'source-met-shang-zhou-bronze'],
+      editorialReview: review([limitation('event-shang-bronze-ritual-elite', '大型礼器主要保存精英与王室礼仪，不能代表所有商代居民的日常器用。', ['source-met-shang-zhou-bronze'])], [], [], [], ['source-bagley-shang-archaeology', 'source-met-shang-zhou-bronze'])
+    },
+    {
+      id: 'event-western-zhou-eastern-expansion', kind: 'historicalProcess', title: '西周建设东方政治中心', timeSpan: timeSpan(-1045, -1000, '约公元前1045—前1000年', true), participantEntityIds: ['western-zhou'],
       evidenceBlocks: [fact('event-western-zhou-east-evidence', '灭商与东方反叛之后，周人在洛阳附近建设成周，驻扎军队并举行册命与朝会。', ['source-western-zhou-domain', 'source-li-feng-early-china'])],
       sourceIds: ['source-western-zhou-domain', 'source-li-feng-early-china'],
       editorialReview: review([], [], [interpretation('event-western-zhou-east-control', '东方中心与各区域政治实体之间的控制强度随时期和地点而变化。', ['source-western-zhou-domain'])], [], ['source-western-zhou-domain'])
     },
     {
-      id: 'event-western-zhou-investiture', title: '西周册命进入青铜铭文', timeSpan: timeSpan(-1020, -850, '约公元前1020—前850年', true), participantEntityIds: ['western-zhou'],
+      id: 'event-western-zhou-investiture', kind: 'historicalProcess', title: '西周册命进入青铜铭文', timeSpan: timeSpan(-1020, -850, '约公元前1020—前850年', true), participantEntityIds: ['western-zhou'],
       evidenceBlocks: [fact('event-western-zhou-investiture-evidence', '大盂鼎等青铜铭文记录周王授予贵族职位、任务、礼服、车马和人员，作器者再把王命献给祖先。', ['source-national-museum-da-yu-ding', 'source-national-museum-ceming'])],
       sourceIds: ['source-national-museum-da-yu-ding', 'source-national-museum-ceming'],
       editorialReview: review([limitation('event-western-zhou-investiture-elite', '册命铭文主要保存王室与贵族的政治经验。', ['source-national-museum-ceming'])], [], [], [], ['source-national-museum-ceming'])
     },
     {
-      id: 'event-western-zhou-capitals-fall', title: '西周王都失守', timeSpan: timeSpan(-771, -771, '公元前771年'), participantEntityIds: ['western-zhou'],
+      id: 'event-western-zhou-capitals-fall', kind: 'historicalEvent', title: '西周王都失守', timeSpan: timeSpan(-771, -771, '公元前771年'), participantEntityIds: ['western-zhou'],
       evidenceBlocks: [fact('event-western-zhou-fall-evidence', '公元前771年，宫廷反对者与西北方向的武装集团进攻西方王都，周幽王被杀，王室随后迁往成周。', ['source-li-feng-western-zhou-fall', 'source-li-feng-early-china'])],
       sourceIds: ['source-li-feng-western-zhou-fall', 'source-li-feng-early-china'],
       editorialReview: review([], [], [interpretation('event-western-zhou-fall-records', '事件细节部分依赖较晚传世文献，参与者与先后关系仍需结合地理和政治背景解释。', ['source-li-feng-western-zhou-fall'])], [], ['source-li-feng-western-zhou-fall'])
     },
     {
-      id: 'event-erlitou-urban-consolidation',
+      id: 'event-erlitou-urban-consolidation', kind: 'historicalProcess',
       title: '二里头城市中心形成',
       timeSpan: timeSpan(-1800, -1600, '二里头文化第二至第三期', true),
       participantEntityIds: ['erlitou-site'],
@@ -230,7 +242,7 @@
       )
     },
     {
-      id: 'event-erligang-urban-expansion',
+      id: 'event-erligang-urban-expansion', kind: 'historicalProcess',
       title: '二里岗城市与物质文化扩展',
       timeSpan: timeSpan(-1600, -1400, '约公元前1600—前1400年', true),
       participantEntityIds: ['shang-civilization', 'western-zhou'],
@@ -247,7 +259,7 @@
       )
     },
     {
-      id: 'event-late-shang-royal-divination',
+      id: 'event-late-shang-royal-divination', kind: 'historicalProcess',
       title: '晚商王室占卜并保存甲骨记录',
       timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
       participantEntityIds: ['shang-civilization', 'shang-oracle-bone-inscriptions'],
@@ -264,7 +276,7 @@
       )
     },
     {
-      id: 'event-fu-hao-activities',
+      id: 'event-fu-hao-activities', kind: 'historicalProcess',
       title: '妇好参与晚商军事与祭祀活动',
       timeSpan: timeSpan(-1250, -1190, '公元前十三世纪', true),
       participantEntityIds: ['shang-civilization'],
@@ -281,7 +293,7 @@
       )
     },
     {
-      id: 'event-zhou-conquest-of-shang',
+      id: 'event-zhou-conquest-of-shang', kind: 'historicalEvent',
       title: '周征服商王室',
       timeSpan: timeSpan(-1050, -1040, '公元前十一世纪中叶', true),
       participantEntityIds: ['shang-civilization'],
@@ -298,7 +310,7 @@
       )
     },
     {
-      id: 'event-sanxingdui-ritual-object-deposition',
+      id: 'event-sanxingdui-ritual-object-deposition', kind: 'historicalEvent',
       title: '三星堆仪式器物集中埋藏',
       timeSpan: timeSpan(-1200, -950, '约公元前1200—前950年', true),
       participantEntityIds: ['sanxingdui-site'],
@@ -346,7 +358,7 @@
   const cards = [
     {
       id: 'western-zhou-bronze-commands', kind: 'overview', primaryEntityId: 'western-zhou', relatedEntityIds: ['shang-civilization', 'china-early-bronze-world'],
-      eventIds: ['event-zhou-conquest-of-shang', 'event-western-zhou-eastern-expansion', 'event-western-zhou-investiture', 'event-western-zhou-capitals-fall'],
+
       title: '西周把王命铸进青铜', editorialPurpose: '从征服、东方中心、册命、宗族和军事义务讲述西周王国。',
       introduction: '周人击败商王室后，接过了商代成熟的青铜铸造和文字传统。他们把战争、赏赐与任命铸进礼器，让王命能够在一次次祖先祭祀中被重新讲述。',
       thesis: { text: '西周通过多个政治中心、亲族与盟友、册命仪式、军事义务和祖先祭祀，把不同地区连接成一个王国。', sourceIds: ['source-national-museum-li-gui', 'source-western-zhou-domain', 'source-national-museum-da-yu-ding', 'source-cook-western-zhou-rites'] },
@@ -366,7 +378,7 @@
       kind: 'overview',
       primaryEntityId: 'china-early-bronze-world',
       relatedEntityIds: ['erlitou-site', 'shang-civilization', 'shang-oracle-bone-inscriptions', 'shang-bronze-ritual-vessels', 'sanxingdui-site'],
-      eventIds: ['event-erlitou-urban-consolidation', 'event-erligang-urban-expansion', 'event-late-shang-royal-divination', 'event-sanxingdui-ritual-object-deposition', 'event-zhou-conquest-of-shang'],
+
       title: '青铜器连接不同的世界',
       editorialPurpose: '把青铜器从孤立的博物馆珍品还原为原料、作坊、城市和仪式共同产生的物件，同时用良渚、二里头、商、三星堆和西周打破单一中心、单一王朝的叙述。',
       introduction: '一件青铜礼器的旅程从矿料和泥土开始，最后抵达祖先、神灵与国王面前。不同城市使用相似的金属，却没有铸出同一个世界。',
@@ -390,7 +402,7 @@
       kind: 'overview',
       primaryEntityId: 'erlitou-site',
       relatedEntityIds: ['shang-civilization'],
-      eventIds: ['event-erlitou-urban-consolidation'],
+
       title: '二里头形成新的礼仪世界',
       editorialPurpose: '一座没有留下自称的城市，怎样让社会秩序变得可见？',
       introduction: '四千年前，洛阳盆地的一片聚落忽然长出宽阔道路、成组院落和专门作坊。没有人把这里的名字写下来，城市本身却留下了秩序形成的痕迹。',
@@ -429,7 +441,7 @@
       kind: 'overview',
       primaryEntityId: 'shang-civilization',
       relatedEntityIds: ['erlitou-site', 'shang-oracle-bone-inscriptions', 'shang-bronze-ritual-vessels'],
-      eventIds: ['event-erligang-urban-expansion', 'event-late-shang-royal-divination', 'event-fu-hao-activities', 'event-zhou-conquest-of-shang'],
+
       title: '商人生活在祖先的目光下',
       editorialPurpose: '商人怎样让死者继续参与活人的世界，并把这种关系写进城市、器物和记忆？',
       introduction: '商人相信死亡没有让家人离开。祖先仍会收到酒肉、听见问题，也可能影响收成、疾病和战争。',
@@ -472,7 +484,7 @@
       kind: 'story',
       primaryEntityId: 'shang-oracle-bone-inscriptions',
       relatedEntityIds: ['shang-civilization'],
-      eventIds: ['event-late-shang-royal-divination'],
+
       title: '甲骨把问神变成记录',
       editorialPurpose: '一场转瞬即逝的占卜，怎样因为刻写而变成三千多年后仍可追索的记录？',
       introduction: '一场占卜原本只存在于火、裂纹和人的判断之间。商人把文字刻在旁边后，一次转瞬即逝的求问，三千多年后仍能被重新读出。',
@@ -505,7 +517,7 @@
       kind: 'story',
       primaryEntityId: 'shang-bronze-ritual-vessels',
       relatedEntityIds: ['shang-civilization'],
-      eventIds: ['event-fu-hao-activities', 'event-zhou-conquest-of-shang'],
+
       title: '青铜从作坊进入祖先宴席',
       editorialPurpose: '一件青铜礼器怎样从原料与作坊出发，进入祖先祭献、身份秩序和历史记忆？',
       introduction: '一件商代青铜器并不从墓里开始。它先汇聚远方的矿料和作坊里的许多双手，最终进入献给祖先的酒食，又随主人一同埋入地下。',
@@ -541,7 +553,7 @@
       kind: 'story',
       primaryEntityId: 'sanxingdui-site',
       relatedEntityIds: ['shang-bronze-ritual-vessels'],
-      eventIds: ['event-sanxingdui-ritual-object-deposition'],
+
       title: '三星堆让看不见的世界现身',
       editorialPurpose: '从八座器物坑出发，解释面具、人像、神树与稀有材料如何可能在仪式中发挥作用，同时让读者看见这些器物尚未被完全破解。',
       introduction: '在成都平原，一座青铜时代古城留下了巨大的面孔、人像、树、象牙与金器。它们被集中送进相邻的坑中，却没有留下能读懂的文字来解释自己。',
@@ -576,32 +588,32 @@
 
   const scenes = [
     {
-      id: 'western-zhou-muye-victory', title: '甲子日清晨，周军攻向商王', eyebrow: '牧野与利簋', timeSpan: timeSpan(-1046, -1046, '约公元前1046年', true),
+      id: 'western-zhou-muye-victory', title: '甲子日清晨，周军攻向商王', eyebrow: '牧野与利簋', timeSpan: timeSpan(-1046, -1046, '约公元前1046年', true), eventIds: ['event-zhou-conquest-of-shang'],
       contentBlocks: [fact('western-zhou-muye-victory-fact', '来自西方的周人联合盟友，在牧野击败商王的军队。商代最后一位君王帝辛死去，周武王成为新的天下共主。胜利后不久，一名叫“利”的官员铸造青铜簋，在器内写下甲子日清晨的战事，以及周王赐给自己的金属。周王朝由战争开始，也从一开始就把胜利写进青铜。', ['source-national-museum-li-gui', 'source-li-feng-early-china'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-li-gui' }, sourceIds: ['source-national-museum-li-gui', 'source-li-feng-early-china', 'source-wikimedia-li-gui']
     },
     {
-      id: 'western-zhou-eastern-center', title: '周人在东方建起新的中心', eyebrow: '宗周与成周', timeSpan: timeSpan(-1045, -1000, '约公元前1045—前1000年', true),
+      id: 'western-zhou-eastern-center', title: '周人在东方建起新的中心', eyebrow: '宗周与成周', timeSpan: timeSpan(-1045, -1000, '约公元前1045—前1000年', true), eventIds: ['event-western-zhou-eastern-expansion'],
       contentBlocks: [fact('western-zhou-eastern-center-fact', '周人的故乡在关中，商王朝原有的人口、城邑和道路却广泛分布在东方。周武王去世后，东方发生反叛，年轻的新王面临重新控制旧商地区的任务。周人随后在今天洛阳附近建设成周。这里驻有军队、贵族和迁来的居民，也能举行册命与朝会。西方的宗周与东方的成周共同支撑王国。', ['source-western-zhou-domain', 'source-li-feng-early-china'])],
       presentation: mapPresentation('map-western-zhou-two-centers', [mapLayer('western-zhou', 'annotation-western-zhou-zongzhou', ['source-western-zhou-domain']), mapLayer('western-zhou', 'annotation-western-zhou-chengzhou', ['source-western-zhou-domain'])], '圆点标出关中的宗周与洛阳附近的成周；连线表示两个王室中心的政治联系。'), sourceIds: ['source-western-zhou-domain', 'source-li-feng-early-china', 'source-natural-earth']
     },
     {
-      id: 'western-zhou-allies-regional-centers', title: '亲族和盟友带着王命前往各地', eyebrow: '区域政治中心', timeSpan: timeSpan(-1040, -950, '约公元前1040—前950年', true),
+      id: 'western-zhou-allies-regional-centers', title: '亲族和盟友带着王命前往各地', eyebrow: '区域政治中心', timeSpan: timeSpan(-1040, -950, '约公元前1040—前950年', true), eventIds: ['event-western-zhou-eastern-expansion'],
       contentBlocks: [synthesis('western-zhou-allies-regional-centers-synthesis', '周王把亲族、功臣和盟友派往各地。他们带着人员、车辆和礼器建立新的据点，控制道路，组织军队，也与当地社群建立婚姻和政治关系。这些首领从周王那里获得土地、人口和身份，在战争与朝会时则要提供兵员、车辆和贡物。随着时间推移，他们的家族在当地拥有自己的祖先墓地、军队与盟友。', ['source-western-zhou-domain', 'source-li-feng-bronze-offices'])],
       presentation: mapPresentation('map-western-zhou-regional-centers', [mapLayer('western-zhou', 'annotation-western-zhou-royal-core', ['source-western-zhou-domain']), mapLayer('western-zhou', 'annotation-western-zhou-eastern-regions', ['source-western-zhou-domain']), mapLayer('western-zhou', 'annotation-western-zhou-northern-regions', ['source-western-zhou-domain'])], '圆点表示王室核心与若干区域政治中心的教学选点；连线表示册命、朝会与军事联系。'), sourceIds: ['source-western-zhou-domain', 'source-li-feng-bronze-offices', 'source-natural-earth']
     },
     {
-      id: 'western-zhou-command-cast-in-ding', title: '一次任命被铸进大鼎', eyebrow: '大盂鼎与册命', timeSpan: timeSpan(-1000, -950, '约公元前1000—前950年', true),
+      id: 'western-zhou-command-cast-in-ding', title: '一次任命被铸进大鼎', eyebrow: '大盂鼎与册命', timeSpan: timeSpan(-1000, -950, '约公元前1000—前950年', true), eventIds: ['event-western-zhou-investiture'],
       contentBlocks: [fact('western-zhou-command-cast-in-ding-fact', '周康王在宗庙中召见一名叫“盂”的贵族，宣布他的职位和任务。仪式中有官员宣读王命，盂随后获得礼服、旗帜、车马和人员。盂铸造了一件巨大的青铜鼎，把这次任命写在内壁，并将它献给祖先。此后家族举行祭祀时，鼎中的铭文会再次唤起周王的命令。', ['source-national-museum-da-yu-ding', 'source-national-museum-ceming'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-western-zhou-investiture-teaching' }, sourceIds: ['source-national-museum-da-yu-ding', 'source-national-museum-ceming', 'source-generated-western-zhou-investiture']
     },
     {
-      id: 'western-zhou-rites-and-armies', title: '祭祖、宴饮和出兵维持王国', eyebrow: '礼仪与义务', timeSpan: timeSpan(-950, -850, '约公元前950—前850年', true),
+      id: 'western-zhou-rites-and-armies', title: '祭祖、宴饮和出兵维持王国', eyebrow: '礼仪与义务', timeSpan: timeSpan(-950, -850, '约公元前950—前850年', true), eventIds: ['event-western-zhou-investiture'],
       contentBlocks: [synthesis('western-zhou-rites-and-armies-synthesis', '贵族用鼎、簋和酒器祭祀祖先，在宴饮中安排席位、交换礼物并确认身份。青铜器上的铭文提醒家族，他们的地位来自哪位周王，又承担着怎样的职责。西周晚期，虢季子白出征后在王前献俘、参加宴饮并接受赏赐，又把战功写进大型青铜盘。周王发动战争时，各地首领带领人员、车辆和武器前来，完成任务的人则可能把新的功绩铸进青铜。', ['source-cook-western-zhou-rites', 'source-national-museum-ceming', 'source-li-feng-bronze-offices', 'source-national-museum-guoji-zibai-pan'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-guoji-zibai-pan' }, sourceIds: ['source-cook-western-zhou-rites', 'source-national-museum-ceming', 'source-li-feng-bronze-offices', 'source-national-museum-guoji-zibai-pan']
     },
     {
-      id: 'western-zhou-capital-falls', title: '王都失守，周王室迁向东方', eyebrow: '公元前771年', timeSpan: timeSpan(-850, -771, '约公元前850—前771年', true),
+      id: 'western-zhou-capital-falls', title: '王都失守，周王室迁向东方', eyebrow: '公元前771年', timeSpan: timeSpan(-850, -771, '约公元前850—前771年', true), eventIds: ['event-western-zhou-capitals-fall'],
       contentBlocks: [synthesis('western-zhou-capital-falls-synthesis', '西周晚期，各地贵族已经积累了自己的军队、土地和盟友。王室内部的继承冲突也把不同政治集团卷入争斗。公元前771年，宫廷反对者与来自西北方向的武装集团共同进攻西方王都，周幽王被杀。新的周王在诸侯支持下迁往东方的成周。周王室、祭祀和王命仍然延续，政治中心却已经改变。', ['source-li-feng-western-zhou-fall', 'source-li-feng-early-china'])],
       presentation: mapPresentation('map-western-zhou-eastward-move', [mapLayer('western-zhou', 'annotation-western-zhou-fallen-capital', ['source-li-feng-western-zhou-fall']), mapLayer('western-zhou', 'annotation-western-zhou-eastern-capital', ['source-li-feng-western-zhou-fall'])], '宗周在公元前771年失守；粗线由关中指向洛阳附近的成周，标出王室东迁。'), sourceIds: ['source-li-feng-western-zhou-fall', 'source-li-feng-early-china', 'source-natural-earth']
     },
@@ -609,7 +621,7 @@
       id: 'china-bronze-before-bronze',
       title: '青铜以前，城市已经出现',
       eyebrow: '良渚与更早的区域中心',
-      timeSpan: timeSpan(-3300, -1900, '约公元前3300—前1900年', true),
+      timeSpan: timeSpan(-3300, -1900, '约公元前3300—前1900年', true), eventIds: ['event-early-china-regional-centers-emerge'],
       contentBlocks: [fact('china-bronze-before-bronze-fact', '在青铜礼器大量出现以前，长江下游的良渚人已经筑城、修建水坝、种植水稻，并把精细玉器放进少数人的墓中。更北方也出现围墙、台基和大型公共工程。复杂社会不是青铜突然带来的；青铜后来进入的，是一个早已有许多区域中心的世界。', ['source-unesco-liangzhu', 'source-liu-chen-archaeology-china'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-china-early-bronze-world', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'china-early-bronze-world', annotationId: 'annotation-china-bronze-liangzhu', sourceIds: ['source-unesco-liangzhu'] },
@@ -622,7 +634,7 @@
       id: 'china-bronze-materials-fire',
       title: '矿料在火中变成礼器',
       eyebrow: '青铜作坊',
-      timeSpan: timeSpan(-2000, -771, '约公元前2000—前771年', true),
+      timeSpan: timeSpan(-2000, -771, '约公元前2000—前771年', true), eventIds: ['event-shang-bronze-production-and-ritual-use'],
       contentBlocks: [fact('china-bronze-materials-fire-fact', '青铜不是从地下直接挖出的成品。矿料被送进作坊，铜与锡等材料在炉火中熔合。工匠先用泥做出模型，再分块制成陶范，合拢后把金属液倒进去。采矿、运输、制范、烧炉和浇铸缺一不可；一件大礼器背后，站着一整条看不见的协作队伍。', ['source-smithsonian-bronze-casting', 'source-met-shang-zhou-bronze'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-casting-apparatus' },
       sourceIds: ['source-smithsonian-bronze-casting', 'source-met-shang-zhou-bronze', 'source-wikimedia-bronze-casting-apparatus']
@@ -631,7 +643,7 @@
       id: 'china-bronze-erlitou-center',
       title: '二里头把作坊放进城市中心',
       eyebrow: '洛阳盆地',
-      timeSpan: timeSpan(-1900, -1500, '约公元前1900—前1500年', true),
+      timeSpan: timeSpan(-1900, -1500, '约公元前1900—前1500年', true), eventIds: ['event-erlitou-urban-consolidation'],
       contentBlocks: [fact('china-bronze-erlitou-center-fact', '约四千年前，洛阳盆地的二里头迅速扩大。宽阔道路把居住区、作坊和成组的大型建筑分开，铜器与绿松石器物则集中出现在城市中心附近。多数墓葬十分简单，少数死者身旁却放着铜铃、玉器和成千片绿松石。材料、道路和仪式共同标出了城市的中心。', ['source-erlitou-cass-report', 'source-zhao-erlitou-settlement', 'source-erlitou-turquoise-restoration'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-erlitou-turquoise-bronze-plaque' },
       sourceIds: ['source-erlitou-cass-report', 'source-zhao-erlitou-settlement', 'source-erlitou-turquoise-restoration', 'source-wikimedia-erlitou-plaque']
@@ -640,7 +652,7 @@
       id: 'china-bronze-shang-cities',
       title: '商文明在城市之间成形',
       eyebrow: '早商城市网络',
-      timeSpan: timeSpan(-1600, -1250, '约公元前1600—前1250年', true),
+      timeSpan: timeSpan(-1600, -1250, '约公元前1600—前1250年', true), eventIds: ['event-erligang-urban-expansion'],
       contentBlocks: [synthesis('china-bronze-shang-cities-synthesis', '公元前二千纪中叶，郑州出现巨大的城墙和成片作坊。相似的青铜器、陶器与制作方法也在更远的城市出现，一直抵达长江附近。工匠、器物和往来路线让商文明逐渐获得形状。它的开端不是一个能够圈出的日子，而是一张不断扩展的城市网络。', ['source-bagley-shang-archaeology', 'source-an-zhengzhou-shang-city', 'source-steinke-erligang'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-early-shang-network', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'shang-civilization', annotationId: 'annotation-shang-zhengzhou', sourceIds: ['source-an-zhengzhou-shang-city'] },
@@ -653,7 +665,7 @@
       id: 'china-bronze-ancestors-records',
       title: '青铜和甲骨把祖先请进王室',
       eyebrow: '晚商祖先祭祀',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination', 'event-shang-bronze-production-and-ritual-use'],
       contentBlocks: [fact('china-bronze-ancestors-records-fact', '在晚商都城安阳，祭祀常从一顿郑重安排的酒食开始。青铜鼎盛放食物，酒器把祭品送给祖先；另一边，王室把关于收成、疾病和战争的问题刻在龟甲与牛骨上，再用火灼出裂纹。青铜让祖先享用祭品，文字则把向祖先提出的问题保存下来。', ['source-keightley-ancestral-landscape', 'source-keightley-shang-history', 'source-unesco-oracle-bones'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-vessel-set' },
       sourceIds: ['source-keightley-ancestral-landscape', 'source-keightley-shang-history', 'source-unesco-oracle-bones', 'source-wikimedia-fuhao-cooking-vessels']
@@ -662,7 +674,7 @@
       id: 'china-bronze-sanxingdui-world',
       title: '三星堆铸出另一套神灵形象',
       eyebrow: '成都平原',
-      timeSpan: timeSpan(-1200, -950, '约公元前1200—前950年', true),
+      timeSpan: timeSpan(-1200, -950, '约公元前1200—前950年', true), eventIds: ['event-sanxingdui-ritual-object-deposition'],
       contentBlocks: [synthesis('china-bronze-sanxingdui-world-synthesis', '成都平原的三星堆也拥有熟练的青铜工匠，却没有只铸造中原常见的酒食礼器。巨大的面具、戴金面罩的头像、立人和青铜树被送进相邻的器物坑。这里没有留下能够读懂的文字解释它们，但这些器物足以让人看见：相似的金属技术，可以进入完全不同的仪式世界。', ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023', 'source-sxd-writing-2021'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-sxd-gold-mask-head' },
       sourceIds: ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023', 'source-sxd-writing-2021', 'source-wikimedia-sxd-gold-mask-head']
@@ -671,7 +683,7 @@
       id: 'china-bronze-zhou-changes',
       title: '周人接过青铜，也改变青铜',
       eyebrow: '西周的继承与变化',
-      timeSpan: timeSpan(-1046, -771, '约公元前1046—前771年', true),
+      timeSpan: timeSpan(-1046, -771, '约公元前1046—前771年', true), eventIds: ['event-zhou-conquest-of-shang'],
       contentBlocks: [fact('china-bronze-zhou-changes-fact', '周人击败商王室后，仍使用商代已经成熟的铸造技术。利簋内部的短铭文记录了灭商之战，后来的西周青铜器又写下赏赐、任命和家族功绩。青铜继续服务祖先，也开始保存新的政治关系。', ['source-national-museum-li-gui', 'source-met-shang-zhou-bronze', 'source-cook-western-zhou-rites'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-li-gui' },
       sourceIds: ['source-national-museum-li-gui', 'source-met-shang-zhou-bronze', 'source-cook-western-zhou-rites', 'source-wikimedia-li-gui']
@@ -680,7 +692,7 @@
       id: 'erlitou-roads-cross-city',
       title: '道路穿过城市',
       eyebrow: '约四千年前的洛阳盆地',
-      timeSpan: timeSpan(-1900, -1600, '约公元前1900—前1600年', true),
+      timeSpan: timeSpan(-1900, -1600, '约公元前1900—前1600年', true), eventIds: ['event-erlitou-urban-consolidation'],
       contentBlocks: [fact('erlitou-roads-cross-city-fact', '约四千年前，洛阳盆地的一处聚落迅速扩展。几条宽阔道路彼此相交，把居住、生产和大型建筑所在的区域分开；人们每天沿路搬运泥土、木料与粮食，也在行走中反复确认城市的中心在哪里。', ['source-erlitou-cass-report', 'source-erlitou-radiocarbon', 'source-zhao-erlitou-settlement'])],
       presentation: {
         kind: 'mapAndText',
@@ -700,7 +712,7 @@
       id: 'erlitou-enclosed-center',
       title: '被围合的中心',
       eyebrow: '门、墙与路径',
-      timeSpan: timeSpan(-1800, -1550, '约公元前1800—前1550年', true),
+      timeSpan: timeSpan(-1800, -1550, '约公元前1800—前1550年', true), eventIds: ['event-erlitou-urban-consolidation'],
       contentBlocks: [interpretation('erlitou-enclosed-center-interpretation', '道路围出的中心并非谁都能随意穿过。成组院落、夯土基址和围墙把空间层层收拢，接近大型建筑要经过更少而更明确的入口。秩序不只由人宣布，也被做进了门、墙和路径。', ['source-erlitou-cass-report', 'source-erlitou-rethinking', 'source-zhao-erlitou-settlement'])],
       presentation: {
         kind: 'mapAndText',
@@ -720,7 +732,7 @@
       id: 'erlitou-rare-materials-workshop',
       title: '稀有材料进入作坊',
       eyebrow: '铜、陶范与绿松石',
-      timeSpan: timeSpan(-1800, -1550, '约公元前1800—前1550年', true),
+      timeSpan: timeSpan(-1800, -1550, '约公元前1800—前1550年', true), eventIds: ['event-erlitou-urban-consolidation'],
       contentBlocks: [synthesis('erlitou-rare-materials-workshop-synthesis', '中心附近的作坊里，工匠把铜熔进陶范，又将一片片绿松石磨薄、拼合。原料从远处来到这里，复杂技术也被集中起来；少量特别的器物因此能够进入少数人的仪式与葬礼。', ['source-erlitou-cass-report', 'source-liu-chen-archaeology-china', 'source-zhao-erlitou-settlement'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-erlitou-turquoise-bronze-plaque' },
       sourceIds: ['source-erlitou-cass-report', 'source-liu-chen-archaeology-china', 'source-zhao-erlitou-settlement', 'source-wikimedia-erlitou-plaque']
@@ -729,7 +741,7 @@
       id: 'erlitou-objects-enter-burials',
       title: '器物跟随主人下葬',
       eyebrow: '少数墓葬中的稀有器物',
-      timeSpan: timeSpan(-1750, -1550, '约公元前1750—前1550年', true),
+      timeSpan: timeSpan(-1750, -1550, '约公元前1750—前1550年', true), eventIds: ['event-erlitou-urban-consolidation'],
       contentBlocks: [synthesis('erlitou-objects-enter-burials-synthesis', '多数墓葬并不华丽，少数死者身旁却放着铜器、玉器、铃和成千片绿松石拼成的龙形器。生前的差别被带进坟墓，稀有材料、声音与形象共同标出某些人的特殊位置。', ['source-erlitou-cass-report', 'source-liu-chen-archaeology-china', 'source-erlitou-turquoise-restoration'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-erlitou-turquoise-dragon-bell' },
       sourceIds: ['source-erlitou-cass-report', 'source-liu-chen-archaeology-china', 'source-erlitou-turquoise-restoration', 'source-wikimedia-erlitou-dragon']
@@ -738,7 +750,7 @@
       id: 'erlitou-xia-name-absent',
       title: '夏的名字没有写在遗址里',
       eyebrow: '考古材料与后世名称',
-      timeSpan: timeSpan(-1900, -1500, '约公元前1900—前1500年', true),
+      timeSpan: timeSpan(-1900, -1500, '约公元前1900—前1500年', true), eventIds: ['event-erlitou-urban-consolidation'],
       contentBlocks: [interpretation('erlitou-xia-name-absent-interpretation', '后来的人循着古书记载的“夏”来到二里头。遗址的年代、规模和位置使这个联系极有吸引力，但这里尚未发现能读出国名或王名的同时代文字。我们能看见一套新秩序怎样成形，却不能让沉默的遗址替自己说出“夏”。', ['source-erlitou-rethinking', 'source-xu-xia-debate', 'source-erlitou-radiocarbon', 'source-thorp-erlitou-xia'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-erlitou-site' },
       sourceIds: ['source-erlitou-rethinking', 'source-xu-xia-debate', 'source-erlitou-radiocarbon', 'source-thorp-erlitou-xia', 'source-wikimedia-erlitou-site']
@@ -747,7 +759,7 @@
       id: 'shang-civilization-forms-between-cities',
       title: '商文明在城市之间成形',
       eyebrow: '公元前二千纪中叶',
-      timeSpan: timeSpan(-1600, -1400, '约公元前1600—前1400年', true),
+      timeSpan: timeSpan(-1600, -1400, '约公元前1600—前1400年', true), eventIds: ['event-erligang-urban-expansion'],
       contentBlocks: [synthesis('shang-civilization-forms-between-cities-synthesis', '公元前二千纪中叶，郑州出现巨大的城墙与成片作坊。相似的青铜器、陶器和制作方法随后抵达更远地方，南至长江边。我们看到的开端不是一个确定的“开国日”，而是商文明在城市、工匠与往来网络中逐渐获得形状。', ['source-bagley-shang-archaeology', 'source-an-zhengzhou-shang-city', 'source-steinke-erligang'])],
       presentation: {
         kind: 'mapAndText',
@@ -769,7 +781,7 @@
       id: 'shang-dead-remain-in-family',
       title: '死者仍在家族之中',
       eyebrow: '晚商王室的祖先',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [interpretation('shang-dead-remain-in-family-interpretation', '在晚商王室，死亡并不等于离开家族。祖先按世代和亲疏被排列，王在不同日子向他们献祭，并询问收成、天气、疾病和战争。死者仍占有位置：他们是被供奉的家人，也是可能降下帮助或灾祸的力量。', ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-liu-shang-ancestors'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-yinxu-royal-tombs' },
       sourceIds: ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-liu-shang-ancestors', 'source-henan-yinxu-royal-tombs-aerial']
@@ -778,7 +790,7 @@
       id: 'shang-meal-for-ancestors',
       title: '一餐送给祖先',
       eyebrow: '青铜礼器中的酒食',
-      timeSpan: timeSpan(-1400, -1046, '约公元前1400—前1046年', true),
+      timeSpan: timeSpan(-1400, -1046, '约公元前1400—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [synthesis('shang-meal-for-ancestors-synthesis', '祭祀常从一顿被郑重安排的酒食开始。鼎、簋盛放食物，觚、爵与卣处理酒；器物的形状、组合和数量让宴饮变成可重复的仪式，也让参与者看见家族次序与身份差别。青铜的重量，托住的是人与祖先之间的一次正式相遇。', ['source-bagley-shang-archaeology', 'source-keightley-ancestral-landscape', 'source-met-shang-zhou-bronze'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-gu' },
       sourceIds: ['source-bagley-shang-archaeology', 'source-keightley-ancestral-landscape', 'source-met-shang-zhou-bronze', 'source-wikimedia-shang-gu']
@@ -787,7 +799,7 @@
       id: 'shang-when-bone-cracks',
       title: '骨头裂开时',
       eyebrow: '一次占卜成为记录',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [fact('shang-when-bone-cracks-fact', '占卜前，牛肩胛骨或龟甲先被整治、钻凿。火炙使它裂开，王或占卜者观察裂纹，提出“会”与“不会”的问题；日期、提问、判断，有时还有结果，被刻在骨面上。一次稍纵即逝的问神之事，从此能够被保存和复看。', ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-unesco-oracle-bones'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-oracle-bones' },
       sourceIds: ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-unesco-oracle-bones', 'source-wikimedia-oracle-bones']
@@ -796,7 +808,7 @@
       id: 'shang-fu-hao-two-records',
       title: '妇好留下两份记录',
       eyebrow: '甲骨中的名字与未被盗掘的墓',
-      timeSpan: timeSpan(-1250, -1190, '约公元前1250—前1190年', true),
+      timeSpan: timeSpan(-1250, -1190, '约公元前1250—前1190年', true), eventIds: ['event-fu-hao-activities'],
       contentBlocks: [
         fact('shang-fu-hao-two-records-fact', '妇好被称为“第一位女武将”。她生活在三千多年前的晚商，是商王武丁的配偶，也是能够主持祭祀、带兵出征的重要王室女性。甲骨一次次记下她的名字：王询问她的分娩和疾病，也占卜她的祭祀与军事行动。', ['source-keightley-shang-history', 'source-smarthistory-fu-hao']),
         synthesis('shang-fu-hao-two-records-synthesis', '三千多年后，考古学家在安阳发现了她未被盗掘的墓。墓中的带名铜器、兵器和大量随葬品，与甲骨记录中的人物彼此照应。妇好不再只是古老文字里的一个名字，我们能够看见她承担过什么职责，也看见她死后怎样进入王室祭祀的祖先行列。', ['source-mizoguchi-xibeigang', 'source-smarthistory-fu-hao', 'source-keightley-shang-history'])
@@ -808,7 +820,7 @@
       id: 'shang-war-enters-sacrifice',
       title: '战争进入祭祀',
       eyebrow: '出征、俘虏与占卜',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [interpretation('shang-war-enters-sacrifice-interpretation', '甲骨中的战争不只写出出征与胜负，也记下俘虏如何被带回祭献。兵器、王权与祖先礼仪在这里相接：对外的暴力能够转化为王室向神灵和先人展示秩序的行动，占卜也被用来决定出征和祭献的时机。', ['source-keightley-shang-history', 'source-campbell-violence-kinship', 'source-smarthistory-fu-hao'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-dagger-axes' },
       sourceIds: ['source-keightley-shang-history', 'source-campbell-violence-kinship', 'source-smarthistory-fu-hao', 'source-wikimedia-shang-dagger-axes']
@@ -817,7 +829,7 @@
       id: 'shang-people-beyond-royal-house',
       title: '王室之外的商人',
       eyebrow: '安阳的街道、家庭与作坊',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [synthesis('shang-people-beyond-royal-house-synthesis', '离开宫殿和王陵，安阳还有道路、水沟、院落、制陶作坊和普通墓葬。工匠烧制日用陶器，家庭在城中居住、劳动、埋葬亲人；他们并不都拥有王室青铜与刻辞，却共同支撑了这座城市，也以不同程度参加祭献与亲属生活。', ['source-smithsonian-anyang-neighborhood', 'source-bagley-shang-archaeology', 'source-unesco-yinxu'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-pottery-workshop' },
       sourceIds: ['source-smithsonian-anyang-neighborhood', 'source-bagley-shang-archaeology', 'source-unesco-yinxu', 'source-wikimedia-shang-pottery']
@@ -826,7 +838,7 @@
       id: 'shang-last-king-story-spreads',
       title: '亡国之君的故事开始流传',
       eyebrow: '王朝结束以后的商',
-      timeSpan: timeSpan(-1050, -1000, '约公元前1050—前1000年', true),
+      timeSpan: timeSpan(-1050, -1000, '约公元前1050—前1000年', true), eventIds: ['event-zhou-conquest-of-shang'],
       contentBlocks: [
         synthesis('shang-last-king-story-spreads-tyrant', '约公元前11世纪中叶，周击败商军，商最后一位君王帝辛（后世称“纣王”）战死。胜利者将改朝换代解释为“天命转移”：旧王失德，因此王朝更替。这个末代昏君的形象，也在后世叙事中不断被强化。', ['source-li-feng-early-china', 'source-khayutina-cultural-memory']),
         fact('shang-last-king-story-spreads-li-gui', '周人随后铸造利簋，记录灭商之战。这件青铜器属于新的统治者，却继承了商人成熟的铸造技术，并继续用于礼仪与祖先祭祀。', ['source-national-museum-li-gui', 'source-met-shang-zhou-bronze', 'source-cook-western-zhou-rites']),
@@ -839,7 +851,7 @@
       id: 'shang-oracle-fire-opens-bone',
       title: '火让骨头开口',
       eyebrow: '安阳的火与裂纹',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [fact('shang-oracle-fire-opens-bone-fact', '三千多年前，在今天河南安阳一带，商王室把牛的肩胛骨和龟的腹甲削整，在背面钻出小坑，再用火灼烧。热力逼出裂纹，商王或占卜者观察裂纹的方向和形状，判断祖先与神灵给出的征兆。', ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-unesco-oracle-bones'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-oracle-pit-marks' },
       sourceIds: ['source-keightley-shang-history', 'source-keightley-ancestral-landscape', 'source-unesco-oracle-bones', 'source-wikimedia-oracle-pit-marks']
@@ -848,7 +860,7 @@
       id: 'shang-oracle-divination-becomes-record',
       title: '一次占卜成为记录',
       eyebrow: '日期、命辞与结果',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [fact('shang-oracle-divination-becomes-record-fact', '裂纹出现后，刻写者在旁边留下日期、占卜者和要判断的事情。有时，商王还会加上自己的判断；事情过去后，又可能补记结果。一块骨面于是能够串起一次行动：何时举行、为了什么、当时怎样判断、后来发生了什么。', ['source-keightley-shang-history', 'source-nivison-question', 'source-schwartz-zhen'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-oracle-bones' },
       sourceIds: ['source-keightley-shang-history', 'source-nivison-question', 'source-schwartz-zhen', 'source-wikimedia-oracle-bones']
@@ -857,7 +869,7 @@
       id: 'shang-oracle-question-repeated',
       title: '同一件事问了不止一次',
       eyebrow: '相近日期里的反复占问',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [synthesis('shang-oracle-question-repeated-synthesis', '王室不会总在一条裂纹后停下。同一场战争、收成、分娩或祭祀，常在相近日期再次占卜；有时还会从相反方向表述同一件事。把这些刻辞放在一起，读者看见的不只是一个答案，而是一群人在不确定中反复试探和作出决定。', ['source-keightley-shang-history', 'source-schwartz-huayuanzhuang', 'source-schwartz-zhen'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-huayuanzhuang-plastron' },
       sourceIds: ['source-keightley-shang-history', 'source-schwartz-huayuanzhuang', 'source-schwartz-zhen', 'source-wikimedia-huayuanzhuang-plastron']
@@ -866,7 +878,7 @@
       id: 'shang-oracle-ancestors-calendar',
       title: '祖先拥有自己的日程',
       eyebrow: '六十天循环与祖先日名',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [fact('shang-oracle-ancestors-calendar-fact', '刻辞开头常先写当天的日名。商人用十个符号和十二个符号依次配对，循环记录六十天；王室祖先也常以其中十个符号之一命名。哪一天向哪位祖先献祭、何时再次占问，由此进入一套可以重复安排的时间秩序。', ['source-keightley-ancestral-landscape', 'source-boltz-sexagenary-cycle'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-oracle-eclipse' },
       sourceIds: ['source-keightley-ancestral-landscape', 'source-boltz-sexagenary-cycle', 'source-wikimedia-oracle-eclipse']
@@ -875,7 +887,7 @@
       id: 'shang-oracle-royal-questions-survive',
       title: '王室的问题留了下来',
       eyebrow: '被重新拼合的晚商材料',
-      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true),
+      timeSpan: timeSpan(-1250, -1046, '约公元前1250—前1046年', true), eventIds: ['event-late-shang-royal-divination'],
       contentBlocks: [synthesis('shang-oracle-royal-questions-survive-synthesis', '这些骨甲后来成批留在地下，碎裂、散失，又在三千多年后重新出土。大多数记录围绕商王，也有一批来自其他王室成员自己的占卜与书写人员。它们构成中国目前所知最早的大规模成熟文字材料，让祭祀、战争和家庭忧虑从一次行动变成可以追索的过去。', ['source-keightley-shang-history', 'source-schwartz-huayuanzhuang', 'source-unesco-oracle-bones'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-oracle-collection' },
       sourceIds: ['source-keightley-shang-history', 'source-schwartz-huayuanzhuang', 'source-unesco-oracle-bones', 'source-wikimedia-oracle-collection']
@@ -884,7 +896,7 @@
       id: 'shang-bronze-materials-reach-workshop',
       title: '矿料来到王室作坊',
       eyebrow: '合金、作坊与远方原料',
-      timeSpan: timeSpan(-1600, -1046, '约公元前1600—前1046年', true),
+      timeSpan: timeSpan(-1600, -1046, '约公元前1600—前1046年', true), eventIds: ['event-shang-bronze-production-and-ritual-use'],
       contentBlocks: [fact('shang-bronze-materials-reach-workshop-fact', '青铜不是从地下直接挖出的金属。工匠把铜与锡等材料配成合金，有时还会加入铅。在安阳等商代城市发现的铸铜遗迹里，熔炉、陶范碎片和各道工序留下的废料成片分布。不同地区汇来的原料，在这里变成仪式所需的器物。', ['source-bagley-shang-archaeology', 'source-smithsonian-bronze-casting', 'source-smithsonian-anyang-kings'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-casting-apparatus' },
       sourceIds: ['source-bagley-shang-archaeology', 'source-smithsonian-bronze-casting', 'source-smithsonian-anyang-kings', 'source-wikimedia-bronze-casting-apparatus']
@@ -893,7 +905,7 @@
       id: 'shang-bronze-clay-mould-shapes-vessel',
       title: '泥范先做出器物',
       eyebrow: '分范、合范与浇铸',
-      timeSpan: timeSpan(-1600, -1046, '约公元前1600—前1046年', true),
+      timeSpan: timeSpan(-1600, -1046, '约公元前1600—前1046年', true), eventIds: ['event-shang-bronze-production-and-ritual-use'],
       contentBlocks: [fact('shang-bronze-clay-mould-shapes-vessel-fact', '工匠先用泥做出器物模型，再覆上一层泥壳。外壳被切成几块，模型则被削小，成为撑住器物内部的泥芯。工匠重新合上外范，留下薄薄空隙，让熔化的青铜从浇口流入。冷却后打碎陶范，器壁与纹饰一起显现。', ['source-bagley-shang-archaeology', 'source-smithsonian-bronze-casting'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-pottery-mould' },
       sourceIds: ['source-bagley-shang-archaeology', 'source-smithsonian-bronze-casting', 'source-wikimedia-bronze-mould']
@@ -902,7 +914,7 @@
       id: 'shang-bronze-vessels-form-feast',
       title: '一件器物加入祖先宴席',
       eyebrow: '食物、酒与器物组合',
-      timeSpan: timeSpan(-1400, -1046, '约公元前1400—前1046年', true),
+      timeSpan: timeSpan(-1400, -1046, '约公元前1400—前1046年', true), eventIds: ['event-shang-bronze-production-and-ritual-use'],
       contentBlocks: [synthesis('shang-bronze-vessels-form-feast-synthesis', '一口鼎用于烹煮或盛放肉食，细长的觚用于饮酒，带提梁的卣储放祭酒。它们很少孤零零地出现，而是按照不同用途组成一套，盛起献给祖先的食物和酒。器物的组合与数量，也把宴饮中的亲属次序和身份差别摆到人们眼前。', ['source-bagley-shang-archaeology', 'source-keightley-ancestral-landscape', 'source-met-shang-zhou-bronze'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-vessel-set' },
       sourceIds: ['source-bagley-shang-archaeology', 'source-keightley-ancestral-landscape', 'source-met-shang-zhou-bronze', 'source-wikimedia-fuhao-cooking-vessels']
@@ -911,7 +923,7 @@
       id: 'shang-bronze-mask-and-name',
       title: '兽面与名字留在器表',
       eyebrow: '纹饰与短铭文',
-      timeSpan: timeSpan(-1400, -1046, '约公元前1400—前1046年', true),
+      timeSpan: timeSpan(-1400, -1046, '约公元前1400—前1046年', true), eventIds: ['event-shang-bronze-production-and-ritual-use'],
       contentBlocks: [fact('shang-bronze-mask-and-name-fact', '工匠常在泥范内壁刻出眼睛、角、鸟和龙。青铜凝固时，纹饰便与器身同时出现。最醒目的是正面展开的兽面，后人常称它为“饕餮”，商人自己的叫法和寓意已经失传。器内有时还铸着短短几个字，标明家族、作器者或接受祭献的祖先。', ['source-bagley-shang-archaeology', 'source-met-shang-zhou-bronze'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-shang-bronze-gu' },
       sourceIds: ['source-bagley-shang-archaeology', 'source-met-shang-zhou-bronze', 'source-wikimedia-shang-gu']
@@ -920,7 +932,7 @@
       id: 'shang-bronze-follows-owner-to-tomb',
       title: '礼器跟随主人进入墓中',
       eyebrow: '妇好墓与商周之间',
-      timeSpan: timeSpan(-1250, -1000, '约公元前1250—前1000年', true),
+      timeSpan: timeSpan(-1250, -1000, '约公元前1250—前1000年', true), eventIds: ['event-shang-bronze-production-and-ritual-use'],
       contentBlocks: [synthesis('shang-bronze-follows-owner-to-tomb-synthesis', '被称为“第一位女武将”的妇好，是商王的配偶，也曾主持祭祀、带兵出征。她死后，成套青铜礼器随她进入墓中，器上的名字让墓主人、生前职责和祖先礼仪彼此照应。商亡以后，周人继续使用陶范、礼器和祖先祭祀，又让铜器铭文逐渐承担更多纪事。青铜没有随王朝结束，而是带着被改变的礼仪进入新的历史记忆。', ['source-smarthistory-fu-hao', 'source-keightley-shang-history', 'source-met-shang-zhou-bronze', 'source-cook-western-zhou-rites'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-fu-hao-tomb' },
       sourceIds: ['source-smarthistory-fu-hao', 'source-keightley-shang-history', 'source-met-shang-zhou-bronze', 'source-cook-western-zhou-rites', 'source-wikimedia-fu-hao-tomb']
@@ -929,7 +941,7 @@
       id: 'sanxingdui-pits-beneath-city',
       title: '一场仪式最后留下的坑',
       eyebrow: '成都平原的青铜时代古城',
-      timeSpan: timeSpan(-1800, -1000, '约公元前1800—前1000年', true),
+      timeSpan: timeSpan(-1800, -1000, '约公元前1800—前1000年', true), eventIds: ['event-sanxingdui-ritual-object-deposition'],
       contentBlocks: [fact('sanxingdui-pits-beneath-city-fact', '四川广汉附近的三星堆，是一座被城墙围起的古城，城内有居住、生产和举行重要活动的空间。考古人员在这里发现了八座相邻的器物坑：青铜、玉器、金器和大量象牙被集中放入其中，许多器物还先被破碎、焚烧。它们不像一处日常废弃物，更像一场重要行动最后留下的现场。', ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023'])],
       presentation: {
         kind: 'mapAndText',
@@ -949,7 +961,7 @@
       id: 'sanxingdui-bronze-faces-watch',
       title: '面具让某个存在现身',
       eyebrow: '青铜与金面',
-      timeSpan: timeSpan(-1200, -1000, '约公元前1200—前1000年', true),
+      timeSpan: timeSpan(-1200, -1000, '约公元前1200—前1000年', true), eventIds: ['event-sanxingdui-ritual-object-deposition'],
       contentBlocks: [
         fact('sanxingdui-bronze-faces-watch-fact', '有的青铜面具眼睛突出、耳朵宽大；有的头像脸上覆盖着薄薄的金面。它们被刻意做得远比日常的人脸醒目。', ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023']),
         interpretation('sanxingdui-bronze-faces-watch-interpretation', '这些面具究竟代表神、祖先，还是由人在仪式里佩戴的形象，至今没有答案。较稳妥的理解是：它们被用来让某种超出日常的存在“现身”，成为聚集人群共同观看和敬畏的焦点。', ['source-sxd-antiquity-2022', 'source-sxd-writing-2021'])
@@ -961,7 +973,7 @@
       id: 'sanxingdui-people-tree-birds',
       title: '人、树与鸟搭起向上的世界',
       eyebrow: '一件向上展开的器物',
-      timeSpan: timeSpan(-1200, -1000, '约公元前1200—前1000年', true),
+      timeSpan: timeSpan(-1200, -1000, '约公元前1200—前1000年', true), eventIds: ['event-sanxingdui-ritual-object-deposition'],
       contentBlocks: [
         fact('sanxingdui-people-tree-birds-fact', '一尊巨大的青铜立人双手向前伸出，仿佛曾托举某个如今失去的东西。另一件青铜树由枝、花和鸟组成，部件铸成后再拼接起来。', ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023']),
         interpretation('sanxingdui-people-tree-birds-interpretation', '研究者常把树、鸟与人的组合理解为连接人间和高处世界的仪式图景：人抬头观看，鸟沿枝条上升，树把目光引向上方。但它们讲述的究竟是哪一个故事，至今没有被破译。', ['source-sxd-antiquity-2022', 'source-sxd-southwest-exchange-2024', 'source-sxd-writing-2021'])
@@ -973,7 +985,7 @@
       id: 'sanxingdui-materials-meet',
       title: '贵重材料把一场仪式聚到一起',
       eyebrow: '不同材料汇到成都平原',
-      timeSpan: timeSpan(-1300, -1000, '约公元前1300—前1000年', true),
+      timeSpan: timeSpan(-1300, -1000, '约公元前1300—前1000年', true), eventIds: ['event-sanxingdui-ritual-object-deposition'],
       contentBlocks: [
         fact('sanxingdui-materials-meet-fact', '在这些坑中，青铜同象牙、金、玉和贝并列。部分器形、纹样和铸造手法能看出与中原、长江中下游地区的联系。', ['source-sxd-antiquity-2022', 'source-sxd-southwest-exchange-2024']),
         interpretation('sanxingdui-materials-meet-interpretation', '我们不知道是谁决定收集这些材料，也不知道仪式的完整规则。但把它们做成面具、人像和树形器，需要调动远超日常生活的资源与工艺；一种合理的理解是，这些器物共同搭起了一场面向众人的仪式，而不是单独使用的珍宝。', ['source-sxd-antiquity-2022', 'source-sxd-southwest-exchange-2024'])
@@ -985,7 +997,7 @@
       id: 'sanxingdui-ritual-world-is-buried',
       title: '埋下的不是谜底',
       eyebrow: '埋藏与新的中心',
-      timeSpan: timeSpan(-1200, -950, '约公元前1200—前950年', true),
+      timeSpan: timeSpan(-1200, -950, '约公元前1200—前950年', true), eventIds: ['event-sanxingdui-ritual-object-deposition'],
       contentBlocks: [
         fact('sanxingdui-ritual-world-is-buried-fact', '许多器物在进入坑前已经破碎，坑内还可见灰烬与层层堆放的痕迹。它们不是随手丢进坑里的。', ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023']),
         interpretation('sanxingdui-ritual-world-is-buried-interpretation', '这场埋藏是仪式的结束、一次危机后的处置，还是另一种我们尚未想到的行动？目前没有定论。后来金沙遗址仍出现鸟、鱼、太阳、金器和人像等相近表达，但这也不能替我们补出三星堆人当时讲述的故事。被埋下的不是谜底，而是一份仍待解读的仪式档案。', ['source-sxd-antiquity-2022', 'source-sxd-sacrificial-area-2023', 'source-sxd-southwest-exchange-2024', 'source-sxd-writing-2021'])

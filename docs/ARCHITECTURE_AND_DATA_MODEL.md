@@ -1,6 +1,6 @@
 # Civilization Wander：架构与数据模型
 
-> 代码审计基线：2026-08-04。本文以当前可执行入口、查询/校验代码和测试为事实来源。仓库只保留 **schema V4** 运行时。
+> 代码审计基线：2026-08-04。本文以当前可执行入口、查询/校验代码和测试为事实来源。仓库只保留 **schema V5** 运行时。
 
 ## 1. 产品目标、边界与核心路径
 
@@ -16,7 +16,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动页面入口，也是具体脚本清单和加载顺序的权威来源。它以经典脚本、相对路径和固定顺序加载，因此可以直接从 `file://` 运行，不需要服务器、打包器或包管理器。依赖层次是：
+`index.html` 是唯一活动页面入口。它以经典脚本、相对路径和固定顺序加载，因此可以直接从 `file://` 运行，不需要服务器、打包器或包管理器。聚合器与语法清单必须和入口保持同一内容模块顺序；`scripts/check-runtime-manifests.js` 从三处读取现状并做只读比较，不再由文档保存另一份模块清单。依赖层次是：
 
 1. `data/world-physical.js`
 2. `data/` 下由入口列出的各内容模块
@@ -28,22 +28,22 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 8. `map/v4/map-renderer.js`
 9. `app.js`
 
-样式顺序是 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css`。仓库没有并行历史运行时或发布快照，活动路径全部属于 V4。
+样式顺序是 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css`。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；稳定表现层仍保留 `ui/v4`、`map/v4` 与 `styles/v4` 目录名，这些路径名不表示活动 schema 仍为 V4。
 
 ```mermaid
 flowchart TD
     HTML["index.html"] --> WP["data/world-physical.js\nATLAS_WORLD_VECTOR"]
-    HTML --> CM["data/content-module.js\nATLAS_V4_* content globals"]
-    HTML --> D["data/atlas-data.js\nATLAS_V4_DATA"]
+    HTML --> CM["data/content-module.js\nATLAS_V5_* content globals"]
+    HTML --> D["data/atlas-data.js\nATLAS_V5_DATA"]
     CM --> D
-    D --> Q["data/queries.js\nATLAS_V4_QUERIES"]
-    Q --> C["ui/v4/cards.js\nATLAS_V4_CARDS"]
-    Q --> R["ui/v4/card-reader.js\nATLAS_V4_READER"]
+    D --> Q["data/queries.js\nATLAS_V5_QUERIES"]
+    Q --> C["ui/v4/cards.js\nATLAS_V5_CARDS"]
+    Q --> R["ui/v4/card-reader.js\nATLAS_V5_READER"]
     C --> R
     WP --> B["assets/natural-earth/base.js\nATLAS_NATURAL_EARTH"]
-    Q --> M["map/v4/map-renderer.js\nATLAS_V4_MAP"]
+    Q --> M["map/v4/map-renderer.js\nATLAS_V5_MAP"]
     B --> M
-    D --> A["app.js\nATLAS_V4_APP"]
+    D --> A["app.js\nATLAS_V5_APP"]
     Q --> A
     C --> A
     R --> A
@@ -51,17 +51,17 @@ flowchart TD
     CSS["styles.css + styles/v4/*"] --> HTML
 ```
 
-各内容模块分别声明正式内容集合；`atlas-data.js` 汇总这些模块并输出唯一的 schema 4 顶层数据；`queries.js` 建索引、提供读 API 并执行失败关闭式校验；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`app.js` 是唯一编排层。新增、删除或重排内容模块时必须同时更新 `index.html` 与固定加载顺序测试，文档不另行复制模块文件清单。
+各内容模块分别声明精确的十四个数组；`atlas-data.js` 在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据；`queries.js` 建索引、提供读 API 并执行失败关闭式校验；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`app.js` 是唯一编排层。新增、删除或重排内容模块时必须同步入口、聚合器、语法清单和测试，并运行 `npm run check:manifests`；文档不另行复制模块文件清单。
 
 ## 3. 从 `index.html` 到地图渲染器的完整调用链
 
-页面脚本全部就绪后，`app.js` 读取 V4 全局对象并立即运行 `queries.validateAtlasData()`。任何无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
+页面脚本全部就绪后，`app.js` 读取 V5 全局对象并立即运行 `queries.validateAtlasData()`。任何无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
 
 初始化链如下：
 
 1. 建立首页板块、Card 容器、返回按钮、标题与面包屑的 DOM 引用。
 2. `app.js` 用首页策展配置中的稳定 Card ID 生成三个入口板块；实体名、摘要和 Card 标题始终从当前聚合数据读取，不在首页配置重复维护。首屏提供三个代表性快速起点；可用的本地阅读快照只把第一个动作替换为“继续上次阅读”，其余入口保持稳定。
-3. 以 `ATLAS_V4_READER.createReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
+3. 以 `ATLAS_V5_READER.createReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
 4. 根据 URL hash 解析 `#card/<cardId>/<sceneId>`；没有有效 Card 时显示首页，直接链接则启动 Reader。
 5. Reader 通过 `getCard()`、`getScenesForCard()` 取得 Card 与由 `Card.sceneIds` 决定的 Scene 顺序，再让 Cards renderer 生成主内容。
 6. Cards renderer 在标题区从主 Entity 与 Card `timeSpan.start/end` 生成“公共类型 · 主实体名称 · 年代”坐标；每个 Scene 的时间行按 `timeDisplay` 显示年代语义，并从 `Card.sceneIds` 派生“当前位置／总数”。这些都是展示派生值，不写回数据。
@@ -70,11 +70,11 @@ flowchart TD
 9. Map Renderer 从 MapState 读取相机与 Geometry，从当前 Scene presentation 读取 Entity/Navigation overlay；Natural Earth 只提供本地底图。
 10. Scene 改变时 Reader 用 `history.replaceState()` 更新当前快照；跨 Card 前进导航先保存来源快照，再 `pushState()`，在 DOM 替换前后同步回顶并播放 180ms 原地 opacity 入场。direct/history/popstate 精确恢复不播放该前进动画。
 
-`app.js` 在 Node 环境还导出首页策展配置、阅读快照规范化函数和 history 辅助函数，供集成测试在没有浏览器 DOM 时验证入口引用、快照边界与历史顺序。本地阅读记录使用带 schema 代号的 `civilization-wander:v4:last-read` 键；缺失、损坏或已经失效的 Card/Scene 引用只会隐藏继续入口，不影响核心内容和导航。
+`app.js` 在 Node 环境还导出首页策展配置、阅读快照规范化函数和 history 辅助函数，供集成测试在没有浏览器 DOM 时验证入口引用、快照边界与历史顺序。本地阅读记录使用带 schema 代号的 `civilization-wander:v5:last-read` 键；缺失、损坏或已经失效的 Card/Scene 引用只会隐藏继续入口，不影响核心内容和导航。
 
-## 4. 正式 V4 数据模型：顶层、字段责任与消费者
+## 4. 正式 V5 数据模型：顶层、字段责任与消费者
 
-顶层对象必须是精确的 `{schemaVersion: 4, ...14 collections}`；未知集合、缺失集合或非数组集合均被拒绝。本文只记录集合职责，不手工维护会随内容增长而变化的对象数量。实时数量由聚合后的运行时数据生成：
+顶层对象必须是精确的 `{schemaVersion: 5, ...14 collections}`；未知集合、缺失集合或非数组集合均被拒绝。本文只记录集合职责，不手工维护会随内容增长而变化的对象数量。实时数量由聚合后的运行时数据生成：
 
 ```powershell
 npm run report:counts
@@ -82,8 +82,8 @@ npm run report:counts
 
 | 集合 | 主要责任 | 主要消费者 |
 |---|---|---|
-| `entities` | 稳定知识身份与默认入口 | 首页、Cards、导航预览、Map、查询 |
-| `events` | 一级历史事件、参与者与证据 | Card 完整性、关系查询、后续事件产品能力 |
+| `entities` | 稳定知识身份；不保存默认 Card | 首页、Cards、导航预览、Map、反向 Card 索引 |
+| `events` | 一级历史事件、过程、文本传统或传统叙事，以及参与者与证据 | Scene 完整性、Card 派生事件、关系查询、后续事件产品能力 |
 | `structuralEdges` | 可复用的历史关系事实 | StructureView、导航 basis、Map legend |
 | `cards` | 公共故事、Scene 所有权和顺序 | Reader、Cards、路由 |
 | `scenes` | 有限叙事步骤和可选呈现 | Cards、Reader、Map |
@@ -113,18 +113,20 @@ npm run report:counts
 |  | `year` | 否 | 非零整数。 |
 | `Asset` | `id`, `type`, `src`, `title`, `alt`, `sourceIds` | 是 | `type` 仅 `data`/`image`，路径须为编码安全的项目内相对路径，禁止协议、绝对路径、盘符与 `..`，扩展名须匹配类型。Node 校验还验证真实文件存在。 |
 
+运行时 Asset 保持精简；creator、license、sourceUrl、origin、原始宽高、SHA-256 与审核状态保存在 `assets/images/<module>/manifest.json`，不扩充运行时 schema。自动生成的旧素材记录可标记 `needsMetadataAudit`，新模块门禁只接受人工核对后的 `approved`。
+
 ### 4.2 知识、事件、关系与故事对象
 
 | 对象 | 字段 | 必填 | 责任、消费者与关键约束 |
 |---|---|---:|---|
-| `Entity` | `id`, `type`, `name`, `canonicalSummary`, `defaultCardId`, `sourceIds` | 是 | 稳定身份；默认 Card 必须存在并把该 Entity 列为 `primaryEntityId`。`sourceIds` 非空。 |
+| `Entity` | `id`, `type`, `name`, `canonicalSummary`, `sourceIds` | 是 | 稳定身份，不拥有或默认跳转到 Card；主/相关 Card 由 Card 字段反向索引。`sourceIds` 非空。 |
 |  | `level`, `alternativeNames`, `timeSpan`, `tags` | 否 | `type`/`level` 当前要求非空字符串；若 Entity 被 Card 用作主实体，其 `type` 还必须在公共类型标签表中有稳定中文标签。别名/标签为唯一字符串数组。 |
-| `Event` | `id`, `title`, `timeSpan`, `participantEntityIds`, `evidenceBlocks`, `sourceIds`, `editorialReview` | 是 | 参与者非空且均存在；证据非空，至少一块属于 evidence 语义并有来源；review 必须有效。 |
+| `Event` | `id`, `kind`, `title`, `timeSpan`, `participantEntityIds`, `evidenceBlocks`, `sourceIds`, `editorialReview` | 是 | `kind` 仅 `historicalEvent`、`historicalProcess`、`textualTradition`、`traditionalNarrative`；参与者非空且均存在；证据非空，至少一块属于 evidence 语义并有来源；review 必须有效。 |
 | `StructuralEdge` | `id`, `family`, `type`, `source`, `target`, `label`, `summaries`, `sourceIds` | 是 | `source`/`target` 为 typed Endpoint 且不得自环；`label.forward`、`summaries.canonical` 必填；来源非空。`branch_of` 两端必须都是 `languageSystem` Entity。 |
 |  | `timeSpan`, `qualifiers` | 否 | 用于方向/时间查询与限定；`family`/`type` 当前仅要求非空字符串。 |
-| `Card` | `id`, `kind`, `primaryEntityId`, `relatedEntityIds`, `eventIds`, `title`, `editorialPurpose`, `introduction`, `thesis`, `timeSpan`, `sceneIds`, `sourceIds`, `editorialReview` | 是 | 公共故事与唯一 Scene 顺序来源。每张 Card 必须有且只有一个主 Entity；该 Entity 必须存在、类型必须有公共标签，且不能在 `relatedEntityIds` 重复。Event、Scene 列表非空；至少 2 个不同来源；至少 2 个属于本 Card Scene 的 sourced `historicalCase`；至少一个归属 Card/Scene 的导航 placement；review 非空。`kind` 当前仅要求字符串。 |
+| `Card` | `id`, `kind`, `primaryEntityId`, `relatedEntityIds`, `title`, `editorialPurpose`, `introduction`, `thesis`, `timeSpan`, `sceneIds`, `sourceIds`, `editorialReview` | 是 | 公共故事与唯一 Scene 顺序来源。每张 Card 必须有且只有一个主 Entity；该 Entity 必须存在、类型必须有公共标签，且不能在 `relatedEntityIds` 重复。Scene 列表非空；Card Event 按 Scene 顺序去重推导，不在 Card 重复存储；至少 2 个不同来源；至少 2 个 sourced evidence blocks；至少一个归属 Card/Scene 的导航 placement；review 非空。`kind` 当前仅要求字符串。 |
 | `Card.thesis` | `text`, `sourceIds` | 是 | 内部核心论点，必须有来源；当前公共 Cards renderer 不显示。 |
-| `Scene` | `id`, `title`, `timeSpan`, `contentBlocks`, `presentation`, `sourceIds` | 是 | 必须恰好出现在一个 `Card.sceneIds` 中；内容与来源非空；时间须与 owner Card 重叠。没有 `cardId`、`order`、`navigationIds`、`mapStateId` 或 `featuredEntityIds`。 |
+| `Scene` | `id`, `title`, `timeSpan`, `eventIds`, `contentBlocks`, `presentation`, `sourceIds` | 是 | 必须恰好出现在一个 `Card.sceneIds` 中；`eventIds` 非空且至少一个 Event 的 `timeSpan` 与 Scene 相交；内容与来源非空；时间须与 owner Card 重叠。没有 `cardId`、`order`、`navigationIds`、`mapStateId` 或 `featuredEntityIds`。 |
 |  | `eyebrow` | 否 | 兼容保留的编辑短标签；当前公共 renderer 不显示。 |
 |  | `timeDisplay` | 否 | 默认为 `year`，显示 `timeSpan.label`；`undatedNarrative` 固定显示“叙事时间 · 无可考年份”，用于没有可考历史发生年份的史诗或神话内部情节。不得自定义显示文案。 |
 
@@ -189,21 +191,22 @@ Annotation 的三种地理主张不能混用：
 
 - 单对象：`getEntity/Event/Card/Scene/StructuralEdge/StructureView/NavigationOption/MapState/CameraPreset/Geometry/MapAnnotation/Asset/Source`。
 - 所有权/排序：`getOwnerCardForScene()`、`getScenesForCard()`。
-- Entity/Card：`getCardsForEntity()`、`getTargetCardForEntity()`。
+- Entity/Card：`getCardsForEntity()`、`getPrimaryCardsForEntity()`、`getRelatedCardsForEntity()`；不再存在 Entity 默认 Card 查询。
+- Event/Scene/Card：`getEventsForScene()` 读取作者明确关联；`getEventsForCard()` 按 Card 的 Scene 顺序去重推导。
 - 关系：`getEdgesForEndpoint()` 支持 typed endpoint、方向与时间重叠；`getStructureViewItems()` 再按 kind/family/type/time 过滤、优先 include Entity、限制 `maxVisible`。
 - 导航：按 Scene/Card + slot 返回局部 rank 排序后的 Placement；`getNavigationOptionsForScene()` 只组合 visible placement 与 Option。
 - 时间：`timeSpanOverlaps()` 同时支持 BCE、CE 与单边范围。
 - 数据：`validateAtlasData()` 包裹所有检查，恶意/畸形嵌套值也只返回 `{valid:false, errors}`，不会把异常抛到调用方。
 
-校验器还执行全局 ID 唯一性、引用类型匹配、未知字段拒绝、对象孤儿检查、Scene 唯一所有权、Card 完整性、导航 rank 连续、地图/Scene/Geometry 时间重叠、Annotation 联合一致性以及本地 Asset 存在性。当前通用孤儿检查覆盖 Event、NavigationOption、CameraPreset、MapState、Geometry、MapAnnotation、StructureView、Asset；Entity、StructuralEdge、Card、Scene、Source 依靠各自引用和完整性规则而没有一条统一“必须被消费”规则。
+校验器还执行全局 ID 唯一性、引用类型匹配、未知字段拒绝、对象孤儿检查、Scene 唯一所有权、Scene—Event 时间相交、Card 派生 Event、Card 完整性、导航 rank 连续、地图/Scene/Geometry 时间重叠、Annotation 联合一致性以及本地 Asset 存在性。当前通用孤儿检查覆盖 Event、NavigationOption、CameraPreset、MapState、Geometry、MapAnnotation、StructureView、Asset；Entity、StructuralEdge、Card、Scene、Source 依靠各自引用和完整性规则而没有一条统一“必须被消费”规则。
 
 ## 6. 对象关系与唯一权威来源
 
 ```mermaid
 erDiagram
-    ENTITY ||--o{ CARD : "primary/related/default"
+    ENTITY ||--o{ CARD : "primary/related"
     ENTITY }o--o{ EVENT : "participant"
-    EVENT }o--o{ CARD : "eventIds"
+    EVENT }o--|{ SCENE : "eventIds"
     ENTITY ||--o{ STRUCTURAL_EDGE : "typed endpoint"
     EVENT ||--o{ STRUCTURAL_EDGE : "typed endpoint"
     CARD ||--|{ SCENE : "owns ordered sceneIds"
@@ -235,10 +238,10 @@ erDiagram
 ```mermaid
 sequenceDiagram
     participant U as "读者/Hash/Observer"
-    participant R as "V4 Reader"
+    participant R as "V5 Reader"
     participant C as "Cards Renderer"
     participant A as "app.js"
-    participant Q as "V4 Queries"
+    participant Q as "V5 Queries"
     participant M as "Map Renderer"
     participant H as "History API"
 
@@ -268,7 +271,7 @@ sequenceDiagram
 
 首次 `renderCard()` 会先写 markup、绑定导航/预览、通知 Card 变化，再创建 IntersectionObserver 并激活 direct/fallback Scene，必要时聚焦 `h1`。普通滚动只重新执行 `announceScene()`。Observer 以视口约 44% 处为阅读锚，使用 `rootMargin: -28% 0 -52%` 与阈值 0/0.2/0.6；不支持 IntersectionObserver 时使用直接回退。
 
-`deriveSceneDirection()` 和激活 context 在运行时派生 `forward/backward/stationary` 方向与 `scroll/direct/navigation/history` 触发原因；`inheritedMedia`、`presentationScene` 等也只存在于 Reader state/callback context，绝不进入 V4 Scene schema。同 Card 的 `textOnly` 继承最近前序有效媒体，直接链接到它也按相同顺序解析；跨 Card 由 `onCardChange` 销毁媒体，全 text-only Card 或此前无媒体保持单栏。同 Card 内地图实例保持常驻，图片作为覆盖层渐显，回到地图时覆盖层渐隐并移除，相同图片保持原 DOM，reduced motion 时立即切换。公共正文保持连续排版：historical case、mechanism 等仍有语义化 markup，但不再卡片化；Scene 内只有策展导航卡片保留边框/背景。
+`deriveSceneDirection()` 和激活 context 在运行时派生 `forward/backward/stationary` 方向与 `scroll/direct/navigation/history` 触发原因；`inheritedMedia`、`presentationScene` 等也只存在于 Reader state/callback context，绝不进入 V5 Scene schema。同 Card 的 `textOnly` 继承最近前序有效媒体，直接链接到它也按相同顺序解析；跨 Card 由 `onCardChange` 销毁媒体，全 text-only Card 或此前无媒体保持单栏。同 Card 内地图实例保持常驻，图片作为覆盖层渐显，回到地图时覆盖层渐隐并移除，相同图片保持原 DOM，reduced motion 时立即切换。公共正文保持连续排版：historical case、mechanism 等仍有语义化 markup，但不再卡片化；Scene 内只有策展导航卡片保留边框/背景。
 
 Reader 用生命周期 `generation`、前进入场 `sequence` 和逐次渲染 `renderSequence` 守卫异步工作。`destroy()` 先使生命周期失效，再断开 observer、清理 timer/preview/替换状态；旧 rAF、timer、preview 与 scroll restore 回调随后即使被调度也不能再写 DOM 或滚动页面。新的 Card render 还会使较早 history restore rAF 的 `renderSequence` 失效。
 
@@ -305,16 +308,16 @@ flowchart LR
     MN --> F
     F --> S["保存来源 card/scene/scrollY\nreplaceState"]
     S --> NS["写入 navigationStack 来源项"]
-    NS --> PS["pushState 目标 atlasV4 快照"]
+    NS --> PS["pushState 目标 atlasV5 快照"]
     PS --> RC["synchronous top reset around DOM replacement\n180ms in-place opacity entry"]
     RC --> B["popstate/back\nrestore Card + Scene + scrollY"]
 ```
 
-普通 `<a href="#card/.../...">` 始终保留静态 fallback；JavaScript 只增强预览、快照和聚焦。跨 Card 前先把当前活动 Scene 与 `scrollY` 写回当前 `atlasV4` 历史项，再 push 目标项。前进导航把 `scrollingElement`、`documentElement`、`body` 与 window 同步设为 0，并在 Card DOM 替换前后各执行一次；替换窗口用 `is-v4-card-replacing` 暂时关闭 scroll anchoring。全局 `scroll-behavior:auto` 保证回顶不被平滑滚动延迟。
+普通 `<a href="#card/.../...">` 始终保留静态 fallback；JavaScript 只增强预览、快照和聚焦。跨 Card 前先把当前活动 Scene 与 `scrollY` 写回当前 `atlasV5` 历史项，再 push 目标项。前进导航把 `scrollingElement`、`documentElement`、`body` 与 window 同步设为 0，并在 Card DOM 替换前后各执行一次；替换窗口继续使用稳定 CSS 类 `is-v4-card-replacing` 暂时关闭 scroll anchoring。全局 `scroll-behavior:auto` 保证回顶不被平滑滚动延迟。
 
-只有 `trigger:'navigation'` 播放 180ms 原地 opacity 入场，不使用 `translateY`；direct、Scene 滚动、history/popstate 与精确 scroll restoration 不套前进动画，`prefers-reduced-motion` 也完全禁用它。history restore 在 DOM 就绪后的 rAF 精确恢复 `scrollY`，并以 `renderSequence` 拒绝较早 render 遗留的回调。`popstate` 只接受 `atlasV4` 快照或当前 hash；无效或不属于目标 Card 的 Scene 确定性回退到 Card 第一 Scene。
+只有 `trigger:'navigation'` 播放 180ms 原地 opacity 入场，不使用 `translateY`；direct、Scene 滚动、history/popstate 与精确 scroll restoration 不套前进动画，`prefers-reduced-motion` 也完全禁用它。history restore 在 DOM 就绪后的 rAF 精确恢复 `scrollY`，并以 `renderSequence` 拒绝较早 render 遗留的回调。`popstate` 只接受 `atlasV5` 快照或当前 hash；无效或不属于目标 Card 的 Scene 确定性回退到 Card 第一 Scene。
 
-首页转场也先保存可见 Card 快照，且只在当前 history state 是 `atlasV4` 时保存，避免用首页状态覆盖陈旧 Card。首页 state 使用 `atlasHome:true`。
+首页转场也先保存可见 Card 快照，且只在当前 history state 是 `atlasV5` 时保存，避免用首页状态覆盖陈旧 Card。首页 state 使用 `atlasHome:true`。
 
 ## 10. 来源、历史事实、推论与内部审校如何绑定
 
@@ -349,11 +352,11 @@ flowchart LR
 ## 12. 新增 Entity、Event 与 StructuralEdge
 
 1. 先新增至少一个可复用 Source，或确认已有 Source 真正支持主张。
-2. 新 Entity 填 `id/type/name/canonicalSummary/defaultCardId/sourceIds`，必要时填 `timeSpan`；不要伪造精确存在期。default Card 必须在最终数据中反向关联该 Entity。
-3. 新 Event 填可计算 `timeSpan`、非空 participants、typed evidence blocks、来源和内部 review。晚期传统叙述不能当作同时代证据。
+2. 新 Entity 填 `id/type/name/canonicalSummary/sourceIds`，必要时填 `timeSpan`；不要伪造精确存在期，也不要添加默认 Card。Card 索引由 `primaryEntityId` 与 `relatedEntityIds` 反向生成。
+3. 新 Event 填准确 `kind`、可计算 `timeSpan`、非空 participants、typed evidence blocks、来源和内部 review。晚期传统叙述使用 `textualTradition` 或 `traditionalNarrative`，不能当作同时代证据。
 4. 新 StructuralEdge 选择真实 `family/type`，用 typed `source/target` 指向 Entity 或 Event，写方向性 label、canonical summary、来源和可辩护的时间；不要为了连图自动暴露所有关系。
 5. 若关系需要出现在地图语境中，复用或新增 StructureView 过滤；如果它应触发跳转，再单独建 NavigationOption，不能把 edge 当 Placement。
-6. 运行 V4 数据校验、内容/查询测试与负向测试；确认不存在自环、错误 endpoint kind、无来源 evidence 或孤儿 Event。
+6. 运行 V5 数据校验、内容/查询测试与负向测试；确认每个 Scene 至少关联一个时间相交 Event，且不存在自环、错误 endpoint kind、无来源 evidence 或孤儿 Event。
 
 ## 13. 新增 Card、Scene 与导航
 
@@ -402,7 +405,7 @@ flowchart LR
 8. 仅在必要时加入 CameraPreset、Geometry、MapState、MapAnnotation 与 Scene map layers。
 9. `node --check` 活动脚本。
 10. `queries.validateAtlasData(data)` 并审阅精确 counts/errors。
-11. 运行数据、UI、地图、集成和 E2E 全套 V4 测试。
+11. 运行数据、UI、地图、集成和 E2E 全套 V5 测试。
 12. 真实浏览器检查桌面/移动、`file://` 直链、滚动 Scene、返回/前进、刷新、键盘、reduced motion、控制台与失败请求。
 
 任何 schema 变更都必须显式升级版本、给出迁移策略、同步 validator，并增加证明坏数据被拒绝的负向测试。Renderer 不能成为坏数据的过滤器。
@@ -427,7 +430,7 @@ npm run report:counts
 
 若 `node`/`npm` 未加入 PATH，可直接调用本机 Codex runtime 的 Node，再传递 `package.json` 中相同参数。本文不保存某次运行的测试数量、通过数量、首载字节数或集合计数；这些结果必须在验收时由当前命令重新生成。
 
-全套测试覆盖 V4 schema/content/query/validation、独立内容模块汇总、Cards/Reader、Map、E2E、应用 history、媒体继承与跨 Card 重置、图片比例与淡入淡出、地图覆盖 UI 隐藏、同步回顶、异步 restore 失效、overlay 差量与反转竞态、入口资源顺序、`file://` 静态约束和 reduced motion。这些模拟 DOM、竞态探针与静态契约仍不替代真实浏览器。
+全套测试覆盖 V5 schema/content/query/validation、独立内容模块汇总、Asset manifest、Cards/Reader、Map、E2E、应用 history、媒体继承与跨 Card 重置、图片比例与淡入淡出、地图覆盖 UI 隐藏、同步回顶、异步 restore 失效、overlay 差量与反转竞态、入口/聚合器/语法清单一致性、`file://` 静态约束和 reduced motion。这些模拟 DOM、竞态探针与静态契约仍不替代真实浏览器。
 
 真实浏览器验收仍应在可访问本地 `file://` 的合规环境中按第 16 节第 12 项执行；不要把 Node 模拟与静态检查写成实机通过。
 
@@ -446,12 +449,12 @@ npm run report:counts
 3. 新增图片仍须使用本地 Asset，并通过文件存在性、alt 与 provenance 校验；Scene 媒体按原比例居中完整显示，余白使用 `#c8cbbb`。
 4. MapAnnotation 必须保持 `locatedAt`、`associatedWith` 与 `screenCallout` 的语义区分；新增地理锚点仍需人工史料审查。
 5. StructureView 查询结果目前只驱动 Geometry family 样式和隐藏 legend 的内部计数，不逐 edge 绘制；`depth` 与 `display` 没有进一步运行语义。
-6. V4 validator 对一般 Entity.type、Card.kind、StructuralEdge family/type、StructureView family/display 仍主要做非空字符串检查；但 Card 主 Entity 的类型必须存在于公共类型标签表。Map 对未知 family 不会提供完整语义样式。未来若其余类型集合稳定，应收紧为显式 enum 并加迁移/负测。
+6. V5 validator 对一般 Entity.type、Card.kind、StructuralEdge family/type、StructureView family/display 仍主要做非空字符串检查；但 Card 主 Entity 的类型必须存在于公共类型标签表，Event.kind 已收紧为显式 enum。Map 对未知 family 不会提供完整语义样式。未来若其余类型集合稳定，应收紧为显式 enum 并加迁移/负测。
 7. `map` 与 `mapAndText`、`image` 与 `imageAndText` 在当前主阅读布局中差异有限；类型为未来呈现保留，不能据此复制内容。
 8. Reader 的 `navigationStack` 是漫游足迹的运行态来源，并复制进每个浏览器 history snapshot；popstate 会从目标快照恢复它，使足迹与返回位置一致。它不是 runtime 内容 schema。`entryContext` 只承载方向、触发原因和媒体继承等瞬时呈现上下文，不持久化。浏览器 history snapshot 仍是返回、足迹和滚动恢复的权威。
 9. Scene 方向与媒体继承依赖当前 Card.sceneIds 和运行态激活顺序；它们没有 schema 字段。若未来需要可编辑的非线性 Scene 顺序，必须先设计正式模型，不能持久化当前派生 context。
 10. 活动本地底图约 1.45 MB，是首载体积主要来源；可在不引入远程依赖的前提下继续压缩或分层，但不能破坏 `file://`。
-11. 没有内容编辑器、schema 生成器或自动迁移器；数据维护依赖严格 validator 与测试。未来工具也应以 Card-first 所有权为准。
+11. 没有内容编辑器或 schema 生成器；V4→V5 提供一次性、显式映射的 `scripts/migrate-v4-content-to-v5.js`，后续破坏性变化仍须各自提供版本与迁移策略。数据维护依赖严格 validator 与测试。
 
 ## 20. 文件职责总表
 
@@ -459,21 +462,26 @@ npm run report:counts
 
 | 文件 | 当前职责/状态 |
 |---|---|
-| `index.html` | 活动 V4 页面、语义 landmark、CSS/JS 固定加载顺序。 |
+| `index.html` | 活动 V5 页面、语义 landmark、CSS/JS 固定加载顺序。 |
 | `app.js` | 首页/Card 视图编排、Reader/Map 接线、媒体切换、history 辅助。 |
 | `package.json` | 零依赖元数据、Node≥20、分层测试与活动语法脚本。 |
 | `styles.css` | 全局 shell、首页、焦点、响应式与 reduced-motion 基线。 |
 | `styles/v4/cards.css` | V4 Card/Scene/claim/navigation/preview/媒体布局。 |
 | `styles/v4/map.css` | V4 SVG 底图、Geometry family、节点、legend、移动/reduced-motion。 |
 
-### 20.2 活动 V4 数据、查询、UI 与地图
+### 20.2 活动 V5 数据、查询、UI 与地图
 
 | 文件 | 当前职责/状态 |
 |---|---|
-| `data/<content-module>.js` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。具体模块清单和顺序以 `index.html` 为准。 |
-| `data/atlas-data.js` | 汇总内容模块并输出 schema 4 的 14 个正式集合。 |
-| `data/queries.js` | V4 索引、查询、严格 validator、Node Asset 文件检查。 |
+| `data/<content-module>.js` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。具体模块清单和顺序由入口实际加载，并与聚合器、语法清单做一致性检查。 |
+| `data/atlas-data.js` | 严格检查模块接口，汇总内容模块并输出 schema 5 的 14 个正式集合。 |
+| `data/queries.js` | V5 索引、派生 Entity/Card 与 Card/Event 查询、严格 validator、Node Asset 文件检查。 |
 | `scripts/report-atlas-counts.js` | 只读加载聚合数据并报告当前 schema 与各集合数量，不修改数据或文档。 |
+| `scripts/check-runtime-manifests.js` | 只读比较入口、聚合器和语法检查中的内容模块顺序，防止加载清单漂移。 |
+| `scripts/validate-content-module.js` | 对 staging 模块执行精确接口、局部 ID／引用、pending sibling 声明、Asset manifest 与媒体决策门禁。 |
+| `scripts/generate-asset-manifests.js` | 从现有运行时 Asset 生成非运行时元数据清单骨架、尺寸和摘要；自动结果保持待审，不猜测许可。 |
+| `scripts/migrate-v4-content-to-v5.js` | 记录 V4→V5 的显式字段删除、Event kind 和逐 Scene Event 映射。 |
+| `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始尺寸、origin、SHA-256 与审核状态。 |
 | `ui/v4/cards.js` | 语义化/转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML。 |
 | `ui/v4/card-reader.js` | Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫。 |
 | `map/v4/map-renderer.js` | 本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理。 |
@@ -484,15 +492,16 @@ npm run report:counts
 
 | 文件 | 覆盖责任 |
 |---|---|
-| `tests/data-v4/schema.test.js` | V4 顶层/所有权/地图分责/全局 ID。 |
-| `tests/data-v4/content.test.js` | 完整 Card、Claim 来源、review 隔离、Natural Earth provenance、两种正式图片放置方式与 Annotation 内容。 |
-| `tests/data-v4/queries.test.js` | Scene 顺序、Entity/Card、Event/edge、Placement、时间、StructureView。 |
-| `tests/data-v4/validation.test.js` | 畸形数据、未知字段、所有权、review、时间、地图、资产等系统负测。 |
+| `tests/data-v5/schema.test.js` | V5 顶层/所有权/地图分责/全局 ID。 |
+| `tests/data-v5/content.test.js` | 完整 Card、Scene Event、Claim 来源、review 隔离、Natural Earth provenance、图片放置与 Annotation 内容。 |
+| `tests/data-v5/queries.test.js` | Scene 顺序、派生 Entity/Card 与 Card/Event、edge、Placement、时间、StructureView。 |
+| `tests/data-v5/validation.test.js` | 畸形数据、未知字段、Scene Event、所有权、review、时间、地图、资产等系统负测。 |
+| `tests/data-v5/asset-manifest.test.js` | Asset manifest 覆盖、文件摘要、尺寸与 AI 图片大小上限。 |
 | `tests/ui-v4/cards.test.js` | V4 Cards/Reader、正文视觉、同 Card 媒体继承、方向派生、前进/恢复、destroy 竞态、hash/history/scroll。 |
 | `tests/map-v4/map.test.js` | 投影/路径、direct/history/相邻 Scene camera、overlay 差量/crossfade/反转、reduced motion、竞态清理。 |
-| `tests/e2e/v4-flows.test.js` | V4 两次返回、textOnly 直链继承前序媒体、全部现有故事可读。 |
+| `tests/e2e/v5-flows.test.js` | V5 两次返回、textOnly 直链继承前序媒体、全部现有故事可读。 |
 | `tests/integration/app-history.test.js` | Card→home→Card 的快照顺序，以及媒体同 Card 保留/跨 Card 重置。 |
-| `tests/integration/runtime.test.js` | 活动 V4 入口隔离、validate-first、品牌/回调/可访问性静态契约。 |
+| `tests/integration/runtime.test.js` | 活动 V5 入口隔离、清单一致性、validate-first、品牌/回调/可访问性静态契约。 |
 | `tests/integration/pages.test.js` | 相对资源、无网络/打包器、首载大小、package scripts。 |
 | `tests/fixtures/local-image.svg` | image presentation/Asset 负测与边界校验 fixture。 |
 
@@ -501,9 +510,9 @@ npm run report:counts
 | 文件 | 当前职责/状态 |
 |---|---|
 | `AGENTS.md` | 当前产品、编辑、数据和工程约束。 |
-| `README.md` | V4 运行、内容范围、架构和维护入口。 |
+| `README.md` | V5 运行、内容范围、架构和维护入口。 |
 | `docs/ARCHITECTURE_AND_DATA_MODEL.md` | 本文；正式字段、运行调用链和内容接入手册。 |
 | `.nojekyll` | 允许根目录作为静态 Pages 内容。 |
 | `.gitignore` | 仓库忽略规则。 |
 
-遇到冲突时采用以下证据优先级：活动 `index.html` 与 `package.json` → 可执行 validator/query/renderer/Reader → 当前测试 → 本文与 README。本文不是 schema 执行器；代码变更后必须同步更新，而不是让文档替代校验器。
+遇到冲突时采用以下证据优先级：活动 `index.html`、聚合器与 `package.json` → 可执行 validator/query/renderer/Reader 与一致性脚本 → 当前测试 → 本文与 README。本文不是 schema 执行器；代码变更后必须同步更新，而不是让文档替代校验器。

@@ -1,0 +1,374 @@
+{
+  "manifestVersion": 1,
+  "module": "ancient-china",
+  "assets": [
+    {
+      "assetId": "asset-western-zhou-investiture-teaching",
+      "file": "assets/images/ancient-china/western-zhou-investiture-teaching.png",
+      "origin": "aiGenerated",
+      "creator": "OpenAI image generation, edited and reviewed for Civilization Wander",
+      "license": "needs review",
+      "sourceUrl": "https://www.chnmuseum.cn/zl/zlhg/201812/t20181220_32409.shtml",
+      "sourceIds": [
+        "source-generated-western-zhou-investiture",
+        "source-national-museum-da-yu-ding",
+        "source-national-museum-ceming"
+      ],
+      "originalWidth": 1536,
+      "originalHeight": 1024,
+      "sha256": "dbadbd0f4f88c9f2b75cc35b3b7e3d6f9f592f66af2b955b3b606e5ccf50d949",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-erlitou-turquoise-bronze-plaque",
+      "file": "assets/images/ancient-china/erlitou-turquoise-bronze-plaque.jpg",
+      "origin": "unclassified",
+      "creator": "Siyuwj",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:嵌绿松石铜牌饰（87VIM57）,_2024-06-22.jpg",
+      "sourceIds": [
+        "source-wikimedia-erlitou-plaque",
+        "source-erlitou-cass-report"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1846,
+      "sha256": "fe2de48b0b9f18fb1eca576096acfa3ff3222d587303c1c6eb0385ea7cf42a76",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-erlitou-turquoise-dragon-bell",
+      "file": "assets/images/ancient-china/erlitou-turquoise-dragon-bell.jpg",
+      "origin": "unclassified",
+      "creator": "Siyuwj",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:绿松石龙形器及铜铃,_2024-06-23.jpg",
+      "sourceIds": [
+        "source-wikimedia-erlitou-dragon",
+        "source-erlitou-turquoise-restoration"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1280,
+      "sha256": "307175382d061cbc58f572b013dbe6365a86fdf2e3da2b85b95014b2ffeca387",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-erlitou-site",
+      "file": "assets/images/ancient-china/erlitou-site.jpg",
+      "origin": "unclassified",
+      "creator": "Windmemories",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:20240815_Erlitou_Site_01.jpg",
+      "sourceIds": [
+        "source-wikimedia-erlitou-site",
+        "source-erlitou-cass-report"
+      ],
+      "originalWidth": 1800,
+      "originalHeight": 1200,
+      "sha256": "ea21686f3040068b97e8a8077ad129abf5c59398562bbc212b9623134ad62eb9",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-yinxu-royal-tombs",
+      "file": "assets/images/ancient-china/yinxu-royal-tombs.jpg",
+      "origin": "unclassified",
+      "creator": "河南省文化和旅游厅",
+      "license": "needs review",
+      "sourceUrl": "https://hct.henan.gov.cn/2023/04-05/2719750.html",
+      "sourceIds": [
+        "source-henan-yinxu-royal-tombs-aerial",
+        "source-unesco-yinxu"
+      ],
+      "originalWidth": 1080,
+      "originalHeight": 609,
+      "sha256": "bafa247615f4a58e64aba5d7b4f25934a18f67bf83671ad21fafeec16de5a465",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-bronze-gu",
+      "file": "assets/images/ancient-china/shang-bronze-gu.jpg",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gu_wine_vessel_from_the_Shang_Dynasty.jpg",
+      "sourceIds": [
+        "source-wikimedia-shang-gu",
+        "source-met-shang-zhou-bronze"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 1323,
+      "sha256": "2183bad0b729f4f9a00155a4db64913501974a6872ccd979ff3f384fc697f990",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-oracle-bones",
+      "file": "assets/images/ancient-china/shang-oracle-bones.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Inscribed_Ox_Scapula_(for_divination).jpg",
+      "sourceIds": [
+        "source-wikimedia-oracle-bones",
+        "source-unesco-oracle-bones"
+      ],
+      "originalWidth": 683,
+      "originalHeight": 1024,
+      "sha256": "2fca8561d94c4bbd53710b573edd5f7568753d02c2c3173d2b5ab767656ef6ab",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-fu-hao-tomb",
+      "file": "assets/images/ancient-china/fu-hao-tomb.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fu_Hao_Tomb,_c._1200_BC,_Reign_of_King_Wu_Ding,_Shang_Dynasty_(10197552004).jpg",
+      "sourceIds": [
+        "source-wikimedia-fu-hao-tomb",
+        "source-smarthistory-fu-hao"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "52488b864fbac3242ce40550e55f7d4b9f247da6d81bfdf89e2d425a01f09790",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-bronze-dagger-axes",
+      "file": "assets/images/ancient-china/shang-bronze-dagger-axes.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Bronze_Ge_Dagger-Axes,_Yinxu,_Anyang.jpg",
+      "sourceIds": [
+        "source-wikimedia-shang-dagger-axes",
+        "source-campbell-violence-kinship"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1280,
+      "sha256": "ea4edb7e562f346704fc51fe63e4be6a6814a54e7a93fe4e506da9c9dd830f6d",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-pottery-workshop",
+      "file": "assets/images/ancient-china/shang-pottery-workshop.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Pottery_Workshop_(45146511164).jpg",
+      "sourceIds": [
+        "source-wikimedia-shang-pottery",
+        "source-smithsonian-anyang-neighborhood"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "e2e027e30ad7a9632956e9bf9357f27b3de28f4aa69880b87a24148db77ebfcc",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-li-gui",
+      "file": "assets/images/ancient-china/li-gui.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_01.jpg",
+      "sourceIds": [
+        "source-wikimedia-li-gui",
+        "source-national-museum-li-gui"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "9d4391c95a4b30be4f2737c74f6fa94d3ca77596304e35f3ff6e0da4d8dd9c58",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-guoji-zibai-pan",
+      "file": "assets/images/ancient-china/guoji-zibai-pan.jpg",
+      "origin": "unclassified",
+      "creator": "National Museum of China",
+      "license": "needs review",
+      "sourceUrl": "https://www.chnmuseum.cn/zp/zpml/csp/202008/t20200826_247376.shtml",
+      "sourceIds": [
+        "source-national-museum-guoji-zibai-pan"
+      ],
+      "originalWidth": 1400,
+      "originalHeight": 1400,
+      "sha256": "d50b8a03d75ea1246663282f03d3e59f870839837910fd3f814e9b8c3e57b39a",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-oracle-pit-marks",
+      "file": "assets/images/ancient-china/shang-oracle-pit-marks.jpg",
+      "origin": "unclassified",
+      "creator": "David N. Keightley",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chinese_oracle_bone_(16th-10th_C_BC)_-_BL_Or._7694.jpg",
+      "sourceIds": [
+        "source-wikimedia-oracle-pit-marks",
+        "source-keightley-shang-history"
+      ],
+      "originalWidth": 998,
+      "originalHeight": 1024,
+      "sha256": "63aa5f662b21c95abbd6ba6d9988b47c8a0c6143072cfe06097ec6645367f746",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-huayuanzhuang-plastron",
+      "file": "assets/images/ancient-china/shang-huayuanzhuang-plastron.jpg",
+      "origin": "unclassified",
+      "creator": "BabelStone",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ningxia_Museum_Shang_dynasty_turtle_plastron_oracle_bone.jpg",
+      "sourceIds": [
+        "source-wikimedia-huayuanzhuang-plastron",
+        "source-schwartz-huayuanzhuang"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 1070,
+      "sha256": "dc11005f20574f118415bc4c1da84711823762f27daaf703a3ffacee9b22cf8e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-oracle-eclipse",
+      "file": "assets/images/ancient-china/shang-oracle-eclipse.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Inscribed_Ox_Bone_(9830543424).jpg",
+      "sourceIds": [
+        "source-wikimedia-oracle-eclipse",
+        "source-keightley-shang-history"
+      ],
+      "originalWidth": 683,
+      "originalHeight": 1024,
+      "sha256": "f219c25d926a092b3205c22a1573a10774982792d9777afbdefca3bc60115147",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-oracle-collection",
+      "file": "assets/images/ancient-china/shang-oracle-collection.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Ox_Bone_Oracle_Bones.jpg",
+      "sourceIds": [
+        "source-wikimedia-oracle-collection",
+        "source-unesco-oracle-bones"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "3fb1f95036b0205dc2149b68e4ecf02ab7b389e55e2c6a11ea5784b700ebe719",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-bronze-casting-apparatus",
+      "file": "assets/images/ancient-china/shang-bronze-casting-apparatus.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Bronze_Casting_Apparatus_%26_Clay_Moulds_(30934169087).jpg",
+      "sourceIds": [
+        "source-wikimedia-bronze-casting-apparatus",
+        "source-smithsonian-bronze-casting"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "c5f892850ea33cec901666349ef468a255f9c5cf78913f4b2e9aad4326dafa6c",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-bronze-pottery-mould",
+      "file": "assets/images/ancient-china/shang-bronze-pottery-mould.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Pottery_Mould_for_Casting_Bronze_(10197668873).jpg",
+      "sourceIds": [
+        "source-wikimedia-bronze-mould",
+        "source-smithsonian-bronze-casting"
+      ],
+      "originalWidth": 683,
+      "originalHeight": 1024,
+      "sha256": "ee6046d4b42be35d0d0af3adff8dda9ee2c359a831b999be4951b78b86051193",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-shang-bronze-vessel-set",
+      "file": "assets/images/ancient-china/shang-bronze-vessel-set.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shang_Bronze_Cooking_Vessels_(45001649745).jpg",
+      "sourceIds": [
+        "source-wikimedia-fuhao-cooking-vessels",
+        "source-smarthistory-fu-hao"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "1a79aaa945cec3007d46f56716fbfb3d381da18acdd1832c1ee335bf78bb9379",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-sxd-gold-mask-head",
+      "file": "assets/images/ancient-china/sanxingdui-gold-mask-head.jpg",
+      "origin": "unclassified",
+      "creator": "momo",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold_Mask_(黄金面罩).jpg",
+      "sourceIds": [
+        "source-wikimedia-sxd-gold-mask-head",
+        "source-sxd-antiquity-2022"
+      ],
+      "originalWidth": 1980,
+      "originalHeight": 2640,
+      "sha256": "5a80ee8267a742b6d5d9c4e21bbc89038e3a09fedee878af337e56d79fbc3706",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-sxd-bronze-tree",
+      "file": "assets/images/ancient-china/sanxingdui-bronze-tree.png",
+      "origin": "unclassified",
+      "creator": "三星堆博物馆",
+      "license": "needs review",
+      "sourceUrl": "https://www.sxd.cn/relics/",
+      "sourceIds": [
+        "source-sxd-museum-bronze-tree",
+        "source-sxd-antiquity-2022"
+      ],
+      "originalWidth": 720,
+      "originalHeight": 736,
+      "sha256": "8fa970619d9b2116aac0dba602d286e7aa14aadeccd150951138acf93d7d6968",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-sxd-ivory-tusk",
+      "file": "assets/images/ancient-china/sanxingdui-ivory-tusk.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanxingdui_Ivory_Tusk_(9950882376).jpg",
+      "sourceIds": [
+        "source-wikimedia-sxd-ivory-tusk",
+        "source-sxd-antiquity-2022"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "8dbec94dbf1857247b70f47aa5f75561aaaac1ae15a0422ae867be7b62f75a87",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-jinsha-sun-bird-disc",
+      "file": "assets/images/ancient-china/jinsha-gold-sun-bird-disc.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Lee Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2014_Jinsha_Gold_Sun-Bird_Disc.jpg",
+      "sourceIds": [
+        "source-wikimedia-jinsha-sun-bird",
+        "source-sxd-southwest-exchange-2024"
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "sha256": "25ca612a2b443e56d3f35536fc00e2a47bb65caaedf933a2d23fd2f482bdd47c",
+      "reviewStatus": "needsMetadataAudit"
+    }
+  ]
+}

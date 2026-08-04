@@ -12,6 +12,7 @@ const ancientChina = require('../../data/ancient-china.js');
 const lateBronzeAge = require('../../data/late-bronze-age.js');
 const aegean = require('../../data/aegean.js');
 const ironAgeNearEast = require('../../data/iron-age-near-east.js');
+const queries = require('../../data/queries.js');
 
 test('all complete stories have two sourced evidence groups, two sources, and internal review', () => {
   const evidenceKinds = new Set([
@@ -25,7 +26,11 @@ test('all complete stories have two sourced evidence groups, two sources, and in
     const blocks = card.sceneIds.flatMap(sceneId =>
       data.scenes.find(scene => scene.id === sceneId).contentBlocks
     );
-    assert.ok(Array.isArray(card.eventIds), card.id);
+    assert.equal('eventIds' in card, false, card.id);
+    assert.ok(card.sceneIds.every(sceneId => {
+      const scene = data.scenes.find(item => item.id === sceneId);
+      return Array.isArray(scene.eventIds) && scene.eventIds.length > 0;
+    }), card.id);
     assert.ok(blocks.filter(block =>
       evidenceKinds.has(block.kind) && Array.isArray(block.sourceIds) && block.sourceIds.length > 0
     ).length >= 2, card.id);
@@ -152,9 +157,19 @@ test('the cuneiform ending reaches Amarna, Assyria, and the last dated text', ()
   assert.match(prose, /公元75年/);
 });
 
-test('the Sumer story remains Event-free and offers the five approved entrances', () => {
+test('the Sumer story derives its Events from Scenes and offers the five approved entrances', () => {
   const card = data.cards.find(item => item.id === 'sumer-measuring-land-time');
-  assert.deepEqual(card.eventIds, []);
+  assert.equal('eventIds' in card, false);
+  assert.deepEqual(
+    queries.getEventsForCard(card.id).map(event => event.id),
+    [
+      'event-southern-mesopotamia-water-land-management',
+      'event-proto-cuneiform-accounting-emerges',
+      'event-mesopotamian-number-calendar-practices-develop',
+      'event-akkadian-imperial-expansion',
+      'event-ur-iii-formation'
+    ]
+  );
   const placements = data.navigationPlacements.filter(placement =>
     (placement.owner.kind === 'card' && placement.owner.cardId === card.id) ||
     (placement.owner.kind === 'scene' && card.sceneIds.includes(placement.owner.sceneId))
@@ -207,13 +222,14 @@ test('Sumer and its Mesopotamian expansion are authored in one module with the a
     ['sumer-measuring-land-time', 'sumer-uruk-city', 'mesopotamia-cities-outlast-dynasties', 'mesopotamian-temple-overview', 'cuneiform-overview', 'akkadian-empire-overview', 'gilgamesh-mortality', 'ur-iii-reordered-city-world', 'old-babylonian-rise-and-fragmentation', 'hammurabi-code-justice', 'tower-of-babel-story-and-etemenanki']
   );
   assert.deepEqual(mesopotamia.cards.map(card => card.sceneIds.length), [5, 4, 6, 4, 6, 4, 9, 4, 5, 6, 5]);
-  assert.deepEqual(mesopotamia.events.map(event => event.id), ['event-ur-iii-formation', 'event-ur-iii-fragmentation', 'event-hammurabi-conquests', 'event-old-babylonian-fragmentation', 'event-hammurabi-code-stele', 'event-etemenanki-rebuilding']);
-  assert.ok(['sumer-measuring-land-time', 'sumer-uruk-city', 'mesopotamian-temple-overview', 'cuneiform-overview', 'akkadian-empire-overview', 'gilgamesh-mortality'].every(cardId => mesopotamia.cards.find(card => card.id === cardId).eventIds.length === 0));
-  assert.deepEqual(mesopotamia.cards.find(card => card.id === 'mesopotamia-cities-outlast-dynasties').eventIds, ['event-ur-iii-formation', 'event-ur-iii-fragmentation', 'event-hammurabi-conquests', 'event-old-babylonian-fragmentation']);
-  assert.deepEqual(mesopotamia.cards.find(card => card.id === 'ur-iii-reordered-city-world').eventIds, ['event-ur-iii-formation', 'event-ur-iii-fragmentation']);
-  assert.deepEqual(mesopotamia.cards.find(card => card.id === 'old-babylonian-rise-and-fragmentation').eventIds, ['event-hammurabi-conquests', 'event-old-babylonian-fragmentation']);
-  assert.deepEqual(mesopotamia.cards.find(card => card.id === 'hammurabi-code-justice').eventIds, ['event-hammurabi-code-stele']);
-  assert.deepEqual(mesopotamia.cards.find(card => card.id === 'tower-of-babel-story-and-etemenanki').eventIds, ['event-etemenanki-rebuilding']);
+  assert.ok(mesopotamia.events.length > 6);
+  assert.ok(mesopotamia.events.every(event => ['historicalEvent', 'historicalProcess', 'textualTradition', 'traditionalNarrative'].includes(event.kind)));
+  assert.ok(mesopotamia.cards.every(card => !('eventIds' in card)));
+  assert.ok(mesopotamia.scenes.every(scene => Array.isArray(scene.eventIds) && scene.eventIds.length > 0));
+  assert.deepEqual(queries.getEventsForCard('ur-iii-reordered-city-world').map(event => event.id), ['event-ur-iii-formation', 'event-ur-iii-fragmentation']);
+  assert.deepEqual(queries.getEventsForCard('old-babylonian-rise-and-fragmentation').map(event => event.id), ['event-old-babylonian-city-kingdoms-emerge', 'event-hammurabi-conquests', 'event-hammurabi-code-stele', 'event-old-babylonian-fragmentation']);
+  assert.deepEqual(queries.getEventsForCard('hammurabi-code-justice').map(event => event.id), ['event-hammurabi-code-stele']);
+  assert.deepEqual(queries.getEventsForCard('tower-of-babel-story-and-etemenanki').map(event => event.id), ['event-tower-babel-textual-tradition-forms', 'event-etemenanki-rebuilding']);
   assert.ok(mesopotamia.scenes.every(scene => scene.sourceIds.length > 0));
   assert.equal(mesopotamia.assets.length, 40);
   for (const card of mesopotamia.cards) {

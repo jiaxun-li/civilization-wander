@@ -1,0 +1,36 @@
+{
+  "handoffVersion": 1,
+  "module": "example-module",
+  "moduleFile": "data/example-module.js",
+  "exportedGlobal": "ATLAS_V5_EXAMPLE_MODULE",
+  "expectedLoadingPosition": "after data/ancient-egypt.js",
+  "assetDirectory": "assets/images/example-module",
+  "pendingExternalRefs": {
+    "sources": [],
+    "entities": [],
+    "events": [],
+    "structuralEdges": [],
+    "cards": [],
+    "scenes": [],
+    "structureViews": [],
+    "navigationOptions": [],
+    "navigationPlacements": [],
+    "cameraPresets": [],
+    "mapStates": [],
+    "geometries": [],
+    "mapAnnotations": [],
+    "assets": []
+  },
+  "mediaDecisions": [
+    {
+      "sceneId": "example-scene",
+      "decision": "newHistoricalAsset",
+      "selectedAssetId": "asset-example",
+      "rationale": "The selected object directly shows the material discussed in this Scene.",
+      "candidatesReviewed": [
+        { "sourceUrl": "https://example.org/candidate-one", "reasonNotSelected": "Less legible at reader size." },
+        { "sourceUrl": "https://example.org/candidate-two", "reasonNotSelected": "Selected; clearer provenance and detail." }
+      ]
+    }
+  ]
+}

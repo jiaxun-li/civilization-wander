@@ -41,7 +41,7 @@ function dataAssetFixture(candidate) {
 test('malformed candidates and hostile nested types never throw', () => {
   const candidates = [
     null,
-    { schemaVersion: 4 },
+    { schemaVersion: 5 },
     (() => {
       const candidate = structuredClone(data);
       candidate.cards[0] = null;
@@ -119,11 +119,11 @@ test('Scene ownership rejects double owners, orphans, and duplicate membership',
   }, /duplicate values|exactly one Card/);
 });
 
-test('Entity default Card must be dedicated to that Entity', () => {
+test('Entity rejects the removed default Card field', () => {
   reject(candidate => {
     const sumer = candidate.entities.find(entity => entity.id === 'sumer');
     sumer.defaultCardId = 'sumer-uruk-city';
-  }, /defaultCardId.*must use the Entity as primaryEntityId/);
+  }, /defaultCardId.*unknown field/);
 });
 
 test('every Card requires one primary Entity with a public type label', () => {
@@ -136,7 +136,8 @@ test('every Card requires one primary Entity with a public type label', () => {
   }, /primaryEntityId.*has no public label/);
 });
 
-test('Event and complete Card editorial requirements are structural while Event links may be empty', () => {
+test('Event, Scene, and complete Card requirements are structural', () => {
+  reject(candidate => { candidate.events[0].kind = 'storyLikeThing'; }, /kind.*must be one of/);
   reject(candidate => { candidate.events[0].participantEntityIds = []; }, /participantEntityIds.*must not be empty/);
   reject(candidate => { candidate.events[0].evidenceBlocks = []; }, /evidenceBlocks.*non-empty/);
   reject(candidate => {
@@ -145,8 +146,12 @@ test('Event and complete Card editorial requirements are structural while Event 
     candidate.events[0].editorialReview.uncertainties = [];
     candidate.events[0].editorialReview.alternativeExplanations = [];
   }, /at least one editorial review item/);
-  assert.deepEqual(data.cards.find(card => card.id === 'sumer-uruk-city').eventIds, []);
-  reject(candidate => { delete candidate.cards[0].eventIds; }, /eventIds.*is required/);
+  reject(candidate => { candidate.cards[0].eventIds = []; }, /eventIds.*unknown field/);
+  reject(candidate => { candidate.scenes[0].eventIds = []; }, /eventIds.*must not be empty/);
+  reject(candidate => { delete candidate.scenes[0].eventIds; }, /eventIds.*is required/);
+  reject(candidate => {
+    candidate.scenes[0].eventIds = ['event-egypt-hatti-treaty'];
+  }, /must include at least one Event whose timeSpan overlaps the Scene/);
   reject(candidate => { candidate.cards[0].sourceIds = [candidate.cards[0].sourceIds[0]]; }, /at least two distinct Sources/);
   reject(candidate => { delete candidate.cards[0].thesis; }, /thesis.*is required/);
 });

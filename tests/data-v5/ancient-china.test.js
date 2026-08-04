@@ -13,15 +13,15 @@ const sceneById = new Map(ancientChina.scenes.map(scene => [scene.id, scene]));
 
 test('Ancient China adds the early bronze overview and approved focused stories', () => {
   assert.deepEqual(
-    ancientChina.entities.map(entity => [entity.id, entity.type, entity.defaultCardId]),
+    ancientChina.entities.map(entity => [entity.id, entity.type]),
     [
-      ['western-zhou', 'polity', 'western-zhou-bronze-commands'],
-      ['china-early-bronze-world', 'culturalTradition', 'china-early-bronze-connected-worlds'],
-      ['erlitou-site', 'SettlementSite', 'erlitou-ritual-world'],
-      ['shang-civilization', 'polity', 'shang-ancestors-world'],
-      ['shang-oracle-bone-inscriptions', 'TextDocument', 'shang-oracle-bones-record'],
-      ['shang-bronze-ritual-vessels', 'CulturalObject', 'shang-bronzes-ancestor-feast'],
-      ['sanxingdui-site', 'SettlementSite', 'sanxingdui-ritual-world']
+      ['western-zhou', 'polity'],
+      ['china-early-bronze-world', 'culturalTradition'],
+      ['erlitou-site', 'SettlementSite'],
+      ['shang-civilization', 'polity'],
+      ['shang-oracle-bone-inscriptions', 'TextDocument'],
+      ['shang-bronze-ritual-vessels', 'CulturalObject'],
+      ['sanxingdui-site', 'SettlementSite']
     ]
   );
   assert.deepEqual(
@@ -204,7 +204,7 @@ test('map captions explain symbols and keep the Shang spread approximate', () =>
   assert.deepEqual(sanxingdui.layers.map(layer => layer.annotationId), ['annotation-sanxingdui-location']);
 });
 
-test('the aggregated V4 atlas validates with Ancient China included', () => {
+test('the aggregated V5 atlas validates with Ancient China included', () => {
   const result = queries.createQueries(data).validateAtlasData();
   assert.equal(result.valid, true, result.errors.join('\n'));
   assert.equal(data.cards.find(card => card.id === 'western-zhou-bronze-commands'), ancientChina.cards[0]);

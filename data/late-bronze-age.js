@@ -1,8 +1,8 @@
-(function exposeLateBronzeAgeV4(root, factory) {
+(function exposeLateBronzeAgeV5(root, factory) {
   const data = factory();
-  if (root) root.ATLAS_V4_LATE_BRONZE_AGE = data;
+  if (root) root.ATLAS_V5_LATE_BRONZE_AGE = data;
   if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createLateBronzeAgeV4Data() {
+}(typeof window !== 'undefined' ? window : globalThis, function createLateBronzeAgeV5Data() {
   'use strict';
 
   function timeSpan(start, end, label, approximate) {
@@ -97,7 +97,7 @@
       alternativeNames: ['Hittite Empire', '赫梯王国'],
       canonicalSummary: '约公元前1650—前1180年，以哈图沙为中心形成并多次重整，通过战争、王族据点、地方条约与大国外交连接安纳托利亚和叙利亚的政治实体。',
       timeSpan: timeSpan(-1650, -1180, '约公元前1650—前1180年', true),
-      defaultCardId: 'hittite-syria-treaties',
+
       tags: ['西亚', '晚青铜时代', '政治实体'],
       sourceIds: ['source-bryce-hittite-kingdom', 'source-beckman-hittite-diplomatic-texts', 'source-unesco-hattusha', 'source-met-hittites']
     },
@@ -108,7 +108,7 @@
       alternativeNames: ['Kingdom of Ugarit', 'Ugarit'],
       canonicalSummary: '约公元前1800—前1180年，以叙利亚海岸城市乌加里特及其港口为中心，通过农业、宫殿管理、外交和跨区域贸易维持的王国。',
       timeSpan: timeSpan(-1800, -1180, '约公元前1800—前1180年', true),
-      defaultCardId: 'ugarit-kings-trade',
+
       tags: ['西亚', '晚青铜时代', '政治实体'],
       sourceIds: ['source-yon-city-of-ugarit', 'source-met-ugarit']
     },
@@ -119,7 +119,7 @@
       alternativeNames: ['Battle of Kadesh'],
       canonicalSummary: '约公元前1274年，埃及新王国与赫梯帝国在叙利亚卡迭石附近进行的大规模战争事件，详细战况主要由埃及王室文本和图像保存。',
       timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true),
-      defaultCardId: 'kadesh-did-not-end-war',
+
       tags: ['西亚', '晚青铜时代', '战争'],
       sourceIds: ['source-bm-kadesh-sallier', 'source-spalinger-war-egypt', 'source-bryce-hittite-kingdom']
     },
@@ -130,7 +130,7 @@
       alternativeNames: ['Amarna Letters'],
       canonicalSummary: '约公元前1360—前1330年，埃及宫廷保存的一批楔形文字外交泥版，记录大国国王、地方统治者与法老之间的问候、礼物、婚姻和求援。',
       timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true),
-      defaultCardId: 'amarna-kings-write-world',
+
       tags: ['西亚', '古埃及', '外交', '楔形文字'],
       sourceIds: ['source-met-amarna-letters', 'source-moran-amarna-letters']
     },
@@ -141,7 +141,7 @@
       alternativeNames: ['Medinet Habu war reliefs and inscriptions'],
       canonicalSummary: '约公元前1180—前1150年，拉美西斯三世祭庙中记录北方来敌、陆战和尼罗河口海战的王室浮雕与铭文。',
       timeSpan: timeSpan(-1180, -1150, '约公元前1180—前1150年', true),
-      defaultCardId: 'medinet-habu-sea-raiders',
+
       tags: ['古埃及', '战争图像', '晚青铜时代'],
       sourceIds: ['source-isac-medinet-habu-i', 'source-edgerton-wilson-ramesses-iii', 'source-grandet-ramesses-iii']
     },
@@ -152,7 +152,7 @@
       alternativeNames: ['Late Bronze Age palace systems'],
       canonicalSummary: '约公元前1600—前1100年，东地中海多地以宫殿集中书写、储藏、生产、贡赋与外交资源的政治和行政组织方式。',
       timeSpan: timeSpan(-1600, -1100, '约公元前1600—前1100年', true),
-      defaultCardId: 'late-bronze-palaces-go-dark',
+
       tags: ['东地中海', '制度', '晚青铜时代'],
       sourceIds: ['source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath', 'source-middleton-understanding-collapse']
     }
@@ -160,7 +160,22 @@
 
   const events = [
     {
-      id: 'event-hittite-sack-babylon',
+      id: 'event-hittite-central-kingship-consolidates', kind: 'historicalProcess', title: '赫梯中央王权在哈图沙重组', timeSpan: timeSpan(-1650, -1350, '约公元前1650—前1350年', true), participantEntityIds: ['hittite-empire'],
+      evidenceBlocks: [fact('event-hittite-central-kingship-evidence', '赫梯统治者以哈图沙为中心经历王位危机、远征和继承安排，逐步形成能够再次进入叙利亚的中央王权。', ['source-bryce-hittite-kingdom', 'source-unesco-hattusha'])],
+      sourceIds: ['source-bryce-hittite-kingdom', 'source-unesco-hattusha'], editorialReview: review([limitation('event-hittite-central-kingship-gaps', '王表和宫廷文书留下的材料不连续，不能把长期重组写成无间断的中央控制。', ['source-bryce-hittite-kingdom'])], [], [], [], ['source-bryce-hittite-kingdom', 'source-unesco-hattusha'])
+    },
+    {
+      id: 'event-ugarit-palace-port-network-operates', kind: 'historicalProcess', title: '乌加里特宫廷与港口网络运转', timeSpan: timeSpan(-1800, -1200, '约公元前1800—前1200年', true), participantEntityIds: ['ugarit-kingdom'],
+      evidenceBlocks: [fact('event-ugarit-palace-port-network-evidence', '乌加里特王城、港口、商人和多语书吏把内陆宫廷接入东地中海交换与外交网络。', ['source-yon-city-of-ugarit', 'source-met-ugarit', 'source-french-ugarit-texts'])],
+      sourceIds: ['source-yon-city-of-ugarit', 'source-met-ugarit', 'source-french-ugarit-texts'], editorialReview: review([limitation('event-ugarit-palace-port-network-archive', '宫殿与商人档案保存不均，不能把王室记录当作全部港口居民的经验。', ['source-yon-city-of-ugarit'])], [], [], [], ['source-yon-city-of-ugarit', 'source-met-ugarit'])
+    },
+    {
+      id: 'event-amarna-diplomatic-correspondence-operates', kind: 'historicalProcess', title: '阿玛尔纳外交书信网络运转', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true), participantEntityIds: ['amarna-letters-corpus'],
+      evidenceBlocks: [fact('event-amarna-diplomatic-correspondence-evidence', '大国国王与黎凡特小国统治者使用阿卡德语楔形文字交换礼物、婚姻协商、地位称谓与军事请求。', ['source-met-amarna-letters', 'source-moran-amarna-letters'])],
+      sourceIds: ['source-met-amarna-letters', 'source-moran-amarna-letters'], editorialReview: review([limitation('event-amarna-diplomatic-correspondence-survival', '现存书信是偶然保存的宫廷档案，不能代表所有外交往来或每次礼物是否兑现。', ['source-moran-amarna-letters'])], [], [], [], ['source-met-amarna-letters', 'source-moran-amarna-letters'])
+    },
+    {
+      id: 'event-hittite-sack-babylon', kind: 'historicalEvent',
       title: '赫梯军队突袭巴比伦',
       timeSpan: timeSpan(-1595, -1595, '约公元前1595年', true),
       participantEntityIds: ['hittite-empire', 'old-babylonian-kingdom'],
@@ -169,7 +184,7 @@
       editorialReview: review([], [], [interpretation('event-hittite-sack-babylon-chronology', '突袭的绝对年代随古代近东年代体系而略有差异。', ['source-bryce-hittite-kingdom'])], [], ['source-bryce-hittite-kingdom', 'source-met-isin-larsa-old-babylonian'])
     },
     {
-      id: 'event-hittite-syrian-expansion',
+      id: 'event-hittite-syrian-expansion', kind: 'historicalProcess',
       title: '赫梯王权进入叙利亚',
       timeSpan: timeSpan(-1350, -1320, '约公元前1350—前1320年', true),
       participantEntityIds: ['hittite-empire'],
@@ -178,7 +193,7 @@
       editorialReview: review([], [], [interpretation('event-hittite-syrian-expansion-boundaries', '赫梯在叙利亚的影响范围会随战争、条约和地方忠诚变化，不能重建成固定国界。', ['source-bryce-hittite-kingdom'])], [], ['source-bryce-hittite-kingdom', 'source-met-hittites'])
     },
     {
-      id: 'event-hittite-ugarit-treaty',
+      id: 'event-hittite-ugarit-treaty', kind: 'historicalEvent',
       title: '乌加里特进入赫梯条约体系',
       timeSpan: timeSpan(-1350, -1330, '约公元前1350—前1330年', true),
       participantEntityIds: ['hittite-empire', 'ugarit-kingdom'],
@@ -187,7 +202,7 @@
       editorialReview: review([limitation('event-hittite-ugarit-treaty-practice', '条约保存的是王室规定，实际执行还需结合书信和地方档案。', ['source-beckman-hittite-diplomatic-texts'])], [], [], [], ['source-beckman-hittite-diplomatic-texts', 'source-met-ugarit'])
     },
     {
-      id: 'event-hittite-central-kingdom-ends',
+      id: 'event-hittite-central-kingdom-ends', kind: 'historicalProcess',
       title: '赫梯中央王国解体',
       timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true),
       participantEntityIds: ['hittite-empire'],
@@ -196,7 +211,7 @@
       editorialReview: review([], [], [interpretation('event-hittite-central-kingdom-ends-causes', '都城放弃、破坏与中央王国解体的次序和原因不能归结为单一入侵。', ['source-bryce-hittite-kingdom', 'source-met-hittites'])], [interpretation('event-hittite-central-kingdom-ends-continuity', '安纳托利亚东南部和叙利亚北部的后继政权延续了部分赫梯名称、符号与政治传统。', ['source-bryce-neo-hittite-kingdoms'])], ['source-bryce-hittite-kingdom', 'source-bryce-neo-hittite-kingdoms', 'source-met-hittites'])
     },
     {
-      id: 'event-ugarit-destruction',
+      id: 'event-ugarit-destruction', kind: 'historicalEvent',
       title: '乌加里特王国毁灭',
       timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true),
       participantEntityIds: ['ugarit-kingdom'],
@@ -205,7 +220,7 @@
       editorialReview: review([], [], [interpretation('event-ugarit-destruction-agent', '毁城者、精确日期与毁灭后的有限再占用仍需谨慎判断。', ['source-yon-city-of-ugarit', 'source-leriche-ugarit-after-1180'])], [], ['source-yon-city-of-ugarit', 'source-french-ugarit-history', 'source-leriche-ugarit-after-1180'])
     },
     {
-      id: 'event-ramesses-iii-northern-invasions',
+      id: 'event-ramesses-iii-northern-invasions', kind: 'historicalEvent',
       title: '拉美西斯三世抵御北方来敌',
       timeSpan: timeSpan(-1177, -1175, '约公元前1177—前1175年', true),
       participantEntityIds: ['egypt-new-kingdom'],
@@ -260,7 +275,7 @@
   const cards = [
     {
       id: 'hittite-syria-treaties', kind: 'overview', primaryEntityId: 'hittite-empire', relatedEntityIds: ['old-babylonian-kingdom', 'ugarit-kingdom', 'troy-archaeological-site', 'battle-of-kadesh-war', 'egypt-new-kingdom'],
-      eventIds: ['event-hittite-sack-babylon', 'event-hittite-syrian-expansion', 'event-hittite-ugarit-treaty', 'event-hittite-wilusa-treaty', 'event-battle-of-kadesh', 'event-egypt-hatti-treaty', 'event-hittite-central-kingdom-ends'],
+
       title: '高原王国成为条约帝国',
       editorialPurpose: '从王国形成、内部危机、再次扩张、条约治理、大国战争与外交一直讲到中央王国终结，呈现赫梯帝国的完整兴衰。',
       introduction: '赫梯并不是从建立之初便一路扩张。高原王国经历王位危机后重新强盛，大王再用战争、王族据点和一份份条约，把相距遥远的地方国王接进同一个政治世界。',
@@ -278,7 +293,7 @@
     },
     {
       id: 'ugarit-kings-trade', kind: 'overview', primaryEntityId: 'ugarit-kingdom', relatedEntityIds: ['hittite-empire'],
-      eventIds: ['event-hittite-ugarit-treaty', 'event-ugarit-destruction'],
+
       title: '乌加里特在诸王之间做生意',
       editorialPurpose: '说明乌加里特的商业活动如何嵌在宫殿、外交和大国秩序之中。',
       introduction: '在叙利亚海岸，一座小王国靠港口、宫殿和书吏穿行于大国之间。乌加里特的生意从来不只是买卖，也是一种求生政治。',
@@ -296,7 +311,7 @@
     },
     {
       id: 'kadesh-did-not-end-war', kind: 'thematic', primaryEntityId: 'battle-of-kadesh-war', relatedEntityIds: ['egypt-new-kingdom', 'hittite-empire'],
-      eventIds: ['event-battle-of-kadesh', 'event-egypt-hatti-treaty'],
+
       title: '卡迭石没有结束战争',
       editorialPurpose: '区分战场脱险、战略结果、王室宣传和十五年后的外交和解。',
       introduction: '拉美西斯二世把卡迭石刻成一场个人胜利，城池却仍在赫梯一侧。真正改变两国关系的，不是战场上的一天，而是此后十五年的较量。',
@@ -314,7 +329,7 @@
     },
     {
       id: 'amarna-kings-write-world', kind: 'thematic', primaryEntityId: 'amarna-letters-corpus', relatedEntityIds: ['egypt-new-kingdom', 'hittite-empire', 'ugarit-kingdom', 'cuneiform', 'late-bronze-palace-system', 'mesopotamia-region'],
-      eventIds: ['event-amarna-reform', 'event-hittite-central-kingdom-ends', 'event-ugarit-destruction'],
+
       title: '诸王把世界写进书信',
       editorialPurpose: '破除青铜时代只有战争与征服的刻板印象，让读者看见诸王持续经营的外交关系。',
       introduction: '战车、城墙和征服并不是青铜时代的全部。在战争之外，诸王不断写信、派遣使者、交换礼物，也努力让远方的国王继续把自己当作朋友。',
@@ -332,7 +347,7 @@
     },
     {
       id: 'medinet-habu-sea-raiders', kind: 'thematic', primaryEntityId: 'medinet-habu-war-records', relatedEntityIds: ['egypt-new-kingdom', 'ugarit-kingdom'],
-      eventIds: ['event-ramesses-iii-northern-invasions'],
+
       title: '海上来敌出现在法老的墙上',
       editorialPurpose: '先认识海上民族说法所依赖的埃及王室证据，再理解这份证据怎样塑造现代人看到的敌人。',
       introduction: '战船翻覆，弓箭落下，俘虏排成队列。法老把来自北方的敌人刻上神庙墙，也把一场危机改写成王权恢复秩序的胜利。',
@@ -350,7 +365,7 @@
     },
     {
       id: 'late-bronze-palaces-go-dark', kind: 'thematic', primaryEntityId: 'late-bronze-palace-system', relatedEntityIds: ['hittite-empire', 'ugarit-kingdom', 'egypt-new-kingdom', 'medinet-habu-war-records', 'mesopotamia-region'],
-      eventIds: ['event-hittite-central-kingdom-ends', 'event-ugarit-destruction', 'event-ramesses-iii-northern-invasions'],
+
       title: '宫殿接连熄灭',
       editorialPurpose: '以赫梯、乌加里特、爱琴海和埃及四组证据讲清宫殿体系的不同结局，同时保留社会延续。',
       introduction: '有些宫殿在火中倒下，有些先被搬空，有些从此不再发出命令。短短几代人里，连接东地中海诸王的书信、仓库和贡赋网络失去了许多中心。',
@@ -370,19 +385,19 @@
 
   const scenes = [
     {
-      id: 'hittite-hattusa-center', title: '一座旧城成为王国中心', eyebrow: '赫梯王国形成', timeSpan: timeSpan(-1650, -1595, '约公元前1650—前1595年', true),
+      id: 'hittite-hattusa-center', title: '一座旧城成为王国中心', eyebrow: '赫梯王国形成', timeSpan: timeSpan(-1650, -1595, '约公元前1650—前1595年', true), eventIds: ['event-hittite-central-kingship-consolidates'],
       contentBlocks: [fact('hittite-hattusa-center-fact', '约公元前17世纪，早期国王哈图西里一世把哈图沙——安纳托利亚高原上的一座旧城——变成王国中心。军队从这里越过山地，进入北叙利亚；下一位国王甚至远征巴比伦，结束当地的第一王朝。', ['source-bryce-hittite-kingdom', 'source-unesco-hattusha', 'source-met-isin-larsa-old-babylonian'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-hittite-hattusa-wall' },
       sourceIds: ['source-bryce-hittite-kingdom', 'source-unesco-hattusha', 'source-met-isin-larsa-old-babylonian', 'source-wikimedia-hattusa-wall']
     },
     {
-      id: 'hittite-throne-crises', title: '远征回来，王位却失去秩序', eyebrow: '早期王国', timeSpan: timeSpan(-1595, -1400, '约公元前1595—前1400年', true),
+      id: 'hittite-throne-crises', title: '远征回来，王位却失去秩序', eyebrow: '早期王国', timeSpan: timeSpan(-1595, -1400, '约公元前1595—前1400年', true), eventIds: ['event-hittite-sack-babylon', 'event-hittite-central-kingship-consolidates'],
       contentBlocks: [fact('hittite-throne-crises-fact', '远征巴比伦的国王回国后遇刺，接下来的王位不断在政变和复仇中易手。先前归服的地方趁机脱离，军队也难以持续向外行动。赫梯没有从建立之初便一路扩张；它先花了许多代人的时间，让继承规则、首都和军队重新稳定下来。', ['source-bryce-hittite-kingdom'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-hittite-inandik-vase' },
       sourceIds: ['source-bryce-hittite-kingdom', 'source-wikimedia-inandik-vase']
     },
     {
-      id: 'hittite-syria-princes', title: '苏庇路里乌玛重建帝国', eyebrow: '赫梯再次扩张', timeSpan: timeSpan(-1350, -1320, '约公元前1350—前1320年', true),
+      id: 'hittite-syria-princes', title: '苏庇路里乌玛重建帝国', eyebrow: '赫梯再次扩张', timeSpan: timeSpan(-1350, -1320, '约公元前1350—前1320年', true), eventIds: ['event-hittite-syrian-expansion'],
       contentBlocks: [fact('hittite-syria-princes-fact', '公元前14世纪，赫梯国王苏庇路里乌玛一世重新稳定王权，并趁叙利亚北部的旧强国衰退向南推进。他没有让哈图沙直接管理每一座城，而是把赫梯王族派到阿勒颇、卡尔凯美什等交通和军事要地。帝国的远方权力先落在这些能够传令、出兵和监督地方国王的支点上。', ['source-bryce-hittite-kingdom', 'source-met-hittites'])],
       presentation: {
         kind: 'mapAndText',
@@ -399,32 +414,32 @@
       sourceIds: ['source-bryce-hittite-kingdom', 'source-met-hittites', 'source-natural-earth']
     },
     {
-      id: 'hittite-kings-treaty', title: '地方国王被写进条约', eyebrow: '条约治理', timeSpan: timeSpan(-1350, -1250, '约公元前1350—前1250年', true),
+      id: 'hittite-kings-treaty', title: '地方国王被写进条约', eyebrow: '条约治理', timeSpan: timeSpan(-1350, -1250, '约公元前1350—前1250年', true), eventIds: ['event-hittite-ugarit-treaty'],
       contentBlocks: [fact('hittite-kings-treaty-fact', '叙利亚海岸的乌加里特在战事逼近时投向赫梯。泥版条约确认当地国王的王位和领土，也列出贡赋、忠诚与军事协助。另一份约公元前13世纪的条约则把安纳托利亚西部维鲁萨的国王阿拉克桑杜写进同一种“大王—地方国王”关系；许多研究者把维鲁萨识别为特洛伊。两地相距遥远，条约内容也不完全相同，但都显示赫梯大王如何让地方王宫继续存在，同时要求其承担政治与军事义务。', ['source-beckman-hittite-diplomatic-texts', 'source-met-ugarit', 'source-cambridge-hittite-troy', 'source-british-museum-alaksandu-wilusa'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-hittite-aleppo-treaty' },
       sourceIds: ['source-beckman-hittite-diplomatic-texts', 'source-met-ugarit', 'source-cambridge-hittite-troy', 'source-british-museum-alaksandu-wilusa', 'source-wikimedia-aleppo-treaty']
     },
     {
-      id: 'hittite-carchemish-supervision', title: '卡迭石之后，敌手交换条约', eyebrow: '战争与大国外交', timeSpan: timeSpan(-1274, -1258, '约公元前1274—前1258年', true),
+      id: 'hittite-carchemish-supervision', title: '卡迭石之后，敌手交换条约', eyebrow: '战争与大国外交', timeSpan: timeSpan(-1274, -1258, '约公元前1274—前1258年', true), eventIds: ['event-battle-of-kadesh', 'event-egypt-hatti-treaty'],
       contentBlocks: [fact('hittite-carchemish-supervision-synthesis', '赫梯与埃及都想控制叙利亚的城市和道路。约公元前1274年，两国军队在卡迭石交战；埃及法老拉美西斯二世没有夺取城市，赫梯也没有靠这一战结束竞争。约十五年后，拉美西斯二世与赫梯大王哈图西里三世交换条约，承诺和平、互助和王朝安全。赫梯的外交因此不只有大王对地方国王的命令，也包括两个大国在长期对抗后彼此承认。', ['source-spalinger-war-egypt', 'source-bryce-hittite-kingdom', 'source-beckman-hittite-diplomatic-texts', 'source-un-egypt-hatti-treaty'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-kadesh-treaty-tablet' },
       sourceIds: ['source-spalinger-war-egypt', 'source-bryce-hittite-kingdom', 'source-beckman-hittite-diplomatic-texts', 'source-un-egypt-hatti-treaty', 'source-wikimedia-kadesh-treaty']
     },
     {
-      id: 'hittite-network-ends', title: '中央王国消失，赫梯之名继续存在', eyebrow: '赫梯帝国终结', timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true),
+      id: 'hittite-network-ends', title: '中央王国消失，赫梯之名继续存在', eyebrow: '赫梯帝国终结', timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true), eventIds: ['event-hittite-central-kingdom-ends'],
       contentBlocks: [synthesis('hittite-network-ends-synthesis', '这种帝国活在反复确认的关系里：新王即位，要重申忠诚；战争来临，要兑现兵员和粮食。约公元前1200年前后，哈图沙遭到破坏并被放弃，赫梯中央王国和以它为中心的条约网络一同解体。不过，居民并没有全部消失；此后安纳托利亚东南部与叙利亚北部的一些政权继续使用赫梯的名称、王权符号和书写传统。帝国结束了，它留下的政治语言却没有立刻结束。', ['source-bryce-hittite-kingdom', 'source-bryce-neo-hittite-kingdoms', 'source-met-hittites'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-hittite-hattusa-ruins' },
       sourceIds: ['source-bryce-hittite-kingdom', 'source-bryce-neo-hittite-kingdoms', 'source-met-hittites', 'source-wikimedia-hattusa-ruins']
     },
 
     {
-      id: 'ugarit-old-city-kingdom', title: '一座旧城形成一个王国', eyebrow: '乌加里特形成', timeSpan: timeSpan(-1800, -1450, '约公元前1800—前1450年', true),
+      id: 'ugarit-old-city-kingdom', title: '一座旧城形成一个王国', eyebrow: '乌加里特形成', timeSpan: timeSpan(-1800, -1450, '约公元前1800—前1450年', true), eventIds: ['event-ugarit-palace-port-network-operates'],
       contentBlocks: [fact('ugarit-old-city-kingdom-fact', '乌加里特不是晚青铜时代突然冒出的城市。这里很早便有人定居，公元前18世纪的远方文书已经提到它；到晚青铜时代，王宫、仓库和成群泥版让一个王国清晰可见。国王从城中管理周围土地，王国却没有留下可供今天精确描画的边界。', ['source-yon-city-of-ugarit', 'source-met-ugarit'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-ugarit-palace' },
       sourceIds: ['source-yon-city-of-ugarit', 'source-met-ugarit', 'source-wikimedia-ugarit-palace']
     },
     {
-      id: 'ugarit-port-inland', title: '港口把王城接到海上', eyebrow: '海陆交换', timeSpan: timeSpan(-1450, -1200, '约公元前1450—前1200年', true),
+      id: 'ugarit-port-inland', title: '港口把王城接到海上', eyebrow: '海陆交换', timeSpan: timeSpan(-1450, -1200, '约公元前1450—前1200年', true), eventIds: ['event-ugarit-palace-port-network-operates'],
       contentBlocks: [fact('ugarit-port-inland-fact', '城外不远处的港口把王宫接到地中海，向东的道路又通往叙利亚内陆。船只带来塞浦路斯的铜和爱琴海风格的陶器，陆路运来粮食与其他货物。乌加里特作为十字路口的存在，让海上的货物能够继续向内陆移动。', ['source-yon-city-of-ugarit', 'source-french-ugarit-exchange', 'source-met-ugarit'])],
       presentation: {
         kind: 'mapAndText',
@@ -441,32 +456,32 @@
       sourceIds: ['source-yon-city-of-ugarit', 'source-french-ugarit-exchange', 'source-met-ugarit', 'source-natural-earth']
     },
     {
-      id: 'ugarit-treaty-tribute', title: '一份条约保住王位，也规定贡赋', eyebrow: '赫梯附庸关系', timeSpan: timeSpan(-1350, -1320, '约公元前1350—前1320年', true),
+      id: 'ugarit-treaty-tribute', title: '一份条约保住王位，也规定贡赋', eyebrow: '赫梯附庸关系', timeSpan: timeSpan(-1350, -1320, '约公元前1350—前1320年', true), eventIds: ['event-hittite-ugarit-treaty', 'event-ugarit-palace-port-network-operates'],
       contentBlocks: [fact('ugarit-treaty-tribute-fact', '公元前14世纪中叶，赫梯军队改变了叙利亚的力量格局。乌加里特国王在压力下加入赫梯主导的秩序：条约保护他的王位和部分领土，也规定贡赋、忠诚与出兵义务。小王国没有消失，却必须把自己的安全写进大王认可的条件里。', ['source-beckman-hittite-diplomatic-texts', 'source-met-ugarit'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-ugarit-law-tablet' },
       sourceIds: ['source-beckman-hittite-diplomatic-texts', 'source-met-ugarit', 'source-wikimedia-ugarit-law-tablet']
     },
     {
-      id: 'ugarit-merchants-palace', title: '货物经过商人，也经过王宫', eyebrow: '宫殿经济', timeSpan: timeSpan(-1350, -1200, '约公元前1350—前1200年', true),
+      id: 'ugarit-merchants-palace', title: '货物经过商人，也经过王宫', eyebrow: '宫殿经济', timeSpan: timeSpan(-1350, -1200, '约公元前1350—前1200年', true), eventIds: ['event-ugarit-palace-port-network-operates'],
       contentBlocks: [fact('ugarit-merchants-palace-fact', '王宫的仓库、账目和书信记录着粮食、金属、木材与制成品的来往。商人替自己经营，也受王室差遣；外国人可以在城中交易，国王则征收、分配并向赫梯交纳贡赋。商业活动嵌在宫殿权力之中，也帮助宫殿履行对大国的义务。', ['source-met-ugarit', 'source-heltzer-ugarit-metal-trade', 'source-yon-city-of-ugarit'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-ugarit-uluburun-reconstruction' },
       sourceIds: ['source-met-ugarit', 'source-heltzer-ugarit-metal-trade', 'source-yon-city-of-ugarit', 'source-wikimedia-uluburun-reconstruction']
     },
     {
-      id: 'ugarit-scribes-languages', title: '书吏在几种文字之间工作', eyebrow: '多语言档案', timeSpan: timeSpan(-1350, -1200, '约公元前1350—前1200年', true),
+      id: 'ugarit-scribes-languages', title: '书吏在几种文字之间工作', eyebrow: '多语言档案', timeSpan: timeSpan(-1350, -1200, '约公元前1350—前1200年', true), eventIds: ['event-ugarit-palace-port-network-operates'],
       contentBlocks: [fact('ugarit-scribes-languages-fact', '货物跨过边界，文书也要跨过语言。书吏用阿卡德语处理许多外交和行政事务，又用本地的乌加里特语记录祭仪、神话和日常业务；城中还留下其他语言与文字的痕迹。能在几套书写系统之间切换，本身就是这座港城的基础设施。', ['source-boyes-writing-ugarit', 'source-french-ugarit-texts', 'source-met-ugarit'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-ugarit-administrative-tablet' },
       sourceIds: ['source-boyes-writing-ugarit', 'source-french-ugarit-texts', 'source-met-ugarit', 'source-wikimedia-ugarit-admin-tablet']
     },
     {
-      id: 'ugarit-destruction-layer', title: '生意停止在毁灭层里', eyebrow: '乌加里特终结', timeSpan: timeSpan(-1200, -1150, '约公元前1200—前1150年', true),
+      id: 'ugarit-destruction-layer', title: '生意停止在毁灭层里', eyebrow: '乌加里特终结', timeSpan: timeSpan(-1200, -1150, '约公元前1200—前1150年', true), eventIds: ['event-ugarit-destruction'],
       contentBlocks: [synthesis('ugarit-destruction-layer-synthesis', '繁荣也带来依赖：航路、粮食、王宫账目和大国命令，任何一环中断都会传到城里。约公元前12世纪初，乌加里特遭到严重毁坏，王宫行政和原有王国没有恢复。泥版留在倒塌的房间里；毁城者难以确定，而它们记录的国际世界也在同一时期解体。', ['source-yon-city-of-ugarit', 'source-french-ugarit-history', 'source-leriche-ugarit-after-1180'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-ugarit-palace' },
       sourceIds: ['source-yon-city-of-ugarit', 'source-french-ugarit-history', 'source-leriche-ugarit-after-1180', 'source-wikimedia-ugarit-palace']
     },
 
     {
-      id: 'kadesh-two-powers-meet', title: '两大王权在卡迭石相遇', eyebrow: '叙利亚争夺', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true),
+      id: 'kadesh-two-powers-meet', title: '两大王权在卡迭石相遇', eyebrow: '叙利亚争夺', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true), eventIds: ['event-battle-of-kadesh'],
       contentBlocks: [fact('kadesh-two-powers-meet-fact', '约公元前1274年，埃及法老拉美西斯二世率军北上，目标是叙利亚要地卡迭石。北方的赫梯大王也集结军队。卡迭石靠近奥伦特河，处在两国争夺的地方王国之间；谁占住它，谁就更能左右叙利亚的盟友。', ['source-bryce-hittite-kingdom', 'source-spalinger-war-egypt', 'source-hayes-scepter-ii'])],
       presentation: {
         kind: 'mapAndText',
@@ -483,19 +498,19 @@
       sourceIds: ['source-bryce-hittite-kingdom', 'source-spalinger-war-egypt', 'source-hayes-scepter-ii', 'source-natural-earth']
     },
     {
-      id: 'kadesh-false-message', title: '法老先听见了错误的消息', eyebrow: '战前情报', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true),
+      id: 'kadesh-false-message', title: '法老先听见了错误的消息', eyebrow: '战前情报', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true), eventIds: ['event-battle-of-kadesh'],
       contentBlocks: [fact('kadesh-false-message-fact', '埃及各军团沿路分开行进，法老带领的一部先到城外。埃及王室文本说，两名被俘者谎称赫梯军队还在远方；后来抓到的侦察人员才供出真相。拉美西斯发现对手就在河对岸，而自己的大部分军队尚未赶到。', ['source-bm-kadesh-sallier', 'source-spalinger-war-egypt'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-kadesh-spies-relief' },
       sourceIds: ['source-bm-kadesh-sallier', 'source-spalinger-war-egypt', 'source-wikimedia-kadesh-spies']
     },
     {
-      id: 'kadesh-chariots-camp', title: '战车冲进尚未集结的营地', eyebrow: '赫梯突袭', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true),
+      id: 'kadesh-chariots-camp', title: '战车冲进尚未集结的营地', eyebrow: '赫梯突袭', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true), eventIds: ['event-battle-of-kadesh'],
       contentBlocks: [fact('kadesh-chariots-camp-fact', '赫梯战车渡河后突然冲向正在扎营的埃及军队，撞散一支赶来的军团，又闯入法老营地。帐篷、士兵和车辆挤在一起，埃及军一度失去队形。后来那些神庙浮雕反复描绘的英雄时刻，首先来自一次危险的情报与集结失败。', ['source-bm-kadesh-sallier', 'source-spalinger-war-egypt'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-kadesh-surprise-map' },
       sourceIds: ['source-bm-kadesh-sallier', 'source-spalinger-war-egypt', 'source-wikimedia-kadesh-attack-map']
     },
     {
-      id: 'kadesh-city-not-taken', title: '法老脱险，却没有得到卡迭石', eyebrow: '战略结果', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true),
+      id: 'kadesh-city-not-taken', title: '法老脱险，却没有得到卡迭石', eyebrow: '战略结果', timeSpan: timeSpan(-1274, -1274, '约公元前1274年', true), eventIds: ['event-battle-of-kadesh'],
       contentBlocks: [synthesis('kadesh-city-not-taken-synthesis', '拉美西斯身边的部队重新抵抗，后续援军也陆续抵达，埃及军没有在营地中覆灭。可他们同样没有夺下卡迭石，只能向南撤回。赫梯仍维持在叙利亚北部的影响。', ['source-bryce-hittite-kingdom', 'source-spalinger-war-egypt', 'source-hayes-scepter-ii'])],
       presentation: {
         kind: 'mapAndText',
@@ -512,32 +527,32 @@
       sourceIds: ['source-bryce-hittite-kingdom', 'source-spalinger-war-egypt', 'source-hayes-scepter-ii', 'source-natural-earth']
     },
     {
-      id: 'kadesh-temple-victory', title: '战役在神庙墙上变成胜利', eyebrow: '王室叙事', timeSpan: timeSpan(-1274, -1259, '约公元前1274—前1259年', true),
+      id: 'kadesh-temple-victory', title: '战役在神庙墙上变成胜利', eyebrow: '王室叙事', timeSpan: timeSpan(-1274, -1259, '约公元前1274—前1259年', true), eventIds: ['event-battle-of-kadesh'],
       contentBlocks: [fact('kadesh-temple-victory-fact', '回到埃及后，拉美西斯让文字和浮雕在多座神庙讲述同一场战役：军队溃散，法老独自迎敌，阿蒙神回应呼喊，敌军被赶入河中。重复出现的场面把危机改写成王权证明。今天关于战役最细的故事，也主要由这套埃及叙事保存下来。', ['source-bm-kadesh-sallier', 'source-hayes-scepter-ii'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-kadesh-ramesses-relief' },
       sourceIds: ['source-bm-kadesh-sallier', 'source-hayes-scepter-ii', 'source-wikimedia-kadesh-relief']
     },
     {
-      id: 'kadesh-treaty-later', title: '十五年后，双方才交换条约', eyebrow: '埃及—赫梯条约', timeSpan: timeSpan(-1274, -1258, '约公元前1274—前1258年', true),
+      id: 'kadesh-treaty-later', title: '十五年后，双方才交换条约', eyebrow: '埃及—赫梯条约', timeSpan: timeSpan(-1274, -1258, '约公元前1274—前1258年', true), eventIds: ['event-battle-of-kadesh', 'event-egypt-hatti-treaty'],
       contentBlocks: [fact('kadesh-treaty-later-fact', '卡迭石之后，两国仍在叙利亚角力。约十五年后，赫梯大王哈图西里三世与拉美西斯二世才交换条约，承诺和平、互助和遣返逃亡者，也彼此支持王朝安全。长期竞争、两国各自的压力和新的权力平衡，最终把敌手带到谈判桌前。', ['source-beckman-hittite-diplomatic-texts', 'source-bryce-hittite-kingdom', 'source-langdon-gardiner-egypt-hatti-treaty', 'source-un-egypt-hatti-treaty'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-kadesh-treaty-tablet' },
       sourceIds: ['source-beckman-hittite-diplomatic-texts', 'source-bryce-hittite-kingdom', 'source-langdon-gardiner-egypt-hatti-treaty', 'source-un-egypt-hatti-treaty', 'source-wikimedia-kadesh-treaty']
     },
 
     {
-      id: 'amarna-letters-remain', title: '战争之外，诸王仍要彼此说话', eyebrow: '阿玛尔纳档案', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true),
+      id: 'amarna-letters-remain', title: '战争之外，诸王仍要彼此说话', eyebrow: '阿玛尔纳档案', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true), eventIds: ['event-amarna-diplomatic-correspondence-operates'],
       contentBlocks: [synthesis('amarna-letters-remain-synthesis', '约公元前十四世纪，埃及法老把宫廷迁到一座新建的都城。宫廷后来离开，外国使者送来的泥版却留在房间里。现存近四百块书信来自大国王宫和东地中海许多地方统治者：有人问候法老，有人商议婚姻和礼物，也有人报告叛乱、围城与道路上的危险。这批档案让我们直接看到，外交已经是晚青铜时代宫廷的日常事务。', ['source-met-amarna-letters', 'source-moran-amarna-letters'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-egypt-new-amarna-letter' },
       sourceIds: ['source-met-amarna-letters', 'source-met-amarna-letter-object', 'source-moran-amarna-letters']
     },
     {
-      id: 'amarna-shared-writing', title: '不同宫廷共用一种外交文字', eyebrow: '书吏与使者', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true),
+      id: 'amarna-shared-writing', title: '不同宫廷共用一种外交文字', eyebrow: '书吏与使者', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true), eventIds: ['event-amarna-diplomatic-correspondence-operates'],
       contentBlocks: [fact('amarna-shared-writing-fact', '埃及、赫梯、米坦尼和叙利亚各地的人并不说同一种语言，宫廷书吏却能采用共同的外交书写传统。他们把芦苇笔压进湿泥，使用楔形文字和以阿卡德语为主的外交语言起草来信。使者再把泥版、口信和礼物一起送往另一座宫廷，让相隔数月路程的统治者能够持续交谈。', ['source-met-amarna-letters', 'source-moran-amarna-letters'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-amarna-mail-carrier' },
       sourceIds: ['source-met-amarna-letters', 'source-moran-amarna-letters', 'source-runeberg-egypt-mail-carrier']
     },
     {
-      id: 'amarna-kings-brothers', title: '一声“兄弟”确认彼此地位', eyebrow: '大王外交', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true),
+      id: 'amarna-kings-brothers', title: '一声“兄弟”确认彼此地位', eyebrow: '大王外交', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true), eventIds: ['event-amarna-diplomatic-correspondence-operates'],
       contentBlocks: [interpretation('amarna-kings-brothers-interpretation', '几个强大王国的统治者在信中把法老称为“兄弟”。这个称呼把他们放进一个彼此承认的大王圈子：他们可以要求对方解释怠慢，争论使者受到的待遇，也可以提醒对方维持过去的友好关系。大王之间没有共同的最高统治者，称呼和礼节便成为确认平等地位、处理摩擦的重要方式。', ['source-met-amarna-letters', 'source-met-amarna-letter-object', 'source-moran-amarna-letters'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-lba-amarna-great-kings', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'amarna-letters-corpus', annotationId: 'annotation-lba-amarna-egypt', sourceIds: ['source-met-amarna-letters'] },
@@ -546,19 +561,19 @@
       sourceIds: ['source-met-amarna-letters', 'source-met-amarna-letter-object', 'source-natural-earth']
     },
     {
-      id: 'amarna-gifts-repeat-friendship', title: '礼物让友好变成反复的行动', eyebrow: '礼物与婚姻', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true),
+      id: 'amarna-gifts-repeat-friendship', title: '礼物让友好变成反复的行动', eyebrow: '礼物与婚姻', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true), eventIds: ['event-amarna-diplomatic-correspondence-operates'],
       contentBlocks: [interpretation('amarna-gifts-repeat-friendship-interpretation', '大王之间的友好需要不断用行动确认。黄金、青金石、马匹和战车随使者往返，王室婚姻又把远隔千里的统治家族连接起来。国王会列出自己送过的礼物，催促对方回赠，也会为公主、嫁妆和接待方式反复交涉。礼物与婚姻不是外交之外的装饰，而是大国经营关系的具体手段。', ['source-met-amarna-letters', 'source-moran-amarna-letters'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-amarna-tushratta-marriage-letter' },
       sourceIds: ['source-met-amarna-letters', 'source-moran-amarna-letters', 'source-wikimedia-tushratta-marriage-letter']
     },
     {
-      id: 'amarna-small-kings-write', title: '小国也用书信争取生存空间', eyebrow: '地方统治者求援', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true),
+      id: 'amarna-small-kings-write', title: '小国也用书信争取生存空间', eyebrow: '地方统治者求援', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true), eventIds: ['event-amarna-diplomatic-correspondence-operates'],
       contentBlocks: [fact('amarna-small-kings-write-fact', '埃及势力之下的地方统治者不能像大王一样把法老称作兄弟。他们用臣属的口吻写信，报告贡赋、驻军、邻近城镇和地方冲突；遇到危险时，又请求法老派来弓箭手、粮食或其他援助。小国不能与埃及平等谈判，却能通过书信呈交情报、指控对手，并努力让远方宫廷作出有利于自己的决定。', ['source-met-amarna-letters', 'source-moran-amarna-letters'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-amarna-four-foreign-rulers' },
       sourceIds: ['source-met-amarna-letters', 'source-moran-amarna-letters', 'source-met-four-foreign-rulers']
     },
     {
-      id: 'amarna-diplomacy-routine', title: '外交成为诸王世界的日常工作', eyebrow: '书信秩序', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true),
+      id: 'amarna-diplomacy-routine', title: '外交成为诸王世界的日常工作', eyebrow: '书信秩序', timeSpan: timeSpan(-1360, -1330, '约公元前1360—前1330年', true), eventIds: ['event-amarna-diplomatic-correspondence-operates'],
       contentBlocks: [synthesis('amarna-diplomacy-routine-synthesis', '一封信要经过书吏起草、使者传递、宫廷接收，再等待答复沿着道路返回。埃及保存下来的泥版中，巴比伦、米坦尼、赫梯和阿拉西亚等地的统治者都曾向法老写信，亚述的来信后来也进入这座宫廷。把这些书信放在一起，可以看到外交并非埃及与少数邻国之间的偶然往来，而是晚青铜时代许多宫廷共同采用的日常工作方式。', ['source-met-amarna-letters', 'source-moran-amarna-letters'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-lba-amarna-diplomacy', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'amarna-letters-corpus', annotationId: 'annotation-lba-amarna-egypt', sourceIds: ['source-met-amarna-letters'] },
@@ -572,7 +587,7 @@
       sourceIds: ['source-met-amarna-letters', 'source-moran-amarna-letters', 'source-natural-earth']
     },
     {
-      id: 'amarna-palaces-stop-replying', title: '许多宫廷后来不再回信', eyebrow: '外交网络失去中心', timeSpan: timeSpan(-1330, -1180, '约公元前1330—前1180年', true),
+      id: 'amarna-palaces-stop-replying', title: '许多宫廷后来不再回信', eyebrow: '外交网络失去中心', timeSpan: timeSpan(-1330, -1180, '约公元前1330—前1180年', true), eventIds: ['event-amarna-diplomatic-correspondence-operates', 'event-hittite-central-kingdom-ends', 'event-ugarit-destruction'],
       contentBlocks: [synthesis('amarna-palaces-stop-replying-synthesis', '阿玛尔纳档案形成以后，诸王外交又继续运转了一个多世纪。使者仍在上路，赫梯与埃及后来签订了正式条约，乌加里特等地方王国也继续保存外国来信。然而到约公元前1200年前后，哈图沙、乌加里特和爱琴海多座宫殿相继失去原有功能，部分档案不再增长。失去的不只是一批统治者，也包括供养书吏、接待使者并让远方宫廷持续通信的许多中心。', ['source-met-amarna-letters', 'source-beckman-hittite-diplomatic-texts', 'source-yon-city-of-ugarit', 'source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-lba-palace-centers', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'late-bronze-palace-system', annotationId: 'annotation-lba-collapse-hattusa', sourceIds: ['source-bryce-hittite-kingdom'] },
@@ -584,31 +599,31 @@
     },
 
     {
-      id: 'medinet-habu-temple-record', title: '法老把不同来敌刻上祭庙', eyebrow: '麦迪奈特哈布', timeSpan: timeSpan(-1180, -1150, '约公元前1180—前1150年', true),
+      id: 'medinet-habu-temple-record', title: '法老把不同来敌刻上祭庙', eyebrow: '麦迪奈特哈布', timeSpan: timeSpan(-1180, -1150, '约公元前1180—前1150年', true), eventIds: ['event-ramesses-iii-northern-invasions'],
       contentBlocks: [fact('medinet-habu-temple-record-fact', '拉美西斯三世是埃及新王国后期的法老。他在自己的祭庙墙上刻下成组的战争浮雕，并记录了若干来敌的名字。后来的研究者把其中一些群体合称为“海上民族”，这个总称也让不同来敌看起来像一支统一大军。', ['source-isac-medinet-habu-i', 'source-edgerton-wilson-ramesses-iii', 'source-grandet-ramesses-iii'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-medinet-habu-temple' },
       sourceIds: ['source-isac-medinet-habu-i', 'source-edgerton-wilson-ramesses-iii', 'source-grandet-ramesses-iii', 'source-wikimedia-medinet-habu-temple']
     },
     {
-      id: 'medinet-habu-delta-battle', title: '战船在尼罗河口挤作一团', eyebrow: '尼罗河口海战', timeSpan: timeSpan(-1177, -1175, '约公元前1177—前1175年', true),
+      id: 'medinet-habu-delta-battle', title: '战船在尼罗河口挤作一团', eyebrow: '尼罗河口海战', timeSpan: timeSpan(-1177, -1175, '约公元前1177—前1175年', true), eventIds: ['event-ramesses-iii-northern-invasions'],
       contentBlocks: [fact('medinet-habu-delta-battle-fact', '浮雕上的船只被挤在狭窄水面，桅杆交错，落水者伸手挣扎。岸上的埃及弓箭手向船队射击，法老则以远大于常人的身形站在一旁。画面把混乱的战斗整理成一场由王权指挥的胜利。', ['source-isac-medinet-habu-i', 'source-edgerton-wilson-ramesses-iii', 'source-cifola-ramesses-sea-peoples'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-medinet-habu-naval-battle' },
       sourceIds: ['source-isac-medinet-habu-i', 'source-edgerton-wilson-ramesses-iii', 'source-cifola-ramesses-sea-peoples', 'source-wikimedia-medinet-habu-naval']
     },
     {
-      id: 'medinet-habu-families-carts', title: '车辆带来了战士的家人', eyebrow: '陆战浮雕', timeSpan: timeSpan(-1177, -1175, '约公元前1177—前1175年', true),
+      id: 'medinet-habu-families-carts', title: '车辆带来了战士的家人', eyebrow: '陆战浮雕', timeSpan: timeSpan(-1177, -1175, '约公元前1177—前1175年', true), eventIds: ['event-ramesses-iii-northern-invasions'],
       contentBlocks: [interpretation('medinet-habu-families-carts-interpretation', '另一组陆战画面不只有持兵器的男子。牛拉车辆载着妇女、孩子和生活物品，与战士一起向前。这使部分来敌更像正在寻找新居所的人群，而不只是完成一次突袭便离开的舰队。', ['source-isac-medinet-habu-i', 'source-yasur-landau-philistines'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-medinet-habu-ox-carts' },
       sourceIds: ['source-isac-medinet-habu-i', 'source-yasur-landau-philistines']
     },
     {
-      id: 'medinet-habu-king-order', title: '法老站在秩序的中心', eyebrow: '王室胜利叙事', timeSpan: timeSpan(-1180, -1150, '约公元前1180—前1150年', true),
+      id: 'medinet-habu-king-order', title: '法老站在秩序的中心', eyebrow: '王室胜利叙事', timeSpan: timeSpan(-1180, -1150, '约公元前1180—前1150年', true), eventIds: ['event-ramesses-iii-northern-invasions'],
       contentBlocks: [interpretation('medinet-habu-king-order-interpretation', '墙面上的法老总是巨大、稳定而有力，敌人则翻倒、被缚或等待计数。这样的构图不是旁观者留下的战地速写，而是王室安排的公开记忆：外部世界陷入混乱，法老击败来敌，让神所认可的秩序重新成立。', ['source-isac-medinet-habu-i', 'source-cifola-ramesses-sea-peoples'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-kadesh-ramesses-relief' },
       sourceIds: ['source-isac-medinet-habu-i', 'source-cifola-ramesses-sea-peoples', 'source-hayes-scepter-ii', 'source-wikimedia-kadesh-relief']
     },
     {
-      id: 'medinet-habu-egypt-contracts', title: '埃及守住边境，旧帝国仍在收缩', eyebrow: '战后变化', timeSpan: timeSpan(-1177, -1100, '约公元前1177—前1100年', true),
+      id: 'medinet-habu-egypt-contracts', title: '埃及守住边境，旧帝国仍在收缩', eyebrow: '战后变化', timeSpan: timeSpan(-1177, -1100, '约公元前1177—前1100年', true), eventIds: ['event-ramesses-iii-northern-invasions'],
       contentBlocks: [synthesis('medinet-habu-egypt-contracts-synthesis', '埃及政权没有像一些北方宫殿那样消失，却逐渐失去在叙利亚和巴勒斯坦的旧有控制。与此同时，新的移民与当地居民在南部沿海建立社区。墙上的胜利保住了法老的王国，却没有让从前的区域秩序复原。', ['source-uee-early-mid-20th-dynasty', 'source-yasur-landau-philistines'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-lba-sea-raiders', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'egypt-new-kingdom', annotationId: 'annotation-lba-egypt-core', sourceIds: ['source-uee-early-mid-20th-dynasty'] },
@@ -619,7 +634,7 @@
     },
 
     {
-      id: 'palaces-connect-kingdoms', title: '晚青铜时代的宫殿世界崩塌', eyebrow: '区域转折', timeSpan: timeSpan(-1250, -1100, '约公元前1250—前1100年', true),
+      id: 'palaces-connect-kingdoms', title: '晚青铜时代的宫殿世界崩塌', eyebrow: '区域转折', timeSpan: timeSpan(-1250, -1100, '约公元前1250—前1100年', true), eventIds: ['event-hittite-central-kingdom-ends', 'event-ugarit-destruction', 'event-mycenaean-palaces-end', 'event-ramesses-iii-northern-invasions'],
       contentBlocks: [
         synthesis('palaces-connect-kingdoms-concept', '历史学家常把约公元前1200年前后，东地中海与近东许多王国经历的剧烈转折称为“晚青铜时代崩溃”。在此前数百年，赫梯、乌加里特、迈锡尼诸王国与埃及等地都由宫殿组织统治和生产。宫殿既是王室居所，也是政府、仓库、作坊和档案中心；书吏、工匠、贡赋与远方使者都在这里汇集。', ['source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath', 'source-yon-city-of-ugarit']),
         synthesis('palaces-connect-kingdoms-change', '约从公元前十三世纪末开始，许多宫殿在几代人内被焚毁、废弃或失去原有功能。赫梯中央王国终结，乌加里特没有重建，爱琴海宫殿停止使用线形文字B，跨海贸易与诸王外交也遭受冲击。这场横跨多个地区的政治、经济和社会转折，就是本故事所说的“崩溃”。', ['source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath', 'source-middleton-understanding-collapse'])
@@ -628,31 +643,31 @@
       sourceIds: ['source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath', 'source-middleton-understanding-collapse', 'source-yon-city-of-ugarit', 'source-wikimedia-ugarit-throne-hall']
     },
     {
-      id: 'palaces-hattusa-silent', title: '哈图沙不再发出大王的命令', eyebrow: '赫梯中央王国终结', timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true),
+      id: 'palaces-hattusa-silent', title: '哈图沙不再发出大王的命令', eyebrow: '赫梯中央王国终结', timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true), eventIds: ['event-hittite-central-kingdom-ends'],
       contentBlocks: [fact('palaces-hattusa-silent-fact', '哈图沙是赫梯大王发出命令的首都。约在公元前十二世纪初，宫殿和公共建筑遭到破坏，中央王权从文献中消失。过去能调动安纳托利亚资源、控制叙利亚属国的大王，不再出现在诸王的往来中。', ['source-knapp-manning-crisis', 'source-bryce-hittite-kingdom'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-hittite-hattusa-ruins' },
       sourceIds: ['source-knapp-manning-crisis', 'source-bryce-hittite-kingdom', 'source-wikimedia-hattusa-ruins']
     },
     {
-      id: 'palaces-ugarit-tablets-stop', title: '乌加里特的泥版停在倒塌房间里', eyebrow: '乌加里特毁灭', timeSpan: timeSpan(-1190, -1180, '约公元前1190—前1180年', true),
+      id: 'palaces-ugarit-tablets-stop', title: '乌加里特的泥版停在倒塌房间里', eyebrow: '乌加里特毁灭', timeSpan: timeSpan(-1190, -1180, '约公元前1190—前1180年', true), eventIds: ['event-ugarit-destruction'],
       contentBlocks: [fact('palaces-ugarit-tablets-stop-fact', '乌加里特的宫殿曾保存账目、契约和外国来信。城市毁灭时，一批尚未归档的泥版留在倒塌房间中，其中还能听见统治者调兵、求援和担忧船只的声音。此后，这里没有恢复为原来的王宫与港口中心。', ['source-knapp-manning-crisis', 'source-yon-city-of-ugarit'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-ugarit-administrative-tablet' },
       sourceIds: ['source-knapp-manning-crisis', 'source-yon-city-of-ugarit', 'source-wikimedia-ugarit-admin-tablet']
     },
     {
-      id: 'palaces-aegean-writing-stops', title: '爱琴海的宫殿也停止书写', eyebrow: '迈锡尼宫殿终结', timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true),
+      id: 'palaces-aegean-writing-stops', title: '爱琴海的宫殿也停止书写', eyebrow: '迈锡尼宫殿终结', timeSpan: timeSpan(-1200, -1180, '约公元前1200—前1180年', true), eventIds: ['event-mycenaean-palaces-end'],
       contentBlocks: [fact('palaces-aegean-writing-stops-fact', '爱琴海诸王的宫殿也以书吏和仓库管理土地、牲畜、工匠与军备。约在同一时期，多座宫殿被毁，原有的行政文字随之停用。人们继续居住在希腊各地，能集中调配大批资源的宫殿政府却没有重新建立。', ['source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-pylos-linear-b-tablet' },
       sourceIds: ['source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath', 'source-wikimedia-pylos-linear-b-tablet']
     },
     {
-      id: 'palaces-egypt-holds', title: '来敌抵达埃及，宫殿仍未熄灭', eyebrow: '埃及的不同结局', timeSpan: timeSpan(-1177, -1100, '约公元前1177—前1100年', true),
+      id: 'palaces-egypt-holds', title: '来敌抵达埃及，宫殿仍未熄灭', eyebrow: '埃及的不同结局', timeSpan: timeSpan(-1177, -1100, '约公元前1177—前1100年', true), eventIds: ['event-ramesses-iii-northern-invasions'],
       contentBlocks: [fact('palaces-egypt-holds-fact', '后来被合称为“海上民族”的来敌也抵达埃及。法老的军队在陆地和尼罗河口作战，王室把胜利刻上祭庙。埃及此后失去了部分对外控制，内部也承受压力，但法老、神庙和书吏组成的国家仍然延续。', ['source-isac-medinet-habu-i', 'source-edgerton-wilson-ramesses-iii', 'source-uee-early-mid-20th-dynasty'])],
       presentation: { kind: 'imageAndText', assetId: 'asset-lba-medinet-habu-naval-battle' },
       sourceIds: ['source-isac-medinet-habu-i', 'source-edgerton-wilson-ramesses-iii', 'source-uee-early-mid-20th-dynasty', 'source-wikimedia-medinet-habu-naval']
     },
     {
-      id: 'palaces-archaeologists-causes', title: '考古学家寻找秩序崩溃的原因', eyebrow: '多种解释', timeSpan: timeSpan(-1250, -1100, '约公元前1250—前1100年', true),
+      id: 'palaces-archaeologists-causes', title: '考古学家寻找秩序崩溃的原因', eyebrow: '多种解释', timeSpan: timeSpan(-1250, -1100, '约公元前1250—前1100年', true), eventIds: ['event-hittite-central-kingdom-ends', 'event-ugarit-destruction', 'event-mycenaean-palaces-end', 'event-ramesses-iii-northern-invasions'],
       contentBlocks: [interpretation('palaces-archaeologists-causes-interpretation', '考古学家比较毁灭层、环境记录、最后一批书信和聚落变化，提出过旱灾、地震、战争、迁徙、内乱与贸易中断等解释。没有一种原因能说明所有地点。不同压力可能在不同地区相遇，又被彼此依赖的宫殿网络放大。', ['source-knapp-manning-crisis', 'source-middleton-understanding-collapse'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-lba-palace-centers', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'late-bronze-palace-system', annotationId: 'annotation-lba-collapse-hattusa', sourceIds: ['source-bryce-hittite-kingdom'] },
@@ -663,7 +678,7 @@
       sourceIds: ['source-knapp-manning-crisis', 'source-middleton-understanding-collapse', 'source-natural-earth']
     },
     {
-      id: 'palaces-life-reorganizes', title: '宫殿熄灭以后，生活仍在重组', eyebrow: '断裂与延续', timeSpan: timeSpan(-1180, -1050, '约公元前1180—前1050年', true),
+      id: 'palaces-life-reorganizes', title: '宫殿熄灭以后，生活仍在重组', eyebrow: '断裂与延续', timeSpan: timeSpan(-1180, -1050, '约公元前1180—前1050年', true), eventIds: ['event-aegean-localizes-after-palaces'],
       contentBlocks: [synthesis('palaces-life-reorganizes-synthesis', '国王的档案停止增长，长距离礼物减少，许多城市的人口也下降了。但农民、商人和手工业者仍在迁移、交换并建立新的社区。赫梯传统在较小政权中延续，埃及也保住王国。熄灭的是一种宫殿秩序，不是所有人的历史。', ['source-deger-jalkotzy-aftermath', 'source-middleton-understanding-collapse', 'source-bryce-neo-hittite-kingdoms', 'source-uee-early-mid-20th-dynasty'])],
       presentation: { kind: 'mapAndText', map: { mapStateId: 'map-lba-palace-centers', transition: 'cut', structureViewIds: [], layers: [
         { kind: 'entity', entityId: 'late-bronze-palace-system', annotationId: 'annotation-lba-collapse-hattusa', sourceIds: ['source-bryce-neo-hittite-kingdoms'] },

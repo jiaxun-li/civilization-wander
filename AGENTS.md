@@ -177,6 +177,10 @@ position.
   into the global exploration graph.
 - A Scene should focus on one limited historical situation or interpretive
   step.
+- Every Scene must have a non-empty `eventIds` list, and at least one linked
+  Event must overlap the Scene's normalized time span. Several Scenes may
+  reuse the same Event. Do not create a fictitious one-off Event merely to
+  satisfy this rule.
 - A Scene should not be a mechanical slice of a long article.
 - Events, participants, causes, consequences, institutions, and competing
   perspectives may lead to other Cards.
@@ -211,6 +215,11 @@ An Event should be independently addressable and may include:
 - navigation options;
 - source IDs;
 - internal editorial review.
+
+V5 requires an Event `kind`: `historicalEvent`, `historicalProcess`,
+`textualTradition`, or `traditionalNarrative`. Use the last two for the
+formation or transmission of texts and traditional narratives; do not present
+their narrated episodes as contemporaneously attested historical events.
 
 Do not force a single causal chain when evidence supports several explanations.
 This does not require public prose to enumerate every explanation or reproduce
@@ -356,8 +365,10 @@ The gate must include:
 4. Source and Asset provenance checks;
 5. local Asset path and file-existence checks;
 6. internal reference checks;
-7. declaration of every intentional external Entity, Event, Source, Asset,
-   NavigationOption, or Card reference;
+7. classification of every top-level reference as local, already present in
+   the active atlas, or supplied by a pending sibling module; pending external
+   references must be declared for every referenceable collection, and the
+   gate must reject both undeclared use and unused declarations;
 8. module-specific negative tests for invalid data where applicable.
 
 An external reference is not an error when it is explicitly declared for
@@ -365,6 +376,25 @@ integration, but it must not be disguised as an internally resolved reference.
 
 Passing this gate means the module is ready for integration; it does not mean
 the main runtime has accepted it.
+
+For a new or parallel staging module, run:
+
+```text
+node scripts/validate-content-module.js data/<module>.js docs/content-packs/<module>.handoff.json
+```
+
+The handoff file is machine-readable. Active-atlas references are discovered
+automatically; only references to not-yet-integrated sibling modules are
+declared manually. Existing active modules are not required to pass this
+isolated gate retroactively when no staging boundary exists.
+
+Each module image directory also owns a non-runtime `manifest.json`. New
+Assets require reviewed creator, license, source URL, original dimensions,
+origin, digest, and approval status. Each Scene's handoff must record its media
+decision. Selecting new historical media or reusing an existing image requires
+at least two actually inspected candidates and a reason for the choice. AI
+media and text-only exceptions require explicit user approval. AI images must
+be smaller than 1,000,000 bytes.
 
 ### Integration handoff
 
@@ -433,7 +463,7 @@ explicitly.
 
 ## Current implementation status
 
-The current runtime is a dependency-free V4 prototype:
+The current runtime is a dependency-free V5 prototype:
 
 - `index.html` loads the application in dependency order.
 - `app.js` coordinates the home view, Card reader, navigation, and optional
@@ -441,7 +471,7 @@ The current runtime is a dependency-free V4 prototype:
 - `data/atlas-data.js` contains Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,
   CameraPresets, MapStates, Geometries, MapAnnotations, Assets, and Sources.
-- `data/queries.js` indexes, queries, and validates the V4 atlas.
+- `data/queries.js` indexes, queries, and validates the V5 atlas.
 - `scripts/report-atlas-counts.js` reports live collection counts from the
   aggregated runtime data without writing files.
 - `ui/v4/cards.js` renders Card and Scene presentations.
@@ -451,11 +481,15 @@ The current runtime is a dependency-free V4 prototype:
   historical overlays.
 - Hash routes use the Card as the primary destination and may include a Scene
   section for reading restoration and refresh stability.
-- The repository keeps only the active V4 runtime and current generated map
+- The repository keeps only the active V5 runtime and current generated map
   products; historical runtime branches are not maintained in parallel.
 
-V4 implements Card-first exploration, optional `ScenePresentation` media, and
-first-class Events while preserving the dependency-free static runtime.
+V5 removes `Entity.defaultCardId` and authored `Card.eventIds`. Entity-to-Card
+indexes and Card Events are derived from Card and Scene ownership. It requires
+non-empty Scene Event links while preserving Card-first exploration, optional
+`ScenePresentation` media, and the dependency-free static runtime. The stable
+presentation implementation remains in `ui/v4`, `map/v4`, and `styles/v4`;
+those directory names are not the active data schema version.
 
 ## Definition of done for a new complete story
 
@@ -466,7 +500,7 @@ A complete Card should have, in data:
 - one internal guiding question or editorial purpose;
 - one thesis or core narrative that does not overclaim;
 - an ordered set of Scenes that develops the Card's story;
-- one or more related Events;
+- one or more related Events, derived from non-empty Scene `eventIds`;
 - relevant people, communities, institutions, political entities, or
   traditions;
 - at least two source-supported historical cases or evidence groups;

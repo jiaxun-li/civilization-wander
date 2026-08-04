@@ -1,6 +1,6 @@
 (function exposeV4CardReader(root, factory) {
   const api = factory();
-  if (root) root.ATLAS_V4_CARD_READER = api;
+  if (root) root.ATLAS_V5_CARD_READER = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
 }(typeof window !== 'undefined' ? window : globalThis, function buildCardReader() {
   'use strict';
@@ -113,7 +113,7 @@
       const scene = activeScene();
       if (!scene) return;
       const snapshot = {
-        atlasV4: true,
+        atlasV5: true,
         cardId: state.activeCardId,
         sceneId: state.activeSceneId,
         scrollY: Number(windowRef.scrollY || 0),
@@ -415,7 +415,7 @@
         navigationId
       });
       windowRef.history.pushState({
-        atlasV4: true,
+        atlasV5: true,
         cardId: target.id,
         sceneId: targetSceneId,
         scrollY: 0,
@@ -434,7 +434,7 @@
 
     function handlePopState(event) {
       const stateSnapshot = event.state;
-      const snapshot = stateSnapshot?.atlasV4
+      const snapshot = stateSnapshot?.atlasV5
         ? stateSnapshot
         : parseCardHash(windowRef.location.hash);
       if (!snapshot || !queries.getCard(snapshot.cardId)) return;
@@ -446,11 +446,11 @@
       });
     }
 
-    function start(defaultCardId = 'sumer-measuring-land-time') {
+    function start(startCardId = 'sumer-measuring-land-time') {
       if (started) return state;
       started = true;
       const parsed = parseCardHash(windowRef.location.hash);
-      const card = queries.getCard(parsed?.cardId) || queries.getCard(defaultCardId);
+      const card = queries.getCard(parsed?.cardId) || queries.getCard(startCardId);
       const scene = queries.getScene(parsed?.sceneId);
       renderCard(card.id, sceneBelongsToCard(scene, card.id) ? scene.id : card.sceneIds[0], {
         navigationStack: windowRef.history.state?.navigationStack || []

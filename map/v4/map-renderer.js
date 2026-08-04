@@ -1,6 +1,6 @@
 (function exposeV4Map(root, factory) {
   const api = factory();
-  if (root) root.ATLAS_V4_MAP = api;
+  if (root) root.ATLAS_V5_MAP = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
 }(typeof window !== 'undefined' ? window : globalThis, function buildV4MapRenderer() {
   'use strict';
@@ -138,7 +138,7 @@
       onNavigate = () => {}
     } = options;
     if (!container || !data || !queries || !naturalEarth || !documentRef) {
-      throw new TypeError('container, V4 data, queries, local Natural Earth data and document are required');
+      throw new TypeError('container, V5 data, queries, local Natural Earth data and document are required');
     }
 
     const geometryPathCache = new Map();

@@ -1,8 +1,8 @@
-(function exposeSumerV4(root, factory) {
+(function exposeSumerV5(root, factory) {
   const data = factory();
-  if (root) root.ATLAS_V4_SUMER = data;
+  if (root) root.ATLAS_V5_SUMER = data;
   if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createSumerV4Data() {
+}(typeof window !== 'undefined' ? window : globalThis, function createSumerV5Data() {
   'use strict';
 
   function timeSpan(start, end, label, approximate) {
@@ -197,7 +197,6 @@
       alternativeNames: ['Sumer', 'Sumerian civilization'],
       canonicalSummary: '约公元前3500—前2000年，形成于南部美索不达米亚城市世界，以苏美尔语及相关书写、计量、历法、神庙与城市传统为重要特征的古代文明。',
       timeSpan: timeSpan(-3500, -2000, '约公元前3500—前2000年', true),
-      defaultCardId: 'sumer-measuring-land-time',
       tags: ['西亚', '文化传统', '苏美尔'],
       sourceIds: ['source-adams-heartland-cities', 'source-met-origins-writing', 'source-proust-mesopotamian-mathematics']
     },
@@ -208,7 +207,6 @@
       alternativeNames: ['Uruk', 'Erech'],
       canonicalSummary: '位于今天伊拉克南部的古代聚落遗址；公元前四千纪后期，人口集中、公共建筑、物资管理与早期书写在这里留下了丰富证据。',
       timeSpan: timeSpan(-3500, -2000, '约公元前3500—前2000年', true),
-      defaultCardId: 'sumer-uruk-city',
       tags: ['西亚', '聚落遗址', '早期城市'],
       sourceIds: ['source-getty-uruk', 'source-met-uruk-first-city']
     }
@@ -220,7 +218,6 @@
       kind: 'overview',
       primaryEntityId: 'sumer',
       relatedEntityIds: ['uruk', 'cuneiform', 'akkadian-empire', 'ur-iii-kingdom'],
-      eventIds: [],
       title: '苏美尔人测量土地与时间',
       editorialPurpose: '水渠、土地、泥板、数字和月相怎样逐渐成为苏美尔城市组织物质与时间的方法？',
       introduction: '一条水渠、一块泥板和一轮新月，看起来毫不相干。苏美尔城市却把它们放进了同一个世界：河水要送进田地，土地要划定边界，谷物和劳作要留下记录，月份也要跟上季节。',
@@ -265,7 +262,6 @@
       kind: 'overview',
       primaryEntityId: 'uruk',
       relatedEntityIds: ['sumer'],
-      eventIds: [],
       title: '城市的诞生',
       editorialPurpose: '人口集中以后，乌鲁克怎样组织食物、公共建筑和大量陌生人的共同生活？',
       introduction: '越来越多的人进入同一座城市以后，食物、劳动、公共空间和彼此陌生的生活都必须重新组织。',
@@ -302,7 +298,7 @@
 
   const scenes = [
     {
-      id: 'sumer-water-network',
+      id: 'sumer-water-network', eventIds: ['event-southern-mesopotamia-water-land-management'],
       title: '水渠把城市连在一起',
       eyebrow: '南部美索不达米亚',
       timeSpan: timeSpan(-3500, -2000, '约公元前3500—前2000年', true),
@@ -327,7 +323,7 @@
       sourceIds: ['source-adams-heartland-cities', 'source-isac-irrigation-southern-mesopotamia', 'source-unesco-uruk-location', 'source-natural-earth']
     },
     {
-      id: 'sumer-land-measurement',
+      id: 'sumer-land-measurement', eventIds: ['event-southern-mesopotamia-water-land-management'],
       title: '土地成为可以记录的数量',
       eyebrow: '晚期乌鲁克至早王朝时期',
       timeSpan: timeSpan(-3300, -2700, '约公元前3300—前2700年', true),
@@ -338,7 +334,7 @@
       sourceIds: ['source-proust-mesopotamian-mathematics', 'source-met-ushumgal-stele']
     },
     {
-      id: 'sumer-clay-records',
+      id: 'sumer-clay-records', eventIds: ['event-proto-cuneiform-accounting-emerges'],
       title: '粮食和劳作进入泥板',
       eyebrow: '约公元前3300年以后',
       timeSpan: timeSpan(-3300, -2600, '约公元前3300—前2600年', true),
@@ -349,7 +345,7 @@
       sourceIds: ['source-englund-proto-cuneiform', 'source-met-origins-writing', 'source-met-grain-tablet']
     },
     {
-      id: 'sumer-sixty-and-moon',
+      id: 'sumer-sixty-and-moon', eventIds: ['event-mesopotamian-number-calendar-practices-develop'],
       title: '六十与月亮安排数量和时间',
       eyebrow: '早期城市至乌尔第三王朝',
       timeSpan: timeSpan(-3300, -2000, '约公元前3300—前2000年', true),
@@ -360,7 +356,7 @@
       sourceIds: ['source-proust-mesopotamian-mathematics', 'source-firth-sumerian-calendars', 'source-met-ur-iii-dugga-account']
     },
     {
-      id: 'sumer-methods-outlast-dynasties',
+      id: 'sumer-methods-outlast-dynasties', eventIds: ['event-akkadian-imperial-expansion', 'event-ur-iii-formation'],
       title: '方法比王朝活得更久',
       eyebrow: '阿卡德至乌尔第三王朝',
       timeSpan: timeSpan(-2350, -2004, '约公元前2350—前2004年', true),
@@ -371,7 +367,7 @@
       sourceIds: ['source-met-akkadian-period', 'source-foster-sargonic-administration', 'source-garfinkle-kingdom-ur', 'source-met-ur-iii-dugga-account']
     },
     {
-      id: 'sumer-uruk-gathering',
+      id: 'sumer-uruk-gathering', eventIds: ['event-uruk-urban-expansion'],
       title: '人群汇入乌鲁克',
       eyebrow: '约公元前3200年',
       timeSpan: timeSpan(-3300, -3100, '约公元前3300—前3100年', true),
@@ -396,7 +392,7 @@
       sourceIds: ['source-mcmahon-early-urbanism', 'source-met-uruk-first-city', 'source-met-origins-writing', 'source-unesco-uruk-location', 'source-natural-earth']
     },
     {
-      id: 'sumer-uruk-feeding',
+      id: 'sumer-uruk-feeding', eventIds: ['event-uruk-urban-expansion'],
       title: '城市每天都要吃饭',
       eyebrow: '公元前四千纪晚期',
       timeSpan: timeSpan(-3500, -3000, '约公元前3500—前3000年', true),
@@ -407,7 +403,7 @@
       sourceIds: ['source-adams-heartland-cities', 'source-met-uruk-first-city']
     },
     {
-      id: 'sumer-uruk-public-center',
+      id: 'sumer-uruk-public-center', eventIds: ['event-uruk-urban-expansion'],
       title: '泥砖筑起公共中心',
       eyebrow: '公元前四千纪晚期',
       timeSpan: timeSpan(-3500, -3000, '约公元前3500—前3000年', true),
@@ -418,7 +414,7 @@
       sourceIds: ['source-dai-uruk', 'source-met-uruk-first-city', 'source-wikimedia-uruk-white-temple-ziggurat']
     },
     {
-      id: 'sumer-uruk-strangers',
+      id: 'sumer-uruk-strangers', eventIds: ['event-uruk-urban-expansion'],
       title: '陌生人组成一座城市',
       eyebrow: '公元前四千纪晚期',
       timeSpan: timeSpan(-3500, -3000, '约公元前3500—前3000年', true),
@@ -509,11 +505,11 @@
   };
 }));
 
-(function exposeMesopotamiaV4(root, factory) {
-  const data = factory(root && root.ATLAS_V4_SUMER);
-  if (root) root.ATLAS_V4_MESOPOTAMIA = data;
+(function exposeMesopotamiaV5(root, factory) {
+  const data = factory(root && root.ATLAS_V5_SUMER);
+  if (root) root.ATLAS_V5_MESOPOTAMIA = data;
   if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createMesopotamiaV4Data(sumer) {
+}(typeof window !== 'undefined' ? window : globalThis, function createMesopotamiaV5Data(sumer) {
   'use strict';
 
   if (!sumer) throw new Error('Sumer data must initialize inside data/mesopotamia.js');
@@ -1145,7 +1141,6 @@
       alternativeNames: ['美索不达米亚', 'Mesopotamia'],
       canonicalSummary: '以底格里斯河、幼发拉底河及其相邻平原为核心，苏美尔、阿卡德、巴比伦与亚述等城市和政权长期形成、竞争并重组的历史区域。',
       timeSpan: timeSpan(-5000, -900, '约公元前五千纪—前一千纪初', true),
-      defaultCardId: 'mesopotamia-cities-outlast-dynasties',
       tags: ['西亚', '历史区域', '青铜时代'],
       sourceIds: ['source-adams-heartland-cities', 'source-van-de-mieroop-ancient-near-east']
     },
@@ -1156,7 +1151,6 @@
       alternativeNames: ['Mesopotamian temple'],
       canonicalSummary: '从早期聚落的特殊建筑发展为连接仪式、城市身份、物资组织与王权表达的长期制度。',
       timeSpan: timeSpan(-5000, -539, '约公元前五千纪—前6世纪', true),
-      defaultCardId: 'mesopotamian-temple-overview',
       tags: ['西亚', '制度', '神庙'],
       sourceIds: ['source-yale-ubaid-summary', 'source-met-isin-larsa-old-babylonian', 'source-british-museum-etemenanki-tablet']
     },
@@ -1167,7 +1161,6 @@
       alternativeNames: ['Cuneiform'],
       canonicalSummary: '约公元前3350—公元75年，在泥板上以楔形笔画书写、从早期管理记录逐渐发展为可记录多种语言，并被宫廷、帝国与学者反复改造的文字系统。',
       timeSpan: timeSpan(-3350, 75, '约公元前3350—公元75年', true),
-      defaultCardId: 'cuneiform-overview',
       tags: ['西亚', '文字系统', '泥板'],
       sourceIds: ['source-englund-proto-cuneiform', 'source-british-museum-cuneiform', 'source-met-grammatical-text-object']
     },
@@ -1178,7 +1171,6 @@
       alternativeNames: ['Akkadian Empire', 'Kingdom of Akkad'],
       canonicalSummary: '约公元前2350—前2150年，由萨尔贡及其继承者建立和维持，连接南部美索不达米亚城邦与更广区域的早期王朝政治秩序。',
       timeSpan: timeSpan(-2350, -2150, '约公元前2350—前2150年', true),
-      defaultCardId: 'akkadian-empire-overview',
       tags: ['西亚', '政治实体', '阿卡德'],
       sourceIds: ['source-met-akkadian-period', 'source-westenholz-kingdom-akkad']
     },
@@ -1189,7 +1181,6 @@
       alternativeNames: ['Epic of Gilgamesh'],
       canonicalSummary: '由苏美尔语故事、古巴比伦阿卡德语版本和后来的标准巴比伦版本共同构成的长期文学传统。',
       timeSpan: timeSpan(-2000, -600, '约公元前二千纪早期—前一千纪中期的文本传统', true),
-      defaultCardId: 'gilgamesh-mortality',
       tags: ['西亚', '文学传统', '楔形文字'],
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh']
     },
@@ -1200,7 +1191,6 @@
       alternativeNames: ['Ur III Kingdom', 'Third Dynasty of Ur'],
       canonicalSummary: '约公元前2112—前2004年，以乌尔为王权中心，通过建筑、书写和多层级资源关系组织南部美索不达米亚的政治实体。',
       timeSpan: timeSpan(-2112, -2004, '约公元前2112—前2004年', true),
-      defaultCardId: 'ur-iii-reordered-city-world',
       tags: ['西亚', '政治实体', '乌尔第三王朝'],
       sourceIds: ['source-garfinkle-kingdom-ur', 'source-steinkeller-ur-iii-core-periphery']
     },
@@ -1211,7 +1201,6 @@
       alternativeNames: ['Old Babylonian Kingdom', 'First Dynasty of Babylon'],
       canonicalSummary: '约公元前1894—前1595年，以巴比伦城为中心、在汉谟拉比晚年迅速扩张，又在其继承者时期逐步收缩的第一王朝政治实体。',
       timeSpan: timeSpan(-1894, -1595, '约公元前1894—前1595年', true),
-      defaultCardId: 'old-babylonian-rise-and-fragmentation',
       tags: ['西亚', '政治实体', '巴比伦'],
       sourceIds: ['source-met-isin-larsa-old-babylonian', 'source-podany-hammurabi-babylon']
     },
@@ -1222,7 +1211,6 @@
       alternativeNames: ['Laws of Hammurabi', 'Code of Hammurabi'],
       canonicalSummary: '刻在大型石碑上的古巴比伦王室法律文本，以具体案件展示国王维护秩序与公正的权威。',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
-      defaultCardId: 'hammurabi-code-justice',
       tags: ['西亚', '法律文本', '王权'],
       sourceIds: ['source-louvre-hammurabi-code', 'source-ehammurabi-laws']
     },
@@ -1233,7 +1221,6 @@
       alternativeNames: ['Tower of Babel'],
       canonicalSummary: '《创世记》中以共同语言、建塔、语言混乱与人群分散为核心的故事，后来常与巴比伦的埃特曼安吉塔庙联系。',
       timeSpan: timeSpan(-1000, -400, '约公元前一千纪的文本形成时期', true),
-      defaultCardId: 'tower-of-babel-story-and-etemenanki',
       tags: ['西亚', '文本传统', '巴比伦'],
       sourceIds: ['source-sefaria-genesis-11', 'source-george-tower-of-babel']
     }
@@ -1241,7 +1228,221 @@
 
   const events = [
     {
+      id: 'event-southern-mesopotamia-water-land-management',
+      kind: 'historicalProcess',
+      title: '南部美索不达米亚形成水渠与土地管理实践',
+      timeSpan: timeSpan(-3500, -2000, '约公元前3500—前2000年', true),
+      participantEntityIds: ['sumer', 'uruk'],
+      evidenceBlocks: [
+        fact('event-southern-mesopotamia-water-land-management-evidence', '南部城市长期修浚水道、分配水源并测量田地；行政记录把土地、收成和劳作转换为可核对的数量。', ['source-adams-heartland-cities', 'source-isac-irrigation-southern-mesopotamia', 'source-proust-mesopotamian-mathematics'])
+      ],
+      sourceIds: ['source-adams-heartland-cities', 'source-isac-irrigation-southern-mesopotamia', 'source-proust-mesopotamian-mathematics'],
+      editorialReview: {
+        limitations: [],
+        counterexamples: [],
+        uncertainties: [interpretation('event-southern-mesopotamia-water-land-management-review', '各城市和时期的水利、土地制度并不相同，不能把长期实践还原成一次统一改革。', ['source-adams-heartland-cities', 'source-isac-irrigation-southern-mesopotamia'])],
+        alternativeExplanations: [],
+        sourceIds: ['source-adams-heartland-cities', 'source-isac-irrigation-southern-mesopotamia']
+      }
+    },
+    {
+      id: 'event-proto-cuneiform-accounting-emerges',
+      kind: 'historicalProcess',
+      title: '原始楔形文字记账体系形成',
+      timeSpan: timeSpan(-3350, -3000, '约公元前3350—前3000年', true),
+      participantEntityIds: ['sumer', 'uruk', 'cuneiform'],
+      evidenceBlocks: [
+        fact('event-proto-cuneiform-accounting-emerges-evidence', '乌鲁克晚期泥板以数量符号和物品符号记录谷物、牲畜与劳作，构成后来楔形文字传统的早期阶段。', ['source-englund-proto-cuneiform', 'source-met-origins-writing', 'source-isac-writing-early-mesopotamia'])
+      ],
+      sourceIds: ['source-englund-proto-cuneiform', 'source-met-origins-writing', 'source-isac-writing-early-mesopotamia'],
+      editorialReview: {
+        limitations: [],
+        counterexamples: [],
+        uncertainties: [interpretation('event-proto-cuneiform-accounting-emerges-review', '早期符号与具体口语的对应关系不能全部确定，形成过程也不是单一时刻的发明。', ['source-englund-proto-cuneiform', 'source-met-origins-writing'])],
+        alternativeExplanations: [],
+        sourceIds: ['source-englund-proto-cuneiform', 'source-met-origins-writing']
+      }
+    },
+    {
+      id: 'event-mesopotamian-number-calendar-practices-develop',
+      kind: 'historicalProcess',
+      title: '美索不达米亚计数与历法实践发展',
+      timeSpan: timeSpan(-3300, -2000, '约公元前3300—前2000年', true),
+      participantEntityIds: ['sumer', 'cuneiform'],
+      evidenceBlocks: [
+        fact('event-mesopotamian-number-calendar-practices-develop-evidence', '书吏为不同物品发展计量体系，并以月相、月份和置闰安排行政与祭祀时间；其中部分计算以六十为重要层级。', ['source-proust-mesopotamian-mathematics', 'source-firth-sumerian-calendars'])
+      ],
+      sourceIds: ['source-proust-mesopotamian-mathematics', 'source-firth-sumerian-calendars'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-mesopotamian-number-calendar-practices-develop-review', '不同物品、城市和时期使用的计数与历法规则并不完全一致。', ['source-proust-mesopotamian-mathematics', 'source-firth-sumerian-calendars'])],
+        alternativeExplanations: [], sourceIds: ['source-proust-mesopotamian-mathematics', 'source-firth-sumerian-calendars']
+      }
+    },
+    {
+      id: 'event-uruk-urban-expansion',
+      kind: 'historicalProcess',
+      title: '乌鲁克发展为大型城市中心',
+      timeSpan: timeSpan(-3500, -3000, '约公元前3500—前3000年', true),
+      participantEntityIds: ['uruk', 'sumer'],
+      evidenceBlocks: [
+        fact('event-uruk-urban-expansion-evidence', '公元前四千纪后期，乌鲁克的人口、公共建筑、作坊、仓储和行政活动显著扩展，形成大型城市生活。', ['source-getty-uruk', 'source-met-uruk-first-city', 'source-adams-heartland-cities'])
+      ],
+      sourceIds: ['source-getty-uruk', 'source-met-uruk-first-city', 'source-adams-heartland-cities'],
+      editorialReview: {
+        limitations: [limitation('event-uruk-urban-expansion-review', '现存证据偏向大型建筑、行政器物与已发掘区域，不能完整代表所有居民的生活。', ['source-getty-uruk', 'source-pollock-household-production'])],
+        counterexamples: [], uncertainties: [], alternativeExplanations: [],
+        sourceIds: ['source-getty-uruk', 'source-pollock-household-production']
+      }
+    },
+    {
+      id: 'event-early-mesopotamian-temple-centers-develop',
+      kind: 'historicalProcess',
+      title: '南部美索不达米亚神庙中心长期发展',
+      timeSpan: timeSpan(-5000, -3000, '约公元前5000—前3000年', true),
+      participantEntityIds: ['mesopotamian-temple', 'uruk'],
+      evidenceBlocks: [
+        fact('event-early-mesopotamian-temple-centers-develop-evidence', '从欧贝德时期到乌鲁克时期，若干聚落反复在特定地点修建仪式性和公共建筑，后来发展出更大规模的神庙中心。', ['source-yale-ubaid-summary', 'source-met-uruk-first-city'])
+      ],
+      sourceIds: ['source-yale-ubaid-summary', 'source-met-uruk-first-city'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-early-mesopotamian-temple-centers-develop-review', '建筑功能与制度连续性不能只凭平面和地点重复完全确定。', ['source-yale-ubaid-summary', 'source-met-uruk-first-city'])],
+        alternativeExplanations: [], sourceIds: ['source-yale-ubaid-summary', 'source-met-uruk-first-city']
+      }
+    },
+    {
+      id: 'event-cuneiform-wedge-and-phonetic-writing-develop',
+      kind: 'historicalProcess',
+      title: '楔形笔画与表音书写逐步发展',
+      timeSpan: timeSpan(-3000, -2000, '约公元前3000—前2000年', true),
+      participantEntityIds: ['cuneiform', 'sumer'],
+      evidenceBlocks: [
+        fact('event-cuneiform-wedge-and-phonetic-writing-develop-evidence', '书吏改变泥板方向与压印方式，楔形笔画逐渐稳定；符号除记录物品和数量外，也越来越多地表示词语与语音。', ['source-british-museum-cuneiform', 'source-penn-uses-writing', 'source-damerow-writing-epistemology'])
+      ],
+      sourceIds: ['source-british-museum-cuneiform', 'source-penn-uses-writing', 'source-damerow-writing-epistemology'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-cuneiform-wedge-and-phonetic-writing-develop-review', '字形和表音用法在不同书写中心逐渐变化，不能用单一日期划定转折。', ['source-british-museum-cuneiform', 'source-penn-uses-writing'])],
+        alternativeExplanations: [], sourceIds: ['source-british-museum-cuneiform', 'source-penn-uses-writing']
+      }
+    },
+    {
+      id: 'event-cuneiform-multilingual-transmission',
+      kind: 'historicalProcess',
+      title: '楔形文字被多种语言采用并长期传承',
+      timeSpan: timeSpan(-2600, 75, '约公元前2600—公元75年', true),
+      participantEntityIds: ['cuneiform'],
+      evidenceBlocks: [
+        fact('event-cuneiform-multilingual-transmission-evidence', '楔形文字从苏美尔语和阿卡德语书写扩展到多种语言，并在宫廷、神庙与书吏学校中持续抄写和调整。', ['source-british-museum-cuneiform', 'source-met-grammatical-text-object'])
+      ],
+      sourceIds: ['source-british-museum-cuneiform', 'source-met-grammatical-text-object'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-cuneiform-multilingual-transmission-review', '各地区采用楔形文字的规模、用途和持续时间差异很大。', ['source-british-museum-cuneiform'])],
+        alternativeExplanations: [], sourceIds: ['source-british-museum-cuneiform']
+      }
+    },
+    {
+      id: 'event-akkadian-imperial-expansion',
+      kind: 'historicalEvent',
+      title: '阿卡德王朝征服并重组城邦世界',
+      timeSpan: timeSpan(-2350, -2150, '约公元前2350—前2150年', true),
+      participantEntityIds: ['akkadian-empire', 'sumer'],
+      evidenceBlocks: [
+        fact('event-akkadian-imperial-expansion-evidence', '萨尔贡及其继承者以军事征服、任命官员和王室纪念物，把南部城邦与更广区域纳入阿卡德王权。', ['source-met-akkadian-period', 'source-westenholz-kingdom-akkad', 'source-frayne-sargonic-inscriptions'])
+      ],
+      sourceIds: ['source-met-akkadian-period', 'source-westenholz-kingdom-akkad', 'source-frayne-sargonic-inscriptions'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-akkadian-imperial-expansion-review', '王室铭文强调胜利，不能单独确定各地实际控制的连续程度。', ['source-westenholz-kingdom-akkad', 'source-frayne-sargonic-inscriptions'])],
+        alternativeExplanations: [], sourceIds: ['source-westenholz-kingdom-akkad', 'source-frayne-sargonic-inscriptions']
+      }
+    },
+    {
+      id: 'event-akkadian-empire-fragments',
+      kind: 'historicalEvent',
+      title: '阿卡德王朝控制瓦解',
+      timeSpan: timeSpan(-2200, -2100, '约公元前2200—前2100年', true),
+      participantEntityIds: ['akkadian-empire', 'sumer'],
+      evidenceBlocks: [
+        fact('event-akkadian-empire-fragments-evidence', '阿卡德晚期王权在地方反抗、继承冲突和区域压力中失去对多座城市的稳定控制，南部随后出现新的地方政权。', ['source-westenholz-kingdom-akkad', 'source-eckart-akkadian-empire'])
+      ],
+      sourceIds: ['source-westenholz-kingdom-akkad', 'source-eckart-akkadian-empire'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-akkadian-empire-fragments-review', '气候、军事与政治因素的相对作用及不同地区的时间节奏仍不能归结为单一原因。', ['source-eckart-akkadian-empire', 'source-lawrence-climate-urbanism'])],
+        alternativeExplanations: [], sourceIds: ['source-eckart-akkadian-empire', 'source-lawrence-climate-urbanism']
+      }
+    },
+    {
+      id: 'event-gilgamesh-textual-tradition-forms',
+      kind: 'textualTradition',
+      title: '吉尔伽美什故事被改写为多种泥板文本',
+      timeSpan: timeSpan(-2000, -600, '约公元前2000—前600年', true),
+      participantEntityIds: ['epic-of-gilgamesh', 'cuneiform', 'uruk'],
+      evidenceBlocks: [
+        fact('event-gilgamesh-textual-tradition-forms-evidence', '苏美尔语故事、古巴比伦阿卡德语片段与后来标准巴比伦版本保存了彼此相关但并不相同的吉尔伽美什叙事。', ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh', 'source-etcsl-gilgamesh-stories'])
+      ],
+      sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh', 'source-etcsl-gilgamesh-stories'],
+      editorialReview: {
+        limitations: [limitation('event-gilgamesh-textual-tradition-forms-review', '史诗情节属于长期文学传统，不能当作乌鲁克历史人物与事件的同时代记录。', ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh'])],
+        counterexamples: [], uncertainties: [], alternativeExplanations: [],
+        sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh']
+      }
+    },
+    {
+      id: 'event-old-babylonian-city-kingdoms-emerge',
+      kind: 'historicalProcess',
+      title: '乌尔第三王朝之后城邦王国重新组合',
+      timeSpan: timeSpan(-2004, -1764, '约公元前2004—前1764年', true),
+      participantEntityIds: ['old-babylonian-kingdom', 'ur-iii-kingdom'],
+      evidenceBlocks: [
+        fact('event-old-babylonian-city-kingdoms-emerge-evidence', '乌尔第三王朝结束后，伊辛、拉尔萨、埃什努那和巴比伦等城市建立各自王朝，并围绕河道、土地与联盟反复竞争。', ['source-cambridge-ur-iii-old-babylonian-transition', 'source-met-isin-larsa-old-babylonian', 'source-podany-hammurabi-babylon'])
+      ],
+      sourceIds: ['source-cambridge-ur-iii-old-babylonian-transition', 'source-met-isin-larsa-old-babylonian', 'source-podany-hammurabi-babylon'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-old-babylonian-city-kingdoms-emerge-review', '各王国的边界和优势随战争、婚盟与地方选择不断变化。', ['source-met-isin-larsa-old-babylonian', 'source-podany-hammurabi-babylon'])],
+        alternativeExplanations: [], sourceIds: ['source-met-isin-larsa-old-babylonian', 'source-podany-hammurabi-babylon']
+      }
+    },
+    {
+      id: 'event-babylonian-scribal-urban-continuity',
+      kind: 'historicalProcess',
+      title: '巴比伦城市与书写传统跨越王朝延续',
+      timeSpan: timeSpan(-1595, -1000, '约公元前1595—前1000年', true),
+      participantEntityIds: ['mesopotamia-region', 'cuneiform', 'old-babylonian-kingdom'],
+      evidenceBlocks: [
+        fact('event-babylonian-scribal-urban-continuity-evidence', '第一王朝结束后，巴比伦尼亚城市、神庙和书吏传统继续运作；后继政权沿用并重组既有城市网络与楔形文字知识。', ['source-brinkman-kassite-history', 'source-met-kassite-period', 'source-van-de-mieroop-ancient-near-east'])
+      ],
+      sourceIds: ['source-brinkman-kassite-history', 'source-met-kassite-period', 'source-van-de-mieroop-ancient-near-east'],
+      editorialReview: {
+        limitations: [], counterexamples: [],
+        uncertainties: [interpretation('event-babylonian-scribal-urban-continuity-review', '延续并不表示政治结构、人口规模或各城市地位保持不变。', ['source-brinkman-kassite-history', 'source-van-de-mieroop-ancient-near-east'])],
+        alternativeExplanations: [], sourceIds: ['source-brinkman-kassite-history', 'source-van-de-mieroop-ancient-near-east']
+      }
+    },
+    {
+      id: 'event-tower-babel-textual-tradition-forms',
+      kind: 'textualTradition',
+      title: '巴别塔故事形成并进入文本传统',
+      timeSpan: timeSpan(-1000, -400, '约公元前1000—前400年', true),
+      participantEntityIds: ['tower-of-babel-tradition'],
+      evidenceBlocks: [
+        fact('event-tower-babel-textual-tradition-forms-evidence', '《创世记》11章以共同语言、建城建塔、语言混乱和人群分散组织巴别塔故事，后来读者又把它同巴比伦高塔传统联系起来。', ['source-sefaria-genesis-11', 'source-george-tower-of-babel'])
+      ],
+      sourceIds: ['source-sefaria-genesis-11', 'source-george-tower-of-babel'],
+      editorialReview: {
+        limitations: [limitation('event-tower-babel-textual-tradition-forms-review', '故事中的建塔与语言混乱属于文本叙事，不能当作埃特曼安吉施工过程的同时代记录。', ['source-sefaria-genesis-11', 'source-george-tower-of-babel'])],
+        counterexamples: [], uncertainties: [], alternativeExplanations: [],
+        sourceIds: ['source-sefaria-genesis-11', 'source-george-tower-of-babel']
+      }
+    },
+    {
       id: 'event-ur-iii-formation',
+      kind: 'historicalEvent',
+      kind: 'historicalEvent',
       title: '乌尔第三王朝形成',
       timeSpan: timeSpan(-2112, -2095, '乌尔那木统治时期，约公元前2112—前2095年', true),
       participantEntityIds: ['ur-iii-kingdom'],
@@ -1263,6 +1464,8 @@
     },
     {
       id: 'event-ur-iii-fragmentation',
+      kind: 'historicalEvent',
+      kind: 'historicalEvent',
       title: '乌尔第三王朝瓦解',
       timeSpan: timeSpan(-2028, -2004, '伊比辛统治后期至乌尔陷落，约公元前2028—前2004年', true),
       participantEntityIds: ['ur-iii-kingdom'],
@@ -1284,6 +1487,8 @@
     },
     {
       id: 'event-hammurabi-conquests',
+      kind: 'historicalEvent',
+      kind: 'historicalEvent',
       title: '汉谟拉比统一南部与中部美索不达米亚',
       timeSpan: timeSpan(-1764, -1755, '汉谟拉比统治后期，约公元前1764—前1755年', true),
       participantEntityIds: ['old-babylonian-kingdom'],
@@ -1303,6 +1508,8 @@
     },
     {
       id: 'event-old-babylonian-fragmentation',
+      kind: 'historicalEvent',
+      kind: 'historicalEvent',
       title: '古巴比伦王国收缩并结束',
       timeSpan: timeSpan(-1749, -1595, '约公元前1749—前1595年', true),
       participantEntityIds: ['old-babylonian-kingdom'],
@@ -1322,6 +1529,8 @@
     },
     {
       id: 'event-hammurabi-code-stele',
+      kind: 'historicalEvent',
+      kind: 'historicalEvent',
       title: '汉谟拉比法典石碑建立',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
       participantEntityIds: ['hammurabi-code', 'old-babylonian-kingdom'],
@@ -1343,6 +1552,8 @@
     },
     {
       id: 'event-etemenanki-rebuilding',
+      kind: 'historicalProcess',
+      kind: 'historicalProcess',
       title: '埃特曼安吉塔庙重建',
       timeSpan: timeSpan(-689, -562, '约公元前689—前562年', true),
       participantEntityIds: ['tower-of-babel-tradition', 'mesopotamian-temple'],
@@ -1467,7 +1678,6 @@
       kind: 'overview',
       primaryEntityId: 'mesopotamia-region',
       relatedEntityIds: ['sumer', 'uruk', 'akkadian-empire', 'ur-iii-kingdom', 'old-babylonian-kingdom', 'mesopotamian-temple', 'cuneiform', 'amarna-letters-corpus', 'late-bronze-palace-system', 'neo-assyrian-empire'],
-      eventIds: ['event-ur-iii-formation', 'event-ur-iii-fragmentation', 'event-hammurabi-conquests', 'event-old-babylonian-fragmentation'],
       title: '两河流域的城市比王朝更长久',
       editorialPurpose: '从苏美尔城市走到中亚述，理解不同王朝怎样反复接管并改造两河流域的城市、神庙、书写与行政经验。',
       introduction: '在巴比伦和亚述成为大国以前，两河流域已经有许多城市和王国。一次次征服改变了首都和疆界，后来者却常常走进旧城，接管神庙、书吏和泥板，再用这些遗产建立新的秩序。',
@@ -1504,7 +1714,6 @@
       kind: 'overview',
       primaryEntityId: 'mesopotamian-temple',
       relatedEntityIds: ['uruk', 'ur-iii-kingdom', 'old-babylonian-kingdom', 'tower-of-babel-tradition'],
-      eventIds: [],
       title: '神庙穿过城邦与王朝',
       editorialPurpose: '一座供奉神明的建筑，为什么会成为城市里延续最久的公共机构之一？',
       introduction: '在两河流域，城市会被摧毁，王朝会改名，神庙却一次次在旧址上重建。',
@@ -1539,7 +1748,6 @@
       kind: 'overview',
       primaryEntityId: 'cuneiform',
       relatedEntityIds: ['sumer', 'uruk', 'hammurabi-code', 'amarna-letters-corpus', 'neo-assyrian-empire'],
-      eventIds: [],
       title: '泥板学会记录语言',
       editorialPurpose: '一套原本擅长记数量的符号，怎样变成能够记录不同语言，并被宫廷、帝国和学者沿用三千多年的文字？',
       introduction: '最早的泥板并没有写诗；真正奇妙的变化，是这些符号后来学会了记录人的语言。',
@@ -1576,7 +1784,6 @@
       kind: 'overview',
       primaryEntityId: 'akkadian-empire',
       relatedEntityIds: ['sumer', 'uruk', 'cuneiform', 'ur-iii-kingdom'],
-      eventIds: [],
       title: '从征服城邦到统治帝国',
       editorialPurpose: '阿卡德王朝征服说不同语言、忠于不同城市传统的人群以后，怎样维持第一个帝国？',
       introduction: '萨尔贡的王朝同样生长在美索不达米亚，却不属于苏美尔城邦传统。它从阿卡德出发征服南方城市；接下来要解决的，不是怎样再赢一仗，而是怎样统治语言和传统都不同的臣民。',
@@ -1612,7 +1819,6 @@
       kind: 'story',
       primaryEntityId: 'epic-of-gilgamesh',
       relatedEntityIds: ['cuneiform', 'uruk'],
-      eventIds: [],
       title: '吉尔伽美什没有找到永生',
       editorialPurpose: '一个能够战胜人和怪物的英雄，怎样在朋友死后发现自己无法战胜死亡？',
       introduction: '一个英雄最害怕的，不是遇到更强的敌人，而是在朋友死后看见自己的结局。',
@@ -1670,7 +1876,6 @@
       kind: 'story',
       primaryEntityId: 'ur-iii-kingdom',
       relatedEntityIds: ['sumer', 'akkadian-empire', 'uruk', 'cuneiform', 'mesopotamian-temple', 'old-babylonian-kingdom'],
-      eventIds: ['event-ur-iii-formation', 'event-ur-iii-fragmentation'],
       title: '泥板让许多城市一起运转',
       editorialPurpose: '阿卡德王朝收缩以后，乌尔怎样通过王权、建造和书写重新组织南部城市，这种秩序又为什么瓦解？',
       introduction: '阿卡德王朝的统治收缩以后，南部美索不达米亚没有立刻进入另一个完整帝国。乌尔第三王朝正是在这个破碎的政治世界里逐步形成的。',
@@ -1726,7 +1931,6 @@
       kind: 'story',
       primaryEntityId: 'old-babylonian-kingdom',
       relatedEntityIds: ['ur-iii-kingdom', 'hammurabi-code', 'tower-of-babel-tradition', 'mesopotamian-temple'],
-      eventIds: ['event-hammurabi-conquests', 'event-old-babylonian-fragmentation'],
       title: '一座城成为王国中心',
       editorialPurpose: '巴比伦怎样从乌尔王朝之后的众多小国之一，短暂成为广大王国的中心，又为什么迅速收缩？',
       introduction: '乌尔王朝倒下后，每座城市都想填补它留下的空位。后来名震世界的巴比伦，此时只控制着河边一小片土地。',
@@ -1762,7 +1966,6 @@
       kind: 'story',
       primaryEntityId: 'hammurabi-code',
       relatedEntityIds: ['old-babylonian-kingdom', 'cuneiform', 'tower-of-babel-tradition'],
-      eventIds: ['event-hammurabi-code-stele'],
       title: '石碑上的公正',
       editorialPurpose: '一块大型王室石碑怎样通过具体纠纷，展示国王所承诺的秩序、公正和社会等级？',
       introduction: '一块比人还高的黑色石碑，把被打瞎的眼睛、冲毁的田地、失败的手术和被俘的士兵放在一起。国王要让人相信：无论发生什么纠纷，他都能给出秩序。',
@@ -1799,7 +2002,6 @@
       kind: 'story',
       primaryEntityId: 'tower-of-babel-tradition',
       relatedEntityIds: ['old-babylonian-kingdom', 'hammurabi-code', 'mesopotamian-temple'],
-      eventIds: ['event-etemenanki-rebuilding'],
       title: '一座高塔进入另一种记忆',
       editorialPurpose: '《创世记》的建塔故事怎样与巴比伦真实存在的埃特曼安吉塔庙产生联系，又为什么不能简单等同？',
       introduction: '一群说着同一种语言的人想建造通天高塔；在故事之外，巴比伦也真的有一座反复重建的巨大塔庙。',
@@ -1834,7 +2036,7 @@
 
   const scenes = [
     {
-      id: 'mesopotamia-many-cities-between-rivers',
+      id: 'mesopotamia-many-cities-between-rivers', eventIds: ['event-uruk-urban-expansion'],
       title: '许多城市在两条河之间出现',
       eyebrow: '公元前四千纪后期',
       timeSpan: timeSpan(-3500, -2350, '约公元前3500—前2350年', true),
@@ -1859,7 +2061,7 @@
       sourceIds: ['source-adams-heartland-cities', 'source-met-uruk-first-city', 'source-met-origins-writing', 'source-met-ur-ziggurat', 'source-natural-earth']
     },
     {
-      id: 'mesopotamia-akkad-gathers-cities',
+      id: 'mesopotamia-akkad-gathers-cities', eventIds: ['event-akkadian-imperial-expansion'],
       title: '阿卡德把许多城市纳入帝国',
       eyebrow: '约公元前2350—前2150年',
       timeSpan: timeSpan(-2350, -2150, '约公元前2350—前2150年', true),
@@ -1870,7 +2072,7 @@
       sourceIds: ['source-met-akkadian-period', 'source-westenholz-kingdom-akkad', 'source-foster-sargonic-administration', 'source-wikimedia-naram-sin-victory-stele', 'source-louvre-naram-sin-victory-stele']
     },
     {
-      id: 'mesopotamia-ur-tablets-reorder-cities',
+      id: 'mesopotamia-ur-tablets-reorder-cities', eventIds: ['event-ur-iii-formation', 'event-ur-iii-fragmentation'],
       title: '乌尔用泥板重新组织城市世界',
       eyebrow: '约公元前2112—前2004年',
       timeSpan: timeSpan(-2112, -2004, '约公元前2112—前2004年', true),
@@ -1881,7 +2083,7 @@
       sourceIds: ['source-garfinkle-kingdom-ur', 'source-steinkeller-ur-iii-core-periphery', 'source-cambridge-ur-iii-old-babylonian-transition', 'source-wikimedia-ur-ziggurat-photo', 'source-met-ur-ziggurat']
     },
     {
-      id: 'mesopotamia-babylon-becomes-center',
+      id: 'mesopotamia-babylon-becomes-center', eventIds: ['event-old-babylonian-city-kingdoms-emerge', 'event-hammurabi-conquests', 'event-old-babylonian-fragmentation'],
       title: '巴比伦从小城变成新的中心',
       eyebrow: '约公元前2004—前1595年',
       timeSpan: timeSpan(-2004, -1595, '约公元前2004—前1595年', true),
@@ -1892,7 +2094,7 @@
       sourceIds: ['source-met-isin-larsa-old-babylonian', 'source-podany-hammurabi-babylon', 'source-cdli-hammurabi-year-names', 'source-cdli-samsuiluna-year-names', 'source-wikimedia-hammurabi-full-stele', 'source-louvre-hammurabi-code']
     },
     {
-      id: 'mesopotamia-babylon-writes-assyria-grows',
+      id: 'mesopotamia-babylon-writes-assyria-grows', eventIds: ['event-babylonian-scribal-urban-continuity'],
       title: '巴比伦重新写信，亚述在北方成长',
       eyebrow: '约公元前1595—前1200年',
       timeSpan: timeSpan(-1595, -1200, '约公元前1595—前1200年', true),
@@ -1903,7 +2105,7 @@
       sourceIds: ['source-brinkman-kassite-history', 'source-met-kassite-period', 'source-met-amarna-letters', 'source-moran-amarna-letters', 'source-oracc-middle-assyrian', 'source-wikimedia-kurigalzu-kudurru']
     },
     {
-      id: 'mesopotamia-cities-do-not-go-dark',
+      id: 'mesopotamia-cities-do-not-go-dark', eventIds: ['event-babylonian-scribal-urban-continuity'],
       title: '两河流域没有随宫殿一起熄灭',
       eyebrow: '公元前十二至十一世纪',
       timeSpan: timeSpan(-1200, -1000, '约公元前1200—前1000年', true),
@@ -1926,7 +2128,7 @@
       sourceIds: ['source-brinkman-kassite-history', 'source-oracc-middle-assyrian', 'source-van-de-mieroop-ancient-near-east', 'source-radner-ancient-assyria', 'source-natural-earth']
     },
     {
-      id: 'mesopotamian-temple-eridu',
+      id: 'mesopotamian-temple-eridu', eventIds: ['event-early-mesopotamian-temple-centers-develop'],
       title: '一间房被不断重建',
       eyebrow: '约公元前五千纪',
       timeSpan: timeSpan(-5000, -4000, '约公元前5000—前4000年', true),
@@ -1948,7 +2150,7 @@
       sourceIds: ['source-yale-ubaid-summary', 'source-met-uruk-first-city', 'source-met-ur-ziggurat', 'source-met-isin-larsa-old-babylonian', 'source-natural-earth']
     },
     {
-      id: 'mesopotamian-temple-uruk',
+      id: 'mesopotamian-temple-uruk', eventIds: ['event-early-mesopotamian-temple-centers-develop', 'event-uruk-urban-expansion'],
       title: '乌鲁克把神庙放进城市中心',
       eyebrow: '公元前四千纪晚期',
       timeSpan: timeSpan(-3500, -3000, '约公元前3500—前3000年', true),
@@ -1959,7 +2161,7 @@
       sourceIds: ['source-met-uruk-first-city', 'source-dai-uruk', 'source-met-mesopotamian-deities', 'source-wikimedia-eanna-4b-plan']
     },
     {
-      id: 'mesopotamian-temple-ur',
+      id: 'mesopotamian-temple-ur', eventIds: ['event-ur-iii-formation'],
       title: '乌尔把神庙举向天空',
       eyebrow: '约公元前2100年',
       timeSpan: timeSpan(-2112, -2004, '约公元前2112—前2004年', true),
@@ -1970,7 +2172,7 @@
       sourceIds: ['source-met-ur-ziggurat', 'source-goddeeris-old-babylonian-economy']
     },
     {
-      id: 'mesopotamian-temple-old-babylonian',
+      id: 'mesopotamian-temple-old-babylonian', eventIds: ['event-old-babylonian-city-kingdoms-emerge', 'event-etemenanki-rebuilding'],
       title: '巴比伦继续重建神庙',
       eyebrow: '古巴比伦至新巴比伦',
       timeSpan: timeSpan(-2004, -539, '约公元前2004—前539年', true),
@@ -1981,7 +2183,7 @@
       sourceIds: ['source-goddeeris-old-babylonian-economy', 'source-met-isin-larsa-old-babylonian', 'source-british-museum-etemenanki-tablet', 'source-wikimedia-etemenanki-reconstruction']
     },
     {
-      id: 'cuneiform-quantities',
+      id: 'cuneiform-quantities', eventIds: ['event-proto-cuneiform-accounting-emerges'],
       title: '泥板先记数量',
       eyebrow: '约公元前3350—前3000年',
       timeSpan: timeSpan(-3350, -3000, '约公元前3350—前3000年', true),
@@ -1992,7 +2194,7 @@
       sourceIds: ['source-englund-proto-cuneiform', 'source-met-origins-writing']
     },
     {
-      id: 'cuneiform-before-sentences',
+      id: 'cuneiform-before-sentences', eventIds: ['event-proto-cuneiform-accounting-emerges'],
       title: '符号还说不出一句话',
       eyebrow: '公元前四千纪末',
       timeSpan: timeSpan(-3350, -3000, '约公元前3350—前3000年', true),
@@ -2003,7 +2205,7 @@
       sourceIds: ['source-englund-proto-cuneiform', 'source-damerow-writing-epistemology', 'source-wikimedia-proto-cuneiform-barley-tablet-pd']
     },
     {
-      id: 'cuneiform-wedges',
+      id: 'cuneiform-wedges', eventIds: ['event-cuneiform-wedge-and-phonetic-writing-develop'],
       title: '芦苇笔压出楔形',
       eyebrow: '公元前三千纪',
       timeSpan: timeSpan(-3000, -2000, '约公元前3000—前2000年', true),
@@ -2014,7 +2216,7 @@
       sourceIds: ['source-british-museum-cuneiform', 'source-penn-uses-writing']
     },
     {
-      id: 'cuneiform-sound',
+      id: 'cuneiform-sound', eventIds: ['event-cuneiform-wedge-and-phonetic-writing-develop'],
       title: '一个符号借出声音',
       eyebrow: '公元前三千纪',
       timeSpan: timeSpan(-3000, -2400, '约公元前3000—前2400年', true),
@@ -2025,7 +2227,7 @@
       sourceIds: ['source-penn-uses-writing', 'source-isac-writing-early-mesopotamia']
     },
     {
-      id: 'cuneiform-language',
+      id: 'cuneiform-language', eventIds: ['event-cuneiform-wedge-and-phonetic-writing-develop'],
       title: '泥板开始跟着语言走',
       eyebrow: '公元前三千纪至后世',
       timeSpan: timeSpan(-2800, -2000, '约公元前2800—前2000年', true),
@@ -2036,7 +2238,7 @@
       sourceIds: ['source-damerow-writing-epistemology', 'source-isac-writing-early-mesopotamia', 'source-british-museum-gilgamesh-tablet-i']
     },
     {
-      id: 'cuneiform-many-languages',
+      id: 'cuneiform-many-languages', eventIds: ['event-cuneiform-multilingual-transmission'],
       title: '一套文字写下多种语言',
       eyebrow: '公元前三千纪至公元一世纪',
       timeSpan: timeSpan(-2600, 75, '约公元前2600—公元75年', true),
@@ -2047,7 +2249,7 @@
       sourceIds: ['source-penn-uses-writing', 'source-british-museum-cuneiform', 'source-met-grammatical-text-object', 'source-met-amarna-letters', 'source-bm-ashurbanipal-library']
     },
     {
-      id: 'akkadian-empire-city-states',
+      id: 'akkadian-empire-city-states', eventIds: ['event-akkadian-imperial-expansion'],
       title: '阿卡德从苏美尔城邦之外兴起',
       eyebrow: '约公元前24世纪',
       timeSpan: timeSpan(-2400, -2300, '约公元前2400—前2300年', true),
@@ -2069,7 +2271,7 @@
       sourceIds: ['source-met-akkadian-period', 'source-westenholz-kingdom-akkad', 'source-natural-earth']
     },
     {
-      id: 'akkadian-empire-sargon-memory',
+      id: 'akkadian-empire-sargon-memory', eventIds: ['event-akkadian-imperial-expansion'],
       title: '传说中的孩子成为征服者',
       eyebrow: '后世记忆与王室铭文',
       timeSpan: timeSpan(-2350, -600, '约公元前2350—前600年', true),
@@ -2081,7 +2283,7 @@
       sourceIds: ['source-fordham-sargon-birth-legend', 'source-etcsl-sargon-ur-zababa', 'source-westenholz-kingdom-akkad', 'source-wikimedia-akkadian-ruler-head']
     },
     {
-      id: 'akkadian-empire-conquests',
+      id: 'akkadian-empire-conquests', eventIds: ['event-akkadian-imperial-expansion'],
       title: '征服者必须借助当地人',
       eyebrow: '阿卡德王朝时期',
       timeSpan: timeSpan(-2350, -2150, '约公元前2350—前2150年', true),
@@ -2092,7 +2294,7 @@
       sourceIds: ['source-met-akkadian-period', 'source-westenholz-kingdom-akkad', 'source-foster-sargonic-administration', 'source-british-museum-enheduanna', 'source-wikimedia-enheduanna-disk']
     },
     {
-      id: 'akkadian-empire-fragmentation',
+      id: 'akkadian-empire-fragmentation', eventIds: ['event-akkadian-empire-fragments', 'event-ur-iii-formation'],
       title: '帝国收缩，南方城市重新兴起',
       eyebrow: '约公元前22世纪',
       timeSpan: timeSpan(-2200, -2000, '约公元前2200—前2000年', true),
@@ -2103,7 +2305,7 @@
       sourceIds: ['source-met-akkadian-period', 'source-eckart-akkadian-empire', 'source-garfinkle-kingdom-ur', 'source-met-ur-nammu-foundation-figure-object']
     },
     {
-      id: 'gilgamesh-many-tablets',
+      id: 'gilgamesh-many-tablets', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '泥板留下许多个吉尔伽美什',
       eyebrow: '跨越多个时代的文本传统',
       timeSpan: timeSpan(-2000, -600, '约公元前2000—前600年', true),
@@ -2115,7 +2317,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-george-gilgamesh-whats-new', 'source-oxford-classical-dictionary-gilgamesh', 'source-british-museum-gilgamesh-tablet-i', 'source-etcsl-gilgamesh-stories', 'source-wikimedia-gilgamesh-old-babylonian-fragments']
     },
     {
-      id: 'gilgamesh-enkidu-enters-uruk',
+      id: 'gilgamesh-enkidu-enters-uruk', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '恩奇都来到乌鲁克',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2128,7 +2330,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-george-civilizing-enkidu', 'source-british-museum-gilgamesh-tablet-i']
     },
     {
-      id: 'gilgamesh-rivals-become-friends',
+      id: 'gilgamesh-rivals-become-friends', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '对手成为朋友',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2141,7 +2343,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh']
     },
     {
-      id: 'gilgamesh-cedar-forest',
+      id: 'gilgamesh-cedar-forest', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '雪松林的胜利越过界限',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2154,7 +2356,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-etcsl-gilgamesh-stories']
     },
     {
-      id: 'gilgamesh-bull-of-heaven',
+      id: 'gilgamesh-bull-of-heaven', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '天牛之死带来判决',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2167,7 +2369,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-tablet-vi']
     },
     {
-      id: 'gilgamesh-enkidu-dies',
+      id: 'gilgamesh-enkidu-dies', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '恩奇都死去',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2180,7 +2382,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-soas-gilgamesh-old-babylonian-grief']
     },
     {
-      id: 'gilgamesh-worlds-end',
+      id: 'gilgamesh-worlds-end', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '吉尔伽美什走到世界尽头',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2193,7 +2395,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-soas-gilgamesh-old-babylonian-x']
     },
     {
-      id: 'gilgamesh-flood-survivor',
+      id: 'gilgamesh-flood-survivor', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '洪水幸存者的故事',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2206,7 +2408,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-british-museum-gilgamesh-flood-tablet', 'source-soas-gilgamesh-xi-opening', 'source-soas-gilgamesh-xi-flood']
     },
     {
-      id: 'gilgamesh-immortality-lost',
+      id: 'gilgamesh-immortality-lost', eventIds: ['event-gilgamesh-textual-tradition-forms'],
       title: '永生从他手中消失',
       eyebrow: '史诗叙事',
       timeDisplay: 'undatedNarrative',
@@ -2220,7 +2422,7 @@
       sourceIds: ['source-george-babylonian-gilgamesh-epic', 'source-oxford-classical-dictionary-gilgamesh', 'source-met-gilgamesh-overview']
     },
     {
-      id: 'ur-iii-rises-after-akkad',
+      id: 'ur-iii-rises-after-akkad', eventIds: ['event-ur-iii-formation'],
       title: '乌尔在破碎的城邦世界中兴起',
       eyebrow: '约公元前2112年以后',
       timeSpan: timeSpan(-2112, -2095, '约公元前2112—前2095年', true),
@@ -2242,7 +2444,7 @@
       sourceIds: ['source-garfinkle-kingdom-ur', 'source-steinkeller-ur-iii-core-periphery', 'source-oracc-ur-namma-inscriptions', 'source-natural-earth']
     },
     {
-      id: 'ur-iii-building-order',
+      id: 'ur-iii-building-order', eventIds: ['event-ur-iii-formation'],
       title: '国王用建造宣布秩序恢复',
       eyebrow: '乌尔那木统治时期',
       timeSpan: timeSpan(-2112, -2095, '约公元前2112—前2095年', true),
@@ -2254,7 +2456,7 @@
       sourceIds: ['source-oracc-ur-namma-inscriptions', 'source-met-ur-nammu-foundation-figure-object', 'source-met-ur-ziggurat']
     },
     {
-      id: 'ur-iii-tablet-administration',
+      id: 'ur-iii-tablet-administration', eventIds: ['event-ur-iii-formation', 'event-ur-iii-fragmentation'],
       title: '泥板让资源跨城市流动',
       eyebrow: '乌尔第三王朝时期',
       timeSpan: timeSpan(-2112, -2004, '约公元前2112—前2004年', true),
@@ -2266,7 +2468,7 @@
       sourceIds: ['source-hilgert-drehem-administrative-documents', 'source-british-museum-ur-iii-barley-rations', 'source-british-museum-ur-iii-drehem-sheep', 'source-british-museum-ur-iii-fields-yields', 'source-wikimedia-ur-iii-administrative-tablet']
     },
     {
-      id: 'ur-iii-fragmentation',
+      id: 'ur-iii-fragmentation', eventIds: ['event-ur-iii-fragmentation'],
       title: '记录最多的王朝仍然瓦解',
       eyebrow: '约公元前2004年以前',
       timeSpan: timeSpan(-2028, -2004, '约公元前2028—前2004年', true),
@@ -2278,7 +2480,7 @@
       sourceIds: ['source-garfinkle-kingdom-ur', 'source-cambridge-ur-iii-old-babylonian-transition', 'source-wikimedia-lament-for-ur-penn']
     },
     {
-      id: 'old-babylonian-after-ur-iii',
+      id: 'old-babylonian-after-ur-iii', eventIds: ['event-old-babylonian-city-kingdoms-emerge'],
       title: '乌尔留下许多竞争者',
       eyebrow: '约公元前2004—前1894年',
       timeSpan: timeSpan(-2004, -1894, '约公元前2004—前1894年', true),
@@ -2303,7 +2505,7 @@
       sourceIds: ['source-cambridge-ur-iii-old-babylonian-transition', 'source-met-isin-larsa-old-babylonian', 'source-natural-earth']
     },
     {
-      id: 'old-babylonian-small-river-kingdom',
+      id: 'old-babylonian-small-river-kingdom', eventIds: ['event-old-babylonian-city-kingdoms-emerge'],
       title: '巴比伦先守住一段河岸',
       eyebrow: '约公元前1894—前1792年',
       timeSpan: timeSpan(-1894, -1792, '约公元前1894—前1792年', true),
@@ -2326,7 +2528,7 @@
       sourceIds: ['source-met-isin-larsa-old-babylonian', 'source-podany-hammurabi-babylon', 'source-natural-earth']
     },
     {
-      id: 'old-babylonian-hammurabi-conquests',
+      id: 'old-babylonian-hammurabi-conquests', eventIds: ['event-hammurabi-conquests'],
       title: '汉谟拉比等到力量平衡破裂',
       eyebrow: '公元前1792—前1750年',
       timeSpan: timeSpan(-1792, -1750, '公元前1792—前1750年', false),
@@ -2351,7 +2553,7 @@
       sourceIds: ['source-cdli-hammurabi-year-names', 'source-podany-hammurabi-babylon', 'source-natural-earth']
     },
     {
-      id: 'old-babylonian-orders-and-institutions',
+      id: 'old-babylonian-orders-and-institutions', eventIds: ['event-hammurabi-conquests', 'event-hammurabi-code-stele'],
       title: '每一道命令都要有人执行',
       eyebrow: '汉谟拉比统治后期',
       timeSpan: timeSpan(-1763, -1750, '约公元前1763—前1750年', true),
@@ -2362,7 +2564,7 @@
       sourceIds: ['source-goddeeris-old-babylonian-economy', 'source-wikimedia-hammurabi-letter', 'source-louvre-hammurabi-code']
     },
     {
-      id: 'old-babylonian-fragmentation',
+      id: 'old-babylonian-fragmentation', eventIds: ['event-old-babylonian-fragmentation'],
       title: '大王国缩回一座城',
       eyebrow: '公元前1750—前1595年',
       timeSpan: timeSpan(-1750, -1595, '公元前1750—前1595年', false),
@@ -2386,7 +2588,7 @@
       sourceIds: ['source-cdli-samsuiluna-year-names', 'source-met-isin-larsa-old-babylonian', 'source-natural-earth']
     },
     {
-      id: 'hammurabi-code-divine-justice',
+      id: 'hammurabi-code-divine-justice', eventIds: ['event-hammurabi-code-stele'],
       title: '国王站在公正之神面前',
       eyebrow: '约公元前1750年',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
@@ -2397,7 +2599,7 @@
       sourceIds: ['source-louvre-hammurabi-code', 'source-wikimedia-hammurabi-full-stele']
     },
     {
-      id: 'hammurabi-code-final-judge',
+      id: 'hammurabi-code-final-judge', eventIds: ['event-hammurabi-code-stele'],
       title: '国王要成为最后的裁判者',
       eyebrow: '约公元前1750年',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
@@ -2408,7 +2610,7 @@
       sourceIds: ['source-louvre-hammurabi-code', 'source-wikimedia-hammurabi-stele']
     },
     {
-      id: 'hammurabi-code-equal-retaliation',
+      id: 'hammurabi-code-equal-retaliation', eventIds: ['event-hammurabi-code-stele'],
       title: '以牙还牙，以眼还眼',
       eyebrow: '石碑第196、197、200条',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
@@ -2419,7 +2621,7 @@
       sourceIds: ['source-ehammurabi-laws', 'source-isac-law-society']
     },
     {
-      id: 'hammurabi-code-status-inequality',
+      id: 'hammurabi-code-status-inequality', eventIds: ['event-hammurabi-code-stele'],
       title: '同一种伤害，不同的代价',
       eyebrow: '石碑第196、198、199条',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
@@ -2430,7 +2632,7 @@
       sourceIds: ['source-ehammurabi-laws', 'source-isac-law-society']
     },
     {
-      id: 'hammurabi-code-property-welfare',
+      id: 'hammurabi-code-property-welfare', eventIds: ['event-hammurabi-code-stele'],
       title: '灾难来时，先保住田地',
       eyebrow: '石碑第32、48条',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
@@ -2441,7 +2643,7 @@
       sourceIds: ['source-ehammurabi-laws', 'source-isac-law-society']
     },
     {
-      id: 'hammurabi-code-transmission-discovery',
+      id: 'hammurabi-code-transmission-discovery', eventIds: ['event-hammurabi-code-stele'],
       title: '石碑被带走，文字没有消失',
       eyebrow: '约公元前1750年—1902年',
       timeSpan: timeSpan(-1750, 1902, '约公元前1750—公元1902年', true),
@@ -2452,7 +2654,7 @@
       sourceIds: ['source-cdli-law-collections', 'source-cambridge-hammurabi-copies', 'source-louvre-hammurabi-code', 'source-wikimedia-hammurabi-discovery']
     },
     {
-      id: 'tower-of-babel-builders-stay-together',
+      id: 'tower-of-babel-builders-stay-together', eventIds: ['event-tower-babel-textual-tradition-forms'],
       title: '《圣经》里的建塔者不愿分散',
       eyebrow: '《创世记》的叙事时间',
       timeDisplay: 'undatedNarrative',
@@ -2464,7 +2666,7 @@
       sourceIds: ['source-sefaria-genesis-11', 'source-wikimedia-bruegel-babel']
     },
     {
-      id: 'tower-of-babel-languages-stop-work',
+      id: 'tower-of-babel-languages-stop-work', eventIds: ['event-tower-babel-textual-tradition-forms'],
       title: '语言终止了工程',
       eyebrow: '故事中的转折',
       timeDisplay: 'undatedNarrative',
@@ -2476,7 +2678,7 @@
       sourceIds: ['source-sefaria-genesis-11', 'source-wikimedia-dore-confusion']
     },
     {
-      id: 'tower-of-babel-real-etemenanki',
+      id: 'tower-of-babel-real-etemenanki', eventIds: ['event-etemenanki-rebuilding'],
       title: '巴比伦真的有一座高塔',
       eyebrow: '约公元前689—前562年',
       timeSpan: timeSpan(-689, -562, '约公元前689—前562年', true),
@@ -2487,7 +2689,7 @@
       sourceIds: ['source-george-tower-of-babel', 'source-met-etemenanki-cylinder', 'source-oracc-nebuchadnezzar-etemenanki', 'source-wikimedia-etemenanki-reconstruction']
     },
     {
-      id: 'tower-of-babel-evidence-and-reconstruction',
+      id: 'tower-of-babel-evidence-and-reconstruction', eventIds: ['event-etemenanki-rebuilding'],
       title: '重建留下证据，外形留下空白',
       eyebrow: '约公元前689—前331年',
       timeSpan: timeSpan(-689, -331, '约公元前689—前331年', true),
@@ -2498,7 +2700,7 @@
       sourceIds: ['source-george-tower-of-babel', 'source-wikimedia-esagil-tablet']
     },
     {
-      id: 'tower-of-babel-building-becomes-memory',
+      id: 'tower-of-babel-building-becomes-memory', eventIds: ['event-tower-babel-textual-tradition-forms', 'event-etemenanki-rebuilding'],
       title: '一座塔进入另一种记忆',
       eyebrow: '约公元前700—前400年',
       timeSpan: timeSpan(-700, -400, '约公元前700—前400年', true),

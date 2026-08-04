@@ -1,0 +1,457 @@
+{
+  "manifestVersion": 1,
+  "module": "ancient-egypt",
+  "assets": [
+    {
+      "assetId": "asset-egypt-old-giza-pyramids",
+      "file": "assets/images/ancient-egypt/old-kingdom-giza-pyramids.jpg",
+      "origin": "unclassified",
+      "creator": "Gary Todd",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giza_Pyramids_of_Khufu,_Khafre_%26_Menkaure_(9793903476).jpg",
+      "sourceIds": [
+        "source-wikimedia-giza-pyramids"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1302,
+      "sha256": "d95a3e1ac4df2f70a38e9770d6062a29f453c351f183fb0081eb71fd6bd02b51",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-old-unas-pyramid-texts",
+      "file": "assets/images/ancient-egypt/old-kingdom-unas-pyramid-texts.jpg",
+      "origin": "unclassified",
+      "creator": "Wikimedia Commons",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unas_Pyramidentexte.jpg",
+      "sourceIds": [
+        "source-wikimedia-unas-pyramid-texts"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1477,
+      "sha256": "e75b456227500fcdb90b186ccced8d14b5460f8859c6f9acfdb15c5273317653",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-old-mitry-statue",
+      "file": "assets/images/ancient-egypt/old-kingdom-mitry-statue.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/543872",
+      "sourceIds": [
+        "source-met-mitry-statue"
+      ],
+      "originalWidth": 912,
+      "originalHeight": 1200,
+      "sha256": "6653000ef522263a87060d872bbd69314e84f0f3982d8e082af43e12267d54b3",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-middle-sinuhe-papyrus",
+      "file": "assets/images/ancient-egypt/middle-kingdom-sinuhe-papyrus.jpg",
+      "origin": "unclassified",
+      "creator": "Georg Möller",
+      "license": "public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sinuhe-Papyrus_(Papyrus_Berlin_3022).jpg",
+      "sourceIds": [
+        "source-wikimedia-sinuhe-papyrus"
+      ],
+      "originalWidth": 968,
+      "originalHeight": 528,
+      "sha256": "9c28b938542ca042e4fccf9f27c3c900f9abca0c12b7d3cc15006bf34d54e128",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-new-hatshepsut",
+      "file": "assets/images/ancient-egypt/new-kingdom-hatshepsut.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/544450",
+      "sourceIds": [
+        "source-met-hatshepsut"
+      ],
+      "originalWidth": 900,
+      "originalHeight": 1200,
+      "sha256": "d2e520578cd2e759db8fd3cae58e4e0c7d48ebc3074c6ad36b6988a1ed260841",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-new-amarna-letter",
+      "file": "assets/images/ancient-egypt/new-kingdom-amarna-letter.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/544695",
+      "sourceIds": [
+        "source-met-amarna-letter-object"
+      ],
+      "originalWidth": 900,
+      "originalHeight": 1200,
+      "sha256": "bf15ded3bd97ddbe6622931b4f299d6ae368a3741a22614ac1083f42ba88feca",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-new-akhenaten",
+      "file": "assets/images/ancient-egypt/new-kingdom-akhenaten.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/544056",
+      "sourceIds": [
+        "source-met-akhenaten-duck"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 960,
+      "sha256": "3a4e49e830eae152337d806aa7724c6b70d76a1b9038f0f6da736d5434aa91f4",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-new-strike-papyrus",
+      "file": "assets/images/ancient-egypt/new-kingdom-strike-papyrus.jpg",
+      "origin": "unclassified",
+      "creator": "Museo Egizio",
+      "license": "needs review",
+      "sourceUrl": "https://collezioni.museoegizio.it/en-GB/material/Cat_1880",
+      "sourceIds": [
+        "source-turin-strike-papyrus"
+      ],
+      "originalWidth": 6941,
+      "originalHeight": 3431,
+      "sha256": "99acc62a6407f586f3d8f981d8328938bc31f917f3f30484a33f0e40e1cb33bc",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-pyramid-djoser-step",
+      "file": "assets/images/ancient-egypt/djoser-step-pyramid.jpg",
+      "origin": "unclassified",
+      "creator": "Charles J. Sharp",
+      "license": "Public Domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saqqara_stepped_pyramid.jpg",
+      "sourceIds": [
+        "source-wikimedia-djoser-step"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1279,
+      "sha256": "e95e9f25153a654768cd4f1a7de63241c027a4f63eeac7f78e566061196d63d3",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-pyramid-bent-angle",
+      "file": "assets/images/ancient-egypt/bent-pyramid-angle.jpg",
+      "origin": "unclassified",
+      "creator": "Timsdad",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bent_Pyramid_angle.jpg",
+      "sourceIds": [
+        "source-wikimedia-bent-pyramid"
+      ],
+      "originalWidth": 1920,
+      "originalHeight": 1440,
+      "sha256": "393269db10dd05db66bc515d5b9c7d917ff763a3b0da3a02471e95e9eccff828",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-pyramid-oarsmen-relief",
+      "file": "assets/images/ancient-egypt/pyramid-oarsmen-official-met.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/552238",
+      "sourceIds": [
+        "source-met-oarsmen-official",
+        "source-wikimedia-oarsmen-official"
+      ],
+      "originalWidth": 691,
+      "originalHeight": 1200,
+      "sha256": "190d9cd98fc5e1e64bc618d14c7733fec1e5ed43e63f24cf4d8f580fec7e2f91",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-pyramid-giza-complex-map",
+      "file": "assets/images/ancient-egypt/pyramid-giza-complex-map.png",
+      "origin": "unclassified",
+      "creator": "MesserWoland",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giza_pyramid_complex_(map).svg",
+      "sourceIds": [
+        "source-wikimedia-giza-complex-map"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1251,
+      "sha256": "ca8364b107d5c7a72fdabf1e06001727521bafd39000244062eb9153973a2242",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-pyramid-offering-bearers",
+      "file": "assets/images/ancient-egypt/old-kingdom-offering-bearers.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/547738",
+      "sourceIds": [
+        "source-met-offering-bearers"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 400,
+      "sha256": "ab102b0683757ef3c29db62d15e6d3d42dd79df4dc61eb58d4027d0f2ce9f12e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-false-door-neferiu",
+      "file": "assets/images/ancient-egypt/false-door-neferiu.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/543863",
+      "sourceIds": [
+        "source-met-neferiu-false-door"
+      ],
+      "originalWidth": 387,
+      "originalHeight": 623,
+      "sha256": "406d96fd8c6a9bb8296162338bf8ce9c1d7344afea13b2faa2de20b49b1216b6",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-afterlife-wah-statuette",
+      "file": "assets/images/ancient-egypt/statuette-of-wah.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/545111",
+      "sourceIds": [
+        "source-met-wah-statuette"
+      ],
+      "originalWidth": 468,
+      "originalHeight": 625,
+      "sha256": "2fb52bf4c6658929785e3690e8810703566c7678e9726f3a99438619a4787bff",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-afterlife-heart-scarab",
+      "file": "assets/images/ancient-egypt/heart-scarab.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/550986",
+      "sourceIds": [
+        "source-met-heart-scarab"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 400,
+      "sha256": "e6b32caefd53626bf9e519f634483f586a6925df900fd5217564ea026abed859",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-afterlife-ukhhotep-coffin",
+      "file": "assets/images/ancient-egypt/ukhhotep-0.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/546303",
+      "sourceIds": [
+        "source-met-ukhhotep-coffin"
+      ],
+      "originalWidth": 3782,
+      "originalHeight": 2467,
+      "sha256": "5bd2733f17f00cecf7c14d7d75dd8335987d1049be9f9eee90c9a38f81d7f4ee",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-afterlife-nesiamun-book-dead",
+      "file": "assets/images/ancient-egypt/book-of-dead-nesiamun-original.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/550820",
+      "sourceIds": [
+        "source-met-nesiamun-book-dead"
+      ],
+      "originalWidth": 4000,
+      "originalHeight": 899,
+      "sha256": "864f169e96d898038becc14d089a65d2dc6b83a0b82b8061e65e31bfc3d173bb",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-afterlife-hatnefer-osiris",
+      "file": "assets/images/ancient-egypt/osiris-figure-hatnefer.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/548954",
+      "sourceIds": [
+        "source-met-hatnefer-osiris"
+      ],
+      "originalWidth": 425,
+      "originalHeight": 625,
+      "sha256": "2acb9c94746df523d089e49ce20a6545e789e048720b66e66899273099a0fae6",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-afterlife-anubis-weighing-heart",
+      "file": "assets/images/ancient-egypt/anubis-weighing-heart.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/557830",
+      "sourceIds": [
+        "source-met-anubis-weighing-heart"
+      ],
+      "originalWidth": 599,
+      "originalHeight": 578,
+      "sha256": "2ec02eaf9abea869b8b2af8bb3a6f480e2a2c83d847eaf3aeedaeb5064c72590",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-afterlife-seti-shabti",
+      "file": "assets/images/ancient-egypt/shabti-seti-i.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/544763",
+      "sourceIds": [
+        "source-met-seti-i-shabti"
+      ],
+      "originalWidth": 495,
+      "originalHeight": 624,
+      "sha256": "6c799457afccbe8eca68742e8ecca59b8177dd71684cf89146ebcf690ceecb3e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-art-anubis-facsimile",
+      "file": "assets/images/ancient-egypt/anubis-weighing-heart.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/557830",
+      "sourceIds": [
+        "source-met-anubis-weighing-heart"
+      ],
+      "originalWidth": 599,
+      "originalHeight": 578,
+      "sha256": "2ec02eaf9abea869b8b2af8bb3a6f480e2a2c83d847eaf3aeedaeb5064c72590",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-art-sahure",
+      "file": "assets/images/ancient-egypt/old-kingdom-sahure-statue.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/543882",
+      "sourceIds": [
+        "source-met-sahure-statue"
+      ],
+      "originalWidth": 882,
+      "originalHeight": 1200,
+      "sha256": "1fb660a0a8fbc241f1b99cb7dfe8c6c364a57be5751728ec22ac76a7e0b4a1e0",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-art-abu-simbel-color",
+      "file": "assets/images/ancient-egypt/art-abu-simbel-color.jpg",
+      "origin": "unclassified",
+      "creator": "Arian Zwegers",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abu_Simbel,_fa%C3%A7ade_of_the_Great_Temple_(6201194723).jpg",
+      "sourceIds": [
+        "source-wikimedia-abu-simbel-color"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 864,
+      "sha256": "61674e80c4b8e55ce9c1594db4b28cc10f9e4b9695892f730cec825955552f2e",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-hieroglyph-narmer",
+      "file": "assets/images/ancient-egypt/hieroglyph-narmer-palette.jpg",
+      "origin": "unclassified",
+      "creator": "Joe deSousa",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Narmer_Palette_(53250074700).jpg",
+      "sourceIds": [
+        "source-wikimedia-narmer-palette-cc0"
+      ],
+      "originalWidth": 1367,
+      "originalHeight": 2048,
+      "sha256": "2e84e047896a4f5f6d02bc2e96e3a6c8607a7376cf2eff9a2d53beaafb771db8",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-hieroglyph-coptic",
+      "file": "assets/images/ancient-egypt/hieroglyph-coptic-manuscript.jpg",
+      "origin": "unclassified",
+      "creator": "The Metropolitan Museum of Art",
+      "license": "needs review",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/475055",
+      "sourceIds": [
+        "source-met-coptic-manuscript"
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1080,
+      "sha256": "0b291a32b4b927c32dfb1de4f1e97a4109623d964ffdf29b69adf3590d5cb50f",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-hieroglyph-champollion-table",
+      "file": "assets/images/ancient-egypt/hieroglyph-champollion-table.jpg",
+      "origin": "unclassified",
+      "creator": "Jean-François Champollion",
+      "license": "Public Domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Champollion_table.jpg",
+      "sourceIds": [
+        "source-wikimedia-champollion-table-pd"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 1548,
+      "sha256": "980bb6dec3f8f505a471cb9f7ac7978137a5ead7d24ec9d5e856ae1d1d0f2de6",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-hieroglyph-karnak-color",
+      "file": "assets/images/ancient-egypt/hieroglyph-karnak-color.jpg",
+      "origin": "unclassified",
+      "creator": "Sandy Gamal",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Egyptian_Hieroglyphs.jpg",
+      "sourceIds": [
+        "source-wikimedia-karnak-hieroglyphs"
+      ],
+      "originalWidth": 1280,
+      "originalHeight": 853,
+      "sha256": "71faf666979bf9df0fc75226e58a1f866c635f4531292ba01638f1fba0690645",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-old-unas-exterior",
+      "file": "assets/images/ancient-egypt/old-kingdom-unas-exterior.jpg",
+      "origin": "unclassified",
+      "creator": "Markh",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pyramid_of_Unas.jpg",
+      "sourceIds": [
+        "source-wikimedia-unas-exterior"
+      ],
+      "originalWidth": 960,
+      "originalHeight": 637,
+      "sha256": "ba4e189ba900f00427c88608e1c1f6c558153ecdf605db9ead0e4e2de53f26a4",
+      "reviewStatus": "needsMetadataAudit"
+    },
+    {
+      "assetId": "asset-egypt-hieroglyph-alphabet-chart",
+      "file": "assets/images/ancient-egypt/hieroglyph-egyptian-to-sinaitic-chart.png",
+      "origin": "unclassified",
+      "creator": "Keith Enevoldsen",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://thinkzone.wlonk.com/AlphabetHistory/EgyptianToLatin.html",
+      "sourceIds": [
+        "source-thinkzone-alphabet-chart"
+      ],
+      "originalWidth": 600,
+      "originalHeight": 1393,
+      "sha256": "14376e97eefefa294affe59bc06d752e358c51b08b69a86bec64e8afab33b4e9",
+      "reviewStatus": "needsMetadataAudit"
+    }
+  ]
+}

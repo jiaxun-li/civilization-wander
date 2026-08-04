@@ -1,6 +1,6 @@
 (function exposeV4Cards(root, factory) {
   const api = factory();
-  if (root) root.ATLAS_V4_CARDS = api;
+  if (root) root.ATLAS_V5_CARDS = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
 }(typeof window !== 'undefined' ? window : globalThis, function buildV4Cards() {
   'use strict';
@@ -29,7 +29,7 @@
   }
 
   function createCardComponents({ data, queries }) {
-    if (!data || !queries) throw new TypeError('V4 data and queries are required');
+    if (!data || !queries) throw new TypeError('V5 data and queries are required');
 
     function entityForCard(card) {
       return queries.getEntity(card?.primaryEntityId) || null;

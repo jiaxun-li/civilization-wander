@@ -10,9 +10,9 @@ test('Card scene order and reverse ownership come from Card.sceneIds only', () =
   assert.equal(queries.getOwnerCardForScene('sumer-land-measurement').id, card.id);
 });
 
-test('the Uruk SettlementSite resolves to its dedicated default Card and approved Scene order', () => {
+test('the Uruk SettlementSite resolves to its primary Card and approved Scene order', () => {
   const entity = queries.getEntity('uruk');
-  const card = queries.getTargetCardForEntity(entity.id);
+  const [card] = queries.getPrimaryCardsForEntity(entity.id);
   assert.equal(entity.type, 'SettlementSite');
   assert.equal(card.id, 'sumer-uruk-city');
   assert.deepEqual(queries.getScenesForCard(card.id).map(scene => scene.id), card.sceneIds);
@@ -20,18 +20,35 @@ test('the Uruk SettlementSite resolves to its dedicated default Card and approve
 
 test('the Sumer cultural tradition resolves to its own five-Scene Card', () => {
   const entity = queries.getEntity('sumer');
-  const card = queries.getTargetCardForEntity(entity.id);
+  const [card] = queries.getPrimaryCardsForEntity(entity.id);
   assert.equal(entity.type, 'culturalTradition');
   assert.equal(card.id, 'sumer-measuring-land-time');
   assert.equal(queries.getScenesForCard(card.id).length, 5);
 });
 
-test('Entity Card lookup is derived while default Card remains curated', () => {
+test('Entity Card indexes distinguish primary and related Cards without storing an entry Card', () => {
   assert.deepEqual(
     queries.getCardsForEntity('sumer').map(card => card.id),
     ['sumer-measuring-land-time', 'sumer-uruk-city', 'mesopotamia-cities-outlast-dynasties', 'cuneiform-overview', 'akkadian-empire-overview', 'ur-iii-reordered-city-world']
   );
-  assert.equal(queries.getTargetCardForEntity('sumer').id, 'sumer-measuring-land-time');
+  assert.deepEqual(queries.getPrimaryCardsForEntity('sumer').map(card => card.id), ['sumer-measuring-land-time']);
+  assert.deepEqual(
+    queries.getRelatedCardsForEntity('sumer').map(card => card.id),
+    ['sumer-uruk-city', 'mesopotamia-cities-outlast-dynasties', 'cuneiform-overview', 'akkadian-empire-overview', 'ur-iii-reordered-city-world']
+  );
+  assert.equal('defaultCardId' in queries.getEntity('sumer'), false);
+});
+
+test('Scene owns Event links and Card Events are derived in Scene order', () => {
+  assert.deepEqual(
+    queries.getEventsForScene('sumer-land-measurement').map(event => event.id),
+    ['event-southern-mesopotamia-water-land-management']
+  );
+  assert.deepEqual(
+    queries.getEventsForCard('sumer-uruk-city').map(event => event.id),
+    ['event-uruk-urban-expansion']
+  );
+  assert.equal('eventIds' in queries.getCard('sumer-uruk-city'), false);
 });
 
 test('Events are independently queryable and typed endpoints filter by direction and time', () => {

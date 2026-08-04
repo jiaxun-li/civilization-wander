@@ -13,11 +13,11 @@ const sceneById = new Map(ancientIndia.scenes.map(scene => [scene.id, scene]));
 
 test('Ancient India adds the approved settlement, civilization, and early Vedic stories', () => {
   assert.deepEqual(
-    ancientIndia.entities.map(entity => [entity.id, entity.type, entity.defaultCardId]),
+    ancientIndia.entities.map(entity => [entity.id, entity.type]),
     [
-      ['indus-civilization', 'culturalTradition', 'indus-civilization-network'],
-      ['mohenjo-daro', 'SettlementSite', 'mohenjo-daro-urban-order'],
-      ['vedic-tradition', 'culturalTradition', 'indo-aryan-enters-south-asia']
+      ['indus-civilization', 'culturalTradition'],
+      ['mohenjo-daro', 'SettlementSite'],
+      ['vedic-tradition', 'culturalTradition']
     ]
   );
   assert.deepEqual(
@@ -186,7 +186,7 @@ test('the remaining Ancient India maps pair visible symbols with plain-language 
   ]);
 });
 
-test('the aggregated V4 atlas validates with Ancient India included', () => {
+test('the aggregated V5 atlas validates with Ancient India included', () => {
   const result = queries.createQueries(data).validateAtlasData();
   assert.equal(result.valid, true, result.errors.join('\n'));
   assert.equal(data.cards.find(card => card.id === 'mohenjo-daro-urban-order'), ancientIndia.cards[0]);

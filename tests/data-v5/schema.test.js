@@ -8,7 +8,7 @@ function clone() {
   return structuredClone(data);
 }
 
-test('active V4 dataset has the complete migrated collections and new first-class collections', () => {
+test('active V5 dataset has the complete migrated collections and new first-class collections', () => {
   const result = queries.validateAtlasData(data);
   const liveCounts = Object.fromEntries(
     Object.entries(data)
@@ -22,14 +22,14 @@ test('active V4 dataset has the complete migrated collections and new first-clas
   });
 });
 
-test('V4 rejects other schema versions and unknown top-level collections', () => {
+test('V5 rejects other schema versions and unknown top-level collections', () => {
   const oldVersion = clone();
-  oldVersion.schemaVersion = 3;
+  oldVersion.schemaVersion = 4;
   assert.equal(queries.validateAtlasData(oldVersion).valid, false);
-  assert.match(queries.validateAtlasData(oldVersion).errors.join('\n'), /schemaVersion.*must equal 4/);
+  assert.match(queries.validateAtlasData(oldVersion).errors.join('\n'), /schemaVersion.*must equal 5/);
 
   const futureVersion = clone();
-  futureVersion.schemaVersion = 5;
+  futureVersion.schemaVersion = 6;
   assert.equal(queries.validateAtlasData(futureVersion).valid, false);
 
   const unknown = clone();
@@ -39,7 +39,7 @@ test('V4 rejects other schema versions and unknown top-level collections', () =>
   assert.match(result.errors.join('\n'), /extraScenes.*unknown collection/);
 });
 
-test('V4 collections use globally unique top-level IDs', () => {
+test('V5 collections use globally unique top-level IDs', () => {
   const duplicate = clone();
   duplicate.events[0].id = duplicate.entities[0].id;
   const result = queries.validateAtlasData(duplicate);

@@ -11,7 +11,7 @@ const {
   shouldResetMediaCard,
   storyBackMode,
   storyTrailEntityNames
-} = globalThis.ATLAS_V4_APP_INTERNALS;
+} = globalThis.ATLAS_V5_APP_INTERNALS;
 const data = require('../../data/atlas-data.js');
 const queries = require('../../data/queries.js');
 
@@ -35,7 +35,7 @@ test('home curation stores stable Card IDs and reads current titles from atlas d
 
 test('last-read snapshots keep only valid Card, Scene, trail, and scroll state', () => {
   const snapshot = normalizeLastReadSnapshot({
-    atlasV4: true,
+    atlasV5: true,
     cardId: 'tower-of-babel-story-and-etemenanki',
     sceneId: 'tower-of-babel-builders-stay-together',
     scrollY: 640,
@@ -50,7 +50,7 @@ test('last-read snapshots keep only valid Card, Scene, trail, and scroll state',
     ]
   }, queries);
   assert.deepEqual(snapshot, {
-    atlasV4: true,
+    atlasV5: true,
     cardId: 'tower-of-babel-story-and-etemenanki',
     sceneId: 'tower-of-babel-builders-stay-together',
     scrollY: 640,
@@ -62,7 +62,7 @@ test('last-read snapshots keep only valid Card, Scene, trail, and scroll state',
     }]
   });
   assert.equal(normalizeLastReadSnapshot({
-    atlasV4: true,
+    atlasV5: true,
     cardId: 'tower-of-babel-story-and-etemenanki',
     sceneId: 'missing-scene'
   }, queries), null);
@@ -70,9 +70,9 @@ test('last-read snapshots keep only valid Card, Scene, trail, and scroll state',
 });
 
 test('the core back control distinguishes story entries from home and direct entries', () => {
-  assert.equal(storyBackMode({ atlasV4: true, entrySource: 'card' }), 'story');
-  assert.equal(storyBackMode({ atlasV4: true, entrySource: 'home' }), 'home');
-  assert.equal(storyBackMode({ atlasV4: true }), 'home');
+  assert.equal(storyBackMode({ atlasV5: true, entrySource: 'card' }), 'story');
+  assert.equal(storyBackMode({ atlasV5: true, entrySource: 'home' }), 'home');
+  assert.equal(storyBackMode({ atlasV5: true }), 'home');
   assert.equal(storyBackMode(null), 'home');
 });
 
@@ -114,7 +114,7 @@ test('the wander trail keeps only the five most recent stories', () => {
 test('App Card B to home to Card A preserves home and Card B history snapshots', () => {
   const entries = [{
     state: {
-      atlasV4: true,
+      atlasV5: true,
       cardId: 'akkadian-empire-overview',
       sceneId: 'akkadian-empire-city-states',
       scrollY: 0
@@ -163,7 +163,7 @@ test('App Card B to home to Card A preserves home and Card B history snapshots',
     history,
     reader,
     {
-      atlasV4: true,
+      atlasV5: true,
       cardId: 'sumer-measuring-land-time',
       sceneId: 'sumer-water-network',
       scrollY: 0
@@ -173,7 +173,7 @@ test('App Card B to home to Card A preserves home and Card B history snapshots',
     'opening Card A from home must not replace atlasHome with stale Card B'
   );
   assert.deepEqual(entries[index].state, {
-    atlasV4: true,
+    atlasV5: true,
     cardId: 'sumer-measuring-land-time',
     sceneId: 'sumer-water-network',
     scrollY: 0
@@ -184,7 +184,7 @@ test('App Card B to home to Card A preserves home and Card B history snapshots',
   const cardB = history.back();
   assert.deepEqual(cardB, {
     state: {
-      atlasV4: true,
+      atlasV5: true,
       cardId: 'akkadian-empire-overview',
       sceneId: 'akkadian-empire-city-states',
       scrollY: 864

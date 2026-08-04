@@ -21,7 +21,7 @@ test('the seventh expansion contains the seven approved compact stories', () => 
     ['babylon-inherits-assyrian-empire', '巴比伦接过亚述的帝国', 6],
     ['lydia-coins-gold-silver', '吕底亚把金银铸成钱币', 4]
   ]);
-  assert.equal(cardById.get('two-kingdoms-two-falls').primaryEntityId, 'kingdom-of-israel');
+  assert.equal(cardById.get('two-kingdoms-two-falls').primaryEntityId, 'ancient-israelite-tradition');
   assert.equal(moduleData.entities.find(entity => entity.id === 'kingdom-of-israel').type, 'polity');
   assert.equal(moduleData.entities.find(entity => entity.id === 'aramaic-language').type, 'languageSystem');
   assert.match(sceneById.get('lydia-mark-makes-alloy-speak').contentBlocks[0].text, /最早一批真正的钱币/);
