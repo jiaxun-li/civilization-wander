@@ -14,7 +14,7 @@ const {
   storyBackMode,
   storyTrailEntityNames
 } = globalThis.ATLAS_V5_APP_INTERNALS;
-const data = require('../../data/atlas-data.js');
+const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 
 test('home curation stores stable Card IDs and reads current titles from atlas data', () => {

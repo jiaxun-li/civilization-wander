@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const data = require('../../data/atlas-data.js');
+const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 const cardsModule = require('../../src/reader/card-components.ts');
 const readerModule = require('../../src/reader/card-reader.ts');

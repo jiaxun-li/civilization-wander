@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const lateBronzeAge = require('../../data/late-bronze-age.js');
-const data = require('../../data/atlas-data.js');
+const { atlasData: data } = require('../../src/data/atlas-data.ts');
 
 const root = path.resolve(__dirname, '../..');
 const cardById = new Map(lateBronzeAge.cards.map(card => [card.id, card]));

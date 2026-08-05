@@ -319,7 +319,7 @@ A Content Agent must not edit:
 
 - `index.html`;
 - `src/main.ts`;
-- `data/atlas-data.js`;
+- `src/data/atlas-data.ts`;
 - another content module;
 - shared or reciprocal navigation in existing modules;
 - shared integration tests;
@@ -337,7 +337,7 @@ scope includes:
 
 - `index.html`;
 - `src/main.ts`;
-- `data/atlas-data.js`;
+- `src/data/atlas-data.ts`;
 - fixed runtime-loading tests;
 - cross-module and reciprocal navigation changes;
 - global duplicate-ID and reference resolution;
@@ -365,7 +365,7 @@ aggregate data in order to make tests pass.
 ### Module-level gate
 
 A new content module must pass its isolated gate before it can be added to
-`src/main.ts` or `data/atlas-data.js`.
+`src/main.ts` or `src/data/atlas-data.ts`.
 
 The gate must include:
 
@@ -459,7 +459,7 @@ ContentPack record, or another non-runtime handoff record.
 
 Do not add an `integrationStatus` field to runtime data unless the schema
 explicitly adopts and validates it. Do not partially load an unfinished module
-through `src/main.ts` or `data/atlas-data.js`.
+through `src/main.ts` or `src/data/atlas-data.ts`.
 
 An unfinished module must remain outside the active aggregation path. Renderer
 filtering, silent query filtering, try/catch suppression, or removal of invalid
@@ -489,9 +489,9 @@ The current runtime is a Vite-built V5 prototype with no client-side runtime dep
 - `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
 - `src/types/runtime.ts` defines the typed consumer boundary between the
-  application, the JavaScript V5 data/query modules, and the typed Reader,
-  Cards, and Map modules.
-- `data/atlas-data.js` contains Entities, Events, StructuralEdges, Cards,
+  application, the JavaScript content modules, the typed V5 aggregation/query
+  modules, and the typed Reader, Cards, and Map modules.
+- `src/data/atlas-data.ts` contains the typed aggregation boundary for Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,
   CameraPresets, MapStates, Geometries, MapAnnotations, Assets, and Sources.
 - `src/data/queries.ts` indexes, queries, and validates the V5 atlas; `data/query-node-runtime.js` supplies its optional Node-only filesystem adapter for Asset validation.

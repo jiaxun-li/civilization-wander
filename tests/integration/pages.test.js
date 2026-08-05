@@ -34,7 +34,10 @@ test('remaining legacy runtime stays local while Vite owns all module loading', 
     .filter(relative => !relative.startsWith('data/'));
   const executableRuntime = executableRuntimeFiles.map(read).join('\n');
   assert.doesNotMatch(runtime, /\bimport\s+|\bexport\s+|\brequire\(['"][^.]|fetch\(|XMLHttpRequest/);
-  assert.doesNotMatch(executableRuntime, /https?:\/\//);
+  assert.doesNotMatch(
+    executableRuntime,
+    /\bfetch\s*\(|\bXMLHttpRequest\b|\bWebSocket\s*\(|\bEventSource\s*\(|navigator\.sendBeacon\s*\(/
+  );
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {

@@ -1,4 +1,4 @@
-import '../../data/atlas-data.js';
+import './atlas-data.ts';
 import '../../data/query-node-runtime.js';
 import type {
   Asset,

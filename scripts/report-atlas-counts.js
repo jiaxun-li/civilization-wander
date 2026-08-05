@@ -1,6 +1,6 @@
 'use strict';
 
-const atlas = require('../data/atlas-data.js');
+const { atlasData: atlas } = require('../src/data/atlas-data.ts');
 
 const counts = Object.fromEntries(
   Object.entries(atlas)

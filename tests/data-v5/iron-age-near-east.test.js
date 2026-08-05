@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const moduleData = require('../../data/iron-age-near-east.js');
-const data = require('../../data/atlas-data.js');
+const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 
 const root = path.resolve(__dirname, '../..');

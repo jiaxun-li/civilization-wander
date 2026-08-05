@@ -4,7 +4,7 @@ const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const data = require('../../data/atlas-data.js');
+const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const mesopotamia = require('../../data/mesopotamia.js');
 const ancientEgypt = require('../../data/ancient-egypt.js');
 const ancientIndia = require('../../data/ancient-india.js');
@@ -237,7 +237,7 @@ test('Sumer and its Mesopotamian expansion are authored in one module with the a
   }
 
   assert.equal(fs.existsSync(path.resolve(__dirname, '../..', 'data/sumer.js')), false);
-  const atlasSource = fs.readFileSync(path.resolve(__dirname, '../..', 'data/atlas-data.js'), 'utf8');
+  const atlasSource = fs.readFileSync(path.resolve(__dirname, '../..', 'src/data/atlas-data.ts'), 'utf8');
   assert.doesNotMatch(atlasSource, /id:\s*['"](?:sumer|mesopotamian-temple|cuneiform|akkadian-empire)(?:-|['"])/);
 });
 

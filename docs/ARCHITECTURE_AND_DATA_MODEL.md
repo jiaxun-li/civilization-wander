@@ -22,7 +22,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 1. `data/world-physical.js`
 2. `data/` 下由入口列出的各内容模块
-3. `data/atlas-data.js`
+3. `src/data/atlas-data.ts`
 4. `src/data/queries.ts`（按需通过 `data/query-node-runtime.js` 获得 Node 文件检查能力）
 5. `src/reader/card-components.ts`
 6. `src/reader/card-reader.ts`
@@ -37,7 +37,7 @@ flowchart TD
     HTML["index.html"] --> ENTRY["src/main.ts\nVite module entry"]
     ENTRY --> WP["data/world-physical.js\nATLAS_WORLD_VECTOR"]
     ENTRY --> CM["data/content-module.js\nATLAS_V5_* content globals"]
-    ENTRY --> D["data/atlas-data.js\nATLAS_V5_DATA"]
+    ENTRY --> D["src/data/atlas-data.ts\nATLAS_V5_DATA"]
     CM --> D
     D --> Q["src/data/queries.ts\nATLAS_V5_QUERIES"]
     Q --> C["src/reader/card-components.ts\nATLAS_V5_CARDS"]
@@ -54,7 +54,7 @@ flowchart TD
     CSS["styles.css + styles/v4/*"] --> ENTRY
 ```
 
-各内容模块分别声明精确的十四个数组；`atlas-data.js` 在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据；`src/data/queries.ts` 建索引、提供读 API 并执行失败关闭式校验，浏览器中不启用文件系统检查，Node 中由 `data/query-node-runtime.js` 提供 Asset 文件检查能力；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`src/app.ts` 是唯一编排层。`src/types/runtime.ts` 只声明应用实际消费的 V5 对象字段和模块接口，不复制完整 schema，也不替代 validator。新增、删除或重排内容模块时必须同步 `src/main.ts`、聚合器、语法清单和测试，并运行 `pnpm run check:manifests`；文档不另行复制模块文件清单。
+各内容模块分别声明精确的十四个数组；`src/data/atlas-data.ts` 以类型化模块接口为边界，在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据；`src/data/queries.ts` 建索引、提供读 API 并执行失败关闭式校验，浏览器中不启用文件系统检查，Node 中由 `data/query-node-runtime.js` 提供 Asset 文件检查能力；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`src/app.ts` 是唯一编排层。`src/types/runtime.ts` 只声明应用实际消费的 V5 对象字段和模块接口，不复制完整 schema，也不替代 validator。新增、删除或重排内容模块时必须同步 `src/main.ts`、聚合器、语法清单和测试，并运行 `pnpm run check:manifests`；文档不另行复制模块文件清单。
 
 ## 3. 从 `index.html` 到地图渲染器的完整调用链
 
@@ -485,7 +485,7 @@ pnpm build
 | 文件 | 当前职责/状态 |
 |---|---|
 | `data/<content-module>.js` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。具体模块清单和顺序由入口实际加载，并与聚合器、语法清单做一致性检查。 |
-| `data/atlas-data.js` | 严格检查模块接口，汇总内容模块并输出 schema 5 的 14 个正式集合。 |
+| `src/data/atlas-data.ts` | 以类型化边界严格检查模块接口，汇总内容模块并输出 schema 5 的 14 个正式集合。 |
 | `src/data/queries.ts` | V5 索引、派生 Entity/Card 与 Card/Event 查询及严格 validator。 |
 | `data/query-node-runtime.js` | 仅在 Node 中为 validator 提供 Asset 文件存在性检查；浏览器中为空适配器。 |
 | `scripts/report-atlas-counts.js` | 只读加载聚合数据并报告当前 schema 与各集合数量，不修改数据或文档。 |

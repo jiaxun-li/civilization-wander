@@ -182,7 +182,7 @@ function main() {
   const moduleFile = path.resolve(projectRoot, moduleArg);
   const handoffFile = path.resolve(projectRoot, handoffArg);
   const moduleData = require(moduleFile);
-  const activeAtlas = require(path.resolve(projectRoot, 'data/atlas-data.js'));
+  const { atlasData: activeAtlas } = require(path.resolve(projectRoot, 'src/data/atlas-data.ts'));
   const handoff = readJson(handoffFile);
   const errors = [];
   const normalizedModuleArg = projectPath(moduleFile);

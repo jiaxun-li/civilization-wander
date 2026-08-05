@@ -276,7 +276,7 @@
 
 **Content Agent 所有权范围：** `data/<内容模块>.js`、`assets/images/<内容模块>/`、模块专属测试和本 ContentPack 记录
 
-**Integration Agent：** 同一时间只能有一个；负责 `index.html`、`src/main.ts`、`data/atlas-data.js`、固定加载顺序测试、跨模块与反向导航及共享验证清单
+**Integration Agent：** 同一时间只能有一个；负责 `index.html`、`src/main.ts`、`src/data/atlas-data.ts`、固定加载顺序测试、跨模块与反向导航及共享验证清单
 
 **UI Agent（如有）：**
 
@@ -326,7 +326,7 @@
 
 **非运行时集成状态：** 模块编写中／模块级通过／集成中／已接入；不得添加 `integrationStatus` runtime 字段
 
-> 模块处于“集成中”时，不得部分加载到 `src/main.ts` 或 `data/atlas-data.js`。不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来隐藏未完成接入。
+> 模块处于“集成中”时，不得部分加载到 `src/main.ts` 或 `src/data/atlas-data.ts`。不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来隐藏未完成接入。
 
 ### 流程改进建议
 
