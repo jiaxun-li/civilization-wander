@@ -27,6 +27,8 @@ export interface ImagePresentation {
 }
 
 export interface MapPresentationConfig {
+  readonly mapStateId: string;
+  readonly structureViewIds: readonly string[];
   readonly caption?: string;
   readonly [key: string]: unknown;
 }
@@ -83,6 +85,23 @@ export interface AtlasQueries {
   getEntity(id: EntityId | null | undefined): Entity | null | undefined;
   getAsset(id: AssetId | null | undefined): Asset | null | undefined;
   getEntityTypeLabel(type: string): string | null;
+  getScenesForCard(cardId: CardId | null | undefined): readonly Scene[];
+  getNavigationOption(id: string | null | undefined): NavigationOption | null | undefined;
+  getNavigationEntrySceneId(option: NavigationOption): SceneId | null;
+  getMapState(id: string | null | undefined): MapState | null | undefined;
+  getStructureView(id: string | null | undefined): StructureView | null | undefined;
+}
+
+export interface NavigationOption {
+  readonly id: string;
+  readonly target: {
+    readonly cardId: CardId;
+  };
+}
+
+export interface StructureView {
+  readonly id: string;
+  readonly [key: string]: unknown;
 }
 
 export interface NavigationTrailEntry {
@@ -114,6 +133,7 @@ export interface AtlasHistoryState {
 export interface ReaderState {
   activeCardId: CardId | null;
   activeSceneId: SceneId | null;
+  entryContext: ReaderContext | null;
   navigationStack: NavigationTrailEntry[];
 }
 
@@ -128,6 +148,7 @@ export interface ReaderContext {
   readonly inheritedMedia?: boolean;
   readonly presentationSceneId?: SceneId;
   readonly presentationScene?: Scene;
+  readonly sourcePresentation?: ScenePresentation;
 }
 
 export interface ResolvedSceneMedia {
@@ -137,8 +158,8 @@ export interface ResolvedSceneMedia {
 }
 
 export interface RenderCardOptions {
-  readonly restoreScrollY?: number;
-  readonly replaceScrollY?: number;
+  readonly restoreScrollY?: number | null;
+  readonly replaceScrollY?: number | null;
   readonly focusHeading?: boolean;
   readonly preserveHistorySnapshot?: boolean;
   readonly navigationStack?: readonly NavigationTrailEntry[];
@@ -150,12 +171,15 @@ export interface CardReader {
   start(cardId?: CardId): ReaderState;
   destroy(): void;
   renderCard(cardId: CardId, sceneId?: SceneId | null, options?: RenderCardOptions): unknown;
+  announceScene(scene: Scene, updateHistory?: boolean, trigger?: string): void;
   followNavigation(navigationId: string): boolean;
+  handlePopState(event: PopStateEvent): void;
   replaceHistorySnapshot(): void;
 }
 
 export interface CardComponents {
-  readonly [key: string]: unknown;
+  renderMainCard(cardId: CardId, options?: { activeSceneId?: SceneId | null }): string;
+  renderPreviewCard(navigationId: string): string;
 }
 
 export interface CardsModule {
@@ -166,6 +190,12 @@ export interface CardsModule {
 export interface CardReaderModule {
   buildCardHash(cardId: CardId, sceneId: SceneId): string;
   parseCardHash(hash?: string): { cardId: CardId; sceneId: SceneId | null } | null;
+  deriveSceneDirection(
+    queries: AtlasQueries,
+    cardId: CardId,
+    fromSceneId: SceneId | null,
+    toSceneId: SceneId
+  ): SceneDirection;
   resolveSceneMedia(queries: AtlasQueries, cardId: CardId, sceneId: SceneId): ResolvedSceneMedia | null;
   createCardReader(options: {
     data: AtlasData;
@@ -175,8 +205,8 @@ export interface CardReaderModule {
     windowRef: AtlasRuntimeGlobal;
     onPresentationChange: (presentation: ScenePresentation, scene: Scene, context: ReaderContext) => void;
     onMapStateChange: (mapState: MapState | null, scene: Scene, mapConfig: MapPresentationConfig | null, context: ReaderContext) => void;
-    onStructureViewsChange: (views: readonly unknown[], scene: Scene, context: ReaderContext) => void;
-    onCardChange: (card: Card) => void;
+    onStructureViewsChange: (views: readonly StructureView[], scene: Scene, context: ReaderContext) => void;
+    onCardChange: (card: Card, scene: Scene) => void;
   }): CardReader;
 }
 
@@ -229,6 +259,7 @@ export interface BrandConfig {
 }
 
 export interface AtlasRuntimeGlobal extends Window {
+  readonly IntersectionObserver?: typeof IntersectionObserver;
   ATLAS_V5_DATA?: AtlasData;
   ATLAS_V5_QUERIES?: AtlasQueries;
   ATLAS_V5_CARDS?: CardsModule;

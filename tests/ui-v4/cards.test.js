@@ -6,7 +6,7 @@ const path = require('node:path');
 const data = require('../../data/atlas-data.js');
 const queries = require('../../data/queries.js');
 const cardsModule = require('../../ui/v4/cards.js');
-const readerModule = require('../../ui/v4/card-reader.js');
+const readerModule = require('../../src/reader/card-reader.ts');
 
 const components = cardsModule.createCardComponents({ data, queries });
 

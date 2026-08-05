@@ -44,7 +44,7 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'data/atlas-data.js',
     'data/queries.js',
     'ui/v4/cards.js',
-    'ui/v4/card-reader.js',
+    'src/reader/card-reader.ts',
     'assets/natural-earth/base.js',
     'map/v4/map-renderer.js',
     'src/app.ts'

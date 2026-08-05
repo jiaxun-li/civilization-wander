@@ -25,7 +25,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 3. `data/atlas-data.js`
 4. `data/queries.js`
 5. `ui/v4/cards.js`
-6. `ui/v4/card-reader.js`
+6. `src/reader/card-reader.ts`
 7. `assets/natural-earth/base.js`
 8. `map/v4/map-renderer.js`
 9. `src/app.ts`
@@ -41,7 +41,7 @@ flowchart TD
     CM --> D
     D --> Q["data/queries.js\nATLAS_V5_QUERIES"]
     Q --> C["ui/v4/cards.js\nATLAS_V5_CARDS"]
-    Q --> R["ui/v4/card-reader.js\nATLAS_V5_READER"]
+    Q --> R["src/reader/card-reader.ts\nATLAS_V5_CARD_READER"]
     C --> R
     WP --> B["assets/natural-earth/base.js\nATLAS_NATURAL_EARTH"]
     Q --> M["map/v4/map-renderer.js\nATLAS_V5_MAP"]
@@ -64,7 +64,7 @@ Vite 按 `src/main.ts` 的导入顺序执行模块；全部依赖就绪后，`sr
 
 1. 建立首页板块、Card 容器、返回按钮、标题与面包屑的 DOM 引用。
 2. `src/app.ts` 用首页策展配置中的稳定 Card ID 生成三个入口板块；实体名、摘要和 Card 标题始终从当前聚合数据读取，不在首页配置重复维护。首屏提供三个代表性快速起点；可用的本地阅读快照只把第一个动作替换为“继续上次阅读”，其余入口保持稳定。
-3. 以 `ATLAS_V5_READER.createReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
+3. 以 `ATLAS_V5_CARD_READER.createCardReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
 4. 根据 URL hash 解析 `#card/<cardId>/<sceneId>`；没有有效 Card 时显示首页，直接链接则启动 Reader。
 5. Reader 通过 `getCard()`、`getScenesForCard()` 取得 Card 与由 `Card.sceneIds` 决定的 Scene 顺序，再让 Cards renderer 生成主内容。
 6. Cards renderer 在标题区从主 Entity 与 Card `timeSpan.start/end` 生成“公共类型 · 主实体名称 · 年代”坐标；每个 Scene 的时间行按 `timeDisplay` 显示年代语义，并从 `Card.sceneIds` 派生“当前位置／总数”。这些都是展示派生值，不写回数据。
@@ -470,7 +470,7 @@ pnpm build
 | 文件 | 当前职责/状态 |
 |---|---|
 | `index.html` | 活动 V5 页面、语义 landmark 与单一 Vite module 入口。 |
-| `src/main.ts` | 样式与既有 V5 运行时模块的固定导入顺序；渐进式 TypeScript 迁移入口。 |
+| `src/main.ts` | 样式与 V5 运行时模块的固定导入顺序；渐进式 TypeScript 迁移入口。 |
 | `src/app.ts` | 类型化的首页/Card 视图编排、Reader/Map 接线、媒体切换、快照与 history 辅助。 |
 | `src/types/runtime.ts` | App 实际消费的 V5 数据、Queries、Cards、Reader、Map 和浏览器全局类型边界；不充当运行时 schema。 |
 | `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
@@ -494,7 +494,7 @@ pnpm build
 | `scripts/migrate-v4-content-to-v5.js` | 记录 V4→V5 的显式字段删除、Event kind 和逐 Scene Event 映射。 |
 | `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始与编码尺寸、体积、WebP 格式、origin、SHA-256 与审核状态。 |
 | `ui/v4/cards.js` | 语义化/转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML。 |
-| `ui/v4/card-reader.js` | Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫。 |
+| `src/reader/card-reader.ts` | 类型化的 Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫；继续暴露 `ATLAS_V5_CARD_READER` 浏览器兼容接口。 |
 | `map/v4/map-renderer.js` | 本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理。 |
 | `data/world-physical.js` | 活动生成的 Natural Earth 4096 坐标底图数据。 |
 | `assets/natural-earth/base.js` | 底图 adapter、筛选、冻结与缓存。 |

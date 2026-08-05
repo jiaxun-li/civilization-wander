@@ -484,12 +484,12 @@ explicitly.
 The current runtime is a Vite-built V5 prototype with no client-side runtime dependencies:
 
 - `index.html` loads the single `src/main.ts` Vite entrypoint.
-- `src/main.ts` imports styles and the existing runtime modules in dependency
-  order while TypeScript migration proceeds incrementally.
+- `src/main.ts` imports styles and runtime modules in dependency order while
+  TypeScript migration proceeds incrementally.
 - `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
 - `src/types/runtime.ts` defines the typed consumer boundary between the
-  application and the still-JavaScript V5 data, query, Reader, Cards, and Map modules.
+  application and the V5 data, query, Reader, Cards, and Map modules.
 - `data/atlas-data.js` contains Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,
   CameraPresets, MapStates, Geometries, MapAnnotations, Assets, and Sources.
@@ -497,7 +497,7 @@ The current runtime is a Vite-built V5 prototype with no client-side runtime dep
 - `scripts/report-atlas-counts.js` reports live collection counts from the
   aggregated runtime data without writing files.
 - `ui/v4/cards.js` renders Card and Scene presentations.
-- `ui/v4/card-reader.js` activates Scenes, updates history, restores scroll
+- `src/reader/card-reader.ts` activates Scenes, updates history, restores scroll
   position, and dispatches presentation changes.
 - `map/v4/map-renderer.js` renders a local Natural Earth SVG map and optional
   historical overlays.

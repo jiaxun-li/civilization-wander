@@ -202,7 +202,7 @@ test('App retains media within one Card and resets it across Cards', () => {
 });
 
 test('App selects only the nearest distinct image in each Scene direction for preloading', () => {
-  const readerModule = require('../../ui/v4/card-reader.js');
+  const readerModule = require('../../src/reader/card-reader.ts');
   const assets = adjacentSceneImageAssets(
     queries,
     readerModule,
