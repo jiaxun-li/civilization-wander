@@ -334,7 +334,9 @@ AI 生成图片同样遵守上述 WebP、尺寸和体积规则。生成原图超
 - Scene—Event 时间相交、Card—Scene 所有权与 Card Event 推导检查；
 - Source 和 ClaimBlock provenance 检查；
 - Asset 本地路径、文件存在性和许可检查；
-- 全量 Node 测试与 JavaScript 语法检查；
+- TypeScript 类型检查、JavaScript 支持脚本语法检查与运行时清单一致性检查；
+- 全量 Node 测试与正式 Vite 构建；
+- `pnpm test:browser` 生产浏览器门禁；
 - direct Card/Scene hash 检查；
 - back/forward 与滚动恢复检查；
 - desktop、mobile 与 reduced-motion 视觉检查；

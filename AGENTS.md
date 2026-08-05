@@ -277,8 +277,10 @@ should be concise and shown only when a map is present.
 ## Technical constraints
 
 - Static HTML, CSS, and JavaScript production output built with Vite.
-- Vite and TypeScript are development dependencies; do not add a client-side
-  framework or runtime package dependency without a separate approved migration.
+- Vite and TypeScript are development dependencies. React and React DOM are the
+  only approved client-side UI runtime dependencies; adding another client
+  framework or runtime package requires a separate product and architecture
+  decision.
 - Use Node.js 22.18 or newer so Node-based tests can type-strip the application
   TypeScript directly; Node.js 24 LTS is the recommended local version.
 - Local preview must work through `pnpm dev` and the production build through
@@ -600,7 +602,11 @@ A map is not part of the completion requirement.
 - Use `apply_patch` for manual file edits.
 - Update validation whenever the schema changes.
 - Add negative tests proving invalid data is rejected.
-- Run syntax checks and the full relevant test suite after implementation.
+- Run TypeScript type checking, JavaScript syntax checks, runtime-manifest checks,
+  and the full relevant test suite after implementation.
+- Changes to React-owned UI must preserve the typed view-model and intent-callback
+  boundary, use focused component or stable-fixture tests, and must not add
+  imperative DOM reconstruction or a second listener layer over React controls.
 - Changes to startup, routing, Reader, scrolling, or media loading must also pass
   `pnpm build` followed by `pnpm test:browser`; the Pages workflow blocks
   deployment when this production-browser gate fails.
