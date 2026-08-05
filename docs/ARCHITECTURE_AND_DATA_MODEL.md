@@ -16,7 +16,9 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动页面入口。它以经典脚本、相对路径和固定顺序加载，因此可以直接从 `file://` 运行，不需要服务器、打包器或包管理器。聚合器与语法清单必须和入口保持同一内容模块顺序；`scripts/check-runtime-manifests.js` 从三处读取现状并做只读比较，不再由文档保存另一份模块清单。依赖层次是：
+`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；TypeScript 先覆盖入口与构建配置，既有 V5 JavaScript 模块通过有序副作用导入渐进迁移。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
+
+聚合器与语法清单必须和 `src/main.ts` 保持同一内容模块顺序；`scripts/check-runtime-manifests.js` 从 HTML 入口、TypeScript 入口、聚合器与语法清单读取现状并做只读比较，不再由文档保存另一份模块清单。运行时依赖层次是：
 
 1. `data/world-physical.js`
 2. `data/` 下由入口列出的各内容模块
@@ -28,13 +30,14 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 8. `map/v4/map-renderer.js`
 9. `app.js`
 
-样式顺序是 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css`。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；稳定表现层仍保留 `ui/v4`、`map/v4` 与 `styles/v4` 目录名，这些路径名不表示活动 schema 仍为 V4。
+样式由 `src/main.ts` 按 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css` 的顺序导入。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；Vite/TypeScript 是构建和开发工作流变化，不构成 schema 版本变化。稳定表现层仍保留 `ui/v4`、`map/v4` 与 `styles/v4` 目录名，这些路径名不表示活动 schema 仍为 V4。
 
 ```mermaid
 flowchart TD
-    HTML["index.html"] --> WP["data/world-physical.js\nATLAS_WORLD_VECTOR"]
-    HTML --> CM["data/content-module.js\nATLAS_V5_* content globals"]
-    HTML --> D["data/atlas-data.js\nATLAS_V5_DATA"]
+    HTML["index.html"] --> ENTRY["src/main.ts\nVite module entry"]
+    ENTRY --> WP["data/world-physical.js\nATLAS_WORLD_VECTOR"]
+    ENTRY --> CM["data/content-module.js\nATLAS_V5_* content globals"]
+    ENTRY --> D["data/atlas-data.js\nATLAS_V5_DATA"]
     CM --> D
     D --> Q["data/queries.js\nATLAS_V5_QUERIES"]
     Q --> C["ui/v4/cards.js\nATLAS_V5_CARDS"]
@@ -48,14 +51,14 @@ flowchart TD
     C --> A
     R --> A
     M --> A
-    CSS["styles.css + styles/v4/*"] --> HTML
+    CSS["styles.css + styles/v4/*"] --> ENTRY
 ```
 
-各内容模块分别声明精确的十四个数组；`atlas-data.js` 在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据；`queries.js` 建索引、提供读 API 并执行失败关闭式校验；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`app.js` 是唯一编排层。新增、删除或重排内容模块时必须同步入口、聚合器、语法清单和测试，并运行 `npm run check:manifests`；文档不另行复制模块文件清单。
+各内容模块分别声明精确的十四个数组；`atlas-data.js` 在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据；`queries.js` 建索引、提供读 API 并执行失败关闭式校验；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`app.js` 是唯一编排层。新增、删除或重排内容模块时必须同步 `src/main.ts`、聚合器、语法清单和测试，并运行 `pnpm run check:manifests`；文档不另行复制模块文件清单。
 
 ## 3. 从 `index.html` 到地图渲染器的完整调用链
 
-页面脚本全部就绪后，`app.js` 读取 V5 全局对象并立即运行 `queries.validateAtlasData()`。任何无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
+Vite 按 `src/main.ts` 的导入顺序执行模块；全部依赖就绪后，`app.js` 读取 V5 全局对象并立即运行 `queries.validateAtlasData()`。任何无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
 
 初始化链如下：
 
@@ -77,7 +80,7 @@ flowchart TD
 顶层对象必须是精确的 `{schemaVersion: 5, ...14 collections}`；未知集合、缺失集合或非数组集合均被拒绝。本文只记录集合职责，不手工维护会随内容增长而变化的对象数量。实时数量由聚合后的运行时数据生成：
 
 ```powershell
-npm run report:counts
+pnpm run report:counts
 ```
 
 | 集合 | 主要责任 | 主要消费者 |
@@ -403,10 +406,10 @@ flowchart LR
 6. Card.sceneIds 唯一顺序。
 7. NavigationOptions，再到 Placements。
 8. 仅在必要时加入 CameraPreset、Geometry、MapState、MapAnnotation 与 Scene map layers。
-9. `node --check` 活动脚本。
+9. `pnpm typecheck` 与 `node --check` 活动脚本。
 10. `queries.validateAtlasData(data)` 并审阅精确 counts/errors。
 11. 运行数据、UI、地图、集成和 E2E 全套 V5 测试。
-12. 真实浏览器检查桌面/移动、`file://` 直链、滚动 Scene、返回/前进、刷新、键盘、reduced motion、控制台与失败请求。
+12. 通过 `pnpm dev` 或 `pnpm preview` 做真实浏览器检查：桌面/移动、直达 Card/Scene、滚动 Scene、返回/前进、刷新、键盘、reduced motion、控制台与失败请求。
 
 任何 schema 变更都必须显式升级版本、给出迁移策略、同步 validator，并增加证明坏数据被拒绝的负向测试。Renderer 不能成为坏数据的过滤器。
 
@@ -414,32 +417,36 @@ flowchart LR
 
 ## 17. 测试、数据校验与验收运行方法
 
-项目没有 dependencies/devDependencies，要求 Node >=20。标准命令：
+项目没有运行时 dependencies；开发与构建使用 Vite、TypeScript 和 Node 类型定义，要求 Node >=20.19，包管理器与锁文件以 pnpm 为准。首次运行先执行 `corepack enable` 和 `pnpm install`。标准命令：
 
 ```powershell
-npm test
-npm run test:data
-npm run test:ui
-npm run test:map
-npm run test:integration
-npm run test:e2e
-npm run check:syntax
-npm run check:pages
-npm run report:counts
+pnpm typecheck
+pnpm test
+pnpm run test:data
+pnpm run test:ui
+pnpm run test:map
+pnpm run test:integration
+pnpm run test:e2e
+pnpm run check:syntax
+pnpm run check:manifests
+pnpm run check:pages
+pnpm run report:counts
+pnpm build
 ```
 
-若 `node`/`npm` 未加入 PATH，可直接调用本机 Codex runtime 的 Node，再传递 `package.json` 中相同参数。本文不保存某次运行的测试数量、通过数量、首载字节数或集合计数；这些结果必须在验收时由当前命令重新生成。
+若 `node`/`pnpm` 未加入 PATH，可直接调用本机 Codex runtime 的 Node 与 pnpm，再传递 `package.json` 中相同参数。本文不保存某次运行的测试数量、通过数量、首载字节数或集合计数；这些结果必须在验收时由当前命令重新生成。
 
-全套测试覆盖 V5 schema/content/query/validation、独立内容模块汇总、Asset manifest、Cards/Reader、Map、E2E、应用 history、媒体继承与跨 Card 重置、图片比例与淡入淡出、地图覆盖 UI 隐藏、同步回顶、异步 restore 失效、overlay 差量与反转竞态、入口/聚合器/语法清单一致性、`file://` 静态约束和 reduced motion。这些模拟 DOM、竞态探针与静态契约仍不替代真实浏览器。
+全套测试覆盖 V5 schema/content/query/validation、独立内容模块汇总、Asset manifest、Cards/Reader、Map、E2E、应用 history、媒体继承与跨 Card 重置、图片比例与淡入淡出、地图覆盖 UI 隐藏、同步回顶、异步 restore 失效、overlay 差量与反转竞态、Vite 入口/聚合器/语法清单一致性、Pages 构建约束和 reduced motion。这些模拟 DOM、竞态探针与静态契约仍不替代真实浏览器。
 
-真实浏览器验收仍应在可访问本地 `file://` 的合规环境中按第 16 节第 12 项执行；不要把 Node 模拟与静态检查写成实机通过。
+真实浏览器验收应通过 Vite 本地开发服务器或正式产物预览按第 16 节第 12 项执行；不要把 Node 模拟与静态检查写成实机通过。
 
-## 18. `file://`、静态部署与地图产物约束
+## 18. Vite、静态部署与地图产物约束
 
-- 活动核心必须保持经典脚本/IIFE/UMD、相对资源与本地 JS 数据；不要换成依赖服务器 CORS 行为的 ESM/fetch JSON。
+- `index.html` 只加载 `src/main.ts`；既有 IIFE/UMD 模块由该入口按固定顺序导入，后续可以逐个迁移为 TypeScript，但不得绕过聚合器、validator 或清单一致性检查。
 - 不得为核心内容请求远程地图、字体、API 或图片。Source URL 只是元数据。
 - URL 主身份保持 `#card/<cardId>/<optionalSceneId>`；Scene ID 用于区段定位和恢复，不成为全局故事节点。
-- GitHub Pages 可直接托管根目录；`.nojekyll` 避免 Jekyll 处理。
+- `vite.config.mts` 使用 `/civilization-wander/` 作为 GitHub Pages 项目路径；`pnpm build` 将应用与本地运行时资源输出到 `dist/`，并复制 `.nojekyll`。
+- `.github/workflows/deploy-pages.yml` 在 `main` 推送后执行测试、构建和 Pages 发布；Pages 来源必须设置为 GitHub Actions，不能再直接托管仓库根目录。
 - 当前地图产物是 `data/world-physical.js` 和 `assets/natural-earth/base.js`：前者保存本地 Natural Earth 矢量数据，后者负责筛选、冻结和缓存。两者都是受版本控制的运行时产物；运行时内容图片位于 `assets/images/` 并统一编码为 WebP，当前仓库不包含地图上游原料或构建链。
 
 ## 19. 已知限制与未来演进方向
@@ -453,7 +460,7 @@ npm run report:counts
 7. `map` 与 `mapAndText`、`image` 与 `imageAndText` 在当前主阅读布局中差异有限；类型为未来呈现保留，不能据此复制内容。
 8. Reader 的 `navigationStack` 是漫游足迹的运行态来源，并复制进每个浏览器 history snapshot；popstate 会从目标快照恢复它，使足迹与返回位置一致。它不是 runtime 内容 schema。`entryContext` 只承载方向、触发原因和媒体继承等瞬时呈现上下文，不持久化。浏览器 history snapshot 仍是返回、足迹和滚动恢复的权威。
 9. Scene 方向与媒体继承依赖当前 Card.sceneIds 和运行态激活顺序；它们没有 schema 字段。若未来需要可编辑的非线性 Scene 顺序，必须先设计正式模型，不能持久化当前派生 context。
-10. 活动本地底图约 1.45 MB，是首载体积主要来源；可在不引入远程依赖的前提下继续压缩或分层，但不能破坏 `file://`。
+10. 活动本地底图与聚合内容仍使主 JavaScript 构建块较大；可在不引入远程运行时依赖的前提下继续压缩、分层或按页面需求拆分，但必须保持直达链接和首次渲染正确。
 11. 没有内容编辑器或 schema 生成器；V4→V5 提供一次性、显式映射的 `scripts/migrate-v4-content-to-v5.js`，后续破坏性变化仍须各自提供版本与迁移策略。数据维护依赖严格 validator 与测试。
 
 ## 20. 文件职责总表
@@ -462,9 +469,12 @@ npm run report:counts
 
 | 文件 | 当前职责/状态 |
 |---|---|
-| `index.html` | 活动 V5 页面、语义 landmark、CSS/JS 固定加载顺序。 |
+| `index.html` | 活动 V5 页面、语义 landmark 与单一 Vite module 入口。 |
+| `src/main.ts` | 样式与既有 V5 运行时模块的固定导入顺序；渐进式 TypeScript 迁移入口。 |
 | `app.js` | 首页/Card 视图编排、Reader/Map 接线、媒体切换、history 辅助。 |
-| `package.json` | 零依赖元数据、Node≥20、分层测试与活动语法脚本。 |
+| `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
+| `tsconfig.json` | 渐进式 TypeScript 类型检查边界；暂不强制检查既有 JavaScript。 |
+| `package.json` | Node≥20.19、pnpm、Vite 开发/构建命令与分层验证脚本。 |
 | `styles.css` | 全局 shell、首页、焦点、响应式与 reduced-motion 基线。 |
 | `styles/v4/cards.css` | V4 Card/Scene/claim/navigation/preview/媒体布局。 |
 | `styles/v4/map.css` | V4 SVG 底图、Geometry family、节点、legend、移动/reduced-motion。 |
@@ -502,7 +512,7 @@ npm run report:counts
 | `tests/e2e/v5-flows.test.js` | V5 两次返回、textOnly 直链继承前序媒体、全部现有故事可读。 |
 | `tests/integration/app-history.test.js` | Card→home→Card 的快照顺序，以及媒体同 Card 保留/跨 Card 重置。 |
 | `tests/integration/runtime.test.js` | 活动 V5 入口隔离、清单一致性、validate-first、品牌/回调/可访问性静态契约。 |
-| `tests/integration/pages.test.js` | 相对资源、无网络/打包器、首载大小、package scripts。 |
+| `tests/integration/pages.test.js` | Vite 单入口、本地导入、无远程运行时、Pages base/Asset 复制与 package scripts。 |
 | `tests/fixtures/local-image.svg` | image presentation/Asset 负测与边界校验 fixture。 |
 
 ### 20.4 说明与配置
@@ -512,7 +522,8 @@ npm run report:counts
 | `AGENTS.md` | 当前产品、编辑、数据和工程约束。 |
 | `README.md` | V5 运行、内容范围、架构和维护入口。 |
 | `docs/ARCHITECTURE_AND_DATA_MODEL.md` | 本文；正式字段、运行调用链和内容接入手册。 |
-| `.nojekyll` | 允许根目录作为静态 Pages 内容。 |
+| `.github/workflows/deploy-pages.yml` | 测试、构建并将 `dist/` 发布到 GitHub Pages。 |
+| `.nojekyll` | 构建时复制到 Pages 产物，避免 Jekyll 处理。 |
 | `.gitignore` | 仓库忽略规则。 |
 
-遇到冲突时采用以下证据优先级：活动 `index.html`、聚合器与 `package.json` → 可执行 validator/query/renderer/Reader 与一致性脚本 → 当前测试 → 本文与 README。本文不是 schema 执行器；代码变更后必须同步更新，而不是让文档替代校验器。
+遇到冲突时采用以下证据优先级：活动 `index.html`、`src/main.ts`、聚合器、构建配置与 `package.json` → 可执行 validator/query/renderer/Reader 与一致性脚本 → 当前测试 → 本文与 README。本文不是 schema 执行器；代码变更后必须同步更新，而不是让文档替代校验器。

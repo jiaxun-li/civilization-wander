@@ -4,44 +4,68 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '../..');
-const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const entrypointResources = [
-  ...html.matchAll(/<(?:script|link)[^>]+(?:src|href)="([^"]+)"/g)
-].map(match => match[1]).filter(value => !value.startsWith('#'));
+const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
+const html = read('index.html');
+const entry = read('src/main.ts');
+const viteConfig = read('vite.config.mts');
+const entryImports = [...entry.matchAll(/import\s+['"]\.\.\/([^'"]+)['"]/g)]
+  .map(match => match[1]);
 
-test('all entrypoint resources are relative and exist for GitHub Pages/file://', () => {
-  assert.ok(entrypointResources.length >= 10);
-  for (const resource of entrypointResources) {
-    assert.doesNotMatch(resource, /^(?:\/|[a-z]+:)/i);
-    assert.equal(fs.existsSync(path.join(root, resource)), true, resource);
-  }
-  assert.equal(fs.existsSync(path.join(root, '.nojekyll')), true);
+test('index.html has one Vite module entrypoint', () => {
+  const scripts = [...html.matchAll(/<script[^>]+src="([^"]+)"[^>]*><\/script>/g)]
+    .map(match => match[1]);
+  assert.deepEqual(scripts, ['/src/main.ts']);
+  assert.match(html, /<script type="module" src="\/src\/main\.ts"><\/script>/);
+  assert.equal(fs.existsSync(path.join(root, 'src/main.ts')), true);
 });
 
-test('runtime modules require no bundler or network fetch', () => {
-  const runtimeFiles = entrypointResources.filter(relative =>
-    relative.endsWith('.js') && relative !== 'data/world-physical.js'
-  );
-  const runtime = runtimeFiles.map(relative => fs.readFileSync(path.join(root, relative), 'utf8')).join('\n');
+test('all Vite entrypoint imports are local build inputs', () => {
+  assert.ok(entryImports.length >= 10);
+  for (const relative of entryImports) {
+    assert.doesNotMatch(relative, /^(?:\/|[a-z]+:)/i);
+    assert.equal(fs.existsSync(path.join(root, relative)), true, relative);
+  }
+});
+
+test('legacy runtime remains local while Vite owns module loading', () => {
+  const runtimeFiles = entryImports.filter(relative => relative.endsWith('.js'));
+  const runtime = runtimeFiles.map(read).join('\n');
   const executableRuntime = runtimeFiles
     .filter(relative => !relative.startsWith('data/') || relative === 'data/queries.js')
-    .map(relative => fs.readFileSync(path.join(root, relative), 'utf8'))
+    .map(read)
     .join('\n');
   assert.doesNotMatch(runtime, /\bimport\s+|\bexport\s+|\brequire\(['"][^.]|fetch\(|XMLHttpRequest/);
   assert.doesNotMatch(executableRuntime, /https?:\/\//);
 });
 
-test('first-load resource size is recorded and remains static-site appropriate', () => {
-  const firstLoad = ['index.html', ...entrypointResources];
-  const bytes = firstLoad.reduce((sum, relative) => sum + fs.statSync(path.join(root, relative)).size, 0);
-  assert.ok(bytes < 2_750_000, `first-load static resources are ${bytes} bytes`);
+test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {
+  assert.match(viteConfig, /base:\s*['"]\/civilization-wander\/['"]/);
+  assert.match(viteConfig, /cp\(resolve\(projectRoot, 'assets'\)/);
+  assert.match(viteConfig, /copyFile\(resolve\(projectRoot, '\.nojekyll'\)/);
+  assert.equal(fs.existsSync(path.join(root, '.nojekyll')), true);
 });
 
-test('package scripts cover all required verification layers without dependencies', () => {
-  const packageJson = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-  for (const name of ['test', 'test:data', 'test:ui', 'test:map', 'test:integration', 'test:e2e', 'check:syntax', 'check:pages', 'report:counts']) {
+test('package scripts cover development, build, preview, and verification', () => {
+  const packageJson = JSON.parse(read('package.json'));
+  for (const name of [
+    'dev',
+    'build',
+    'preview',
+    'typecheck',
+    'test',
+    'test:data',
+    'test:ui',
+    'test:map',
+    'test:integration',
+    'test:e2e',
+    'check:syntax',
+    'check:pages',
+    'report:counts'
+  ]) {
     assert.equal(typeof packageJson.scripts[name], 'string', name);
   }
   assert.equal(packageJson.dependencies, undefined);
-  assert.equal(packageJson.devDependencies, undefined);
+  assert.equal(typeof packageJson.devDependencies.vite, 'string');
+  assert.equal(typeof packageJson.devDependencies.typescript, 'string');
+  assert.equal(typeof packageJson.devDependencies['@types/node'], 'string');
 });

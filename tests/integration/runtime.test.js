@@ -8,6 +8,7 @@ const queryModule = require('../../data/queries.js');
 const root = path.resolve(__dirname, '../..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const html = read('index.html');
+const entry = read('src/main.ts');
 const app = read('app.js');
 const globalCss = read('styles.css');
 const cardCss = read('styles/v4/cards.css');
@@ -24,9 +25,13 @@ test('entrypoint, aggregator, and syntax manifest keep one content-module order'
   assert.equal(result.status, 0, result.stderr || result.stdout);
 });
 
-test('entrypoint loads only the V5 main path in dependency order', () => {
-  const scripts = [...html.matchAll(/<script src="([^"]+)"/g)].map(match => match[1]);
-  assert.deepEqual(scripts, [
+test('Vite entrypoint loads only the V5 main path in dependency order', () => {
+  assert.match(html, /<script type="module" src="\/src\/main\.ts"><\/script>/);
+  const imports = [...entry.matchAll(/import\s+['"]\.\.\/([^'"]+)['"]/g)].map(match => match[1]);
+  assert.deepEqual(imports, [
+    'styles.css',
+    'styles/v4/cards.css',
+    'styles/v4/map.css',
     'data/world-physical.js',
     'data/mesopotamia.js',
     'data/ancient-egypt.js',
@@ -127,7 +132,7 @@ test('left-column images crossfade while unchanged images remain stable', () => 
 });
 
 test('same-Card image presentations preserve the map DOM underneath', () => {
-  const imageRenderer = app.match(/function renderImagePresentation\(presentation, scene, context\)[\s\S]*?\n    }\n\n    reader =/)?.[0] || '';
+  const imageRenderer = app.match(/function renderImagePresentation\(presentation, scene, context\)[\s\S]*?\r?\n    }\r?\n\r?\n    reader =/)?.[0] || '';
   assert.doesNotMatch(imageRenderer, /map\?\.destroy\(\)|map = null|nextContainer\.innerHTML/);
   assert.match(imageRenderer, /nextContainer\.append\(incomingImage\)/);
   assert.match(imageRenderer, /setAttribute\('aria-hidden', 'true'\)/);

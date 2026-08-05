@@ -18,34 +18,50 @@
 
 ## 本地运行
 
-最简单的方式是直接双击 `index.html`。
-
-也可以使用任意静态文件服务器：
+需要 Node.js 20.19 或更高版本。首次运行先安装开发依赖：
 
 ```powershell
-python -m http.server 8000
+corepack enable
+pnpm install
 ```
 
-然后打开 `http://localhost:8000/`。
+启动带自动刷新的本地预览：
 
-项目使用原生 HTML、CSS 和 JavaScript，不需要构建步骤或运行时依赖；核心体验同时支持 `file://` 与 GitHub Pages。
+```powershell
+pnpm dev
+```
+
+终端会显示可访问地址，通常是 `http://localhost:5173/civilization-wander/`。修改入口、样式或脚本后，浏览器会自动更新。
+
+检查正式构建时使用：
+
+```powershell
+pnpm build
+pnpm preview
+```
+
+`pnpm build` 生成 `dist/`，`pnpm preview` 用本地服务器预览与 GitHub Pages 相同的产物。`dist/` 是临时构建目录，不提交到仓库。项目使用 Vite 和渐进式 TypeScript 作为开发底座；现有 V5 数据 schema、原生界面模块和本地内容资源保持不变，正式页面没有远程内容、地图、字体或图片依赖。
 
 ## 验证
 
-项目使用 Node.js 内置测试工具，不需要安装项目依赖：
+安装依赖后可运行：
 
 ```powershell
-npm test
-npm run check:syntax
-npm run check:manifests
-npm run check:pages
+pnpm typecheck
+pnpm test
+pnpm run check:syntax
+pnpm run check:manifests
+pnpm run check:pages
+pnpm build
 ```
 
 查看当前运行时数据的实时统计：
 
 ```powershell
-npm run report:counts
+pnpm run report:counts
 ```
+
+推送到 `main` 后，GitHub Actions 会测试、构建并发布 `dist/`。仓库的 Pages 来源需要设置为 **GitHub Actions**，不再直接发布仓库根目录。
 
 ## 项目文档
 

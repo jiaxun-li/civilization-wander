@@ -275,17 +275,21 @@ should be concise and shown only when a map is present.
 
 ## Technical constraints
 
-- Static HTML, CSS, and JavaScript.
-- No framework, bundler, or runtime package dependency.
-- The core experience must work from `file://`.
+- Static HTML, CSS, and JavaScript production output built with Vite.
+- Vite and TypeScript are development dependencies; do not add a client-side
+  framework or runtime package dependency without a separate approved migration.
+- Local preview must work through `pnpm dev` and the production build through
+  `pnpm build` plus `pnpm preview`; direct `file://` loading is not supported.
 - Content must remain available from local JavaScript data files.
 - Do not add runtime network requests for core content or navigation.
-- Do not require a remote map, remote font, API, or development server.
+- Do not require a remote map, remote font, or API. A local Vite server is the
+  supported development and preview path.
 - Preserve direct Card links, optional Scene section anchors, and refresh
   behavior.
 - Preserve browser back/forward navigation and reading-position restoration.
 - Preserve desktop and mobile layouts.
-- Keep validation runnable in Node without installing project dependencies.
+- Keep validation runnable after the locked pnpm development dependencies are
+  installed.
 - Breaking schema changes require an explicit schema version and migration
   strategy.
 - Do not hide invalid data through renderer-only filtering when validation can
@@ -312,6 +316,7 @@ A Content Agent may edit only:
 A Content Agent must not edit:
 
 - `index.html`;
+- `src/main.ts`;
 - `data/atlas-data.js`;
 - another content module;
 - shared or reciprocal navigation in existing modules;
@@ -329,6 +334,7 @@ Only one Integration Agent may own shared integration files at a time. Its
 scope includes:
 
 - `index.html`;
+- `src/main.ts`;
 - `data/atlas-data.js`;
 - fixed runtime-loading tests;
 - cross-module and reciprocal navigation changes;
@@ -357,7 +363,7 @@ aggregate data in order to make tests pass.
 ### Module-level gate
 
 A new content module must pass its isolated gate before it can be added to
-`index.html` or `data/atlas-data.js`.
+`src/main.ts` or `data/atlas-data.js`.
 
 The gate must include:
 
@@ -434,7 +440,7 @@ After taking exclusive integration ownership, the Integration Agent must:
 5. update fixed loading-order and integration tests;
 6. run the complete validator;
 7. run syntax checks and the full test suite;
-8. verify `file://` loading, direct Card/Scene links, desktop and mobile
+8. verify the Vite development or production preview, direct Card/Scene links, desktop and mobile
    navigation, coarse-pointer Preview behavior, back/forward restoration,
    reduced motion, and browser console errors;
 9. synchronize README, architecture documentation, and affected workflow
@@ -451,7 +457,7 @@ ContentPack record, or another non-runtime handoff record.
 
 Do not add an `integrationStatus` field to runtime data unless the schema
 explicitly adopts and validates it. Do not partially load an unfinished module
-through `index.html` or `data/atlas-data.js`.
+through `src/main.ts` or `data/atlas-data.js`.
 
 An unfinished module must remain outside the active aggregation path. Renderer
 filtering, silent query filtering, try/catch suppression, or removal of invalid
@@ -473,9 +479,11 @@ explicitly.
 
 ## Current implementation status
 
-The current runtime is a dependency-free V5 prototype:
+The current runtime is a Vite-built V5 prototype with no client-side runtime dependencies:
 
-- `index.html` loads the application in dependency order.
+- `index.html` loads the single `src/main.ts` Vite entrypoint.
+- `src/main.ts` imports styles and the existing runtime modules in dependency
+  order while TypeScript migration proceeds incrementally.
 - `app.js` coordinates the home view, Card reader, navigation, and optional
   map renderer.
 - `data/atlas-data.js` contains Entities, Events, StructuralEdges, Cards,
@@ -497,7 +505,7 @@ The current runtime is a dependency-free V5 prototype:
 V5 removes `Entity.defaultCardId` and authored `Card.eventIds`. Entity-to-Card
 indexes and Card Events are derived from Card and Scene ownership. It requires
 non-empty Scene Event links while preserving Card-first exploration, optional
-`ScenePresentation` media, and the dependency-free static runtime. The stable
+`ScenePresentation` media, and the static production runtime. The stable
 presentation implementation remains in `ui/v4`, `map/v4`, and `styles/v4`;
 those directory names are not the active data schema version.
 

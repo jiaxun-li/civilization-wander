@@ -2,8 +2,13 @@
   "name": "civilization-wander-v5",
   "version": "5.0.0",
   "private": true,
-  "description": "Dependency-free static civilization knowledge network.",
+  "packageManager": "pnpm@11.9.0",
+  "description": "Static civilization knowledge network with a Vite development and build workflow.",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
     "test": "node --test tests/data-v5/*.test.js tests/ui-v4/*.test.js tests/map-v4/*.test.js tests/integration/*.test.js tests/e2e/*.test.js",
     "test:data": "node --test tests/data-v5/*.test.js",
     "test:ui": "node --test tests/ui-v4/*.test.js",
@@ -16,6 +21,11 @@
     "report:counts": "node scripts/report-atlas-counts.js"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.0"
   }
 }

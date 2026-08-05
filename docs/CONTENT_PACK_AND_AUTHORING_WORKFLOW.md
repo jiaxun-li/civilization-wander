@@ -253,9 +253,9 @@ Scene 还必须满足：
 
 多 Agent 并行生产时，必须遵循 `AGENTS.md` 的 Multi-agent content integration ownership。主运行时在每一个完成的集成边界都必须有效；尚未完成的模块留在主聚合路径之外。
 
-- Content Agent 只编辑获分配的 `data/<内容模块>.js`、对应的 `assets/images/<内容模块>/`、模块专属测试和本 ContentPack 记录；不得修改 `index.html`、`data/atlas-data.js`、其他内容模块、既有模块中的共享或反向导航，以及固定集成测试；
+- Content Agent 只编辑获分配的 `data/<内容模块>.js`、对应的 `assets/images/<内容模块>/`、模块专属测试和本 ContentPack 记录；不得修改 `index.html`、`src/main.ts`、`data/atlas-data.js`、其他内容模块、既有模块中的共享或反向导航，以及固定集成测试；
 - UI Agent 的常规测试应使用小型、稳定且有效的 fixture，不依赖正在被 Content Agent 修改或暂时无效的全集数据；接入完成后才用实时聚合 atlas 做集成级 smoke test；
-- 同一时间只能有一个 Integration Agent 拥有 `index.html`、`data/atlas-data.js`、固定加载顺序测试、跨模块与反向导航、全局 ID／引用消歧，以及受加载顺序影响的共享验证清单；
+- 同一时间只能有一个 Integration Agent 拥有 `index.html`、`src/main.ts`、`data/atlas-data.js`、固定加载顺序测试、跨模块与反向导航、全局 ID／引用消歧，以及受加载顺序影响的共享验证清单；
 - Content Agent 若需要跨模块连接，应在交接记录中提出出站入口、目标 ID、所需反向入口和建议位置，不得直接修改既有模块；
 - Content Agent 可以在交接记录中提出“首页候选”及其叙事理由，但不得直接修改首页策展配置。首页入口不会因新增 Card 自动增加；只有当前 UI／Integration 所有者可以调整入口，而且配置只保存稳定 Card ID，公共标题与摘要始终从聚合数据读取；
 - 模块交给 Integration Agent 前必须冻结编辑所有权。Integration Agent 仅可为引用接线、稳定 ID 复用和跨模块导航调整临时编辑已提交模块，不得改写已批准公共正文和媒体选择；若需要编辑性改写，必须先把所有权退回 Content Agent。
@@ -278,9 +278,9 @@ node scripts/validate-content-module.js data/<module>.js docs/content-packs/<mod
 
 每个 `assets/images/<module>/` 还必须包含非运行时、`manifestVersion: 2` 的 `manifest.json`，为 Asset 保存 creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、`webp` 格式、SHA-256、来源 ID 和审核状态。现存 V4 迁移到 V5 的素材可以诚实标为 `needsMetadataAudit`，但新模块必须在门禁前完成审核，不得猜测许可或创作者。
 
-Integration Agent 接手后必须先确认当前主运行时有效，再接入入口和聚合器、解决全局重复 ID 与外部引用、置入反向导航、更新加载顺序测试，随后运行完整 validator、语法检查、全量测试和浏览器验收，并同步 README、架构文档和受影响工作规范。
+Integration Agent 接手后必须先确认当前主运行时有效，再接入 `src/main.ts` 和聚合器、解决全局重复 ID 与外部引用、置入反向导航、更新加载顺序测试，随后运行完整 validator、类型与语法检查、全量测试、正式构建和浏览器验收，并同步 README、架构文档和受影响工作规范。
 
-已经通过模块级门禁但尚未完成主运行时门禁的模块，必须在任务或 ContentPack 交接记录中标记为“集成中”。这不是 runtime schema 字段；除非 schema 正式采纳并校验，不得添加 `integrationStatus`。集成中的模块不得部分加载到 `index.html` 或 `data/atlas-data.js`，不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来掩盖未完成接入。
+已经通过模块级门禁但尚未完成主运行时门禁的模块，必须在任务或 ContentPack 交接记录中标记为“集成中”。这不是 runtime schema 字段；除非 schema 正式采纳并校验，不得添加 `integrationStatus`。集成中的模块不得部分加载到 `src/main.ts` 或 `data/atlas-data.js`，不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来掩盖未完成接入。
 
 ### 置入 V5
 
@@ -379,7 +379,7 @@ AI 生成图片同样遵守上述 WebP、尺寸和体积规则。生成原图超
 第二阶段内部依次完成证据整理、故事写作和公共文字删减，但仍在同一轮提交并等待一次批准。Claim 必须标记为 `public`、`editorialReview`、`dataOnly` 或 `delete`；公共正文只能使用 `public` Claim。
 专名是否可以出现，只看它是否推动当前故事，不看相关 Card 或扩展包是否已经制作。删除不影响人物关系、事件推进、历史判断或跨故事连接的名称；不要设置跨 Card 或整包的专名数量上限。
 现代学者姓名、学派和学术争论默认只进入来源或 EditorialReview。公共正文只写证据支持的最窄正面叙事，不逐条翻译证据边界和来源限制。
-若启用多 Agent 并行，每个 Content Agent 只编辑自己的内容模块、对应 Asset 目录和模块专属测试；同一时间只指定一个 Integration Agent 修改入口、聚合器、固定加载顺序测试和共享导航。未完成模块保持在主聚合路径之外，并在非运行时交接记录中标记为“集成中”。
+若启用多 Agent 并行，每个 Content Agent 只编辑自己的内容模块、对应 Asset 目录和模块专属测试；同一时间只指定一个 Integration Agent 修改 `index.html`、`src/main.ts`、聚合器、固定加载顺序测试和共享导航。未完成模块保持在主聚合路径之外，并在非运行时交接记录中标记为“集成中”。
 在第二阶段正文获批准且我明确要求进入第三阶段前，不要修改项目文件或运行时数据。
 每轮将内容产物和流程改进建议分开。
 ```
@@ -392,6 +392,6 @@ AI 生成图片同样遵守上述 WebP、尺寸和体积规则。生成原图超
 不要改写已批准文字；严格遵循第一阶段批准的数据文件决策。
 如有结构冲突，先报告，不要自行重构数据结构。
 补齐稳定 ID、来源、Scene—Event 引用、Card—Scene 所有权、导航和本地 Asset；不要在 Card 上手写 Event 列表。
-若内容由其他 Agent 并行生产，先核对模块级门禁、交接记录和所有权冻结；只有当前唯一 Integration Agent 可以修改 `index.html`、`data/atlas-data.js`、共享导航及固定集成清单。不要把“集成中”写入 runtime schema，也不要用 renderer 过滤未完成模块。
+若内容由其他 Agent 并行生产，先核对模块级门禁、交接记录和所有权冻结；只有当前唯一 Integration Agent 可以修改 `index.html`、`src/main.ts`、`data/atlas-data.js`、共享导航及固定集成清单。不要把“集成中”写入 runtime schema，也不要用 renderer 过滤未完成模块。
 随后在同一第三阶段完成验证、流程复盘并提议新增 content 方向。
 ```
