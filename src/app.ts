@@ -11,6 +11,7 @@ import {
   type HomeSectionViewModel
 } from './home/home-view.ts';
 import { mountSiteHeader } from './shell/site-header.ts';
+import { mountStoryNavigation } from './shell/story-navigation.ts';
 import type {
   AssetId,
   AtlasApp,
@@ -303,10 +304,12 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     });
     const homePrimaryAction = requiredElement<HTMLAnchorElement>(runtimeDocument, '[data-home-primary-action]');
     const storyBackBar = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-bar]');
+    const storyNavigationController = mountStoryNavigation(storyBackBar, {
+      visible: false,
+      returnsToStory: false,
+      trailNames: []
+    });
     const storyBackButton = requiredElement<HTMLButtonElement>(runtimeDocument, '[data-story-back]');
-    const storyBackDesktop = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-desktop]');
-    const storyBackMobile = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-mobile]');
-    const storyTrail = requiredElement<HTMLElement>(runtimeDocument, '[data-story-trail]');
     const components = cardsModule.createCardComponents({ data, queries });
 
     let reader: CardReader | null = null;
@@ -404,19 +407,9 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     }
 
     function updateStoryBackControl({ visible = false }: { visible?: boolean } = {}): void {
-      storyBackBar.hidden = !visible;
-      if (!visible) return;
       const returnsToStory = storyBackMode(root.history.state) === 'story';
-      const desktopLabel = returnsToStory ? '返回上一个故事' : '返回首页';
-      const mobileLabel = returnsToStory ? '返回' : '返回首页';
-      storyBackDesktop.textContent = desktopLabel;
-      storyBackMobile.textContent = mobileLabel;
-      storyBackButton.setAttribute('aria-label', desktopLabel);
-      storyBackButton.dataset.backMode = returnsToStory ? 'story' : 'home';
       const trailNames = storyTrailEntityNames(reader?.state, queries);
-      storyTrail.hidden = trailNames.length < 2;
-      storyTrail.textContent = trailNames.join(' → ');
-      storyTrail.title = storyTrail.textContent;
+      storyNavigationController.update({ visible, returnsToStory, trailNames });
     }
 
     function showHome({ push = false }: { push?: boolean } = {}): void {

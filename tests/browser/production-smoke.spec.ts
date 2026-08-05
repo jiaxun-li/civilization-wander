@@ -27,7 +27,9 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
   await expect(page.locator('[data-home-sections] .home-entities')).toHaveCount(3);
   await expect(page.locator('[data-home-sections] .home-entity-card')).toHaveCount(12);
 
-  await page.locator('.home-primary-actions [data-start-card="odyssey-name-and-home"]').click();
+  await page.locator(
+    '.home-primary-actions [data-start-card="odyssey-name-and-home"]:not([data-home-primary-action])'
+  ).click();
   await expect(page.locator('#home-view')).toBeHidden();
   await expect(page.locator('#card-view')).toBeVisible();
   await expect(page.locator('[data-card-id="odyssey-name-and-home"]')).toBeVisible();
@@ -44,9 +46,18 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
   await expect(secondScene).toHaveClass(/\bis-active\b/);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
 
-  await page.locator('.site-brand[data-home-link]').click();
+  await expect(page.locator('[data-story-back-bar]')).toBeVisible();
+  await expect(page.locator('[data-story-back]')).toHaveAttribute('aria-label', '返回首页');
+  await page.locator('[data-story-back]').click();
   await expect(page.locator('#home-view')).toBeVisible();
   await expect(page.locator('#card-view')).toBeHidden();
+
+  await page.locator(
+    '.home-primary-actions [data-start-card="odyssey-name-and-home"]:not([data-home-primary-action])'
+  ).click();
+  await expect(page.locator('#card-view')).toBeVisible();
+  await page.locator('.site-brand[data-home-link]').click();
+  await expect(page.locator('#home-view')).toBeVisible();
 
   expect(resourceErrors, resourceErrors.join('\n')).toEqual([]);
   expect(runtimeErrors, runtimeErrors.join('\n')).toEqual([]);

@@ -10,6 +10,7 @@ const entry = read('src/main.ts');
 const app = read('src/app.ts');
 const homeView = read('src/home/home-view.ts');
 const siteHeader = read('src/shell/site-header.ts');
+const storyNavigation = read('src/shell/story-navigation.ts');
 const viteConfig = read('vite.config.mts');
 const playwrightConfig = read('playwright.config.ts');
 const deployWorkflow = read('.github/workflows/deploy-pages.yml');
@@ -60,6 +61,15 @@ test('React renders the site header without owning home navigation', () => {
   assert.match(siteHeader, /function SiteHeader\(/);
   assert.match(siteHeader, /data-home-link/);
   assert.doesNotMatch(siteHeader, /history\.|showHome|createCardReader/);
+});
+
+test('React renders story navigation while App retains history behavior', () => {
+  assert.match(app, /mountStoryNavigation\(/);
+  assert.match(app, /storyNavigationController\.update\(/);
+  assert.match(storyNavigation, /function StoryNavigation\(/);
+  assert.match(storyNavigation, /data-story-back/);
+  assert.match(storyNavigation, /trailNames\.join\(' → '\)/);
+  assert.doesNotMatch(storyNavigation, /history\.|history\.back|showHome|createCardReader/);
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {

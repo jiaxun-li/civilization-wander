@@ -36,6 +36,7 @@ flowchart TD
     ENTRY --> A["src/app.ts\nruntime orchestrator"]
     A --> H["src/home/home-view.ts\nReact home view"]
     A --> SH["src/shell/site-header.ts\nReact site header"]
+    A --> SN["src/shell/story-navigation.ts\nReact back + trail"]
     A --> D["src/data/atlas-data.ts\natlasData"]
     D --> CM["data/content-module.ts\nnamed ContentModule export"]
     Q["src/data/queries.ts\nqueriesModule"] --> D
@@ -471,6 +472,7 @@ pnpm run test:browser
 | `src/app.ts` | 通过命名导入拥有完整运行时依赖图，并负责 React 首页视图模型、Card 打开、Reader/Map 接线、媒体切换、快照与 history 辅助。 |
 | `src/home/home-view.ts` | React 首页组件与类型化视图模型；只负责首页 DOM，不拥有 Reader、history、localStorage 或地图状态。 |
 | `src/shell/site-header.ts` | React 品牌 Header；保留稳定的首页链接属性，点击行为仍由 App 编排。 |
+| `src/shell/story-navigation.ts` | React 返回控件与漫游足迹；App 继续拥有 history、Reader 状态和返回决策。 |
 | `src/types/runtime.ts` | 十四个内容集合、Claim 判别联合、App/Queries/Cards/Reader/Map 与必要浏览器 API 外观的编译期结构契约；不保存运行时模块全局变量，语义规则仍由 validator 执行。 |
 | `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
 | `tsconfig.json` | TypeScript 运行时与正式内容模块的类型检查边界；Node 支持脚本和测试仍由各自的 JavaScript 检查覆盖。 |
