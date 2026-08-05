@@ -18,4 +18,4 @@ import '../ui/v4/cards.js';
 import '../ui/v4/card-reader.js';
 import '../assets/natural-earth/base.js';
 import '../map/v4/map-renderer.js';
-import '../app.js';
+import './app.ts';

@@ -8,8 +8,8 @@ const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const html = read('index.html');
 const entry = read('src/main.ts');
 const viteConfig = read('vite.config.mts');
-const entryImports = [...entry.matchAll(/import\s+['"]\.\.\/([^'"]+)['"]/g)]
-  .map(match => match[1]);
+const entryImports = [...entry.matchAll(/import\s+['"]([^'"]+)['"]/g)]
+  .map(match => path.posix.normalize(path.posix.join('src', match[1])));
 
 test('index.html has one Vite module entrypoint', () => {
   const scripts = [...html.matchAll(/<script[^>]+src="([^"]+)"[^>]*><\/script>/g)]
@@ -30,10 +30,10 @@ test('all Vite entrypoint imports are local build inputs', () => {
 test('legacy runtime remains local while Vite owns module loading', () => {
   const runtimeFiles = entryImports.filter(relative => relative.endsWith('.js'));
   const runtime = runtimeFiles.map(read).join('\n');
-  const executableRuntime = runtimeFiles
+  const executableRuntimeFiles = runtimeFiles
     .filter(relative => !relative.startsWith('data/') || relative === 'data/queries.js')
-    .map(read)
-    .join('\n');
+    .concat('src/app.ts');
+  const executableRuntime = executableRuntimeFiles.map(read).join('\n');
   assert.doesNotMatch(runtime, /\bimport\s+|\bexport\s+|\brequire\(['"][^.]|fetch\(|XMLHttpRequest/);
   assert.doesNotMatch(executableRuntime, /https?:\/\//);
 });
@@ -68,4 +68,5 @@ test('package scripts cover development, build, preview, and verification', () =
   assert.equal(typeof packageJson.devDependencies.vite, 'string');
   assert.equal(typeof packageJson.devDependencies.typescript, 'string');
   assert.equal(typeof packageJson.devDependencies['@types/node'], 'string');
+  assert.equal(packageJson.engines.node, '>=22.18');
 });

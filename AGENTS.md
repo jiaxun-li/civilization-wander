@@ -278,6 +278,8 @@ should be concise and shown only when a map is present.
 - Static HTML, CSS, and JavaScript production output built with Vite.
 - Vite and TypeScript are development dependencies; do not add a client-side
   framework or runtime package dependency without a separate approved migration.
+- Use Node.js 22.18 or newer so Node-based tests can type-strip the application
+  TypeScript directly; Node.js 24 LTS is the recommended local version.
 - Local preview must work through `pnpm dev` and the production build through
   `pnpm build` plus `pnpm preview`; direct `file://` loading is not supported.
 - Content must remain available from local JavaScript data files.
@@ -484,8 +486,10 @@ The current runtime is a Vite-built V5 prototype with no client-side runtime dep
 - `index.html` loads the single `src/main.ts` Vite entrypoint.
 - `src/main.ts` imports styles and the existing runtime modules in dependency
   order while TypeScript migration proceeds incrementally.
-- `app.js` coordinates the home view, Card reader, navigation, and optional
+- `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
+- `src/types/runtime.ts` defines the typed consumer boundary between the
+  application and the still-JavaScript V5 data, query, Reader, Cards, and Map modules.
 - `data/atlas-data.js` contains Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,
   CameraPresets, MapStates, Geometries, MapAnnotations, Assets, and Sources.

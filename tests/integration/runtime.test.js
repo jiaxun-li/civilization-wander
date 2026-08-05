@@ -9,7 +9,7 @@ const root = path.resolve(__dirname, '../..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const html = read('index.html');
 const entry = read('src/main.ts');
-const app = read('app.js');
+const app = read('src/app.ts');
 const globalCss = read('styles.css');
 const cardCss = read('styles/v4/cards.css');
 const mapCss = read('styles/v4/map.css');
@@ -27,7 +27,8 @@ test('entrypoint, aggregator, and syntax manifest keep one content-module order'
 
 test('Vite entrypoint loads only the V5 main path in dependency order', () => {
   assert.match(html, /<script type="module" src="\/src\/main\.ts"><\/script>/);
-  const imports = [...entry.matchAll(/import\s+['"]\.\.\/([^'"]+)['"]/g)].map(match => match[1]);
+  const imports = [...entry.matchAll(/import\s+['"]([^'"]+)['"]/g)]
+    .map(match => path.posix.normalize(path.posix.join('src', match[1])));
   assert.deepEqual(imports, [
     'styles.css',
     'styles/v4/cards.css',
@@ -46,7 +47,7 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'ui/v4/card-reader.js',
     'assets/natural-earth/base.js',
     'map/v4/map-renderer.js',
-    'app.js'
+    'src/app.ts'
   ]);
 });
 
@@ -80,8 +81,8 @@ test('V5 validation proves all references and objects are complete', () => {
 });
 
 test('brand and default experience are centralized and editorial', () => {
-  assert.match(app, /const BRAND_CONFIG = Object\.freeze/);
-  assert.match(app, /const HOME_SECTIONS = Object\.freeze/);
+  assert.match(app, /const BRAND_CONFIG(?::[^=]+)? = Object\.freeze/);
+  assert.match(app, /const HOME_SECTIONS(?::[^=]+)? = Object\.freeze/);
   assert.match(app, /name: '文明漫游'/);
   assert.match(app, /startCardId: 'sumer-measuring-land-time'/);
   assert.match(app, /eyebrow: '四个古代世界'[\s\S]*title: '从一个文明开始'/);
@@ -103,11 +104,11 @@ test('brand and default experience are centralized and editorial', () => {
 });
 
 test('map and body are Scene-driven through one callback chain', () => {
-  assert.match(app, /onMapStateChange\(mapState, scene, mapConfig, context\)/);
+  assert.match(app, /onMapStateChange\(/);
   assert.match(app, /renderMapState\([\s\S]*context\?\.presentationScene \|\| scene,[\s\S]*mapConfig,[\s\S]*context[\s\S]*\)/);
-  assert.match(app, /onStructureViewsChange\(views, scene, context\)/);
-  assert.match(app, /setStructureViews\([\s\S]*views,[\s\S]*context\.presentationScene,[\s\S]*context[\s\S]*\)/);
-  assert.match(app, /onNavigate\(navigationId\)[\s\S]*reader\.followNavigation\(navigationId\)/);
+  assert.match(app, /onStructureViewsChange\(/);
+  assert.match(app, /setStructureViews\([\s\S]*views,[\s\S]*presentationScene,[\s\S]*context[\s\S]*\)/);
+  assert.match(app, /onNavigate\([\s\S]*reader\?\.followNavigation\(navigationId\)/);
 });
 
 test('desktop media retains the available reader height below the sticky back bar', () => {
@@ -132,7 +133,7 @@ test('left-column images crossfade while unchanged images remain stable', () => 
 });
 
 test('same-Card image presentations preserve the map DOM underneath', () => {
-  const imageRenderer = app.match(/function renderImagePresentation\(presentation, scene, context\)[\s\S]*?\r?\n    }\r?\n\r?\n    reader =/)?.[0] || '';
+  const imageRenderer = app.match(/function renderImagePresentation\([\s\S]*?\r?\n    reader =/)?.[0] || '';
   assert.doesNotMatch(imageRenderer, /map\?\.destroy\(\)|map = null|nextContainer\.innerHTML/);
   assert.match(imageRenderer, /nextContainer\.append\(incomingImage\)/);
   assert.match(imageRenderer, /setAttribute\('aria-hidden', 'true'\)/);

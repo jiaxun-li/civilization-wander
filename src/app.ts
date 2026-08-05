@@ -1,8 +1,69 @@
-(function startCivilizationAtlas(root, documentRef) {
+import type {
+  AssetId,
+  AtlasApp,
+  AtlasData,
+  AtlasHistoryState,
+  AtlasMap,
+  AtlasQueries,
+  AtlasRuntimeGlobal,
+  BrandConfig,
+  Card,
+  CardId,
+  CardReader,
+  CardReaderModule,
+  CardsModule,
+  Entity,
+  ImageAsset,
+  ImagePresentation,
+  LastReadSnapshot,
+  MapModule,
+  MapPresentationConfig,
+  MapState,
+  NavigationTrailEntry,
+  ReaderContext,
+  ReaderState,
+  Scene,
+  SceneId,
+  ScenePresentation
+} from './types/runtime.ts';
+
+interface HomeSection {
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly cardIds: readonly CardId[];
+}
+
+type SnapshotCandidate = Record<string, unknown>;
+
+function record(value: unknown): SnapshotCandidate | null {
+  return value !== null && typeof value === 'object' && !Array.isArray(value)
+    ? value as SnapshotCandidate
+    : null;
+}
+
+function requiredElement<T extends Element>(
+  documentRef: Document,
+  selector: string
+): T {
+  const element = documentRef.querySelector<T>(selector);
+  if (!element) throw new Error(`Required interface element is missing: ${selector}`);
+  return element;
+}
+
+function requiredElementById<T extends HTMLElement>(
+  documentRef: Document,
+  id: string
+): T {
+  const element = documentRef.getElementById(id);
+  if (!element) throw new Error(`Required interface element is missing: #${id}`);
+  return element as T;
+}
+
+(function startCivilizationAtlas(root: AtlasRuntimeGlobal, documentRef: Document | null) {
   'use strict';
 
   const LAST_READ_STORAGE_KEY = 'civilization-wander:v5:last-read';
-  const HOME_SECTIONS = Object.freeze([
+  const HOME_SECTIONS: readonly HomeSection[] = Object.freeze([
     Object.freeze({
       eyebrow: '四个古代世界',
       title: '从一个文明开始',
@@ -35,40 +96,49 @@
     })
   ]);
 
-  const BRAND_CONFIG = Object.freeze({
+  const BRAND_CONFIG: BrandConfig = Object.freeze({
     name: '文明漫游',
     tagline: '从一个人物、城市、信仰或作品出发，沿着关联漫游人类文明。',
     shortTagline: '沿着关联漫游人类文明',
     startCardId: 'sumer-measuring-land-time'
   });
 
-  function normalizeLastReadSnapshot(snapshot, queries) {
-    if (!snapshot?.atlasV5 || !queries) return null;
-    const card = queries.getCard(snapshot.cardId);
-    const scene = queries.getScene(snapshot.sceneId);
+  function normalizeLastReadSnapshot(snapshot: unknown, queries: AtlasQueries): LastReadSnapshot | null {
+    const candidate = record(snapshot);
+    if (candidate?.atlasV5 !== true || !queries) return null;
+    const cardId = typeof candidate.cardId === 'string' ? candidate.cardId : null;
+    const sceneId = typeof candidate.sceneId === 'string' ? candidate.sceneId : null;
+    const card = queries.getCard(cardId);
+    const scene = queries.getScene(sceneId);
     if (!card || !scene || !card.sceneIds.includes(scene.id)) return null;
-    const navigationStack = Array.isArray(snapshot.navigationStack)
-      ? snapshot.navigationStack.filter(entry => {
-        const entryCard = queries.getCard(entry?.cardId);
-        const entryScene = queries.getScene(entry?.sceneId);
+    const navigationStack: NavigationTrailEntry[] = Array.isArray(candidate.navigationStack)
+      ? candidate.navigationStack.map(record).filter((entry): entry is SnapshotCandidate => Boolean(entry)).filter(entry => {
+        const entryCardId = typeof entry.cardId === 'string' ? entry.cardId : null;
+        const entrySceneId = typeof entry.sceneId === 'string' ? entry.sceneId : null;
+        const entryCard = queries.getCard(entryCardId);
+        const entryScene = queries.getScene(entrySceneId);
         return Boolean(entryCard && entryScene && entryCard.sceneIds.includes(entryScene.id));
       }).map(entry => ({
-        cardId: entry.cardId,
-        sceneId: entry.sceneId,
-        scrollY: Number.isFinite(entry.scrollY) && entry.scrollY >= 0 ? entry.scrollY : 0,
+        cardId: entry.cardId as string,
+        sceneId: entry.sceneId as string,
+        scrollY: typeof entry.scrollY === 'number' && Number.isFinite(entry.scrollY) && entry.scrollY >= 0
+          ? entry.scrollY
+          : 0,
         navigationId: typeof entry.navigationId === 'string' ? entry.navigationId : null
-      }))
+      } as NavigationTrailEntry))
       : [];
     return {
       atlasV5: true,
       cardId: card.id,
       sceneId: scene.id,
-      scrollY: Number.isFinite(snapshot.scrollY) && snapshot.scrollY >= 0 ? snapshot.scrollY : 0,
+      scrollY: Number.isFinite(candidate.scrollY) && (candidate.scrollY as number) >= 0
+        ? candidate.scrollY as number
+        : 0,
       navigationStack
     };
   }
 
-  function parseLastReadSnapshot(serialized, queries) {
+  function parseLastReadSnapshot(serialized: unknown, queries: AtlasQueries): LastReadSnapshot | null {
     if (typeof serialized !== 'string' || serialized.length === 0) return null;
     try {
       return normalizeLastReadSnapshot(JSON.parse(serialized), queries);
@@ -77,7 +147,7 @@
     }
   }
 
-  function shouldSaveCardSnapshot(cardView, historyState) {
+  function shouldSaveCardSnapshot(cardView: HTMLElement | null, historyState: AtlasHistoryState | null) {
     return Boolean(
       cardView &&
       cardView.hidden === false &&
@@ -85,13 +155,23 @@
     );
   }
 
-  function saveCardSnapshotBeforeTransition(cardView, historyState, reader) {
+  function saveCardSnapshotBeforeTransition(
+    cardView: HTMLElement | null,
+    historyState: AtlasHistoryState | null,
+    reader: CardReader | null
+  ) {
     if (!shouldSaveCardSnapshot(cardView, historyState)) return false;
     reader?.replaceHistorySnapshot?.();
     return true;
   }
 
-  function pushHistoryEntryAfterSavingCard(cardView, history, reader, nextState, hash) {
+  function pushHistoryEntryAfterSavingCard(
+    cardView: HTMLElement | null,
+    history: History,
+    reader: CardReader | null,
+    nextState: AtlasHistoryState,
+    hash: string
+  ) {
     const savedCardSnapshot = saveCardSnapshotBeforeTransition(
       cardView,
       history.state,
@@ -101,15 +181,21 @@
     return savedCardSnapshot;
   }
 
-  function shouldResetMediaCard(activeMediaCardId, nextCardId) {
+  function shouldResetMediaCard(activeMediaCardId: CardId | null, nextCardId: CardId) {
     return activeMediaCardId !== nextCardId;
   }
 
-  function adjacentSceneImageAssets(queries, readerModule, cardId, sceneId, excludedAssetId = null) {
+  function adjacentSceneImageAssets(
+    queries: AtlasQueries,
+    readerModule: CardReaderModule,
+    cardId: CardId,
+    sceneId: SceneId,
+    excludedAssetId: AssetId | null = null
+  ): ImageAsset[] {
     const card = queries?.getCard?.(cardId);
     const sceneIndex = card?.sceneIds.indexOf(sceneId) ?? -1;
     if (!card || sceneIndex < 0 || !readerModule?.resolveSceneMedia) return [];
-    const assets = [];
+    const assets: ImageAsset[] = [];
     const seen = new Set(excludedAssetId ? [excludedAssetId] : []);
     for (const direction of [-1, 1]) {
       for (let index = sceneIndex + direction;
@@ -128,11 +214,11 @@
     return assets;
   }
 
-  async function waitForImageReady(image) {
+  async function waitForImageReady(image: HTMLImageElement): Promise<HTMLImageElement> {
     if (!image) throw new TypeError('image is required');
     if (!image.complete) {
       await new Promise((resolve, reject) => {
-        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('load', () => resolve(undefined), { once: true });
         image.addEventListener('error', () => reject(new Error('Image failed to load')), { once: true });
       });
     }
@@ -147,11 +233,11 @@
     return image;
   }
 
-  function storyBackMode(historyState) {
+  function storyBackMode(historyState: AtlasHistoryState | null): 'story' | 'home' {
     return historyState?.entrySource === 'card' ? 'story' : 'home';
   }
 
-  function storyTrailEntityNames(readerState, queries) {
+  function storyTrailEntityNames(readerState: ReaderState | null | undefined, queries: AtlasQueries): string[] {
     if (!readerState?.activeCardId || !Array.isArray(readerState.navigationStack) || readerState.navigationStack.length === 0) return [];
     return readerState.navigationStack
       .map(entry => entry.cardId)
@@ -178,13 +264,14 @@
     storyTrailEntityNames
   });
   if (!documentRef) return;
+  const runtimeDocument = documentRef;
 
   function initialize() {
-    const data = root.ATLAS_V5_DATA;
-    const queries = root.ATLAS_V5_QUERIES;
-    const cardsModule = root.ATLAS_V5_CARDS;
-    const readerModule = root.ATLAS_V5_CARD_READER;
-    const mapModule = root.ATLAS_V5_MAP;
+    const data = root.ATLAS_V5_DATA as AtlasData;
+    const queries = root.ATLAS_V5_QUERIES as AtlasQueries;
+    const cardsModule = root.ATLAS_V5_CARDS as CardsModule;
+    const readerModule = root.ATLAS_V5_CARD_READER as CardReaderModule;
+    const mapModule = root.ATLAS_V5_MAP as MapModule;
     const naturalEarth = root.ATLAS_NATURAL_EARTH?.base;
     if (!data || !queries || !cardsModule || !readerModule || !mapModule || !naturalEarth) {
       throw new Error('V5 runtime modules failed to load');
@@ -192,39 +279,39 @@
     const validation = queries.validateAtlasData();
     if (!validation.valid) throw new Error(`V5 data validation failed: ${validation.errors.join('; ')}`);
 
-    const homeView = documentRef.getElementById('home-view');
-    const cardView = documentRef.getElementById('card-view');
-    const cardRoot = documentRef.getElementById('card-root');
-    const homeSectionsRoot = documentRef.querySelector('[data-home-sections]');
-    const homePrimaryAction = documentRef.querySelector('[data-home-primary-action]');
-    const storyBackBar = documentRef.querySelector('[data-story-back-bar]');
-    const storyBackButton = documentRef.querySelector('[data-story-back]');
-    const storyBackDesktop = documentRef.querySelector('[data-story-back-desktop]');
-    const storyBackMobile = documentRef.querySelector('[data-story-back-mobile]');
-    const storyTrail = documentRef.querySelector('[data-story-trail]');
+    const homeView = requiredElementById<HTMLElement>(runtimeDocument, 'home-view');
+    const cardView = requiredElementById<HTMLElement>(runtimeDocument, 'card-view');
+    const cardRoot = requiredElementById<HTMLElement>(runtimeDocument, 'card-root');
+    const homeSectionsRoot = requiredElement<HTMLElement>(runtimeDocument, '[data-home-sections]');
+    const homePrimaryAction = requiredElement<HTMLAnchorElement>(runtimeDocument, '[data-home-primary-action]');
+    const storyBackBar = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-bar]');
+    const storyBackButton = requiredElement<HTMLButtonElement>(runtimeDocument, '[data-story-back]');
+    const storyBackDesktop = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-desktop]');
+    const storyBackMobile = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-mobile]');
+    const storyTrail = requiredElement<HTMLElement>(runtimeDocument, '[data-story-trail]');
     const components = cardsModule.createCardComponents({ data, queries });
 
-    let reader = null;
+    let reader: CardReader | null = null;
     let readerStarted = false;
-    let map = null;
-    let mapContainer = null;
-    let activeMediaCardId = null;
-    let activeImageAssetId = null;
+    let map: AtlasMap | null = null;
+    let mapContainer: HTMLElement | null = null;
+    let activeMediaCardId: CardId | null = null;
+    let activeImageAssetId: AssetId | null = null;
     let mediaImageRequestSequence = 0;
     let mediaImageTransitionSequence = 0;
-    let mediaImageTransitionTimer = null;
-    const imagePreloads = new Map();
-    const preloadedImageAssetIds = new Set();
-    let homeResumeSnapshot = null;
+    let mediaImageTransitionTimer: number | null = null;
+    const imagePreloads = new Map<AssetId, HTMLImageElement>();
+    const preloadedImageAssetIds = new Set<AssetId>();
+    let homeResumeSnapshot: LastReadSnapshot | null = null;
 
-    documentRef.querySelector('[data-brand-name]').textContent = BRAND_CONFIG.name;
-    documentRef.querySelector('[data-brand-tagline]').textContent = BRAND_CONFIG.shortTagline;
+    requiredElement<HTMLElement>(runtimeDocument, '[data-brand-name]').textContent = BRAND_CONFIG.name;
+    requiredElement<HTMLElement>(runtimeDocument, '[data-brand-tagline]').textContent = BRAND_CONFIG.shortTagline;
 
-    function entityTypeLabel(entity) {
-      return queries.getEntityTypeLabel(entity.type);
+    function entityTypeLabel(entity: Entity): string {
+      return queries.getEntityTypeLabel(entity.type) || entity.type;
     }
 
-    function renderHomeCard(cardId) {
+    function renderHomeCard(cardId: CardId): string {
       const card = queries.getCard(cardId);
       if (!card) throw new Error(`Unknown home story: ${cardId}`);
       const entity = queries.getEntity(card.primaryEntityId);
@@ -265,7 +352,7 @@
       }
     }
 
-    function storeLastReadSnapshot(snapshot) {
+    function storeLastReadSnapshot(snapshot: unknown): boolean {
       const normalized = normalizeLastReadSnapshot(snapshot, queries);
       if (!normalized) return false;
       try {
@@ -276,7 +363,7 @@
       }
     }
 
-    function currentReadingSnapshot() {
+    function currentReadingSnapshot(): LastReadSnapshot | null {
       if (!readerStarted || cardView.hidden || !reader?.state.activeCardId) return null;
       return normalizeLastReadSnapshot({
         atlasV5: true,
@@ -287,11 +374,12 @@
       }, queries);
     }
 
-    function updateHomePrimaryAction(snapshot = readLastReadSnapshot()) {
+    function updateHomePrimaryAction(snapshot: unknown = readLastReadSnapshot()): void {
       homeResumeSnapshot = normalizeLastReadSnapshot(snapshot, queries);
       const card = homeResumeSnapshot
         ? queries.getCard(homeResumeSnapshot.cardId)
         : queries.getCard(BRAND_CONFIG.startCardId);
+      if (!card) throw new Error(`Unknown start story: ${BRAND_CONFIG.startCardId}`);
       const sceneId = homeResumeSnapshot?.sceneId || card.sceneIds[0];
       homePrimaryAction.href = readerModule.buildCardHash(card.id, sceneId);
       homePrimaryAction.dataset.startCard = card.id;
@@ -300,7 +388,7 @@
         : '从苏美尔开始 <span aria-hidden="true">→</span>';
     }
 
-    function updateStoryBackControl({ visible = false } = {}) {
+    function updateStoryBackControl({ visible = false }: { visible?: boolean } = {}): void {
       storyBackBar.hidden = !visible;
       if (!visible) return;
       const returnsToStory = storyBackMode(root.history.state) === 'story';
@@ -316,7 +404,7 @@
       storyTrail.title = storyTrail.textContent;
     }
 
-    function showHome({ push = false } = {}) {
+    function showHome({ push = false }: { push?: boolean } = {}): void {
       const lastReadSnapshot = currentReadingSnapshot();
       if (lastReadSnapshot) storeLastReadSnapshot(lastReadSnapshot);
       if (push) {
@@ -330,17 +418,18 @@
       }
       homeView.hidden = false;
       cardView.hidden = true;
-      documentRef.title = `${BRAND_CONFIG.name} · 连续阅读文明知识网络`;
+      runtimeDocument.title = `${BRAND_CONFIG.name} · 连续阅读文明知识网络`;
       updateStoryBackControl();
       updateHomePrimaryAction(lastReadSnapshot || undefined);
       root.scrollTo(0, 0);
-      documentRef.getElementById('home-title')?.focus?.({ preventScroll: true });
+      runtimeDocument.getElementById('home-title')?.focus?.({ preventScroll: true });
     }
 
-    function directMediaImage(container) {
-      return Array.from(container?.children || []).find(child =>
+    function directMediaImage(container: Element | null): HTMLImageElement | null {
+      const image = Array.from(container?.children || []).find(child =>
         child.tagName === 'IMG' && !child.hasAttribute('data-media-image-transition')
-      ) || null;
+      );
+      return image ? image as HTMLImageElement : null;
     }
 
     function clearMediaImageTransition() {
@@ -354,10 +443,10 @@
       mediaImageRequestSequence += 1;
     }
 
-    function preloadImageAsset(asset) {
+    function preloadImageAsset(asset: ImageAsset): void {
       if (!asset || asset.type !== 'image' || activeImageAssetId === asset.id ||
           preloadedImageAssetIds.has(asset.id) || imagePreloads.has(asset.id)) return;
-      const image = documentRef.createElement('img');
+      const image = runtimeDocument.createElement('img');
       image.decoding = 'async';
       image.fetchPriority = 'low';
       image.addEventListener('load', () => {
@@ -370,13 +459,22 @@
       image.src = asset.src;
     }
 
-    function preloadAdjacentSceneImages(cardId, sceneId, currentAssetId) {
+    function preloadAdjacentSceneImages(
+      cardId: CardId | undefined,
+      sceneId: SceneId | undefined,
+      currentAssetId: AssetId
+    ): void {
+      if (!cardId || !sceneId) return;
       if (root.navigator?.connection?.saveData) return;
       adjacentSceneImageAssets(queries, readerModule, cardId, sceneId, currentAssetId)
         .forEach(preloadImageAsset);
     }
 
-    function transitionMediaImage(container, incomingImage, outgoingImage) {
+    function transitionMediaImage(
+      container: HTMLElement,
+      incomingImage: HTMLImageElement | null,
+      outgoingImage: HTMLImageElement | null
+    ): void {
       clearMediaImageTransition();
       if (!incomingImage && !outgoingImage) return;
       if (root.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
@@ -410,9 +508,9 @@
       }, 260) || null;
     }
 
-    function ensureMap() {
+    function ensureMap(): AtlasMap | null {
       invalidateMediaImageRequest();
-      const nextContainer = cardRoot.querySelector('[data-map-slot]');
+      const nextContainer = cardRoot.querySelector<HTMLElement>('[data-map-slot]');
       if (!nextContainer) return null;
       if (map && mapContainer === nextContainer) {
         const outgoingImage = activeImageAssetId
@@ -424,39 +522,43 @@
         return map;
       }
       const outgoingImage = activeImageAssetId
-        ? directMediaImage(nextContainer)?.cloneNode(true)
+        ? directMediaImage(nextContainer)?.cloneNode(true) as HTMLImageElement | null
         : null;
       map?.destroy();
       activeImageAssetId = null;
       mapContainer = nextContainer;
       map = mapModule.createNaturalEarthMap({
-        container: mapContainer,
+        container: nextContainer,
         data,
         queries,
         naturalEarth,
-        documentRef,
+        documentRef: runtimeDocument,
         windowRef: root,
-        onNavigate(navigationId) {
-          reader.followNavigation(navigationId);
+        onNavigate(navigationId: string) {
+          reader?.followNavigation(navigationId);
         }
       });
-      mapContainer.querySelector('[data-v4-map]')?.removeAttribute('aria-hidden');
-      transitionMediaImage(mapContainer, null, outgoingImage);
+      nextContainer.querySelector('[data-v4-map]')?.removeAttribute('aria-hidden');
+      transitionMediaImage(nextContainer, null, outgoingImage);
       return map;
     }
 
-    function setMediaVisibility(presentation) {
-      const article = cardRoot.querySelector('[data-card-id]');
-      const media = cardRoot.querySelector('[data-card-media]');
+    function setMediaVisibility(presentation: ScenePresentation): void {
+      const article = cardRoot.querySelector<HTMLElement>('[data-card-id]');
+      const media = cardRoot.querySelector<HTMLElement>('[data-card-media]');
       if (!article || !media) return;
       const hasMedia = presentation.kind !== 'textOnly';
       article.classList.toggle('is-media-hidden', !hasMedia);
       media.hidden = !hasMedia;
     }
 
-    function renderImagePresentation(presentation, scene, context) {
+    function renderImagePresentation(
+      presentation: ImagePresentation,
+      scene: Scene,
+      context: ReaderContext
+    ): void {
       const asset = queries.getAsset(presentation.assetId);
-      const nextContainer = cardRoot.querySelector('[data-map-slot]');
+      const nextContainer = cardRoot.querySelector<HTMLElement>('[data-map-slot]');
       if (!asset || asset.type !== 'image' || !nextContainer) return;
       preloadAdjacentSceneImages(context?.cardId, scene?.id, asset.id);
       if (activeImageAssetId === asset.id && mapContainer === nextContainer) return;
@@ -467,7 +569,7 @@
       mapContainer = nextContainer;
       activeImageAssetId = asset.id;
       const requestSequence = ++mediaImageRequestSequence;
-      const incomingImage = documentRef.createElement('img');
+      const incomingImage = runtimeDocument.createElement('img');
       incomingImage.src = asset.src;
       incomingImage.alt = asset.alt;
       incomingImage.decoding = 'async';
@@ -477,7 +579,7 @@
         nextContainer.append(incomingImage);
         nextContainer.querySelector('[data-v4-map]')?.setAttribute('aria-hidden', 'true');
         transitionMediaImage(nextContainer, incomingImage, outgoingImage);
-        const caption = cardRoot.querySelector('[data-media-caption]');
+        const caption = cardRoot.querySelector<HTMLElement>('[data-media-caption]');
         if (caption) caption.textContent = asset.title;
       }).catch(() => {
         if (requestSequence !== mediaImageRequestSequence || activeImageAssetId !== asset.id) return;
@@ -491,17 +593,22 @@
       components,
       root: cardRoot,
       windowRef: root,
-      onPresentationChange(presentation, scene, context) {
+      onPresentationChange(presentation: ScenePresentation, scene: Scene, context: ReaderContext) {
         setMediaVisibility(presentation);
         if (presentation.kind === 'textOnly') {
           invalidateMediaImageRequest();
-          const caption = cardRoot.querySelector('[data-media-caption]');
+          const caption = cardRoot.querySelector<HTMLElement>('[data-media-caption]');
           if (caption) caption.textContent = '';
         } else if (presentation.kind === 'image' || presentation.kind === 'imageAndText') {
           renderImagePresentation(presentation, scene, context);
         }
       },
-      onMapStateChange(mapState, scene, mapConfig, context) {
+      onMapStateChange(
+        mapState: MapState | null,
+        scene: Scene,
+        mapConfig: MapPresentationConfig | null,
+        context: ReaderContext
+      ) {
         if (!mapState || !mapConfig) return;
         const activeMap = ensureMap();
         activeMap?.renderMapState(
@@ -510,19 +617,21 @@
           mapConfig,
           context
         );
-        const caption = cardRoot.querySelector('[data-media-caption]');
+        const caption = cardRoot.querySelector<HTMLElement>('[data-media-caption]');
         if (caption) caption.textContent = mapConfig.caption || '范围、选点与路线均为近似教学表达。';
       },
-      onStructureViewsChange(views, scene, context) {
-        if (context?.presentationScene?.presentation?.map) {
+      onStructureViewsChange(views: readonly unknown[], scene: Scene, context: ReaderContext) {
+        const presentationScene = context?.presentationScene;
+        const presentation = presentationScene?.presentation;
+        if (presentationScene && (presentation?.kind === 'map' || presentation?.kind === 'mapAndText')) {
           ensureMap()?.setStructureViews(
             views,
-            context.presentationScene,
+            presentationScene,
             context
           );
         }
       },
-      onCardChange(card) {
+      onCardChange(card: Card) {
         if (shouldResetMediaCard(activeMediaCardId, card.id)) {
           invalidateMediaImageRequest();
           clearMediaImageTransition();
@@ -534,14 +643,19 @@
         }
         homeView.hidden = true;
         cardView.hidden = false;
-        documentRef.title = `${card.title} · ${BRAND_CONFIG.name}`;
+        runtimeDocument.title = `${card.title} · ${BRAND_CONFIG.name}`;
         updateStoryBackControl({ visible: true });
       }
     });
 
-    function openCard(cardId, sceneId = null, { resumeSnapshot = null } = {}) {
+    function openCard(
+      cardId: CardId,
+      sceneId: SceneId | null = null,
+      { resumeSnapshot = null }: { resumeSnapshot?: LastReadSnapshot | null } = {}
+    ): boolean {
       const card = queries.getCard(cardId);
-      if (!card) return false;
+      const activeReader = reader;
+      if (!card || !activeReader) return false;
       const requested = queries.getScene(sceneId);
       const resolvedSceneId = requested && card.sceneIds.includes(requested.id)
         ? requested.id
@@ -554,21 +668,21 @@
       const navigationStack = resume?.navigationStack || [];
       const hash = readerModule.buildCardHash(card.id, resolvedSceneId);
       const enteringFromHome = cardView.hidden;
-      const nextState = {
+      const nextState: AtlasHistoryState = {
         atlasV5: true,
         cardId: card.id,
         sceneId: resolvedSceneId,
         scrollY,
         entrySource: enteringFromHome ? 'home' : 'card',
-        navigationStack: resume ? navigationStack : (enteringFromHome ? [] : reader.state.navigationStack)
+        navigationStack: resume ? navigationStack : (enteringFromHome ? [] : activeReader.state.navigationStack)
       };
       if (!readerStarted) {
         root.history.pushState(nextState, '', hash);
-        reader.start(card.id);
+        activeReader.start(card.id);
         readerStarted = true;
         if (resume) {
           root.history.replaceState(nextState, '', hash);
-          reader.renderCard(card.id, resolvedSceneId, {
+          activeReader.renderCard(card.id, resolvedSceneId, {
             restoreScrollY: scrollY,
             focusHeading: true,
             preserveHistorySnapshot: true,
@@ -580,11 +694,11 @@
         pushHistoryEntryAfterSavingCard(
           cardView,
           root.history,
-          reader,
+          activeReader,
           nextState,
           hash
         );
-        reader.renderCard(card.id, resolvedSceneId, {
+        activeReader.renderCard(card.id, resolvedSceneId, {
           restoreScrollY: scrollY,
           focusHeading: true,
           navigationStack: nextState.navigationStack,
@@ -594,8 +708,8 @@
       return true;
     }
 
-    function bindHomeLinks(scope = documentRef) {
-      scope.querySelectorAll('[data-home-link]').forEach(link => {
+    function bindHomeLinks(scope: ParentNode = runtimeDocument): void {
+      scope.querySelectorAll<HTMLElement>('[data-home-link]').forEach(link => {
         if (link.dataset.bound === 'true') return;
         link.dataset.bound = 'true';
         link.addEventListener('click', event => {
@@ -605,13 +719,14 @@
       });
     }
 
-    function bindStartCards() {
-      documentRef.querySelectorAll('[data-start-card]').forEach(link => {
-        link.addEventListener('click', event => {
+    function bindStartCards(): void {
+      runtimeDocument.querySelectorAll<HTMLAnchorElement>('[data-start-card]').forEach(link => {
+        link.addEventListener('click', (event: MouseEvent) => {
           if (event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
           event.preventDefault();
           const resumeSnapshot = link === homePrimaryAction ? homeResumeSnapshot : null;
-          openCard(link.dataset.startCard, resumeSnapshot?.sceneId || null, { resumeSnapshot });
+          const cardId = link.dataset.startCard;
+          if (cardId) openCard(cardId, resumeSnapshot?.sceneId || null, { resumeSnapshot });
         });
       });
     }
@@ -653,7 +768,8 @@
       showHome();
     }
 
-    const api = {
+    if (!reader) throw new Error('V5 Card Reader failed to initialize');
+    const api: AtlasApp = {
       brand: BRAND_CONFIG,
       data,
       queries,
@@ -673,12 +789,12 @@
   }
 
   root.ATLAS_BRAND = BRAND_CONFIG;
-  if (documentRef.readyState === 'loading') {
-    documentRef.addEventListener('DOMContentLoaded', initialize, { once: true });
+  if (runtimeDocument.readyState === 'loading') {
+    runtimeDocument.addEventListener('DOMContentLoaded', initialize, { once: true });
   } else {
     initialize();
   }
 }(
-  typeof window !== 'undefined' ? window : globalThis,
+  (typeof window !== 'undefined' ? window : globalThis) as unknown as AtlasRuntimeGlobal,
   typeof document !== 'undefined' ? document : null
 ));

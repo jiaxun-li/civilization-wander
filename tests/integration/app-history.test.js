@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-require('../../app.js');
+require('../../src/app.ts');
 
 const {
   homeSections,

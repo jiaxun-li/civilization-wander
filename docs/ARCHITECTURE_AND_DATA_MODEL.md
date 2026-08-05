@@ -28,7 +28,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 6. `ui/v4/card-reader.js`
 7. `assets/natural-earth/base.js`
 8. `map/v4/map-renderer.js`
-9. `app.js`
+9. `src/app.ts`
 
 样式由 `src/main.ts` 按 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css` 的顺序导入。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；Vite/TypeScript 是构建和开发工作流变化，不构成 schema 版本变化。稳定表现层仍保留 `ui/v4`、`map/v4` 与 `styles/v4` 目录名，这些路径名不表示活动 schema 仍为 V4。
 
@@ -46,7 +46,7 @@ flowchart TD
     WP --> B["assets/natural-earth/base.js\nATLAS_NATURAL_EARTH"]
     Q --> M["map/v4/map-renderer.js\nATLAS_V5_MAP"]
     B --> M
-    D --> A["app.js\nATLAS_V5_APP"]
+    D --> A["src/app.ts\nATLAS_V5_APP"]
     Q --> A
     C --> A
     R --> A
@@ -54,26 +54,26 @@ flowchart TD
     CSS["styles.css + styles/v4/*"] --> ENTRY
 ```
 
-各内容模块分别声明精确的十四个数组；`atlas-data.js` 在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据；`queries.js` 建索引、提供读 API 并执行失败关闭式校验；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`app.js` 是唯一编排层。新增、删除或重排内容模块时必须同步 `src/main.ts`、聚合器、语法清单和测试，并运行 `pnpm run check:manifests`；文档不另行复制模块文件清单。
+各内容模块分别声明精确的十四个数组；`atlas-data.js` 在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据；`queries.js` 建索引、提供读 API 并执行失败关闭式校验；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`src/app.ts` 是唯一编排层。`src/types/runtime.ts` 只声明应用实际消费的 V5 对象字段和模块接口，不复制完整 schema，也不替代 validator。新增、删除或重排内容模块时必须同步 `src/main.ts`、聚合器、语法清单和测试，并运行 `pnpm run check:manifests`；文档不另行复制模块文件清单。
 
 ## 3. 从 `index.html` 到地图渲染器的完整调用链
 
-Vite 按 `src/main.ts` 的导入顺序执行模块；全部依赖就绪后，`app.js` 读取 V5 全局对象并立即运行 `queries.validateAtlasData()`。任何无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
+Vite 按 `src/main.ts` 的导入顺序执行模块；全部依赖就绪后，`src/app.ts` 通过类型化运行时边界读取 V5 全局对象并立即运行 `queries.validateAtlasData()`。任何缺失的运行时模块、必需 DOM 或无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
 
 初始化链如下：
 
 1. 建立首页板块、Card 容器、返回按钮、标题与面包屑的 DOM 引用。
-2. `app.js` 用首页策展配置中的稳定 Card ID 生成三个入口板块；实体名、摘要和 Card 标题始终从当前聚合数据读取，不在首页配置重复维护。首屏提供三个代表性快速起点；可用的本地阅读快照只把第一个动作替换为“继续上次阅读”，其余入口保持稳定。
+2. `src/app.ts` 用首页策展配置中的稳定 Card ID 生成三个入口板块；实体名、摘要和 Card 标题始终从当前聚合数据读取，不在首页配置重复维护。首屏提供三个代表性快速起点；可用的本地阅读快照只把第一个动作替换为“继续上次阅读”，其余入口保持稳定。
 3. 以 `ATLAS_V5_READER.createReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
 4. 根据 URL hash 解析 `#card/<cardId>/<sceneId>`；没有有效 Card 时显示首页，直接链接则启动 Reader。
 5. Reader 通过 `getCard()`、`getScenesForCard()` 取得 Card 与由 `Card.sceneIds` 决定的 Scene 顺序，再让 Cards renderer 生成主内容。
 6. Cards renderer 在标题区从主 Entity 与 Card `timeSpan.start/end` 生成“公共类型 · 主实体名称 · 年代”坐标；每个 Scene 的时间行按 `timeDisplay` 显示年代语义，并从 `Card.sceneIds` 派生“当前位置／总数”。这些都是展示派生值，不写回数据。
-7. Reader 为普通导航、预览、IntersectionObserver 和 history 绑定行为；渲染新 Card 时先通知 `onCardChange`，使 `app.js` 在跨 Card 时销毁上一 Card 的媒体，再激活目标 Scene。
+7. Reader 为普通导航、预览、IntersectionObserver 和 history 绑定行为；渲染新 Card 时先通知 `onCardChange`，使 `src/app.ts` 在跨 Card 时销毁上一 Card 的媒体，再激活目标 Scene。
 8. Scene 激活时，Reader 先按同 Card 顺序解析有效媒体：非 `textOnly` 使用自身 presentation，`textOnly` 继承最近的前序 map/image；没有前序媒体则保持无媒体。随后依次发送 resolved presentation、StructureView 和 MapState。
 9. Map Renderer 从 MapState 读取相机与 Geometry，从当前 Scene presentation 读取 Entity/Navigation overlay；Natural Earth 只提供本地底图。
 10. Scene 改变时 Reader 用 `history.replaceState()` 更新当前快照；跨 Card 前进导航先保存来源快照，再 `pushState()`，在 DOM 替换前后同步回顶并播放 180ms 原地 opacity 入场。direct/history/popstate 精确恢复不播放该前进动画。
 
-`app.js` 在 Node 环境还导出首页策展配置、阅读快照规范化函数和 history 辅助函数，供集成测试在没有浏览器 DOM 时验证入口引用、快照边界与历史顺序。本地阅读记录使用带 schema 代号的 `civilization-wander:v5:last-read` 键；缺失、损坏或已经失效的 Card/Scene 引用只会隐藏继续入口，不影响核心内容和导航。
+`src/app.ts` 在 Node 环境还暴露首页策展配置、阅读快照规范化函数和 history 辅助函数，供集成测试在没有浏览器 DOM 时验证入口引用、快照边界与历史顺序。Node 22.18+ 可以直接读取其中的可擦除 TypeScript 类型。本地阅读记录使用带 schema 代号的 `civilization-wander:v5:last-read` 键；缺失、损坏或已经失效的 Card/Scene 引用只会隐藏继续入口，不影响核心内容和导航。
 
 ## 4. 正式 V5 数据模型：顶层、字段责任与消费者
 
@@ -243,7 +243,7 @@ sequenceDiagram
     participant U as "读者/Hash/Observer"
     participant R as "V5 Reader"
     participant C as "Cards Renderer"
-    participant A as "app.js"
+    participant A as "src/app.ts"
     participant Q as "V5 Queries"
     participant M as "Map Renderer"
     participant H as "History API"
@@ -417,7 +417,7 @@ flowchart LR
 
 ## 17. 测试、数据校验与验收运行方法
 
-项目没有运行时 dependencies；开发与构建使用 Vite、TypeScript 和 Node 类型定义，要求 Node >=20.19，包管理器与锁文件以 pnpm 为准。首次运行先执行 `corepack enable` 和 `pnpm install`。标准命令：
+项目没有运行时 dependencies；开发与构建使用 Vite、TypeScript 和 Node 类型定义，要求 Node >=22.18，推荐 Node 24 LTS，包管理器与锁文件以 pnpm 为准。首次运行先执行 `corepack enable` 和 `pnpm install`。标准命令：
 
 ```powershell
 pnpm typecheck
@@ -471,10 +471,11 @@ pnpm build
 |---|---|
 | `index.html` | 活动 V5 页面、语义 landmark 与单一 Vite module 入口。 |
 | `src/main.ts` | 样式与既有 V5 运行时模块的固定导入顺序；渐进式 TypeScript 迁移入口。 |
-| `app.js` | 首页/Card 视图编排、Reader/Map 接线、媒体切换、history 辅助。 |
+| `src/app.ts` | 类型化的首页/Card 视图编排、Reader/Map 接线、媒体切换、快照与 history 辅助。 |
+| `src/types/runtime.ts` | App 实际消费的 V5 数据、Queries、Cards、Reader、Map 和浏览器全局类型边界；不充当运行时 schema。 |
 | `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
 | `tsconfig.json` | 渐进式 TypeScript 类型检查边界；暂不强制检查既有 JavaScript。 |
-| `package.json` | Node≥20.19、pnpm、Vite 开发/构建命令与分层验证脚本。 |
+| `package.json` | Node≥22.18、pnpm、Vite 开发/构建命令与分层验证脚本。 |
 | `styles.css` | 全局 shell、首页、焦点、响应式与 reduced-motion 基线。 |
 | `styles/v4/cards.css` | V4 Card/Scene/claim/navigation/preview/媒体布局。 |
 | `styles/v4/map.css` | V4 SVG 底图、Geometry family、节点、legend、移动/reduced-motion。 |
