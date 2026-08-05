@@ -1,37 +1,40 @@
-(function exposeLateBronzeAgeV5(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_LATE_BRONZE_AGE = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createLateBronzeAgeV5Data() {
-  'use strict';
+import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
 
-  function timeSpan(start, end, label, approximate) {
-    const value = { start, end, label };
+type SourceIds = readonly string[];
+
+  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+    const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id, text, sourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id, text, sourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id, text, sourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id, text, sourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function historicalCase(id, title, text, eventIds, sourceIds) {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
-  function review(limitations, counterexamples, uncertainties, alternatives, sourceIds) {
+  function review(
+    limitations: readonly ContentRecord[],
+    counterexamples: readonly ContentRecord[],
+    uncertainties: readonly ContentRecord[],
+    alternatives: readonly ContentRecord[],
+    sourceIds: SourceIds
+  ): ContentRecord {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -839,7 +842,16 @@
     { id: 'map-lba-palace-centers', cameraPresetId: 'camera-lba-palace-centers', layers: [{ kind: 'geometry', geometryId: 'geometry-lba-palace-centers', timeSpan: timeSpan(-1250, -1050, '约公元前1250—前1050年', true), sourceIds: ['source-knapp-manning-crisis', 'source-deger-jalkotzy-aftermath', 'source-uee-early-mid-20th-dynasty', 'source-natural-earth'] }] }
   ];
 
-  function associatedAnnotation(id, subjectKind, subjectIdKey, subjectId, coordinates, sourceIds, placement, label) {
+  function associatedAnnotation(
+    id: string,
+    subjectKind: string,
+    subjectIdKey: string,
+    subjectId: string,
+    coordinates: readonly number[],
+    sourceIds: SourceIds,
+    placement: string,
+    label: string
+  ): ContentRecord {
     return { id, subject: { kind: subjectKind, [subjectIdKey]: subjectId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label };
   }
 
@@ -891,7 +903,7 @@
     { id: 'asset-lba-medinet-habu-ox-carts', type: 'image', src: 'assets/images/late-bronze-age/medinet-habu-ox-carts.webp', title: '麦迪奈特哈布图版中的牛车与战士细节', alt: '芝加哥大学考古调查的整页黑白图版，上半左侧记录牛车细节，其他三格记录埃及和北方来敌的战士。', sourceIds: ['source-isac-medinet-habu-i', 'source-wikimedia-medinet-habu-land-battle'] }
   ];
 
-  return {
+  export const lateBronzeAgeData = {
     sources,
     entities,
     events,
@@ -906,5 +918,10 @@
     geometries,
     mapAnnotations,
     assets
-  };
-}));
+  } satisfies ContentModule;
+
+const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
+  ATLAS_V5_LATE_BRONZE_AGE?: ContentModule;
+};
+
+root.ATLAS_V5_LATE_BRONZE_AGE = lateBronzeAgeData;

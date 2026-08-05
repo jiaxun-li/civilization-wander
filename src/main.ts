@@ -9,7 +9,7 @@ import '../data/mesopotamia.js';
 import '../data/ancient-egypt.js';
 import '../data/ancient-india.ts';
 import '../data/ancient-china.js';
-import '../data/late-bronze-age.js';
+import '../data/late-bronze-age.ts';
 import '../data/aegean.js';
 import '../data/iron-age-near-east.js';
 import './data/atlas-data.ts';

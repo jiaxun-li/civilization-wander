@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const lateBronzeAge = require('../../data/late-bronze-age.js');
+const { lateBronzeAgeData: lateBronzeAge } = require('../../data/late-bronze-age.ts');
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 
 const root = path.resolve(__dirname, '../..');
