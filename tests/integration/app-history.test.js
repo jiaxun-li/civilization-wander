@@ -1,8 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-require('../../src/app.ts');
-
+const { appInternals } = require('../../src/app.ts');
 const {
   homeSections,
   normalizeLastReadSnapshot,
@@ -13,7 +12,7 @@ const {
   waitForImageReady,
   storyBackMode,
   storyTrailEntityNames
-} = globalThis.ATLAS_V5_APP_INTERNALS;
+} = appInternals;
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 

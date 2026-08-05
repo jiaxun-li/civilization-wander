@@ -18,52 +18,46 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 `index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader、Map、查询、聚合器、本地底图 adapter 与全部正式内容模块均为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
 
-`src/data/atlas-data.ts` 的命名导入与有序定义是正式内容模块清单的唯一运行时来源；`src/main.ts` 只导入聚合器，不再重复导入各内容模块。`scripts/check-runtime-manifests.js` 只读检查 HTML 入口、TypeScript 入口和聚合器，确保入口没有第二份内容清单；文档不保存另一份模块清单。运行时依赖层次是：
+`src/data/atlas-data.ts` 的命名导入与有序定义是正式内容模块清单的唯一运行时来源；`src/main.ts` 只导入样式与 `src/app.ts`。`src/app.ts` 再以命名导入取得聚合数据、查询、Cards、Reader、Natural Earth adapter 与 Map，不重复维护内容模块清单。`scripts/check-runtime-manifests.js` 只读检查 HTML 入口、TypeScript 入口、App 依赖图与聚合器，并拒绝重新引入 `ATLAS_*` 运行时全局桥接；文档不保存另一份模块清单。运行时依赖层次是：
 
-1. `src/data/world-physical.ts`
-2. `src/data/atlas-data.ts`，由它直接命名导入 `data/` 下的各内容模块
-3. 聚合后的 schema V5 数据
-4. `src/data/queries.ts`（按需通过 `data/query-node-runtime.js` 获得 Node 文件检查能力）
-5. `src/reader/card-components.ts`
-6. `src/reader/card-reader.ts`
-7. `src/map/natural-earth-base.ts`
-8. `src/map/map-renderer.ts`
-9. `src/app.ts`
+1. `src/main.ts`：样式与单一 App 入口
+2. `src/app.ts`：运行时模块的唯一编排层
+3. `src/data/atlas-data.ts`：直接命名导入 `data/` 下的各内容模块，输出聚合后的 schema V5 数据
+4. `src/data/queries.ts`：直接导入聚合数据；Node 直接运行时由 `data/query-node-runtime.js` 提供文件检查，Vite 构建时将它明确替换为 `src/data/query-browser-runtime.ts`
+5. `src/reader/card-components.ts` 与 `src/reader/card-reader.ts`
+6. `src/map/natural-earth-base.ts`：直接导入 `src/data/world-physical.ts`
+7. `src/map/map-renderer.ts`
 
 样式由 `src/main.ts` 按 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css` 的顺序导入。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；Vite/TypeScript 是构建和开发工作流变化，不构成 schema 版本变化。Cards、Reader 与 Map 的活动代码位于 `src/reader` 和 `src/map`；`styles/v4` 只保留稳定视觉类名，这个目录名不表示活动 schema 仍为 V4。
 
 ```mermaid
 flowchart TD
     HTML["index.html"] --> ENTRY["src/main.ts\nVite module entry"]
-    ENTRY --> WP["src/data/world-physical.ts\nATLAS_WORLD_VECTOR"]
-    ENTRY --> D["src/data/atlas-data.ts\nATLAS_V5_DATA"]
+    ENTRY --> A["src/app.ts\nruntime orchestrator"]
+    A --> D["src/data/atlas-data.ts\natlasData"]
     D --> CM["data/content-module.ts\nnamed ContentModule export"]
-    D --> Q["src/data/queries.ts\nATLAS_V5_QUERIES"]
-    Q --> C["src/reader/card-components.ts\nATLAS_V5_CARDS"]
-    Q --> R["src/reader/card-reader.ts\nATLAS_V5_CARD_READER"]
-    C --> R
-    WP --> B["src/map/natural-earth-base.ts\nATLAS_NATURAL_EARTH"]
-    Q --> M["src/map/map-renderer.ts\nATLAS_V5_MAP"]
-    B --> M
-    D --> A["src/app.ts\nATLAS_V5_APP"]
-    Q --> A
-    C --> A
-    R --> A
-    M --> A
+    Q["src/data/queries.ts\nqueriesModule"] --> D
+    Q --> N["query runtime adapter\nNode fs or browser null"]
+    A --> Q
+    A --> C["src/reader/card-components.ts\ncardsModule"]
+    A --> R["src/reader/card-reader.ts\ncardReaderModule"]
+    A --> B["src/map/natural-earth-base.ts\nnaturalEarthModule"]
+    B --> WP["src/data/world-physical.ts\nworldPhysicalVector"]
+    A --> M["src/map/map-renderer.ts\nmapModule"]
     CSS["styles.css + styles/v4/*"] --> ENTRY
 ```
 
-各内容模块以 TypeScript 命名导出声明精确的十四个数组，不再写入 `globalThis.ATLAS_V5_*` 内容全局变量；`src/data/atlas-data.ts` 直接导入这些导出，并在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据。`src/types/runtime.ts` 为十四个集合、Claim 判别联合与运行时消费者提供编译期结构契约；它负责尽早发现错误字段和错误类型，但不替代 validator 的引用、唯一性、时间相交和完整性规则。`src/data/queries.ts` 建索引、提供读 API 并执行失败关闭式校验，浏览器中不启用文件系统检查，Node 中由 `data/query-node-runtime.js` 提供 Asset 文件检查能力；Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`src/app.ts` 是唯一编排层。新增、删除或重排内容模块时只更新聚合器的命名导入与有序定义及受影响测试，并运行 `pnpm run check:manifests`；`src/main.ts` 不维护重复清单。
+各内容模块以 TypeScript 命名导出声明精确的十四个数组，不再写入 `globalThis.ATLAS_V5_*` 内容全局变量；其余运行时模块也全部通过命名导入与导出连接，不再以 `ATLAS_*` 浏览器全局变量传递依赖。`src/data/atlas-data.ts` 直接导入这些导出，并在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据。`src/types/runtime.ts` 为十四个集合、Claim 判别联合与运行时消费者提供编译期结构契约；它负责尽早发现错误字段和错误类型，但不替代 validator 的引用、唯一性、时间相交和完整性规则。`src/data/queries.ts` 建索引、提供读 API 并执行失败关闭式校验；Node 直接运行时由 `data/query-node-runtime.js` 提供 Asset 文件检查，Vite 则通过显式 alias 使用空的浏览器 adapter，避免把 CommonJS/Node 文件系统代码打进页面。Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`src/app.ts` 是唯一编排层。新增、删除或重排内容模块时只更新聚合器的命名导入与有序定义及受影响测试，并运行 `pnpm run check:manifests`；`src/main.ts` 不维护重复清单。
 
 ## 3. 从 `index.html` 到地图渲染器的完整调用链
 
-Vite 按 `src/main.ts` 的导入顺序执行运行时模块；聚合器先通过命名导入取得全部内容模块并合并数据。全部依赖就绪后，`src/app.ts` 通过类型化运行时边界读取聚合数据与运行模块，并立即运行 `queries.validateAtlasData()`。任何缺失的运行时模块、必需 DOM 或无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
+Vite 从 `src/main.ts` 进入 `src/app.ts`，再由 ES module 依赖图执行各命名导入；聚合器通过命名导入取得全部内容模块并合并数据。全部依赖就绪后，`src/app.ts` 直接使用类型化导入的聚合数据与运行模块，并立即运行 `queries.validateAtlasData()`。任何无法解析的模块依赖、必需 DOM 或无效数据都会在首次渲染前抛错，而不是由 renderer 静默过滤。
 
 初始化链如下：
 
 1. 建立首页板块、Card 容器、返回按钮、标题与面包屑的 DOM 引用。
 2. `src/app.ts` 用首页策展配置中的稳定 Card ID 生成三个入口板块；实体名、摘要和 Card 标题始终从当前聚合数据读取，不在首页配置重复维护。首屏提供三个代表性快速起点；可用的本地阅读快照只把第一个动作替换为“继续上次阅读”，其余入口保持稳定。
-3. 以 `ATLAS_V5_CARD_READER.createCardReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
+3. 以命名导入的 `cardReaderModule.createCardReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
 4. 根据 URL hash 解析 `#card/<cardId>/<sceneId>`；没有有效 Card 时显示首页，直接链接则启动 Reader。
 5. Reader 通过 `getCard()`、`getScenesForCard()` 取得 Card 与由 `Card.sceneIds` 决定的 Scene 顺序，再让 Cards renderer 生成主内容。
 6. Cards renderer 在标题区从主 Entity 与 Card `timeSpan.start/end` 生成“公共类型 · 主实体名称 · 年代”坐标；每个 Scene 的时间行按 `timeDisplay` 显示年代语义，并从 `Card.sceneIds` 派生“当前位置／总数”。这些都是展示派生值，不写回数据。
@@ -443,7 +437,7 @@ pnpm run test:browser
 
 ## 18. Vite、静态部署与地图产物约束
 
-- `index.html` 只加载 `src/main.ts`；入口按固定顺序导入 TypeScript 运行时，内容模块只由聚合器的命名导入接入。后续重构不得绕过聚合器、validator 或清单一致性检查。
+- `index.html` 只加载 `src/main.ts`；入口只导入样式与 `src/app.ts`，App 通过命名导入拥有完整运行时依赖图，内容模块只由聚合器接入。后续重构不得绕过聚合器、validator、清单一致性检查或重新引入运行时全局桥接。
 - 不得为核心内容请求远程地图、字体、API 或图片。Source URL 只是元数据。
 - URL 主身份保持 `#card/<cardId>/<optionalSceneId>`；Scene ID 用于区段定位和恢复，不成为全局故事节点。
 - `vite.config.mts` 使用 `/civilization-wander/` 作为 GitHub Pages 项目路径；`pnpm build` 将应用与本地运行时资源输出到 `dist/`，并复制 `.nojekyll`。
@@ -471,9 +465,9 @@ pnpm run test:browser
 | 文件 | 当前职责/状态 |
 |---|---|
 | `index.html` | 活动 V5 页面、语义 landmark 与单一 Vite module 入口。 |
-| `src/main.ts` | 样式与 V5 TypeScript 运行时模块的固定导入顺序。 |
-| `src/app.ts` | 类型化的首页/Card 视图编排、Reader/Map 接线、媒体切换、快照与 history 辅助。 |
-| `src/types/runtime.ts` | 十四个内容集合、Claim 判别联合、App/Queries/Cards/Reader/Map 与浏览器兼容边界的编译期结构契约；语义规则仍由 validator 执行。 |
+| `src/main.ts` | 按固定顺序导入样式，并加载唯一的 `src/app.ts` 运行时入口。 |
+| `src/app.ts` | 通过命名导入拥有完整运行时依赖图，并负责类型化的首页/Card 视图编排、Reader/Map 接线、媒体切换、快照与 history 辅助。 |
+| `src/types/runtime.ts` | 十四个内容集合、Claim 判别联合、App/Queries/Cards/Reader/Map 与必要浏览器 API 外观的编译期结构契约；不保存运行时模块全局变量，语义规则仍由 validator 执行。 |
 | `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
 | `tsconfig.json` | TypeScript 运行时与正式内容模块的类型检查边界；Node 支持脚本和测试仍由各自的 JavaScript 检查覆盖。 |
 | `package.json` | Node≥22.18、pnpm、Vite 开发/构建命令与分层验证脚本。 |
@@ -488,19 +482,20 @@ pnpm run test:browser
 | `data/<content-module>.ts` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。每个模块以 TypeScript 命名导出提供精确十四集合，不写入内容全局变量；清单与顺序由聚合器维护。 |
 | `src/data/atlas-data.ts` | 以类型化边界严格检查模块接口，汇总内容模块并输出 schema 5 的 14 个正式集合。 |
 | `src/data/queries.ts` | V5 索引、派生 Entity/Card 与 Card/Event 查询及严格 validator。 |
-| `data/query-node-runtime.js` | 仅在 Node 中为 validator 提供 Asset 文件存在性检查；浏览器中为空适配器。 |
+| `data/query-node-runtime.js` | 为 Node validator 提供 Asset 文件存在性检查；仅供 Node 直接运行时使用。 |
+| `src/data/query-browser-runtime.ts` | Vite 明确替换使用的空浏览器 adapter，防止 CommonJS/Node 文件系统代码进入生产页面。 |
 | `scripts/report-atlas-counts.js` | 只读加载聚合数据并报告当前 schema 与各集合数量，不修改数据或文档。 |
-| `scripts/check-runtime-manifests.js` | 只读检查 HTML/TypeScript 入口与聚合器，确认聚合器是唯一内容模块清单且入口没有重复导入。 |
+| `scripts/check-runtime-manifests.js` | 只读检查 HTML/TypeScript 入口、App 命名导入图与聚合器，确认聚合器是唯一内容模块清单，并拒绝旧式运行时全局桥接。 |
 | `scripts/validate-content-module.js` | 对 staging 模块执行精确接口、局部 ID／引用、pending sibling 声明、Asset manifest 与媒体决策门禁。 |
 | `scripts/content-module-runtime.js` | 从聚合器命名导入读取真实内容模块文件名，并统一解析唯一的十四集合命名导出；避免测试和维护脚本另存模块清单。 |
 | `scripts/generate-asset-manifests.js` | 从现有运行时 Asset 更新 version-2 非运行时元数据清单、编码尺寸、体积和摘要；保留既有审核字段，不猜测许可。 |
 | `scripts/migrate-v4-content-to-v5.js` | 记录 V4→V5 的显式字段删除、Event kind 和逐 Scene Event 映射。 |
 | `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始与编码尺寸、体积、WebP 格式、origin、SHA-256 与审核状态。 |
-| `src/reader/card-components.ts` | 类型化并语义转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML；继续暴露 `ATLAS_V5_CARDS` 浏览器兼容接口。 |
-| `src/reader/card-reader.ts` | 类型化的 Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫；继续暴露 `ATLAS_V5_CARD_READER` 浏览器兼容接口。 |
-| `src/map/map-renderer.ts` | 类型化的本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理；继续暴露 `ATLAS_V5_MAP` 浏览器兼容接口。 |
-| `src/data/world-physical.ts` | 活动生成、受 TypeScript 接口约束的 Natural Earth 4096 坐标底图数据。 |
-| `src/map/natural-earth-base.ts` | TypeScript 底图 adapter、筛选、冻结与缓存。 |
+| `src/reader/card-components.ts` | 类型化并语义转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML；以 `cardsModule` 命名导出供 App 使用。 |
+| `src/reader/card-reader.ts` | 类型化的 Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫；以 `cardReaderModule` 命名导出供 App 使用。 |
+| `src/map/map-renderer.ts` | 类型化的本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理；以 `mapModule` 命名导出供 App 使用。 |
+| `src/data/world-physical.ts` | 活动生成、受 TypeScript 接口约束并以 `worldPhysicalVector` 命名导出的 Natural Earth 4096 坐标底图数据。 |
+| `src/map/natural-earth-base.ts` | 直接导入底图数据的 TypeScript adapter、筛选、冻结与缓存；以 `naturalEarthModule` 命名导出供 App 使用。 |
 | `playwright.config.ts` | 正式构建的 Chromium 验收配置、Pages 子路径与失败报告策略。 |
 | `tests/browser/production-smoke.spec.ts` | 首页进入 Card、Scene 滚动、图片加载、控制台与关键资源错误的生产冒烟验收。 |
 

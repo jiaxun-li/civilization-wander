@@ -490,7 +490,7 @@ export interface CardReaderModule {
     queries: AtlasQueries;
     components: CardComponents;
     root: HTMLElement;
-    windowRef: AtlasRuntimeGlobal;
+    windowRef: AtlasWindow;
     onPresentationChange: (presentation: ScenePresentation, scene: Scene, context: ReaderContext) => void;
     onMapStateChange: (mapState: MapState | null, scene: Scene, mapConfig: MapPresentationConfig | null, context: ReaderContext) => void;
     onStructureViewsChange: (views: readonly StructureView[], scene: Scene, context: ReaderContext) => void;
@@ -660,7 +660,7 @@ export interface MapModule {
     queries: AtlasQueries;
     naturalEarth: NaturalEarthData;
     documentRef: Document;
-    windowRef: AtlasRuntimeGlobal;
+    windowRef: AtlasWindow;
     onNavigate?: (navigationId: string) => void;
   }): AtlasMap;
 }
@@ -688,17 +688,7 @@ export interface BrandConfig {
   readonly startCardId: CardId;
 }
 
-export interface AtlasRuntimeGlobal extends Window {
+export interface AtlasWindow extends Window {
   readonly IntersectionObserver?: typeof IntersectionObserver;
-  ATLAS_V5_DATA?: AtlasData;
-  ATLAS_V5_QUERIES?: AtlasQueries;
-  ATLAS_V5_CARDS?: CardsModule;
-  ATLAS_V5_CARD_READER?: CardReaderModule;
-  ATLAS_V5_MAP?: MapModule;
-  ATLAS_WORLD_VECTOR?: GeneratedNaturalEarthVector;
-  ATLAS_NATURAL_EARTH?: NaturalEarthAdapterModule;
-  ATLAS_V5_APP_INTERNALS?: Readonly<Record<string, unknown>>;
-  ATLAS_V5_APP?: AtlasApp;
-  ATLAS_BRAND?: BrandConfig;
   navigator: Navigator & { readonly connection?: { readonly saveData?: boolean } };
 }

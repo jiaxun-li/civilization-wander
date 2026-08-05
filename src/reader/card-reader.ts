@@ -1,7 +1,6 @@
 import type {
   AtlasHistoryState,
   AtlasQueries,
-  AtlasRuntimeGlobal,
   Card,
   CardId,
   CardReader,
@@ -573,5 +572,3 @@ export const cardReaderModule = {
   resolveSceneMedia,
   createCardReader
 } satisfies CardReaderModule;
-
-(globalThis as unknown as AtlasRuntimeGlobal).ATLAS_V5_CARD_READER = cardReaderModule;

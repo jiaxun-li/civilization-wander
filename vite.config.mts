@@ -9,6 +9,12 @@ const outputDirectory = resolve(projectRoot, 'dist');
 export default defineConfig({
   base: '/civilization-wander/',
   publicDir: false,
+  resolve: {
+    alias: [{
+      find: '../../data/query-node-runtime.js',
+      replacement: resolve(projectRoot, 'src/data/query-browser-runtime.ts')
+    }]
+  },
   plugins: [
     {
       name: 'copy-runtime-assets',

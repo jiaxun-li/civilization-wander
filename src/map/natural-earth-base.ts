@@ -1,3 +1,4 @@
+import { worldPhysicalVector } from '../data/world-physical.ts';
 import type {
   Bounds,
   GeneratedNaturalEarthPath,
@@ -62,20 +63,11 @@ export function createNaturalEarthBase(vector: GeneratedNaturalEarthVector): Nat
   });
 }
 
-type NaturalEarthRuntimeRoot = typeof globalThis & {
-  ATLAS_WORLD_VECTOR?: GeneratedNaturalEarthVector;
-  ATLAS_NATURAL_EARTH?: NaturalEarthAdapterModule;
-};
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as NaturalEarthRuntimeRoot;
-
 export const naturalEarthModule: NaturalEarthAdapterModule = Object.freeze({
-  base: root.ATLAS_WORLD_VECTOR ? createNaturalEarthBase(root.ATLAS_WORLD_VECTOR) : null,
+  base: createNaturalEarthBase(worldPhysicalVector),
   sourcePath,
   dataset,
   pathBounds,
   splitPath,
   createNaturalEarthBase
 });
-
-root.ATLAS_NATURAL_EARTH = naturalEarthModule;

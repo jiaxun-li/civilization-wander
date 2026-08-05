@@ -1,6 +1,5 @@
 import type {
   AtlasQueries,
-  AtlasRuntimeGlobal,
   Card,
   CardComponents,
   CardsModule,
@@ -233,5 +232,3 @@ export const cardsModule = {
   formatTimeSpan,
   createCardComponents
 } satisfies CardsModule;
-
-(globalThis as unknown as AtlasRuntimeGlobal).ATLAS_V5_CARDS = cardsModule;

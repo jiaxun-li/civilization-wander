@@ -25,7 +25,7 @@ test('the aggregator is the single content-module manifest', () => {
   assert.equal(result.status, 0, result.stderr || result.stdout);
 });
 
-test('Vite entrypoint loads only the V5 main path in dependency order', () => {
+test('Vite entrypoint imports styles and the single App runtime path', () => {
   assert.match(html, /<script type="module" src="\/src\/main\.ts"><\/script>/);
   const imports = [...entry.matchAll(/import\s+['"]([^'"]+)['"]/g)]
     .map(match => path.posix.normalize(path.posix.join('src', match[1])));
@@ -33,15 +33,26 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'styles.css',
     'styles/v4/cards.css',
     'styles/v4/map.css',
-    'src/data/world-physical.ts',
+    'src/app.ts'
+  ]);
+});
+
+test('runtime modules use named imports instead of legacy browser globals', () => {
+  const runtimeFiles = [
+    'src/app.ts',
     'src/data/atlas-data.ts',
     'src/data/queries.ts',
+    'src/data/query-browser-runtime.ts',
+    'src/data/world-physical.ts',
     'src/reader/card-components.ts',
     'src/reader/card-reader.ts',
     'src/map/natural-earth-base.ts',
     'src/map/map-renderer.ts',
-    'src/app.ts'
-  ]);
+    'data/query-node-runtime.js'
+  ];
+  for (const relative of runtimeFiles) {
+    assert.doesNotMatch(read(relative), /ATLAS_(?:V5|WORLD|NATURAL|BRAND)/, relative);
+  }
 });
 
 test('runtime contains no timeline or interactive basemap state', () => {

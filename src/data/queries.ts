@@ -1,15 +1,15 @@
-import './atlas-data.ts';
-import '../../data/query-node-runtime.js';
+import { atlasData } from './atlas-data.ts';
+import nodeValidationRuntime from '../../data/query-node-runtime.js';
 import type {
   Asset,
   AtlasData,
   AtlasQueries,
-  AtlasRuntimeGlobal,
   CameraPreset,
   Card,
   CardId,
   Entity,
   EntityId,
+  Event,
   GraphEndpoint,
   HistoricalGeometry,
   MapAnnotation,
@@ -18,6 +18,7 @@ import type {
   NavigationPlacement,
   Scene,
   SceneId,
+  Source,
   StructuralEdge,
   StructureView,
   TimeSpan,
@@ -94,8 +95,8 @@ type UncheckedItem = UnknownRecord & {
 };
 type Direction = 'incoming' | 'outgoing' | 'both';
 type EdgeQueryOptions = { readonly direction?: Direction; readonly timeSpan?: TimeSpan };
-type QueryEvent = UnknownRecord & { readonly id: string };
-type QuerySource = UnknownRecord & { readonly id: string };
+type QueryEvent = Event;
+type QuerySource = Source;
 type QueryCard = Card & { readonly relatedEntityIds: readonly EntityId[] };
 type QueryScene = Scene & { readonly eventIds: readonly string[] };
 type QueryStructuralEdge = StructuralEdge & {
@@ -194,15 +195,7 @@ type NodeValidationRuntime = {
   readonly projectRoot: string;
 };
 
-type QueryRuntimeGlobal = AtlasRuntimeGlobal & {
-  ATLAS_V5_QUERY_NODE_RUNTIME?: NodeValidationRuntime | null;
-};
-
-const runtimeGlobal = globalThis as unknown as QueryRuntimeGlobal;
-const defaultData = runtimeGlobal.ATLAS_V5_DATA as QueryData | undefined;
-const nodeValidationRuntime = runtimeGlobal.ATLAS_V5_QUERY_NODE_RUNTIME ?? null;
-
-if (!defaultData) throw new Error('ATLAS_V5_DATA must load before queries');
+const defaultData: QueryData = atlasData;
 
   const TOP_LEVEL_KEYS = [
     'schemaVersion',
@@ -1554,6 +1547,4 @@ if (!defaultData) throw new Error('ATLAS_V5_DATA must load before queries');
     validateAtlasData,
     ENTITY_TYPE_LABELS,
     timeSpanOverlaps
-  });
-
-runtimeGlobal.ATLAS_V5_QUERIES = queriesModule as AtlasQueries;
+  }) satisfies AtlasQueries;

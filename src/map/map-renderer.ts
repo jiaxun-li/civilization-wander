@@ -1,6 +1,5 @@
 import type {
   AtlasQueries,
-  AtlasRuntimeGlobal,
   Bounds,
   CameraPreset,
   CameraTransition,
@@ -633,5 +632,3 @@ export const mapModule = {
   projectAnnotation,
   createNaturalEarthMap
 } satisfies MapModule;
-
-(globalThis as unknown as AtlasRuntimeGlobal).ATLAS_V5_MAP = mapModule;

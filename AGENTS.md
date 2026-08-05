@@ -341,7 +341,7 @@ scope includes:
 - `index.html`;
 - `src/main.ts`;
 - `src/data/atlas-data.ts`;
-- fixed runtime-loading tests;
+- fixed runtime-entry and named-import graph tests;
 - cross-module and reciprocal navigation changes;
 - global duplicate-ID and reference resolution;
 - any shared package or verification manifest affected by module loading.
@@ -490,12 +490,15 @@ explicitly.
 The current runtime is a Vite-built V5 prototype with no client-side runtime dependencies:
 
 - `index.html` loads the single `src/main.ts` Vite entrypoint.
-- `src/main.ts` imports styles and typed runtime modules in dependency order.
+- `src/main.ts` imports styles and the single `src/app.ts` runtime entry; `src/app.ts`
+  owns the typed named-import graph for data, queries, Cards, Reader, and Map.
 - `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.
+- Runtime modules communicate through named TypeScript imports and exports; do not
+  reintroduce `ATLAS_*` browser globals as a dependency bridge.
 - `src/data/atlas-data.ts` contains the typed aggregation boundary for Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,
   CameraPresets, MapStates, Geometries, MapAnnotations, Assets, and Sources.

@@ -132,5 +132,3 @@ export function createAtlasV5Data(
 }
 
 export const atlasData = createAtlasV5Data();
-
-(globalThis as unknown as { ATLAS_V5_DATA?: AtlasData }).ATLAS_V5_DATA = atlasData;

@@ -2,22 +2,16 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '../..');
 const adapterPath = path.join(root, 'data/query-node-runtime.js');
-const adapterSource = fs.readFileSync(adapterPath, 'utf8');
+const browserAdapterPath = path.join(root, 'src/data/query-browser-runtime.ts');
+const viteConfig = fs.readFileSync(path.join(root, 'vite.config.mts'), 'utf8');
 
-test('browser bundle shims cannot activate the Node filesystem adapter', () => {
-  const browserGlobal = {};
-  const bundlerModuleShim = {};
-
-  assert.doesNotThrow(() => vm.runInNewContext(adapterSource, {
-    globalThis: browserGlobal,
-    module: bundlerModuleShim
-  }));
-  assert.equal(browserGlobal.ATLAS_V5_QUERY_NODE_RUNTIME, null);
-  assert.deepEqual(bundlerModuleShim, {});
+test('Vite replaces the Node filesystem adapter with an empty browser module', () => {
+  assert.match(viteConfig, /find: '\.\.\/\.\.\/data\/query-node-runtime\.js'/);
+  assert.match(viteConfig, /replacement: resolve\(projectRoot, 'src\/data\/query-browser-runtime\.ts'\)/);
+  assert.match(fs.readFileSync(browserAdapterPath, 'utf8'), /const queryBrowserRuntime = null;/);
 });
 
 test('Node keeps filesystem-backed Asset validation enabled', () => {

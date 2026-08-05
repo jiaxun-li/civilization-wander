@@ -1,22 +1,25 @@
+import { atlasData } from './data/atlas-data.ts';
+import { queriesModule } from './data/queries.ts';
+import { cardsModule } from './reader/card-components.ts';
+import { cardReaderModule } from './reader/card-reader.ts';
+import { naturalEarthModule } from './map/natural-earth-base.ts';
+import { mapModule } from './map/map-renderer.ts';
 import type {
   AssetId,
   AtlasApp,
-  AtlasData,
   AtlasHistoryState,
   AtlasMap,
   AtlasQueries,
-  AtlasRuntimeGlobal,
+  AtlasWindow,
   BrandConfig,
   Card,
   CardId,
   CardReader,
   CardReaderModule,
-  CardsModule,
   Entity,
   ImageAsset,
   ImagePresentation,
   LastReadSnapshot,
-  MapModule,
   MapPresentationConfig,
   MapState,
   NavigationTrailEntry,
@@ -60,7 +63,9 @@ function requiredElementById<T extends HTMLElement>(
   return element as T;
 }
 
-(function startCivilizationAtlas(root: AtlasRuntimeGlobal, documentRef: Document | null) {
+export let atlasApp: AtlasApp | null = null;
+
+export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, documentRef: Document | null) {
   'use strict';
 
   const LAST_READ_STORAGE_KEY = 'civilization-wander:v5:last-read';
@@ -251,7 +256,7 @@ function requiredElementById<T extends HTMLElement>(
       .filter(Boolean);
   }
 
-  root.ATLAS_V5_APP_INTERNALS = Object.freeze({
+  const internals = Object.freeze({
     homeSections: HOME_SECTIONS,
     normalizeLastReadSnapshot,
     parseLastReadSnapshot,
@@ -264,19 +269,15 @@ function requiredElementById<T extends HTMLElement>(
     storyBackMode,
     storyTrailEntityNames
   });
-  if (!documentRef) return;
+  if (!documentRef) return internals;
   const runtimeDocument = documentRef;
 
   function initialize() {
-    const data = root.ATLAS_V5_DATA as AtlasData;
-    const queries = root.ATLAS_V5_QUERIES as AtlasQueries;
-    const cardsModule = root.ATLAS_V5_CARDS as CardsModule;
-    const readerModule = root.ATLAS_V5_CARD_READER as CardReaderModule;
-    const mapModule = root.ATLAS_V5_MAP as MapModule;
-    const naturalEarth = root.ATLAS_NATURAL_EARTH?.base;
-    if (!data || !queries || !cardsModule || !readerModule || !mapModule || !naturalEarth) {
-      throw new Error('V5 runtime modules failed to load');
-    }
+    const data = atlasData;
+    const queries = queriesModule;
+    const readerModule = cardReaderModule;
+    const naturalEarth = naturalEarthModule.base;
+    if (!naturalEarth) throw new Error('Natural Earth base failed to initialize');
     const verifiedNaturalEarth = naturalEarth;
     const validation = queries.validateAtlasData();
     if (!validation.valid) throw new Error(`V5 data validation failed: ${validation.errors.join('; ')}`);
@@ -786,17 +787,17 @@ function requiredElementById<T extends HTMLElement>(
         mapStateId: map?.getActiveMapState()?.id || null
       })
     };
-    root.ATLAS_V5_APP = api;
+    atlasApp = api;
     return api;
   }
 
-  root.ATLAS_BRAND = BRAND_CONFIG;
   if (runtimeDocument.readyState === 'loading') {
     runtimeDocument.addEventListener('DOMContentLoaded', initialize, { once: true });
   } else {
     initialize();
   }
+  return internals;
 }(
-  (typeof window !== 'undefined' ? window : globalThis) as unknown as AtlasRuntimeGlobal,
+  (typeof window !== 'undefined' ? window : globalThis) as unknown as AtlasWindow,
   typeof document !== 'undefined' ? document : null
 ));

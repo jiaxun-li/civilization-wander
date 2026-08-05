@@ -2,12 +2,12 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const vm = require('node:vm');
 
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 const mapModule = require('../../src/map/map-renderer.ts');
 const naturalEarthModule = require('../../src/map/natural-earth-base.ts');
+const { worldPhysicalVector } = require('../../src/data/world-physical.ts');
 
 function classList() {
   const values = new Set();
@@ -131,12 +131,7 @@ let cachedWorldBase = null;
 
 function worldBase() {
   if (cachedWorldBase) return cachedWorldBase;
-  const sandbox = { window: {} };
-  vm.runInNewContext(
-    fs.readFileSync(path.resolve(__dirname, '../../src/data/world-physical.ts'), 'utf8'),
-    sandbox
-  );
-  cachedWorldBase = naturalEarthModule.createNaturalEarthBase(sandbox.window.ATLAS_WORLD_VECTOR);
+  cachedWorldBase = naturalEarthModule.createNaturalEarthBase(worldPhysicalVector);
   return cachedWorldBase;
 }
 

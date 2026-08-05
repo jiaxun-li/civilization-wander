@@ -22,20 +22,22 @@ test('index.html has one Vite module entrypoint', () => {
 });
 
 test('all Vite entrypoint imports are local build inputs', () => {
-  assert.ok(entryImports.length >= 10);
+  assert.deepEqual(entryImports, [
+    'styles.css',
+    'styles/v4/cards.css',
+    'styles/v4/map.css',
+    'src/app.ts'
+  ]);
   for (const relative of entryImports) {
     assert.doesNotMatch(relative, /^(?:\/|[a-z]+:)/i);
     assert.equal(fs.existsSync(path.join(root, relative)), true, relative);
   }
 });
 
-test('remaining legacy runtime stays local while Vite owns all module loading', () => {
-  const runtimeFiles = entryImports.filter(relative => relative.endsWith('.js'));
-  const runtime = runtimeFiles.map(read).join('\n');
-  const executableRuntimeFiles = entryImports
-    .filter(relative => !relative.startsWith('data/'));
-  const executableRuntime = executableRuntimeFiles.map(read).join('\n');
-  assert.doesNotMatch(runtime, /\bimport\s+|\bexport\s+|\brequire\(['"][^.]|fetch\(|XMLHttpRequest/);
+test('the app owns a local typed module graph without remote runtime loading', () => {
+  const executableRuntime = read('src/app.ts');
+  assert.match(executableRuntime, /import \{ atlasData \} from '\.\/data\/atlas-data\.ts'/);
+  assert.match(executableRuntime, /import \{ queriesModule \} from '\.\/data\/queries\.ts'/);
   assert.doesNotMatch(
     executableRuntime,
     /\bfetch\s*\(|\bXMLHttpRequest\b|\bWebSocket\s*\(|\bEventSource\s*\(|navigator\.sendBeacon\s*\(/
