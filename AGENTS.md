@@ -367,13 +367,14 @@ aggregate data in order to make tests pass.
 
 ### Module-level gate
 
-A new content module must pass its isolated gate before it can be added to
-`src/main.ts` or `src/data/atlas-data.ts`.
+A new content module must pass its isolated gate before its named export can be
+added to the ordered definitions in `src/data/atlas-data.ts`. Content modules
+are not imported separately by `src/main.ts`.
 
 The gate must include:
 
-1. JavaScript syntax validation;
-2. module export/global initialization validation;
+1. TypeScript syntax and type validation;
+2. named-export and exact fourteen-collection interface validation;
 3. duplicate ID checks inside the module;
 4. Source and Asset provenance checks;
 5. local Asset path and file-existence checks;
@@ -396,8 +397,8 @@ For a new or parallel staging module, run:
 node scripts/validate-content-module.js data/<module>.ts docs/content-packs/<module>.handoff.json
 ```
 
-The handoff file is machine-readable and uses `handoffVersion: 2`. The gate
-compares its module path, exported browser global, new IDs, active-atlas reuse,
+The handoff file is machine-readable and uses `handoffVersion: 3`. The gate
+compares its module path, exported TypeScript binding, new IDs, active-atlas reuse,
 pending sibling references, check results, and frozen state with the submitted
 module. Active-atlas references are discovered automatically; only references
 to not-yet-integrated sibling modules are declared manually. Existing active
@@ -422,7 +423,7 @@ user approval.
 The Content Agent must provide the Integration Agent with:
 
 - the module filename and expected loading position;
-- exported global name;
+- exported TypeScript binding;
 - new top-level IDs;
 - reused external IDs;
 - proposed outbound navigation;
@@ -439,7 +440,7 @@ rather than an earlier snapshot.
 After taking exclusive integration ownership, the Integration Agent must:
 
 1. confirm that the current main runtime is valid before changing shared files;
-2. add the module to the entrypoint and aggregator in dependency order;
+2. add the module's named import and definition to the aggregator in dependency order;
 3. resolve global duplicate IDs and external references;
 4. apply reciprocal navigation in the owning existing modules;
 5. update fixed loading-order and integration tests;
@@ -462,8 +463,9 @@ main-runtime gate must be marked `integration in progress` in the task,
 ContentPack record, or another non-runtime handoff record.
 
 Do not add an `integrationStatus` field to runtime data unless the schema
-explicitly adopts and validates it. Do not partially load an unfinished module
-through `src/main.ts` or `src/data/atlas-data.ts`.
+explicitly adopts and validates it. Do not partially add an unfinished module
+to `src/data/atlas-data.ts`, and do not bypass the aggregator by importing it
+from `src/main.ts`.
 
 An unfinished module must remain outside the active aggregation path. Renderer
 filtering, silent query filtering, try/catch suppression, or removal of invalid

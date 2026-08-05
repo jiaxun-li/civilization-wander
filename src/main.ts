@@ -5,13 +5,6 @@ import '../styles/v4/map.css';
 // Preserve the established V5 runtime dependency order across the typed
 // content modules and runtime adapters.
 import './data/world-physical.ts';
-import '../data/mesopotamia.ts';
-import '../data/ancient-egypt.ts';
-import '../data/ancient-india.ts';
-import '../data/ancient-china.ts';
-import '../data/late-bronze-age.ts';
-import '../data/aegean.ts';
-import '../data/iron-age-near-east.ts';
 import './data/atlas-data.ts';
 import './data/queries.ts';
 import './reader/card-components.ts';

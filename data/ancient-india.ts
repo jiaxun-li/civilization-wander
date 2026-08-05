@@ -1,40 +1,51 @@
-import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
+import type {
+  ContentModule,
+  ContentModuleCollectionMap,
+  EditorialReview,
+  HistoricalCaseClaim,
+  HistoricalFactClaim,
+  InterpretationClaim,
+  LabeledTimeSpan,
+  LimitationClaim,
+  TextClaim
+} from '../src/types/runtime.ts';
 
 type SourceIds = readonly string[];
+type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
 
-  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+  function timeSpan(start: number, end: number, label: string, approximate = false): LabeledTimeSpan {
     const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id: string, text: string, sourceIds: SourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id: string, text: string, sourceIds: SourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): InterpretationClaim {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id: string, text: string, sourceIds: SourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): TextClaim {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id: string, text: string, sourceIds: SourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds): LimitationClaim {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds) {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): HistoricalCaseClaim {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
   function review(
-    limitations: readonly ContentRecord[],
-    counterexamples: readonly ContentRecord[],
-    uncertainties: readonly ContentRecord[],
-    alternatives: readonly ContentRecord[],
+    limitations: readonly LimitationClaim[],
+    counterexamples: readonly HistoricalCaseClaim[],
+    uncertainties: readonly InterpretationClaim[],
+    alternatives: readonly InterpretationClaim[],
     sourceIds: SourceIds
-  ) {
+  ): EditorialReview {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -44,7 +55,7 @@ type SourceIds = readonly string[];
     };
   }
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     { id: 'source-wright-ancient-indus', title: 'The Ancient Indus: Urbanism, Economy, and Society', author: 'Rita P. Wright', year: 2010, publisher: 'Cambridge University Press', url: 'https://www.britishmuseum.org/collection/term/BIB8384' },
     { id: 'source-kenoyer-indus-civilisation', title: 'The Indus Civilisation', author: 'Jonathan Mark Kenoyer', publisher: 'Cambridge University Press', url: 'https://www.cambridge.org/core/books/abs/cambridge-world-prehistory/indus-civilisation/6D73243ABD6561B46B84EE198929CC5E' },
     { id: 'source-unesco-mohenjo-daro', title: 'Archaeological Ruins at Moenjodaro', publisher: 'UNESCO World Heritage Centre', url: 'https://whc.unesco.org/en/list/138/' },
@@ -80,7 +91,7 @@ type SourceIds = readonly string[];
     { id: 'source-generated-vedic-recitation', title: 'Early Vedic recitation teaching illustration', year: 2026, publisher: 'OpenAI image generation' }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     {
       id: 'indus-civilization',
       type: 'culturalTradition',
@@ -116,7 +127,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const events = [
+  const events: Collection<'events'> = [
     {
       id: 'event-steppe-related-ancestry-enters-south-asia', kind: 'historicalProcess',
       title: '草原相关人群进入南亚',
@@ -187,7 +198,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const structuralEdges = [
+  const structuralEdges: Collection<'structuralEdges'> = [
     {
       id: 'edge-mohenjo-daro-indus-civilization',
       family: 'historicalNetwork',
@@ -214,7 +225,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     {
       id: 'mohenjo-daro-urban-order',
       kind: 'overview',
@@ -317,7 +328,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     {
       id: 'mohenjo-daro-partial-city',
       title: '一座尚未完全看见的城市',
@@ -555,7 +566,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     {
       id: 'nav-mohenjo-daro-indus-civilization',
       target: { cardId: 'indus-civilization-network', sceneId: 'indus-shared-measures' },
@@ -593,7 +604,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     { id: 'placement-mohenjo-daro-indus-closing', navigationOptionId: 'nav-mohenjo-daro-indus-civilization', owner: { kind: 'card', cardId: 'mohenjo-daro-urban-order' }, slot: 'closing', rank: 1, visible: true, interactive: true },
     { id: 'placement-indus-mohenjo-daro-inline', navigationOptionId: 'nav-indus-civilization-mohenjo-daro', owner: { kind: 'scene', sceneId: 'indus-shared-measures' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-indus-akkadian-inline', navigationOptionId: 'nav-indus-akkadian-empire', owner: { kind: 'scene', sceneId: 'indus-meluhha-ships' }, slot: 'inline', rank: 1, visible: true, interactive: true },
@@ -601,7 +612,7 @@ type SourceIds = readonly string[];
     { id: 'placement-indo-aryan-indus-inline', navigationOptionId: 'nav-indo-aryan-indus', owner: { kind: 'scene', sceneId: 'indo-aryan-cities-change-first' }, slot: 'inline', rank: 1, visible: true, interactive: true }
   ];
 
-  const cameraPresets = [
+  const cameraPresets: Collection<'cameraPresets'> = [
     { id: 'camera-mohenjo-daro-site', center: [68.132872, 27.325358], scale: 10 },
     { id: 'camera-indus-mature-network', center: [72.6, 27.2], scale: 4.6 },
     { id: 'camera-indus-western-exchange', center: [58.5, 27.5], scale: 5.2 },
@@ -611,7 +622,7 @@ type SourceIds = readonly string[];
     { id: 'camera-indo-aryan-synthesis', center: [76.3, 29], scale: 3.7 }
   ];
 
-  const geometries = [
+  const geometries: Collection<'geometries'> = [
     {
       id: 'geometry-mohenjo-daro-site',
       geometry: { type: 'Point', coordinates: [68.132872, 27.325358] },
@@ -678,7 +689,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const mapStates = [
+  const mapStates: Collection<'mapStates'> = [
     {
       id: 'map-mohenjo-daro-site',
       cameraPresetId: 'camera-mohenjo-daro-site',
@@ -729,7 +740,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const mapAnnotations = [
+  const mapAnnotations: Collection<'mapAnnotations'> = [
     {
       id: 'annotation-mohenjo-daro-site-label',
       subject: { kind: 'entity', entityId: 'mohenjo-daro' },
@@ -842,7 +853,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     { id: 'asset-mohenjo-daro-well', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-well.webp', title: '摩亨佐-达罗砖砌水井', alt: '摩亨佐-达罗遗址中的圆形砖砌水井俯视照片，井口由多层弧形砖围成。', sourceIds: ['source-wikimedia-mohenjo-well', 'source-jansen-mohenjo-water'] },
     { id: 'asset-mohenjo-daro-street', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-street.webp', title: '摩亨佐-达罗的街道与砖墙', alt: '摩亨佐-达罗遗址中的狭长街道，两侧保留高低不一的砖砌住宅墙体。', sourceIds: ['source-wikimedia-mohenjo-street', 'source-green-indus-public-goods'] },
     { id: 'asset-mohenjo-daro-great-bath', type: 'image', src: 'assets/images/ancient-india/mohenjo-daro-great-bath.webp', title: '摩亨佐-达罗大浴池', alt: '摩亨佐-达罗大浴池完整全景，长方形砖池、两端台阶和周边砖墙清晰可见。', sourceIds: ['source-wikimedia-mohenjo-great-bath', 'source-unesco-mohenjo-daro', 'source-jansen-mohenjo-water'] },
@@ -869,9 +880,3 @@ type SourceIds = readonly string[];
     mapAnnotations,
     assets
   } satisfies ContentModule;
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
-  ATLAS_V5_ANCIENT_INDIA?: ContentModule;
-};
-
-root.ATLAS_V5_ANCIENT_INDIA = ancientIndiaData;

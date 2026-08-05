@@ -1,40 +1,53 @@
-import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
+import type {
+  ContentModule,
+  ContentModuleCollectionMap,
+  EditorialReview,
+  HistoricalCaseClaim,
+  HistoricalFactClaim,
+  InterpretationClaim,
+  LabeledTimeSpan,
+  LimitationClaim,
+  MapPresentation,
+  MapPresentationLayer,
+  TextClaim
+} from '../src/types/runtime.ts';
 
 type SourceIds = readonly string[];
+type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
 
-  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+  function timeSpan(start: number, end: number, label: string, approximate = false): LabeledTimeSpan {
     const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function fact(id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): InterpretationClaim {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): HistoricalCaseClaim {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
-  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): TextClaim {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function limitation(id: string, text: string, sourceIds: SourceIds): LimitationClaim {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
   function review(
-    limitations: readonly ContentRecord[],
-    counterexamples: readonly ContentRecord[],
-    uncertainties: readonly ContentRecord[],
-    alternatives: readonly ContentRecord[],
+    limitations: readonly LimitationClaim[],
+    counterexamples: readonly HistoricalCaseClaim[],
+    uncertainties: readonly InterpretationClaim[],
+    alternatives: readonly InterpretationClaim[],
     sourceIds: SourceIds
-  ): ContentRecord {
+  ): EditorialReview {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -44,10 +57,10 @@ type SourceIds = readonly string[];
     };
   }
 
-  const mapPresentation = (mapStateId: string, layers: readonly ContentRecord[], caption: string): ContentRecord => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
-  const mapLayer = (entityId: string, annotationId: string, sourceIds: SourceIds): ContentRecord => ({ kind: 'entity', entityId, annotationId, sourceIds });
+  const mapPresentation = (mapStateId: string, layers: readonly MapPresentationLayer[], caption: string): MapPresentation => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
+  const mapLayer = (entityId: string, annotationId: string, sourceIds: SourceIds): MapPresentationLayer => ({ kind: 'entity', entityId, annotationId, sourceIds });
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     { id: 'source-unesco-liangzhu', title: 'Archaeological Ruins of Liangzhu City', publisher: 'UNESCO World Heritage Centre', url: 'https://whc.unesco.org/en/list/1592/' },
     { id: 'source-erlitou-cass-report', title: 'Erlitou, 1999–2006', author: 'Institute of Archaeology, Chinese Academy of Social Sciences', year: 2014, publisher: 'Encyclopaedia of China Publishing House' },
     { id: 'source-erlitou-rethinking', title: 'Rethinking Erlitou: Legend, History and Chinese Archaeology', author: 'Li Liu and Hong Xu', year: 2007, publisher: 'Antiquity', url: 'https://www.cambridge.org/core/journals/antiquity/article/abs/rethinking-erlitou-legend-history-and-chinese-archaeology/FDBD0E8E7C661FC180CAD54AD9742E31' },
@@ -117,7 +130,7 @@ type SourceIds = readonly string[];
     { id: 'source-generated-western-zhou-investiture', title: '西周册命仪式教学插图', author: 'OpenAI image generation, edited and reviewed for Civilization Wander', year: 2026, publisher: 'Civilization Wander' }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     {
       id: 'western-zhou',
       type: 'polity',
@@ -197,7 +210,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const events = [
+  const events: Collection<'events'> = [
     {
       id: 'event-early-china-regional-centers-emerge', kind: 'historicalProcess', title: '中国多地大型聚落与区域中心形成', timeSpan: timeSpan(-3300, -1900, '约公元前3300—前1900年', true), participantEntityIds: ['china-early-bronze-world'],
       evidenceBlocks: [fact('event-early-china-centers-evidence', '青铜冶铸成为王权技术以前，中国不同区域已经出现城墙、大型建筑、手工业分区与远距离交换网络。', ['source-unesco-liangzhu', 'source-liu-chen-archaeology-china'])],
@@ -332,7 +345,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const structuralEdges = [
+  const structuralEdges: Collection<'structuralEdges'> = [
     {
       id: 'edge-erlitou-shang-transition',
       family: 'historicalNetwork',
@@ -359,7 +372,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     {
       id: 'western-zhou-bronze-commands', kind: 'overview', primaryEntityId: 'western-zhou', relatedEntityIds: ['shang-civilization', 'china-early-bronze-world'],
 
@@ -590,7 +603,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     {
       id: 'western-zhou-muye-victory', title: '甲子日清晨，周军攻向商王', eyebrow: '牧野与利簋', timeSpan: timeSpan(-1046, -1046, '约公元前1046年', true), eventIds: ['event-zhou-conquest-of-shang'],
       contentBlocks: [fact('western-zhou-muye-victory-fact', '来自西方的周人联合盟友，在牧野击败商王的军队。商代最后一位君王帝辛死去，周武王成为新的天下共主。胜利后不久，一名叫“利”的官员铸造青铜簋，在器内写下甲子日清晨的战事，以及周王赐给自己的金属。周王朝由战争开始，也从一开始就把胜利写进青铜。', ['source-national-museum-li-gui', 'source-li-feng-early-china'])],
@@ -1011,7 +1024,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     {
       id: 'nav-western-zhou-china-bronze', target: { cardId: 'china-early-bronze-connected-worlds', sceneId: 'china-bronze-zhou-changes' }, basis: { kind: 'relatedCard', cardId: 'china-early-bronze-connected-worlds' },
       label: '进入中国的早期青铜世界', description: '从一次册命走向更长的材料史，看矿料、作坊、城市和礼仪怎样共同塑造青铜时代。'
@@ -1156,7 +1169,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     { id: 'placement-western-zhou-china-bronze-inline', navigationOptionId: 'nav-western-zhou-china-bronze', owner: { kind: 'scene', sceneId: 'western-zhou-command-cast-in-ding' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-china-bronze-western-zhou-inline', navigationOptionId: 'nav-china-bronze-western-zhou', owner: { kind: 'scene', sceneId: 'china-bronze-zhou-changes' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-western-zhou-shang-inline', navigationOptionId: 'nav-western-zhou-shang-ending', owner: { kind: 'scene', sceneId: 'western-zhou-muye-victory' }, slot: 'inline', rank: 1, visible: true, interactive: true },
@@ -1181,7 +1194,7 @@ type SourceIds = readonly string[];
     { id: 'placement-sanxingdui-shang-bronze-closing', navigationOptionId: 'nav-sanxingdui-shang-bronze', owner: { kind: 'card', cardId: 'sanxingdui-ritual-world' }, slot: 'closing', rank: 1, visible: true, interactive: true }
   ];
 
-  const cameraPresets = [
+  const cameraPresets: Collection<'cameraPresets'> = [
     { id: 'camera-western-zhou-two-centers', center: [110.8, 34.5], scale: 5.1 },
     { id: 'camera-western-zhou-regional-centers', center: [113, 35], scale: 3.6 },
     { id: 'camera-china-early-bronze-world', center: [110.5, 31.5], scale: 4.3 },
@@ -1190,7 +1203,7 @@ type SourceIds = readonly string[];
     { id: 'camera-sanxingdui-location', center: [104.2, 30.99], scale: 10 }
   ];
 
-  const geometries = [
+  const geometries: Collection<'geometries'> = [
     {
       id: 'geometry-western-zhou-two-centers', geometry: { type: 'LineString', coordinates: [[108.9, 34.3], [112.45, 34.62]] },
       timeSpan: timeSpan(-1045, -1000, '约公元前1045—前1000年', true), approximate: true, label: '宗周与成周的政治联系教学线',
@@ -1248,7 +1261,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const mapStates = [
+  const mapStates: Collection<'mapStates'> = [
     {
       id: 'map-western-zhou-two-centers', cameraPresetId: 'camera-western-zhou-two-centers',
       layers: [{ kind: 'geometry', geometryId: 'geometry-western-zhou-two-centers', timeSpan: timeSpan(-1045, -1000, '约公元前1045—前1000年', true), sourceIds: ['source-western-zhou-domain', 'source-natural-earth'] }]
@@ -1292,7 +1305,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const mapAnnotations = [
+  const mapAnnotations: Collection<'mapAnnotations'> = [
     {
       id: 'annotation-western-zhou-zongzhou', subject: { kind: 'entity', entityId: 'western-zhou' }, anchor: { kind: 'geo', coordinates: [108.9, 34.3] }, anchorMeaning: 'associatedWith', approximate: true,
       sourceIds: ['source-western-zhou-domain'], placement: 'left', label: '宗周（关中王室中心）'
@@ -1403,7 +1416,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     { id: 'asset-western-zhou-investiture-teaching', type: 'image', src: 'assets/images/ancient-china/western-zhou-investiture-teaching.webp', title: '西周册命仪式教学插图', alt: '教学插图表现宗庙内宣读册命、贵族接受礼服与赏赐的场景，前景放置青铜鼎；画面不承担具体铭文字形证据。', sourceIds: ['source-generated-western-zhou-investiture', 'source-national-museum-da-yu-ding', 'source-national-museum-ceming'] },
     { id: 'asset-erlitou-turquoise-bronze-plaque', type: 'image', src: 'assets/images/ancient-china/erlitou-turquoise-bronze-plaque.webp', title: '嵌绿松石青铜兽面牌饰', alt: '二里头出土的嵌绿松石青铜兽面牌饰完整正面，铜胎上密集排列数百枚蓝绿色小片。', sourceIds: ['source-wikimedia-erlitou-plaque', 'source-erlitou-cass-report'] },
     { id: 'asset-erlitou-turquoise-dragon-bell', type: 'image', src: 'assets/images/ancient-china/erlitou-turquoise-dragon-bell.webp', title: '绿松石龙形器及铜铃', alt: '展柜中完整陈列的二里头绿松石龙形器与铜铃，细小绿松石片组成弯曲的长形器物。', sourceIds: ['source-wikimedia-erlitou-dragon', 'source-erlitou-turquoise-restoration'] },
@@ -1445,9 +1458,3 @@ type SourceIds = readonly string[];
     mapAnnotations,
     assets
   } satisfies ContentModule;
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
-  ATLAS_V5_ANCIENT_CHINA?: ContentModule;
-};
-
-root.ATLAS_V5_ANCIENT_CHINA = ancientChinaData;

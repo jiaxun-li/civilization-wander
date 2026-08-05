@@ -188,15 +188,15 @@ function main() {
   const expectedModuleName = path.basename(moduleFile, path.extname(moduleFile));
   const moduleSource = fs.readFileSync(moduleFile, 'utf8');
 
-  if (handoff.handoffVersion !== 2) errors.push('handoff.handoffVersion must be 2');
+  if (handoff.handoffVersion !== 3) errors.push('handoff.handoffVersion must be 3');
   if (handoff.module !== expectedModuleName) errors.push(`handoff.module must be ${expectedModuleName}`);
   if (!isNonEmptyString(handoff.moduleFile) || handoff.moduleFile.replaceAll('\\', '/') !== normalizedModuleArg) {
     errors.push(`handoff.moduleFile must be ${normalizedModuleArg}`);
   }
-  if (!isNonEmptyString(handoff.exportedGlobal)) {
-    errors.push('handoff.exportedGlobal must be a non-empty string');
-  } else if (!moduleSource.includes(`root.${handoff.exportedGlobal} =`)) {
-    errors.push(`module does not initialize browser global ${handoff.exportedGlobal}`);
+  if (!isNonEmptyString(handoff.exportedBinding) || !/^[A-Za-z_$][\w$]*$/.test(handoff.exportedBinding)) {
+    errors.push('handoff.exportedBinding must be a valid TypeScript identifier');
+  } else if (!new RegExp(`export\\s+const\\s+${handoff.exportedBinding}\\b`).test(moduleSource)) {
+    errors.push(`module does not declare named export ${handoff.exportedBinding}`);
   }
   if (!isNonEmptyString(handoff.expectedLoadingPosition)) {
     errors.push('handoff.expectedLoadingPosition must be a non-empty string');

@@ -1,8 +1,8 @@
 {
-  "handoffVersion": 2,
+  "handoffVersion": 3,
   "module": "example-module",
   "moduleFile": "data/example-module.ts",
-  "exportedGlobal": "ATLAS_V5_EXAMPLE_MODULE",
+  "exportedBinding": "exampleModuleData",
   "expectedLoadingPosition": "after data/ancient-egypt.ts",
   "assetDirectory": "assets/images/example-module",
   "newTopLevelIds": {

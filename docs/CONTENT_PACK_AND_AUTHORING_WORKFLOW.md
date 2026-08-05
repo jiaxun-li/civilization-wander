@@ -262,15 +262,15 @@ Scene 还必须满足：
 
 新建、staging 或多 Agent 并行模块进入主聚合器前必须独立通过模块级门禁。单 Agent 连续修改已经接入的活动模块时不追溯要求隔离门禁，但仍须通过主运行时全量门禁：
 
-1. JavaScript 语法；
-2. 模块导出或浏览器全局初始化；
+1. TypeScript 语法与类型；
+2. TypeScript 命名导出与精确十四集合接口；
 3. 模块内部重复 ID；
 4. Source、Asset provenance、本地路径与文件存在性；
 5. 模块内部引用；
 6. 把全部顶层引用分类为模块内部、当前活动 atlas 已有、或尚未接入的并行 sibling；当前 atlas 引用由脚本自动发现，只有 pending sibling 引用需要在全部十四个可引用集合下显式声明；声明未使用和使用未声明都必须失败；
 7. 适用的模块专属负向测试。
 
-模块级通过只表示“可交给集成”，不表示已经进入主运行时。交接记录必须包含模块文件、预期加载位置、导出全局名、新增顶层 ID、复用外部 ID、拟议出站导航、既有模块所需反向导航、本地 Asset 目录、模块级测试结果和未解决问题。机器可读交接文件使用 `handoffVersion: 2` 的 `docs/content-packs/<module>.handoff.json`，结构参考 `docs/content-packs/module-handoff.example.json`。门禁会把这些声明与模块实际导出、活动 atlas 引用和浏览器全局初始化逐项核对；执行：
+模块级通过只表示“可交给集成”，不表示已经进入主运行时。交接记录必须包含模块文件、预期加载位置、TypeScript 命名导出、新增顶层 ID、复用外部 ID、拟议出站导航、既有模块所需反向导航、本地 Asset 目录、模块级测试结果和未解决问题。机器可读交接文件使用 `handoffVersion: 3` 的 `docs/content-packs/<module>.handoff.json`，结构参考 `docs/content-packs/module-handoff.example.json`。门禁会把这些声明与模块实际命名导出和活动 atlas 引用逐项核对；执行：
 
 ```text
 node scripts/validate-content-module.js data/<module>.ts docs/content-packs/<module>.handoff.json
@@ -278,9 +278,9 @@ node scripts/validate-content-module.js data/<module>.ts docs/content-packs/<mod
 
 每个 `assets/images/<module>/` 还必须包含非运行时、`manifestVersion: 2` 的 `manifest.json`，为 Asset 保存 creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、`webp` 格式、SHA-256、来源 ID 和审核状态。现存 V4 迁移到 V5 的素材可以诚实标为 `needsMetadataAudit`，但新模块必须在门禁前完成审核，不得猜测许可或创作者。
 
-Integration Agent 接手后必须先确认当前主运行时有效，再接入 `src/main.ts` 和聚合器、解决全局重复 ID 与外部引用、置入反向导航、更新加载顺序测试，随后运行完整 validator、类型与语法检查、全量测试、正式构建和 `pnpm test:browser` 生产浏览器门禁；自动冒烟未覆盖的桌面、移动、历史导航、键盘与 reduced-motion 行为仍须人工验收。最后同步 README、架构文档和受影响工作规范。
+Integration Agent 接手后必须先确认当前主运行时有效，再把模块的命名导入和定义按顺序接入 `src/data/atlas-data.ts`；`src/main.ts` 不重复导入内容模块。随后解决全局重复 ID 与外部引用、置入反向导航、更新聚合清单测试，并运行完整 validator、类型与语法检查、全量测试、正式构建和 `pnpm test:browser` 生产浏览器门禁；自动冒烟未覆盖的桌面、移动、历史导航、键盘与 reduced-motion 行为仍须人工验收。最后同步 README、架构文档和受影响工作规范。
 
-已经通过模块级门禁但尚未完成主运行时门禁的模块，必须在任务或 ContentPack 交接记录中标记为“集成中”。这不是 runtime schema 字段；除非 schema 正式采纳并校验，不得添加 `integrationStatus`。集成中的模块不得部分加载到 `src/main.ts` 或 `src/data/atlas-data.ts`，不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来掩盖未完成接入。
+已经通过模块级门禁但尚未完成主运行时门禁的模块，必须在任务或 ContentPack 交接记录中标记为“集成中”。这不是 runtime schema 字段；除非 schema 正式采纳并校验，不得添加 `integrationStatus`。集成中的模块不得部分接入 `src/data/atlas-data.ts`，也不得绕过聚合器由 `src/main.ts` 直接加载；不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来掩盖未完成接入。
 
 ### 置入 V5
 
@@ -313,7 +313,7 @@ AI 生成图片同样遵守上述 WebP、尺寸和体积规则。生成原图超
 
 所有 Scene 图片都按原始比例完整显示并在媒体栏居中，不得为填满容器而裁切；图片之外的余白统一使用地图大陆色 `#c8cbbb`。这一规则须同时验证 desktop 和 mobile。
 
-每个拥有 `assets` 集合的内容数据文件必须拥有自己的图片目录，统一使用 `assets/images/<数据文件名>/`。该文件声明的图片 Asset 只能引用自己的目录；新增或迁移内容模块时必须同步更新路径、入口脚本与自动化校验。
+每个拥有 `assets` 集合的内容数据文件必须拥有自己的图片目录，统一使用 `assets/images/<数据文件名>/`。该文件声明的图片 Asset 只能引用自己的目录；新增或迁移内容模块时必须同步更新路径、聚合器命名导入与自动化校验。
 
 ### 地图规则
 

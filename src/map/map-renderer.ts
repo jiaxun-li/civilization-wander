@@ -4,6 +4,7 @@ import type {
   Bounds,
   CameraPreset,
   CameraTransition,
+  GraphEndpoint,
   GeometryShape,
   HistoricalGeometry,
   MapAnnotation,
@@ -545,7 +546,7 @@ export function createNaturalEarthMap(options: CreateNaturalEarthMapOptions) {
       mapRoot.classList.remove(...Array.from(VIEW_FAMILIES, family => `is-${family}`));
       activeViews.forEach(view => mapRoot.classList.add(`is-${view.family}`));
       const ownerCard = scene ? queries.getOwnerCardForScene(scene.id) : null;
-      const focus = ownerCard?.primaryEntityId
+      const focus: GraphEndpoint | null = ownerCard?.primaryEntityId
         ? { kind: 'entity', id: ownerCard.primaryEntityId }
         : null;
       const markup = activeViews.map(view => {

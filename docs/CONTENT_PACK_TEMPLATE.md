@@ -286,7 +286,7 @@
 
 **预期加载位置：**
 
-**导出／浏览器全局名：**
+**TypeScript 命名导出：**
 
 **对应 Asset 目录：**
 
@@ -298,7 +298,7 @@
 
 **既有模块所需反向导航及建议位置：** 只由 Integration Agent 实际修改
 
-**机器可读交接文件：** `docs/content-packs/<module>.handoff.json`；使用 `handoffVersion: 2`，以 `docs/content-packs/module-handoff.example.json` 为结构起点；新增 ID、活动 atlas 复用 ID、模块文件、导出全局名与冻结状态必须和实际文件一致
+**机器可读交接文件：** `docs/content-packs/<module>.handoff.json`；使用 `handoffVersion: 3`，以 `docs/content-packs/module-handoff.example.json` 为结构起点；新增 ID、活动 atlas 复用 ID、模块文件、TypeScript 命名导出与冻结状态必须和实际文件一致
 
 **pending sibling 外部引用：** 在全部十四个顶层集合下逐项列出；当前活动 atlas 已有引用由门禁自动发现，不手工重复
 
@@ -306,7 +306,7 @@
 
 **模块级语法检查：**
 
-**模块导出／全局初始化检查：**
+**模块命名导出／精确接口检查：**
 
 **模块内部重复 ID 检查：**
 
@@ -326,7 +326,7 @@
 
 **非运行时集成状态：** 模块编写中／模块级通过／集成中／已接入；不得添加 `integrationStatus` runtime 字段
 
-> 模块处于“集成中”时，不得部分加载到 `src/main.ts` 或 `src/data/atlas-data.ts`。不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来隐藏未完成接入。
+> 模块处于“集成中”时，不得部分接入 `src/data/atlas-data.ts`，也不得绕过聚合器由 `src/main.ts` 直接加载。不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来隐藏未完成接入。
 
 ### 流程改进建议
 

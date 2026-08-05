@@ -16,7 +16,7 @@ const mapCss = read('styles/v4/map.css');
 const mapSource = read('src/map/map-renderer.ts');
 const cardsSource = read('src/reader/card-components.ts');
 
-test('entrypoint, aggregator, and syntax manifest keep one content-module order', () => {
+test('the aggregator is the single content-module manifest', () => {
   const { spawnSync } = require('node:child_process');
   const result = spawnSync(process.execPath, ['scripts/check-runtime-manifests.js'], {
     cwd: root,
@@ -34,13 +34,6 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'styles/v4/cards.css',
     'styles/v4/map.css',
     'src/data/world-physical.ts',
-    'data/mesopotamia.ts',
-    'data/ancient-egypt.ts',
-    'data/ancient-india.ts',
-    'data/ancient-china.ts',
-    'data/late-bronze-age.ts',
-    'data/aegean.ts',
-    'data/iron-age-near-east.ts',
     'src/data/atlas-data.ts',
     'src/data/queries.ts',
     'src/reader/card-components.ts',

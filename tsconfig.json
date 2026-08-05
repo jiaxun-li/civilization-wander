@@ -8,11 +8,17 @@
     "checkJs": false,
     "skipLibCheck": true,
     "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "strict": true,
     "types": ["node", "vite/client"]
   },
-  "include": ["src/**/*.ts", "vite.config.mts"]
+  "include": [
+    "src/**/*.ts",
+    "data/**/*.ts",
+    "tests/fixtures/module-gate-valid.ts",
+    "vite.config.mts"
+  ]
 }

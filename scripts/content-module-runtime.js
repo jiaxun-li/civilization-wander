@@ -24,10 +24,9 @@ function loadContentModule(filename) {
 }
 
 function listActiveContentModules(projectRoot) {
-  const entrySource = fs.readFileSync(path.resolve(projectRoot, 'src/main.ts'), 'utf8');
-  return [...entrySource.matchAll(/import\s+['"]([^'"]+)['"]/g)]
-    .map(match => path.posix.normalize(path.posix.join('src', match[1])))
-    .filter(filename => /^data\/[^/]+\.[jt]s$/.test(filename))
+  const aggregatorSource = fs.readFileSync(path.resolve(projectRoot, 'src/data/atlas-data.ts'), 'utf8');
+  return [...aggregatorSource.matchAll(/from\s+['"]\.\.\/\.\.\/(data\/[^'"]+\.ts)['"]/g)]
+    .map(match => match[1])
     .map(filename => ({
       name: path.posix.basename(filename, path.posix.extname(filename)),
       filename

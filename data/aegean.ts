@@ -1,40 +1,51 @@
-import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
+import type {
+  ContentModule,
+  ContentModuleCollectionMap,
+  EditorialReview,
+  HistoricalCaseClaim,
+  HistoricalFactClaim,
+  InterpretationClaim,
+  LabeledTimeSpan,
+  LimitationClaim,
+  TextClaim
+} from '../src/types/runtime.ts';
 
 type SourceIds = readonly string[];
+type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
 
-  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+  function timeSpan(start: number, end: number, label: string, approximate = false): LabeledTimeSpan {
     const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function fact(id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): InterpretationClaim {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): TextClaim {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function limitation(id: string, text: string, sourceIds: SourceIds): LimitationClaim {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): HistoricalCaseClaim {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
   function review(
-    limitations: readonly ContentRecord[],
-    counterexamples: readonly ContentRecord[],
-    uncertainties: readonly ContentRecord[],
-    alternatives: readonly ContentRecord[],
+    limitations: readonly LimitationClaim[],
+    counterexamples: readonly HistoricalCaseClaim[],
+    uncertainties: readonly InterpretationClaim[],
+    alternatives: readonly InterpretationClaim[],
     sourceIds: SourceIds
-  ): ContentRecord {
+  ): EditorialReview {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -44,7 +55,7 @@ type SourceIds = readonly string[];
     };
   }
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     { id: 'source-unesco-minoan-palatial-centres', title: 'Minoan Palatial Centres', year: 2025, publisher: 'UNESCO World Heritage Centre', url: 'https://whc.unesco.org/en/decisions/8959/' },
     { id: 'source-met-minoan-crete', title: 'Minoan Crete', author: 'Seán Hemingway and Colette Hemingway', year: 2002, publisher: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/minoan-crete' },
     { id: 'source-salgarella-writing-bronze-age-crete', title: 'Writing in Bronze Age Crete', author: 'Ester Salgarella', year: 2025, publisher: 'Cambridge University Press', url: 'https://www.cambridge.org/core/elements/writing-in-bronze-age-crete/5D5094CF9E6B118C94AD0554E3D9762A' },
@@ -126,7 +137,7 @@ type SourceIds = readonly string[];
     { id: 'source-wikimedia-flaxman-odyssey-argus', title: 'Odysseus and his dog Argus, public domain, original 2048 × 1536', author: 'John Flaxman', year: 1835, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Flaxman_Odyssey_Ulysses_and_his_dog.jpg' }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     {
       id: 'minoan-palatial-civilization', type: 'culturalTradition', name: '克里特宫殿文明', alternativeNames: ['米诺斯文明', 'Minoan civilization'],
       canonicalSummary: '约公元前2000—前1100年，克里特多个宫殿中心以庭院、仓储、作坊、仪式和书写组织区域生活，并在后期被迈锡尼行政传统改变。',
@@ -177,7 +188,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const events = [
+  const events: Collection<'events'> = [
     {
       id: 'event-mycenaean-shaft-grave-elites-emerge', kind: 'historicalProcess', title: '迈锡尼竖井墓精英形成', timeSpan: timeSpan(-1700, -1450, '约公元前1700—前1450年', true),
       participantEntityIds: ['mycenaean-civilization'],
@@ -271,7 +282,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const structuralEdges = [
+  const structuralEdges: Collection<'structuralEdges'> = [
     {
       id: 'edge-minoan-mycenaean-administration', family: 'historicalNetwork', type: 'adapted_administrative_practice',
       source: { kind: 'entity', id: 'mycenaean-civilization' }, target: { kind: 'entity', id: 'minoan-palatial-civilization' },
@@ -362,7 +373,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     {
       id: 'crete-through-palatial-age', kind: 'overview', primaryEntityId: 'minoan-palatial-civilization', relatedEntityIds: ['mycenaean-civilization'],
       title: '克里特岛走过宫殿时代',
@@ -501,7 +512,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     {
       id: 'crete-court-palace-daily-life', eventIds: ['event-crete-palaces-emerge-and-rebuild'], title: '庭院装下宫殿的日常', eyebrow: '成熟宫殿文明', timeSpan: timeSpan(-2000, -1700, '约公元前2000—前1700年', true),
       contentBlocks: [fact('crete-court-palace-daily-life-fact', '约公元前二千年，克里特几处旧聚落旁出现围绕中央庭院的大型建筑。仓库的大罐收进粮食、酒和油，作坊加工陶器、石料与金属，人群又在庭院聚会和举行仪式。克诺索斯与岛上其他中心分别组织周边区域的活动。', ['source-unesco-minoan-palatial-centres', 'source-met-minoan-crete'])],
@@ -768,7 +779,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     { id: 'nav-crete-mycenae', target: { cardId: 'mycenae-graves-palaces-tablets', sceneId: 'mycenae-gold-enters-graves' }, basis: { kind: 'structuralEdge', structuralEdgeId: 'edge-minoan-mycenaean-administration' }, label: '进入迈锡尼的宫殿世界', description: '从墓穴里的黄金开始，看线形文字B怎样进入大陆宫殿。' },
     { id: 'nav-mycenae-crete', target: { cardId: 'crete-through-palatial-age', sceneId: 'crete-court-palace-daily-life' }, basis: { kind: 'structuralEdge', structuralEdgeId: 'edge-minoan-mycenaean-administration' }, label: '进入克里特的宫殿时代', description: '从围绕庭院的宫殿开始，看岛屿书写与行政语言怎样变化。' },
     { id: 'nav-mycenae-dark-age', target: { cardId: 'greece-reconnects-after-palaces', sceneId: 'dark-age-orders-stop-tablets' }, basis: { kind: 'structuralEdge', structuralEdgeId: 'edge-mycenaean-dark-age-reorganization' }, label: '进入宫殿之后的希腊', description: '从停止发令的宫殿继续，看地方社区怎样重组生活。' },
@@ -799,7 +810,7 @@ type SourceIds = readonly string[];
     { id: 'nav-iliad-gods', target: { cardId: 'greek-gods-leave-palaces', sceneId: 'gods-names-enter-tablets' }, basis: { kind: 'structuralEdge', structuralEdgeId: 'edge-gods-shape-heroic-fates' }, label: '认识介入战争的希腊诸神', description: '从史诗里的帮助与惩罚，进入神名、祭祀和神界家庭的更长传统。' }
   ];
 
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     { id: 'placement-crete-mycenae-inline', navigationOptionId: 'nav-crete-mycenae', owner: { kind: 'scene', sceneId: 'crete-tablets-change-language' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-mycenae-crete-inline', navigationOptionId: 'nav-mycenae-crete', owner: { kind: 'scene', sceneId: 'mycenae-linear-b-writes-greek' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-mycenae-dark-age-inline', navigationOptionId: 'nav-mycenae-dark-age', owner: { kind: 'scene', sceneId: 'mycenae-palaces-stop-commanding' }, slot: 'inline', rank: 1, visible: true, interactive: true },
@@ -830,7 +841,7 @@ type SourceIds = readonly string[];
     { id: 'placement-iliad-gods-inline', navigationOptionId: 'nav-iliad-gods', owner: { kind: 'scene', sceneId: 'iliad-two-captives-start-quarrel' }, slot: 'inline', rank: 1, visible: true, interactive: true }
   ];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     { id: 'asset-aegean-knossos-central-court', type: 'image', src: 'assets/images/aegean/crete-knossos-central-court.webp', title: '克诺索斯中央庭院全景', alt: '横向全景完整展现克诺索斯中央庭院、四周石砌台阶、墙基和部分重建柱廊，显示宫殿空间围绕开阔庭院组织。', sourceIds: ['source-wikimedia-knossos-central-court'] },
     { id: 'asset-aegean-linear-a-tablets', type: 'image', src: 'assets/images/aegean/crete-linear-a-tablets.webp', title: '阿克罗蒂里出土的线形文字A泥版', alt: '两块浅褐色青铜时代泥版并排陈列，表面可见线形文字A符号；它们出土于圣托里尼的阿克罗蒂里，并非克里特宫殿本身。', sourceIds: ['source-wikimedia-linear-a-akrotiri'] },
     { id: 'asset-aegean-akrotiri-flotilla', type: 'image', src: 'assets/images/aegean/crete-akrotiri-flotilla.webp', title: '阿克罗蒂里船队壁画', alt: '青铜时代壁画中，多艘长船在岛屿聚落之间航行；作品来自圣托里尼的阿克罗蒂里，作为同一爱琴海交流世界的视觉参照。', sourceIds: ['source-wikimedia-akrotiri-flotilla'] },
@@ -891,9 +902,3 @@ type SourceIds = readonly string[];
     mapAnnotations: [],
     assets
   } satisfies ContentModule;
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
-  ATLAS_V5_AEGEAN?: ContentModule;
-};
-
-root.ATLAS_V5_AEGEAN = aegeanData;

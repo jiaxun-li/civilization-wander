@@ -8,8 +8,8 @@ const { spawnSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '../..');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
-const validFixtureFile = path.resolve(root, 'tests/fixtures/module-gate-valid.js');
-const validFixture = require(validFixtureFile);
+const validFixtureFile = path.resolve(root, 'tests/fixtures/module-gate-valid.ts');
+const { fixtureData: validFixture } = require(validFixtureFile);
 const collections = [
   'sources', 'entities', 'events', 'structuralEdges', 'cards', 'scenes',
   'structureViews', 'navigationOptions', 'navigationPlacements',
@@ -39,10 +39,10 @@ function mediaDecisions(moduleData) {
 function handoffFor(moduleFile, moduleData, overrides = {}) {
   const relativeModuleFile = path.relative(root, moduleFile).replaceAll('\\', '/');
   return {
-    handoffVersion: 2,
+    handoffVersion: 3,
     module: path.basename(moduleFile, path.extname(moduleFile)),
     moduleFile: relativeModuleFile,
-    exportedGlobal: 'ATLAS_V5_MODULE_GATE_FIXTURE',
+    exportedBinding: 'fixtureData',
     expectedLoadingPosition: 'after data/ancient-egypt.ts',
     assetDirectory: 'tests/fixtures/module-gate-assets',
     newTopLevelIds: inventory(moduleData),
@@ -80,11 +80,11 @@ function runGate(moduleFile, handoff) {
 
 function withTemporaryModule(transform, callback) {
   const tempDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'civilization-wander-module-fixture-'));
-  const moduleFile = path.join(tempDirectory, 'staging-fixture.js');
+  const moduleFile = path.join(tempDirectory, 'staging-fixture.ts');
   const source = fs.readFileSync(validFixtureFile, 'utf8');
   fs.writeFileSync(moduleFile, transform(source));
   delete require.cache[moduleFile];
-  const moduleData = require(moduleFile);
+  const { fixtureData: moduleData } = require(moduleFile);
   try {
     callback(moduleFile, moduleData);
   } finally {
@@ -106,20 +106,18 @@ test('isolated module gate accepts a complete frozen staging module and handoff'
   assert.deepEqual(report.pendingExternalRefs, {});
 });
 
-test('isolated module gate accepts a TypeScript module namespace export', () => {
+test('isolated module gate accepts an aliased TypeScript named export', () => {
   const tempDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'civilization-wander-module-ts-'));
   const moduleFile = path.join(tempDirectory, 'staging-fixture.ts');
   const fixtureUrl = JSON.stringify(pathToFileURL(validFixtureFile).href);
   fs.writeFileSync(moduleFile, `
-import fixture from ${fixtureUrl};
-export const fixtureData = fixture;
-const root = globalThis as typeof globalThis & {
-  ATLAS_V5_MODULE_GATE_FIXTURE?: typeof fixture;
-};
-root.ATLAS_V5_MODULE_GATE_FIXTURE = fixtureData;
+import { fixtureData as fixture } from ${fixtureUrl};
+export const alternateFixtureData = fixture;
 `);
   try {
-    const result = runGate(moduleFile, handoffFor(moduleFile, validFixture));
+    const result = runGate(moduleFile, handoffFor(moduleFile, validFixture, {
+      exportedBinding: 'alternateFixtureData'
+    }));
     assert.equal(result.status, 0, result.stderr);
     assert.equal(JSON.parse(result.stdout).valid, true);
   } finally {
@@ -133,7 +131,7 @@ test('isolated module gate rejects IDs that already belong to the active atlas',
   const handoff = handoffFor(moduleFile, moduleData, {
     module: 'mesopotamia',
     moduleFile: 'data/mesopotamia.ts',
-    exportedGlobal: 'ATLAS_V5_MESOPOTAMIA',
+    exportedBinding: 'mesopotamiaData',
     assetDirectory: 'assets/images/mesopotamia'
   });
   const result = runGate(moduleFile, handoff);

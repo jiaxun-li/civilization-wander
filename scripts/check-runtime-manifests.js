@@ -11,15 +11,12 @@ const entrySource = read('src/main.ts');
 const entryImports = [...entrySource.matchAll(/import\s+['"]([^'"]+)['"]/g)]
   .map(match => path.posix.normalize(path.posix.join('src', match[1])));
 const atlasSource = read('src/data/atlas-data.ts');
-const atlasModules = [...atlasSource.matchAll(/import\s+['"]\.\.\/\.\.\/(data\/[^'"]+\.[jt]s)['"]/g)]
-  .map(match => match[1]);
-const packageJson = JSON.parse(read('package.json'));
-const syntaxFiles = [...packageJson.scripts['check:syntax'].matchAll(/node --check ([^ &]+)/g)]
+const atlasModules = [...atlasSource.matchAll(/from\s+['"]\.\.\/\.\.\/(data\/[^'"]+\.ts)['"]/g)]
   .map(match => match[1]);
 
 const worldIndex = entryImports.indexOf('src/data/world-physical.ts');
 const atlasIndex = entryImports.indexOf('src/data/atlas-data.ts');
-const entryModules = entryImports.slice(worldIndex + 1, atlasIndex);
+const entryModules = entryImports.filter(file => file.startsWith('data/'));
 const errors = [];
 
 if (!/<script\s+type="module"\s+src="\/src\/main\.ts"><\/script>/.test(html)) {
@@ -27,18 +24,12 @@ if (!/<script\s+type="module"\s+src="\/src\/main\.ts"><\/script>/.test(html)) {
 }
 if (worldIndex < 0) errors.push('src/main.ts does not import src/data/world-physical.ts');
 if (atlasIndex < 0) errors.push('src/main.ts does not import src/data/atlas-data.ts');
-if (JSON.stringify(entryModules) !== JSON.stringify(atlasModules)) {
-  errors.push(`content module order differs:\nentrypoint=${entryModules.join(', ')}\naggregator=${atlasModules.join(', ')}`);
-}
-const legacyAtlasModules = atlasModules.filter(file => file.endsWith('.js'));
-const syntaxModuleOrder = syntaxFiles.filter(file => legacyAtlasModules.includes(file));
-if (JSON.stringify(syntaxModuleOrder) !== JSON.stringify(legacyAtlasModules)) {
-  errors.push(`check:syntax legacy module order differs:\nsyntax=${syntaxModuleOrder.join(', ')}\naggregator=${legacyAtlasModules.join(', ')}`);
-}
+if (entryModules.length > 0) errors.push(`src/main.ts must not side-effect import content modules: ${entryModules.join(', ')}`);
+if (atlasModules.length === 0) errors.push('src/data/atlas-data.ts does not directly import any TypeScript content modules');
 
 if (errors.length) {
   errors.forEach(error => console.error(error));
   process.exitCode = 1;
 } else {
-  console.log(`Runtime manifests agree on ${atlasModules.length} content modules.`);
+  console.log(`The typed aggregator directly imports ${atlasModules.length} content modules; src/main.ts has no duplicate content imports.`);
 }

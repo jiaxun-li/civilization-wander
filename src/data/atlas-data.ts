@@ -1,55 +1,24 @@
-import '../../data/mesopotamia.ts';
-import '../../data/ancient-egypt.ts';
-import '../../data/ancient-india.ts';
-import '../../data/ancient-china.ts';
-import '../../data/late-bronze-age.ts';
-import '../../data/aegean.ts';
-import '../../data/iron-age-near-east.ts';
+import { mesopotamiaData } from '../../data/mesopotamia.ts';
+import { ancientEgyptData } from '../../data/ancient-egypt.ts';
+import { ancientIndiaData } from '../../data/ancient-india.ts';
+import { ancientChinaData } from '../../data/ancient-china.ts';
+import { lateBronzeAgeData } from '../../data/late-bronze-age.ts';
+import { aegeanData } from '../../data/aegean.ts';
+import { ironAgeNearEastData } from '../../data/iron-age-near-east.ts';
 
 import type {
-  Asset,
   AtlasData,
-  CameraPreset,
-  Card,
-  Entity,
-  HistoricalGeometry,
-  MapAnnotation,
-  MapState,
-  NavigationOption,
-  NavigationPlacement,
-  Scene,
-  StructuralEdge,
-  StructureView
+  ContentModule,
+  ContentModuleCollectionMap
 } from '../types/runtime.ts';
 
 type UnknownRecord = Record<string, unknown>;
 
-type ModuleCollectionMap = {
-  sources: UnknownRecord;
-  entities: Entity;
-  events: UnknownRecord;
-  structuralEdges: StructuralEdge;
-  cards: Card;
-  scenes: Scene;
-  structureViews: StructureView;
-  navigationOptions: NavigationOption;
-  navigationPlacements: NavigationPlacement;
-  cameraPresets: CameraPreset;
-  mapStates: MapState;
-  geometries: HistoricalGeometry;
-  mapAnnotations: MapAnnotation;
-  assets: Asset;
-};
-
-type CollectionName = keyof ModuleCollectionMap;
-type ContentModule = {
-  readonly [Collection in CollectionName]: readonly ModuleCollectionMap[Collection][];
-};
+type CollectionName = keyof ContentModuleCollectionMap;
 
 type ModuleDefinition = {
   readonly file: string;
-  readonly globalName: string;
-  readonly missingDependencyError: string;
+  readonly data: unknown;
 };
 
 const MODULE_COLLECTIONS = [
@@ -60,42 +29,35 @@ const MODULE_COLLECTIONS = [
 
 const MODULE_COLLECTION_SET = new Set<string>(MODULE_COLLECTIONS);
 
-// Dependency and interface failures always name the actual TypeScript content file.
-const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
+// This is the single runtime aggregation order for formal content modules.
+export const contentModuleDefinitions: readonly ModuleDefinition[] = [
   {
     file: 'data/mesopotamia.ts',
-    globalName: 'ATLAS_V5_MESOPOTAMIA',
-    missingDependencyError: 'data/mesopotamia.ts must load before src/data/atlas-data.ts'
+    data: mesopotamiaData
   },
   {
     file: 'data/ancient-egypt.ts',
-    globalName: 'ATLAS_V5_ANCIENT_EGYPT',
-    missingDependencyError: 'data/ancient-egypt.ts must load before src/data/atlas-data.ts'
+    data: ancientEgyptData
   },
   {
     file: 'data/ancient-india.ts',
-    globalName: 'ATLAS_V5_ANCIENT_INDIA',
-    missingDependencyError: 'data/ancient-india.ts must load before src/data/atlas-data.ts'
+    data: ancientIndiaData
   },
   {
     file: 'data/ancient-china.ts',
-    globalName: 'ATLAS_V5_ANCIENT_CHINA',
-    missingDependencyError: 'data/ancient-china.ts must load before src/data/atlas-data.ts'
+    data: ancientChinaData
   },
   {
     file: 'data/late-bronze-age.ts',
-    globalName: 'ATLAS_V5_LATE_BRONZE_AGE',
-    missingDependencyError: 'data/late-bronze-age.ts must load before src/data/atlas-data.ts'
+    data: lateBronzeAgeData
   },
   {
     file: 'data/aegean.ts',
-    globalName: 'ATLAS_V5_AEGEAN',
-    missingDependencyError: 'data/aegean.ts must load before src/data/atlas-data.ts'
+    data: aegeanData
   },
   {
     file: 'data/iron-age-near-east.ts',
-    globalName: 'ATLAS_V5_IRON_AGE_NEAR_EAST',
-    missingDependencyError: 'data/iron-age-near-east.ts must load before src/data/atlas-data.ts'
+    data: ironAgeNearEastData
   }
 ];
 
@@ -107,7 +69,7 @@ function assertContentModule(
   value: unknown,
   definition: ModuleDefinition
 ): asserts value is ContentModule {
-  if (!isRecord(value)) throw new Error(definition.missingDependencyError);
+  if (!isRecord(value)) throw new TypeError(`${definition.file} must export a content module object`);
 
   for (const collection of MODULE_COLLECTIONS) {
     if (!Object.prototype.hasOwnProperty.call(value, collection)) {
@@ -125,17 +87,18 @@ function assertContentModule(
   }
 }
 
-export function createAtlasV5Data(runtimeValues: Readonly<Record<string, unknown>>): AtlasData {
-  const modules = MODULE_DEFINITIONS.map(definition => {
-    const moduleData = runtimeValues[definition.globalName];
-    assertContentModule(moduleData, definition);
-    return moduleData;
+export function createAtlasV5Data(
+  definitions: readonly ModuleDefinition[] = contentModuleDefinitions
+): AtlasData {
+  const modules = definitions.map(definition => {
+    assertContentModule(definition.data, definition);
+    return definition.data;
   });
 
   function combine<Collection extends CollectionName>(
     collection: Collection
-  ): ModuleCollectionMap[Collection][] {
-    const items: ModuleCollectionMap[Collection][] = [];
+  ): ContentModuleCollectionMap[Collection][number][] {
+    const items: ContentModuleCollectionMap[Collection][number][] = [];
     for (const moduleData of modules) items.push(...moduleData[collection]);
     return items;
   }
@@ -168,8 +131,6 @@ export function createAtlasV5Data(runtimeValues: Readonly<Record<string, unknown
   };
 }
 
-const runtimeValues = globalThis as unknown as Readonly<Record<string, unknown>>;
-
-export const atlasData = createAtlasV5Data(runtimeValues);
+export const atlasData = createAtlasV5Data();
 
 (globalThis as unknown as { ATLAS_V5_DATA?: AtlasData }).ATLAS_V5_DATA = atlasData;

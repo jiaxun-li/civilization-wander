@@ -1,37 +1,46 @@
-import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
+import type {
+  ContentModule,
+  ContentModuleCollectionMap,
+  HistoricalFactClaim,
+  InterpretationClaim,
+  LabeledTimeSpan,
+  LimitationClaim,
+  TextClaim
+} from '../src/types/runtime.ts';
 
 type SourceIds = readonly string[];
+type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
 type SumerModule = Pick<
   ContentModule,
   'sources' | 'entities' | 'cards' | 'scenes' | 'cameraPresets' | 'geometries' | 'mapStates' | 'assets'
 >;
 
-export const sumerData: SumerModule = (() => {
-  function timeSpan(start: number | null, end: number | null, label: string, approximate = false): TimeSpan {
+const sumerData: SumerModule = (() => {
+  function timeSpan(start: number | null, end: number | null, label: string, approximate = false): LabeledTimeSpan {
     const value: { start?: number | null; end?: number | null; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     if (start === null) delete value.start;
     if (end === null) delete value.end;
-    return value as TimeSpan;
+    return value as LabeledTimeSpan;
   }
 
-  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): InterpretationClaim {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function fact(id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): TextClaim {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function limitation(id: string, text: string, sourceIds: SourceIds): LimitationClaim {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     {
       id: 'source-getty-uruk',
       title: 'Uruk: First City of the Ancient World',
@@ -191,7 +200,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     {
       id: 'sumer',
       type: 'culturalTradition',
@@ -214,7 +223,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     {
       id: 'sumer-measuring-land-time',
       kind: 'overview',
@@ -298,7 +307,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     {
       id: 'sumer-water-network', eventIds: ['event-southern-mesopotamia-water-land-management'],
       title: '水渠把城市连在一起',
@@ -428,11 +437,11 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const cameraPresets = [
+  const cameraPresets: Collection<'cameraPresets'> = [
     { id: 'camera-southern-mesopotamia', center: [45.6, 31.5], scale: 7.5 }
   ];
 
-  const geometries = [{
+  const geometries: Collection<'geometries'> = [{
     id: 'geometry-uruk-site',
     geometry: { type: 'Point', coordinates: [45.637222, 31.324167] },
     timeSpan: timeSpan(-3500, -3000, '公元前四千纪晚期的乌鲁克遗址位置', true),
@@ -441,7 +450,7 @@ export const sumerData: SumerModule = (() => {
     sourceIds: ['source-unesco-uruk-location']
   }];
 
-  const mapStates = [{
+  const mapStates: Collection<'mapStates'> = [{
     id: 'map-sumer-uruk',
     cameraPresetId: 'camera-southern-mesopotamia',
     layers: [{
@@ -452,7 +461,7 @@ export const sumerData: SumerModule = (() => {
     }]
   }];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     {
       id: 'asset-sumer-uruk-public-center',
       type: 'image',
@@ -509,29 +518,29 @@ export const sumerData: SumerModule = (() => {
 
   const sumer = sumerData;
 
-  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+  function timeSpan(start: number, end: number, label: string, approximate = false): LabeledTimeSpan {
     const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function fact(id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): InterpretationClaim {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): TextClaim {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function limitation(id: string, text: string, sourceIds: SourceIds): LimitationClaim {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     {
       id: 'source-yale-ubaid-summary',
       title: 'The Ubaid Period: Summary',
@@ -1128,7 +1137,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     {
       id: 'mesopotamia-region',
       type: 'GeographicFeature',
@@ -1221,7 +1230,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const events = [
+  const events: Collection<'events'> = [
     {
       id: 'event-southern-mesopotamia-water-land-management',
       kind: 'historicalProcess',
@@ -1562,7 +1571,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const structuralEdges = [
+  const structuralEdges: Collection<'structuralEdges'> = [
     {
       id: 'edge-uruk-mesopotamian-temple',
       family: 'historicalNetwork',
@@ -1661,7 +1670,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     {
       id: 'mesopotamia-cities-outlast-dynasties',
       kind: 'overview',
@@ -2023,7 +2032,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     {
       id: 'mesopotamia-many-cities-between-rivers', eventIds: ['event-uruk-urban-expansion'],
       title: '许多城市在两条河之间出现',
@@ -2701,7 +2710,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     { id: 'nav-mesopotamia-uruk', target: { cardId: 'sumer-uruk-city', sceneId: 'sumer-uruk-gathering' }, basis: { kind: 'relatedCard', cardId: 'sumer-uruk-city' }, label: '进入乌鲁克', description: '走进一座迅速扩大的城市，观察食物、公共建筑与陌生人的共同生活怎样被组织起来。' },
     { id: 'nav-uruk-mesopotamia', target: { cardId: 'mesopotamia-cities-outlast-dynasties', sceneId: 'mesopotamia-many-cities-between-rivers' }, basis: { kind: 'relatedCard', cardId: 'mesopotamia-cities-outlast-dynasties' }, label: '进入两河流域的城市长史', description: '把乌鲁克放回更长的区域历史，看一座座城市怎样穿过阿卡德、乌尔、巴比伦与亚述的王朝更替。' },
     { id: 'nav-mesopotamia-sumer', target: { cardId: 'sumer-measuring-land-time', sceneId: 'sumer-water-network' }, basis: { kind: 'relatedCard', cardId: 'sumer-measuring-land-time' }, label: '进入苏美尔文明', description: '从城市群转向水渠、土地、泥板与历法，看看苏美尔人怎样组织物质和时间。' },
@@ -2939,7 +2948,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     { id: 'placement-mesopotamia-uruk-inline', navigationOptionId: 'nav-mesopotamia-uruk', owner: { kind: 'scene', sceneId: 'mesopotamia-many-cities-between-rivers' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-mesopotamia-sumer-inline', navigationOptionId: 'nav-mesopotamia-sumer', owner: { kind: 'scene', sceneId: 'mesopotamia-many-cities-between-rivers' }, slot: 'inline', rank: 2, visible: true, interactive: true },
     { id: 'placement-mesopotamia-akkadian-inline', navigationOptionId: 'nav-mesopotamia-akkadian', owner: { kind: 'scene', sceneId: 'mesopotamia-akkad-gathers-cities' }, slot: 'inline', rank: 1, visible: true, interactive: true },
@@ -2991,7 +3000,7 @@ export const sumerData: SumerModule = (() => {
     { id: 'placement-temple-babel-inline', navigationOptionId: 'nav-temple-babel', owner: { kind: 'scene', sceneId: 'mesopotamian-temple-old-babylonian' }, slot: 'inline', rank: 2, visible: true, interactive: true },
   ];
 
-  const cameraPresets = [
+  const cameraPresets: Collection<'cameraPresets'> = [
     { id: 'camera-mesopotamia-story', center: [45.25, 31.7], scale: 7.2 },
     { id: 'camera-southern-city-world', center: [45.7, 31.2], scale: 8 },
     { id: 'camera-mesopotamia-two-centers', center: [43.85, 34.05], scale: 5.5 },
@@ -3000,7 +3009,7 @@ export const sumerData: SumerModule = (() => {
     { id: 'camera-old-babylonian-fragmentation', center: [40.1, 35.4], scale: 3.8 }
   ];
 
-  const geometries = [
+  const geometries: Collection<'geometries'> = [
     {
       id: 'geometry-mesopotamia-early-cities',
       geometry: { type: 'MultiPoint', coordinates: [[45.64, 31.32], [46.1, 30.96], [45.23, 32.13], [46.17, 31.41]] },
@@ -3075,7 +3084,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const mapStates = [
+  const mapStates: Collection<'mapStates'> = [
     {
       id: 'map-mesopotamia-early-cities',
       cameraPresetId: 'camera-southern-city-world',
@@ -3168,7 +3177,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const mapAnnotations = [
+  const mapAnnotations: Collection<'mapAnnotations'> = [
     {
       id: 'annotation-mesopotamia-early-uruk',
       subject: { kind: 'entity', entityId: 'mesopotamia-region' },
@@ -3361,7 +3370,7 @@ export const sumerData: SumerModule = (() => {
     }
   ];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     { id: 'asset-akkadian-naram-sin-victory-stele', type: 'image', src: 'assets/images/mesopotamia/akkadian-naram-sin-victory-stele.webp', title: '纳拉姆辛胜利碑', alt: '粉褐色石碑浮雕中，头戴角冠的阿卡德国王纳拉姆辛持弓站在山坡高处，士兵沿山势向上推进，战败者倒下或求饶。', sourceIds: ['source-wikimedia-naram-sin-victory-stele', 'source-louvre-naram-sin-victory-stele'] },
     { id: 'asset-kassite-kurigalzu-kudurru', type: 'image', src: 'assets/images/mesopotamia/kassite-kurigalzu-kudurru.webp', title: '刻有库里加尔祖二世名字的库杜鲁', alt: '一块深灰色不规则石碑完整入镜，表面刻有密集楔形文字和图像；它记录加喜特国王库里加尔祖二世作出的土地赠予，原本保存在神庙中。', sourceIds: ['source-wikimedia-kurigalzu-kudurru', 'source-met-kassite-period'] },
     { id: 'asset-mesopotamian-temple-ur-ziggurat', type: 'image', src: 'assets/images/mesopotamia/mesopotamian-temple-ur-ziggurat.webp', title: '今天的乌尔塔庙遗址', alt: '夕阳下的乌尔塔庙遗址照片，宽阔阶梯通向经过修复的泥砖台基。', sourceIds: ['source-wikimedia-ur-ziggurat-photo', 'source-met-ur-ziggurat'] },
@@ -3415,11 +3424,3 @@ export const sumerData: SumerModule = (() => {
     mapAnnotations,
     assets: sumer.assets.concat(assets)
   } satisfies ContentModule;
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
-  ATLAS_V5_SUMER?: SumerModule;
-  ATLAS_V5_MESOPOTAMIA?: ContentModule;
-};
-
-root.ATLAS_V5_SUMER = sumerData;
-root.ATLAS_V5_MESOPOTAMIA = mesopotamiaData;

@@ -1,40 +1,54 @@
-import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
+import type {
+  ContentModule,
+  ContentModuleCollectionMap,
+  EditorialReview,
+  HistoricalCaseClaim,
+  HistoricalFactClaim,
+  InterpretationClaim,
+  LabeledTimeSpan,
+  LimitationClaim,
+  MapAnnotation,
+  Position,
+  ScreenPlacement,
+  TextClaim
+} from '../src/types/runtime.ts';
 
 type SourceIds = readonly string[];
+type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
 
-  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+  function timeSpan(start: number, end: number, label: string, approximate = false): LabeledTimeSpan {
     const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function fact(id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): InterpretationClaim {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): TextClaim {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function limitation(id: string, text: string, sourceIds: SourceIds): LimitationClaim {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): HistoricalCaseClaim {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
   function review(
-    limitations: readonly ContentRecord[],
-    counterexamples: readonly ContentRecord[],
-    uncertainties: readonly ContentRecord[],
-    alternatives: readonly ContentRecord[],
+    limitations: readonly LimitationClaim[],
+    counterexamples: readonly HistoricalCaseClaim[],
+    uncertainties: readonly InterpretationClaim[],
+    alternatives: readonly InterpretationClaim[],
     sourceIds: SourceIds
-  ): ContentRecord {
+  ): EditorialReview {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -44,7 +58,7 @@ type SourceIds = readonly string[];
     };
   }
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     { id: 'source-bryce-hittite-kingdom', title: 'The Kingdom of the Hittites, 2nd edition', author: 'Trevor Bryce', year: 2005, publisher: 'Oxford University Press', url: 'https://academic.oup.com/book/36172' },
     { id: 'source-bryce-neo-hittite-kingdoms', title: 'The World of the Neo-Hittite Kingdoms', author: 'Trevor Bryce', year: 2012, publisher: 'Oxford University Press', url: 'https://academic.oup.com/book/9649' },
     { id: 'source-beckman-hittite-diplomatic-texts', title: 'Hittite Diplomatic Texts, 2nd edition', author: 'Gary Beckman', year: 1999, publisher: 'Society of Biblical Literature', url: 'https://cart.sbl-site.org/books/061507E' },
@@ -92,7 +106,7 @@ type SourceIds = readonly string[];
     { id: 'source-wikimedia-medinet-habu-land-battle', title: 'Medinet Habu plate 50: oxcart and warriors of the Sea Peoples, public domain', author: 'The Epigraphic Survey', year: 1930, publisher: 'University of Chicago Press', url: 'https://isac.uchicago.edu/research/projects/epigraphic-survey-bibliography' }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     {
       id: 'hittite-empire',
       type: 'polity',
@@ -161,7 +175,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const events = [
+  const events: Collection<'events'> = [
     {
       id: 'event-hittite-central-kingship-consolidates', kind: 'historicalProcess', title: '赫梯中央王权在哈图沙重组', timeSpan: timeSpan(-1650, -1350, '约公元前1650—前1350年', true), participantEntityIds: ['hittite-empire'],
       evidenceBlocks: [fact('event-hittite-central-kingship-evidence', '赫梯统治者以哈图沙为中心经历王位危机、远征和继承安排，逐步形成能够再次进入叙利亚的中央王权。', ['source-bryce-hittite-kingdom', 'source-unesco-hattusha'])],
@@ -239,7 +253,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const structuralEdges = [
+  const structuralEdges: Collection<'structuralEdges'> = [
     {
       id: 'edge-hittite-old-babylon-raid', family: 'historicalNetwork', type: 'raided',
       source: { kind: 'entity', id: 'hittite-empire' }, target: { kind: 'entity', id: 'old-babylonian-kingdom' },
@@ -275,7 +289,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     {
       id: 'hittite-syria-treaties', kind: 'overview', primaryEntityId: 'hittite-empire', relatedEntityIds: ['old-babylonian-kingdom', 'ugarit-kingdom', 'troy-archaeological-site', 'battle-of-kadesh-war', 'egypt-new-kingdom'],
 
@@ -386,7 +400,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     {
       id: 'hittite-hattusa-center', title: '一座旧城成为王国中心', eyebrow: '赫梯王国形成', timeSpan: timeSpan(-1650, -1595, '约公元前1650—前1595年', true), eventIds: ['event-hittite-central-kingship-consolidates'],
       contentBlocks: [fact('hittite-hattusa-center-fact', '约公元前17世纪，早期国王哈图西里一世把哈图沙——安纳托利亚高原上的一座旧城——变成王国中心。军队从这里越过山地，进入北叙利亚；下一位国王甚至远征巴比伦，结束当地的第一王朝。', ['source-bryce-hittite-kingdom', 'source-unesco-hattusha', 'source-met-isin-larsa-old-babylonian'])],
@@ -693,7 +707,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     { id: 'nav-amarna-mesopotamia', target: { cardId: 'mesopotamia-cities-outlast-dynasties', sceneId: 'mesopotamia-babylon-writes-assyria-grows' }, entry: { kind: 'targetScene' }, basis: { kind: 'relatedCard', cardId: 'mesopotamia-cities-outlast-dynasties' }, label: '进入与法老通信的巴比伦王朝', description: '从法老收到的巴比伦来信出发，直接认识重新统治巴比伦尼亚并进入大国外交的加喜特王朝。' },
     { id: 'nav-collapse-mesopotamia', target: { cardId: 'mesopotamia-cities-outlast-dynasties', sceneId: 'mesopotamia-cities-do-not-go-dark' }, basis: { kind: 'relatedCard', cardId: 'mesopotamia-cities-outlast-dynasties' }, label: '进入没有一同熄灭的两河流域', description: '把赫梯、乌加里特和爱琴海的宫殿终结同巴比伦、亚述的收缩与延续放在一起比较。' },
     { id: 'nav-collapse-egypt-civilization', target: { cardId: 'ancient-egypt-gift-of-nile', sceneId: 'ancient-egypt-survives-palaces' }, basis: { kind: 'relatedCard', cardId: 'ancient-egypt-gift-of-nile' }, label: '进入尼罗河边的三千年', description: '从晚青铜时代各地宫殿的不同结局，转向埃及跨越王朝兴衰的更长历史。' },
@@ -728,7 +742,7 @@ type SourceIds = readonly string[];
     { id: 'nav-ugarit-collapse', target: { cardId: 'late-bronze-palaces-go-dark', sceneId: 'palaces-ugarit-tablets-stop' }, basis: { kind: 'event', eventId: 'event-ugarit-destruction' }, label: '进入宫殿体系的区域危机', description: '把乌加里特的毁灭与赫梯、爱琴海和仍然延续的埃及放在一起观察。' }
   ];
 
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     { id: 'placement-amarna-mesopotamia-inline', navigationOptionId: 'nav-amarna-mesopotamia', owner: { kind: 'scene', sceneId: 'amarna-diplomacy-routine' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-collapse-mesopotamia-closing', navigationOptionId: 'nav-collapse-mesopotamia', owner: { kind: 'card', cardId: 'late-bronze-palaces-go-dark' }, slot: 'closing', rank: 1, visible: true, interactive: true },
     { id: 'placement-collapse-egypt-civilization-inline', navigationOptionId: 'nav-collapse-egypt-civilization', owner: { kind: 'scene', sceneId: 'palaces-egypt-holds' }, slot: 'inline', rank: 2, visible: true, interactive: true },
@@ -763,7 +777,7 @@ type SourceIds = readonly string[];
     { id: 'placement-ugarit-collapse-inline', navigationOptionId: 'nav-ugarit-collapse', owner: { kind: 'scene', sceneId: 'ugarit-destruction-layer' }, slot: 'inline', rank: 2, visible: true, interactive: true }
   ];
 
-  const cameraPresets = [
+  const cameraPresets: Collection<'cameraPresets'> = [
     { id: 'camera-lba-hittite-syria', center: [35.5, 36.4], scale: 4.2 },
     { id: 'camera-lba-ugarit-connections', center: [34.5, 35.4], scale: 10.0 },
     { id: 'camera-lba-kadesh-powers', center: [34.0, 31.5], scale: 3.1 },
@@ -773,7 +787,7 @@ type SourceIds = readonly string[];
     { id: 'camera-lba-palace-centers', center: [29.5, 34.0], scale: 2.7 }
   ];
 
-  const geometries = [
+  const geometries: Collection<'geometries'> = [
     {
       id: 'geometry-lba-hittite-syria',
       geometry: { type: 'MultiLineString', coordinates: [[[34.62, 40.02], [37.16, 36.2]], [[34.62, 40.02], [38.01, 36.83]], [[38.01, 36.83], [35.78, 35.6]]] },
@@ -832,7 +846,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const mapStates = [
+  const mapStates: Collection<'mapStates'> = [
     { id: 'map-lba-hittite-syria', cameraPresetId: 'camera-lba-hittite-syria', layers: [{ kind: 'geometry', geometryId: 'geometry-lba-hittite-syria', timeSpan: timeSpan(-1350, -1200, '约公元前1350—前1200年', true), sourceIds: ['source-bryce-hittite-kingdom', 'source-met-ugarit', 'source-natural-earth'] }] },
     { id: 'map-lba-ugarit-connections', cameraPresetId: 'camera-lba-ugarit-connections', layers: [{ kind: 'geometry', geometryId: 'geometry-lba-ugarit-connections', timeSpan: timeSpan(-1450, -1200, '约公元前1450—前1200年', true), sourceIds: ['source-yon-city-of-ugarit', 'source-french-ugarit-exchange', 'source-met-ugarit', 'source-natural-earth'] }] },
     { id: 'map-lba-kadesh-powers', cameraPresetId: 'camera-lba-kadesh-powers', layers: [{ kind: 'geometry', geometryId: 'geometry-lba-kadesh-powers', timeSpan: timeSpan(-1274, -1258, '约公元前1274—前1258年', true), sourceIds: ['source-bm-kadesh-sallier', 'source-bryce-hittite-kingdom', 'source-hayes-scepter-ii', 'source-natural-earth'] }] },
@@ -844,18 +858,18 @@ type SourceIds = readonly string[];
 
   function associatedAnnotation(
     id: string,
-    subjectKind: string,
-    subjectIdKey: string,
+    subjectKind: 'entity',
+    subjectIdKey: 'entityId',
     subjectId: string,
-    coordinates: readonly number[],
+    coordinates: Position,
     sourceIds: SourceIds,
-    placement: string,
+    placement: ScreenPlacement,
     label: string
-  ): ContentRecord {
+  ): MapAnnotation {
     return { id, subject: { kind: subjectKind, [subjectIdKey]: subjectId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label };
   }
 
-  const mapAnnotations = [
+  const mapAnnotations: Collection<'mapAnnotations'> = [
     associatedAnnotation('annotation-lba-hattusa', 'entity', 'entityId', 'hittite-empire', [34.62, 40.02], ['source-unesco-hattusha'], 'left', '哈图沙（赫梯首都）'),
     associatedAnnotation('annotation-lba-aleppo', 'entity', 'entityId', 'hittite-empire', [37.16, 36.2], ['source-bryce-hittite-kingdom'], 'left', '阿勒颇（王族支点）'),
     associatedAnnotation('annotation-lba-carchemish', 'entity', 'entityId', 'hittite-empire', [38.01, 36.83], ['source-bryce-hittite-kingdom'], 'right', '卡尔凯美什（区域王族驻地）'),
@@ -880,7 +894,7 @@ type SourceIds = readonly string[];
     associatedAnnotation('annotation-lba-collapse-egypt', 'entity', 'entityId', 'late-bronze-palace-system', [31.2, 30.0], ['source-uee-early-mid-20th-dynasty'], 'left', '埃及核心（国家延续）')
   ];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     { id: 'asset-lba-hittite-hattusa-wall', type: 'image', src: 'assets/images/late-bronze-age/hittite-hattusa-wall.webp', title: '哈图沙城墙的现代考古复原', alt: '安纳托利亚高原上以土坯和石基复原的一段赫梯城墙，城门和方形塔楼沿城墙排列。', sourceIds: ['source-wikimedia-hattusa-wall'] },
     { id: 'asset-lba-hittite-inandik-vase', type: 'image', src: 'assets/images/late-bronze-age/hittite-inandik-vase.webp', title: '伊南德克浮雕陶器；它呈现早期赫梯的宫廷祭仪，而非王位冲突本身', alt: '一件大型红褐色四耳陶器，器身分层排列立体人物、乐师、祭仪与动物图像；它为理解早期赫梯的王权仪式提供同时代视觉参照。', sourceIds: ['source-wikimedia-inandik-vase'] },
     { id: 'asset-lba-hittite-aleppo-treaty', type: 'image', src: 'assets/images/late-bronze-age/hittite-aleppo-treaty.webp', title: '赫梯大王与阿勒颇国王的条约泥版', alt: '一块竖长形浅褐色泥版，正面写满阿卡德语楔形文字，是赫梯管理叙利亚地方王国的条约实例。', sourceIds: ['source-wikimedia-aleppo-treaty'] },
@@ -919,9 +933,3 @@ type SourceIds = readonly string[];
     mapAnnotations,
     assets
   } satisfies ContentModule;
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
-  ATLAS_V5_LATE_BRONZE_AGE?: ContentModule;
-};
-
-root.ATLAS_V5_LATE_BRONZE_AGE = lateBronzeAgeData;

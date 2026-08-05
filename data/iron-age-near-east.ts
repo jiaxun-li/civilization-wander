@@ -1,18 +1,34 @@
-import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
+import type {
+  ContentModule,
+  ContentModuleCollectionMap,
+  EditorialReview,
+  HistoricalCaseClaim,
+  HistoricalFactClaim,
+  InterpretationClaim,
+  LabeledTimeSpan,
+  LimitationClaim,
+  MapAnnotation,
+  MapPresentation,
+  MapPresentationLayer,
+  Position,
+  ScreenPlacement,
+  TextClaim
+} from '../src/types/runtime.ts';
 
 type SourceIds = readonly string[];
+type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
 
-  const timeSpan = (start: number, end: number, label: string, approximate = false): TimeSpan => Object.assign({ start, end, label }, approximate ? { approximate: true as const } : {});
-  const fact = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'historicalFact', text, sourceIds });
-  const interpretation = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'interpretation', text, sourceIds });
-  const synthesis = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'editorialSynthesis', text, sourceIds });
-  const limitation = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'limitation', text, sourceIds });
-  const historicalCase = (id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'historicalCase', title, text, eventIds, sourceIds });
-  const review = (limitations: readonly ContentRecord[], counterexamples: readonly ContentRecord[], uncertainties: readonly ContentRecord[], alternatives: readonly ContentRecord[], sourceIds: SourceIds): ContentRecord => ({ limitations, counterexamples, uncertainties, alternativeExplanations: alternatives, sourceIds });
-  const mapPresentation = (mapStateId: string, layers: readonly ContentRecord[], caption: string): ContentRecord => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
-  const mapLayer = (entityId: string, annotationId: string, sourceIds: SourceIds): ContentRecord => ({ kind: 'entity', entityId, annotationId, sourceIds });
+  const timeSpan = (start: number, end: number, label: string, approximate = false): LabeledTimeSpan => Object.assign({ start, end, label }, approximate ? { approximate: true as const } : {});
+  const fact = (id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim => ({ id, kind: 'historicalFact', text, sourceIds });
+  const interpretation = (id: string, text: string, sourceIds: SourceIds): InterpretationClaim => ({ id, kind: 'interpretation', text, sourceIds });
+  const synthesis = (id: string, text: string, sourceIds: SourceIds): TextClaim => ({ id, kind: 'editorialSynthesis', text, sourceIds });
+  const limitation = (id: string, text: string, sourceIds: SourceIds): LimitationClaim => ({ id, kind: 'limitation', text, sourceIds });
+  const historicalCase = (id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): HistoricalCaseClaim => ({ id, kind: 'historicalCase', title, text, eventIds, sourceIds });
+  const review = (limitations: readonly LimitationClaim[], counterexamples: readonly HistoricalCaseClaim[], uncertainties: readonly InterpretationClaim[], alternatives: readonly InterpretationClaim[], sourceIds: SourceIds): EditorialReview => ({ limitations, counterexamples, uncertainties, alternativeExplanations: alternatives, sourceIds });
+  const mapPresentation = (mapStateId: string, layers: readonly MapPresentationLayer[], caption: string): MapPresentation => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
+  const mapLayer = (entityId: string, annotationId: string, sourceIds: SourceIds): MapPresentationLayer => ({ kind: 'entity', entityId, annotationId, sourceIds });
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     { id: 'source-met-old-assyrian-caravan', title: 'Trade between Assur and Anatolia', publisher: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/assy/hd_assy.htm' },
     { id: 'source-met-assyria', title: 'Assyria, 1365–609 B.C.', publisher: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/assy/hd_assy.htm' },
     { id: 'source-bm-introducing-assyrians', title: 'Introducing the Assyrians', publisher: 'British Museum', url: 'https://www.britishmuseum.org/blog/introducing-assyrians' },
@@ -92,7 +108,7 @@ type SourceIds = readonly string[];
     { id: 'source-generated-iron-teaching', title: '铁器早期材料与块炼炉教学插图', author: 'OpenAI image generation, edited and reviewed for Civilization Wander', year: 2026, publisher: 'Civilization Wander' }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     { id: 'assur-community', type: 'peopleGroup', name: '亚述城社群', canonicalSummary: '约公元前二千纪以来，以亚述城为中心组织远程贸易、神庙与地方政治，并为后来不同亚述王国提供城市传统的社群。', timeSpan: timeSpan(-2000, -1000, '约公元前2000—前1000年', true), tags: ['近东', '亚述', '贸易'], sourceIds: ['source-met-old-assyrian-caravan', 'source-oracc-middle-assyrian'] },
     { id: 'babylon-city', type: 'SettlementSite', name: '巴比伦城', canonicalSummary: '幼发拉底河畔长期作为神庙、书吏、王权与城市共同体中心，并在亚述与新巴比伦时期经历毁坏和重建的城市。', timeSpan: timeSpan(-1900, -300, '约公元前1900—前300年', true), tags: ['近东', '城市', '巴比伦'], sourceIds: ['source-met-esarhaddon-prism', 'source-met-babylon-lion'] },
     { id: 'kingdom-of-judah', type: 'polity', name: '犹大王国', canonicalSummary: '约公元前900—前586年，以耶路撒冷为王都，先后面对亚述与新巴比伦扩张并最终被后者终结的黎凡特王国。', timeSpan: timeSpan(-900, -586, '约公元前900—前586年', true), tags: ['黎凡特', '铁器时代'], sourceIds: ['source-met-ancient-israel', 'source-bm-babylonian-chronicle'] },
@@ -106,7 +122,7 @@ type SourceIds = readonly string[];
     { id: 'iron', type: 'Commodity', name: '铁', canonicalSummary: '约公元前2000年后，欧亚多地工匠逐步从铁矿中获得铁坯，并通过锻打、渗碳、铸造等不同技术把铁制成武器、工具和日常器物。', timeSpan: timeSpan(-2000, -300, '约公元前2000—前300年', true), tags: ['铁器时代', '冶金', '欧亚交流'], sourceIds: ['source-erb-satullo-iron-adoption', 'source-cambridge-south-asia-archaeology', 'source-qian-huang-cast-iron-china'] }
   ];
 
-  const events = [
+  const events: Collection<'events'> = [
     { id: 'event-meteoric-iron-prestige-use', kind: 'historicalProcess', title: '陨铁被制成稀有器物', timeSpan: timeSpan(-3400, -1300, '约公元前3400—前1300年', true), participantEntityIds: ['iron'], evidenceBlocks: [fact('event-meteoric-iron-use-evidence', '在矿石冶铁普及以前，含镍陨铁被识别并锻造成少量珍贵器物。', ['source-matsui-tutankhamun-dagger'])], sourceIds: ['source-matsui-tutankhamun-dagger'], editorialReview: review([limitation('event-meteoric-iron-use-rarity', '陨铁器物数量很少，不能据此推断普通工具已广泛使用铁。', ['source-matsui-tutankhamun-dagger'])], [], [], [], ['source-matsui-tutankhamun-dagger']) },
     { id: 'event-old-assyrian-trade-networks', kind: 'historicalProcess', title: '古亚述商人经营安纳托利亚贸易', timeSpan: timeSpan(-2000, -1750, '约公元前2000—前1750年', true), participantEntityIds: ['assur-community'], evidenceBlocks: [fact('event-old-assyrian-trade-evidence', '亚述城商人以驴队把锡和纺织品送往安纳托利亚，并用泥版家信和契约维持跨地网络。', ['source-met-old-assyrian-caravan'])], sourceIds: ['source-met-old-assyrian-caravan'], editorialReview: review([limitation('event-old-assyrian-trade-archive', '商人档案突出参与远程贸易的家庭，不能代表亚述城所有居民。', ['source-met-old-assyrian-caravan'])], [], [], [], ['source-met-old-assyrian-caravan']) },
     { id: 'event-ashurbanipal-collections-assembled', kind: 'historicalProcess', title: '亚述巴尼拔在尼尼微组织泥版收藏', timeSpan: timeSpan(-668, -631, '公元前668—前631年'), participantEntityIds: ['neo-assyrian-empire'], evidenceBlocks: [fact('event-ashurbanipal-collections-evidence', '王室命令书吏搜集和抄写医学、占卜、词表、仪式与文学泥版，形成今天统称的尼尼微收藏。', ['source-bm-ashurbanipal-library', 'source-oracc-assembling-library'])], sourceIds: ['source-bm-ashurbanipal-library', 'source-oracc-assembling-library'], editorialReview: review([limitation('event-ashurbanipal-collections-rooms', '所谓“图书馆”来自多个发现地点和碎片集合，不是保存完整的单一房间。', ['source-bm-ashurbanipal-library'])], [], [], [], ['source-bm-ashurbanipal-library', 'source-oracc-assembling-library']) },
@@ -130,7 +146,7 @@ type SourceIds = readonly string[];
     { id: 'event-cast-iron-develops-in-china', kind: 'historicalProcess', title: '中国工匠发展铸铁技术', timeSpan: timeSpan(-800, -300, '约公元前800—前300年', true), participantEntityIds: ['iron'], evidenceBlocks: [fact('event-cast-iron-china-evidence', '公元前一千纪的中国工匠发展出铸铁生产，并以铸模和后续热处理制作农具与器件。', ['source-qian-huang-cast-iron-china', 'source-intarch-iron-china'])], sourceIds: ['source-qian-huang-cast-iron-china', 'source-intarch-iron-china'], editorialReview: review([], [], [interpretation('event-cast-iron-china-paths', '中国西北的块炼铁和中原铸铁在较长时期内并存，其技术联系仍需分地区讨论。', ['source-intarch-iron-china'])], [], ['source-intarch-iron-china']) }
   ];
 
-  const structuralEdges = [
+  const structuralEdges: Collection<'structuralEdges'> = [
     { id: 'edge-assyria-conquers-israel', family: 'historicalNetwork', type: 'conquered', source: { kind: 'entity', id: 'neo-assyrian-empire' }, target: { kind: 'entity', id: 'kingdom-of-israel' }, timeSpan: timeSpan(-734, -720, '约公元前734—前720年', true), label: { forward: '吞并其领土', reverse: '被其吞并' }, summaries: { canonical: '亚述逐步削减并最终吞并以色列王国。' }, sourceIds: ['source-oracc-israel'] },
     { id: 'edge-assyria-subordinates-phoenician-cities', family: 'historicalNetwork', type: 'received_tribute_from', source: { kind: 'entity', id: 'neo-assyrian-empire' }, target: { kind: 'entity', id: 'phoenician-tradition' }, timeSpan: timeSpan(-876, -630, '约公元前876—前630年', true), label: { forward: '向海岸城邦索取贡物', reverse: '向其纳贡并周旋' }, summaries: { canonical: '亚述通过远征、条约和贡赋控制部分腓尼基城邦，却没有接管整片地中海航网。' }, sourceIds: ['source-met-phoenicians', 'source-met-assyria'] },
     { id: 'edge-phoenician-script-influences-aramaic', family: 'historicalNetwork', type: 'influenced_writing', source: { kind: 'entity', id: 'phoenician-tradition' }, target: { kind: 'entity', id: 'aramaic-language' }, timeSpan: timeSpan(-1000, -800, '约公元前1000—前800年', true), label: { forward: '影响其字母书写', reverse: '从其传统发展字母' }, summaries: { canonical: '早期阿拉米字母从腓尼基字母传统发展而来，又逐渐形成自己的书写样式。' }, sourceIds: ['source-oracc-aramaic-hebrew', 'source-met-alphabet'] },
@@ -138,7 +154,7 @@ type SourceIds = readonly string[];
     { id: 'edge-neo-babylon-succeeds-assyria', family: 'historicalNetwork', type: 'succeeded', source: { kind: 'entity', id: 'neo-babylonian-empire' }, target: { kind: 'entity', id: 'neo-assyrian-empire' }, timeSpan: timeSpan(-626, -605, '公元前626—前605年'), label: { forward: '推翻并接续其部分帝国空间', reverse: '被其推翻并接续' }, summaries: { canonical: '新巴比伦联合米底推翻亚述王权，并继续争夺亚述留下的叙利亚与黎凡特。' }, sourceIds: ['source-met-babylon', 'source-met-assyria'] }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     { id: 'iron-crosses-empires-routes', kind: 'thematic', primaryEntityId: 'iron', relatedEntityIds: ['hittite-empire', 'late-bronze-palace-system', 'greek-dark-age-communities', 'phoenician-tradition', 'neo-assyrian-empire'], title: '铁器穿过帝国与商路', editorialPurpose: '从材料、工匠、商路与帝国需求出发，讲述铁如何进入欧亚各地。', introduction: '最早的铁来自陨石，只出现在少数珍贵器物中。后来，工匠学会从矿石中炼铁，港口开始运输铁料，帝国则需要越来越多的铁制武器和工具。', thesis: { text: '铁器的传播既是一部冶金技术史，也是一部工匠迁移、原料运输、国家征集和地方创新的历史。', sourceIds: ['source-erb-satullo-iron-adoption', 'source-npj-dor-iron-blooms', 'source-cambridge-south-asia-archaeology', 'source-qian-huang-cast-iron-china'] }, timeSpan: timeSpan(-3400, -300, '约公元前3400—前300年', true), sceneIds: ['iron-first-falls-from-sky', 'iron-bloom-leaves-furnace', 'iron-hittite-court-smiths', 'iron-workshops-after-palaces', 'iron-blooms-travel-by-sea', 'iron-assyrian-armies-building', 'iron-south-asia-regional-paths', 'iron-china-casts-metal'], sourceIds: ['source-matsui-tutankhamun-dagger', 'source-erb-satullo-iron-adoption', 'source-bsa-aegean-iron-technologies', 'source-npj-dor-iron-blooms', 'source-maxwell-hyslop-assyrian-iron', 'source-cambridge-south-asia-archaeology', 'source-qian-huang-cast-iron-china', 'source-intarch-iron-china'], editorialReview: review([limitation('iron-review-corrosion', '铁器容易腐蚀，保存状况会影响各地区出土数量。', ['source-erb-satullo-iron-adoption'])], [historicalCase('iron-review-bronze-continues', '青铜继续被使用', '铁器增加后，青铜仍长期用于武器、容器和礼仪器物。', ['event-iron-use-expands-after-palaces'], ['source-erb-satullo-iron-adoption'])], [interpretation('iron-review-early-dates', '最早冶铁遗址、南亚部分早期年代及中国不同技术路线之间的联系仍会随新材料调整。', ['source-erb-satullo-iron-adoption', 'source-cambridge-south-asia-archaeology', 'source-intarch-iron-china'])], [interpretation('iron-review-many-causes', '原料、燃料、工匠组织、交通和社会需求共同影响铁器采用速度。', ['source-erb-satullo-iron-adoption'])], ['source-erb-satullo-iron-adoption', 'source-cambridge-south-asia-archaeology', 'source-intarch-iron-china']) },
     { id: 'assyria-orders-cross-empire', kind: 'overview', primaryEntityId: 'neo-assyrian-empire', relatedEntityIds: ['assur-community', 'kingdom-of-israel', 'kingdom-of-judah', 'phoenician-tradition', 'aramaic-language', 'neo-babylonian-empire'], title: '亚述的命令穿过帝国', editorialPurpose: '从尚武王权、公开暴力、行政道路、迁徙和知识收藏理解亚述帝国。', introduction: '亚述诸王让战争成为王权最醒目的语言，又让书信、官员和迁徙把胜利变成日常统治。帝国留下的既有令人畏惧的浮雕，也有装满文字的泥版。', thesis: { text: '新亚述是一个以军事成就塑造王权、再以行省、道路、官员、迁徙与知识收藏组织征服成果的帝国。', sourceIds: ['source-met-assyria', 'source-bm-introducing-assyrians', 'source-oracc-governance'] }, timeSpan: timeSpan(-2000, -609, '约公元前2000—前609年', true), sceneIds: ['assyria-merchants-before-empire', 'assyria-kings-prove-through-war', 'assyria-rebellion-sees-consequences', 'assyria-conquest-becomes-government', 'assyria-people-moved-elsewhere', 'assyria-nineveh-collects-knowledge', 'assyria-violent-city-silenced'], sourceIds: ['source-met-old-assyrian-caravan', 'source-oracc-middle-assyrian', 'source-met-assyria', 'source-oracc-royal-inscriptions', 'source-oracc-governance', 'source-oracc-deportation', 'source-bm-ashurbanipal-library'], editorialReview: review([limitation('assyria-review-martial', '“尚武”描述王权意识形态和国家组织，不能当作每个亚述人的先天民族性格。', ['source-bm-introducing-assyrians', 'source-oracc-royal-inscriptions'])], [], [interpretation('assyria-review-propaganda', '王室浮雕与铭文夸示胜利，但暴力、处决和强制迁徙本身也有多类证据支持。', ['source-oracc-royal-inscriptions', 'source-oracc-deportation'])], [interpretation('assyria-review-other-empires', '公开暴力并非亚述独有；亚述材料的保存和展示方式尤其突出。', ['source-bm-introducing-assyrians']), interpretation('assyria-review-beyond-war', '贸易、农业、地方协商、神庙和书吏同样支撑帝国。', ['source-oracc-governance', 'source-bm-ashurbanipal-library'])], ['source-bm-introducing-assyrians', 'source-oracc-governance', 'source-oracc-deportation', 'source-bm-ashurbanipal-library']) },
     { id: 'phoenician-cities-sail-mediterranean', kind: 'overview', primaryEntityId: 'phoenician-tradition', relatedEntityIds: ['neo-assyrian-empire', 'greek-dark-age-communities'], title: '腓尼基城邦驶向地中海', editorialPurpose: '以全程地图说明独立海岸城邦如何成为跨海交换的连接者。', introduction: '腓尼基没有统一的海上帝国。几座各有国王的海岸城，却让船、货物、文字和移民一站站走到地中海尽头以外。', thesis: { text: '腓尼基城邦的历史作用不在统一海洋，而在通过港口、岛屿和海外社区把分散海岸接入持续交换。', sourceIds: ['source-met-phoenicians', 'source-met-phoenician-sailing', 'source-antiquity-phoenician-diaspora'] }, timeSpan: timeSpan(-1200, -300, '约公元前1200—前300年', true), sceneIds: ['phoenicia-four-coastal-kings', 'phoenicia-cargo-many-hands', 'phoenicia-islands-link-voyage', 'phoenicia-beyond-mediterranean-gate', 'phoenicia-ships-bring-tribute', 'phoenicia-distant-ports-centres'], sourceIds: ['source-met-phoenicians', 'source-met-phoenician-sailing', 'source-bm-phoenician', 'source-antiquity-phoenician-diaspora', 'source-met-alphabet'], editorialReview: review([limitation('phoenicia-review-elite', '主要证据偏向港口、精英墓葬、铭文和外部帝国记录。', ['source-met-phoenicians', 'source-bm-phoenician'])], [], [interpretation('phoenicia-review-routes', '地图连线是教学性的交换网络，不是单艘船的确定航海日志。', ['source-met-phoenician-sailing'])], [interpretation('phoenicia-review-local-agency', '海外聚落形成于与当地社会的合作、通婚、竞争和冲突，不能只写成东方人的单向扩张。', ['source-antiquity-phoenician-diaspora'])], ['source-met-phoenicians', 'source-met-phoenician-sailing', 'source-antiquity-phoenician-diaspora']) },
@@ -148,7 +164,7 @@ type SourceIds = readonly string[];
     { id: 'lydia-coins-gold-silver', kind: 'thematic', primaryEntityId: 'lydian-kingdom', relatedEntityIds: ['hittite-empire'], title: '吕底亚把金银铸成钱币', editorialPurpose: '从萨迪斯的资源、冶金和王权说明早期铸币怎样出现，并在王国灭亡后继续流通。', introduction: '金银早已能买到东西，问题是每次付款都要称量、检验并相信对方。吕底亚人在金属上打下印记，让一小块合金开始替发行者说话。', thesis: { text: '早期钱币不是从物物交换突然跳出的发明，而是贵金属资源、精炼技术、权威印记与支付需求在吕底亚汇合的结果。', sourceIds: ['source-met-sardis', 'source-sardis-coins', 'source-sardis-refining'] }, timeSpan: timeSpan(-700, -500, '约公元前700—前500年', true), sceneIds: ['lydia-roads-gold-kingship-sardis', 'lydia-mark-makes-alloy-speak', 'lydia-croesus-separates-gold-silver', 'lydia-kingdom-falls-mint-continues'], sourceIds: ['source-met-sardis', 'source-sardis-introduction', 'source-sardis-coins', 'source-sardis-refining', 'source-iranica-cyrus'], editorialReview: review([limitation('lydia-review-coin-bias', '钱币和萨迪斯考古材料突出王室与城市交易，不能代表所有乡村交换。', ['source-met-sardis', 'source-sardis-coins'])], [historicalCase('lydia-review-noncoin', '钱币没有取代所有交换', '称量金属、实物支付、信用与互惠交换在铸币出现后仍长期并存。', ['event-lydian-coinage-emerges'], ['source-sardis-coins'])], [interpretation('lydia-review-first', '最早钱币的精确年代、地点、发行者和首要用途仍有争论。', ['source-sardis-coins'])], [interpretation('lydia-review-drivers', '军饷、贡赋、王室支付、商业和金属检验需求可能共同推动制度形成。', ['source-sardis-coins', 'source-sardis-refining'])], ['source-met-sardis', 'source-sardis-coins', 'source-sardis-refining']) }
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     { id: 'iron-first-falls-from-sky', title: '铁最初从天空来到人间', eyebrow: '陨铁与珍宝', timeSpan: timeSpan(-3400, -1300, '约公元前3400—前1300年', true), eventIds: ['event-meteoric-iron-prestige-use'], contentBlocks: [fact('iron-first-falls-from-sky-fact', '在学会冶炼铁矿以前，人们已经见过铁。陨石坠落地面，带来含镍较多的天然铁块。工匠把它们锤成珠饰、刀刃和礼物，送进宫殿与王墓。埃及法老图坦卡蒙的墓中就有一把金柄铁匕首，银亮的刀刃来自陨石。此时的铁比黄金更加罕见，首先代表来自远方甚至天空的珍奇。', ['source-matsui-tutankhamun-dagger'])], presentation: { kind: 'imageAndText', assetId: 'asset-iane-tutankhamun-dagger' }, sourceIds: ['source-matsui-tutankhamun-dagger', 'source-wikimedia-tutankhamun-dagger'] },
     { id: 'iron-bloom-leaves-furnace', title: '铁匠从炉中取出一团铁坯', eyebrow: '块炼与锻打', timeSpan: timeSpan(-2000, -1000, '约公元前2000—前1000年', true), eventIds: ['event-extractive-iron-metallurgy-develops'], contentBlocks: [fact('iron-bloom-leaves-furnace-fact', '铁矿石进入炭火燃烧的炉中，矿石里的氧逐渐被带走。早期炉温还不能让铁像青铜一样流淌，铁匠得到的是一团夹着炉渣的海绵状铁坯。接下来，他们要反复加热、折叠和锻打，把杂质一点点挤出去，再制成斧、凿、刀或矛头。矿石提供材料，炉火和铁锤则决定它最终能做什么。', ['source-erb-satullo-iron-adoption'])], presentation: { kind: 'imageAndText', assetId: 'asset-iane-iron-bloomery' }, sourceIds: ['source-erb-satullo-iron-adoption', 'source-generated-iron-teaching'] },
     { id: 'iron-hittite-court-smiths', title: '赫梯王把铁匠召进宫廷', eyebrow: '安纳托利亚与王室礼物', timeSpan: timeSpan(-1650, -1200, '约公元前1650—前1200年', true), eventIds: ['event-extractive-iron-metallurgy-develops'], contentBlocks: [fact('iron-hittite-court-smiths-fact', '赫梯帝国位于安纳托利亚高原，这里长期积累了采矿和金属加工经验。赫梯国王能够召集铁匠，让他们为宫廷制作铁制礼物，再把这些礼物送给远方的统治者。KBo 1.14号王室书信提到，储存优质铁的地方暂时无货，铁匠正在赶制新的器物。铁匠因此进入了王室外交：他们锻出的刀刃和礼物，沿着赫梯的条约与使节网络走向别处。', ['source-erb-satullo-iron-adoption', 'source-kbo-1-14', 'source-cdli-kbo-1-14'])], presentation: { kind: 'imageAndText', assetId: 'asset-iane-kbo-1-14' }, sourceIds: ['source-erb-satullo-iron-adoption', 'source-kbo-1-14', 'source-cdli-kbo-1-14'] },
@@ -197,7 +213,7 @@ type SourceIds = readonly string[];
     { id: 'lydia-kingdom-falls-mint-continues', title: '王国灭亡，铸币制度继续扩展', eyebrow: '波斯与希腊的采用', timeSpan: timeSpan(-546, -500, '约公元前546—前500年', true), eventIds: ['event-persia-conquers-sardis', 'event-lydian-coinage-emerges'], contentBlocks: [fact('lydia-kingdom-falls-mint-continues-fact', '约前546年，波斯军队攻取萨迪斯，吕底亚王国终结。征服者没有关闭这里的铸币活动，而是继续发行沿用吕底亚重量和图案的钱币，后来又换上手持弓箭的波斯国王形象。铸币同时从安纳托利亚西部传向希腊海岸和希腊本土；各城邦把自己的神祇、动物与城邦标志压上钱币，使这项制度成为古风和古典时代希腊政治与市场的重要工具。王国消失了，国家为金属重量和价值作担保的办法却被波斯与希腊分别采用和改造。', ['source-sardis-coins', 'source-iranica-cyrus', 'source-met-coinage-greece'])], presentation: mapPresentation('map-iane-lydia-persian-transfer', [mapLayer('lydian-kingdom', 'annotation-iane-sardis-persia', ['source-met-sardis']), mapLayer('lydian-kingdom', 'annotation-iane-persian-core-direction', ['source-iranica-cyrus'])], '连线表示萨迪斯进入波斯帝国后的政治联系，不复原居鲁士军队的具体行军路线。'), sourceIds: ['source-sardis-coins', 'source-iranica-cyrus', 'source-met-coinage-greece', 'source-natural-earth'] }
   ];
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     { id: 'nav-assyria-israel-judah', target: { cardId: 'two-kingdoms-two-falls', sceneId: 'israel-enters-and-falls-to-assyria' }, basis: { kind: 'structuralEdge', structuralEdgeId: 'edge-assyria-conquers-israel' }, label: '进入两个王国的陷落', description: '从亚述的征服视角转向撒马利亚、拉吉与耶路撒冷，比较以色列和犹大的不同结局。' },
     { id: 'nav-israel-judah-assyria', target: { cardId: 'assyria-orders-cross-empire', sceneId: 'assyria-kings-prove-through-war' }, basis: { kind: 'structuralEdge', structuralEdgeId: 'edge-assyria-conquers-israel' }, label: '进入亚述的帝国机器', description: '从被征服者的处境转向王宫、军队、行省和强制迁徙如何共同运转。' },
     { id: 'nav-assyria-phoenicia', target: { cardId: 'phoenician-cities-sail-mediterranean', sceneId: 'phoenicia-ships-bring-tribute' }, basis: { kind: 'structuralEdge', structuralEdgeId: 'edge-assyria-subordinates-phoenician-cities' }, label: '进入纳贡仍不停航的海岸', description: '看海岸城邦如何在亚述压力下继续经营通往西方的网络。' },
@@ -237,7 +253,7 @@ type SourceIds = readonly string[];
     { id: 'nav-iron-assyria', target: { cardId: 'assyria-orders-cross-empire', sceneId: 'assyria-kings-prove-through-war' }, basis: { kind: 'relatedCard', cardId: 'assyria-orders-cross-empire' }, label: '进入亚述的帝国机器', description: '从铁制武器和工具继续看军队、道路、贡赋、行省与王权怎样共同运转。' },
     { id: 'nav-assyria-iron', target: { cardId: 'iron-crosses-empires-routes', sceneId: 'iron-assyrian-armies-building' }, basis: { kind: 'relatedCard', cardId: 'iron-crosses-empires-routes' }, label: '追踪帝国需要的铁', description: '从尚武王权转向矿料、铁匠、仓库和工地，看器物怎样被组织成帝国资源。' }
   ];
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     { id: 'placement-iron-hittite-inline', navigationOptionId: 'nav-iron-hittite', owner: { kind: 'scene', sceneId: 'iron-hittite-court-smiths' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-hittite-iron-inline', navigationOptionId: 'nav-hittite-iron', owner: { kind: 'scene', sceneId: 'hittite-network-ends' }, slot: 'inline', rank: 3, visible: true, interactive: true },
     { id: 'placement-iron-collapse-inline', navigationOptionId: 'nav-iron-collapse', owner: { kind: 'scene', sceneId: 'iron-workshops-after-palaces' }, slot: 'inline', rank: 1, visible: true, interactive: true },
@@ -278,7 +294,7 @@ type SourceIds = readonly string[];
     { id: 'placement-babel-babylon-inline', navigationOptionId: 'nav-babel-babylon', owner: { kind: 'scene', sceneId: 'tower-of-babel-evidence-and-reconstruction' }, slot: 'inline', rank: 1, visible: true, interactive: true }
   ];
 
-  const cameraPresets = [
+  const cameraPresets: Collection<'cameraPresets'> = [
     { id: 'camera-iane-iron-east-mediterranean', center: [29, 36], scale: 2.6 },
     { id: 'camera-iane-iron-assyria', center: [39, 36], scale: 3.5 },
     { id: 'camera-iane-iron-south-asia', center: [77, 23], scale: 2.2 },
@@ -295,7 +311,7 @@ type SourceIds = readonly string[];
     { id: 'camera-iane-lydia-persia', center: [40, 34.5], scale: 2.2 }
   ];
 
-  const geometries = [
+  const geometries: Collection<'geometries'> = [
     { id: 'geometry-iane-iron-after-palaces', geometry: { type: 'MultiLineString', coordinates: [[[34.62, 40.02], [33.2, 35.1]], [[33.2, 35.1], [25.1, 35.2]]] }, timeSpan: timeSpan(-1200, -900, '约公元前1200—前900年', true), approximate: true, label: '安纳托利亚、塞浦路斯与爱琴海冶金联系', sourceIds: ['source-erb-satullo-iron-adoption', 'source-bsa-aegean-iron-technologies', 'source-natural-earth'] },
     { id: 'geometry-iane-iron-sea', geometry: { type: 'LineString', coordinates: [[34.92, 32.62], [33.2, 35.1], [25.1, 35.2], [14.2, 37.6]] }, timeSpan: timeSpan(-800, -550, '约公元前800—前550年', true), approximate: true, label: '东地中海铁料分段海运教学联系', sourceIds: ['source-npj-dor-iron-blooms', 'source-met-phoenician-sailing', 'source-natural-earth'] },
     { id: 'geometry-iane-iron-assyria', geometry: { type: 'LineString', coordinates: [[36, 39], [43.15, 36.36]] }, timeSpan: timeSpan(-900, -600, '约公元前900—前600年', true), approximate: true, label: '安纳托利亚矿料方向与亚述核心教学联系', sourceIds: ['source-maxwell-hyslop-assyrian-iron', 'source-natural-earth'] },
@@ -315,7 +331,8 @@ type SourceIds = readonly string[];
     { id: 'geometry-iane-lydia-persian-transfer', geometry: { type: 'LineString', coordinates: [[28.04, 38.49], [53.17, 30.2]] }, timeSpan: timeSpan(-546, -500, '约公元前546—前500年', true), approximate: true, label: '萨迪斯进入波斯帝国后的政治联系', sourceIds: ['source-met-sardis', 'source-iranica-cyrus', 'source-natural-earth'] }
   ];
 
-  const mapStates = [
+  type MapStateSpec = readonly [string, string, string, number, number, string, SourceIds];
+  const mapStateSpecs: readonly MapStateSpec[] = [
     ['map-iane-iron-after-palaces', 'camera-iane-iron-east-mediterranean', 'geometry-iane-iron-after-palaces', -1200, -900, '约公元前1200—前900年', ['source-erb-satullo-iron-adoption', 'source-bsa-aegean-iron-technologies', 'source-natural-earth']],
     ['map-iane-iron-sea', 'camera-iane-iron-east-mediterranean', 'geometry-iane-iron-sea', -800, -550, '约公元前800—前550年', ['source-npj-dor-iron-blooms', 'source-met-phoenician-sailing', 'source-natural-earth']],
     ['map-iane-iron-assyria', 'camera-iane-iron-assyria', 'geometry-iane-iron-assyria', -900, -600, '约公元前900—前600年', ['source-maxwell-hyslop-assyrian-iron', 'source-natural-earth']],
@@ -333,10 +350,20 @@ type SourceIds = readonly string[];
     ['map-iane-babylon-succeeds-assyria', 'camera-iane-babylon-transition', 'geometry-iane-babylon-succeeds-assyria', -626, -605, '公元前626—前605年', ['source-met-babylon', 'source-met-assyria', 'source-natural-earth']],
     ['map-iane-lydia-sardis-corridor', 'camera-iane-lydia', 'geometry-iane-lydia-sardis-corridor', -700, -560, '约公元前700—前560年', ['source-met-sardis', 'source-sardis-introduction', 'source-natural-earth']],
     ['map-iane-lydia-persian-transfer', 'camera-iane-lydia-persia', 'geometry-iane-lydia-persian-transfer', -546, -500, '约公元前546—前500年', ['source-met-sardis', 'source-iranica-cyrus', 'source-natural-earth']]
-  ].map(item => ({ id: item[0], cameraPresetId: item[1], layers: [{ kind: 'geometry', geometryId: item[2], timeSpan: timeSpan(item[3] as number, item[4] as number, item[5] as string, (item[5] as string).startsWith('约')), sourceIds: item[6] }] }));
+  ];
+  const mapStates: Collection<'mapStates'> = mapStateSpecs.map(item => ({
+    id: item[0],
+    cameraPresetId: item[1],
+    layers: [{
+      kind: 'geometry',
+      geometryId: item[2],
+      timeSpan: timeSpan(item[3], item[4], item[5], item[5].startsWith('约')),
+      sourceIds: item[6]
+    }]
+  }));
 
-  const annotation = (id: string, entityId: string, coordinates: readonly number[], sourceIds: SourceIds, placement: string, label: string): ContentRecord => ({ id, subject: { kind: 'entity', entityId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label });
-  const mapAnnotations = [
+  const annotation = (id: string, entityId: string, coordinates: Position, sourceIds: SourceIds, placement: ScreenPlacement, label: string): MapAnnotation => ({ id, subject: { kind: 'entity', entityId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label });
+  const mapAnnotations: Collection<'mapAnnotations'> = [
     annotation('annotation-iane-iron-hattusa-collapse', 'iron', [34.62, 40.02], ['source-erb-satullo-iron-adoption'], 'right', '安纳托利亚'), annotation('annotation-iane-iron-aegean', 'iron', [25.1, 35.2], ['source-bsa-aegean-iron-technologies'], 'left', '爱琴海'), annotation('annotation-iane-iron-cyprus', 'iron', [33.2, 35.1], ['source-bsa-aegean-iron-technologies'], 'below', '塞浦路斯'),
     annotation('annotation-iane-iron-dor', 'iron', [34.92, 32.62], ['source-npj-dor-iron-blooms'], 'left', '多尔港'), annotation('annotation-iane-iron-cyprus-sea', 'iron', [33.2, 35.1], ['source-met-phoenician-sailing'], 'right', '塞浦路斯'), annotation('annotation-iane-iron-west-sea', 'iron', [14.2, 37.6], ['source-met-phoenician-sailing'], 'right', '中地中海方向'),
     annotation('annotation-iane-iron-nineveh', 'iron', [43.15, 36.36], ['source-maxwell-hyslop-assyrian-iron'], 'right', '亚述核心'), annotation('annotation-iane-iron-anatolia-source', 'iron', [36, 39], ['source-maxwell-hyslop-assyrian-iron'], 'left', '安纳托利亚矿料方向'),
@@ -355,7 +382,7 @@ type SourceIds = readonly string[];
     annotation('annotation-iane-sardis-persia', 'lydian-kingdom', [28.04, 38.49], ['source-met-sardis'], 'left', '萨迪斯（波斯西部中心）'), annotation('annotation-iane-persian-core-direction', 'lydian-kingdom', [53.17, 30.2], ['source-iranica-cyrus'], 'right', '波斯王权核心区')
   ];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     { id: 'asset-iane-tutankhamun-dagger', type: 'image', src: 'assets/images/iron-age-near-east/tutankhamun-meteorite-dagger.webp', title: '图坦卡蒙墓中的陨铁匕首', alt: '开罗埃及博物馆陈列的图坦卡蒙金柄铁匕首，细长银灰色刀刃与装饰华丽的金柄完整可见。', sourceIds: ['source-wikimedia-tutankhamun-dagger', 'source-matsui-tutankhamun-dagger'] },
     { id: 'asset-iane-iron-bloomery', type: 'image', src: 'assets/images/iron-age-near-east/iron-bloomery-teaching.webp', title: '铁匠从块炼炉中取出铁坯', alt: '教学插图表现两名工匠用长钳从黏土块炼炉中夹出发红的海绵状铁坯，炉火、炉渣与锻锤清晰可见。', sourceIds: ['source-generated-iron-teaching', 'source-erb-satullo-iron-adoption'] },
     { id: 'asset-iane-kbo-1-14', type: 'image', src: 'assets/images/iron-age-near-east/kbo-1-14-iron-letter-facsimile.webp', title: 'KBo 1.14号赫梯王室书信拓片', alt: '1916年出版的KBo 1.14号楔形文字泥板正面线描拓片，页首标明第14号，残缺泥板上的多行文字清晰可见。', sourceIds: ['source-kbo-1-14', 'source-cdli-kbo-1-14'] },
@@ -385,9 +412,3 @@ type SourceIds = readonly string[];
     cameraPresets, mapStates, geometries, mapAnnotations,
     assets
   } satisfies ContentModule;
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
-  ATLAS_V5_IRON_AGE_NEAR_EAST?: ContentModule;
-};
-
-root.ATLAS_V5_IRON_AGE_NEAR_EAST = ironAgeNearEastData;

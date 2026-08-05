@@ -1,35 +1,48 @@
-import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
+import type {
+  ContentModule,
+  ContentModuleCollectionMap,
+  EditorialReview,
+  HistoricalFactClaim,
+  InterpretationClaim,
+  LabeledTimeSpan,
+  LimitationClaim,
+  MapAnnotation,
+  Position,
+  ScreenPlacement,
+  TextClaim
+} from '../src/types/runtime.ts';
 
 type SourceIds = readonly string[];
+type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
 
-  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+  function timeSpan(start: number, end: number, label: string, approximate = false): LabeledTimeSpan {
     const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function fact(id: string, text: string, sourceIds: SourceIds): HistoricalFactClaim {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): InterpretationClaim {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): TextClaim {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
+  function limitation(id: string, text: string, sourceIds: SourceIds): LimitationClaim {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
   function review(
-    limitations: readonly ContentRecord[],
-    uncertainties: readonly ContentRecord[],
-    alternatives: readonly ContentRecord[],
+    limitations: readonly LimitationClaim[],
+    uncertainties: readonly InterpretationClaim[],
+    alternatives: readonly InterpretationClaim[],
     sourceIds: SourceIds
-  ): ContentRecord {
+  ): EditorialReview {
     return {
       limitations: limitations || [],
       counterexamples: [],
@@ -39,7 +52,7 @@ type SourceIds = readonly string[];
     };
   }
 
-  const sources = [
+  const sources: Collection<'sources'> = [
     { id: 'source-ucl-narmer', title: 'Narmer', publisher: 'UCL Digital Egypt for Universities', url: 'https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/narmer.html' },
     { id: 'source-met-telling-time-egypt', title: 'Telling Time in Ancient Egypt', publisher: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/telling-time-in-ancient-egypt' },
     { id: 'source-met-egypt-1000-1', title: 'Egypt, 1000 B.C.–1 A.D.', publisher: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/ht/04/afe.html' },
@@ -144,7 +157,7 @@ type SourceIds = readonly string[];
     { id: 'source-wikimedia-abu-simbel-color', title: 'Abu Simbel Great Temple Façade Photograph, CC BY 2.0', author: 'Arian Zwegers', year: 1998, publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Abu_Simbel,_fa%C3%A7ade_of_the_Great_Temple_(6201194723).jpg' }
   ];
 
-  const entities = [
+  const entities: Collection<'entities'> = [
     { id: 'ancient-egypt-civilization', type: 'culturalTradition', name: '古埃及文明', alternativeNames: ['Ancient Egyptian civilization'], canonicalSummary: '约公元前3100—前30年，形成于尼罗河河谷与三角洲，以法老王权、神庙、象形文字、死后信仰和不断变化的艺术传统延续了近三千年的古代文明。', timeSpan: timeSpan(-3100, -30, '约公元前3100—前30年', true), tags: ['非洲', '古埃及', '文化传统'], sourceIds: ['source-ucl-narmer', 'source-met-telling-time-egypt', 'source-met-egypt-1000-1'] },
     { id: 'egypt-old-kingdom', type: 'polity', name: '古埃及古王国', alternativeNames: ['Old Kingdom of Egypt'], canonicalSummary: '约公元前2686—前2181年，以统一王权、大型王室陵墓和不断扩展的行政网络为重要特征的古埃及政治实体。', timeSpan: timeSpan(-2686, -2181, '约公元前2686—前2181年', true), tags: ['非洲', '古埃及', '政治实体'], sourceIds: ['source-met-old-kingdom', 'source-muller-old-kingdom-end'] },
     { id: 'egypt-middle-kingdom', type: 'polity', name: '古埃及中王国', alternativeNames: ['Middle Kingdom of Egypt'], canonicalSummary: '约公元前2055—前1650年，由底比斯王室重新统一埃及后形成，并以文学、王权重组和后期政治分裂留下鲜明证据的政治实体。', timeSpan: timeSpan(-2055, -1650, '约公元前2055—前1650年', true), tags: ['非洲', '古埃及', '政治实体'], sourceIds: ['source-ucl-middle-kingdom', 'source-met-middle-kingdom', 'source-uee-second-intermediate'] },
@@ -155,7 +168,7 @@ type SourceIds = readonly string[];
     { id: 'egyptian-hieroglyphs', type: 'writingSystem', name: '古埃及象形文字', alternativeNames: ['Egyptian hieroglyphs'], canonicalSummary: '把词、辅音和帮助判断词义的无声符号组合起来记录古埃及语的书写系统。', timeSpan: timeSpan(-3100, 400, '约公元前3100年至公元4世纪', true), tags: ['非洲', '古埃及', '文字系统', '语言'], sourceIds: ['source-ucl-hieroglyphic-system', 'source-ucl-writing-development', 'source-ucl-coptic'] }
   ];
 
-  const events = [
+  const events: Collection<'events'> = [
     {
       id: 'event-upper-lower-egypt-unified', kind: 'historicalProcess', title: '上下埃及王权逐步统一', timeSpan: timeSpan(-3300, -3050, '约公元前3300—前3050年', true), participantEntityIds: ['ancient-egypt-civilization'],
       evidenceBlocks: [fact('event-upper-lower-egypt-unified-evidence', '纳尔迈石板等早期王权图像把南北冠冕、征服与仪式结合起来，显示上下埃及统一王权正在形成。', ['source-ucl-narmer'])],
@@ -287,12 +300,12 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const structuralEdges = [
+  const structuralEdges: Collection<'structuralEdges'> = [
     { id: 'edge-egypt-old-middle-kingdom', family: 'historicalNetwork', type: 'reunified_after_fragmentation', source: { kind: 'entity', id: 'egypt-old-kingdom' }, target: { kind: 'entity', id: 'egypt-middle-kingdom' }, timeSpan: timeSpan(-2181, -2055, '古王国结束至中王国重新统一', true), label: { forward: '分裂后形成新的统一王国', reverse: '继承并重组更早的王权传统' }, summaries: { canonical: '古王国结束后的南北分裂，构成底比斯王室重新统一埃及并建立中王国的直接前史。' }, qualifiers: ['不把中王国视为古王国制度的简单恢复'], sourceIds: ['source-muller-old-kingdom-end', 'source-ucl-mentuhotep-ii'] },
     { id: 'edge-egypt-middle-new-kingdom', family: 'historicalNetwork', type: 'reunified_after_fragmentation', source: { kind: 'entity', id: 'egypt-middle-kingdom' }, target: { kind: 'entity', id: 'egypt-new-kingdom' }, timeSpan: timeSpan(-1650, -1550, '中王国结束至新王国重新统一', true), label: { forward: '分裂后形成新的统一王国', reverse: '继承并扩大早期边界经验' }, summaries: { canonical: '中王国结束后的阿瓦里斯与底比斯对峙，构成雅赫摩斯重新统一埃及并建立新王国的直接前史。' }, qualifiers: ['不把新王国扩张解释为单一战争的自动结果'], sourceIds: ['source-ucl-second-intermediate', 'source-ucl-ahmose'] }
   ];
 
-  const cards = [
+  const cards: Collection<'cards'> = [
     {
       id: 'ancient-egypt-gift-of-nile', kind: 'overview', primaryEntityId: 'ancient-egypt-civilization', relatedEntityIds: ['egypt-old-kingdom', 'egypt-middle-kingdom', 'egypt-new-kingdom', 'egypt-pyramids', 'egyptian-religion', 'egyptian-art', 'egyptian-hieroglyphs', 'late-bronze-palace-system', 'medinet-habu-war-records'], title: '尼罗河的赠礼',
       editorialPurpose: '以尼罗河提供的环境条件为入口，解释古埃及人如何通过劳动、国家组织、文字、图像和信仰把这些条件变成一个长期延续、又不断变化的文明。',
@@ -367,7 +380,7 @@ type SourceIds = readonly string[];
     ...additionalCards
   ];
 
-  const scenes = [
+  const scenes: Collection<'scenes'> = [
     {
       id: 'ancient-egypt-two-lands', title: '两片土地成为一个王国', eyebrow: '文明的政治起点', timeSpan: timeSpan(-3300, -2686, '约公元前3300—前2686年', true), eventIds: ['event-upper-lower-egypt-unified'],
       contentBlocks: [fact('ancient-egypt-two-lands-fact', '古王国开始前约四百年，尼罗河南方河谷与北方三角洲仍由不同的政治中心控制。约公元前3100年，一块石板把国王纳尔迈尔画了两次：一面戴南方白冠，一面戴北方红冠。画面宣告两片土地归于一王，后来的法老也一直自称“上下埃及之王”。', ['source-ucl-narmer'])],
@@ -716,7 +729,7 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     { id: 'nav-egypt-civilization-old', target: { cardId: 'egypt-old-kingdom-overview', sceneId: 'egypt-old-pyramids-horizon' }, basis: { kind: 'relatedCard', cardId: 'egypt-old-kingdom-overview' }, label: '进入金字塔时代的古王国', description: '从尼罗河边的长期文明，走进最早的大型金字塔与支撑它们的王国。' },
     { id: 'nav-egypt-civilization-pyramids', target: { cardId: 'egypt-pyramids-kingdom-at-work', sceneId: 'egypt-pyramid-merer-boats' }, basis: { kind: 'relatedCard', cardId: 'egypt-pyramids-kingdom-at-work' }, label: '走进金字塔工地', description: '跟着运石船、工匠和粮食，看看一座金字塔怎样让整个王国忙起来。' },
     { id: 'nav-egypt-civilization-hieroglyphs', target: { cardId: 'egyptian-hieroglyphs-words-sounds', sceneId: 'egypt-hieroglyph-word-sound' }, basis: { kind: 'relatedCard', cardId: 'egyptian-hieroglyphs-words-sounds' }, label: '读懂象形文字', description: '看看鸟、眼睛和流水的图形怎样同时记录词、声音与意义。' },
@@ -757,7 +770,7 @@ type SourceIds = readonly string[];
     { id: 'nav-egypt-art-hieroglyph', target: { cardId: 'egyptian-hieroglyphs-words-sounds', sceneId: 'egypt-hieroglyph-silent-guides' }, basis: { kind: 'relatedCard', cardId: 'egyptian-hieroglyphs-words-sounds' }, label: '看图形怎样帮助读者认词', description: '从会继续“做事”的墓室图像，转向动物朝向和不发音符号怎样引导阅读。' },
   ];
 
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     { id: 'placement-egypt-civilization-old-inline', navigationOptionId: 'nav-egypt-civilization-old', owner: { kind: 'scene', sceneId: 'ancient-egypt-pyramid-kingdom' }, slot: 'inline', rank: 1, visible: true, interactive: true },
     { id: 'placement-egypt-civilization-pyramids-inline', navigationOptionId: 'nav-egypt-civilization-pyramids', owner: { kind: 'scene', sceneId: 'ancient-egypt-pyramid-kingdom' }, slot: 'inline', rank: 2, visible: true, interactive: true },
     { id: 'placement-egypt-civilization-hieroglyphs-inline', navigationOptionId: 'nav-egypt-civilization-hieroglyphs', owner: { kind: 'scene', sceneId: 'ancient-egypt-visible-identity' }, slot: 'inline', rank: 1, visible: true, interactive: true },
@@ -798,14 +811,14 @@ type SourceIds = readonly string[];
     { id: 'placement-egypt-art-hieroglyph-inline', navigationOptionId: 'nav-egypt-art-hieroglyph', owner: { kind: 'scene', sceneId: 'egypt-art-images-work' }, slot: 'inline', rank: 1, visible: true, interactive: true },
   ];
 
-  const cameraPresets = [
+  const cameraPresets: Collection<'cameraPresets'> = [
     { id: 'camera-egypt-upper-lower', center: [31.4, 27.8], scale: 4.8 },
     { id: 'camera-egypt-middle-centers', center: [31.5, 27.8], scale: 5.2 },
     { id: 'camera-egypt-thebes-avaris', center: [32.1, 27.8], scale: 4.9 },
     { id: 'camera-egypt-new-reach', center: [33.2, 27.5], scale: 3.5 }
   ];
 
-  const geometries = [
+  const geometries: Collection<'geometries'> = [
     {
       id: 'geometry-egypt-upper-lower',
       geometry: { type: 'MultiPoint', coordinates: [[32.64, 25.69], [31.1, 30.7]] },
@@ -836,18 +849,18 @@ type SourceIds = readonly string[];
     }
   ];
 
-  const mapStates = [
+  const mapStates: Collection<'mapStates'> = [
     { id: 'map-egypt-upper-lower', cameraPresetId: 'camera-egypt-upper-lower', layers: [{ kind: 'geometry', geometryId: 'geometry-egypt-upper-lower', timeSpan: timeSpan(-3150, -3050, '上下埃及统一前后', true), sourceIds: ['source-ucl-narmer', 'source-natural-earth'] }] },
     { id: 'map-egypt-middle-centers', cameraPresetId: 'camera-egypt-middle-centers', layers: [{ kind: 'geometry', geometryId: 'geometry-egypt-middle-centers', timeSpan: timeSpan(-2250, -2010, '古王国结束至中王国初期', true), sourceIds: ['source-muller-old-kingdom-end', 'source-ucl-mentuhotep-ii', 'source-natural-earth'] }] },
     { id: 'map-egypt-thebes-avaris', cameraPresetId: 'camera-egypt-thebes-avaris', layers: [{ kind: 'geometry', geometryId: 'geometry-egypt-thebes-avaris', timeSpan: timeSpan(-1700, -1525, '底比斯与阿瓦里斯对峙时期', true), sourceIds: ['source-ucl-second-intermediate', 'source-ucl-ahmose', 'source-natural-earth'] }] },
     { id: 'map-egypt-new-reach', cameraPresetId: 'camera-egypt-new-reach', layers: [{ kind: 'geometry', geometryId: 'geometry-egypt-new-reach', timeSpan: timeSpan(-1550, -1258, '新王国向努比亚与西亚延伸', true), sourceIds: ['source-met-new-kingdom', 'source-ucl-nubia-new-kingdom', 'source-met-amarna-letters', 'source-bm-kadesh-sallier', 'source-natural-earth'] }] }
   ];
 
-  function associatedAnnotation(id: string, entityId: string, coordinates: readonly number[], sourceIds: SourceIds, placement: string, label: string): ContentRecord {
+  function associatedAnnotation(id: string, entityId: string, coordinates: Position, sourceIds: SourceIds, placement: ScreenPlacement, label: string): MapAnnotation {
     return { id, subject: { kind: 'entity', entityId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label };
   }
 
-  const mapAnnotations = [
+  const mapAnnotations: Collection<'mapAnnotations'> = [
     associatedAnnotation('annotation-ancient-egypt-nile-south', 'ancient-egypt-civilization', [32.64, 25.69], ['source-met-telling-time-egypt'], 'left', '南方河谷'),
     associatedAnnotation('annotation-ancient-egypt-nile-north', 'ancient-egypt-civilization', [31.1, 30.7], ['source-met-telling-time-egypt'], 'right', '北方三角洲'),
     associatedAnnotation('annotation-egypt-upper', 'egypt-old-kingdom', [32.64, 25.69], ['source-ucl-narmer'], 'left', '上埃及（南方河谷）'),
@@ -864,7 +877,7 @@ type SourceIds = readonly string[];
     associatedAnnotation('annotation-egypt-new-kadesh', 'egypt-new-kingdom', [36.5, 34.56], ['source-bm-kadesh-sallier', 'source-un-egypt-hatti-treaty'], 'right', '卡迭石')
   ];
 
-  const assets = [
+  const assets: Collection<'assets'> = [
     { id: 'asset-egypt-old-giza-pyramids', type: 'image', src: 'assets/images/ancient-egypt/old-kingdom-giza-pyramids.webp', title: '吉萨三座大金字塔', alt: '沙漠地平线上的胡夫、哈夫拉与孟卡拉金字塔实景照片，三座金字塔按远近排列。', sourceIds: ['source-wikimedia-giza-pyramids'] },
     { id: 'asset-egypt-old-unas-pyramid-texts', type: 'image', src: 'assets/images/ancient-egypt/old-kingdom-unas-pyramid-texts.webp', title: '乌尼斯金字塔墓室内的文字', alt: '乌尼斯金字塔墓室的历史照片，成列象形文字覆盖在石壁表面。', sourceIds: ['source-wikimedia-unas-pyramid-texts'] },
     { id: 'asset-egypt-old-mitry-statue', type: 'image', src: 'assets/images/ancient-egypt/old-kingdom-mitry-statue.webp', title: '官员米特里的木雕像', alt: '彩绘木雕表现站立的官员米特里，他短发、赤裸上身，穿着白色短裙。', sourceIds: ['source-met-mitry-statue'] },
@@ -913,9 +926,3 @@ type SourceIds = readonly string[];
     mapAnnotations,
     assets
   } satisfies ContentModule;
-
-const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
-  ATLAS_V5_ANCIENT_EGYPT?: ContentModule;
-};
-
-root.ATLAS_V5_ANCIENT_EGYPT = ancientEgyptData;

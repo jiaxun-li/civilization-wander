@@ -2,6 +2,9 @@ export type EntityId = string;
 export type CardId = string;
 export type SceneId = string;
 export type AssetId = string;
+export type SourceId = string;
+export type EventId = string;
+export type SourceIds = readonly SourceId[];
 
 export interface TimeSpan {
   readonly start?: number;
@@ -10,37 +13,143 @@ export interface TimeSpan {
   readonly approximate?: boolean;
 }
 
+export type LabeledTimeSpan = TimeSpan & { readonly label: string };
+
 export interface Entity {
   readonly id: EntityId;
   readonly type: string;
   readonly name: string;
   readonly canonicalSummary: string;
+  readonly level?: string;
+  readonly alternativeNames?: readonly string[];
   readonly timeSpan?: TimeSpan;
+  readonly tags?: readonly string[];
+  readonly sourceIds: SourceIds;
+}
+
+export interface Source {
+  readonly id: SourceId;
+  readonly title: string;
+  readonly author?: string;
+  readonly year?: number;
+  readonly publisher?: string;
+  readonly url?: string;
+}
+
+export interface TextClaim {
+  readonly id: string;
+  readonly kind:
+    | 'geographyObservation'
+    | 'editorialSynthesis'
+    | 'sourceNote';
+  readonly text: string;
+  readonly sourceIds: SourceIds;
+}
+
+export interface HistoricalFactClaim {
+  readonly id: string;
+  readonly kind: 'historicalFact';
+  readonly text: string;
+  readonly timeSpan?: TimeSpan;
+  readonly eventIds?: readonly EventId[];
+  readonly entityIds?: readonly EntityId[];
+  readonly sourceIds: SourceIds;
+}
+
+export interface HistoricalCaseClaim {
+  readonly id: string;
+  readonly kind: 'historicalCase';
+  readonly title: string;
+  readonly text: string;
+  readonly timeSpan?: TimeSpan;
+  readonly eventIds: readonly EventId[];
+  readonly entityIds?: readonly EntityId[];
+  readonly sourceIds: SourceIds;
+}
+
+export interface InterpretationClaim {
+  readonly id: string;
+  readonly kind: 'interpretation';
+  readonly text: string;
+  readonly attribution?: string;
+  readonly sourceIds: SourceIds;
+}
+
+export interface NarrativeTransitionClaim {
+  readonly id: string;
+  readonly kind: 'narrativeTransition';
+  readonly text: string;
+}
+
+export interface MechanismClaim {
+  readonly id: string;
+  readonly kind: 'mechanism';
+  readonly statement: string;
+  readonly steps: readonly string[];
+  readonly sourceIds: SourceIds;
+}
+
+export interface LimitationClaim {
+  readonly id: string;
+  readonly kind: 'limitation';
+  readonly text: string;
+  readonly addressesBlockIds?: readonly string[];
+  readonly sourceIds: SourceIds;
+}
+
+export interface AssetClaim {
+  readonly id: string;
+  readonly kind: 'asset';
+  readonly assetId: AssetId;
+  readonly caption?: string;
+  readonly sourceIds: SourceIds;
+}
+
+export type ClaimBlock =
+  | TextClaim
+  | HistoricalFactClaim
+  | HistoricalCaseClaim
+  | InterpretationClaim
+  | NarrativeTransitionClaim
+  | MechanismClaim
+  | LimitationClaim
+  | AssetClaim;
+
+export type PublicClaimBlock = Exclude<ClaimBlock, LimitationClaim>;
+
+export interface EditorialReview {
+  readonly limitations: readonly LimitationClaim[];
+  readonly counterexamples: readonly HistoricalCaseClaim[];
+  readonly uncertainties: readonly InterpretationClaim[];
+  readonly alternativeExplanations: readonly InterpretationClaim[];
+  readonly sourceIds: SourceIds;
+}
+
+export interface Event {
+  readonly id: EventId;
+  readonly kind: 'historicalEvent' | 'historicalProcess' | 'textualTradition' | 'traditionalNarrative';
+  readonly title: string;
+  readonly timeSpan: TimeSpan;
+  readonly participantEntityIds: readonly EntityId[];
+  readonly evidenceBlocks: readonly PublicClaimBlock[];
+  readonly sourceIds: SourceIds;
+  readonly editorialReview: EditorialReview;
 }
 
 export interface Card {
   readonly id: CardId;
   readonly title: string;
+  readonly kind: string;
   readonly primaryEntityId: EntityId;
   readonly sceneIds: readonly SceneId[];
   readonly relatedEntityIds: readonly EntityId[];
   readonly introduction: string;
+  readonly editorialPurpose: string;
+  readonly thesis: { readonly text: string; readonly sourceIds: SourceIds };
   readonly timeSpan: TimeSpan;
+  readonly sourceIds: SourceIds;
+  readonly editorialReview: EditorialReview;
 }
-
-export type TextClaimKind =
-  | 'geographyObservation'
-  | 'historicalFact'
-  | 'interpretation'
-  | 'editorialSynthesis'
-  | 'narrativeTransition'
-  | 'sourceNote';
-
-export type ClaimBlock =
-  | { readonly kind: 'historicalCase'; readonly title: string; readonly text: string }
-  | { readonly kind: 'mechanism'; readonly statement: string; readonly steps: readonly string[] }
-  | { readonly kind: 'asset'; readonly assetId: AssetId; readonly caption?: string }
-  | { readonly kind: TextClaimKind; readonly text: string };
 
 export interface TextOnlyPresentation {
   readonly kind: 'textOnly';
@@ -55,23 +164,26 @@ export interface MapPresentationConfig {
   readonly mapStateId: string;
   readonly structureViewIds: readonly string[];
   readonly caption?: string;
-  readonly transition?: CameraTransition;
-  readonly layers?: readonly MapPresentationLayer[];
-  readonly [key: string]: unknown;
+  readonly transition: CameraTransition;
+  readonly layers: readonly MapPresentationLayer[];
 }
 
 export type CameraTransition = 'cut' | 'ease' | 'hold';
 
 export type MapPresentationLayer =
   | {
-      readonly kind: 'navigation';
-      readonly navigationOptionId: string;
-      readonly annotationId: string;
-    }
-  | {
       readonly kind: 'entity';
       readonly entityId: EntityId;
       readonly annotationId: string;
+      readonly timeSpan?: TimeSpan;
+      readonly sourceIds: SourceIds;
+    }
+  | {
+      readonly kind: 'navigation';
+      readonly navigationOptionId: string;
+      readonly annotationId: string;
+      readonly timeSpan?: TimeSpan;
+      readonly sourceIds: SourceIds;
     };
 
 export interface MapPresentation {
@@ -84,11 +196,13 @@ export type ScenePresentation = TextOnlyPresentation | ImagePresentation | MapPr
 export interface Scene {
   readonly id: SceneId;
   readonly title: string;
-  readonly timeSpan: TimeSpan & { readonly label: string };
+  readonly eyebrow?: string;
+  readonly timeSpan: LabeledTimeSpan;
   readonly timeDisplay?: 'year' | 'undatedNarrative';
-  readonly contentBlocks: readonly ClaimBlock[];
-  readonly eventIds: readonly string[];
+  readonly contentBlocks: readonly PublicClaimBlock[];
+  readonly eventIds: readonly EventId[];
   readonly presentation: ScenePresentation;
+  readonly sourceIds: SourceIds;
 }
 
 export interface ImageAsset {
@@ -97,6 +211,7 @@ export interface ImageAsset {
   readonly src: string;
   readonly title: string;
   readonly alt: string;
+  readonly sourceIds: SourceIds;
 }
 
 export interface DataAsset {
@@ -105,11 +220,10 @@ export interface DataAsset {
   readonly src: string;
   readonly title: string;
   readonly alt: string;
+  readonly sourceIds: SourceIds;
 }
 
 export type Asset = ImageAsset | DataAsset;
-
-export type ContentRecord = Readonly<Record<string, unknown>>;
 
 export type ContentModuleCollectionName =
   | 'sources'
@@ -127,17 +241,41 @@ export type ContentModuleCollectionName =
   | 'mapAnnotations'
   | 'assets';
 
-export type ContentModule = {
-  readonly [Collection in ContentModuleCollectionName]: readonly ContentRecord[];
+export type ContentModuleCollectionMap = {
+  readonly sources: readonly Source[];
+  readonly entities: readonly Entity[];
+  readonly events: readonly Event[];
+  readonly structuralEdges: readonly StructuralEdge[];
+  readonly cards: readonly Card[];
+  readonly scenes: readonly Scene[];
+  readonly structureViews: readonly StructureView[];
+  readonly navigationOptions: readonly NavigationOption[];
+  readonly navigationPlacements: readonly NavigationPlacement[];
+  readonly cameraPresets: readonly CameraPreset[];
+  readonly mapStates: readonly MapState[];
+  readonly geometries: readonly HistoricalGeometry[];
+  readonly mapAnnotations: readonly MapAnnotation[];
+  readonly assets: readonly Asset[];
 };
+
+export type ContentModule = Readonly<ContentModuleCollectionMap>;
 
 export interface AtlasData {
   readonly schemaVersion: 5;
+  readonly sources: readonly Source[];
   readonly entities: readonly Entity[];
+  readonly events: readonly Event[];
+  readonly structuralEdges: readonly StructuralEdge[];
   readonly cards: readonly Card[];
   readonly scenes: readonly Scene[];
+  readonly structureViews: readonly StructureView[];
+  readonly navigationOptions: readonly NavigationOption[];
+  readonly navigationPlacements: readonly NavigationPlacement[];
+  readonly cameraPresets: readonly CameraPreset[];
+  readonly mapStates: readonly MapState[];
+  readonly geometries: readonly HistoricalGeometry[];
+  readonly mapAnnotations: readonly MapAnnotation[];
   readonly assets: readonly Asset[];
-  readonly [collection: string]: unknown;
 }
 
 export interface ValidationResult {
@@ -176,35 +314,68 @@ export interface NavigationOption {
     readonly cardId: CardId;
     readonly sceneId?: SceneId;
   };
-  readonly basis?:
+  readonly entry?: { readonly kind: 'targetScene' };
+  readonly basis:
     | { readonly kind: 'structuralEdge'; readonly structuralEdgeId: string }
     | { readonly kind: 'relatedCard'; readonly cardId: CardId }
-    | { readonly kind: 'event'; readonly eventId: string };
+    | { readonly kind: 'event'; readonly eventId: EventId }
+    | { readonly kind: 'editorial'; readonly sourceIds: SourceIds };
 }
 
-export interface NavigationPlacement {
-  readonly id?: string;
+interface NavigationPlacementBase {
+  readonly id: string;
   readonly navigationOptionId: string;
+  readonly rank: number;
   readonly visible: boolean;
   readonly interactive: boolean;
 }
 
+export type NavigationPlacement =
+  | NavigationPlacementBase & {
+      readonly owner: { readonly kind: 'scene'; readonly sceneId: SceneId };
+      readonly slot: 'inline' | 'map';
+    }
+  | NavigationPlacementBase & {
+      readonly owner: { readonly kind: 'card'; readonly cardId: CardId };
+      readonly slot: 'closing';
+    };
+
 export interface StructuralEdge {
   readonly id: string;
-  readonly label?: { readonly forward?: string; readonly reverse?: string };
-  readonly summaries?: { readonly canonical?: string };
+  readonly family: string;
+  readonly type: string;
+  readonly source: GraphEndpoint;
+  readonly target: GraphEndpoint;
+  readonly timeSpan?: TimeSpan;
+  readonly label: { readonly forward: string; readonly reverse?: string };
+  readonly summaries: {
+    readonly canonical: string;
+    readonly forward?: string;
+    readonly reverse?: string;
+  };
+  readonly qualifiers?: readonly string[];
+  readonly sourceIds: SourceIds;
 }
 
-export interface GraphEndpoint {
-  readonly kind: string;
-  readonly id: string;
-}
+export type GraphEndpoint =
+  | { readonly kind: 'entity'; readonly id: EntityId }
+  | { readonly kind: 'event'; readonly id: EventId };
 
 export interface StructureView {
   readonly id: string;
   readonly family: string;
   readonly title: string;
-  readonly [key: string]: unknown;
+  readonly query: {
+    readonly endpointKinds?: readonly ('entity' | 'event')[];
+    readonly edgeFamilies?: readonly string[];
+    readonly edgeTypes?: readonly string[];
+    readonly direction: 'incoming' | 'outgoing' | 'both';
+    readonly timeSpan?: TimeSpan;
+  };
+  readonly maxVisible: number;
+  readonly includeEntityIds?: readonly EntityId[];
+  readonly display: string;
+  readonly depth?: number;
 }
 
 export interface NavigationTrailEntry {
@@ -330,7 +501,14 @@ export interface CardReaderModule {
 export interface MapState {
   readonly id: string;
   readonly cameraPresetId: string;
-  readonly layers: readonly { readonly geometryId: string }[];
+  readonly layers: readonly GeometryMapLayer[];
+}
+
+export interface GeometryMapLayer {
+  readonly kind: 'geometry';
+  readonly geometryId: string;
+  readonly timeSpan: TimeSpan;
+  readonly sourceIds: SourceIds;
 }
 
 export type Position = readonly [number, number];
@@ -347,12 +525,14 @@ export type GeometryShape =
 export interface HistoricalGeometry {
   readonly id: string;
   readonly geometry: GeometryShape;
+  readonly timeSpan: TimeSpan;
   readonly approximate: boolean;
   readonly label: string;
+  readonly sourceIds: SourceIds;
 }
 
 export interface CameraPreset {
-  readonly id?: string;
+  readonly id: string;
   readonly center: Position;
   readonly scale: number;
 }
@@ -374,7 +554,13 @@ export type AnnotationAnchor =
 
 export interface MapAnnotation {
   readonly id: string;
+  readonly subject:
+    | { readonly kind: 'entity'; readonly entityId: EntityId }
+    | { readonly kind: 'navigation'; readonly navigationOptionId: string };
   readonly anchor: AnnotationAnchor;
+  readonly anchorMeaning: 'locatedAt' | 'associatedWith' | 'screenCallout';
+  readonly approximate: boolean;
+  readonly sourceIds: SourceIds;
   readonly placement: ScreenPlacement;
   readonly label?: string;
 }

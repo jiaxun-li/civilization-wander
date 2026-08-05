@@ -1,15 +1,18 @@
-(function exposeModuleGateFixture(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_MODULE_GATE_FIXTURE = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createModuleGateFixture() {
-  'use strict';
+  import type {
+    ContentModule,
+    ContentModuleCollectionMap,
+    EditorialReview,
+    HistoricalCaseClaim
+  } from '../../src/types/runtime.ts';
 
-  const sources = [
+  type Collection<Name extends keyof ContentModuleCollectionMap> = ContentModuleCollectionMap[Name];
+  type CollectionItem<Name extends keyof ContentModuleCollectionMap> = Collection<Name>[number];
+
+  const sources: Collection<'sources'> = [
     { id: 'fixture-source-a', title: 'Fixture source A' },
     { id: 'fixture-source-b', title: 'Fixture source B' }
   ];
-  const entities = [
+  const entities: Collection<'entities'> = [
     {
       id: 'fixture-entity-a', type: 'person', name: '甲',
       canonicalSummary: '用于模块门禁成功路径的第一个稳定身份。',
@@ -22,7 +25,7 @@
     }
   ];
 
-  function editorialReview(prefix, addressedBlockId) {
+  function editorialReview(prefix: string, addressedBlockId: string): EditorialReview {
     return {
       limitations: [{
         id: `${prefix}-limitation`, kind: 'limitation',
@@ -37,7 +40,7 @@
     };
   }
 
-  const events = ['a', 'b'].map(letter => ({
+  const events: Collection<'events'> = ['a', 'b'].map((letter): CollectionItem<'events'> => ({
     id: `fixture-event-${letter}`,
     kind: 'historicalEvent',
     title: `测试事件${letter.toUpperCase()}`,
@@ -57,7 +60,7 @@
     )
   }));
 
-  function cases(letter) {
+  function cases(letter: string): HistoricalCaseClaim[] {
     return [1, 2].map(number => ({
       id: `fixture-scene-${letter}-case-${number}`,
       kind: 'historicalCase',
@@ -70,7 +73,7 @@
     }));
   }
 
-  const scenes = ['a', 'b'].map(letter => ({
+  const scenes: Collection<'scenes'> = ['a', 'b'].map((letter): CollectionItem<'scenes'> => ({
     id: `fixture-scene-${letter}`,
     title: `测试段落${letter.toUpperCase()}`,
     timeSpan: { start: 100, end: 100, label: '公元100年' },
@@ -80,7 +83,7 @@
     sourceIds: ['fixture-source-a', 'fixture-source-b']
   }));
 
-  const cards = ['a', 'b'].map(letter => ({
+  const cards: Collection<'cards'> = ['a', 'b'].map((letter): CollectionItem<'cards'> => ({
     id: `fixture-card-${letter}`,
     kind: 'historicalStory',
     primaryEntityId: `fixture-entity-${letter}`,
@@ -101,7 +104,7 @@
     )
   }));
 
-  const navigationOptions = [
+  const navigationOptions: Collection<'navigationOptions'> = [
     {
       id: 'fixture-navigation-a-to-b',
       target: { cardId: 'fixture-card-b', sceneId: 'fixture-scene-b' },
@@ -117,7 +120,7 @@
       description: '从另一项完整 fixture 检查双向导航。'
     }
   ];
-  const navigationPlacements = [
+  const navigationPlacements: Collection<'navigationPlacements'> = [
     {
       id: 'fixture-placement-a-to-b',
       navigationOptionId: 'fixture-navigation-a-to-b',
@@ -132,7 +135,7 @@
     }
   ];
 
-  return {
+  export const fixtureData = {
     sources,
     entities,
     events,
@@ -147,5 +150,4 @@
     geometries: [],
     mapAnnotations: [],
     assets: []
-  };
-}));
+  } satisfies ContentModule;

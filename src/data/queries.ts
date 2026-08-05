@@ -413,7 +413,7 @@ if (!defaultData) throw new Error('ATLAS_V5_DATA must load before queries');
     }
 
     function getEdgesForEndpoint(
-      endpointOrKind: GraphEndpoint | string,
+      endpointOrKind: GraphEndpoint | GraphEndpoint['kind'],
       idOrOptions: string | EdgeQueryOptions = {},
       maybeOptions: EdgeQueryOptions = {}
     ): QueryStructuralEdge[] {
