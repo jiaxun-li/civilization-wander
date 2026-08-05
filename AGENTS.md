@@ -513,6 +513,10 @@ only client-side runtime dependencies and currently own only the home view:
 - `src/reader/card-header.ts` renders the Card coordinate, title, and
   introduction with React from an App-owned typed view model; Scene content
   and Reader lifecycle remain outside that root.
+- Do not add nested React roots inside Scene, image, map, or SVG subtrees that
+  Reader, App, or Map Renderer still mutate imperatively. The next Card/Scene
+  phase requires one approved React Card-tree boundary and explicit media/map
+  ports before replacing the string renderer.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.

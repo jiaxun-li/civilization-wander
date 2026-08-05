@@ -452,6 +452,23 @@ pnpm run test:browser
 
 ## 19. 已知限制与未来演进方向
 
+### 19.1 React 渐进迁移边界
+
+当前 React root 都是明确的叶子边界：首页、品牌 Header、返回／足迹、导航预览、媒体说明和 Card 标题区。它们只接收 App 或 Reader 提供的类型化视图模型与意图回调，不直接拥有 schema 数据、浏览器 history、Reader 生命周期、地图状态或图片切换。`onBeforeCardChange` 必须先卸载位于旧 Card DOM 内的 React root，再由 Reader 替换 Card markup；不得直接删除仍由 React 管理的节点。
+
+尚未迁移的 Card/Scene 正文、导航小卡、图片／地图容器和 SVG 地图仍由 `card-components.ts`、Reader、App 与 Map Renderer 协作管理。Reader 会替换 Card 根 markup、绑定导航与 `IntersectionObserver`；App 会向媒体容器插入图片并控制淡入淡出；Map Renderer 会更新同一容器下的 SVG 子树。因此下一阶段不能继续在 Scene、地图或图片容器内部零散增加 React root，也不能让 React 重渲染仍被这些模块命令式修改的祖先节点。
+
+下一阶段必须作为一个完整 Reader/Card 边界设计后再实施：
+
+1. 先定义单一 React Card tree 的 props、Scene 激活状态、导航意图和媒体 port；
+2. 让 Reader 从“替换 HTML 与绑定节点”收缩为 history、observer 与状态控制器；
+3. 通过稳定 ref/port 把地图和图片过渡接入 React Card tree，保持 Map Renderer 自己的 SVG 生命周期；
+4. 真实浏览器覆盖直达 Scene、滚动激活、跨 Card、返回恢复、粗指针预览和媒体继承后，才删除旧字符串 renderer 与 fallback。
+
+在这套边界获批前，当前叶子迁移状态是有意的稳定停靠点，不应以多个嵌套小 root 临时包住 Scene 正文。
+
+### 19.2 其他已知限制
+
 1. Event 已是一级数据和查询对象，但没有独立公共路由或 Event 页面；当前通过 Card 与关系被发现。
 2. 来源已下沉到 ClaimBlock/证据/地图对象，公共 UI 尚未显示行内 citation 或来源面板。
 3. 新增图片仍须使用本地 WebP Asset，并通过文件存在性、体积、尺寸、alt 与 provenance 校验；Scene 媒体按原比例居中完整显示，余白使用 `#c8cbbb`。
@@ -526,6 +543,7 @@ pnpm run test:browser
 | `tests/integration/app-history.test.js` | Card→home→Card 的快照顺序，以及媒体同 Card 保留/跨 Card 重置。 |
 | `tests/integration/runtime.test.js` | 活动 V5 入口隔离、清单一致性、validate-first、品牌/回调/可访问性静态契约。 |
 | `tests/integration/pages.test.js` | Vite 单入口、本地导入、无远程运行时、Pages base/Asset 复制与 package scripts。 |
+| `tests/integration/react-components.test.js` | React 首页与叶子外壳的真实静态输出、稳定属性、可访问语义和自动转义契约。 |
 | `tests/fixtures/local-image.svg` | image presentation/Asset 负测与边界校验 fixture。 |
 
 ### 20.4 说明与配置
