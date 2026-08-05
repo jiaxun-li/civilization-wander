@@ -17,7 +17,7 @@ const packageJson = JSON.parse(read('package.json'));
 const syntaxFiles = [...packageJson.scripts['check:syntax'].matchAll(/node --check ([^ &]+)/g)]
   .map(match => match[1]);
 
-const worldIndex = entryImports.indexOf('data/world-physical.js');
+const worldIndex = entryImports.indexOf('src/data/world-physical.ts');
 const atlasIndex = entryImports.indexOf('src/data/atlas-data.ts');
 const entryModules = entryImports.slice(worldIndex + 1, atlasIndex);
 const errors = [];
@@ -25,7 +25,7 @@ const errors = [];
 if (!/<script\s+type="module"\s+src="\/src\/main\.ts"><\/script>/.test(html)) {
   errors.push('index.html does not load /src/main.ts as its module entrypoint');
 }
-if (worldIndex < 0) errors.push('src/main.ts does not import data/world-physical.js');
+if (worldIndex < 0) errors.push('src/main.ts does not import src/data/world-physical.ts');
 if (atlasIndex < 0) errors.push('src/main.ts does not import src/data/atlas-data.ts');
 if (JSON.stringify(entryModules) !== JSON.stringify(atlasModules)) {
   errors.push(`content module order differs:\nentrypoint=${entryModules.join(', ')}\naggregator=${atlasModules.join(', ')}`);

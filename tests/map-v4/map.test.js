@@ -7,7 +7,7 @@ const vm = require('node:vm');
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 const mapModule = require('../../src/map/map-renderer.ts');
-const naturalEarthModule = require('../../assets/natural-earth/base.js');
+const naturalEarthModule = require('../../src/map/natural-earth-base.ts');
 
 function classList() {
   const values = new Set();
@@ -133,7 +133,7 @@ function worldBase() {
   if (cachedWorldBase) return cachedWorldBase;
   const sandbox = { window: {} };
   vm.runInNewContext(
-    fs.readFileSync(path.resolve(__dirname, '../../data/world-physical.js'), 'utf8'),
+    fs.readFileSync(path.resolve(__dirname, '../../src/data/world-physical.ts'), 'utf8'),
     sandbox
   );
   cachedWorldBase = naturalEarthModule.createNaturalEarthBase(sandbox.window.ATLAS_WORLD_VECTOR);

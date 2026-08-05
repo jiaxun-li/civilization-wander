@@ -33,7 +33,7 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'styles.css',
     'styles/v4/cards.css',
     'styles/v4/map.css',
-    'data/world-physical.js',
+    'src/data/world-physical.ts',
     'data/mesopotamia.js',
     'data/ancient-egypt.js',
     'data/ancient-india.js',
@@ -45,7 +45,7 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'src/data/queries.ts',
     'src/reader/card-components.ts',
     'src/reader/card-reader.ts',
-    'assets/natural-earth/base.js',
+    'src/map/natural-earth-base.ts',
     'src/map/map-renderer.ts',
     'src/app.ts'
   ]);

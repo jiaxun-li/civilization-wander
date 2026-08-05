@@ -16,17 +16,17 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader 与 Map 已迁移为 TypeScript，内容数据、查询和本地底图 adapter 仍按依赖顺序加载 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
+`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader、Map、查询、聚合器与本地底图 adapter 已迁移为 TypeScript，七个内容模块和 Node 文件校验 adapter 仍按依赖顺序加载 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
 
 聚合器与语法清单必须和 `src/main.ts` 保持同一内容模块顺序；`scripts/check-runtime-manifests.js` 从 HTML 入口、TypeScript 入口、聚合器与语法清单读取现状并做只读比较，不再由文档保存另一份模块清单。运行时依赖层次是：
 
-1. `data/world-physical.js`
+1. `src/data/world-physical.ts`
 2. `data/` 下由入口列出的各内容模块
 3. `src/data/atlas-data.ts`
 4. `src/data/queries.ts`（按需通过 `data/query-node-runtime.js` 获得 Node 文件检查能力）
 5. `src/reader/card-components.ts`
 6. `src/reader/card-reader.ts`
-7. `assets/natural-earth/base.js`
+7. `src/map/natural-earth-base.ts`
 8. `src/map/map-renderer.ts`
 9. `src/app.ts`
 
@@ -35,7 +35,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 ```mermaid
 flowchart TD
     HTML["index.html"] --> ENTRY["src/main.ts\nVite module entry"]
-    ENTRY --> WP["data/world-physical.js\nATLAS_WORLD_VECTOR"]
+    ENTRY --> WP["src/data/world-physical.ts\nATLAS_WORLD_VECTOR"]
     ENTRY --> CM["data/content-module.js\nATLAS_V5_* content globals"]
     ENTRY --> D["src/data/atlas-data.ts\nATLAS_V5_DATA"]
     CM --> D
@@ -43,7 +43,7 @@ flowchart TD
     Q --> C["src/reader/card-components.ts\nATLAS_V5_CARDS"]
     Q --> R["src/reader/card-reader.ts\nATLAS_V5_CARD_READER"]
     C --> R
-    WP --> B["assets/natural-earth/base.js\nATLAS_NATURAL_EARTH"]
+    WP --> B["src/map/natural-earth-base.ts\nATLAS_NATURAL_EARTH"]
     Q --> M["src/map/map-renderer.ts\nATLAS_V5_MAP"]
     B --> M
     D --> A["src/app.ts\nATLAS_V5_APP"]
@@ -280,7 +280,7 @@ Reader 用生命周期 `generation`、前进入场 `sequence` 和逐次渲染 `r
 
 ## 8. 地图投影、镜头、几何与节点更新
 
-地图是一个固定 `viewBox="0 0 1000 700"` 的本地 SVG。`data/world-physical.js` 提供 4096 坐标空间的 Natural Earth 数据，adapter 在初始化时一次性拆分陆地子路径，并为陆地、全部湖泊和全部 rank≤6 河流缓存路径范围。renderer 汇总当前 Card 所有地图 Scene 的 CameraPreset，以这些镜头范围的并集各生成一个地区陆地、湖泊和河流 SVG 路径；同 Card 的 Scene 切换只移动镜头和更新历史覆盖层，不再改写底图路径。这样既避免任意数量截断破坏河网连续性，也不绘制完整世界底图。运行时没有 tile、字体、影像或 API 请求，也没有拖拽、滚轮缩放、平移或底图切换控件。
+地图是一个固定 `viewBox="0 0 1000 700"` 的本地 SVG。`src/data/world-physical.ts` 提供 4096 坐标空间的 Natural Earth 数据，adapter 在初始化时一次性拆分陆地子路径，并为陆地、全部湖泊和全部 rank≤6 河流缓存路径范围。renderer 汇总当前 Card 所有地图 Scene 的 CameraPreset，以这些镜头范围的并集各生成一个地区陆地、湖泊和河流 SVG 路径；同 Card 的 Scene 切换只移动镜头和更新历史覆盖层，不再改写底图路径。这样既避免任意数量截断破坏河网连续性，也不绘制完整世界底图。运行时没有 tile、字体、影像或 API 请求，也没有拖拽、滚轮缩放、平移或底图切换控件。
 
 `projectPoint()` 使用 Web Mercator 并限制纬度；`geometryToPath()` 支持六种正式 GeoJSON geometry。`cameraTransform()` 把 CameraPreset center 投到 4096 空间，以 SVG 中心 `(500,350)` 对齐，并按 `scale * 1000 / worldSize` 计算变换。几何 path 按 ID 缓存。
 
@@ -432,13 +432,15 @@ pnpm run check:manifests
 pnpm run check:pages
 pnpm run report:counts
 pnpm build
+pnpm run test:browser:install # 每台机器首次运行一次
+pnpm run test:browser
 ```
 
 若 `node`/`pnpm` 未加入 PATH，可直接调用本机 Codex runtime 的 Node 与 pnpm，再传递 `package.json` 中相同参数。本文不保存某次运行的测试数量、通过数量、首载字节数或集合计数；这些结果必须在验收时由当前命令重新生成。
 
-全套测试覆盖 V5 schema/content/query/validation、独立内容模块汇总、Asset manifest、Cards/Reader、Map、E2E、应用 history、媒体继承与跨 Card 重置、图片比例与淡入淡出、地图覆盖 UI 隐藏、同步回顶、异步 restore 失效、overlay 差量与反转竞态、Vite 入口/聚合器/语法清单一致性、Pages 构建约束和 reduced motion。这些模拟 DOM、竞态探针与静态契约仍不替代真实浏览器。
+全套 Node 测试覆盖 V5 schema/content/query/validation、独立内容模块汇总、Asset manifest、Cards/Reader、Map、E2E、应用 history、媒体继承与跨 Card 重置、图片比例与淡入淡出、地图覆盖 UI 隐藏、同步回顶、异步 restore 失效、overlay 差量与反转竞态、Vite 入口/聚合器/语法清单一致性、Pages 构建约束和 reduced motion。`pnpm test:browser` 则用真实 Chromium 打开 `dist/`，检查首页、Card 进入、Scene 滚动激活、主要图片、控制台错误和关键资源失败。
 
-真实浏览器验收应通过 Vite 本地开发服务器或正式产物预览按第 16 节第 12 项执行；不要把 Node 模拟与静态检查写成实机通过。
+自动化生产浏览器门禁覆盖关键冒烟路径，但不能代替第 16 节第 12 项中的完整桌面、移动、历史导航、键盘和 reduced-motion 人工验收；不要把 Node 模拟、静态检查或单条浏览器冒烟测试写成全量实机通过。
 
 ## 18. Vite、静态部署与地图产物约束
 
@@ -446,8 +448,8 @@ pnpm build
 - 不得为核心内容请求远程地图、字体、API 或图片。Source URL 只是元数据。
 - URL 主身份保持 `#card/<cardId>/<optionalSceneId>`；Scene ID 用于区段定位和恢复，不成为全局故事节点。
 - `vite.config.mts` 使用 `/civilization-wander/` 作为 GitHub Pages 项目路径；`pnpm build` 将应用与本地运行时资源输出到 `dist/`，并复制 `.nojekyll`。
-- `.github/workflows/deploy-pages.yml` 在 `main` 推送后执行测试、构建和 Pages 发布；Pages 来源必须设置为 GitHub Actions，不能再直接托管仓库根目录。
-- 当前地图产物是 `data/world-physical.js` 和 `assets/natural-earth/base.js`：前者保存本地 Natural Earth 矢量数据，后者负责筛选、冻结和缓存。两者都是受版本控制的运行时产物；运行时内容图片位于 `assets/images/` 并统一编码为 WebP，当前仓库不包含地图上游原料或构建链。
+- `.github/workflows/deploy-pages.yml` 在 `main` 推送后执行测试、构建与生产 Chromium 验收；只有全部通过才发布 Pages，失败时保存 Playwright 报告和追踪。Pages 来源必须设置为 GitHub Actions，不能再直接托管仓库根目录。
+- 当前地图产物是 `src/data/world-physical.ts` 和 `src/map/natural-earth-base.ts`：前者保存本地 Natural Earth 矢量数据，后者负责筛选、冻结和缓存。两者都是受版本控制并接受 TypeScript 检查的运行时产物；运行时内容图片位于 `assets/images/` 并统一编码为 WebP，当前仓库不包含地图上游原料或构建链。
 
 ## 19. 已知限制与未来演进方向
 
@@ -497,8 +499,10 @@ pnpm build
 | `src/reader/card-components.ts` | 类型化并语义转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML；继续暴露 `ATLAS_V5_CARDS` 浏览器兼容接口。 |
 | `src/reader/card-reader.ts` | 类型化的 Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫；继续暴露 `ATLAS_V5_CARD_READER` 浏览器兼容接口。 |
 | `src/map/map-renderer.ts` | 类型化的本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理；继续暴露 `ATLAS_V5_MAP` 浏览器兼容接口。 |
-| `data/world-physical.js` | 活动生成的 Natural Earth 4096 坐标底图数据。 |
-| `assets/natural-earth/base.js` | 底图 adapter、筛选、冻结与缓存。 |
+| `src/data/world-physical.ts` | 活动生成、受 TypeScript 接口约束的 Natural Earth 4096 坐标底图数据。 |
+| `src/map/natural-earth-base.ts` | TypeScript 底图 adapter、筛选、冻结与缓存。 |
+| `playwright.config.ts` | 正式构建的 Chromium 验收配置、Pages 子路径与失败报告策略。 |
+| `tests/browser/production-smoke.spec.ts` | 首页进入 Card、Scene 滚动、图片加载、控制台与关键资源错误的生产冒烟验收。 |
 
 ### 20.3 测试与 fixture
 
@@ -524,7 +528,7 @@ pnpm build
 | `AGENTS.md` | 当前产品、编辑、数据和工程约束。 |
 | `README.md` | V5 运行、内容范围、架构和维护入口。 |
 | `docs/ARCHITECTURE_AND_DATA_MODEL.md` | 本文；正式字段、运行调用链和内容接入手册。 |
-| `.github/workflows/deploy-pages.yml` | 测试、构建并将 `dist/` 发布到 GitHub Pages。 |
+| `.github/workflows/deploy-pages.yml` | 测试、构建、运行生产浏览器门禁并将通过验收的 `dist/` 发布到 GitHub Pages。 |
 | `.nojekyll` | 构建时复制到 Pages 产物，避免 Jekyll 处理。 |
 | `.gitignore` | 仓库忽略规则。 |
 

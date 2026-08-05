@@ -282,7 +282,10 @@ should be concise and shown only when a map is present.
   TypeScript directly; Node.js 24 LTS is the recommended local version.
 - Local preview must work through `pnpm dev` and the production build through
   `pnpm build` plus `pnpm preview`; direct `file://` loading is not supported.
-- Content must remain available from local JavaScript data files.
+- Content and generated map data must remain available from local,
+  version-controlled modules.
+- Production-browser acceptance uses `pnpm test:browser` after `pnpm build`;
+  install its local Chromium once with `pnpm run test:browser:install`.
 - Do not add runtime network requests for core content or navigation.
 - Do not require a remote map, remote font, or API. A local Vite server is the
   supported development and preview path.
@@ -442,7 +445,8 @@ After taking exclusive integration ownership, the Integration Agent must:
 5. update fixed loading-order and integration tests;
 6. run the complete validator;
 7. run syntax checks and the full test suite;
-8. verify the Vite development or production preview, direct Card/Scene links, desktop and mobile
+8. run `pnpm test:browser` against the production build, then verify any
+   interaction not covered by that smoke test in the Vite development or production preview, direct Card/Scene links, desktop and mobile
    navigation, coarse-pointer Preview behavior, back/forward restoration,
    reduced motion, and browser console errors;
 9. synchronize README, architecture documentation, and affected workflow
@@ -502,6 +506,8 @@ The current runtime is a Vite-built V5 prototype with no client-side runtime dep
   position, and dispatches presentation changes.
 - `src/map/map-renderer.ts` renders a local Natural Earth SVG map and optional
   historical overlays.
+- `src/data/world-physical.ts` stores the generated local Natural Earth vector,
+  and `src/map/natural-earth-base.ts` is its typed filtering and bounds adapter.
 - Hash routes use the Card as the primary destination and may include a Scene
   section for reading restoration and refresh stability.
 - The repository keeps only the active V5 runtime and current generated map
@@ -563,6 +569,9 @@ A map is not part of the completion requirement.
 - Update validation whenever the schema changes.
 - Add negative tests proving invalid data is rejected.
 - Run syntax checks and the full relevant test suite after implementation.
+- Changes to startup, routing, Reader, scrolling, or media loading must also pass
+  `pnpm build` followed by `pnpm test:browser`; the Pages workflow blocks
+  deployment when this production-browser gate fails.
 - For interface or presentation changes, verify desktop and mobile behavior,
   direct links, back navigation, scroll restoration, and console errors.
 - Do not create commits, push branches, or open pull requests unless the user

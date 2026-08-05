@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="文明漫游">
+  <rect width="64" height="64" rx="14" fill="#f1ede3"/>
+  <circle cx="32" cy="32" r="21" fill="none" stroke="#86543d" stroke-width="3"/>
+  <path d="M18 39c8-2 9-15 17-15 5 0 7 5 11 5" fill="none" stroke="#252821" stroke-linecap="round" stroke-width="4"/>
+  <circle cx="18" cy="39" r="3.5" fill="#86543d"/>
+  <circle cx="46" cy="29" r="3.5" fill="#86543d"/>
+</svg>

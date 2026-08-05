@@ -278,7 +278,7 @@ node scripts/validate-content-module.js data/<module>.js docs/content-packs/<mod
 
 每个 `assets/images/<module>/` 还必须包含非运行时、`manifestVersion: 2` 的 `manifest.json`，为 Asset 保存 creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、`webp` 格式、SHA-256、来源 ID 和审核状态。现存 V4 迁移到 V5 的素材可以诚实标为 `needsMetadataAudit`，但新模块必须在门禁前完成审核，不得猜测许可或创作者。
 
-Integration Agent 接手后必须先确认当前主运行时有效，再接入 `src/main.ts` 和聚合器、解决全局重复 ID 与外部引用、置入反向导航、更新加载顺序测试，随后运行完整 validator、类型与语法检查、全量测试、正式构建和浏览器验收，并同步 README、架构文档和受影响工作规范。
+Integration Agent 接手后必须先确认当前主运行时有效，再接入 `src/main.ts` 和聚合器、解决全局重复 ID 与外部引用、置入反向导航、更新加载顺序测试，随后运行完整 validator、类型与语法检查、全量测试、正式构建和 `pnpm test:browser` 生产浏览器门禁；自动冒烟未覆盖的桌面、移动、历史导航、键盘与 reduced-motion 行为仍须人工验收。最后同步 README、架构文档和受影响工作规范。
 
 已经通过模块级门禁但尚未完成主运行时门禁的模块，必须在任务或 ContentPack 交接记录中标记为“集成中”。这不是 runtime schema 字段；除非 schema 正式采纳并校验，不得添加 `integrationStatus`。集成中的模块不得部分加载到 `src/main.ts` 或 `src/data/atlas-data.ts`，不得通过 renderer 过滤、查询静默跳过、try/catch 压制或删除无效对象来掩盖未完成接入。
 

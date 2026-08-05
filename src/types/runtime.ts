@@ -359,7 +359,30 @@ export interface MapAnnotation {
 
 export interface NaturalEarthPath {
   readonly d: string;
-  readonly bounds?: Bounds;
+  readonly bounds?: Bounds | null;
+}
+
+export interface GeneratedNaturalEarthPath {
+  readonly d: string;
+  readonly rank?: number;
+  readonly [property: string]: unknown;
+}
+
+export interface GeneratedNaturalEarthTerrain {
+  readonly kind: string;
+  readonly rank: number;
+  readonly name: string;
+  readonly label: Position;
+}
+
+export interface GeneratedNaturalEarthVector {
+  readonly size: number;
+  readonly landPath: string;
+  readonly lakes: readonly GeneratedNaturalEarthPath[];
+  readonly rivers: readonly GeneratedNaturalEarthPath[];
+  readonly terrain: readonly GeneratedNaturalEarthTerrain[];
+  readonly source: string;
+  readonly sourceUrl: string;
 }
 
 export interface NaturalEarthData {
@@ -368,6 +391,15 @@ export interface NaturalEarthData {
   readonly landPath?: string;
   readonly lakes: readonly NaturalEarthPath[];
   readonly rivers: readonly NaturalEarthPath[];
+}
+
+export interface NaturalEarthAdapterModule {
+  readonly base: NaturalEarthData | null;
+  readonly sourcePath: string;
+  readonly dataset: string;
+  pathBounds(pathData: unknown): Bounds | null;
+  splitPath(pathData: unknown): readonly NaturalEarthPath[];
+  createNaturalEarthBase(vector: GeneratedNaturalEarthVector): NaturalEarthData;
 }
 
 export interface AtlasMap {
@@ -455,7 +487,8 @@ export interface AtlasRuntimeGlobal extends Window {
   ATLAS_V5_CARDS?: CardsModule;
   ATLAS_V5_CARD_READER?: CardReaderModule;
   ATLAS_V5_MAP?: MapModule;
-  ATLAS_NATURAL_EARTH?: { readonly base?: NaturalEarthData };
+  ATLAS_WORLD_VECTOR?: GeneratedNaturalEarthVector;
+  ATLAS_NATURAL_EARTH?: NaturalEarthAdapterModule;
   ATLAS_V5_APP_INTERNALS?: Readonly<Record<string, unknown>>;
   ATLAS_V5_APP?: AtlasApp;
   ATLAS_BRAND?: BrandConfig;

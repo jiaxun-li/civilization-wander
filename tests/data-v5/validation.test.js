@@ -29,7 +29,7 @@ function dataAssetFixture(candidate) {
   candidate.assets.push({
     id: 'asset-test-data',
     type: 'data',
-    src: 'data/world-physical.js',
+    src: 'src/data/world-physical.ts',
     title: 'Local data validation fixture',
     alt: 'Local vector data',
     sourceIds: ['source-natural-earth']

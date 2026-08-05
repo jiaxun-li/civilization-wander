@@ -8,6 +8,8 @@ const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const html = read('index.html');
 const entry = read('src/main.ts');
 const viteConfig = read('vite.config.mts');
+const playwrightConfig = read('playwright.config.ts');
+const deployWorkflow = read('.github/workflows/deploy-pages.yml');
 const entryImports = [...entry.matchAll(/import\s+['"]([^'"]+)['"]/g)]
   .map(match => path.posix.normalize(path.posix.join('src', match[1])));
 
@@ -60,6 +62,8 @@ test('package scripts cover development, build, preview, and verification', () =
     'test:map',
     'test:integration',
     'test:e2e',
+    'test:browser',
+    'test:browser:install',
     'check:syntax',
     'check:pages',
     'report:counts'
@@ -70,5 +74,18 @@ test('package scripts cover development, build, preview, and verification', () =
   assert.equal(typeof packageJson.devDependencies.vite, 'string');
   assert.equal(typeof packageJson.devDependencies.typescript, 'string');
   assert.equal(typeof packageJson.devDependencies['@types/node'], 'string');
+  assert.equal(typeof packageJson.devDependencies['@playwright/test'], 'string');
   assert.equal(packageJson.engines.node, '>=22.18');
+});
+
+test('Pages deployment runs production browser acceptance before publishing', () => {
+  assert.match(playwrightConfig, /start-production-preview\.ts/);
+  assert.match(playwrightConfig, /\/civilization-wander\//);
+  const buildIndex = deployWorkflow.indexOf('- name: Build');
+  const browserIndex = deployWorkflow.indexOf('- name: Run production browser acceptance');
+  const publishIndex = deployWorkflow.indexOf('- name: Configure Pages');
+  assert.ok(buildIndex >= 0 && buildIndex < browserIndex);
+  assert.ok(browserIndex < publishIndex);
+  assert.match(deployWorkflow, /playwright install --with-deps chromium/);
+  assert.match(deployWorkflow, /playwright-report/);
 });

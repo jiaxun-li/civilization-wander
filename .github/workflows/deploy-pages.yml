@@ -41,6 +41,23 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run production browser acceptance
+        run: pnpm test:browser
+
+      - name: Upload browser failure report
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 

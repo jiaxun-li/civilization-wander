@@ -55,13 +55,20 @@ pnpm run check:pages
 pnpm build
 ```
 
+首次运行生产浏览器验收前安装一次 Chromium；此后可直接检查正式构建能否打开故事、滚动并加载图片：
+
+```powershell
+pnpm run test:browser:install
+pnpm run test:browser
+```
+
 查看当前运行时数据的实时统计：
 
 ```powershell
 pnpm run report:counts
 ```
 
-推送到 `main` 后，GitHub Actions 会测试、构建并发布 `dist/`。仓库的 Pages 来源需要设置为 **GitHub Actions**，不再直接发布仓库根目录。
+推送到 `main` 后，GitHub Actions 会测试、构建，并在真实 Chromium 中通过生产浏览器验收后发布 `dist/`；验收失败会阻止部署并上传错误报告。仓库的 Pages 来源需要设置为 **GitHub Actions**，不再直接发布仓库根目录。
 
 ## 项目文档
 
