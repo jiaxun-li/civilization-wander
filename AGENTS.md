@@ -313,7 +313,7 @@ module-level checks.
 
 A Content Agent may edit only:
 
-- its assigned `data/<content-module>.js`;
+- its assigned `data/<content-module>.js` or `data/<content-module>.ts`;
 - the matching `assets/images/<content-module>/` directory;
 - tests dedicated to that content module;
 - its ContentPack review or handoff record.
@@ -393,7 +393,7 @@ the main runtime has accepted it.
 For a new or parallel staging module, run:
 
 ```text
-node scripts/validate-content-module.js data/<module>.js docs/content-packs/<module>.handoff.json
+node scripts/validate-content-module.js data/<module>.<js-or-ts> docs/content-packs/<module>.handoff.json
 ```
 
 The handoff file is machine-readable and uses `handoffVersion: 2`. The gate
@@ -492,8 +492,8 @@ The current runtime is a Vite-built V5 prototype with no client-side runtime dep
   TypeScript migration proceeds incrementally.
 - `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
-- `src/types/runtime.ts` defines the typed consumer boundary between the
-  application, the JavaScript content modules, the typed V5 aggregation/query
+- `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
+  application, the mixed JavaScript/TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.
 - `src/data/atlas-data.ts` contains the typed aggregation boundary for Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,

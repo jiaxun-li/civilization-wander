@@ -7,7 +7,7 @@ import '../styles/v4/map.css';
 import './data/world-physical.ts';
 import '../data/mesopotamia.js';
 import '../data/ancient-egypt.js';
-import '../data/ancient-india.js';
+import '../data/ancient-india.ts';
 import '../data/ancient-china.js';
 import '../data/late-bronze-age.js';
 import '../data/aegean.js';

@@ -109,6 +109,28 @@ export interface DataAsset {
 
 export type Asset = ImageAsset | DataAsset;
 
+export type ContentRecord = Readonly<Record<string, unknown>>;
+
+export type ContentModuleCollectionName =
+  | 'sources'
+  | 'entities'
+  | 'events'
+  | 'structuralEdges'
+  | 'cards'
+  | 'scenes'
+  | 'structureViews'
+  | 'navigationOptions'
+  | 'navigationPlacements'
+  | 'cameraPresets'
+  | 'mapStates'
+  | 'geometries'
+  | 'mapAnnotations'
+  | 'assets';
+
+export type ContentModule = {
+  readonly [Collection in ContentModuleCollectionName]: readonly ContentRecord[];
+};
+
 export interface AtlasData {
   readonly schemaVersion: 5;
   readonly entities: readonly Entity[];

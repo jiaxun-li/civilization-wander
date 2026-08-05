@@ -4,13 +4,12 @@
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
+const {
+  CONTENT_MODULE_COLLECTIONS: collections,
+  loadContentModule
+} = require('./content-module-runtime.js');
 
 const projectRoot = path.resolve(__dirname, '..');
-const collections = [
-  'sources', 'entities', 'events', 'structuralEdges', 'cards', 'scenes',
-  'structureViews', 'navigationOptions', 'navigationPlacements',
-  'cameraPresets', 'mapStates', 'geometries', 'mapAnnotations', 'assets'
-];
 const referenceFields = new Map([
   ['sourceIds', 'sources'],
   ['participantEntityIds', 'entities'],
@@ -176,17 +175,17 @@ function main() {
   const moduleArg = process.argv[2];
   const handoffArg = process.argv[3];
   if (!moduleArg || !handoffArg) {
-    throw new Error('Usage: node scripts/validate-content-module.js data/<module>.js docs/content-packs/<module>.handoff.json');
+    throw new Error('Usage: node scripts/validate-content-module.js data/<module>.<js-or-ts> docs/content-packs/<module>.handoff.json');
   }
 
   const moduleFile = path.resolve(projectRoot, moduleArg);
   const handoffFile = path.resolve(projectRoot, handoffArg);
-  const moduleData = require(moduleFile);
+  const moduleData = loadContentModule(moduleFile);
   const { atlasData: activeAtlas } = require(path.resolve(projectRoot, 'src/data/atlas-data.ts'));
   const handoff = readJson(handoffFile);
   const errors = [];
   const normalizedModuleArg = projectPath(moduleFile);
-  const expectedModuleName = path.basename(moduleFile, '.js');
+  const expectedModuleName = path.basename(moduleFile, path.extname(moduleFile));
   const moduleSource = fs.readFileSync(moduleFile, 'utf8');
 
   if (handoff.handoffVersion !== 2) errors.push('handoff.handoffVersion must be 2');
@@ -196,7 +195,7 @@ function main() {
   }
   if (!isNonEmptyString(handoff.exportedGlobal)) {
     errors.push('handoff.exportedGlobal must be a non-empty string');
-  } else if (!moduleSource.includes(`root.${handoff.exportedGlobal} = data`)) {
+  } else if (!moduleSource.includes(`root.${handoff.exportedGlobal} =`)) {
     errors.push(`module does not initialize browser global ${handoff.exportedGlobal}`);
   }
   if (!isNonEmptyString(handoff.expectedLoadingPosition)) {

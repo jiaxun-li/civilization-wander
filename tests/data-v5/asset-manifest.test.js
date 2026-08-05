@@ -3,15 +3,16 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
+const {
+  listActiveContentModules,
+  loadContentModule
+} = require('../../scripts/content-module-runtime.js');
 
 const root = path.resolve(__dirname, '../..');
-const modules = [
-  'mesopotamia', 'ancient-egypt', 'ancient-india', 'ancient-china',
-  'late-bronze-age', 'aegean', 'iron-age-near-east'
-];
+const modules = listActiveContentModules(root);
 
 test('runtime image directories contain WebP files rather than duplicate JPEG or PNG copies', () => {
-  for (const moduleName of modules) {
+  for (const { name: moduleName } of modules) {
     const directory = path.resolve(root, `assets/images/${moduleName}`);
     const legacyFiles = fs.readdirSync(directory)
       .filter(filename => /\.(?:jpe?g|png)$/i.test(filename));
@@ -20,8 +21,8 @@ test('runtime image directories contain WebP files rather than duplicate JPEG or
 });
 
 test('every active Asset has a non-runtime metadata record with a current digest', () => {
-  for (const moduleName of modules) {
-    const moduleData = require(path.resolve(root, `data/${moduleName}.js`));
+  for (const { name: moduleName, filename } of modules) {
+    const moduleData = loadContentModule(path.resolve(root, filename));
     const manifest = JSON.parse(fs.readFileSync(path.resolve(root, `assets/images/${moduleName}/manifest.json`), 'utf8'));
     assert.equal(manifest.manifestVersion, 2, moduleName);
     const entryById = new Map(manifest.assets.map(entry => [entry.assetId, entry]));
@@ -47,7 +48,7 @@ test('every active Asset has a non-runtime metadata record with a current digest
 });
 
 test('active AI-generated images remain explicitly identified after WebP conversion', () => {
-  const aiEntries = modules.flatMap(moduleName => {
+  const aiEntries = modules.flatMap(({ name: moduleName }) => {
     const manifest = JSON.parse(fs.readFileSync(path.resolve(root, `assets/images/${moduleName}/manifest.json`), 'utf8'));
     return manifest.assets.filter(entry => entry.origin === 'aiGenerated');
   });
@@ -60,7 +61,7 @@ test('active AI-generated images remain explicitly identified after WebP convers
 });
 
 test('completed V5 metadata audit leaves no unresolved image licenses', () => {
-  const unresolved = modules.flatMap(moduleName => {
+  const unresolved = modules.flatMap(({ name: moduleName }) => {
     const manifest = JSON.parse(fs.readFileSync(path.resolve(root, `assets/images/${moduleName}/manifest.json`), 'utf8'));
     return manifest.assets
       .filter(entry => entry.license === 'needs review')

@@ -1,6 +1,6 @@
 import '../../data/mesopotamia.js';
 import '../../data/ancient-egypt.js';
-import '../../data/ancient-india.js';
+import '../../data/ancient-india.ts';
 import '../../data/ancient-china.js';
 import '../../data/late-bronze-age.js';
 import '../../data/aegean.js';
@@ -47,7 +47,7 @@ type ContentModule = {
 };
 
 type ModuleDefinition = {
-  readonly name: string;
+  readonly file: string;
   readonly globalName: string;
   readonly missingDependencyError: string;
 };
@@ -60,41 +60,41 @@ const MODULE_COLLECTIONS = [
 
 const MODULE_COLLECTION_SET = new Set<string>(MODULE_COLLECTIONS);
 
-// Keep dependency failures byte-for-byte compatible with the former aggregator;
-// module interface failures still name the JavaScript content file that owns them.
+// Preserve legacy dependency errors while each module migrates; interface
+// failures always name the actual JavaScript or TypeScript content file.
 const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
   {
-    name: 'mesopotamia',
+    file: 'data/mesopotamia.js',
     globalName: 'ATLAS_V5_MESOPOTAMIA',
     missingDependencyError: 'data/mesopotamia.js must load before data/atlas-data.js'
   },
   {
-    name: 'ancient-egypt',
+    file: 'data/ancient-egypt.js',
     globalName: 'ATLAS_V5_ANCIENT_EGYPT',
     missingDependencyError: 'data/ancient-egypt.js must load before data/atlas-data.js'
   },
   {
-    name: 'ancient-india',
+    file: 'data/ancient-india.ts',
     globalName: 'ATLAS_V5_ANCIENT_INDIA',
-    missingDependencyError: 'data/ancient-india.js must load before data/atlas-data.js'
+    missingDependencyError: 'data/ancient-india.ts must load before src/data/atlas-data.ts'
   },
   {
-    name: 'ancient-china',
+    file: 'data/ancient-china.js',
     globalName: 'ATLAS_V5_ANCIENT_CHINA',
     missingDependencyError: 'data/ancient-china.js must load before data/atlas-data.js'
   },
   {
-    name: 'late-bronze-age',
+    file: 'data/late-bronze-age.js',
     globalName: 'ATLAS_V5_LATE_BRONZE_AGE',
     missingDependencyError: 'data/late-bronze-age.js must load before data/atlas-data.js'
   },
   {
-    name: 'aegean',
+    file: 'data/aegean.js',
     globalName: 'ATLAS_V5_AEGEAN',
     missingDependencyError: 'data/aegean.js must load before data/atlas-data.js'
   },
   {
-    name: 'iron-age-near-east',
+    file: 'data/iron-age-near-east.js',
     globalName: 'ATLAS_V5_IRON_AGE_NEAR_EAST',
     missingDependencyError: 'data/iron-age-near-east.js must load before data/atlas-data.js'
   }
@@ -112,16 +112,16 @@ function assertContentModule(
 
   for (const collection of MODULE_COLLECTIONS) {
     if (!Object.prototype.hasOwnProperty.call(value, collection)) {
-      throw new Error(`data/${definition.name}.js is missing required collection ${collection}`);
+      throw new Error(`${definition.file} is missing required collection ${collection}`);
     }
     if (!Array.isArray(value[collection])) {
-      throw new TypeError(`data/${definition.name}.js collection ${collection} must be an array`);
+      throw new TypeError(`${definition.file} collection ${collection} must be an array`);
     }
   }
 
   for (const key of Object.keys(value)) {
     if (!MODULE_COLLECTION_SET.has(key)) {
-      throw new Error(`data/${definition.name}.js exports unknown collection ${key}`);
+      throw new Error(`${definition.file} exports unknown collection ${key}`);
     }
   }
 }

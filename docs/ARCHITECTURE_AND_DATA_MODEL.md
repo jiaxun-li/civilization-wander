@@ -16,7 +16,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader、Map、查询、聚合器与本地底图 adapter 已迁移为 TypeScript，七个内容模块和 Node 文件校验 adapter 仍按依赖顺序加载 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
+`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader、Map、查询、聚合器与本地底图 adapter 已迁移为 TypeScript，内容模块正按独立验收边界由 JavaScript 渐进迁移为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
 
 聚合器与语法清单必须和 `src/main.ts` 保持同一内容模块顺序；`scripts/check-runtime-manifests.js` 从 HTML 入口、TypeScript 入口、聚合器与语法清单读取现状并做只读比较，不再由文档保存另一份模块清单。运行时依赖层次是：
 
@@ -36,7 +36,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 flowchart TD
     HTML["index.html"] --> ENTRY["src/main.ts\nVite module entry"]
     ENTRY --> WP["src/data/world-physical.ts\nATLAS_WORLD_VECTOR"]
-    ENTRY --> CM["data/content-module.js\nATLAS_V5_* content globals"]
+    ENTRY --> CM["data/content-module.js/.ts\nATLAS_V5_* content globals"]
     ENTRY --> D["src/data/atlas-data.ts\nATLAS_V5_DATA"]
     CM --> D
     D --> Q["src/data/queries.ts\nATLAS_V5_QUERIES"]
@@ -486,13 +486,14 @@ pnpm run test:browser
 
 | 文件 | 当前职责/状态 |
 |---|---|
-| `data/<content-module>.js` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。具体模块清单和顺序由入口实际加载，并与聚合器、语法清单做一致性检查。 |
+| `data/<content-module>.js` / `.ts` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。新模块默认 TypeScript；既有模块渐进迁移。具体模块清单和顺序由入口实际加载，并与聚合器、语法或类型清单做一致性检查。 |
 | `src/data/atlas-data.ts` | 以类型化边界严格检查模块接口，汇总内容模块并输出 schema 5 的 14 个正式集合。 |
 | `src/data/queries.ts` | V5 索引、派生 Entity/Card 与 Card/Event 查询及严格 validator。 |
 | `data/query-node-runtime.js` | 仅在 Node 中为 validator 提供 Asset 文件存在性检查；浏览器中为空适配器。 |
 | `scripts/report-atlas-counts.js` | 只读加载聚合数据并报告当前 schema 与各集合数量，不修改数据或文档。 |
 | `scripts/check-runtime-manifests.js` | 只读比较入口、聚合器和语法检查中的内容模块顺序，防止加载清单漂移。 |
 | `scripts/validate-content-module.js` | 对 staging 模块执行精确接口、局部 ID／引用、pending sibling 声明、Asset manifest 与媒体决策门禁。 |
+| `scripts/content-module-runtime.js` | 从活动入口读取真实内容模块文件名，并统一加载 CommonJS 或 TypeScript namespace 导出的十四集合模块；避免测试和维护脚本猜测扩展名。 |
 | `scripts/generate-asset-manifests.js` | 从现有运行时 Asset 更新 version-2 非运行时元数据清单、编码尺寸、体积和摘要；保留既有审核字段，不猜测许可。 |
 | `scripts/migrate-v4-content-to-v5.js` | 记录 V4→V5 的显式字段删除、Event kind 和逐 Scene Event 映射。 |
 | `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始与编码尺寸、体积、WebP 格式、origin、SHA-256 与审核状态。 |

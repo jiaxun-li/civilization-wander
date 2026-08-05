@@ -7,8 +7,12 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { listActiveContentModules, loadContentModule } = require('./content-module-runtime.js');
 
 const projectRoot = path.resolve(__dirname, '..');
+const activeModuleFiles = new Map(
+  listActiveContentModules(projectRoot).map(module => [module.name, module.filename])
+);
 const moduleNames = [
   'ancient-egypt',
   'ancient-india',
@@ -222,8 +226,10 @@ function addSceneEventIds(source, sceneId, eventIds) {
 }
 
 for (const moduleName of moduleNames) {
-  const modulePath = path.join(projectRoot, 'data', `${moduleName}.js`);
-  const moduleData = require(modulePath);
+  const moduleFile = activeModuleFiles.get(moduleName);
+  if (!moduleFile) throw new Error(`active content module not found: ${moduleName}`);
+  const modulePath = path.resolve(projectRoot, moduleFile);
+  const moduleData = loadContentModule(modulePath);
   let source = fs.readFileSync(modulePath, 'utf8');
 
   for (const entity of moduleData.entities) {
@@ -249,7 +255,9 @@ for (const moduleName of moduleNames) {
 // Normalize the one misspelled V4 type token before V5 is published. Aegean
 // was migrated directly, so it participates only in this focused type pass.
 for (const moduleName of ['ancient-egypt', 'aegean']) {
-  const modulePath = path.join(projectRoot, 'data', `${moduleName}.js`);
+  const moduleFile = activeModuleFiles.get(moduleName);
+  if (!moduleFile) throw new Error(`active content module not found: ${moduleName}`);
+  const modulePath = path.resolve(projectRoot, moduleFile);
   let source = fs.readFileSync(modulePath, 'utf8');
   for (const [oldType, newType] of entityTypeRenames) {
     source = source.replaceAll(`type: '${oldType}'`, `type: '${newType}'`);

@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const { pathToFileURL } = require('node:url');
 const { spawnSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '../..');
@@ -39,7 +40,7 @@ function handoffFor(moduleFile, moduleData, overrides = {}) {
   const relativeModuleFile = path.relative(root, moduleFile).replaceAll('\\', '/');
   return {
     handoffVersion: 2,
-    module: path.basename(moduleFile, '.js'),
+    module: path.basename(moduleFile, path.extname(moduleFile)),
     moduleFile: relativeModuleFile,
     exportedGlobal: 'ATLAS_V5_MODULE_GATE_FIXTURE',
     expectedLoadingPosition: 'after data/ancient-egypt.js',
@@ -103,6 +104,27 @@ test('isolated module gate accepts a complete frozen staging module and handoff'
   assert.equal(report.valid, true);
   assert.deepEqual(report.activeExternalRefs, {});
   assert.deepEqual(report.pendingExternalRefs, {});
+});
+
+test('isolated module gate accepts a TypeScript module namespace export', () => {
+  const tempDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'civilization-wander-module-ts-'));
+  const moduleFile = path.join(tempDirectory, 'staging-fixture.ts');
+  const fixtureUrl = JSON.stringify(pathToFileURL(validFixtureFile).href);
+  fs.writeFileSync(moduleFile, `
+import fixture from ${fixtureUrl};
+export const fixtureData = fixture;
+const root = globalThis as typeof globalThis & {
+  ATLAS_V5_MODULE_GATE_FIXTURE?: typeof fixture;
+};
+root.ATLAS_V5_MODULE_GATE_FIXTURE = fixtureData;
+`);
+  try {
+    const result = runGate(moduleFile, handoffFor(moduleFile, validFixture));
+    assert.equal(result.status, 0, result.stderr);
+    assert.equal(JSON.parse(result.stdout).valid, true);
+  } finally {
+    fs.rmSync(tempDirectory, { recursive: true, force: true });
+  }
 });
 
 test('isolated module gate rejects IDs that already belong to the active atlas', () => {

@@ -4,12 +4,10 @@
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
+const { listActiveContentModules, loadContentModule } = require('./content-module-runtime.js');
 
 const projectRoot = path.resolve(__dirname, '..');
-const modules = [
-  'mesopotamia', 'ancient-egypt', 'ancient-india', 'ancient-china',
-  'late-bronze-age', 'aegean', 'iron-age-near-east'
-];
+const modules = listActiveContentModules(projectRoot);
 
 function dimensions(filename) {
   const buffer = fs.readFileSync(filename);
@@ -71,8 +69,8 @@ function inferLicense(sources) {
   return match ? match[1] : 'needs review';
 }
 
-for (const moduleName of modules) {
-  const moduleData = require(path.resolve(projectRoot, `data/${moduleName}.js`));
+for (const { name: moduleName, filename } of modules) {
+  const moduleData = loadContentModule(path.resolve(projectRoot, filename));
   const sourceById = new Map(moduleData.sources.map(source => [source.id, source]));
   const manifestFile = path.resolve(projectRoot, `assets/images/${moduleName}/manifest.json`);
   const previousManifest = fs.existsSync(manifestFile)

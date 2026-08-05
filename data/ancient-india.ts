@@ -1,37 +1,40 @@
-(function exposeAncientIndiaV5(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_ANCIENT_INDIA = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createAncientIndiaV5Data() {
-  'use strict';
+import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
 
-  function timeSpan(start, end, label, approximate) {
-    const value = { start, end, label };
+type SourceIds = readonly string[];
+
+  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+    const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id, text, sourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds) {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id, text, sourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds) {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id, text, sourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds) {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id, text, sourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds) {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function historicalCase(id, title, text, eventIds, sourceIds) {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds) {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
-  function review(limitations, counterexamples, uncertainties, alternatives, sourceIds) {
+  function review(
+    limitations: readonly ContentRecord[],
+    counterexamples: readonly ContentRecord[],
+    uncertainties: readonly ContentRecord[],
+    alternatives: readonly ContentRecord[],
+    sourceIds: SourceIds
+  ) {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -850,7 +853,7 @@
     { id: 'asset-vedic-recitation-teaching', type: 'image', src: 'assets/images/ancient-india/vedic-recitation-teaching.webp', title: '祭火旁的早期吠陀吟诵教学图', alt: '教学插图：夜色中的河岸营地，吟诵者与听众围坐在小型祭火旁，远处可见牛群和轻轮车辆；画面不含现代文字。', sourceIds: ['source-generated-vedic-recitation', 'source-jamison-brereton-rigveda'] }
   ];
 
-  return {
+  export const ancientIndiaData = {
     sources,
     entities,
     events,
@@ -865,5 +868,10 @@
     geometries,
     mapAnnotations,
     assets
-  };
-}));
+  } satisfies ContentModule;
+
+const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
+  ATLAS_V5_ANCIENT_INDIA?: ContentModule;
+};
+
+root.ATLAS_V5_ANCIENT_INDIA = ancientIndiaData;
