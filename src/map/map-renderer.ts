@@ -1,12 +1,30 @@
-(function exposeV4Map(root, factory) {
-  const api = factory();
-  if (root) root.ATLAS_V5_MAP = api;
-  if (typeof module === 'object' && module.exports) module.exports = api;
-}(typeof window !== 'undefined' ? window : globalThis, function buildV4MapRenderer() {
-  'use strict';
+import type {
+  AtlasQueries,
+  AtlasRuntimeGlobal,
+  Bounds,
+  CameraPreset,
+  CameraTransition,
+  GeometryShape,
+  HistoricalGeometry,
+  MapAnnotation,
+  MapModule,
+  MapPresentationConfig,
+  MapState,
+  NaturalEarthData,
+  NaturalEarthPath,
+  Position,
+  ReaderContext,
+  Scene,
+  ScreenPlacement,
+  StructureView
+} from '../types/runtime.ts';
 
-  const VIEW_FAMILIES = new Set(['lineage', 'composition', 'context', 'historicalNetwork']);
-  const SCREEN_POSITIONS = {
+type CreateNaturalEarthMapOptions = Parameters<MapModule['createNaturalEarthMap']>[0];
+type RegionalPaths = { land: string; lakes: string; rivers: string };
+type RegionalPathKey = keyof RegionalPaths;
+
+const VIEW_FAMILIES = new Set(['lineage', 'composition', 'context', 'historicalNetwork']);
+const SCREEN_POSITIONS = {
     auto: [50, 50],
     above: [50, 18],
     below: [50, 82],
@@ -16,9 +34,9 @@
     topRight: [74, 16],
     bottomLeft: [13, 76],
     bottomRight: [74, 76]
-  };
+} satisfies Record<ScreenPlacement, Position>;
 
-  function escapeHtml(value = '') {
+function escapeHtml(value: unknown = ''): string {
     return String(value)
       .replaceAll('&', '&amp;')
       .replaceAll('<', '&lt;')
@@ -27,7 +45,7 @@
       .replaceAll("'", '&#39;');
   }
 
-  function projectPoint([longitude, latitude], size = 4096) {
+export function projectPoint([longitude, latitude]: Position, size = 4096): [number, number] {
     const safeLatitude = Math.max(-85.05112878, Math.min(85.05112878, Number(latitude)));
     const sin = Math.sin(safeLatitude * Math.PI / 180);
     return [
@@ -36,14 +54,18 @@
     ];
   }
 
-  function geometryToPath(geometry, size = 4096) {
+export function geometryToPath(geometry: GeometryShape | null | undefined, size = 4096): string {
     if (!geometry?.type || !geometry.coordinates) return '';
-    const point = coordinates => {
+    const point = (coordinates: Position): string => {
       const [x, y] = projectPoint(coordinates, size);
       return `${x.toFixed(1)} ${y.toFixed(1)}`;
     };
-    const line = coordinates => coordinates.map((coordinates, index) => `${index ? 'L' : 'M'}${point(coordinates)}`).join('');
-    const polygon = coordinates => coordinates.map(ring => `${line(ring)}Z`).join('');
+    const line = (coordinates: readonly Position[]): string => coordinates
+      .map((position, index) => `${index ? 'L' : 'M'}${point(position)}`)
+      .join('');
+    const polygon = (coordinates: readonly (readonly Position[])[]): string => coordinates
+      .map(ring => `${line(ring)}Z`)
+      .join('');
     if (geometry.type === 'Point') {
       const [x, y] = projectPoint(geometry.coordinates, size);
       return `M${(x - 7).toFixed(1)} ${y.toFixed(1)}a7 7 0 1 0 14 0a7 7 0 1 0-14 0`;
@@ -61,14 +83,18 @@
     return '';
   }
 
-  function cameraTransform(cameraPreset, size = 4096) {
+export function cameraTransform(cameraPreset: CameraPreset | null | undefined, size = 4096): string {
     const [x, y] = projectPoint(cameraPreset?.center || [0, 0], size);
     const scale = Number(cameraPreset?.scale ?? 1);
     const normalized = scale * (1000 / size);
     return `translate(500 350) scale(${normalized.toFixed(5)}) translate(${-x.toFixed(2)} ${-y.toFixed(2)})`;
   }
 
-  function cameraViewportBounds(cameraPreset, size = 4096, padding = 0.25) {
+export function cameraViewportBounds(
+  cameraPreset: CameraPreset | null | undefined,
+  size = 4096,
+  padding = 0.25
+): Bounds {
     const [centerX, centerY] = projectPoint(cameraPreset?.center || [0, 0], size);
     const scale = Math.max(Number(cameraPreset?.scale) || 1, 0.01);
     const padded = 1 + Math.max(Number(padding) || 0, 0);
@@ -82,16 +108,22 @@
     ];
   }
 
-  function boundsIntersect(left, right) {
+export function boundsIntersect(left: unknown, right: unknown): boolean {
     return Boolean(
       Array.isArray(left) && left.length === 4 &&
       Array.isArray(right) && right.length === 4 &&
+      left.every(value => typeof value === 'number') &&
+      right.every(value => typeof value === 'number') &&
       left[2] >= right[0] && left[0] <= right[2] &&
       left[3] >= right[1] && left[1] <= right[3]
     );
   }
 
-  function selectRegionalPaths(items = [], cameraPresets = [], size = 4096) {
+export function selectRegionalPaths(
+  items: readonly NaturalEarthPath[] = [],
+  cameraPresets: readonly CameraPreset[] | CameraPreset = [],
+  size = 4096
+): NaturalEarthPath[] {
     const presets = (Array.isArray(cameraPresets) ? cameraPresets : [cameraPresets]).filter(Boolean);
     if (!presets.length) return [];
     const viewports = presets.map(preset => cameraViewportBounds(preset, size));
@@ -100,12 +132,19 @@
     );
   }
 
-  function cameraPresetsForCard(queries, cardId, fallbackPreset = null) {
+export function cameraPresetsForCard(
+  queries: AtlasQueries,
+  cardId: string | null,
+  fallbackPreset: CameraPreset | null = null
+): CameraPreset[] {
     const card = cardId ? queries.getCard(cardId) : null;
-    const presets = [];
-    const seen = new Set();
+    const presets: CameraPreset[] = [];
+    const seen = new Set<string | undefined>();
     for (const sceneId of card?.sceneIds || []) {
-      const mapConfig = queries.getScene(sceneId)?.presentation?.map;
+      const presentation = queries.getScene(sceneId)?.presentation;
+      const mapConfig = presentation?.kind === 'map' || presentation?.kind === 'mapAndText'
+        ? presentation.map
+        : null;
       const mapState = mapConfig ? queries.getMapState(mapConfig.mapStateId) : null;
       const preset = mapState ? queries.getCameraPreset(mapState.cameraPresetId) : null;
       if (!preset || seen.has(preset.id)) continue;
@@ -116,7 +155,11 @@
     return presets;
   }
 
-  function projectAnnotation(annotation, cameraPreset, size = 4096) {
+export function projectAnnotation(
+  annotation: Pick<MapAnnotation, 'anchor'> | null | undefined,
+  cameraPreset: CameraPreset,
+  size = 4096
+): [number, number] | null {
     if (annotation?.anchor?.kind !== 'geo') return null;
     const [pointX, pointY] = projectPoint(annotation.anchor.coordinates, size);
     const [centerX, centerY] = projectPoint(cameraPreset.center, size);
@@ -127,32 +170,32 @@
     ];
   }
 
-  function createNaturalEarthMap(options) {
+export function createNaturalEarthMap(options: CreateNaturalEarthMapOptions) {
     const {
       container,
       data,
       queries,
       naturalEarth,
-      documentRef = typeof document !== 'undefined' ? document : null,
-      windowRef = documentRef?.defaultView || (typeof window !== 'undefined' ? window : null),
+      documentRef,
+      windowRef,
       onNavigate = () => {}
     } = options;
     if (!container || !data || !queries || !naturalEarth || !documentRef) {
       throw new TypeError('container, V5 data, queries, local Natural Earth data and document are required');
     }
 
-    const geometryPathCache = new Map();
-    let activeMapState = null;
-    let activeScene = null;
-    let activeMapConfig = null;
-    let activeViews = [];
+    const geometryPathCache = new Map<string, string>();
+    let activeMapState: MapState | null = null;
+    let activeScene: Scene | null = null;
+    let activeMapConfig: MapPresentationConfig | null = null;
+    let activeViews: StructureView[] = [];
     let activeCameraTransform = '';
-    let activeCameraPreset = null;
-    const overlayTimers = new Map();
-    const overlayCommitted = new Map();
-    const overlayDesired = new Map();
-    const regionalBaseCache = new Map();
-    const activeBasePaths = { land: '', lakes: '', rivers: '' };
+    let activeCameraPreset: CameraPreset | null = null;
+    const overlayTimers = new Map<string, number>();
+    const overlayCommitted = new Map<string, string>();
+    const overlayDesired = new Map<string, string>();
+    const regionalBaseCache = new Map<string, RegionalPaths>();
+    const activeBasePaths: RegionalPaths = { land: '', lakes: '', rivers: '' };
 
     container.innerHTML = `
       <div class="v4-map" data-v4-map>
@@ -178,27 +221,27 @@
         <p class="v4-map__approximation">近似教学示意 · 非精确疆界或路线</p>
       </div>`;
 
-    const mapRoot = container.querySelector('[data-v4-map]');
-    const cameraGroup = container.querySelector('[data-map-camera]');
-    const landPath = container.querySelector('[data-map-land]');
-    const lakePath = container.querySelector('[data-map-lakes]');
-    const historicalGroup = container.querySelector('[data-map-historical]');
-    const riverPath = container.querySelector('[data-map-rivers]');
-    const nodes = container.querySelector('[data-map-nodes]');
-    const legend = container.querySelector('[data-map-legend]');
+    const mapRoot = container.querySelector<HTMLElement>('[data-v4-map]')!;
+    const cameraGroup = container.querySelector<SVGElement>('[data-map-camera]')!;
+    const landPath = container.querySelector<SVGPathElement>('[data-map-land]')!;
+    const lakePath = container.querySelector<SVGPathElement>('[data-map-lakes]')!;
+    const historicalGroup = container.querySelector<SVGElement>('[data-map-historical]')!;
+    const riverPath = container.querySelector<SVGPathElement>('[data-map-rivers]')!;
+    const nodes = container.querySelector<HTMLElement>('[data-map-nodes]')!;
+    const legend = container.querySelector<HTMLElement>('[data-map-legend]')!;
 
-    function prefersReducedMotion() {
+    function prefersReducedMotion(): boolean {
       return Boolean(windowRef?.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches);
     }
 
-    function cachedGeometryPath(geometry) {
+    function cachedGeometryPath(geometry: HistoricalGeometry): string {
       if (!geometryPathCache.has(geometry.id)) {
         geometryPathCache.set(geometry.id, geometryToPath(geometry.geometry, naturalEarth.size));
       }
-      return geometryPathCache.get(geometry.id);
+      return geometryPathCache.get(geometry.id) ?? '';
     }
 
-    function geometryMarkup(mapState) {
+    function geometryMarkup(mapState: MapState): string {
       return mapState.layers.map(layer => {
         const geometry = queries.getGeometry(layer.geometryId);
         if (!geometry) return '';
@@ -213,17 +256,23 @@
       }).join('');
     }
 
-    function shouldCrossfade(context) {
+    function shouldCrossfade(context: ReaderContext | null | undefined): boolean {
       return Boolean(
         activeMapState &&
         !context?.inheritedMedia &&
         context?.trigger === 'scroll' &&
-        ['forward', 'backward'].includes(context.direction) &&
+        (context.direction === 'forward' || context.direction === 'backward') &&
         !prefersReducedMotion()
       );
     }
 
-    function replaceOverlay(element, markup, key, context, afterCommit = () => {}) {
+    function replaceOverlay(
+      element: HTMLElement | SVGElement,
+      markup: string,
+      key: string,
+      context: ReaderContext | null | undefined,
+      afterCommit: () => void = () => {}
+    ): boolean {
       if (overlayDesired.get(key) === markup) return false;
       const priorTimer = overlayTimers.get(key);
       if (priorTimer) windowRef.clearTimeout?.(priorTimer);
@@ -271,11 +320,18 @@
       return true;
     }
 
-    function renderGeometryLayers(mapState, context) {
+    function renderGeometryLayers(
+      mapState: MapState,
+      context: ReaderContext | null | undefined
+    ): void {
       replaceOverlay(historicalGroup, geometryMarkup(mapState), 'geometry', context);
     }
 
-    function positionForAnnotation(annotation, cameraPreset) {
+    function positionForAnnotation(annotation: MapAnnotation, cameraPreset: CameraPreset): {
+      left: number;
+      top: number;
+      geographic: boolean;
+    } {
       if (annotation.anchor.kind === 'geo') {
         const projected = projectAnnotation(annotation, cameraPreset, naturalEarth.size);
         return { left: projected?.[0] ?? 50, top: projected?.[1] ?? 50, geographic: true };
@@ -284,7 +340,11 @@
       return { left, top, geographic: false };
     }
 
-    function nodeMarkup(mapConfig, cameraPreset, scene) {
+    function nodeMarkup(
+      mapConfig: MapPresentationConfig | null | undefined,
+      cameraPreset: CameraPreset,
+      scene: Scene | null | undefined
+    ): string {
       const layers = mapConfig?.layers || [];
       const placements = scene
         ? queries.getNavigationPlacementsForScene(scene.id, 'map')
@@ -330,13 +390,21 @@
       }).join('');
     }
 
-    function bindNodeNavigation() {
-      nodes.querySelectorAll('[data-map-navigation-id]').forEach(button => {
-        button.addEventListener('click', () => onNavigate(button.dataset.mapNavigationId));
+    function bindNodeNavigation(): void {
+      nodes.querySelectorAll<HTMLElement>('[data-map-navigation-id]').forEach(button => {
+        button.addEventListener('click', () => {
+          const navigationId = button.dataset.mapNavigationId;
+          if (navigationId) onNavigate(navigationId);
+        });
       });
     }
 
-    function renderNodes(mapConfig, cameraPreset, scene, context) {
+    function renderNodes(
+      mapConfig: MapPresentationConfig,
+      cameraPreset: CameraPreset,
+      scene: Scene | null,
+      context: ReaderContext | null | undefined
+    ): void {
       const hasGeographicLabels = (mapConfig?.layers || []).some(layer =>
         queries.getMapAnnotation(layer.annotationId)?.anchor?.kind === 'geo'
       );
@@ -350,14 +418,18 @@
       );
     }
 
-    function applyCamera(cameraPreset, transition, context) {
+    function applyCamera(
+      cameraPreset: CameraPreset,
+      transition: CameraTransition | undefined,
+      context: ReaderContext | null | undefined
+    ): CameraPreset {
       const requested = transition || 'cut';
       const firstRender = !activeCameraTransform;
       const adjacentReading = context?.trigger === 'scroll' &&
-        ['forward', 'backward'].includes(context.direction);
+        (context.direction === 'forward' || context.direction === 'backward');
       const promotedCut = adjacentReading && requested === 'cut';
       const directional = promotedCut ? 'ease' : requested;
-      const historyOrDirectEntry = ['direct', 'history'].includes(context?.trigger);
+      const historyOrDirectEntry = context?.trigger === 'direct' || context?.trigger === 'history';
       const selected = historyOrDirectEntry ? 'cut' : directional;
       const effective = firstRender
         ? 'cut'
@@ -372,7 +444,7 @@
       cameraGroup.style.transition = effective === 'ease'
         ? `transform ${transitionDuration}ms cubic-bezier(0.2, 0.72, 0.2, 1)`
         : 'none';
-      if (effective === 'hold' && !firstRender) return activeCameraPreset;
+      if (effective === 'hold' && !firstRender) return activeCameraPreset ?? cameraPreset;
       const nextTransform = cameraTransform(cameraPreset, naturalEarth.size);
       cameraGroup.setAttribute('transform', nextTransform);
       activeCameraTransform = nextTransform;
@@ -380,13 +452,17 @@
       return cameraPreset;
     }
 
-    function setBasePath(element, key, pathData) {
+    function setBasePath(
+      element: SVGPathElement | null,
+      key: RegionalPathKey,
+      pathData: string
+    ): void {
       if (!element || activeBasePaths[key] === pathData) return;
       element.setAttribute('d', pathData);
       activeBasePaths[key] = pathData;
     }
 
-    function renderRegionalBase(cardId, fallbackPreset) {
+    function renderRegionalBase(cardId: string | null, fallbackPreset: CameraPreset): void {
       const presets = cameraPresetsForCard(queries, cardId, fallbackPreset);
       const cacheKey = cardId || presets
         .map(preset => preset.id || `${preset.center?.join(',')}:${preset.scale}`)
@@ -394,9 +470,9 @@
         .join('|');
       let regional = regionalBaseCache.get(cacheKey);
       if (!regional) {
-        const landItems = naturalEarth.land?.length
+        const landItems: readonly NaturalEarthPath[] = naturalEarth.land?.length
           ? naturalEarth.land
-          : [{ d: naturalEarth.landPath }];
+          : [{ d: naturalEarth.landPath ?? '' }];
         regional = {
           land: selectRegionalPaths(landItems, presets, naturalEarth.size).map(item => item.d).join(' '),
           lakes: selectRegionalPaths(naturalEarth.lakes, presets, naturalEarth.size).map(item => item.d).join(' '),
@@ -410,7 +486,12 @@
       mapRoot.dataset.baseRegion = cacheKey;
     }
 
-    function renderMapState(mapState, scene = null, mapConfig = null, context = null) {
+    function renderMapState(
+      mapState: MapState | null,
+      scene: Scene | null = null,
+      mapConfig: MapPresentationConfig | null = null,
+      context: ReaderContext | null = null
+    ): boolean {
       if (!mapState || !mapConfig) {
         clear();
         return false;
@@ -449,7 +530,11 @@
       return true;
     }
 
-    function setStructureViews(views = [], scene = null, context = null) {
+    function setStructureViews(
+      views: readonly StructureView[] = [],
+      scene: Scene | null = null,
+      context: ReaderContext | null = null
+    ): void {
       const sameInheritedMedia = Boolean(
         context?.inheritedMedia &&
         activeScene?.id === scene?.id
@@ -483,7 +568,7 @@
       if (activeMapState) renderGeometryLayers(activeMapState, context);
     }
 
-    function clear() {
+    function clear(): void {
       overlayTimers.forEach(timer => windowRef.clearTimeout?.(timer));
       overlayTimers.clear();
       overlayCommitted.clear();
@@ -502,7 +587,7 @@
       mapRoot.dataset.sceneId = '';
     }
 
-    function destroy() {
+    function destroy(): void {
       overlayTimers.forEach(timer => windowRef.clearTimeout?.(timer));
       overlayTimers.clear();
       overlayCommitted.clear();
@@ -534,17 +619,18 @@
     };
   }
 
-  return {
-    VIEW_FAMILIES,
-    SCREEN_POSITIONS,
-    projectPoint,
-    geometryToPath,
-    cameraTransform,
-    cameraViewportBounds,
-    boundsIntersect,
-    selectRegionalPaths,
-    cameraPresetsForCard,
-    projectAnnotation,
-    createNaturalEarthMap
-  };
-}));
+export const mapModule = {
+  VIEW_FAMILIES,
+  SCREEN_POSITIONS,
+  projectPoint,
+  geometryToPath,
+  cameraTransform,
+  cameraViewportBounds,
+  boundsIntersect,
+  selectRegionalPaths,
+  cameraPresetsForCard,
+  projectAnnotation,
+  createNaturalEarthMap
+} satisfies MapModule;
+
+(globalThis as unknown as AtlasRuntimeGlobal).ATLAS_V5_MAP = mapModule;

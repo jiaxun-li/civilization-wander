@@ -40,7 +40,7 @@ pnpm build
 pnpm preview
 ```
 
-`pnpm build` 生成 `dist/`，`pnpm preview` 用本地服务器预览与 GitHub Pages 相同的产物。`dist/` 是临时构建目录，不提交到仓库。项目使用 Vite 和渐进式 TypeScript 作为开发底座；核心应用编排与其消费的 V5 运行时边界已经类型化，现有 V5 数据 schema、原生界面模块和本地内容资源保持不变。正式页面没有远程内容、地图、字体或图片依赖。
+`pnpm build` 生成 `dist/`，`pnpm preview` 用本地服务器预览与 GitHub Pages 相同的产物。`dist/` 是临时构建目录，不提交到仓库。项目使用 Vite 和渐进式 TypeScript 作为开发底座；应用编排、Cards、Reader、Map 与其消费的 V5 运行时边界已经类型化，现有 V5 数据 schema、界面行为和本地内容资源保持不变。正式页面没有远程内容、地图、字体或图片依赖。
 
 ## 验证
 

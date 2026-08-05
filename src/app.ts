@@ -24,7 +24,8 @@ import type {
   ReaderState,
   Scene,
   SceneId,
-  ScenePresentation
+  ScenePresentation,
+  StructureView
 } from './types/runtime.ts';
 
 interface HomeSection {
@@ -276,6 +277,7 @@ function requiredElementById<T extends HTMLElement>(
     if (!data || !queries || !cardsModule || !readerModule || !mapModule || !naturalEarth) {
       throw new Error('V5 runtime modules failed to load');
     }
+    const verifiedNaturalEarth = naturalEarth;
     const validation = queries.validateAtlasData();
     if (!validation.valid) throw new Error(`V5 data validation failed: ${validation.errors.join('; ')}`);
 
@@ -531,7 +533,7 @@ function requiredElementById<T extends HTMLElement>(
         container: nextContainer,
         data,
         queries,
-        naturalEarth,
+        naturalEarth: verifiedNaturalEarth,
         documentRef: runtimeDocument,
         windowRef: root,
         onNavigate(navigationId: string) {
@@ -620,7 +622,7 @@ function requiredElementById<T extends HTMLElement>(
         const caption = cardRoot.querySelector<HTMLElement>('[data-media-caption]');
         if (caption) caption.textContent = mapConfig.caption || '范围、选点与路线均为近似教学表达。';
       },
-      onStructureViewsChange(views: readonly unknown[], scene: Scene, context: ReaderContext) {
+      onStructureViewsChange(views: readonly StructureView[], scene: Scene, context: ReaderContext) {
         const presentationScene = context?.presentationScene;
         const presentation = presentationScene?.presentation;
         if (presentationScene && (presentation?.kind === 'map' || presentation?.kind === 'mapAndText')) {

@@ -6,7 +6,7 @@ const vm = require('node:vm');
 
 const data = require('../../data/atlas-data.js');
 const queries = require('../../data/queries.js');
-const mapModule = require('../../map/v4/map-renderer.js');
+const mapModule = require('../../src/map/map-renderer.ts');
 const naturalEarthModule = require('../../assets/natural-earth/base.js');
 
 function classList() {
@@ -465,7 +465,7 @@ test('clear removes prior geometry, nodes, caption state, and active map identit
 
 test('map runtime has no network, zoom, pan, drag, or basemap controls', () => {
   const source = [
-    fs.readFileSync(path.resolve(__dirname, '../../map/v4/map-renderer.js'), 'utf8'),
+    fs.readFileSync(path.resolve(__dirname, '../../src/map/map-renderer.ts'), 'utf8'),
     fs.readFileSync(path.resolve(__dirname, '../../styles/v4/map.css'), 'utf8')
   ].join('\n');
   assert.doesNotMatch(source, /https?:\/\//i);

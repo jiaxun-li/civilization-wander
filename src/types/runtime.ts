@@ -3,11 +3,19 @@ export type CardId = string;
 export type SceneId = string;
 export type AssetId = string;
 
+export interface TimeSpan {
+  readonly start?: number;
+  readonly end?: number;
+  readonly label?: string;
+  readonly approximate?: boolean;
+}
+
 export interface Entity {
   readonly id: EntityId;
   readonly type: string;
   readonly name: string;
   readonly canonicalSummary: string;
+  readonly timeSpan?: TimeSpan;
 }
 
 export interface Card {
@@ -15,7 +23,23 @@ export interface Card {
   readonly title: string;
   readonly primaryEntityId: EntityId;
   readonly sceneIds: readonly SceneId[];
+  readonly introduction: string;
+  readonly timeSpan: TimeSpan;
 }
+
+export type TextClaimKind =
+  | 'geographyObservation'
+  | 'historicalFact'
+  | 'interpretation'
+  | 'editorialSynthesis'
+  | 'narrativeTransition'
+  | 'sourceNote';
+
+export type ClaimBlock =
+  | { readonly kind: 'historicalCase'; readonly title: string; readonly text: string }
+  | { readonly kind: 'mechanism'; readonly statement: string; readonly steps: readonly string[] }
+  | { readonly kind: 'asset'; readonly assetId: AssetId; readonly caption?: string }
+  | { readonly kind: TextClaimKind; readonly text: string };
 
 export interface TextOnlyPresentation {
   readonly kind: 'textOnly';
@@ -30,8 +54,24 @@ export interface MapPresentationConfig {
   readonly mapStateId: string;
   readonly structureViewIds: readonly string[];
   readonly caption?: string;
+  readonly transition?: CameraTransition;
+  readonly layers?: readonly MapPresentationLayer[];
   readonly [key: string]: unknown;
 }
+
+export type CameraTransition = 'cut' | 'ease' | 'hold';
+
+export type MapPresentationLayer =
+  | {
+      readonly kind: 'navigation';
+      readonly navigationOptionId: string;
+      readonly annotationId: string;
+    }
+  | {
+      readonly kind: 'entity';
+      readonly entityId: EntityId;
+      readonly annotationId: string;
+    };
 
 export interface MapPresentation {
   readonly kind: 'map' | 'mapAndText';
@@ -42,6 +82,10 @@ export type ScenePresentation = TextOnlyPresentation | ImagePresentation | MapPr
 
 export interface Scene {
   readonly id: SceneId;
+  readonly title: string;
+  readonly timeSpan: TimeSpan & { readonly label: string };
+  readonly timeDisplay?: 'dated' | 'undatedNarrative';
+  readonly contentBlocks: readonly ClaimBlock[];
   readonly presentation: ScenePresentation;
 }
 
@@ -90,17 +134,52 @@ export interface AtlasQueries {
   getNavigationEntrySceneId(option: NavigationOption): SceneId | null;
   getMapState(id: string | null | undefined): MapState | null | undefined;
   getStructureView(id: string | null | undefined): StructureView | null | undefined;
+  getStructuralEdge(id: string | null | undefined): StructuralEdge | null | undefined;
+  getNavigationPlacementsForScene(sceneId: SceneId, slot?: string): readonly NavigationPlacement[];
+  getNavigationPlacementsForCard(cardId: CardId, slot?: string): readonly NavigationPlacement[];
+  getCameraPreset(id: string | null | undefined): CameraPreset | null | undefined;
+  getGeometry(id: string | null | undefined): HistoricalGeometry | null | undefined;
+  getMapAnnotation(id: string | null | undefined): MapAnnotation | null | undefined;
+  getOwnerCardForScene(sceneId: SceneId): Card | null | undefined;
+  getStructureViewItems(viewId: string, focus: GraphEndpoint | null): readonly StructuralEdge[];
 }
 
 export interface NavigationOption {
   readonly id: string;
+  readonly label: string;
+  readonly description: string;
   readonly target: {
     readonly cardId: CardId;
+    readonly sceneId?: SceneId;
   };
+  readonly basis?:
+    | { readonly kind: 'structuralEdge'; readonly structuralEdgeId: string }
+    | { readonly kind: 'relatedCard'; readonly cardId: CardId }
+    | { readonly kind: 'event'; readonly eventId: string };
+}
+
+export interface NavigationPlacement {
+  readonly id?: string;
+  readonly navigationOptionId: string;
+  readonly visible: boolean;
+  readonly interactive: boolean;
+}
+
+export interface StructuralEdge {
+  readonly id: string;
+  readonly label?: { readonly forward?: string; readonly reverse?: string };
+  readonly summaries?: { readonly canonical?: string };
+}
+
+export interface GraphEndpoint {
+  readonly kind: string;
+  readonly id: string;
 }
 
 export interface StructureView {
   readonly id: string;
+  readonly family: string;
+  readonly title: string;
   readonly [key: string]: unknown;
 }
 
@@ -178,12 +257,26 @@ export interface CardReader {
 }
 
 export interface CardComponents {
+  renderContentBlock(block: ClaimBlock): string;
+  renderSmallCard(
+    navigationId: string,
+    options?: { readonly placement?: Pick<NavigationPlacement, 'visible' | 'interactive'> }
+  ): string;
   renderMainCard(cardId: CardId, options?: { activeSceneId?: SceneId | null }): string;
   renderPreviewCard(navigationId: string): string;
+  targetContext(navigationId: string): CardTargetContext | null;
+}
+
+export interface CardTargetContext {
+  readonly navigation: NavigationOption;
+  readonly card: Card;
+  readonly entity: Entity | null;
+  readonly sceneId: SceneId | null;
 }
 
 export interface CardsModule {
   escapeHtml(value?: unknown): string;
+  formatTimeSpan(timeSpan?: TimeSpan): string;
   createCardComponents(options: { data: AtlasData; queries: AtlasQueries }): CardComponents;
 }
 
@@ -212,26 +305,121 @@ export interface CardReaderModule {
 
 export interface MapState {
   readonly id: string;
-  readonly [key: string]: unknown;
+  readonly cameraPresetId: string;
+  readonly layers: readonly { readonly geometryId: string }[];
+}
+
+export type Position = readonly [number, number];
+export type Bounds = readonly [number, number, number, number];
+
+export type GeometryShape =
+  | { readonly type: 'Point'; readonly coordinates: Position }
+  | { readonly type: 'MultiPoint'; readonly coordinates: readonly Position[] }
+  | { readonly type: 'LineString'; readonly coordinates: readonly Position[] }
+  | { readonly type: 'MultiLineString'; readonly coordinates: readonly (readonly Position[])[] }
+  | { readonly type: 'Polygon'; readonly coordinates: readonly (readonly Position[])[] }
+  | { readonly type: 'MultiPolygon'; readonly coordinates: readonly (readonly (readonly Position[])[])[] };
+
+export interface HistoricalGeometry {
+  readonly id: string;
+  readonly geometry: GeometryShape;
+  readonly approximate: boolean;
+  readonly label: string;
+}
+
+export interface CameraPreset {
+  readonly id?: string;
+  readonly center: Position;
+  readonly scale: number;
+}
+
+export type ScreenPlacement =
+  | 'auto'
+  | 'above'
+  | 'below'
+  | 'left'
+  | 'right'
+  | 'topLeft'
+  | 'topRight'
+  | 'bottomLeft'
+  | 'bottomRight';
+
+export type AnnotationAnchor =
+  | { readonly kind: 'geo'; readonly coordinates: Position }
+  | { readonly kind: 'screen' };
+
+export interface MapAnnotation {
+  readonly id: string;
+  readonly anchor: AnnotationAnchor;
+  readonly placement: ScreenPlacement;
+  readonly label?: string;
+}
+
+export interface NaturalEarthPath {
+  readonly d: string;
+  readonly bounds?: Bounds;
+}
+
+export interface NaturalEarthData {
+  readonly size: number;
+  readonly land?: readonly NaturalEarthPath[];
+  readonly landPath?: string;
+  readonly lakes: readonly NaturalEarthPath[];
+  readonly rivers: readonly NaturalEarthPath[];
 }
 
 export interface AtlasMap {
-  renderMapState(mapState: MapState, scene: Scene, mapConfig: MapPresentationConfig, context: ReaderContext): void;
-  setStructureViews(views: readonly unknown[], scene: Scene, context: ReaderContext): void;
+  renderMapState(
+    mapState: MapState | null,
+    scene?: Scene | null,
+    mapConfig?: MapPresentationConfig | null,
+    context?: ReaderContext | null
+  ): boolean;
+  setStructureViews(
+    views?: readonly StructureView[],
+    scene?: Scene | null,
+    context?: ReaderContext | null
+  ): void;
   clear(): void;
   destroy(): void;
   getActiveMapState(): MapState | null;
+  getActiveScene(): Scene | null;
+  getActiveMapConfig(): MapPresentationConfig | null;
+  getActiveCameraTransform(): string;
+  getGeometryCacheSize(): number;
 }
 
 export interface MapModule {
+  readonly VIEW_FAMILIES: ReadonlySet<string>;
+  readonly SCREEN_POSITIONS: Readonly<Record<ScreenPlacement, Position>>;
+  projectPoint(position: Position, size?: number): [number, number];
+  geometryToPath(geometry: GeometryShape | null | undefined, size?: number): string;
+  cameraTransform(cameraPreset: CameraPreset | null | undefined, size?: number): string;
+  cameraViewportBounds(cameraPreset: CameraPreset | null | undefined, size?: number, padding?: number): Bounds;
+  boundsIntersect(left: unknown, right: unknown): boolean;
+  selectRegionalPaths(
+    items?: readonly NaturalEarthPath[],
+    cameraPresets?: readonly CameraPreset[] | CameraPreset,
+    size?: number
+  ): readonly NaturalEarthPath[];
+  cameraPresetsForCard(
+    queries: AtlasQueries,
+    cardId: CardId | null,
+    fallbackPreset?: CameraPreset | null
+  ): CameraPreset[];
+  projectAnnotation(
+    annotation: Pick<MapAnnotation, 'anchor'> | null | undefined,
+    cameraPreset: CameraPreset,
+    size?: number
+  ): [number, number] | null;
   createNaturalEarthMap(options: {
     container: HTMLElement;
     data: AtlasData;
     queries: AtlasQueries;
-    naturalEarth: unknown;
+    naturalEarth: NaturalEarthData;
     documentRef: Document;
     windowRef: AtlasRuntimeGlobal;
-    onNavigate: (navigationId: string) => void;
+    onNavigate?: (navigationId: string) => void;
   }): AtlasMap;
 }
 
@@ -265,7 +453,7 @@ export interface AtlasRuntimeGlobal extends Window {
   ATLAS_V5_CARDS?: CardsModule;
   ATLAS_V5_CARD_READER?: CardReaderModule;
   ATLAS_V5_MAP?: MapModule;
-  ATLAS_NATURAL_EARTH?: { readonly base?: unknown };
+  ATLAS_NATURAL_EARTH?: { readonly base?: NaturalEarthData };
   ATLAS_V5_APP_INTERNALS?: Readonly<Record<string, unknown>>;
   ATLAS_V5_APP?: AtlasApp;
   ATLAS_BRAND?: BrandConfig;

@@ -13,8 +13,8 @@ const app = read('src/app.ts');
 const globalCss = read('styles.css');
 const cardCss = read('styles/v4/cards.css');
 const mapCss = read('styles/v4/map.css');
-const mapJs = read('map/v4/map-renderer.js');
-const cardsJs = read('ui/v4/cards.js');
+const mapSource = read('src/map/map-renderer.ts');
+const cardsSource = read('src/reader/card-components.ts');
 
 test('entrypoint, aggregator, and syntax manifest keep one content-module order', () => {
   const { spawnSync } = require('node:child_process');
@@ -43,16 +43,16 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'data/iron-age-near-east.js',
     'data/atlas-data.js',
     'data/queries.js',
-    'ui/v4/cards.js',
+    'src/reader/card-components.ts',
     'src/reader/card-reader.ts',
     'assets/natural-earth/base.js',
-    'map/v4/map-renderer.js',
+    'src/map/map-renderer.ts',
     'src/app.ts'
   ]);
 });
 
 test('runtime contains no timeline or interactive basemap state', () => {
-  const runtime = [html, app, globalCss, cardCss, mapCss, mapJs].join('\n');
+  const runtime = [html, app, globalCss, cardCss, mapCss, mapSource].join('\n');
   for (const forbidden of [
     'server.arcgisonline.com',
     'World_Imagery',
@@ -67,7 +67,7 @@ test('runtime contains no timeline or interactive basemap state', () => {
   ]) {
     assert.equal(runtime.includes(forbidden), false, forbidden);
   }
-  assert.doesNotMatch(mapJs, /addEventListener\(['"](?:wheel|pointerdown|pointermove|mousedown|touchmove)/);
+  assert.doesNotMatch(mapSource, /addEventListener\(['"](?:wheel|pointerdown|pointermove|mousedown|touchmove)/);
 });
 
 test('V5 validation proves all references and objects are complete', () => {
@@ -129,7 +129,7 @@ test('left-column images crossfade while unchanged images remain stable', () => 
   assert.match(app, /waitForImageReady\(incomingImage\)\.then/);
   assert.match(app, /preloadAdjacentSceneImages\(context\?\.cardId, scene\?\.id, asset\.id\)/);
   assert.match(app, /image\.fetchPriority = 'low'/);
-  assert.match(cardsJs, /loading="lazy" decoding="async"/);
+  assert.match(cardsSource, /loading="lazy" decoding="async"/);
 });
 
 test('same-Card image presentations preserve the map DOM underneath', () => {
@@ -156,9 +156,9 @@ test('map cards and approximation copy are visually hidden without deleting thei
     mapCss,
     /\.v4-map__nodes,\s*\.v4-map__legend,\s*\.v4-map__approximation\s*\{\s*display: none;/
   );
-  assert.match(mapJs, /data-map-nodes/);
-  assert.match(mapJs, /data-map-legend/);
-  assert.match(mapJs, /近似教学示意 · 非精确疆界或路线/);
+  assert.match(mapSource, /data-map-nodes/);
+  assert.match(mapSource, /data-map-legend/);
+  assert.match(mapSource, /近似教学示意 · 非精确疆界或路线/);
 });
 
 test('SVG camera transform is not shifted by a second CSS transform origin', () => {

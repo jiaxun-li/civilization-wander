@@ -27,12 +27,11 @@ test('all Vite entrypoint imports are local build inputs', () => {
   }
 });
 
-test('legacy runtime remains local while Vite owns module loading', () => {
+test('remaining legacy runtime stays local while Vite owns all module loading', () => {
   const runtimeFiles = entryImports.filter(relative => relative.endsWith('.js'));
   const runtime = runtimeFiles.map(read).join('\n');
-  const executableRuntimeFiles = runtimeFiles
-    .filter(relative => !relative.startsWith('data/') || relative === 'data/queries.js')
-    .concat('src/app.ts');
+  const executableRuntimeFiles = entryImports
+    .filter(relative => !relative.startsWith('data/') || relative === 'data/queries.js');
   const executableRuntime = executableRuntimeFiles.map(read).join('\n');
   assert.doesNotMatch(runtime, /\bimport\s+|\bexport\s+|\brequire\(['"][^.]|fetch\(|XMLHttpRequest/);
   assert.doesNotMatch(executableRuntime, /https?:\/\//);

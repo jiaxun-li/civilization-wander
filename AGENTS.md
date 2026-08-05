@@ -489,17 +489,18 @@ The current runtime is a Vite-built V5 prototype with no client-side runtime dep
 - `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
 - `src/types/runtime.ts` defines the typed consumer boundary between the
-  application and the V5 data, query, Reader, Cards, and Map modules.
+  application, the JavaScript V5 data/query modules, and the typed Reader,
+  Cards, and Map modules.
 - `data/atlas-data.js` contains Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,
   CameraPresets, MapStates, Geometries, MapAnnotations, Assets, and Sources.
 - `data/queries.js` indexes, queries, and validates the V5 atlas.
 - `scripts/report-atlas-counts.js` reports live collection counts from the
   aggregated runtime data without writing files.
-- `ui/v4/cards.js` renders Card and Scene presentations.
+- `src/reader/card-components.ts` renders Card and Scene presentations.
 - `src/reader/card-reader.ts` activates Scenes, updates history, restores scroll
   position, and dispatches presentation changes.
-- `map/v4/map-renderer.js` renders a local Natural Earth SVG map and optional
+- `src/map/map-renderer.ts` renders a local Natural Earth SVG map and optional
   historical overlays.
 - Hash routes use the Card as the primary destination and may include a Scene
   section for reading restoration and refresh stability.

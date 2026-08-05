@@ -16,7 +16,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；TypeScript 先覆盖入口与构建配置，既有 V5 JavaScript 模块通过有序副作用导入渐进迁移。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
+`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader 与 Map 已迁移为 TypeScript，内容数据、查询和本地底图 adapter 仍按依赖顺序加载 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
 
 聚合器与语法清单必须和 `src/main.ts` 保持同一内容模块顺序；`scripts/check-runtime-manifests.js` 从 HTML 入口、TypeScript 入口、聚合器与语法清单读取现状并做只读比较，不再由文档保存另一份模块清单。运行时依赖层次是：
 
@@ -24,13 +24,13 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 2. `data/` 下由入口列出的各内容模块
 3. `data/atlas-data.js`
 4. `data/queries.js`
-5. `ui/v4/cards.js`
+5. `src/reader/card-components.ts`
 6. `src/reader/card-reader.ts`
 7. `assets/natural-earth/base.js`
-8. `map/v4/map-renderer.js`
+8. `src/map/map-renderer.ts`
 9. `src/app.ts`
 
-样式由 `src/main.ts` 按 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css` 的顺序导入。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；Vite/TypeScript 是构建和开发工作流变化，不构成 schema 版本变化。稳定表现层仍保留 `ui/v4`、`map/v4` 与 `styles/v4` 目录名，这些路径名不表示活动 schema 仍为 V4。
+样式由 `src/main.ts` 按 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css` 的顺序导入。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；Vite/TypeScript 是构建和开发工作流变化，不构成 schema 版本变化。Cards、Reader 与 Map 的活动代码位于 `src/reader` 和 `src/map`；`styles/v4` 只保留稳定视觉类名，这个目录名不表示活动 schema 仍为 V4。
 
 ```mermaid
 flowchart TD
@@ -40,11 +40,11 @@ flowchart TD
     ENTRY --> D["data/atlas-data.js\nATLAS_V5_DATA"]
     CM --> D
     D --> Q["data/queries.js\nATLAS_V5_QUERIES"]
-    Q --> C["ui/v4/cards.js\nATLAS_V5_CARDS"]
+    Q --> C["src/reader/card-components.ts\nATLAS_V5_CARDS"]
     Q --> R["src/reader/card-reader.ts\nATLAS_V5_CARD_READER"]
     C --> R
     WP --> B["assets/natural-earth/base.js\nATLAS_NATURAL_EARTH"]
-    Q --> M["map/v4/map-renderer.js\nATLAS_V5_MAP"]
+    Q --> M["src/map/map-renderer.ts\nATLAS_V5_MAP"]
     B --> M
     D --> A["src/app.ts\nATLAS_V5_APP"]
     Q --> A
@@ -442,7 +442,7 @@ pnpm build
 
 ## 18. Vite、静态部署与地图产物约束
 
-- `index.html` 只加载 `src/main.ts`；既有 IIFE/UMD 模块由该入口按固定顺序导入，后续可以逐个迁移为 TypeScript，但不得绕过聚合器、validator 或清单一致性检查。
+- `index.html` 只加载 `src/main.ts`；TypeScript 表现层与剩余 JavaScript 数据、查询和底图模块均由该入口按固定顺序导入。后续迁移不得绕过聚合器、validator 或清单一致性检查。
 - 不得为核心内容请求远程地图、字体、API 或图片。Source URL 只是元数据。
 - URL 主身份保持 `#card/<cardId>/<optionalSceneId>`；Scene ID 用于区段定位和恢复，不成为全局故事节点。
 - `vite.config.mts` 使用 `/civilization-wander/` 作为 GitHub Pages 项目路径；`pnpm build` 将应用与本地运行时资源输出到 `dist/`，并复制 `.nojekyll`。
@@ -493,9 +493,9 @@ pnpm build
 | `scripts/generate-asset-manifests.js` | 从现有运行时 Asset 更新 version-2 非运行时元数据清单、编码尺寸、体积和摘要；保留既有审核字段，不猜测许可。 |
 | `scripts/migrate-v4-content-to-v5.js` | 记录 V4→V5 的显式字段删除、Event kind 和逐 Scene Event 映射。 |
 | `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始与编码尺寸、体积、WebP 格式、origin、SHA-256 与审核状态。 |
-| `ui/v4/cards.js` | 语义化/转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML。 |
+| `src/reader/card-components.ts` | 类型化并语义转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML；继续暴露 `ATLAS_V5_CARDS` 浏览器兼容接口。 |
 | `src/reader/card-reader.ts` | 类型化的 Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫；继续暴露 `ATLAS_V5_CARD_READER` 浏览器兼容接口。 |
-| `map/v4/map-renderer.js` | 本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理。 |
+| `src/map/map-renderer.ts` | 类型化的本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理；继续暴露 `ATLAS_V5_MAP` 浏览器兼容接口。 |
 | `data/world-physical.js` | 活动生成的 Natural Earth 4096 坐标底图数据。 |
 | `assets/natural-earth/base.js` | 底图 adapter、筛选、冻结与缓存。 |
 
