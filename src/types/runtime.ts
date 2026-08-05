@@ -469,6 +469,11 @@ export interface CardTargetContext {
   readonly sceneId: SceneId | null;
 }
 
+export interface NavigationPreviewRenderer {
+  open(layer: HTMLElement, navigationId: string): boolean;
+  close(layer?: HTMLElement | null): void;
+}
+
 export interface CardsModule {
   escapeHtml(value?: unknown): string;
   formatTimeSpan(timeSpan?: TimeSpan): string;
@@ -489,6 +494,7 @@ export interface CardReaderModule {
     data: AtlasData;
     queries: AtlasQueries;
     components: CardComponents;
+    previewRenderer?: NavigationPreviewRenderer;
     root: HTMLElement;
     windowRef: AtlasWindow;
     onPresentationChange: (presentation: ScenePresentation, scene: Scene, context: ReaderContext) => void;

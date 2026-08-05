@@ -34,6 +34,11 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
   await expect(page.locator('#card-view')).toBeVisible();
   await expect(page.locator('[data-card-id="odyssey-name-and-home"]')).toBeVisible();
 
+  const previewTrigger = page.locator('[data-preview-navigation-id]').first();
+  await previewTrigger.hover();
+  await expect(page.locator('[data-preview-layer]')).toHaveAttribute('data-open', 'true');
+  await expect(page.locator('[data-preview-layer] .v4-preview-card')).toBeVisible();
+
   const mediaImage = page.locator('[data-map-slot] > img:not([data-media-image-transition])');
   await expect(mediaImage).toBeVisible();
   await expect.poll(() => mediaImage.evaluate(image => {

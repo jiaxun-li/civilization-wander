@@ -11,6 +11,7 @@ const app = read('src/app.ts');
 const homeView = read('src/home/home-view.ts');
 const siteHeader = read('src/shell/site-header.ts');
 const storyNavigation = read('src/shell/story-navigation.ts');
+const navigationPreview = read('src/reader/navigation-preview.ts');
 const viteConfig = read('vite.config.mts');
 const playwrightConfig = read('playwright.config.ts');
 const deployWorkflow = read('.github/workflows/deploy-pages.yml');
@@ -74,6 +75,16 @@ test('React renders story navigation while App retains history behavior', () => 
   assert.match(storyNavigation, /trailNames\.join\(' → '\)/);
   assert.match(storyNavigation, /onClick: onBack/);
   assert.doesNotMatch(storyNavigation, /history\.|history\.back|showHome|createCardReader/);
+});
+
+test('React renders navigation previews while Reader retains preview timing', () => {
+  const reader = read('src/reader/card-reader.ts');
+  assert.match(app, /createNavigationPreviewRenderer\(/);
+  assert.match(navigationPreview, /function NavigationPreview\(/);
+  assert.match(navigationPreview, /createRoot\(layer\)/);
+  assert.match(reader, /previewRenderer\.open\(layer, navigationId\)/);
+  assert.match(reader, /previewTimer = windowRef\.setTimeout/);
+  assert.doesNotMatch(navigationPreview, /setTimeout|mouseenter|mouseleave|followNavigation/);
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {

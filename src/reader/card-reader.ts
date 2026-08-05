@@ -93,6 +93,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       data,
       queries,
       components,
+      previewRenderer,
       root,
       windowRef,
       onPresentationChange = () => {},
@@ -343,8 +344,11 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       previewTimer = null;
       const layer = root.querySelector<HTMLElement>('[data-preview-layer]');
       if (layer) {
-        layer.innerHTML = '';
-        layer.removeAttribute?.('data-open');
+        if (previewRenderer) previewRenderer.close(layer);
+        else {
+          layer.innerHTML = '';
+          layer.removeAttribute?.('data-open');
+        }
       }
       tapPreviewNavigationId = null;
       root.querySelectorAll<HTMLElement>('[data-preview-navigation-id]').forEach(trigger => {
@@ -355,8 +359,12 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
     function openPreview(navigationId: string): void {
       const layer = root.querySelector<HTMLElement>('[data-preview-layer]');
       if (!layer) return;
-      layer.innerHTML = components.renderPreviewCard(navigationId);
-      layer.setAttribute?.('data-open', 'true');
+      if (previewRenderer) {
+        if (!previewRenderer.open(layer, navigationId)) return;
+      } else {
+        layer.innerHTML = components.renderPreviewCard(navigationId);
+        layer.setAttribute?.('data-open', 'true');
+      }
       root.querySelectorAll<HTMLElement>('[data-preview-navigation-id]').forEach(trigger => {
         trigger.setAttribute?.(
           'aria-expanded',
@@ -409,6 +417,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       }
       announcedSceneId = null;
       restoringHistorySnapshot = preserveHistorySnapshot || Number.isFinite(restoreScrollY);
+      closePreview();
       replaceCardMarkup(
         components.renderMainCard(card.id, { activeSceneId: resolvedScene.id }),
         replaceScrollY

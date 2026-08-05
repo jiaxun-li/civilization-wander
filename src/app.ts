@@ -2,6 +2,7 @@ import { atlasData } from './data/atlas-data.ts';
 import { queriesModule } from './data/queries.ts';
 import { cardsModule } from './reader/card-components.ts';
 import { cardReaderModule } from './reader/card-reader.ts';
+import { createNavigationPreviewRenderer } from './reader/navigation-preview.ts';
 import { naturalEarthModule } from './map/natural-earth-base.ts';
 import { mapModule } from './map/map-renderer.ts';
 import {
@@ -314,6 +315,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
       trailNames: []
     }, handleStoryBack);
     const components = cardsModule.createCardComponents({ data, queries });
+    const previewRenderer = createNavigationPreviewRenderer({ components, queries });
 
     let reader: CardReader | null = null;
     let readerStarted = false;
@@ -602,6 +604,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
       data,
       queries,
       components,
+      previewRenderer,
       root: cardRoot,
       windowRef: root,
       onPresentationChange(presentation: ScenePresentation, scene: Scene, context: ReaderContext) {

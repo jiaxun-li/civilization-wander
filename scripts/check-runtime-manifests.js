@@ -23,6 +23,7 @@ const runtimeSources = [
   'src/data/world-physical.ts',
   'src/reader/card-components.ts',
   'src/reader/card-reader.ts',
+  'src/reader/navigation-preview.ts',
   'src/map/natural-earth-base.ts',
   'src/map/map-renderer.ts',
   'data/query-node-runtime.js'

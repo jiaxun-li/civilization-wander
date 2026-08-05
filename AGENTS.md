@@ -504,6 +504,9 @@ only client-side runtime dependencies and currently own only the home view:
   trail while App remains the authority for browser history and Reader state.
 - React-owned shell elements send typed intent callbacks to App; do not scan
   React-rendered DOM to attach a second set of imperative click listeners.
+- `src/reader/navigation-preview.ts` renders navigation preview cards with
+  React; Reader remains responsible for hover/focus timing, coarse-pointer
+  confirmation, and following navigation.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.
