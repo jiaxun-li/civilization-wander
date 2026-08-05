@@ -3,7 +3,7 @@
   "module": "example-module",
   "moduleFile": "data/example-module.ts",
   "exportedGlobal": "ATLAS_V5_EXAMPLE_MODULE",
-  "expectedLoadingPosition": "after data/ancient-egypt.js",
+  "expectedLoadingPosition": "after data/ancient-egypt.ts",
   "assetDirectory": "assets/images/example-module",
   "newTopLevelIds": {
     "sources": [],

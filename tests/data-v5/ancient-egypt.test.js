@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ancientEgypt = require('../../data/ancient-egypt.js');
+const { ancientEgyptData: ancientEgypt } = require('../../data/ancient-egypt.ts');
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 

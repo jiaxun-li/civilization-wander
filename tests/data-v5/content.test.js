@@ -6,7 +6,7 @@ const path = require('node:path');
 
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const mesopotamia = require('../../data/mesopotamia.js');
-const ancientEgypt = require('../../data/ancient-egypt.js');
+const { ancientEgyptData: ancientEgypt } = require('../../data/ancient-egypt.ts');
 const { ancientIndiaData: ancientIndia } = require('../../data/ancient-india.ts');
 const { ancientChinaData: ancientChina } = require('../../data/ancient-china.ts');
 const { lateBronzeAgeData: lateBronzeAge } = require('../../data/late-bronze-age.ts');

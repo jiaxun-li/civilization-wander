@@ -1,5 +1,5 @@
 import '../../data/mesopotamia.js';
-import '../../data/ancient-egypt.js';
+import '../../data/ancient-egypt.ts';
 import '../../data/ancient-india.ts';
 import '../../data/ancient-china.ts';
 import '../../data/late-bronze-age.ts';
@@ -69,9 +69,9 @@ const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
     missingDependencyError: 'data/mesopotamia.js must load before data/atlas-data.js'
   },
   {
-    file: 'data/ancient-egypt.js',
+    file: 'data/ancient-egypt.ts',
     globalName: 'ATLAS_V5_ANCIENT_EGYPT',
-    missingDependencyError: 'data/ancient-egypt.js must load before data/atlas-data.js'
+    missingDependencyError: 'data/ancient-egypt.ts must load before src/data/atlas-data.ts'
   },
   {
     file: 'data/ancient-india.ts',

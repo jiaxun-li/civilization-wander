@@ -1,33 +1,35 @@
-(function exposeAncientEgyptV5(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_ANCIENT_EGYPT = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createAncientEgyptV5Data() {
-  'use strict';
+import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
 
-  function timeSpan(start, end, label, approximate) {
-    const value = { start, end, label };
+type SourceIds = readonly string[];
+
+  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+    const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id, text, sourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id, text, sourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id, text, sourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id, text, sourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function review(limitations, uncertainties, alternatives, sourceIds) {
+  function review(
+    limitations: readonly ContentRecord[],
+    uncertainties: readonly ContentRecord[],
+    alternatives: readonly ContentRecord[],
+    sourceIds: SourceIds
+  ): ContentRecord {
     return {
       limitations: limitations || [],
       counterexamples: [],
@@ -841,7 +843,7 @@
     { id: 'map-egypt-new-reach', cameraPresetId: 'camera-egypt-new-reach', layers: [{ kind: 'geometry', geometryId: 'geometry-egypt-new-reach', timeSpan: timeSpan(-1550, -1258, '新王国向努比亚与西亚延伸', true), sourceIds: ['source-met-new-kingdom', 'source-ucl-nubia-new-kingdom', 'source-met-amarna-letters', 'source-bm-kadesh-sallier', 'source-natural-earth'] }] }
   ];
 
-  function associatedAnnotation(id, entityId, coordinates, sourceIds, placement, label) {
+  function associatedAnnotation(id: string, entityId: string, coordinates: readonly number[], sourceIds: SourceIds, placement: string, label: string): ContentRecord {
     return { id, subject: { kind: 'entity', entityId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label };
   }
 
@@ -895,7 +897,7 @@
     { id: 'asset-egypt-hieroglyph-alphabet-chart', type: 'image', src: 'assets/images/ancient-egypt/hieroglyph-egyptian-to-sinaitic-chart.webp', title: '埃及象形文字到原始西奈文字示意图（简化且有推测）', alt: '彩色表格从左到右排列埃及象形文字、原始西奈文字、腓尼基字母、古希腊字母和拉丁字母，第一行显示牛头图形逐渐变成字母A的过程。', sourceIds: ['source-thinkzone-alphabet-chart'] }
   ];
 
-  return {
+  export const ancientEgyptData = {
     sources,
     entities,
     events,
@@ -910,5 +912,10 @@
     geometries,
     mapAnnotations,
     assets
-  };
-}));
+  } satisfies ContentModule;
+
+const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
+  ATLAS_V5_ANCIENT_EGYPT?: ContentModule;
+};
+
+root.ATLAS_V5_ANCIENT_EGYPT = ancientEgyptData;

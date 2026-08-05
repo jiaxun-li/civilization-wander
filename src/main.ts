@@ -6,7 +6,7 @@ import '../styles/v4/map.css';
 // JavaScript content modules are migrated to TypeScript incrementally.
 import './data/world-physical.ts';
 import '../data/mesopotamia.js';
-import '../data/ancient-egypt.js';
+import '../data/ancient-egypt.ts';
 import '../data/ancient-india.ts';
 import '../data/ancient-china.ts';
 import '../data/late-bronze-age.ts';

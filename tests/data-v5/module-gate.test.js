@@ -43,7 +43,7 @@ function handoffFor(moduleFile, moduleData, overrides = {}) {
     module: path.basename(moduleFile, path.extname(moduleFile)),
     moduleFile: relativeModuleFile,
     exportedGlobal: 'ATLAS_V5_MODULE_GATE_FIXTURE',
-    expectedLoadingPosition: 'after data/ancient-egypt.js',
+    expectedLoadingPosition: 'after data/ancient-egypt.ts',
     assetDirectory: 'tests/fixtures/module-gate-assets',
     newTopLevelIds: inventory(moduleData),
     reusedExternalIds: emptyInventory(),
