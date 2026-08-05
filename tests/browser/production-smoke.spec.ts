@@ -24,6 +24,8 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
   await page.goto('./', { waitUntil: 'networkidle' });
   await expect(page.locator('#home-view')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.locator('[data-home-sections] .home-entities')).toHaveCount(3);
+  await expect(page.locator('[data-home-sections] .home-entity-card')).toHaveCount(12);
 
   await page.locator('.home-primary-actions [data-start-card="odyssey-name-and-home"]').click();
   await expect(page.locator('#home-view')).toBeHidden();
@@ -44,4 +46,24 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
 
   expect(resourceErrors, resourceErrors.join('\n')).toEqual([]);
   expect(runtimeErrors, runtimeErrors.join('\n')).toEqual([]);
+});
+
+test('React home continuation opens the stored Card and Scene', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('civilization-wander:v5:last-read', JSON.stringify({
+      atlasV5: true,
+      cardId: 'tower-of-babel-story-and-etemenanki',
+      sceneId: 'tower-of-babel-builders-stay-together',
+      scrollY: 0,
+      navigationStack: []
+    }));
+  });
+
+  await page.goto('./', { waitUntil: 'networkidle' });
+  const continueLink = page.locator('[data-home-primary-action]');
+  await expect(continueLink).toContainText('继续上次阅读');
+  await expect(continueLink).toHaveAttribute('data-start-card', 'tower-of-babel-story-and-etemenanki');
+  await continueLink.click();
+  await expect(page.locator('[data-card-id="tower-of-babel-story-and-etemenanki"]')).toBeVisible();
+  await expect(page.locator('[data-scene-id="tower-of-babel-builders-stay-together"]')).toHaveClass(/\bis-active\b/);
 });

@@ -487,13 +487,17 @@ explicitly.
 
 ## Current implementation status
 
-The current runtime is a Vite-built V5 prototype with no client-side runtime dependencies:
+The current runtime is a Vite-built V5 prototype. React and React DOM are the
+only client-side runtime dependencies and currently own only the home view:
 
 - `index.html` loads the single `src/main.ts` Vite entrypoint.
 - `src/main.ts` imports styles and the single `src/app.ts` runtime entry; `src/app.ts`
   owns the typed named-import graph for data, queries, Cards, Reader, and Map.
 - `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
+- `src/home/home-view.ts` renders the React home view from typed view models;
+  App remains the owner of Card opening, continuation state, history, and Reader
+  orchestration.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.

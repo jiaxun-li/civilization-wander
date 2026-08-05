@@ -7,6 +7,8 @@ const root = path.resolve(__dirname, '../..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const html = read('index.html');
 const entry = read('src/main.ts');
+const app = read('src/app.ts');
+const homeView = read('src/home/home-view.ts');
 const viteConfig = read('vite.config.mts');
 const playwrightConfig = read('playwright.config.ts');
 const deployWorkflow = read('.github/workflows/deploy-pages.yml');
@@ -35,13 +37,20 @@ test('all Vite entrypoint imports are local build inputs', () => {
 });
 
 test('the app owns a local typed module graph without remote runtime loading', () => {
-  const executableRuntime = read('src/app.ts');
-  assert.match(executableRuntime, /import \{ atlasData \} from '\.\/data\/atlas-data\.ts'/);
-  assert.match(executableRuntime, /import \{ queriesModule \} from '\.\/data\/queries\.ts'/);
+  assert.match(app, /import \{ atlasData \} from '\.\/data\/atlas-data\.ts'/);
+  assert.match(app, /import \{ queriesModule \} from '\.\/data\/queries\.ts'/);
   assert.doesNotMatch(
-    executableRuntime,
+    app,
     /\bfetch\s*\(|\bXMLHttpRequest\b|\bWebSocket\s*\(|\bEventSource\s*\(|navigator\.sendBeacon\s*\(/
   );
+});
+
+test('React owns only the home view while App retains navigation orchestration', () => {
+  assert.match(app, /mountHomeView\(homeView,/);
+  assert.match(homeView, /createRoot\(container\)/);
+  assert.match(homeView, /function HomeView\(/);
+  assert.match(homeView, /data-start-card/);
+  assert.doesNotMatch(homeView, /history\.|localStorage|createCardReader|renderMapState/);
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {
@@ -72,10 +81,14 @@ test('package scripts cover development, build, preview, and verification', () =
   ]) {
     assert.equal(typeof packageJson.scripts[name], 'string', name);
   }
-  assert.equal(packageJson.dependencies, undefined);
+  assert.deepEqual(Object.keys(packageJson.dependencies).sort(), ['react', 'react-dom']);
+  assert.equal(typeof packageJson.dependencies.react, 'string');
+  assert.equal(typeof packageJson.dependencies['react-dom'], 'string');
   assert.equal(typeof packageJson.devDependencies.vite, 'string');
   assert.equal(typeof packageJson.devDependencies.typescript, 'string');
   assert.equal(typeof packageJson.devDependencies['@types/node'], 'string');
+  assert.equal(typeof packageJson.devDependencies['@types/react'], 'string');
+  assert.equal(typeof packageJson.devDependencies['@types/react-dom'], 'string');
   assert.equal(typeof packageJson.devDependencies['@playwright/test'], 'string');
   assert.equal(packageJson.engines.node, '>=22.18');
 });

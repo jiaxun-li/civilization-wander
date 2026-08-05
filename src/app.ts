@@ -4,6 +4,12 @@ import { cardsModule } from './reader/card-components.ts';
 import { cardReaderModule } from './reader/card-reader.ts';
 import { naturalEarthModule } from './map/natural-earth-base.ts';
 import { mapModule } from './map/map-renderer.ts';
+import {
+  mountHomeView,
+  type HomeActionViewModel,
+  type HomeCardViewModel,
+  type HomeSectionViewModel
+} from './home/home-view.ts';
 import type {
   AssetId,
   AtlasApp,
@@ -285,7 +291,14 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     const homeView = requiredElementById<HTMLElement>(runtimeDocument, 'home-view');
     const cardView = requiredElementById<HTMLElement>(runtimeDocument, 'card-view');
     const cardRoot = requiredElementById<HTMLElement>(runtimeDocument, 'card-root');
-    const homeSectionsRoot = requiredElement<HTMLElement>(runtimeDocument, '[data-home-sections]');
+    const homeViewController = mountHomeView(homeView, {
+      primaryAction: homeActionViewModel(BRAND_CONFIG.startCardId, '从苏美尔开始'),
+      featuredActions: [
+        homeActionViewModel('odyssey-name-and-home', '从《奥德赛》开始'),
+        homeActionViewModel('egypt-pyramids-kingdom-at-work', '从金字塔开始')
+      ],
+      sections: HOME_SECTIONS.map(homeSectionViewModel)
+    });
     const homePrimaryAction = requiredElement<HTMLAnchorElement>(runtimeDocument, '[data-home-primary-action]');
     const storyBackBar = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-bar]');
     const storyBackButton = requiredElement<HTMLButtonElement>(runtimeDocument, '[data-story-back]');
@@ -314,37 +327,37 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
       return queries.getEntityTypeLabel(entity.type) || entity.type;
     }
 
-    function renderHomeCard(cardId: CardId): string {
+    function homeActionViewModel(cardId: CardId, label: string): HomeActionViewModel {
+      const card = queries.getCard(cardId);
+      if (!card) throw new Error(`Unknown home action story: ${cardId}`);
+      return {
+        cardId: card.id,
+        href: readerModule.buildCardHash(card.id, card.sceneIds[0]),
+        label
+      };
+    }
+
+    function homeCardViewModel(cardId: CardId): HomeCardViewModel {
       const card = queries.getCard(cardId);
       if (!card) throw new Error(`Unknown home story: ${cardId}`);
       const entity = queries.getEntity(card.primaryEntityId);
       if (!entity) throw new Error(`Missing primary Entity for home story: ${cardId}`);
-      const firstSceneId = card.sceneIds[0];
-      return `
-        <a class="home-entity-card" href="${readerModule.buildCardHash(card.id, firstSceneId)}"
-          data-start-card="${cardsModule.escapeHtml(card.id)}">
-          <span>${cardsModule.escapeHtml(entityTypeLabel(entity))}</span>
-          <strong>${cardsModule.escapeHtml(entity.name)}</strong>
-          <p>${cardsModule.escapeHtml(entity.canonicalSummary)}</p>
-          <small>${cardsModule.escapeHtml(card.title)}</small>
-          <b aria-hidden="true">开始阅读 →</b>
-        </a>`;
+      return {
+        cardId: card.id,
+        href: readerModule.buildCardHash(card.id, card.sceneIds[0]),
+        entityType: entityTypeLabel(entity),
+        entityName: entity.name,
+        summary: entity.canonicalSummary,
+        cardTitle: card.title
+      };
     }
 
-    function renderHomeSections() {
-      homeSectionsRoot.innerHTML = HOME_SECTIONS.map((section, index) => {
-        const headingId = `home-section-${index + 1}-title`;
-        return `
-          <section class="home-entities" aria-labelledby="${headingId}">
-            <header>
-              <p class="home-hero__eyebrow">${cardsModule.escapeHtml(section.eyebrow)}</p>
-              <h2 id="${headingId}">${cardsModule.escapeHtml(section.title)}</h2>
-            </header>
-            <div class="home-card-grid">
-              ${section.cardIds.map(renderHomeCard).join('')}
-            </div>
-          </section>`;
-      }).join('');
+    function homeSectionViewModel(section: HomeSection): HomeSectionViewModel {
+      return {
+        eyebrow: section.eyebrow,
+        title: section.title,
+        cards: section.cardIds.map(homeCardViewModel)
+      };
     }
 
     function readLastReadSnapshot() {
@@ -384,11 +397,11 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
         : queries.getCard(BRAND_CONFIG.startCardId);
       if (!card) throw new Error(`Unknown start story: ${BRAND_CONFIG.startCardId}`);
       const sceneId = homeResumeSnapshot?.sceneId || card.sceneIds[0];
-      homePrimaryAction.href = readerModule.buildCardHash(card.id, sceneId);
-      homePrimaryAction.dataset.startCard = card.id;
-      homePrimaryAction.innerHTML = homeResumeSnapshot
-        ? `继续上次阅读：${cardsModule.escapeHtml(card.title)} <span aria-hidden="true">→</span>`
-        : '从苏美尔开始 <span aria-hidden="true">→</span>';
+      homeViewController.updatePrimaryAction({
+        cardId: card.id,
+        href: readerModule.buildCardHash(card.id, sceneId),
+        label: homeResumeSnapshot ? `继续上次阅读：${card.title}` : '从苏美尔开始'
+      });
     }
 
     function updateStoryBackControl({ visible = false }: { visible?: boolean } = {}): void {
@@ -757,7 +770,6 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
       if (snapshot) storeLastReadSnapshot(snapshot);
     });
 
-    renderHomeSections();
     updateHomePrimaryAction();
     bindHomeLinks();
     bindStartCards();
