@@ -10,7 +10,7 @@ const ancientEgypt = require('../../data/ancient-egypt.js');
 const { ancientIndiaData: ancientIndia } = require('../../data/ancient-india.ts');
 const { ancientChinaData: ancientChina } = require('../../data/ancient-china.ts');
 const { lateBronzeAgeData: lateBronzeAge } = require('../../data/late-bronze-age.ts');
-const aegean = require('../../data/aegean.js');
+const { aegeanData: aegean } = require('../../data/aegean.ts');
 const { ironAgeNearEastData: ironAgeNearEast } = require('../../data/iron-age-near-east.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 

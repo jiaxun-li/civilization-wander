@@ -1,37 +1,40 @@
-(function exposeAegeanV5(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_AEGEAN = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createAegeanV5Data() {
-  'use strict';
+import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
 
-  function timeSpan(start, end, label, approximate) {
-    const value = { start, end, label };
+type SourceIds = readonly string[];
+
+  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+    const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id, text, sourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id, text, sourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id, text, sourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id, text, sourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function historicalCase(id, title, text, eventIds, sourceIds) {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
-  function review(limitations, counterexamples, uncertainties, alternatives, sourceIds) {
+  function review(
+    limitations: readonly ContentRecord[],
+    counterexamples: readonly ContentRecord[],
+    uncertainties: readonly ContentRecord[],
+    alternatives: readonly ContentRecord[],
+    sourceIds: SourceIds
+  ): ContentRecord {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -872,7 +875,7 @@
     { id: 'asset-aegean-odyssey-argus', type: 'image', src: 'assets/images/aegean/odyssey-argus.webp', title: '化装归来的奥德修斯与老狗阿尔戈斯', alt: '弗拉克斯曼公共领域线描表现化装成乞丐的奥德修斯在宫门外遇到垂老的猎犬阿尔戈斯；狗认出主人，旁人却仍不知道他的身份。', sourceIds: ['source-wikimedia-flaxman-odyssey-argus'] }
   ];
 
-  return {
+  export const aegeanData = {
     sources,
     entities,
     events,
@@ -887,5 +890,10 @@
     geometries: [],
     mapAnnotations: [],
     assets
-  };
-}));
+  } satisfies ContentModule;
+
+const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
+  ATLAS_V5_AEGEAN?: ContentModule;
+};
+
+root.ATLAS_V5_AEGEAN = aegeanData;

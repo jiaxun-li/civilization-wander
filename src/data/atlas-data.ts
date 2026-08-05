@@ -3,7 +3,7 @@ import '../../data/ancient-egypt.js';
 import '../../data/ancient-india.ts';
 import '../../data/ancient-china.ts';
 import '../../data/late-bronze-age.ts';
-import '../../data/aegean.js';
+import '../../data/aegean.ts';
 import '../../data/iron-age-near-east.ts';
 
 import type {
@@ -89,9 +89,9 @@ const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
     missingDependencyError: 'data/late-bronze-age.ts must load before src/data/atlas-data.ts'
   },
   {
-    file: 'data/aegean.js',
+    file: 'data/aegean.ts',
     globalName: 'ATLAS_V5_AEGEAN',
-    missingDependencyError: 'data/aegean.js must load before data/atlas-data.js'
+    missingDependencyError: 'data/aegean.ts must load before src/data/atlas-data.ts'
   },
   {
     file: 'data/iron-age-near-east.ts',
