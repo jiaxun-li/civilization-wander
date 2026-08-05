@@ -91,3 +91,17 @@ test('React home continuation opens the stored Card and Scene', async ({ page })
   await expect(page.locator('[data-card-id="tower-of-babel-story-and-etemenanki"]')).toBeVisible();
   await expect(page.locator('[data-scene-id="tower-of-babel-builders-stay-together"]')).toHaveClass(/\bis-active\b/);
 });
+
+test('React wander trail follows cross-Card history and returns to the source story', async ({ page }) => {
+  await page.goto('./#card/sumer-measuring-land-time/sumer-water-network', { waitUntil: 'networkidle' });
+  await expect(page.locator('[data-card-id="sumer-measuring-land-time"]')).toBeVisible();
+
+  await page.locator('[data-navigation-id="nav-sumer-akkadian-empire"]').click();
+  await expect(page.locator('[data-card-id="akkadian-empire-overview"]')).toBeVisible();
+  await expect(page.locator('[data-story-back]')).toHaveAttribute('aria-label', '返回上一个故事');
+  await expect(page.locator('[data-story-trail]')).toBeVisible();
+  await expect(page.locator('[data-story-trail]')).toContainText('→');
+
+  await page.locator('[data-story-back]').click();
+  await expect(page.locator('[data-card-id="sumer-measuring-land-time"]')).toBeVisible();
+});
