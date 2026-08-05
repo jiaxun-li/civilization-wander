@@ -13,7 +13,7 @@ import '../data/late-bronze-age.js';
 import '../data/aegean.js';
 import '../data/iron-age-near-east.js';
 import '../data/atlas-data.js';
-import '../data/queries.js';
+import './data/queries.ts';
 import './reader/card-components.ts';
 import './reader/card-reader.ts';
 import '../assets/natural-earth/base.js';

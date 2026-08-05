@@ -5,7 +5,7 @@ const path = require('node:path');
 
 const moduleData = require('../../data/iron-age-near-east.js');
 const data = require('../../data/atlas-data.js');
-const queries = require('../../data/queries.js');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 
 const root = path.resolve(__dirname, '../..');
 const cardById = new Map(moduleData.cards.map(card => [card.id, card]));

@@ -494,7 +494,7 @@ The current runtime is a Vite-built V5 prototype with no client-side runtime dep
 - `data/atlas-data.js` contains Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,
   CameraPresets, MapStates, Geometries, MapAnnotations, Assets, and Sources.
-- `data/queries.js` indexes, queries, and validates the V5 atlas.
+- `src/data/queries.ts` indexes, queries, and validates the V5 atlas; `data/query-node-runtime.js` supplies its optional Node-only filesystem adapter for Asset validation.
 - `scripts/report-atlas-counts.js` reports live collection counts from the
   aggregated runtime data without writing files.
 - `src/reader/card-components.ts` renders Card and Scene presentations.

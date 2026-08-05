@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const data = require('../../data/atlas-data.js');
-const queries = require('../../data/queries.js');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 
 test('Card scene order and reverse ownership come from Card.sceneIds only', () => {
   const card = queries.getCard('sumer-measuring-land-time');

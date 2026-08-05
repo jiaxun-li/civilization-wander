@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const data = require('../../data/atlas-data.js');
-const queries = require('../../data/queries.js');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 
 function reject(mutator, pattern) {
   const candidate = structuredClone(data);

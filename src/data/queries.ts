@@ -1,20 +1,208 @@
-(function exposeAtlasV5Queries(root, factory) {
-  const nodeValidationRuntime = typeof module === 'object' && module.exports
-    ? {
-        fs: module['require']('node:fs'),
-        path: module['require']('node:path'),
-        projectRoot: module['require']('node:path').resolve(__dirname, '..')
-      }
-    : null;
-  const api = factory(
-    root?.ATLAS_V5_DATA ||
-    (typeof module === 'object' && module.exports ? require('./atlas-data.js') : null),
-    nodeValidationRuntime
-  );
-  if (root) root.ATLAS_V5_QUERIES = api;
-  if (typeof module === 'object' && module.exports) module.exports = api;
-}(typeof window !== 'undefined' ? window : globalThis, function createAtlasV5QueriesModule(defaultData, nodeValidationRuntime) {
-  'use strict';
+import '../../data/atlas-data.js';
+import '../../data/query-node-runtime.js';
+import type {
+  Asset,
+  AtlasData,
+  AtlasQueries,
+  AtlasRuntimeGlobal,
+  CameraPreset,
+  Card,
+  CardId,
+  Entity,
+  EntityId,
+  GraphEndpoint,
+  HistoricalGeometry,
+  MapAnnotation,
+  MapState,
+  NavigationOption,
+  NavigationPlacement,
+  Scene,
+  SceneId,
+  StructuralEdge,
+  StructureView,
+  TimeSpan,
+  ValidationResult
+} from '../types/runtime.ts';
+
+type UnknownRecord = Record<string, unknown>;
+type UncheckedItem = UnknownRecord & {
+  id: string;
+  kind: string;
+  type: string;
+  family: string;
+  title: string;
+  text: string;
+  src: string;
+  year: number;
+  rank: number;
+  maxVisible: number;
+  depth: number;
+  scale: number;
+  visible: boolean;
+  interactive: boolean;
+  approximate: boolean;
+  anchorMeaning: string;
+  placement: string;
+  display: string;
+  direction: string;
+  cardId: string;
+  sceneId: string;
+  entityId: string;
+  eventId: string;
+  assetId: string;
+  geometryId: string;
+  annotationId: string;
+  navigationOptionId: string;
+  cameraPresetId: string;
+  primaryEntityId: string;
+  structuralEdgeId: string;
+  sourceIds: string[];
+  relatedEntityIds: string[];
+  sceneIds: string[];
+  eventIds: string[];
+  participantEntityIds: string[];
+  structureViewIds: string[];
+  includeEntityIds: string[];
+  endpointKinds: string[];
+  edgeFamilies: string[];
+  edgeTypes: string[];
+  contentBlocks: UncheckedItem[];
+  evidenceBlocks: UncheckedItem[];
+  layers: UncheckedItem[];
+  limitations: UncheckedItem[];
+  counterexamples: UncheckedItem[];
+  uncertainties: UncheckedItem[];
+  alternativeExplanations: UncheckedItem[];
+  center: unknown[];
+  coordinates: unknown;
+  timeSpan: TimeSpan;
+  source: UncheckedItem;
+  target: UncheckedItem;
+  owner: UncheckedItem;
+  entry: UncheckedItem;
+  basis: UncheckedItem;
+  label: UncheckedItem;
+  summaries: UncheckedItem;
+  thesis: UncheckedItem;
+  editorialReview: UncheckedItem;
+  presentation: UncheckedItem;
+  map: UncheckedItem;
+  query: UncheckedItem;
+  subject: UncheckedItem;
+  anchor: UncheckedItem;
+  geometry: UncheckedItem;
+};
+type Direction = 'incoming' | 'outgoing' | 'both';
+type EdgeQueryOptions = { readonly direction?: Direction; readonly timeSpan?: TimeSpan };
+type QueryEvent = UnknownRecord & { readonly id: string };
+type QuerySource = UnknownRecord & { readonly id: string };
+type QueryCard = Card & { readonly relatedEntityIds: readonly EntityId[] };
+type QueryScene = Scene & { readonly eventIds: readonly string[] };
+type QueryStructuralEdge = StructuralEdge & {
+  readonly family: string;
+  readonly type: string;
+  readonly source: GraphEndpoint;
+  readonly target: GraphEndpoint;
+  readonly timeSpan?: TimeSpan;
+};
+type QueryStructureView = StructureView & {
+  readonly query: {
+    readonly direction?: Direction;
+    readonly timeSpan?: TimeSpan;
+    readonly endpointKinds?: readonly string[];
+    readonly edgeFamilies?: readonly string[];
+    readonly edgeTypes?: readonly string[];
+  };
+  readonly includeEntityIds?: readonly EntityId[];
+  readonly maxVisible: number;
+};
+type QueryNavigationOption = NavigationOption & {
+  readonly entry?: { readonly kind: 'targetScene' };
+};
+type QueryNavigationPlacement = NavigationPlacement & {
+  readonly id: string;
+  readonly owner:
+    | { readonly kind: 'scene'; readonly sceneId: SceneId }
+    | { readonly kind: 'card'; readonly cardId: CardId };
+  readonly slot: string;
+  readonly rank: number;
+};
+
+type QueryData = AtlasData & {
+  readonly entities: readonly Entity[];
+  readonly events: readonly QueryEvent[];
+  readonly structuralEdges: readonly QueryStructuralEdge[];
+  readonly cards: readonly QueryCard[];
+  readonly scenes: readonly QueryScene[];
+  readonly structureViews: readonly QueryStructureView[];
+  readonly navigationOptions: readonly QueryNavigationOption[];
+  readonly navigationPlacements: readonly QueryNavigationPlacement[];
+  readonly cameraPresets: readonly CameraPreset[];
+  readonly mapStates: readonly MapState[];
+  readonly geometries: readonly HistoricalGeometry[];
+  readonly mapAnnotations: readonly MapAnnotation[];
+  readonly assets: readonly Asset[];
+  readonly sources: readonly QuerySource[];
+};
+
+type QueryCollectionMap = {
+  entities: Entity;
+  events: QueryEvent;
+  structuralEdges: QueryStructuralEdge;
+  cards: QueryCard;
+  scenes: QueryScene;
+  structureViews: QueryStructureView;
+  navigationOptions: QueryNavigationOption;
+  navigationPlacements: QueryNavigationPlacement;
+  cameraPresets: CameraPreset;
+  mapStates: MapState;
+  geometries: HistoricalGeometry;
+  mapAnnotations: MapAnnotation;
+  assets: Asset;
+  sources: QuerySource;
+};
+
+type CollectionName = keyof QueryCollectionMap;
+type ValidationAtlas = UnknownRecord & {
+  schemaVersion: unknown;
+} & Record<CollectionName, UncheckedItem[]>;
+type ErrorReporter = (path: string, message: string) => void;
+type ClaimBlockReference = { readonly targetBlockId: string; readonly path: string };
+type ClaimRule = {
+  readonly allowed: readonly string[];
+  readonly required: readonly string[];
+  readonly text?: boolean;
+  readonly title?: boolean;
+  readonly statement?: boolean;
+  readonly steps?: boolean;
+  readonly sources?: boolean;
+  readonly events?: boolean;
+  readonly asset?: boolean;
+};
+
+type NodeValidationRuntime = {
+  readonly fs: {
+    existsSync(path: string): boolean;
+    statSync(path: string): { isFile(): boolean };
+  };
+  readonly path: {
+    extname(path: string): string;
+    resolve(...paths: string[]): string;
+    relative(from: string, to: string): string;
+    isAbsolute(path: string): boolean;
+  };
+  readonly projectRoot: string;
+};
+
+type QueryRuntimeGlobal = AtlasRuntimeGlobal & {
+  ATLAS_V5_QUERY_NODE_RUNTIME?: NodeValidationRuntime | null;
+};
+
+const runtimeGlobal = globalThis as unknown as QueryRuntimeGlobal;
+const defaultData = runtimeGlobal.ATLAS_V5_DATA as QueryData | undefined;
+const nodeValidationRuntime = runtimeGlobal.ATLAS_V5_QUERY_NODE_RUNTIME ?? null;
+
+if (!defaultData) throw new Error('ATLAS_V5_DATA must load before queries');
 
   const TOP_LEVEL_KEYS = [
     'schemaVersion',
@@ -32,8 +220,13 @@
     'mapAnnotations',
     'assets',
     'sources'
-  ];
-  const COLLECTION_KEYS = TOP_LEVEL_KEYS.filter(key => key !== 'schemaVersion');
+  ] as const;
+  const COLLECTION_KEYS = TOP_LEVEL_KEYS.filter(
+    (key): key is CollectionName => key !== 'schemaVersion'
+  );
+  const SCENE_TIME_DISPLAYS = new Set<unknown>(['year', 'undatedNarrative']);
+  const SCENE_NAVIGATION_SLOTS = new Set<unknown>(['inline', 'map']);
+  const NAVIGATION_SLOTS = new Set<unknown>(['inline', 'map', 'closing']);
   const TRANSITIONS = new Set(['hold', 'ease', 'cut']);
   const PRESENTATION_KINDS = new Set(['textOnly', 'image', 'imageAndText', 'map', 'mapAndText']);
   const DIRECTIONS = new Set(['incoming', 'outgoing', 'both']);
@@ -67,7 +260,7 @@
     'traditionalNarrative'
   ]);
   const ASSET_TYPES = new Set(['data', 'image']);
-  const ENTITY_TYPE_LABELS = Object.freeze({
+  const ENTITY_TYPE_LABELS: Readonly<Record<string, string>> = Object.freeze({
     person: '人物',
     polity: '政治实体',
     institution: '制度',
@@ -89,101 +282,121 @@
     Commodity: '商品',
     war: '战争'
   });
-  const ASSET_EXTENSIONS = {
+  const ASSET_EXTENSIONS: Readonly<Record<'data' | 'image', ReadonlySet<string>>> = {
     data: new Set(['.js', '.json', '.geojson']),
     image: new Set(['.avif', '.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp'])
   };
   const CAMERA_SCALE_MIN = 0.7;
   const CAMERA_SCALE_MAX = 12;
 
-  function isPlainObject(value) {
+  function isPlainObject(value: unknown): value is UnknownRecord {
     return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
   }
 
-  function isNonEmptyString(value) {
+  function isNonEmptyString(value: unknown): value is string {
     return typeof value === 'string' && value.trim().length > 0;
   }
 
-  function unique(values) {
+  function unique(values: readonly unknown[]): boolean {
     return new Set(values).size === values.length;
   }
 
-  function arrayOrEmpty(value) {
+  function arrayOrEmpty(value: unknown): unknown[] {
     return Array.isArray(value) ? value : [];
   }
 
-  function timeSpanOverlaps(left, right) {
+  function timeSpanOverlaps(left: unknown, right: unknown): boolean {
     if (!left || !right) return true;
-    const leftStart = left.start === undefined ? -Infinity : left.start;
-    const leftEnd = left.end === undefined ? Infinity : left.end;
-    const rightStart = right.start === undefined ? -Infinity : right.start;
-    const rightEnd = right.end === undefined ? Infinity : right.end;
+    const leftSpan = isPlainObject(left) ? left : {};
+    const rightSpan = isPlainObject(right) ? right : {};
+    const leftStart = typeof leftSpan.start === 'number' ? leftSpan.start : -Infinity;
+    const leftEnd = typeof leftSpan.end === 'number' ? leftSpan.end : Infinity;
+    const rightStart = typeof rightSpan.start === 'number' ? rightSpan.start : -Infinity;
+    const rightEnd = typeof rightSpan.end === 'number' ? rightSpan.end : Infinity;
     return leftStart <= rightEnd && rightStart <= leftEnd;
   }
 
-  function buildIndexes(data) {
-    const byCollection = {};
+  function buildIndexes(data: QueryData) {
+    const byCollection = {} as Record<CollectionName, Map<string, UncheckedItem>>;
     COLLECTION_KEYS.forEach(key => {
       byCollection[key] = new Map(
         arrayOrEmpty(data?.[key])
           .filter(isPlainObject)
-          .map(item => [item.id, item])
+          .filter((item): item is UnknownRecord & { id: string } => typeof item.id === 'string')
+          .map(item => [item.id, item as unknown as UncheckedItem] as const)
       );
     });
-    const ownerCardBySceneId = new Map();
+    const ownerCardBySceneId = new Map<string, { card: QueryCard; order: number }[]>();
     arrayOrEmpty(data?.cards).filter(isPlainObject).forEach(card => {
       arrayOrEmpty(card.sceneIds).forEach((sceneId, order) => {
+        if (typeof sceneId !== 'string') return;
         const owners = ownerCardBySceneId.get(sceneId) || [];
-        owners.push({ card, order });
+        owners.push({ card: card as unknown as QueryCard, order });
         ownerCardBySceneId.set(sceneId, owners);
       });
     });
     return { byCollection, ownerCardBySceneId };
   }
 
-  function createQueries(data) {
+  function createQueries(data: QueryData) {
     const indexes = buildIndexes(data);
-    const collection = name => indexes.byCollection[name];
-    const get = (name, id) => collection(name)?.get(id) || null;
+    const collection = (name: CollectionName): Map<string, UncheckedItem> => indexes.byCollection[name];
+    const get = <Name extends CollectionName>(
+      name: Name,
+      id: string | null | undefined
+    ): QueryCollectionMap[Name] | null => (
+      collection(name)?.get(id ?? '') as QueryCollectionMap[Name] | undefined
+    ) ?? null;
 
-    function getOwnerCardForScene(sceneId) {
+    function getOwnerCardForScene(sceneId: SceneId): QueryCard | null {
       const owners = indexes.ownerCardBySceneId.get(sceneId) || [];
       return owners.length === 1 ? owners[0].card : null;
     }
 
-    function getScenesForCard(cardId) {
+    function getScenesForCard(cardId: CardId | null | undefined): QueryScene[] {
       const card = get('cards', cardId);
-      return card ? card.sceneIds.map(sceneId => get('scenes', sceneId)).filter(Boolean) : [];
+      return card
+        ? card.sceneIds
+          .map(sceneId => get('scenes', sceneId))
+          .filter((scene): scene is QueryScene => Boolean(scene))
+        : [];
     }
 
-    function getCardsForEntity(entityId) {
+    function getCardsForEntity(entityId: EntityId): QueryCard[] {
       return data.cards.filter(card =>
         card.primaryEntityId === entityId || card.relatedEntityIds.includes(entityId)
       );
     }
 
-    function getPrimaryCardsForEntity(entityId) {
+    function getPrimaryCardsForEntity(entityId: EntityId): QueryCard[] {
       return data.cards.filter(card => card.primaryEntityId === entityId);
     }
 
-    function getRelatedCardsForEntity(entityId) {
+    function getRelatedCardsForEntity(entityId: EntityId): QueryCard[] {
       return data.cards.filter(card => card.relatedEntityIds.includes(entityId));
     }
 
-    function getEventsForScene(sceneId) {
+    function getEventsForScene(sceneId: SceneId): QueryEvent[] {
       const scene = get('scenes', sceneId);
-      return scene ? scene.eventIds.map(eventId => get('events', eventId)).filter(Boolean) : [];
+      return scene
+        ? scene.eventIds
+          .map(eventId => get('events', eventId))
+          .filter((event): event is QueryEvent => Boolean(event))
+        : [];
     }
 
-    function getEventsForCard(cardId) {
-      const eventIds = new Set();
+    function getEventsForCard(cardId: CardId): QueryEvent[] {
+      const eventIds = new Set<string>();
       getScenesForCard(cardId).forEach(scene => {
         scene.eventIds.forEach(eventId => eventIds.add(eventId));
       });
-      return Array.from(eventIds, eventId => get('events', eventId)).filter(Boolean);
+      return Array.from(eventIds, eventId => get('events', eventId))
+        .filter((event): event is QueryEvent => Boolean(event));
     }
 
-    function getNavigationEntrySceneId(navigationOrId) {
+    function getNavigationEntrySceneId(
+      navigationOrId: QueryNavigationOption | string
+    ): SceneId | null {
       const navigation = typeof navigationOrId === 'string'
         ? get('navigationOptions', navigationOrId)
         : navigationOrId;
@@ -191,6 +404,7 @@
       if (!targetCard) return null;
       if (
         navigation?.entry?.kind === 'targetScene' &&
+        typeof navigation.target.sceneId === 'string' &&
         targetCard.sceneIds.includes(navigation.target.sceneId)
       ) {
         return navigation.target.sceneId;
@@ -198,15 +412,19 @@
       return targetCard.sceneIds[0] || null;
     }
 
-    function getEdgesForEndpoint(endpointOrKind, idOrOptions, maybeOptions) {
-      let endpoint;
-      let options;
+    function getEdgesForEndpoint(
+      endpointOrKind: GraphEndpoint | string,
+      idOrOptions: string | EdgeQueryOptions = {},
+      maybeOptions: EdgeQueryOptions = {}
+    ): QueryStructuralEdge[] {
+      let endpoint: GraphEndpoint;
+      let options: EdgeQueryOptions;
       if (typeof endpointOrKind === 'string') {
-        endpoint = { kind: endpointOrKind, id: idOrOptions };
-        options = maybeOptions || {};
+        endpoint = { kind: endpointOrKind, id: typeof idOrOptions === 'string' ? idOrOptions : '' };
+        options = maybeOptions;
       } else {
         endpoint = endpointOrKind;
-        options = idOrOptions || {};
+        options = typeof idOrOptions === 'string' ? {} : idOrOptions;
       }
       const direction = options.direction || 'both';
       const timeSpan = options.timeSpan;
@@ -221,7 +439,10 @@
       });
     }
 
-    function getStructureViewItems(viewId, focusEndpoint) {
+    function getStructureViewItems(
+      viewId: string,
+      focusEndpoint: GraphEndpoint | null
+    ): QueryStructuralEdge[] {
       const view = get('structureViews', viewId);
       if (!view) return [];
       const query = view.query;
@@ -245,19 +466,23 @@
         .slice(0, view.maxVisible);
     }
 
-    function placementsForOwner(kind, id, slot) {
-      const key = kind === 'scene' ? 'sceneId' : 'cardId';
+    function placementsForOwner(
+      kind: 'scene' | 'card',
+      id: string,
+      slot?: string
+    ): QueryNavigationPlacement[] {
       return data.navigationPlacements
-        .filter(placement =>
-          placement.owner.kind === kind &&
-          placement.owner[key] === id &&
-          (!slot || placement.slot === slot)
-        )
+        .filter(placement => {
+          const ownsTarget = placement.owner.kind === 'scene'
+            ? kind === 'scene' && placement.owner.sceneId === id
+            : kind === 'card' && placement.owner.cardId === id;
+          return ownsTarget && (!slot || placement.slot === slot);
+        })
         .slice()
         .sort((left, right) => left.rank - right.rank || left.id.localeCompare(right.id));
     }
 
-    function getNavigationOptionsForScene(sceneId, slot) {
+    function getNavigationOptionsForScene(sceneId: SceneId, slot?: string) {
       return placementsForOwner('scene', sceneId, slot)
         .filter(placement => placement.visible)
         .map(placement => ({
@@ -269,10 +494,10 @@
     return {
       data,
       indexes,
-      getEntity: id => get('entities', id),
-      getEvent: id => get('events', id),
-      getCard: id => get('cards', id),
-      getScene: id => get('scenes', id),
+      getEntity: (id: string | null | undefined) => get('entities', id),
+      getEvent: (id: string | null | undefined) => get('events', id),
+      getCard: (id: string | null | undefined) => get('cards', id),
+      getScene: (id: string | null | undefined) => get('scenes', id),
       getOwnerCardForScene,
       getScenesForCard,
       getCardsForEntity,
@@ -281,35 +506,35 @@
       getEventsForScene,
       getEventsForCard,
       getNavigationEntrySceneId,
-      getStructuralEdge: id => get('structuralEdges', id),
+      getStructuralEdge: (id: string | null | undefined) => get('structuralEdges', id),
       getEdgesForEndpoint,
-      getStructureView: id => get('structureViews', id),
+      getStructureView: (id: string | null | undefined) => get('structureViews', id),
       getStructureViewItems,
-      getNavigationOption: id => get('navigationOptions', id),
-      getNavigationPlacementsForScene: (sceneId, slot) => placementsForOwner('scene', sceneId, slot),
-      getNavigationPlacementsForCard: (cardId, slot) => placementsForOwner('card', cardId, slot),
+      getNavigationOption: (id: string | null | undefined) => get('navigationOptions', id),
+      getNavigationPlacementsForScene: (sceneId: SceneId, slot?: string) => placementsForOwner('scene', sceneId, slot),
+      getNavigationPlacementsForCard: (cardId: CardId, slot?: string) => placementsForOwner('card', cardId, slot),
       getNavigationOptionsForScene,
-      getMapState: id => get('mapStates', id),
-      getCameraPreset: id => get('cameraPresets', id),
-      getGeometry: id => get('geometries', id),
-      getMapAnnotation: id => get('mapAnnotations', id),
-      getAsset: id => get('assets', id),
-      getSource: id => get('sources', id),
-      getEntityTypeLabel: type => ENTITY_TYPE_LABELS[type] || null,
+      getMapState: (id: string | null | undefined) => get('mapStates', id),
+      getCameraPreset: (id: string | null | undefined) => get('cameraPresets', id),
+      getGeometry: (id: string | null | undefined) => get('geometries', id),
+      getMapAnnotation: (id: string | null | undefined) => get('mapAnnotations', id),
+      getAsset: (id: string | null | undefined) => get('assets', id),
+      getSource: (id: string | null | undefined) => get('sources', id),
+      getEntityTypeLabel: (type: string) => ENTITY_TYPE_LABELS[type] || null,
       timeSpanOverlaps,
-      validateAtlasData: candidate => validateAtlasData(candidate === undefined ? data : candidate)
+      validateAtlasData: (candidate?: unknown) => validateAtlasData(candidate === undefined ? data : candidate)
     };
   }
 
-  function validateAtlasDataUnsafe(candidate) {
-    const errors = [];
-    const data = candidate === undefined ? defaultData : candidate;
+  function validateAtlasDataUnsafe(candidate?: unknown): ValidationResult {
+    const errors: string[] = [];
+    const candidateData: unknown = candidate === undefined ? defaultData : candidate;
 
-    function error(path, message) {
+    function error(path: string, message: string): void {
       errors.push(`${path}: ${message}`);
     }
 
-    function checkObject(value, path) {
+    function checkObject(value: unknown, path: string): value is UnknownRecord {
       if (!isPlainObject(value)) {
         error(path, 'must be an object');
         return false;
@@ -317,7 +542,12 @@
       return true;
     }
 
-    function checkKeys(value, allowed, required, path) {
+    function checkKeys(
+      value: unknown,
+      allowed: readonly string[],
+      required: readonly string[],
+      path: string
+    ): value is UnknownRecord {
       if (!checkObject(value, path)) return false;
       Object.keys(value).forEach(key => {
         if (!allowed.includes(key)) error(`${path}.${key}`, 'unknown field');
@@ -328,16 +558,20 @@
       return true;
     }
 
-    function checkString(value, path) {
+    function checkString(value: unknown, path: string): void {
       if (!isNonEmptyString(value)) error(path, 'must be a non-empty string');
     }
 
-    function checkBoolean(value, path) {
+    function checkBoolean(value: unknown, path: string): void {
       if (typeof value !== 'boolean') error(path, 'must be a boolean');
     }
 
-    function checkStringArray(value, path, options) {
-      const settings = options || {};
+    function checkStringArray(
+      value: unknown,
+      path: string,
+      options: { readonly nonEmpty?: boolean } = {}
+    ): void {
+      const settings = options;
       if (!Array.isArray(value)) {
         error(path, 'must be an array');
         return;
@@ -347,8 +581,12 @@
       if (!unique(value)) error(path, 'must not contain duplicate values');
     }
 
-    function checkTimeSpan(value, path, options) {
-      const settings = options || {};
+    function checkTimeSpan(
+      value: unknown,
+      path: string,
+      options: { readonly numeric?: boolean } = {}
+    ): void {
+      const settings = options;
       if (!checkKeys(value, ['start', 'end', 'approximate', 'label'], ['label'], path)) return;
       checkString(value.label, `${path}.label`);
       const hasStart = Object.prototype.hasOwnProperty.call(value, 'start');
@@ -357,33 +595,44 @@
       ['start', 'end'].forEach(key => {
         if (!Object.prototype.hasOwnProperty.call(value, key)) return;
         const year = value[key];
-        if (!Number.isFinite(year) || !Number.isInteger(year)) error(`${path}.${key}`, 'must be a finite integer');
+        if (typeof year !== 'number' || !Number.isFinite(year) || !Number.isInteger(year)) {
+          error(`${path}.${key}`, 'must be a finite integer');
+        }
         if (year === 0) error(`${path}.${key}`, 'year 0 is not allowed');
       });
-      if (hasStart && hasEnd && Number.isFinite(value.start) && Number.isFinite(value.end) && value.start > value.end) {
+      if (
+        hasStart && hasEnd &&
+        typeof value.start === 'number' && Number.isFinite(value.start) &&
+        typeof value.end === 'number' && Number.isFinite(value.end) &&
+        value.start > value.end
+      ) {
         error(path, 'start must be less than or equal to end');
       }
       if (Object.prototype.hasOwnProperty.call(value, 'approximate')) checkBoolean(value.approximate, `${path}.approximate`);
     }
 
-    if (!checkObject(data, 'atlas')) {
+    if (!checkObject(candidateData, 'atlas')) {
       return { valid: false, errors, counts: {} };
     }
-    Object.keys(data).forEach(key => {
-      if (!TOP_LEVEL_KEYS.includes(key)) error(`atlas.${key}`, 'unknown collection or field');
+    Object.keys(candidateData).forEach(key => {
+      if (!TOP_LEVEL_KEYS.includes(key as typeof TOP_LEVEL_KEYS[number])) {
+        error(`atlas.${key}`, 'unknown collection or field');
+      }
     });
     TOP_LEVEL_KEYS.forEach(key => {
-      if (!Object.prototype.hasOwnProperty.call(data, key)) error(`atlas.${key}`, 'is required');
+      if (!Object.prototype.hasOwnProperty.call(candidateData, key)) error(`atlas.${key}`, 'is required');
     });
-    if (data.schemaVersion !== 5) error('atlas.schemaVersion', 'must equal 5');
+    if (candidateData.schemaVersion !== 5) error('atlas.schemaVersion', 'must equal 5');
     COLLECTION_KEYS.forEach(key => {
-      if (!Array.isArray(data[key])) error(`atlas.${key}`, 'must be an array');
+      if (!Array.isArray(candidateData[key])) error(`atlas.${key}`, 'must be an array');
     });
     if (errors.length) return { valid: false, errors, counts: {} };
 
-    const indexes = buildIndexes(data);
+    const data = candidateData as ValidationAtlas;
+
+    const indexes = buildIndexes(data as unknown as QueryData);
     const maps = indexes.byCollection;
-    const allTopIds = new Map();
+    const allTopIds = new Map<string, string>();
     COLLECTION_KEYS.forEach(collectionName => {
       data[collectionName].forEach((item, index) => {
         const path = `${collectionName}[${index}]`;
@@ -399,33 +648,43 @@
       });
     });
 
-    function has(collectionName, id) {
+    function has(collectionName: CollectionName, id: string): boolean {
       return maps[collectionName].has(id);
     }
 
-    function checkRef(collectionName, id, path) {
+    function checkRef(collectionName: CollectionName, id: unknown, path: string): void {
       checkString(id, path);
       if (isNonEmptyString(id) && !has(collectionName, id)) error(path, `references missing ${collectionName} object ${id}`);
     }
 
-    function checkRefArray(collectionName, ids, path, options) {
+    function checkRefArray(
+      collectionName: CollectionName,
+      ids: unknown,
+      path: string,
+      options: { readonly nonEmpty?: boolean } = {}
+    ): void {
       checkStringArray(ids, path, options);
       if (!Array.isArray(ids)) return;
       ids.forEach((id, index) => checkRef(collectionName, id, `${path}[${index}]`));
     }
 
-    function checkSourceIds(ids, path, nonEmpty) {
+    function checkSourceIds(ids: unknown, path: string, nonEmpty = false): void {
       checkRefArray('sources', ids, path, { nonEmpty: Boolean(nonEmpty) });
     }
 
-    function checkClaimBlock(block, path, blockIds, usage = 'general') {
+    function checkClaimBlock(
+      block: unknown,
+      path: string,
+      blockIds: Set<string> | null,
+      usage = 'general'
+    ): void {
       if (!checkObject(block, path)) return;
-      if (blockIds) {
+      if (blockIds && isNonEmptyString(block.id)) {
         if (blockIds.has(block.id)) error(`${path}.id`, `duplicate ClaimBlock id ${block.id}`);
-        else if (isNonEmptyString(block.id)) blockIds.add(block.id);
+        else blockIds.add(block.id);
       }
       checkString(block.id, `${path}.id`);
-      if (!CLAIM_KINDS.has(block.kind)) {
+      if (!isNonEmptyString(block.kind) || !CLAIM_KINDS.has(block.kind)) {
         error(`${path}.kind`, `unknown ClaimBlock kind ${String(block.kind)}`);
         return;
       }
@@ -436,7 +695,7 @@
         );
       }
       const common = ['id', 'kind'];
-      const rules = {
+      const rules: Record<string, ClaimRule> = {
         geographyObservation: {
           allowed: common.concat(['text', 'sourceIds']),
           required: ['id', 'kind', 'text', 'sourceIds'],
@@ -528,7 +787,11 @@
       if (rule.asset) checkRef('assets', block.assetId, `${path}.assetId`);
     }
 
-    function checkEditorialReview(value, path, blockIds) {
+    function checkEditorialReview(
+      value: unknown,
+      path: string,
+      blockIds: Set<string>
+    ): void {
       if (!checkKeys(
         value,
         ['limitations', 'counterexamples', 'uncertainties', 'alternativeExplanations', 'sourceIds'],
@@ -540,7 +803,7 @@
         ['counterexamples', 'historicalCase'],
         ['uncertainties', 'interpretation'],
         ['alternativeExplanations', 'interpretation']
-      ];
+      ] as const;
       let itemCount = 0;
       buckets.forEach(([bucket, kind]) => {
         const items = value[bucket];
@@ -563,8 +826,8 @@
       checkSourceIds(value.sourceIds, `${path}.sourceIds`, true);
     }
 
-    const claimBlockIds = new Set();
-    const claimBlockReferences = [];
+    const claimBlockIds = new Set<string>();
+    const claimBlockReferences: ClaimBlockReference[] = [];
 
     data.sources.forEach((source, index) => {
       const path = `sources[${index}]`;
@@ -601,10 +864,10 @@
           error(`${path}.src`, 'must be a local relative path');
         }
         if (escapesProjectRoot) error(`${path}.src`, 'must not escape the project root');
-        if (ASSET_TYPES.has(asset.type)) {
+        if (asset.type === 'data' || asset.type === 'image') {
           const extension = nodeValidationRuntime
             ? nodeValidationRuntime.path.extname(decodedSrc).toLowerCase()
-            : `.${decodedSrc.split('.').pop().toLowerCase()}`;
+            : `.${(decodedSrc.split('.').pop() ?? '').toLowerCase()}`;
           if (!ASSET_EXTENSIONS[asset.type].has(extension)) {
             error(`${path}.src`, `extension ${extension || '(none)'} is not allowed for Asset type ${asset.type}`);
           }
@@ -687,9 +950,9 @@
       checkEditorialReview(event.editorialReview, `${path}.editorialReview`, claimBlockIds);
     });
 
-    function checkEndpoint(endpoint, path) {
+    function checkEndpoint(endpoint: unknown, path: string): void {
       if (!checkKeys(endpoint, ['kind', 'id'], ['kind', 'id'], path)) return;
-      if (!['entity', 'event'].includes(endpoint.kind)) error(`${path}.kind`, 'must be entity or event');
+      if (endpoint.kind !== 'entity' && endpoint.kind !== 'event') error(`${path}.kind`, 'must be entity or event');
       else checkRef(endpoint.kind === 'entity' ? 'entities' : 'events', endpoint.id, `${path}.id`);
     }
 
@@ -726,7 +989,7 @@
       }
     });
 
-    const sceneOwnerRecords = new Map();
+    const sceneOwnerRecords = new Map<unknown, { cardId: string; order: number }[]>();
     data.cards.forEach((card, index) => {
       const path = `cards[${index}]`;
       checkKeys(
@@ -772,7 +1035,7 @@
       checkString(scene.id, `${path}.id`);
       checkString(scene.title, `${path}.title`);
       if (scene.eyebrow !== undefined) checkString(scene.eyebrow, `${path}.eyebrow`);
-      if (scene.timeDisplay !== undefined && !['year', 'undatedNarrative'].includes(scene.timeDisplay)) {
+      if (scene.timeDisplay !== undefined && !SCENE_TIME_DISPLAYS.has(scene.timeDisplay)) {
         error(`${path}.timeDisplay`, 'must be year or undatedNarrative');
       }
       checkTimeSpan(scene.timeSpan, `${path}.timeSpan`);
@@ -796,9 +1059,12 @@
     data.scenes.forEach((scene, index) => {
       const owners = sceneOwnerRecords.get(scene.id) || [];
       if (owners.length !== 1) error(`scenes[${index}].id`, `must belong to exactly one Card; found ${owners.length}`);
-      const ownerCard = owners.length === 1 ? maps.cards.get(owners[0].cardId) : null;
+      const ownerCard = owners.length === 1 ? maps.cards.get(owners[0]?.cardId ?? '') : null;
       if (ownerCard && !timeSpanOverlaps(ownerCard.timeSpan, scene.timeSpan)) error(`scenes[${index}].timeSpan`, 'must overlap owner Card timeSpan');
-      const linkedEvents = arrayOrEmpty(scene.eventIds).map(eventId => maps.events.get(eventId)).filter(Boolean);
+      const linkedEvents = arrayOrEmpty(scene.eventIds)
+        .filter(isNonEmptyString)
+        .map(eventId => maps.events.get(eventId))
+        .filter((event): event is UncheckedItem => Boolean(event));
       if (linkedEvents.length > 0 && !linkedEvents.some(event => timeSpanOverlaps(scene.timeSpan, event.timeSpan))) {
         error(`scenes[${index}].eventIds`, 'must include at least one Event whose timeSpan overlaps the Scene');
       }
@@ -863,7 +1129,7 @@
       }
     });
 
-    const placementRanks = new Map();
+    const placementRanks = new Map<string, { rank: number; path: string }[]>();
     data.navigationPlacements.forEach((placement, index) => {
       const path = `navigationPlacements[${index}]`;
       checkKeys(placement, ['id', 'navigationOptionId', 'owner', 'slot', 'rank', 'visible', 'interactive'], ['id', 'navigationOptionId', 'owner', 'slot', 'rank', 'visible', 'interactive'], path);
@@ -873,7 +1139,7 @@
         if (placement.owner.kind === 'scene') {
           checkKeys(placement.owner, ['kind', 'sceneId'], ['kind', 'sceneId'], `${path}.owner`);
           checkRef('scenes', placement.owner.sceneId, `${path}.owner.sceneId`);
-          if (!['inline', 'map'].includes(placement.slot)) error(`${path}.slot`, 'Scene owner requires inline or map slot');
+          if (!SCENE_NAVIGATION_SLOTS.has(placement.slot)) error(`${path}.slot`, 'Scene owner requires inline or map slot');
         } else if (placement.owner.kind === 'card') {
           checkKeys(placement.owner, ['kind', 'cardId'], ['kind', 'cardId'], `${path}.owner`);
           checkRef('cards', placement.owner.cardId, `${path}.owner.cardId`);
@@ -882,7 +1148,7 @@
           error(`${path}.owner.kind`, 'must be scene or card');
         }
       }
-      if (!['inline', 'map', 'closing'].includes(placement.slot)) error(`${path}.slot`, 'must be inline, map, or closing');
+      if (!NAVIGATION_SLOTS.has(placement.slot)) error(`${path}.slot`, 'must be inline, map, or closing');
       if (!Number.isInteger(placement.rank) || placement.rank < 1) error(`${path}.rank`, 'must be a positive integer');
       checkBoolean(placement.visible, `${path}.visible`);
       checkBoolean(placement.interactive, `${path}.interactive`);
@@ -899,7 +1165,7 @@
       });
     });
 
-    const reciprocalCardLinks = new Map();
+    const reciprocalCardLinks = new Map<string, string>();
     const cardTargetPlacements = new Map();
     data.navigationPlacements.forEach((placement, index) => {
       if (placement.visible !== true || placement.interactive !== true) return;
@@ -956,18 +1222,24 @@
       checkSourceIds(geometry.sourceIds, `${path}.sourceIds`, geometry.approximate === true);
     });
 
-    function checkMapLayer(layer, path, allowedKinds) {
+    function checkMapLayer(
+      layer: unknown,
+      path: string,
+      allowedKinds: readonly string[]
+    ): void {
       if (!checkObject(layer, path)) return;
       const refFields = ['geometryId', 'entityId', 'navigationOptionId'];
       const presentRefs = refFields.filter(field => Object.prototype.hasOwnProperty.call(layer, field));
       if (presentRefs.length !== 1) error(path, 'must contain exactly one primary reference');
-      if (!allowedKinds.includes(layer.kind)) error(`${path}.kind`, `kind ${String(layer.kind)} is not allowed here`);
+      if (!isNonEmptyString(layer.kind) || !allowedKinds.includes(layer.kind)) {
+        error(`${path}.kind`, `kind ${String(layer.kind)} is not allowed here`);
+      }
       if (layer.kind === 'geometry') {
         checkKeys(layer, ['kind', 'geometryId', 'timeSpan', 'sourceIds'], ['kind', 'geometryId', 'timeSpan', 'sourceIds'], path);
         checkRef('geometries', layer.geometryId, `${path}.geometryId`);
         checkTimeSpan(layer.timeSpan, `${path}.timeSpan`);
         checkSourceIds(layer.sourceIds, `${path}.sourceIds`, true);
-        const geometry = maps.geometries.get(layer.geometryId);
+        const geometry = maps.geometries.get(layer.geometryId as string);
         if (geometry && !timeSpanOverlaps(layer.timeSpan, geometry.timeSpan)) error(`${path}.timeSpan`, 'must overlap Geometry timeSpan');
       } else if (layer.kind === 'entity') {
         checkKeys(layer, ['kind', 'entityId', 'annotationId', 'timeSpan', 'sourceIds'], ['kind', 'entityId', 'annotationId', 'sourceIds'], path);
@@ -1076,7 +1348,7 @@
         checkKeys(presentation, ['kind', 'map'], ['kind', 'map'], path);
         if (checkKeys(presentation.map, ['mapStateId', 'transition', 'structureViewIds', 'layers', 'caption'], ['mapStateId', 'transition', 'structureViewIds', 'layers'], `${path}.map`)) {
           checkRef('mapStates', presentation.map.mapStateId, `${path}.map.mapStateId`);
-          if (!TRANSITIONS.has(presentation.map.transition)) error(`${path}.map.transition`, 'must be hold, ease, or cut');
+          if (!TRANSITIONS.has(presentation.map.transition as string)) error(`${path}.map.transition`, 'must be hold, ease, or cut');
           if (presentation.map.caption !== undefined) checkString(presentation.map.caption, `${path}.map.caption`);
           checkRefArray('structureViews', presentation.map.structureViewIds, `${path}.map.structureViewIds`);
           if (!Array.isArray(presentation.map.layers)) error(`${path}.map.layers`, 'must be an array');
@@ -1091,9 +1363,9 @@
               if (annotation.subject.kind !== 'navigation' || annotation.subject.navigationOptionId !== layer.navigationOptionId) error(`${path}.map.layers[${layerIndex}].annotationId`, 'annotation subject must match Navigation layer');
             }
           });
-          const mapState = maps.mapStates.get(presentation.map.mapStateId);
-          arrayOrEmpty(mapState?.layers).forEach((layer, layerIndex) => {
-            const geometry = maps.geometries.get(layer.geometryId);
+          const mapState = maps.mapStates.get(presentation.map.mapStateId as string);
+          arrayOrEmpty(mapState?.layers).filter(isPlainObject).forEach((layer, layerIndex) => {
+            const geometry = maps.geometries.get(layer.geometryId as string);
             if (!timeSpanOverlaps(scene.timeSpan, layer.timeSpan)) error(`${path}.map.mapStateId`, `Scene timeSpan does not overlap MapState layer ${layerIndex}`);
             if (geometry && !timeSpanOverlaps(scene.timeSpan, geometry.timeSpan)) error(`${path}.map.mapStateId`, `Scene timeSpan does not overlap Geometry ${geometry.id}`);
           });
@@ -1105,8 +1377,8 @@
       if (placement.owner?.kind !== 'scene' || placement.slot !== 'map') return;
       const scene = maps.scenes.get(placement.owner.sceneId);
       const layers = arrayOrEmpty(scene?.presentation?.map?.layers);
-      const matchingLayers = layers.filter(layer =>
-        layer?.kind === 'navigation' &&
+      const matchingLayers = layers.filter(isPlainObject).filter(layer =>
+        layer.kind === 'navigation' &&
         layer.navigationOptionId === placement.navigationOptionId
       );
       if (matchingLayers.length !== 1) {
@@ -1115,8 +1387,8 @@
     });
 
     data.scenes.forEach((scene, sceneIndex) => {
-      arrayOrEmpty(scene?.presentation?.map?.layers).forEach((layer, layerIndex) => {
-        if (layer?.kind !== 'navigation') return;
+      arrayOrEmpty(scene?.presentation?.map?.layers).filter(isPlainObject).forEach((layer, layerIndex) => {
+        if (layer.kind !== 'navigation') return;
         const matchingPlacements = data.navigationPlacements.filter(placement =>
           placement?.owner?.kind === 'scene' &&
           placement.owner.sceneId === scene.id &&
@@ -1132,8 +1404,11 @@
       });
     });
 
-    function referencedIds(collectionName, callback) {
-      const used = new Set();
+    function referencedIds(
+      collectionName: CollectionName,
+      callback: (used: Set<string>) => void
+    ): void {
+      const used = new Set<string>();
       callback(used);
       data[collectionName].forEach((item, index) => {
         if (!used.has(item.id)) error(`${collectionName}[${index}].id`, 'orphan object is not referenced by active V5 data');
@@ -1141,7 +1416,7 @@
     }
 
     referencedIds('events', used => {
-      data.scenes.forEach(scene => arrayOrEmpty(scene.eventIds).forEach(id => used.add(id)));
+      data.scenes.forEach(scene => arrayOrEmpty(scene.eventIds).filter(isNonEmptyString).forEach(id => used.add(id)));
       data.structuralEdges.forEach(edge => {
         if (edge.source.kind === 'event') used.add(edge.source.id);
         if (edge.target.kind === 'event') used.add(edge.target.id);
@@ -1150,19 +1425,23 @@
     referencedIds('navigationOptions', used => data.navigationPlacements.forEach(placement => used.add(placement.navigationOptionId)));
     referencedIds('cameraPresets', used => data.mapStates.forEach(mapState => used.add(mapState.cameraPresetId)));
     referencedIds('mapStates', used => data.scenes.forEach(scene => {
-      if (scene.presentation?.map) used.add(scene.presentation.map.mapStateId);
+      if (scene.presentation?.map && typeof scene.presentation.map.mapStateId === 'string') used.add(scene.presentation.map.mapStateId);
     }));
-    referencedIds('geometries', used => data.mapStates.forEach(mapState => mapState.layers.forEach(layer => used.add(layer.geometryId))));
+    referencedIds('geometries', used => data.mapStates.forEach(mapState => arrayOrEmpty(mapState.layers)
+      .filter(isPlainObject)
+      .forEach(layer => { if (isNonEmptyString(layer.geometryId)) used.add(layer.geometryId); })));
     referencedIds('mapAnnotations', used => data.scenes.forEach(scene => {
-      (scene.presentation?.map?.layers || []).forEach(layer => used.add(layer.annotationId));
+      arrayOrEmpty(scene.presentation?.map?.layers).filter(isPlainObject).forEach(layer => {
+        if (isNonEmptyString(layer.annotationId)) used.add(layer.annotationId);
+      });
     }));
     referencedIds('structureViews', used => data.scenes.forEach(scene => {
-      (scene.presentation?.map?.structureViewIds || []).forEach(id => used.add(id));
+      arrayOrEmpty(scene.presentation?.map?.structureViewIds).filter(isNonEmptyString).forEach(id => used.add(id));
     }));
     referencedIds('assets', used => data.scenes.forEach(scene => {
       if (scene.presentation?.assetId) used.add(scene.presentation.assetId);
-      scene.contentBlocks.forEach(block => {
-        if (block.kind === 'asset') used.add(block.assetId);
+      arrayOrEmpty(scene.contentBlocks).filter(isPlainObject).forEach(block => {
+        if (block.kind === 'asset' && isNonEmptyString(block.assetId)) used.add(block.assetId);
       });
     }));
 
@@ -1173,18 +1452,22 @@
     };
   }
 
-  function checkCoordinatesPosition(position, path, error) {
+  function checkCoordinatesPosition(
+    position: unknown,
+    path: string,
+    error: ErrorReporter
+  ): void {
     if (!Array.isArray(position) || position.length !== 2) {
       error(path, 'must be a [longitude, latitude] pair');
       return;
     }
     const longitude = position[0];
     const latitude = position[1];
-    if (!Number.isFinite(longitude) || longitude < -180 || longitude > 180) error(`${path}[0]`, 'longitude must be finite and within [-180, 180]');
-    if (!Number.isFinite(latitude) || latitude < -85.05112878 || latitude > 85.05112878) error(`${path}[1]`, 'latitude must be finite and within Web Mercator bounds');
+    if (typeof longitude !== 'number' || !Number.isFinite(longitude) || longitude < -180 || longitude > 180) error(`${path}[0]`, 'longitude must be finite and within [-180, 180]');
+    if (typeof latitude !== 'number' || !Number.isFinite(latitude) || latitude < -85.05112878 || latitude > 85.05112878) error(`${path}[1]`, 'latitude must be finite and within Web Mercator bounds');
   }
 
-  function checkGeometry(value, path, error) {
+  function checkGeometry(value: unknown, path: string, error: ErrorReporter): void {
     if (!isPlainObject(value)) {
       error(path, 'must be a GeoJSON geometry object');
       return;
@@ -1198,15 +1481,15 @@
       error(`${path}.coordinates`, 'is required');
       return;
     }
-    const position = (item, itemPath) => checkCoordinatesPosition(item, itemPath, error);
-    const line = (items, itemPath) => {
+    const position = (item: unknown, itemPath: string): void => checkCoordinatesPosition(item, itemPath, error);
+    const line = (items: unknown, itemPath: string): void => {
       if (!Array.isArray(items) || items.length < 2) {
         error(itemPath, 'LineString must contain at least two positions');
         return;
       }
       items.forEach((item, index) => position(item, `${itemPath}[${index}]`));
     };
-    const ring = (items, itemPath) => {
+    const ring = (items: unknown, itemPath: string): void => {
       if (!Array.isArray(items) || items.length < 4) {
         error(itemPath, 'Polygon ring must contain at least four positions');
         return;
@@ -1218,7 +1501,7 @@
         error(itemPath, 'Polygon ring must be closed');
       }
     };
-    const polygon = (items, itemPath) => {
+    const polygon = (items: unknown, itemPath: string): void => {
       if (!Array.isArray(items) || items.length === 0) {
         error(itemPath, 'Polygon must contain at least one ring');
         return;
@@ -1252,11 +1535,11 @@
     }
   }
 
-  function validateAtlasData(candidate) {
+  function validateAtlasData(candidate?: unknown): ValidationResult {
     try {
       return validateAtlasDataUnsafe(candidate);
     } catch (cause) {
-      const detail = cause && typeof cause.message === 'string' ? cause.message : String(cause);
+      const detail = cause instanceof Error ? cause.message : String(cause);
       return {
         valid: false,
         errors: [`atlas: malformed data must not interrupt validation (${detail})`],
@@ -1266,10 +1549,11 @@
   }
 
   const defaultQueries = createQueries(defaultData);
-  return Object.assign(defaultQueries, {
+  export const queriesModule = Object.assign(defaultQueries, {
     createQueries,
     validateAtlasData,
     ENTITY_TYPE_LABELS,
     timeSpanOverlaps
   });
-}));
+
+runtimeGlobal.ATLAS_V5_QUERIES = queriesModule as AtlasQueries;

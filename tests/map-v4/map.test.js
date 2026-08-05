@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const data = require('../../data/atlas-data.js');
-const queries = require('../../data/queries.js');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 const mapModule = require('../../src/map/map-renderer.ts');
 const naturalEarthModule = require('../../assets/natural-earth/base.js');
 

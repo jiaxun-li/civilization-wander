@@ -12,7 +12,7 @@ const ancientChina = require('../../data/ancient-china.js');
 const lateBronzeAge = require('../../data/late-bronze-age.js');
 const aegean = require('../../data/aegean.js');
 const ironAgeNearEast = require('../../data/iron-age-near-east.js');
-const queries = require('../../data/queries.js');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 
 test('all complete stories have two sourced evidence groups, two sources, and internal review', () => {
   const evidenceKinds = new Set([

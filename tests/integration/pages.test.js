@@ -31,7 +31,7 @@ test('remaining legacy runtime stays local while Vite owns all module loading', 
   const runtimeFiles = entryImports.filter(relative => relative.endsWith('.js'));
   const runtime = runtimeFiles.map(read).join('\n');
   const executableRuntimeFiles = entryImports
-    .filter(relative => !relative.startsWith('data/') || relative === 'data/queries.js');
+    .filter(relative => !relative.startsWith('data/'));
   const executableRuntime = executableRuntimeFiles.map(read).join('\n');
   assert.doesNotMatch(runtime, /\bimport\s+|\bexport\s+|\brequire\(['"][^.]|fetch\(|XMLHttpRequest/);
   assert.doesNotMatch(executableRuntime, /https?:\/\//);

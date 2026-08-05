@@ -23,6 +23,7 @@ export interface Card {
   readonly title: string;
   readonly primaryEntityId: EntityId;
   readonly sceneIds: readonly SceneId[];
+  readonly relatedEntityIds: readonly EntityId[];
   readonly introduction: string;
   readonly timeSpan: TimeSpan;
 }
@@ -84,8 +85,9 @@ export interface Scene {
   readonly id: SceneId;
   readonly title: string;
   readonly timeSpan: TimeSpan & { readonly label: string };
-  readonly timeDisplay?: 'dated' | 'undatedNarrative';
+  readonly timeDisplay?: 'year' | 'undatedNarrative';
   readonly contentBlocks: readonly ClaimBlock[];
+  readonly eventIds: readonly string[];
   readonly presentation: ScenePresentation;
 }
 

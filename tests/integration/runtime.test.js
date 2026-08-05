@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const data = require('../../data/atlas-data.js');
-const queryModule = require('../../data/queries.js');
+const { queriesModule: queryModule } = require('../../src/data/queries.ts');
 
 const root = path.resolve(__dirname, '../..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
@@ -42,7 +42,7 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'data/aegean.js',
     'data/iron-age-near-east.js',
     'data/atlas-data.js',
-    'data/queries.js',
+    'src/data/queries.ts',
     'src/reader/card-components.ts',
     'src/reader/card-reader.ts',
     'assets/natural-earth/base.js',

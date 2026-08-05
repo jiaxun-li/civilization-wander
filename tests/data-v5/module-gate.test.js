@@ -6,7 +6,7 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '../..');
-const queries = require('../../data/queries.js');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 const validFixtureFile = path.resolve(root, 'tests/fixtures/module-gate-valid.js');
 const validFixture = require(validFixtureFile);
 const collections = [

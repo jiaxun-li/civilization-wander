@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const data = require('../../data/atlas-data.js');
-const queries = require('../../data/queries.js');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 const cardsModule = require('../../src/reader/card-components.ts');
 const readerModule = require('../../src/reader/card-reader.ts');
 
