@@ -44,6 +44,10 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
   await expect(secondScene).toHaveClass(/\bis-active\b/);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
 
+  await page.locator('.site-brand[data-home-link]').click();
+  await expect(page.locator('#home-view')).toBeVisible();
+  await expect(page.locator('#card-view')).toBeHidden();
+
   expect(resourceErrors, resourceErrors.join('\n')).toEqual([]);
   expect(runtimeErrors, runtimeErrors.join('\n')).toEqual([]);
 });

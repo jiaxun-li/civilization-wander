@@ -15,6 +15,7 @@ const atlasSource = read('src/data/atlas-data.ts');
 const runtimeSources = [
   'src/app.ts',
   'src/home/home-view.ts',
+  'src/shell/site-header.ts',
   'src/data/atlas-data.ts',
   'src/data/queries.ts',
   'src/data/query-browser-runtime.ts',

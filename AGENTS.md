@@ -498,6 +498,8 @@ only client-side runtime dependencies and currently own only the home view:
 - `src/home/home-view.ts` renders the React home view from typed view models;
   App remains the owner of Card opening, continuation state, history, and Reader
   orchestration.
+- `src/shell/site-header.ts` renders the React brand header while App owns the
+  home-navigation behavior attached to its stable data attribute.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.

@@ -10,6 +10,7 @@ import {
   type HomeCardViewModel,
   type HomeSectionViewModel
 } from './home/home-view.ts';
+import { mountSiteHeader } from './shell/site-header.ts';
 import type {
   AssetId,
   AtlasApp,
@@ -288,6 +289,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     const validation = queries.validateAtlasData();
     if (!validation.valid) throw new Error(`V5 data validation failed: ${validation.errors.join('; ')}`);
 
+    mountSiteHeader(requiredElement<HTMLElement>(runtimeDocument, '.site-header'), BRAND_CONFIG);
     const homeView = requiredElementById<HTMLElement>(runtimeDocument, 'home-view');
     const cardView = requiredElementById<HTMLElement>(runtimeDocument, 'card-view');
     const cardRoot = requiredElementById<HTMLElement>(runtimeDocument, 'card-root');
@@ -319,9 +321,6 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     const imagePreloads = new Map<AssetId, HTMLImageElement>();
     const preloadedImageAssetIds = new Set<AssetId>();
     let homeResumeSnapshot: LastReadSnapshot | null = null;
-
-    requiredElement<HTMLElement>(runtimeDocument, '[data-brand-name]').textContent = BRAND_CONFIG.name;
-    requiredElement<HTMLElement>(runtimeDocument, '[data-brand-tagline]').textContent = BRAND_CONFIG.shortTagline;
 
     function entityTypeLabel(entity: Entity): string {
       return queries.getEntityTypeLabel(entity.type) || entity.type;

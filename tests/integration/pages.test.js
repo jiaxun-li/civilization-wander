@@ -9,6 +9,7 @@ const html = read('index.html');
 const entry = read('src/main.ts');
 const app = read('src/app.ts');
 const homeView = read('src/home/home-view.ts');
+const siteHeader = read('src/shell/site-header.ts');
 const viteConfig = read('vite.config.mts');
 const playwrightConfig = read('playwright.config.ts');
 const deployWorkflow = read('.github/workflows/deploy-pages.yml');
@@ -51,6 +52,14 @@ test('React owns only the home view while App retains navigation orchestration',
   assert.match(homeView, /function HomeView\(/);
   assert.match(homeView, /data-start-card/);
   assert.doesNotMatch(homeView, /history\.|localStorage|createCardReader|renderMapState/);
+});
+
+test('React renders the site header without owning home navigation', () => {
+  assert.match(app, /mountSiteHeader\(/);
+  assert.match(siteHeader, /createRoot\(container\)/);
+  assert.match(siteHeader, /function SiteHeader\(/);
+  assert.match(siteHeader, /data-home-link/);
+  assert.doesNotMatch(siteHeader, /history\.|showHome|createCardReader/);
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {
