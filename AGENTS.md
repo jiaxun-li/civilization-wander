@@ -502,6 +502,8 @@ only client-side runtime dependencies and currently own only the home view:
   home-navigation behavior attached to its stable data attribute.
 - `src/shell/story-navigation.ts` renders the React back control and wander
   trail while App remains the authority for browser history and Reader state.
+- React-owned shell elements send typed intent callbacks to App; do not scan
+  React-rendered DOM to attach a second set of imperative click listeners.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.

@@ -52,7 +52,9 @@ test('React owns only the home view while App retains navigation orchestration',
   assert.match(homeView, /createRoot\(container\)/);
   assert.match(homeView, /function HomeView\(/);
   assert.match(homeView, /data-start-card/);
+  assert.match(homeView, /onOpenCard\(action\.cardId, primary\)/);
   assert.doesNotMatch(homeView, /history\.|localStorage|createCardReader|renderMapState/);
+  assert.doesNotMatch(app, /bindStartCards|bindHomeLinks/);
 });
 
 test('React renders the site header without owning home navigation', () => {
@@ -60,6 +62,7 @@ test('React renders the site header without owning home navigation', () => {
   assert.match(siteHeader, /createRoot\(container\)/);
   assert.match(siteHeader, /function SiteHeader\(/);
   assert.match(siteHeader, /data-home-link/);
+  assert.match(siteHeader, /onGoHome\(\)/);
   assert.doesNotMatch(siteHeader, /history\.|showHome|createCardReader/);
 });
 
@@ -69,6 +72,7 @@ test('React renders story navigation while App retains history behavior', () => 
   assert.match(storyNavigation, /function StoryNavigation\(/);
   assert.match(storyNavigation, /data-story-back/);
   assert.match(storyNavigation, /trailNames\.join\(' → '\)/);
+  assert.match(storyNavigation, /onClick: onBack/);
   assert.doesNotMatch(storyNavigation, /history\.|history\.back|showHome|createCardReader/);
 });
 

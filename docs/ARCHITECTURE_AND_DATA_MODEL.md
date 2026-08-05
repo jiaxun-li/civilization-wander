@@ -16,7 +16,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；React/React DOM 目前只接管首页视图，App 仍拥有 Card 打开、继续阅读、history 与 Reader 编排。应用编排、首页组件、Cards、Reader、Map、查询、聚合器、本地底图 adapter 与全部正式内容模块均为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
+`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；React/React DOM 目前接管首页、品牌 Header、故事返回控件与漫游足迹，组件通过类型化意图回调调用 App，不自行读写 history 或 Reader。App 仍拥有 Card 打开、继续阅读、history 与 Reader 编排。应用编排、React 外壳组件、Cards、Reader、Map、查询、聚合器、本地底图 adapter 与全部正式内容模块均为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
 
 `src/data/atlas-data.ts` 的命名导入与有序定义是正式内容模块清单的唯一运行时来源；`src/main.ts` 只导入样式与 `src/app.ts`。`src/app.ts` 再以命名导入取得聚合数据、查询、Cards、Reader、Natural Earth adapter 与 Map，不重复维护内容模块清单。`scripts/check-runtime-manifests.js` 只读检查 HTML 入口、TypeScript 入口、App 依赖图与聚合器，并拒绝重新引入 `ATLAS_*` 运行时全局桥接；文档不保存另一份模块清单。运行时依赖层次是：
 

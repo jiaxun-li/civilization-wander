@@ -1,4 +1,9 @@
-import { Fragment, createElement, type ReactNode } from 'react';
+import {
+  Fragment,
+  createElement,
+  type MouseEvent as ReactMouseEvent,
+  type ReactNode
+} from 'react';
 import { flushSync } from 'react-dom';
 import { createRoot, type Root } from 'react-dom/client';
 import type { CardId } from '../types/runtime.ts';
@@ -28,6 +33,7 @@ export interface HomeViewModel {
   readonly primaryAction: HomeActionViewModel;
   readonly featuredActions: readonly HomeActionViewModel[];
   readonly sections: readonly HomeSectionViewModel[];
+  readonly onOpenCard: (cardId: CardId, primary: boolean) => void;
 }
 
 export interface HomeViewController {
@@ -35,7 +41,19 @@ export interface HomeViewController {
   unmount(): void;
 }
 
-function actionLink(action: HomeActionViewModel, primary = false): ReactNode {
+function shouldHandleCardClick(event: ReactMouseEvent<HTMLAnchorElement>): boolean {
+  return event.button === 0
+    && !event.metaKey
+    && !event.ctrlKey
+    && !event.shiftKey
+    && !event.altKey;
+}
+
+function actionLink(
+  action: HomeActionViewModel,
+  primary: boolean,
+  onOpenCard: HomeViewModel['onOpenCard']
+): ReactNode {
   return createElement(
     'a',
     {
@@ -43,7 +61,12 @@ function actionLink(action: HomeActionViewModel, primary = false): ReactNode {
       href: action.href,
       key: primary ? 'primary' : action.cardId,
       'data-home-primary-action': primary ? '' : undefined,
-      'data-start-card': action.cardId
+      'data-start-card': action.cardId,
+      onClick(event: ReactMouseEvent<HTMLAnchorElement>) {
+        if (!shouldHandleCardClick(event)) return;
+        event.preventDefault();
+        onOpenCard(action.cardId, primary);
+      }
     },
     action.label,
     ' ',
@@ -51,14 +74,19 @@ function actionLink(action: HomeActionViewModel, primary = false): ReactNode {
   );
 }
 
-function homeCard(card: HomeCardViewModel): ReactNode {
+function homeCard(card: HomeCardViewModel, onOpenCard: HomeViewModel['onOpenCard']): ReactNode {
   return createElement(
     'a',
     {
       className: 'home-entity-card',
       href: card.href,
       key: card.cardId,
-      'data-start-card': card.cardId
+      'data-start-card': card.cardId,
+      onClick(event: ReactMouseEvent<HTMLAnchorElement>) {
+        if (!shouldHandleCardClick(event)) return;
+        event.preventDefault();
+        onOpenCard(card.cardId, false);
+      }
     },
     createElement('span', null, card.entityType),
     createElement('strong', null, card.entityName),
@@ -71,7 +99,8 @@ function homeCard(card: HomeCardViewModel): ReactNode {
 export function HomeView({
   primaryAction,
   featuredActions,
-  sections
+  sections,
+  onOpenCard
 }: HomeViewModel): ReactNode {
   return createElement(
     Fragment,
@@ -93,8 +122,8 @@ export function HomeView({
       createElement(
         'nav',
         { className: 'home-primary-actions', 'aria-label': '推荐阅读起点' },
-        actionLink(primaryAction, true),
-        ...featuredActions.map(action => actionLink(action))
+        actionLink(primaryAction, true, onOpenCard),
+        ...featuredActions.map(action => actionLink(action, false, onOpenCard))
       )
     ),
     createElement(
@@ -115,7 +144,11 @@ export function HomeView({
             createElement('p', { className: 'home-hero__eyebrow' }, section.eyebrow),
             createElement('h2', { id: headingId }, section.title)
           ),
-          createElement('div', { className: 'home-card-grid' }, ...section.cards.map(homeCard))
+          createElement(
+            'div',
+            { className: 'home-card-grid' },
+            ...section.cards.map(card => homeCard(card, onOpenCard))
+          )
         );
       })
     )

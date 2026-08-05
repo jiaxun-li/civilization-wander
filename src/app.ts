@@ -290,7 +290,11 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     const validation = queries.validateAtlasData();
     if (!validation.valid) throw new Error(`V5 data validation failed: ${validation.errors.join('; ')}`);
 
-    mountSiteHeader(requiredElement<HTMLElement>(runtimeDocument, '.site-header'), BRAND_CONFIG);
+    mountSiteHeader(
+      requiredElement<HTMLElement>(runtimeDocument, '.site-header'),
+      BRAND_CONFIG,
+      handleGoHome
+    );
     const homeView = requiredElementById<HTMLElement>(runtimeDocument, 'home-view');
     const cardView = requiredElementById<HTMLElement>(runtimeDocument, 'card-view');
     const cardRoot = requiredElementById<HTMLElement>(runtimeDocument, 'card-root');
@@ -300,16 +304,15 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
         homeActionViewModel('odyssey-name-and-home', '从《奥德赛》开始'),
         homeActionViewModel('egypt-pyramids-kingdom-at-work', '从金字塔开始')
       ],
-      sections: HOME_SECTIONS.map(homeSectionViewModel)
+      sections: HOME_SECTIONS.map(homeSectionViewModel),
+      onOpenCard: handleHomeOpenCard
     });
-    const homePrimaryAction = requiredElement<HTMLAnchorElement>(runtimeDocument, '[data-home-primary-action]');
     const storyBackBar = requiredElement<HTMLElement>(runtimeDocument, '[data-story-back-bar]');
     const storyNavigationController = mountStoryNavigation(storyBackBar, {
       visible: false,
       returnsToStory: false,
       trailNames: []
-    });
-    const storyBackButton = requiredElement<HTMLButtonElement>(runtimeDocument, '[data-story-back]');
+    }, handleStoryBack);
     const components = cardsModule.createCardComponents({ data, queries });
 
     let reader: CardReader | null = null;
@@ -716,37 +719,23 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
       return true;
     }
 
-    function bindHomeLinks(scope: ParentNode = runtimeDocument): void {
-      scope.querySelectorAll<HTMLElement>('[data-home-link]').forEach(link => {
-        if (link.dataset.bound === 'true') return;
-        link.dataset.bound = 'true';
-        link.addEventListener('click', event => {
-          event.preventDefault();
-          showHome({ push: true });
-        });
-      });
+    function handleGoHome(): void {
+      showHome({ push: true });
     }
 
-    function bindStartCards(): void {
-      runtimeDocument.querySelectorAll<HTMLAnchorElement>('[data-start-card]').forEach(link => {
-        link.addEventListener('click', (event: MouseEvent) => {
-          if (event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-          event.preventDefault();
-          const resumeSnapshot = link === homePrimaryAction ? homeResumeSnapshot : null;
-          const cardId = link.dataset.startCard;
-          if (cardId) openCard(cardId, resumeSnapshot?.sceneId || null, { resumeSnapshot });
-        });
-      });
+    function handleHomeOpenCard(cardId: CardId, primary: boolean): void {
+      const resumeSnapshot = primary ? homeResumeSnapshot : null;
+      openCard(cardId, resumeSnapshot?.sceneId || null, { resumeSnapshot });
     }
 
-    storyBackButton.addEventListener('click', () => {
+    function handleStoryBack(): void {
       if (storyBackMode(root.history.state) === 'story') {
         reader?.replaceHistorySnapshot?.();
         root.history.back();
         return;
       }
       showHome({ push: true });
-    });
+    }
 
     root.addEventListener('popstate', event => {
       if (event.state?.atlasHome || root.location.hash === '#home' || !root.location.hash) {
@@ -763,8 +752,6 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     });
 
     updateHomePrimaryAction();
-    bindHomeLinks();
-    bindStartCards();
     root.history.replaceState({ atlasHome: true }, '', root.location.hash || '#home');
 
     const direct = readerModule.parseCardHash(root.location.hash);

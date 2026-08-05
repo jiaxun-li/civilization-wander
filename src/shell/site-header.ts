@@ -1,16 +1,25 @@
-import { createElement } from 'react';
+import { createElement, type MouseEvent as ReactMouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import type { BrandConfig } from '../types/runtime.ts';
 
-export function SiteHeader({ brand }: { readonly brand: BrandConfig }) {
+interface SiteHeaderProps {
+  readonly brand: BrandConfig;
+  readonly onGoHome: () => void;
+}
+
+export function SiteHeader({ brand, onGoHome }: SiteHeaderProps) {
   return createElement(
     'a',
     {
       className: 'site-brand',
       href: '#home',
       'data-home-link': '',
-      'aria-label': `${brand.name}首页`
+      'aria-label': `${brand.name}首页`,
+      onClick(event: ReactMouseEvent<HTMLAnchorElement>) {
+        event.preventDefault();
+        onGoHome();
+      }
     },
     createElement('span', { className: 'site-brand__mark', 'aria-hidden': 'true' }, '游'),
     createElement(
@@ -22,7 +31,11 @@ export function SiteHeader({ brand }: { readonly brand: BrandConfig }) {
   );
 }
 
-export function mountSiteHeader(container: HTMLElement, brand: BrandConfig): void {
+export function mountSiteHeader(
+  container: HTMLElement,
+  brand: BrandConfig,
+  onGoHome: () => void
+): void {
   const reactRoot = createRoot(container);
-  flushSync(() => reactRoot.render(createElement(SiteHeader, { brand })));
+  flushSync(() => reactRoot.render(createElement(SiteHeader, { brand, onGoHome })));
 }
