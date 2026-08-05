@@ -16,7 +16,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader、Map、查询、聚合器与本地底图 adapter 已迁移为 TypeScript，内容模块正按独立验收边界由 JavaScript 渐进迁移为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
+`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；应用编排、Cards、Reader、Map、查询、聚合器、本地底图 adapter 与全部正式内容模块均为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
 
 聚合器与语法清单必须和 `src/main.ts` 保持同一内容模块顺序；`scripts/check-runtime-manifests.js` 从 HTML 入口、TypeScript 入口、聚合器与语法清单读取现状并做只读比较，不再由文档保存另一份模块清单。运行时依赖层次是：
 
@@ -36,7 +36,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 flowchart TD
     HTML["index.html"] --> ENTRY["src/main.ts\nVite module entry"]
     ENTRY --> WP["src/data/world-physical.ts\nATLAS_WORLD_VECTOR"]
-    ENTRY --> CM["data/content-module.js/.ts\nATLAS_V5_* content globals"]
+    ENTRY --> CM["data/content-module.ts\nATLAS_V5_* content globals"]
     ENTRY --> D["src/data/atlas-data.ts\nATLAS_V5_DATA"]
     CM --> D
     D --> Q["src/data/queries.ts\nATLAS_V5_QUERIES"]
@@ -444,7 +444,7 @@ pnpm run test:browser
 
 ## 18. Vite、静态部署与地图产物约束
 
-- `index.html` 只加载 `src/main.ts`；TypeScript 表现层与剩余 JavaScript 数据、查询和底图模块均由该入口按固定顺序导入。后续迁移不得绕过聚合器、validator 或清单一致性检查。
+- `index.html` 只加载 `src/main.ts`；TypeScript 表现层、内容数据、查询和底图模块均由该入口按固定顺序导入。后续重构不得绕过聚合器、validator 或清单一致性检查。
 - 不得为核心内容请求远程地图、字体、API 或图片。Source URL 只是元数据。
 - URL 主身份保持 `#card/<cardId>/<optionalSceneId>`；Scene ID 用于区段定位和恢复，不成为全局故事节点。
 - `vite.config.mts` 使用 `/civilization-wander/` 作为 GitHub Pages 项目路径；`pnpm build` 将应用与本地运行时资源输出到 `dist/`，并复制 `.nojekyll`。
@@ -472,11 +472,11 @@ pnpm run test:browser
 | 文件 | 当前职责/状态 |
 |---|---|
 | `index.html` | 活动 V5 页面、语义 landmark 与单一 Vite module 入口。 |
-| `src/main.ts` | 样式与 V5 运行时模块的固定导入顺序；渐进式 TypeScript 迁移入口。 |
+| `src/main.ts` | 样式与 V5 TypeScript 运行时模块的固定导入顺序。 |
 | `src/app.ts` | 类型化的首页/Card 视图编排、Reader/Map 接线、媒体切换、快照与 history 辅助。 |
 | `src/types/runtime.ts` | App 实际消费的 V5 数据、Queries、Cards、Reader、Map 和浏览器全局类型边界；不充当运行时 schema。 |
 | `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
-| `tsconfig.json` | 渐进式 TypeScript 类型检查边界；暂不强制检查既有 JavaScript。 |
+| `tsconfig.json` | TypeScript 运行时与正式内容模块的类型检查边界；Node 支持脚本和测试仍由各自的 JavaScript 检查覆盖。 |
 | `package.json` | Node≥22.18、pnpm、Vite 开发/构建命令与分层验证脚本。 |
 | `styles.css` | 全局 shell、首页、焦点、响应式与 reduced-motion 基线。 |
 | `styles/v4/cards.css` | V4 Card/Scene/claim/navigation/preview/媒体布局。 |
@@ -486,7 +486,7 @@ pnpm run test:browser
 
 | 文件 | 当前职责/状态 |
 |---|---|
-| `data/<content-module>.js` / `.ts` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。新模块默认 TypeScript；既有模块渐进迁移。具体模块清单和顺序由入口实际加载，并与聚合器、语法或类型清单做一致性检查。 |
+| `data/<content-module>.ts` | 按主题拆分的正式内容模块：来源、Entity、Event、Card、Scenes、导航、可选地图配置与图片 Assets。新模块继续使用 TypeScript。具体模块清单和顺序由入口实际加载，并与聚合器和类型清单做一致性检查。 |
 | `src/data/atlas-data.ts` | 以类型化边界严格检查模块接口，汇总内容模块并输出 schema 5 的 14 个正式集合。 |
 | `src/data/queries.ts` | V5 索引、派生 Entity/Card 与 Card/Event 查询及严格 validator。 |
 | `data/query-node-runtime.js` | 仅在 Node 中为 validator 提供 Asset 文件存在性检查；浏览器中为空适配器。 |

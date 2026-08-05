@@ -253,7 +253,7 @@ Scene 还必须满足：
 
 多 Agent 并行生产时，必须遵循 `AGENTS.md` 的 Multi-agent content integration ownership。主运行时在每一个完成的集成边界都必须有效；尚未完成的模块留在主聚合路径之外。
 
-- Content Agent 只编辑获分配的 `data/<内容模块>.js` 或 `data/<内容模块>.ts`、对应的 `assets/images/<内容模块>/`、模块专属测试和本 ContentPack 记录；不得修改 `index.html`、`src/main.ts`、`src/data/atlas-data.ts`、其他内容模块、既有模块中的共享或反向导航，以及固定集成测试；新建模块默认使用 TypeScript，维护既有模块时沿用其当前扩展名，除非任务明确包含迁移；
+- Content Agent 只编辑获分配的 `data/<内容模块>.ts`、对应的 `assets/images/<内容模块>/`、模块专属测试和本 ContentPack 记录；不得修改 `index.html`、`src/main.ts`、`src/data/atlas-data.ts`、其他内容模块、既有模块中的共享或反向导航，以及固定集成测试；正式内容模块统一使用 TypeScript；
 - UI Agent 的常规测试应使用小型、稳定且有效的 fixture，不依赖正在被 Content Agent 修改或暂时无效的全集数据；接入完成后才用实时聚合 atlas 做集成级 smoke test；
 - 同一时间只能有一个 Integration Agent 拥有 `index.html`、`src/main.ts`、`src/data/atlas-data.ts`、固定加载顺序测试、跨模块与反向导航、全局 ID／引用消歧，以及受加载顺序影响的共享验证清单；
 - Content Agent 若需要跨模块连接，应在交接记录中提出出站入口、目标 ID、所需反向入口和建议位置，不得直接修改既有模块；
@@ -273,7 +273,7 @@ Scene 还必须满足：
 模块级通过只表示“可交给集成”，不表示已经进入主运行时。交接记录必须包含模块文件、预期加载位置、导出全局名、新增顶层 ID、复用外部 ID、拟议出站导航、既有模块所需反向导航、本地 Asset 目录、模块级测试结果和未解决问题。机器可读交接文件使用 `handoffVersion: 2` 的 `docs/content-packs/<module>.handoff.json`，结构参考 `docs/content-packs/module-handoff.example.json`。门禁会把这些声明与模块实际导出、活动 atlas 引用和浏览器全局初始化逐项核对；执行：
 
 ```text
-node scripts/validate-content-module.js data/<module>.<js-or-ts> docs/content-packs/<module>.handoff.json
+node scripts/validate-content-module.js data/<module>.ts docs/content-packs/<module>.handoff.json
 ```
 
 每个 `assets/images/<module>/` 还必须包含非运行时、`manifestVersion: 2` 的 `manifest.json`，为 Asset 保存 creator、license、sourceUrl、origin、原始宽高、编码后宽高、编码后字节数、`webp` 格式、SHA-256、来源 ID 和审核状态。现存 V4 迁移到 V5 的素材可以诚实标为 `needsMetadataAudit`，但新模块必须在门禁前完成审核，不得猜测许可或创作者。
@@ -313,7 +313,7 @@ AI 生成图片同样遵守上述 WebP、尺寸和体积规则。生成原图超
 
 所有 Scene 图片都按原始比例完整显示并在媒体栏居中，不得为填满容器而裁切；图片之外的余白统一使用地图大陆色 `#c8cbbb`。这一规则须同时验证 desktop 和 mobile。
 
-每个拥有 `assets` 集合的内容数据 JavaScript 文件必须拥有自己的图片目录，统一使用 `assets/images/<数据文件名>/`。该文件声明的图片 Asset 只能引用自己的目录；新增或迁移内容模块时必须同步更新路径、入口脚本与自动化校验。
+每个拥有 `assets` 集合的内容数据文件必须拥有自己的图片目录，统一使用 `assets/images/<数据文件名>/`。该文件声明的图片 Asset 只能引用自己的目录；新增或迁移内容模块时必须同步更新路径、入口脚本与自动化校验。
 
 ### 地图规则
 

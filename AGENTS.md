@@ -393,7 +393,7 @@ the main runtime has accepted it.
 For a new or parallel staging module, run:
 
 ```text
-node scripts/validate-content-module.js data/<module>.<js-or-ts> docs/content-packs/<module>.handoff.json
+node scripts/validate-content-module.js data/<module>.ts docs/content-packs/<module>.handoff.json
 ```
 
 The handoff file is machine-readable and uses `handoffVersion: 2`. The gate
@@ -488,12 +488,11 @@ explicitly.
 The current runtime is a Vite-built V5 prototype with no client-side runtime dependencies:
 
 - `index.html` loads the single `src/main.ts` Vite entrypoint.
-- `src/main.ts` imports styles and runtime modules in dependency order while
-  TypeScript migration proceeds incrementally.
+- `src/main.ts` imports styles and typed runtime modules in dependency order.
 - `src/app.ts` coordinates the home view, Card reader, navigation, and optional
   map renderer.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
-  application, the mixed JavaScript/TypeScript content modules, the typed V5 aggregation/query
+  application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.
 - `src/data/atlas-data.ts` contains the typed aggregation boundary for Entities, Events, StructuralEdges, Cards,
   Scenes, StructureViews, NavigationOptions, NavigationPlacements,

@@ -274,7 +274,7 @@
 
 **Content Agent：**
 
-**Content Agent 所有权范围：** `data/<内容模块>.js` 或 `data/<内容模块>.ts`、`assets/images/<内容模块>/`、模块专属测试和本 ContentPack 记录
+**Content Agent 所有权范围：** `data/<内容模块>.ts`、`assets/images/<内容模块>/`、模块专属测试和本 ContentPack 记录
 
 **Integration Agent：** 同一时间只能有一个；负责 `index.html`、`src/main.ts`、`src/data/atlas-data.ts`、固定加载顺序测试、跨模块与反向导航及共享验证清单
 
@@ -302,7 +302,7 @@
 
 **pending sibling 外部引用：** 在全部十四个顶层集合下逐项列出；当前活动 atlas 已有引用由门禁自动发现，不手工重复
 
-**模块门禁命令：** `node scripts/validate-content-module.js data/<module>.<js-or-ts> docs/content-packs/<module>.handoff.json`
+**模块门禁命令：** `node scripts/validate-content-module.js data/<module>.ts docs/content-packs/<module>.handoff.json`
 
 **模块级语法检查：**
 

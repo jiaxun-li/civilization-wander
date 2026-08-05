@@ -60,8 +60,7 @@ const MODULE_COLLECTIONS = [
 
 const MODULE_COLLECTION_SET = new Set<string>(MODULE_COLLECTIONS);
 
-// Preserve legacy dependency errors while each module migrates; interface
-// failures always name the actual JavaScript or TypeScript content file.
+// Dependency and interface failures always name the actual TypeScript content file.
 const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
   {
     file: 'data/mesopotamia.ts',

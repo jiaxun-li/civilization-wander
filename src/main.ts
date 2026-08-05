@@ -2,8 +2,8 @@ import '../styles.css';
 import '../styles/v4/cards.css';
 import '../styles/v4/map.css';
 
-// Preserve the established V5 runtime dependency order while the remaining
-// JavaScript content modules are migrated to TypeScript incrementally.
+// Preserve the established V5 runtime dependency order across the typed
+// content modules and runtime adapters.
 import './data/world-physical.ts';
 import '../data/mesopotamia.ts';
 import '../data/ancient-egypt.ts';
