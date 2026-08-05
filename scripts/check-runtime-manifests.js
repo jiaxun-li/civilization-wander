@@ -21,7 +21,7 @@ const runtimeSources = [
   'src/data/queries.ts',
   'src/data/query-browser-runtime.ts',
   'src/data/world-physical.ts',
-  'src/reader/card-components.ts',
+  'src/reader/card-view.ts',
   'src/reader/card-header.ts',
   'src/reader/card-reader.ts',
   'src/reader/navigation-preview.ts',
@@ -42,7 +42,7 @@ const expectedEntryImports = [
 const requiredAppImports = [
   './data/atlas-data.ts',
   './data/queries.ts',
-  './reader/card-components.ts',
+  './reader/card-view.ts',
   './reader/card-reader.ts',
   './map/natural-earth-base.ts',
   './map/map-renderer.ts'

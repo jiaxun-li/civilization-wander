@@ -1,6 +1,6 @@
 # Civilization Wander：架构与数据模型
 
-> 代码审计基线：2026-08-04。本文以当前可执行入口、查询/校验代码和测试为事实来源。仓库只保留 **schema V5** 运行时。
+> 代码审计基线：2026-08-06。本文以当前可执行入口、查询/校验代码和测试为事实来源。仓库只保留 **schema V5** 运行时。
 
 ## 1. 产品目标、边界与核心路径
 
@@ -16,7 +16,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 ## 2. 活动入口、加载顺序与模块依赖
 
-`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；React/React DOM 目前接管首页、品牌 Header、故事返回控件与漫游足迹，组件通过类型化意图回调调用 App，不自行读写 history 或 Reader。App 仍拥有 Card 打开、继续阅读、history 与 Reader 编排。应用编排、React 外壳组件、Cards、Reader、Map、查询、聚合器、本地底图 adapter 与全部正式内容模块均为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
+`index.html` 是唯一活动 HTML 入口，通过 `<script type="module">` 加载 `src/main.ts`。Vite 提供本地开发服务器、自动刷新和正式构建；React/React DOM 接管首页、品牌 Header、故事返回控件、漫游足迹和单一完整 Card tree。组件通过类型化意图回调调用 App/Reader，不自行读写 history。Reader 拥有 Card/Scene 状态、滚动观察、Preview 计时、导航与 history；App 拥有 Card 打开、继续阅读、图片过渡和 Reader/Map 编排。应用编排、React 视图、Reader、Map、查询、聚合器、本地底图 adapter 与全部正式内容模块均为 TypeScript，Node 文件校验 adapter 仍为 JavaScript。项目不再支持直接双击 `index.html` 或 `file://`，开发预览使用 `pnpm dev`，正式产物由 `pnpm build` 生成到 `dist/`。
 
 `src/data/atlas-data.ts` 的命名导入与有序定义是正式内容模块清单的唯一运行时来源；`src/main.ts` 只导入样式与 `src/app.ts`。`src/app.ts` 再以命名导入取得聚合数据、查询、Cards、Reader、Natural Earth adapter 与 Map，不重复维护内容模块清单。`scripts/check-runtime-manifests.js` 只读检查 HTML 入口、TypeScript 入口、App 依赖图与聚合器，并拒绝重新引入 `ATLAS_*` 运行时全局桥接；文档不保存另一份模块清单。运行时依赖层次是：
 
@@ -24,7 +24,7 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 2. `src/app.ts`：运行时模块的唯一编排层
 3. `src/data/atlas-data.ts`：直接命名导入 `data/` 下的各内容模块，输出聚合后的 schema V5 数据
 4. `src/data/queries.ts`：直接导入聚合数据；Node 直接运行时由 `data/query-node-runtime.js` 提供文件检查，Vite 构建时将它明确替换为 `src/data/query-browser-runtime.ts`
-5. `src/reader/card-components.ts` 与 `src/reader/card-reader.ts`
+5. `src/reader/card-view.ts` 与 `src/reader/card-reader.ts`
 6. `src/map/natural-earth-base.ts`：直接导入 `src/data/world-physical.ts`
 7. `src/map/map-renderer.ts`
 
@@ -37,15 +37,15 @@ flowchart TD
     A --> H["src/home/home-view.ts\nReact home view"]
     A --> SH["src/shell/site-header.ts\nReact site header"]
     A --> SN["src/shell/story-navigation.ts\nReact back + trail"]
-    A --> NP["src/reader/navigation-preview.ts\nReact navigation preview"]
-    A --> MC["src/media/media-caption.ts\nReact media caption"]
-    A --> CH["src/reader/card-header.ts\nReact Card header"]
+    A --> CV["src/reader/card-view.ts\nsingle React Card tree"]
+    CV --> NP["navigation preview"]
+    CV --> MC["media caption"]
+    CV --> CH["Card header"]
     A --> D["src/data/atlas-data.ts\natlasData"]
     D --> CM["data/content-module.ts\nnamed ContentModule export"]
     Q["src/data/queries.ts\nqueriesModule"] --> D
     Q --> N["query runtime adapter\nNode fs or browser null"]
     A --> Q
-    A --> C["src/reader/card-components.ts\ncardsModule"]
     A --> R["src/reader/card-reader.ts\ncardReaderModule"]
     A --> B["src/map/natural-earth-base.ts\nnaturalEarthModule"]
     B --> WP["src/data/world-physical.ts\nworldPhysicalVector"]
@@ -53,7 +53,7 @@ flowchart TD
     CSS["styles.css + styles/v4/*"] --> ENTRY
 ```
 
-各内容模块以 TypeScript 命名导出声明精确的十四个数组，不再写入 `globalThis.ATLAS_V5_*` 内容全局变量；其余运行时模块也全部通过命名导入与导出连接，不再以 `ATLAS_*` 浏览器全局变量传递依赖。`src/data/atlas-data.ts` 直接导入这些导出，并在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据。`src/types/runtime.ts` 为十四个集合、Claim 判别联合与运行时消费者提供编译期结构契约；它负责尽早发现错误字段和错误类型，但不替代 validator 的引用、唯一性、时间相交和完整性规则。`src/data/queries.ts` 建索引、提供读 API 并执行失败关闭式校验；Node 直接运行时由 `data/query-node-runtime.js` 提供 Asset 文件检查，Vite 则通过显式 alias 使用空的浏览器 adapter，避免把 CommonJS/Node 文件系统代码打进页面。Cards 只负责 HTML；Reader 负责 Card/Scene 生命周期与浏览器历史；Map Renderer 只负责可选地图；`src/app.ts` 是唯一编排层。新增、删除或重排内容模块时只更新聚合器的命名导入与有序定义及受影响测试，并运行 `pnpm run check:manifests`；`src/main.ts` 不维护重复清单。
+各内容模块以 TypeScript 命名导出声明精确的十四个数组，不再写入 `globalThis.ATLAS_V5_*` 内容全局变量；其余运行时模块也全部通过命名导入与导出连接，不再以 `ATLAS_*` 浏览器全局变量传递依赖。`src/data/atlas-data.ts` 直接导入这些导出，并在聚合前拒绝缺失、拼错、非数组或未知集合，再输出唯一的 schema 5 顶层数据。`src/types/runtime.ts` 为十四个集合、Claim 判别联合与运行时消费者提供编译期结构契约；它负责尽早发现错误字段和错误类型，但不替代 validator 的引用、唯一性、时间相交和完整性规则。`src/data/queries.ts` 建索引、提供读 API 并执行失败关闭式校验；Node 直接运行时由 `data/query-node-runtime.js` 提供 Asset 文件检查，Vite 则通过显式 alias 使用空的浏览器 adapter，避免把 CommonJS/Node 文件系统代码打进页面。React Card tree 负责公共 Card/Scene DOM；Reader 负责 Card/Scene 状态与浏览器历史；App 负责媒体决策与编排；Map Renderer 只负责稳定媒体 port 内的可选地图；`src/app.ts` 是唯一编排层。新增、删除或重排内容模块时只更新聚合器的命名导入与有序定义及受影响测试，并运行 `pnpm run check:manifests`；`src/main.ts` 不维护重复清单。
 
 ## 3. 从 `index.html` 到地图渲染器的完整调用链
 
@@ -63,11 +63,11 @@ Vite 从 `src/main.ts` 进入 `src/app.ts`，再由 ES module 依赖图执行各
 
 1. 建立首页板块、Card 容器、返回按钮、标题与面包屑的 DOM 引用。
 2. `src/app.ts` 用首页策展配置中的稳定 Card ID 生成三个入口板块；实体名、摘要和 Card 标题始终从当前聚合数据读取，不在首页配置重复维护。首屏提供三个代表性快速起点；可用的本地阅读快照只把第一个动作替换为“继续上次阅读”，其余入口保持稳定。
-3. 以命名导入的 `cardReaderModule.createCardReader()` 创建 Reader，注入 `queries`、Cards renderer 以及 Card/Scene/媒体/地图/history 回调。
+3. 创建单一 `CardViewController`，再以命名导入的 `cardReaderModule.createCardReader()` 创建 Reader，注入 `queries`、Card view 以及 Card/Scene/媒体/地图/history 回调。
 4. 根据 URL hash 解析 `#card/<cardId>/<sceneId>`；没有有效 Card 时显示首页，直接链接则启动 Reader。
-5. Reader 通过 `getCard()`、`getScenesForCard()` 取得 Card 与由 `Card.sceneIds` 决定的 Scene 顺序，再让 Cards renderer 生成主内容。
-6. Cards renderer 在标题区从主 Entity 与 Card `timeSpan.start/end` 生成“公共类型 · 主实体名称 · 年代”坐标；每个 Scene 的时间行按 `timeDisplay` 显示年代语义，并从 `Card.sceneIds` 派生“当前位置／总数”。这些都是展示派生值，不写回数据。
-7. Reader 为普通导航、预览、IntersectionObserver 和 history 绑定行为；渲染新 Card 时先通知 `onCardChange`，使 `src/app.ts` 在跨 Card 时销毁上一 Card 的媒体，再激活目标 Scene。
+5. Reader 通过 `getCard()`、`getScenesForCard()` 取得 Card 与由 `Card.sceneIds` 决定的 Scene 顺序，再让 Card view 生成类型化视图模型并渲染完整 React Card tree。
+6. Card view 在标题区从主 Entity 与 Card `timeSpan.start/end` 生成“主实体名称 · 年代”坐标；每个 Scene 的时间行按 `timeDisplay` 显示年代语义，并从 `Card.sceneIds` 派生“当前位置／总数”。这些都是展示派生值，不写回数据。
+7. React 导航控件把点击、hover、focus 和离开意图传给 Reader；Reader 负责 Preview 延时、粗指针二次确认、实际导航、IntersectionObserver 与 history。渲染新 Card 前先通知 `onBeforeCardChange`，使 `src/app.ts` 在 React 替换媒体 port 前销毁跨 Card 媒体，再渲染并激活目标 Scene。
 8. Scene 激活时，Reader 先按同 Card 顺序解析有效媒体：非 `textOnly` 使用自身 presentation，`textOnly` 继承最近的前序 map/image；没有前序媒体则保持无媒体。随后依次发送 resolved presentation、StructureView 和 MapState。
 9. Map Renderer 从 MapState 读取相机与 Geometry，从当前 Scene presentation 读取 Entity/Navigation overlay；Natural Earth 只提供本地底图。
 10. Scene 改变时 Reader 用 `history.replaceState()` 更新当前快照；跨 Card 前进导航先保存来源快照，再 `pushState()`，在 DOM 替换前后同步回顶并播放 180ms 原地 opacity 入场。direct/history/popstate 精确恢复不播放该前进动画。
@@ -127,7 +127,7 @@ pnpm run report:counts
 | `StructuralEdge` | `id`, `family`, `type`, `source`, `target`, `label`, `summaries`, `sourceIds` | 是 | `source`/`target` 为 typed Endpoint 且不得自环；`label.forward`、`summaries.canonical` 必填；来源非空。`branch_of` 两端必须都是 `languageSystem` Entity。 |
 |  | `timeSpan`, `qualifiers` | 否 | 用于方向/时间查询与限定；`family`/`type` 当前仅要求非空字符串。 |
 | `Card` | `id`, `kind`, `primaryEntityId`, `relatedEntityIds`, `title`, `editorialPurpose`, `introduction`, `thesis`, `timeSpan`, `sceneIds`, `sourceIds`, `editorialReview` | 是 | 公共故事与唯一 Scene 顺序来源。每张 Card 必须有且只有一个主 Entity；该 Entity 必须存在、类型必须有公共标签，且不能在 `relatedEntityIds` 重复。Scene 列表非空；Card Event 按 Scene 顺序去重推导，不在 Card 重复存储；至少 2 个不同来源；至少 2 个 sourced evidence blocks；至少一个归属 Card/Scene 的导航 placement；review 非空。`kind` 当前仅要求字符串。 |
-| `Card.thesis` | `text`, `sourceIds` | 是 | 内部核心论点，必须有来源；当前公共 Cards renderer 不显示。 |
+| `Card.thesis` | `text`, `sourceIds` | 是 | 内部核心论点，必须有来源；当前公共 React Card view 不显示。 |
 | `Scene` | `id`, `title`, `timeSpan`, `eventIds`, `contentBlocks`, `presentation`, `sourceIds` | 是 | 必须恰好出现在一个 `Card.sceneIds` 中；`eventIds` 非空且至少一个 Event 的 `timeSpan` 与 Scene 相交；内容与来源非空；时间须与 owner Card 重叠。没有 `cardId`、`order`、`navigationIds`、`mapStateId` 或 `featuredEntityIds`。 |
 |  | `eyebrow` | 否 | 兼容保留的编辑短标签；当前公共 renderer 不显示。 |
 |  | `timeDisplay` | 否 | 默认为 `year`，显示 `timeSpan.label`；`undatedNarrative` 固定显示“叙事时间 · 无可考年份”，用于没有可考历史发生年份的史诗或神话内部情节。不得自定义显示文案。 |
@@ -241,7 +241,7 @@ erDiagram
 sequenceDiagram
     participant U as "读者/Hash/Observer"
     participant R as "V5 Reader"
-    participant C as "Cards Renderer"
+    participant C as "React Card View"
     participant A as "src/app.ts"
     participant Q as "V5 Queries"
     participant M as "Map Renderer"
@@ -249,8 +249,8 @@ sequenceDiagram
 
     U->>R: "start/open/scroll activates Scene"
     R->>Q: "getCard + getScenesForCard"
-    R->>C: "renderMainCard(card, scenes)"
-    C-->>R: "semantic markup + media slot + nav"
+    R->>C: "renderCard(cardId, activeSceneId, typed intents)"
+    C-->>R: "single React tree + stable media port"
     R->>A: "onCardChange; reset media only across Cards"
     R->>R: "announceScene; derive direction/trigger; resolve own or prior media"
     R->>A: "onPresentationChange(resolved presentation)"
@@ -271,7 +271,7 @@ sequenceDiagram
     R->>H: "replaceState(cardId, sceneId, scrollY)"
 ```
 
-首次 `renderCard()` 会先写 markup、绑定导航/预览、通知 Card 变化，再创建 IntersectionObserver 并激活 direct/fallback Scene，必要时聚焦 `h1`。普通滚动只重新执行 `announceScene()`。Observer 以视口约 44% 处为阅读锚，使用 `rootMargin: -28% 0 -52%` 与阈值 0/0.2/0.6；不支持 IntersectionObserver 时使用直接回退。
+首次 `renderCard()` 会先让 React Card view 生成完整树并接收类型化导航/预览意图，再通知 Card 变化、创建 IntersectionObserver 并激活 direct/fallback Scene，必要时通过 view port 聚焦 `h1`。普通滚动只重新执行 `announceScene()` 并更新 React active Scene。Observer 以视口约 44% 处为阅读锚，使用 `rootMargin: -28% 0 -52%` 与阈值 0/0.2/0.6；不支持 IntersectionObserver 时使用直接回退。
 
 `deriveSceneDirection()` 和激活 context 在运行时派生 `forward/backward/stationary` 方向与 `scroll/direct/navigation/history` 触发原因；`inheritedMedia`、`presentationScene` 等也只存在于 Reader state/callback context，绝不进入 V5 Scene schema。同 Card 的 `textOnly` 继承最近前序有效媒体，直接链接到它也按相同顺序解析；跨 Card 由 `onCardChange` 销毁媒体，全 text-only Card 或此前无媒体保持单栏。同 Card 内地图实例保持常驻，图片作为覆盖层渐显，回到地图时覆盖层渐隐并移除，相同图片保持原 DOM，reduced motion 时立即切换。Reader 仅预加载当前 Scene 前后最近的不同图片，不预取全库；图片切换保留当前媒体，直到新图完成加载和解码后才开始淡入。公共正文保持连续排版：historical case、mechanism 等仍有语义化 markup，但不再卡片化；Scene 内只有策展导航卡片保留边框/背景。
 
@@ -416,7 +416,7 @@ flowchart LR
 
 ## 17. 测试、数据校验与验收运行方法
 
-项目没有运行时 dependencies；开发与构建使用 Vite、TypeScript 和 Node 类型定义，要求 Node >=22.18，推荐 Node 24 LTS，包管理器与锁文件以 pnpm 为准。首次运行先执行 `corepack enable` 和 `pnpm install`。标准命令：
+React 与 React DOM 是仅有的客户端运行时 dependencies；开发与构建使用 Vite、TypeScript、React 类型和 Node 类型定义，要求 Node >=22.18，推荐 Node 24 LTS，包管理器与锁文件以 pnpm 为准。首次运行先执行 `corepack enable` 和 `pnpm install`。标准命令：
 
 ```powershell
 pnpm typecheck
@@ -452,20 +452,15 @@ pnpm run test:browser
 
 ## 19. 已知限制与未来演进方向
 
-### 19.1 React 渐进迁移边界
+### 19.1 React Card tree 与命令式媒体边界
 
-当前 React root 都是明确的叶子边界：首页、品牌 Header、返回／足迹、导航预览、媒体说明和 Card 标题区。它们只接收 App 或 Reader 提供的类型化视图模型与意图回调，不直接拥有 schema 数据、浏览器 history、Reader 生命周期、地图状态或图片切换。`onBeforeCardChange` 必须先卸载位于旧 Card DOM 内的 React root，再由 Reader 替换 Card markup；不得直接删除仍由 React 管理的节点。
+Card 阅读界面已经完成单一 React tree 迁移。`src/reader/card-view.ts` 从 Queries 构造类型化公共视图模型，并拥有 Card header、全部 Scene、ClaimBlock、行内／结尾导航、Preview、媒体说明和媒体 port 的 DOM。旧字符串 renderer 已删除；Card header、Preview 与媒体说明不再分别创建嵌套 root。
 
-尚未迁移的 Card/Scene 正文、导航小卡、图片／地图容器和 SVG 地图仍由 `card-components.ts`、Reader、App 与 Map Renderer 协作管理。Reader 会替换 Card 根 markup、绑定导航与 `IntersectionObserver`；App 会向媒体容器插入图片并控制淡入淡出；Map Renderer 会更新同一容器下的 SVG 子树。因此下一阶段不能继续在 Scene、地图或图片容器内部零散增加 React root，也不能让 React 重渲染仍被这些模块命令式修改的祖先节点。
+Reader 不拥有 React DOM，也不拼接 HTML、扫描导航控件或绑定 Card 点击事件。React 控件发送类型化意图；Reader 继续负责 active Card/Scene、IntersectionObserver、Preview 延时、粗指针二次确认、hash/history、导航栈、滚动恢复、媒体继承和异步生命周期守卫。Scene 激活、媒体可见性、caption 与前进入场通过 `CardViewController` 的窄接口回写视图。
 
-下一阶段必须作为一个完整 Reader/Card 边界设计后再实施：
+图片与地图故意保持命令式 island：React 只提供稳定的 `[data-map-slot]` 媒体 port，不渲染其 children；App 的图片控制器和 Map Renderer 只能在这个 port 内创建、过渡和清理 DOM/SVG。跨 Card 时 `onBeforeCardChange` 必须先销毁旧媒体，再让 React 更换 Card tree。不得在媒体 port 或 SVG 内增加第二个 React root，也不得让地图或图片控制器修改 React 所有的 Scene、导航或标题 DOM。
 
-1. 先定义单一 React Card tree 的 props、Scene 激活状态、导航意图和媒体 port；
-2. 让 Reader 从“替换 HTML 与绑定节点”收缩为 history、observer 与状态控制器；
-3. 通过稳定 ref/port 把地图和图片过渡接入 React Card tree，保持 Map Renderer 自己的 SVG 生命周期；
-4. 真实浏览器覆盖直达 Scene、滚动激活、跨 Card、返回恢复、粗指针预览和媒体继承后，才删除旧字符串 renderer 与 fallback。
-
-在这套边界获批前，当前叶子迁移状态是有意的稳定停靠点，不应以多个嵌套小 root 临时包住 Scene 正文。
+这一边界为后续搜索／筛选页面提供统一 React UI 基础，但不自动公开数据层全部关系。新增页面路由、筛选维度或知识网络公开规则仍须单独设计并同步测试与文档。
 
 ### 19.2 其他已知限制
 
@@ -489,13 +484,14 @@ pnpm run test:browser
 |---|---|
 | `index.html` | 活动 V5 页面、语义 landmark 与单一 Vite module 入口。 |
 | `src/main.ts` | 按固定顺序导入样式，并加载唯一的 `src/app.ts` 运行时入口。 |
-| `src/app.ts` | 通过命名导入拥有完整运行时依赖图，并负责 React 首页视图模型、Card 打开、Reader/Map 接线、媒体切换、快照与 history 辅助。 |
+| `src/app.ts` | 通过命名导入拥有完整运行时依赖图，并负责 React 首页视图模型、Card 打开、Card view/Reader/Map 接线、媒体切换、快照与 history 辅助。 |
 | `src/home/home-view.ts` | React 首页组件与类型化视图模型；只负责首页 DOM，不拥有 Reader、history、localStorage 或地图状态。 |
 | `src/shell/site-header.ts` | React 品牌 Header；保留稳定的首页链接属性，点击行为仍由 App 编排。 |
 | `src/shell/story-navigation.ts` | React 返回控件与漫游足迹；App 继续拥有 history、Reader 状态和返回决策。 |
-| `src/reader/navigation-preview.ts` | React 导航预览卡；Reader 继续拥有 hover/focus 延时、粗指针二次确认和实际导航。 |
-| `src/media/media-caption.ts` | React 媒体说明文字；App 继续决定图片标题、地图说明与 textOnly 清空。 |
-| `src/reader/card-header.ts` | React Card 坐标、标题与导语；App 提供类型化视图模型，Scene 正文和 Reader 生命周期仍在其外。 |
+| `src/reader/card-view.ts` | 单一 React Card tree、类型化公共视图模型、Scene 激活呈现、导航意图与稳定媒体 port；不拥有 history、媒体继承或地图状态。 |
+| `src/reader/navigation-preview.ts` | Card tree 内的 React 导航预览叶子组件；Reader 继续拥有 hover/focus 延时、粗指针二次确认和实际导航。 |
+| `src/media/media-caption.ts` | Card tree 内的 React 媒体说明叶子组件；App 继续决定图片标题、地图说明与 textOnly 清空。 |
+| `src/reader/card-header.ts` | Card tree 内的 React Card 坐标、标题与导语叶子组件。 |
 | `src/types/runtime.ts` | 十四个内容集合、Claim 判别联合、App/Queries/Cards/Reader/Map 与必要浏览器 API 外观的编译期结构契约；不保存运行时模块全局变量，语义规则仍由 validator 执行。 |
 | `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
 | `tsconfig.json` | TypeScript 运行时与正式内容模块的类型检查边界；Node 支持脚本和测试仍由各自的 JavaScript 检查覆盖。 |
@@ -520,8 +516,8 @@ pnpm run test:browser
 | `scripts/generate-asset-manifests.js` | 从现有运行时 Asset 更新 version-2 非运行时元数据清单、编码尺寸、体积和摘要；保留既有审核字段，不猜测许可。 |
 | `scripts/migrate-v4-content-to-v5.js` | 记录 V4→V5 的显式字段删除、Event kind 和逐 Scene Event 映射。 |
 | `assets/images/<module>/manifest.json` | 保存运行时 schema 之外的媒体来源、许可、创作者、原始与编码尺寸、体积、WebP 格式、origin、SHA-256 与审核状态。 |
-| `src/reader/card-components.ts` | 类型化并语义转义后的 Card、连续 Scene prose、ClaimBlock、带框导航 Placement 与预览 HTML；以 `cardsModule` 命名导出供 App 使用。 |
-| `src/reader/card-reader.ts` | 类型化的 Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫；以 `cardReaderModule` 命名导出供 App 使用。 |
+| `src/reader/card-view.ts` | 从 Queries 构造公共 Card/Scene/Claim/navigation view model，以单一 React root 渲染完整 Card，并向 Reader/App 暴露窄控制器与媒体 port。 |
+| `src/reader/card-reader.ts` | 类型化的 Card/Scene 状态、导航意图、Scene 方向/媒体派生、观察器、hash/history/瞬时 scroll restoration、前进入场与异步生命周期守卫；不生成 HTML 或绑定 React DOM 点击事件。 |
 | `src/map/map-renderer.ts` | 类型化的本地 SVG 投影、连续相机/overlay transition、Geometry、Scene 节点、StructureView legend 与竞态清理；以 `mapModule` 命名导出供 App 使用。 |
 | `src/data/world-physical.ts` | 活动生成、受 TypeScript 接口约束并以 `worldPhysicalVector` 命名导出的 Natural Earth 4096 坐标底图数据。 |
 | `src/map/natural-earth-base.ts` | 直接导入底图数据的 TypeScript adapter、筛选、冻结与缓存；以 `naturalEarthModule` 命名导出供 App 使用。 |
@@ -543,7 +539,8 @@ pnpm run test:browser
 | `tests/integration/app-history.test.js` | Card→home→Card 的快照顺序，以及媒体同 Card 保留/跨 Card 重置。 |
 | `tests/integration/runtime.test.js` | 活动 V5 入口隔离、清单一致性、validate-first、品牌/回调/可访问性静态契约。 |
 | `tests/integration/pages.test.js` | Vite 单入口、本地导入、无远程运行时、Pages base/Asset 复制与 package scripts。 |
-| `tests/integration/react-components.test.js` | React 首页与叶子外壳的真实静态输出、稳定属性、可访问语义和自动转义契约。 |
+| `tests/integration/react-components.test.js` | React 首页、外壳和完整 Card tree 的真实静态输出、稳定属性、可访问语义、内部数据隔离和自动转义契约。 |
+| `tests/helpers/react-card-harness.js` | Node 测试使用的 React 静态输出与无 DOM Card view fixture；不进入生产运行时。 |
 | `tests/fixtures/local-image.svg` | image presentation/Asset 负测与边界校验 fixture。 |
 
 ### 20.4 说明与配置

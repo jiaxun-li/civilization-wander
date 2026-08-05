@@ -14,7 +14,7 @@ const globalCss = read('styles.css');
 const cardCss = read('styles/v4/cards.css');
 const mapCss = read('styles/v4/map.css');
 const mapSource = read('src/map/map-renderer.ts');
-const cardsSource = read('src/reader/card-components.ts');
+const cardViewSource = read('src/reader/card-view.ts');
 
 test('the aggregator is the single content-module manifest', () => {
   const { spawnSync } = require('node:child_process');
@@ -44,7 +44,7 @@ test('runtime modules use named imports instead of legacy browser globals', () =
     'src/data/queries.ts',
     'src/data/query-browser-runtime.ts',
     'src/data/world-physical.ts',
-    'src/reader/card-components.ts',
+    'src/reader/card-view.ts',
     'src/reader/card-reader.ts',
     'src/map/natural-earth-base.ts',
     'src/map/map-renderer.ts',
@@ -133,7 +133,7 @@ test('left-column images crossfade while unchanged images remain stable', () => 
   assert.match(app, /waitForImageReady\(incomingImage\)\.then/);
   assert.match(app, /preloadAdjacentSceneImages\(context\?\.cardId, scene\?\.id, asset\.id\)/);
   assert.match(app, /image\.fetchPriority = 'low'/);
-  assert.match(cardsSource, /loading="lazy" decoding="async"/);
+  assert.match(cardViewSource, /loading: 'lazy', decoding: 'async'/);
 });
 
 test('same-Card image presentations preserve the map DOM underneath', () => {

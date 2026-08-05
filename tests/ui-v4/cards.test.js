@@ -5,18 +5,14 @@ const path = require('node:path');
 
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
-const cardsModule = require('../../src/reader/card-components.ts');
+const { formatTimeSpan } = require('../../src/reader/card-view.ts');
 const readerModule = require('../../src/reader/card-reader.ts');
+const {
+  createFakeCardView,
+  createStaticCardComponents
+} = require('../helpers/react-card-harness.js');
 
-const components = cardsModule.createCardComponents({ data, queries });
-
-function fakeRoot() {
-  return {
-    innerHTML: '',
-    querySelectorAll() { return []; },
-    querySelector() { return null; }
-  };
-}
+const components = createStaticCardComponents(queries);
 
 function fakeWindow(hash = '') {
   const calls = { push: [], replace: [], scroll: [], listeners: new Map() };
@@ -60,8 +56,8 @@ test('the story header combines the primary Entity name and its generated years 
     components.renderMainCard('assyria-orders-cross-empire'),
     /<p class="v4-main-card__coordinate">新亚述帝国 · 约公元前911—前609年<\/p>/
   );
-  assert.equal(cardsModule.formatTimeSpan({ start: -44, end: 14 }), '公元前44—公元14年');
-  assert.equal(cardsModule.formatTimeSpan({ start: 618, end: 907 }), '公元618—907年');
+  assert.equal(formatTimeSpan({ start: -44, end: 14 }), '公元前44—公元14年');
+  assert.equal(formatTimeSpan({ start: 618, end: 907 }), '公元618—907年');
 });
 
 test('typed public blocks render semantic markup and escape untrusted text', () => {
@@ -112,7 +108,7 @@ test('text-only stories create no media dependency and ordinary links retain fal
     fixtureData.scenes.find(scene => scene.id === sceneId).presentation = { kind: 'textOnly' };
   }
   const fixtureQueries = queries.createQueries(fixtureData);
-  const fixtureComponents = cardsModule.createCardComponents({ data: fixtureData, queries: fixtureQueries });
+  const fixtureComponents = createStaticCardComponents(fixtureQueries);
   const markup = fixtureComponents.renderMainCard(card.id);
   assert.match(markup, /is-text-only-card/);
   assert.doesNotMatch(markup, /data-map-slot/);
@@ -256,34 +252,12 @@ test('public navigation opens at the first Scene unless an approved targetScene 
 });
 
 test('coarse-pointer navigation opens its preview before following on a second tap', () => {
-  const listeners = {};
-  const attributes = {};
-  const control = {
-    dataset: {
-      navigationId: 'nav-sumer-akkadian-empire',
-      previewNavigationId: 'nav-sumer-akkadian-empire'
-    },
-    addEventListener(type, handler) { listeners[type] = handler; },
-    setAttribute(name, value) { attributes[name] = value; }
-  };
-  const layer = {
-    innerHTML: '',
-    setAttribute(name, value) { attributes[`layer:${name}`] = value; },
-    removeAttribute(name) { delete attributes[`layer:${name}`]; }
-  };
-  const root = {
-    innerHTML: '',
-    querySelectorAll(selector) {
-      if (selector === '[data-navigation-id]' || selector === '[data-preview-navigation-id]') return [control];
-      return [];
-    },
-    querySelector(selector) { return selector === '[data-preview-layer]' ? layer : null; }
-  };
+  const view = createFakeCardView(queries);
   const windowRef = fakeWindow('#card/sumer-measuring-land-time/sumer-methods-outlast-dynasties');
   windowRef.matchMedia = () => ({ matches: true });
-  const reader = readerModule.createCardReader({ data, queries, components, root, windowRef });
+  const reader = readerModule.createCardReader({ queries, view, windowRef });
   reader.start();
-  const tap = () => listeners.click({
+  const tap = () => view.state.actions.onNavigationClick('nav-sumer-akkadian-empire', {
     defaultPrevented: false,
     button: 0,
     metaKey: false,
@@ -294,8 +268,7 @@ test('coarse-pointer navigation opens its preview before following on a second t
   });
 
   tap();
-  assert.match(layer.innerHTML, /v4-preview-card/);
-  assert.equal(attributes['aria-expanded'], 'true');
+  assert.equal(view.state.previewNavigationId, 'nav-sumer-akkadian-empire');
   assert.equal(windowRef.calls.push.length, 0);
 
   tap();
@@ -310,19 +283,12 @@ test('hash routes preserve direct story and section addresses', () => {
 });
 
 test('a direct section address aligns the requested Scene', () => {
-  const sceneIds = queries.getCard('egypt-old-kingdom-overview').sceneIds;
   const calls = [];
-  const sceneElements = sceneIds.map(sceneId => ({
-    dataset: { sceneId }, classList: { toggle() {} }, setAttribute() {},
-    scrollIntoView(options) { calls.push([sceneId, options]); }
-  }));
-  const root = {
-    innerHTML: '',
-    querySelectorAll(selector) { return selector === '[data-scene-id]' ? sceneElements : []; },
-    querySelector() { return null; }
-  };
+  const view = createFakeCardView(queries, {
+    onScrollIntoView(sceneId, options) { calls.push([sceneId, options]); }
+  });
   const reader = readerModule.createCardReader({
-    data, queries, components, root,
+    queries, view,
     windowRef: fakeWindow('#card/egypt-old-kingdom-overview/egypt-old-pyramids-horizon')
   });
   reader.start();
@@ -337,7 +303,7 @@ test('Reader activates inherited optional media independently from map availabil
   const maps = [];
   const windowRef = fakeWindow('#card/sumer-measuring-land-time/sumer-methods-outlast-dynasties');
   const reader = readerModule.createCardReader({
-    data, queries, components, root: fakeRoot(), windowRef,
+    queries, view: createFakeCardView(queries), windowRef,
     onPresentationChange(presentation, scene, context) { presentations.push([presentation.kind, scene.id, context]); },
     onMapStateChange(mapState, scene) { maps.push([mapState?.id || null, scene.id]); }
   });
@@ -372,7 +338,7 @@ test('Reader derives forward and backward Scene direction without schema fields'
 
 test('cross-story navigation opens the target story at its first Scene and snapshots source scroll', () => {
   const windowRef = fakeWindow('#card/ur-iii-reordered-city-world/ur-iii-fragmentation');
-  const reader = readerModule.createCardReader({ data, queries, components, root: fakeRoot(), windowRef });
+  const reader = readerModule.createCardReader({ queries, view: createFakeCardView(queries), windowRef });
   reader.start();
   windowRef.scrollY = 940;
   assert.equal(reader.followNavigation('nav-ur-iii-sumer'), true);
@@ -387,7 +353,7 @@ test('cross-story navigation opens the target story at its first Scene and snaps
 
 test('an approved targetScene entry opens the complete target story at that Scene', () => {
   const windowRef = fakeWindow('#card/amarna-kings-write-world/amarna-diplomacy-routine');
-  const reader = readerModule.createCardReader({ data, queries, components, root: fakeRoot(), windowRef });
+  const reader = readerModule.createCardReader({ queries, view: createFakeCardView(queries), windowRef });
   reader.start();
   assert.equal(reader.followNavigation('nav-amarna-mesopotamia'), true);
   assert.equal(reader.state.activeCardId, 'mesopotamia-cities-outlast-dynasties');
@@ -401,7 +367,7 @@ test('an approved targetScene entry opens the complete target story at that Scen
 test('cross-story navigation resets inherited media', () => {
   const changes = [];
   const reader = readerModule.createCardReader({
-    data, queries, components, root: fakeRoot(),
+    queries, view: createFakeCardView(queries),
     windowRef: fakeWindow('#card/sumer-measuring-land-time/sumer-methods-outlast-dynasties'),
     onPresentationChange(presentation, scene, context) { changes.push({ kind: presentation.kind, sceneId: scene.id, context }); }
   });
@@ -445,7 +411,7 @@ test('real back-forward-back traversal preserves story, section, and scroll stat
     addEventListener(type, handler) { listeners.set(type, handler); },
     removeEventListener(type) { listeners.delete(type); }
   };
-  const reader = readerModule.createCardReader({ data, queries, components, root: fakeRoot(), windowRef });
+  const reader = readerModule.createCardReader({ queries, view: createFakeCardView(queries), windowRef });
   reader.start();
   windowRef.scrollY = 120;
   reader.followNavigation('nav-sumer-akkadian-empire');

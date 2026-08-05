@@ -3,11 +3,13 @@ import type {
   AtlasQueries,
   Card,
   CardId,
+  CardViewActions,
   CardReader,
   CardReaderModule,
   LastReadSnapshot,
   MapPresentationConfig,
   MapState,
+  NavigationInteractionEvent,
   NavigationTrailEntry,
   ReaderContext,
   ReaderState,
@@ -90,11 +92,8 @@ export function resolveSceneMedia(
 
 export function createCardReader(options: CreateCardReaderOptions): CardReader {
     const {
-      data,
       queries,
-      components,
-      previewRenderer,
-      root,
+      view,
       windowRef,
       onBeforeCardChange = () => {},
       onPresentationChange = () => {},
@@ -102,8 +101,8 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       onStructureViewsChange = () => {},
       onCardChange = () => {}
     } = options;
-    if (!data || !queries || !components || !root || !windowRef) {
-      throw new TypeError('data, queries, components, root and windowRef are required');
+    if (!queries || !view || !windowRef) {
+      throw new TypeError('queries, view and windowRef are required');
     }
 
     const state: ReaderState = {
@@ -119,7 +118,6 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
     let announcedSceneId: SceneId | null = null;
     let restoringHistorySnapshot = false;
     let entryTransitionTimer: number | null = null;
-    let entryTransitionArticle: HTMLElement | null = null;
     let entryTransitionSequence = 0;
     let renderSequence = 0;
     let lifecycleGeneration = 0;
@@ -203,11 +201,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       announcedSceneId = scene.id;
       state.activeSceneId = scene.id;
       state.entryContext = context;
-      root.querySelectorAll<HTMLElement>('[data-scene-id]').forEach(element => {
-        const active = element.dataset.sceneId === scene.id;
-        element.classList?.toggle('is-active', active);
-        element.setAttribute?.('aria-current', active ? 'step' : 'false');
-      });
+      view.setActiveScene(scene.id);
       const presentation = resolvedMedia.presentation;
       const mapConfig: MapPresentationConfig | null =
         presentation.kind === 'map' || presentation.kind === 'mapAndText'
@@ -232,7 +226,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       initialTrigger = 'direct'
     }: SceneObserverOptions = {}): void {
       observer?.disconnect?.();
-      const sceneElements = Array.from(root.querySelectorAll<HTMLElement>('[data-scene-id]'));
+      const sceneElements = Array.from(view.getSceneElements());
       const first = queries.getScene(state.activeSceneId) || queries.getScenesForCard(state.activeCardId)[0];
       const Observer = windowRef.IntersectionObserver;
       if (!Observer) {
@@ -276,11 +270,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       entryTransitionSequence += 1;
       if (entryTransitionTimer) windowRef.clearTimeout?.(entryTransitionTimer);
       entryTransitionTimer = null;
-      entryTransitionArticle?.classList?.remove(
-        'is-entering-forward',
-        'is-entering-forward-active'
-      );
-      entryTransitionArticle = null;
+      view.setEntryTransition(null);
     }
 
     function restoreScrollInstant(scrollY: number | null | undefined): void {
@@ -297,34 +287,15 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       windowRef.scrollTo(0, targetScrollY);
     }
 
-    function replaceCardMarkup(markup: string, scrollY: number | null = null): void {
-      if (typeof scrollY !== 'number' || !Number.isFinite(scrollY)) {
-        root.innerHTML = markup;
-        return;
-      }
-      const documentElement = windowRef.document?.documentElement;
-      documentElement?.classList?.add?.('is-v4-card-replacing');
-      try {
-        restoreScrollInstant(scrollY);
-        root.innerHTML = markup;
-        restoreScrollInstant(scrollY);
-      } finally {
-        documentElement?.classList?.remove?.('is-v4-card-replacing');
-      }
-    }
-
     function applyForwardEntryTransition(trigger: string): void {
       clearEntryTransition();
       if (trigger !== 'navigation' || prefersReducedMotion()) return;
-      const article = root.querySelector<HTMLElement>('[data-card-id]');
-      if (!article) return;
       const generation = lifecycleGeneration;
       const transitionSequence = entryTransitionSequence;
-      entryTransitionArticle = article;
-      article.classList?.add('is-entering-forward');
+      view.setEntryTransition('initial');
       scheduleLifecycleFrame(() => {
         if (transitionSequence !== entryTransitionSequence) return;
-        article.classList?.add('is-entering-forward-active');
+        view.setEntryTransition('active');
       });
       let timerCompleted = false;
       const timer = windowRef.setTimeout?.(() => {
@@ -333,8 +304,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
           generation !== lifecycleGeneration ||
           transitionSequence !== entryTransitionSequence
         ) return;
-        article.classList?.remove('is-entering-forward', 'is-entering-forward-active');
-        if (entryTransitionArticle === article) entryTransitionArticle = null;
+        view.setEntryTransition(null);
         entryTransitionTimer = null;
       }, 200) || null;
       entryTransitionTimer = timerCompleted ? null : timer;
@@ -343,58 +313,51 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
     function closePreview(): void {
       if (previewTimer) windowRef.clearTimeout(previewTimer);
       previewTimer = null;
-      const layer = root.querySelector<HTMLElement>('[data-preview-layer]');
-      if (layer) {
-        if (previewRenderer) previewRenderer.close(layer);
-        else {
-          layer.innerHTML = '';
-          layer.removeAttribute?.('data-open');
-        }
-      }
+      view.closePreview();
       tapPreviewNavigationId = null;
-      root.querySelectorAll<HTMLElement>('[data-preview-navigation-id]').forEach(trigger => {
-        trigger.setAttribute?.('aria-expanded', 'false');
-      });
     }
 
     function openPreview(navigationId: string): void {
-      const layer = root.querySelector<HTMLElement>('[data-preview-layer]');
-      if (!layer) return;
-      if (previewRenderer) {
-        if (!previewRenderer.open(layer, navigationId)) return;
-      } else {
-        layer.innerHTML = components.renderPreviewCard(navigationId);
-        layer.setAttribute?.('data-open', 'true');
-      }
-      root.querySelectorAll<HTMLElement>('[data-preview-navigation-id]').forEach(trigger => {
-        trigger.setAttribute?.(
-          'aria-expanded',
-          String(trigger.dataset.previewNavigationId === navigationId)
-        );
-      });
+      view.openPreview(navigationId);
     }
 
     function requiresTapPreview(): boolean {
       return Boolean(windowRef.matchMedia?.('(hover: none), (pointer: coarse)').matches);
     }
 
-    function bindPreviewTriggers(): void {
-      root.querySelectorAll<HTMLElement>('[data-preview-navigation-id]').forEach(trigger => {
-        const show = () => {
-          if (previewTimer) windowRef.clearTimeout(previewTimer);
-          const generation = lifecycleGeneration;
-          previewTimer = windowRef.setTimeout(() => {
-            if (generation !== lifecycleGeneration) return;
-            const navigationId = trigger.dataset.previewNavigationId;
-            if (navigationId) openPreview(navigationId);
-          }, 120);
-        };
-        trigger.addEventListener?.('mouseenter', show);
-        trigger.addEventListener?.('focus', show);
-        trigger.addEventListener?.('mouseleave', closePreview);
-        trigger.addEventListener?.('blur', closePreview);
-      });
+    function requestPreview(navigationId: string): void {
+      if (previewTimer) windowRef.clearTimeout(previewTimer);
+      const generation = lifecycleGeneration;
+      previewTimer = windowRef.setTimeout(() => {
+        if (generation !== lifecycleGeneration) return;
+        openPreview(navigationId);
+      }, 120) || null;
     }
+
+    function handleNavigationClick(
+      navigationId: string,
+      event: NavigationInteractionEvent
+    ): void {
+      if (
+        event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey ||
+        event.shiftKey || event.altKey
+      ) return;
+      if (requiresTapPreview() && tapPreviewNavigationId !== navigationId) {
+        event.preventDefault();
+        tapPreviewNavigationId = navigationId;
+        openPreview(navigationId);
+        return;
+      }
+      event.preventDefault();
+      tapPreviewNavigationId = null;
+      followNavigation(navigationId);
+    }
+
+    const cardViewActions: CardViewActions = {
+      onNavigationClick: handleNavigationClick,
+      onPreviewRequest: requestPreview,
+      onPreviewClose: closePreview
+    };
 
     function renderCard(cardId: CardId, sceneId: SceneId | null = null, {
       restoreScrollY = null,
@@ -418,42 +381,30 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       }
       announcedSceneId = null;
       restoringHistorySnapshot = preserveHistorySnapshot || Number.isFinite(restoreScrollY);
-      onBeforeCardChange();
+      onBeforeCardChange(card);
       closePreview();
-      replaceCardMarkup(
-        components.renderMainCard(card.id, { activeSceneId: resolvedScene.id }),
-        replaceScrollY
-      );
-      root.querySelectorAll<HTMLElement>('[data-navigation-id]').forEach(control => {
-        control.addEventListener('click', (event: MouseEvent) => {
-          if (event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-          const navigationId = control.dataset.navigationId;
-          if (!navigationId) return;
-          if (requiresTapPreview() && tapPreviewNavigationId !== navigationId) {
-            event.preventDefault?.();
-            tapPreviewNavigationId = navigationId;
-            openPreview(navigationId);
-            return;
-          }
-          event.preventDefault?.();
-          tapPreviewNavigationId = null;
-          followNavigation(navigationId);
-        });
-      });
-      bindPreviewTriggers();
+      const documentElement = windowRef.document?.documentElement;
+      const replacingAtScroll = typeof replaceScrollY === 'number' && Number.isFinite(replaceScrollY);
+      if (replacingAtScroll) documentElement?.classList?.add?.('is-v4-card-replacing');
+      try {
+        if (replacingAtScroll) restoreScrollInstant(replaceScrollY);
+        view.renderCard(card.id, resolvedScene.id, cardViewActions);
+        if (replacingAtScroll) restoreScrollInstant(replaceScrollY);
+      } finally {
+        if (replacingAtScroll) documentElement?.classList?.remove?.('is-v4-card-replacing');
+      }
       onCardChange(card, resolvedScene);
       bindSceneObserver({
         updateInitialHistory: !restoringHistorySnapshot,
         initialTrigger: trigger
       });
-      if (focusHeading) root.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
+      if (focusHeading) view.focusHeading();
       applyForwardEntryTransition(trigger);
       const shouldAddressRequestedScene = !Number.isFinite(restoreScrollY) &&
         resolvedScene.id !== scenes[0]?.id &&
         ['direct', 'navigation'].includes(trigger);
       const requestedSceneElement = shouldAddressRequestedScene
-        ? Array.from(root.querySelectorAll<HTMLElement>('[data-scene-id]'))
-          .find(element => element.dataset.sceneId === resolvedScene.id)
+        ? view.getSceneElement(resolvedScene.id)
         : null;
       if (requestedSceneElement) {
         scheduleLifecycleFrame(() => {

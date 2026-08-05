@@ -54,8 +54,9 @@ Card
    not be represented internally as exact `locatedAt` claims.
 9. Chinese, South Asian, Central Asian, West Asian, African, American, and
    other non-Western histories are first-class content, not token additions.
-10. Keep the prototype dependency-free until the content model and experience
-    have been validated.
+10. Keep runtime dependencies deliberately small. React and React DOM are the
+    approved UI runtime; do not add another client framework or a remote core
+    runtime without a separate product and architecture decision.
 
 ## Public narrative firewall
 
@@ -488,7 +489,8 @@ explicitly.
 ## Current implementation status
 
 The current runtime is a Vite-built V5 prototype. React and React DOM are the
-only client-side runtime dependencies and currently own only the home view:
+only client-side runtime dependencies. React owns the home view, shell, and one
+complete Card tree; Reader, App, and Map retain non-visual orchestration:
 
 - `index.html` loads the single `src/main.ts` Vite entrypoint.
 - `src/main.ts` imports styles and the single `src/app.ts` runtime entry; `src/app.ts`
@@ -504,19 +506,20 @@ only client-side runtime dependencies and currently own only the home view:
   trail while App remains the authority for browser history and Reader state.
 - React-owned shell elements send typed intent callbacks to App; do not scan
   React-rendered DOM to attach a second set of imperative click listeners.
-- `src/reader/navigation-preview.ts` renders navigation preview cards with
-  React; Reader remains responsible for hover/focus timing, coarse-pointer
-  confirmation, and following navigation.
-- `src/media/media-caption.ts` renders the current media caption with React;
-  App remains responsible for resolving image titles, map captions, and
-  text-only clearing.
-- `src/reader/card-header.ts` renders the Card coordinate, title, and
-  introduction with React from an App-owned typed view model; Scene content
-  and Reader lifecycle remain outside that root.
-- Do not add nested React roots inside Scene, image, map, or SVG subtrees that
-  Reader, App, or Map Renderer still mutate imperatively. The next Card/Scene
-  phase requires one approved React Card-tree boundary and explicit media/map
-  ports before replacing the string renderer.
+- `src/reader/card-view.ts` owns one React root for the complete Card tree:
+  header, Scenes, public ClaimBlocks, inline/closing navigation, preview,
+  media caption, and a stable media port. It receives typed view models and
+  intent callbacks; it does not own history, media inheritance, or map state.
+- `src/reader/navigation-preview.ts`, `src/media/media-caption.ts`, and
+  `src/reader/card-header.ts` are leaf components inside that Card tree, not
+  separately mounted roots.
+- `src/reader/card-reader.ts` owns Card/Scene state, observer activation,
+  preview timing, coarse-pointer confirmation, navigation, hash/history, and
+  scroll restoration. It must not generate HTML, scan navigation controls, or
+  bind click handlers to React-owned Card DOM.
+- App's image transition controller and Map Renderer may mutate only the
+  stable media port returned by the Card view. Do not add a nested React root
+  inside the image, map, or SVG subtree.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.
@@ -528,9 +531,11 @@ only client-side runtime dependencies and currently own only the home view:
 - `src/data/queries.ts` indexes, queries, and validates the V5 atlas; `data/query-node-runtime.js` supplies its optional Node-only filesystem adapter for Asset validation.
 - `scripts/report-atlas-counts.js` reports live collection counts from the
   aggregated runtime data without writing files.
-- `src/reader/card-components.ts` renders Card and Scene presentations.
+- `src/reader/card-view.ts` builds typed public view models and renders the
+  complete React Card/Scene presentation.
 - `src/reader/card-reader.ts` activates Scenes, updates history, restores scroll
-  position, and dispatches presentation changes.
+  position, dispatches presentation changes, and sends typed intent/state to
+  the Card view.
 - `src/map/map-renderer.ts` renders a local Natural Earth SVG map and optional
   historical overlays.
 - `src/data/world-physical.ts` stores the generated local Natural Earth vector,

@@ -9,6 +9,13 @@ const { StoryNavigation } = require('../../src/shell/story-navigation.ts');
 const { NavigationPreview } = require('../../src/reader/navigation-preview.ts');
 const { MediaCaption } = require('../../src/media/media-caption.ts');
 const { CardHeader } = require('../../src/reader/card-header.ts');
+const {
+  CardView,
+  createCardViewModel,
+  createPreviewViewModel,
+  formatTimeSpan
+} = require('../../src/reader/card-view.ts');
+const { queriesModule: queries } = require('../../src/data/queries.ts');
 
 test('React home markup keeps stable navigation attributes and escapes content', () => {
   const markup = renderToStaticMarkup(createElement(HomeView, {
@@ -113,4 +120,62 @@ test('React Card header preserves its semantic structure and escaping', () => {
   assert.match(markup, /<h1 tabindex="-1">故事 &lt;标题&gt;<\/h1>/);
   assert.match(markup, /class="v4-main-card__introduction"/);
   assert.match(markup, /导语 &amp; 说明/);
+});
+
+test('the complete React Card tree preserves semantic Scene, media, and navigation contracts', () => {
+  const model = createCardViewModel(queries, 'sumer-measuring-land-time');
+  assert.ok(model);
+  const markup = renderToStaticMarkup(createElement(CardView, {
+    model,
+    activeSceneId: 'sumer-water-network',
+    mediaVisible: true,
+    mediaCaption: '当前图片说明',
+    preview: createPreviewViewModel(queries, 'nav-sumer-akkadian-empire'),
+    entryTransition: null
+  }));
+
+  assert.match(markup, /data-card-id="sumer-measuring-land-time"/);
+  assert.equal((markup.match(/data-scene-id=/g) || []).length, 5);
+  assert.match(markup, /data-scene-id="sumer-water-network"[^>]*aria-current="step"/);
+  assert.match(markup, /data-map-slot=""/);
+  assert.match(markup, /当前图片说明/);
+  assert.match(markup, /data-navigation-id="nav-sumer-akkadian-empire"/);
+  assert.match(markup, /role="tooltip"/);
+  assert.doesNotMatch(markup, /EditorialReview|NavigationPlacement|ScenePresentation/);
+});
+
+test('the React Card tree escapes authored text and derives public years without a string renderer', () => {
+  const markup = renderToStaticMarkup(createElement(CardView, {
+    model: {
+      id: 'card-one',
+      header: {
+        coordinate: '实体 <一>',
+        title: '标题 & 故事',
+        introduction: '导语 <script>'
+      },
+      hasOptionalMedia: false,
+      scenes: [{
+        id: 'scene-one',
+        title: '段落 <一>',
+        timeLabel: '公元前44年',
+        progressLabel: '01 / 01',
+        presentationKind: 'textOnly',
+        blocks: [{ id: 'block-one', kind: 'paragraph', text: '正文 & 解释' }],
+        navigation: []
+      }],
+      closingNavigation: []
+    },
+    activeSceneId: 'scene-one',
+    mediaVisible: false,
+    mediaCaption: '',
+    preview: null,
+    entryTransition: null
+  }));
+
+  assert.match(markup, /实体 &lt;一&gt;/);
+  assert.match(markup, /标题 &amp; 故事/);
+  assert.match(markup, /导语 &lt;script&gt;/);
+  assert.match(markup, /正文 &amp; 解释/);
+  assert.doesNotMatch(markup, /<script>/);
+  assert.equal(formatTimeSpan({ start: -44, end: 14 }), '公元前44—公元14年');
 });

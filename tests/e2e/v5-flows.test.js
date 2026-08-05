@@ -3,14 +3,13 @@ const assert = require('node:assert/strict');
 
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
-const cardsModule = require('../../src/reader/card-components.ts');
 const readerModule = require('../../src/reader/card-reader.ts');
+const {
+  createFakeCardView,
+  createStaticCardComponents
+} = require('../helpers/react-card-harness.js');
 
-const components = cardsModule.createCardComponents({ data, queries });
-
-function fakeRoot() {
-  return { innerHTML: '', querySelectorAll() { return []; }, querySelector() { return null; } };
-}
+const components = createStaticCardComponents(queries);
 
 function fakeWindow(hash = '') {
   const snapshots = [];
@@ -40,7 +39,7 @@ function harness(hash) {
   const presentationChanges = [];
   const mapChanges = [];
   const reader = readerModule.createCardReader({
-    data, queries, components, root: fakeRoot(), windowRef,
+    queries, view: createFakeCardView(queries), windowRef,
     onPresentationChange(presentation, scene) {
       presentationChanges.push({ kind: presentation.kind, sceneId: scene.id });
     },

@@ -451,33 +451,35 @@ export interface CardReader {
   replaceHistorySnapshot(): void;
 }
 
-export interface CardComponents {
-  renderContentBlock(block: ClaimBlock): string;
-  renderSmallCard(
-    navigationId: string,
-    options?: { readonly placement?: Pick<NavigationPlacement, 'visible' | 'interactive'> }
-  ): string;
-  renderMainCard(cardId: CardId, options?: { activeSceneId?: SceneId | null }): string;
-  renderPreviewCard(navigationId: string): string;
-  targetContext(navigationId: string): CardTargetContext | null;
+export interface NavigationInteractionEvent {
+  readonly defaultPrevented: boolean;
+  readonly button: number;
+  readonly metaKey: boolean;
+  readonly ctrlKey: boolean;
+  readonly shiftKey: boolean;
+  readonly altKey: boolean;
+  preventDefault(): void;
 }
 
-export interface CardTargetContext {
-  readonly navigation: NavigationOption;
-  readonly card: Card;
-  readonly entity: Entity | null;
-  readonly sceneId: SceneId | null;
+export interface CardViewActions {
+  onNavigationClick(navigationId: string, event: NavigationInteractionEvent): void;
+  onPreviewRequest(navigationId: string): void;
+  onPreviewClose(): void;
 }
 
-export interface NavigationPreviewRenderer {
-  open(layer: HTMLElement, navigationId: string): boolean;
-  close(layer?: HTMLElement | null): void;
-}
-
-export interface CardsModule {
-  escapeHtml(value?: unknown): string;
-  formatTimeSpan(timeSpan?: TimeSpan): string;
-  createCardComponents(options: { data: AtlasData; queries: AtlasQueries }): CardComponents;
+export interface CardViewController {
+  renderCard(cardId: CardId, activeSceneId: SceneId, actions: CardViewActions): void;
+  setActiveScene(sceneId: SceneId): void;
+  setMediaVisible(visible: boolean): void;
+  setMediaCaption(text: string): void;
+  openPreview(navigationId: string): boolean;
+  closePreview(): void;
+  setEntryTransition(phase: 'initial' | 'active' | null): void;
+  getSceneElements(): readonly HTMLElement[];
+  getSceneElement(sceneId: SceneId): HTMLElement | null;
+  getMapSlot(): HTMLElement | null;
+  focusHeading(): void;
+  destroy(): void;
 }
 
 export interface CardReaderModule {
@@ -491,13 +493,10 @@ export interface CardReaderModule {
   ): SceneDirection;
   resolveSceneMedia(queries: AtlasQueries, cardId: CardId, sceneId: SceneId): ResolvedSceneMedia | null;
   createCardReader(options: {
-    data: AtlasData;
     queries: AtlasQueries;
-    components: CardComponents;
-    previewRenderer?: NavigationPreviewRenderer;
-    root: HTMLElement;
+    view: CardViewController;
     windowRef: AtlasWindow;
-    onBeforeCardChange?: () => void;
+    onBeforeCardChange?: (card: Card) => void;
     onPresentationChange: (presentation: ScenePresentation, scene: Scene, context: ReaderContext) => void;
     onMapStateChange: (mapState: MapState | null, scene: Scene, mapConfig: MapPresentationConfig | null, context: ReaderContext) => void;
     onStructureViewsChange: (views: readonly StructureView[], scene: Scene, context: ReaderContext) => void;

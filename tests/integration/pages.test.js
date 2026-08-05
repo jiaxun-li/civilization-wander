@@ -14,6 +14,7 @@ const storyNavigation = read('src/shell/story-navigation.ts');
 const navigationPreview = read('src/reader/navigation-preview.ts');
 const mediaCaption = read('src/media/media-caption.ts');
 const cardHeader = read('src/reader/card-header.ts');
+const cardView = read('src/reader/card-view.ts');
 const viteConfig = read('vite.config.mts');
 const playwrightConfig = read('playwright.config.ts');
 const deployWorkflow = read('.github/workflows/deploy-pages.yml');
@@ -50,7 +51,7 @@ test('the app owns a local typed module graph without remote runtime loading', (
   );
 });
 
-test('React owns only the home view while App retains navigation orchestration', () => {
+test('React owns the home view while App retains navigation orchestration', () => {
   assert.match(app, /mountHomeView\(homeView,/);
   assert.match(homeView, /createRoot\(container\)/);
   assert.match(homeView, /function HomeView\(/);
@@ -81,32 +82,41 @@ test('React renders story navigation while App retains history behavior', () => 
 
 test('React renders navigation previews while Reader retains preview timing', () => {
   const reader = read('src/reader/card-reader.ts');
-  assert.match(app, /createNavigationPreviewRenderer\(/);
+  assert.match(app, /createCardViewController\(/);
   assert.match(navigationPreview, /function NavigationPreview\(/);
-  assert.match(navigationPreview, /createRoot\(layer\)/);
-  assert.match(reader, /previewRenderer\.open\(layer, navigationId\)/);
+  assert.match(cardView, /createElement\(NavigationPreview, preview\)/);
+  assert.match(reader, /view\.openPreview\(navigationId\)/);
   assert.match(reader, /previewTimer = windowRef\.setTimeout/);
   assert.doesNotMatch(navigationPreview, /setTimeout|mouseenter|mouseleave|followNavigation/);
 });
 
 test('React renders media captions while App retains presentation decisions', () => {
   const reader = read('src/reader/card-reader.ts');
-  assert.match(app, /createMediaCaptionController\(\)/);
-  assert.match(app, /mediaCaptionController\.update\(asset\.title\)/);
+  assert.match(app, /cardViewController\.setMediaCaption\(asset\.title\)/);
   assert.match(mediaCaption, /function MediaCaption\(/);
-  assert.match(mediaCaption, /createRoot\(container\)/);
-  assert.match(reader, /onBeforeCardChange\(\)/);
+  assert.match(cardView, /createElement\(MediaCaption, \{ text: mediaCaption \}\)/);
+  assert.doesNotMatch(mediaCaption, /createRoot\(/);
+  assert.match(reader, /onBeforeCardChange\(card\)/);
   assert.doesNotMatch(mediaCaption, /getAsset|renderMapState|presentation\.kind/);
 });
 
-test('React renders Card headers from App-owned view models', () => {
+test('the React Card tree renders Card headers from typed view models', () => {
   const reader = read('src/reader/card-reader.ts');
-  assert.match(app, /createCardHeaderController\(\)/);
-  assert.match(app, /cardsModule\.formatTimeSpan/);
   assert.match(cardHeader, /function CardHeader\(/);
   assert.match(cardHeader, /v4-main-card__introduction/);
-  assert.match(reader, /onBeforeCardChange\(\)/);
+  assert.match(cardView, /function createCardViewModel\(/);
+  assert.match(cardView, /createElement\(CardHeader, model\.header\)/);
+  assert.match(reader, /onBeforeCardChange\(card\)/);
   assert.doesNotMatch(cardHeader, /getCard|getEntity|history\.|renderCard/);
+});
+
+test('one React Card root owns Card and Scene DOM while Reader owns state and history', () => {
+  const reader = read('src/reader/card-reader.ts');
+  assert.match(cardView, /const reactRoot: Root = createRoot\(root\)/);
+  assert.match(reader, /view\.renderCard\(card\.id, resolvedScene\.id, cardViewActions\)/);
+  assert.match(reader, /view\.setActiveScene\(scene\.id\)/);
+  assert.doesNotMatch(reader, /innerHTML|querySelectorAll<HTMLElement>|addEventListener\('click'/);
+  assert.doesNotMatch(cardHeader + mediaCaption + navigationPreview, /createRoot\(/);
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {

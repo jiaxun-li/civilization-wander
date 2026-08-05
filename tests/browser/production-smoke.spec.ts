@@ -105,3 +105,30 @@ test('React wander trail follows cross-Card history and returns to the source st
   await page.locator('[data-story-back]').click();
   await expect(page.locator('[data-card-id="sumer-measuring-land-time"]')).toBeVisible();
 });
+
+test('the React Card media port preserves one map across mobile Scene updates', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('./#card/sumer-measuring-land-time/sumer-water-network', { waitUntil: 'networkidle' });
+
+  const map = page.locator('[data-v4-map]');
+  await expect(map).toBeVisible();
+  await map.evaluate(element => element.setAttribute('data-port-sentinel', 'stable'));
+
+  const imageScene = page.locator('section[data-scene-id="sumer-land-measurement"]');
+  await imageScene.evaluate(element => {
+    const rect = element.getBoundingClientRect();
+    window.scrollTo({ top: window.scrollY + rect.top - window.innerHeight * 0.35 });
+  });
+  await expect(imageScene).toHaveClass(/\bis-active\b/);
+  await expect(page.locator('[data-map-slot] > img:not([data-media-image-transition])')).toBeVisible();
+  await expect(map).toHaveAttribute('data-port-sentinel', 'stable');
+
+  const mapScene = page.locator('section[data-scene-id="sumer-water-network"]');
+  await mapScene.evaluate(element => {
+    const rect = element.getBoundingClientRect();
+    window.scrollTo({ top: window.scrollY + rect.top - window.innerHeight * 0.35 });
+  });
+  await expect(mapScene).toHaveClass(/\bis-active\b/);
+  await expect(map).toBeVisible();
+  await expect(map).toHaveAttribute('data-port-sentinel', 'stable');
+});
