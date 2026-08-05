@@ -24,7 +24,7 @@ test('typed aggregator preserves the exact fourteen-collection module boundary',
   delete missingModule.ATLAS_V5_MESOPOTAMIA;
   assert.throws(
     () => createAtlasV5Data(missingModule),
-    /data\/mesopotamia\.js must load before data\/atlas-data\.js/
+    /data\/mesopotamia\.ts must load before src\/data\/atlas-data\.ts/
   );
 
   const missingCollection = runtimeValues();
@@ -33,7 +33,7 @@ test('typed aggregator preserves the exact fourteen-collection module boundary',
   missingCollection.ATLAS_V5_MESOPOTAMIA = withoutScenes;
   assert.throws(
     () => createAtlasV5Data(missingCollection),
-    /data\/mesopotamia\.js is missing required collection scenes/
+    /data\/mesopotamia\.ts is missing required collection scenes/
   );
 
   const invalidCollection = runtimeValues();
@@ -43,7 +43,7 @@ test('typed aggregator preserves the exact fourteen-collection module boundary',
   };
   assert.throws(
     () => createAtlasV5Data(invalidCollection),
-    /data\/mesopotamia\.js collection scenes must be an array/
+    /data\/mesopotamia\.ts collection scenes must be an array/
   );
 
   const unknownCollection = runtimeValues();
@@ -53,6 +53,6 @@ test('typed aggregator preserves the exact fourteen-collection module boundary',
   };
   assert.throws(
     () => createAtlasV5Data(unknownCollection),
-    /data\/mesopotamia\.js exports unknown collection rendererFallbacks/
+    /data\/mesopotamia\.ts exports unknown collection rendererFallbacks/
   );
 });

@@ -1,4 +1,4 @@
-import '../../data/mesopotamia.js';
+import '../../data/mesopotamia.ts';
 import '../../data/ancient-egypt.ts';
 import '../../data/ancient-india.ts';
 import '../../data/ancient-china.ts';
@@ -64,9 +64,9 @@ const MODULE_COLLECTION_SET = new Set<string>(MODULE_COLLECTIONS);
 // failures always name the actual JavaScript or TypeScript content file.
 const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
   {
-    file: 'data/mesopotamia.js',
+    file: 'data/mesopotamia.ts',
     globalName: 'ATLAS_V5_MESOPOTAMIA',
-    missingDependencyError: 'data/mesopotamia.js must load before data/atlas-data.js'
+    missingDependencyError: 'data/mesopotamia.ts must load before src/data/atlas-data.ts'
   },
   {
     file: 'data/ancient-egypt.ts',

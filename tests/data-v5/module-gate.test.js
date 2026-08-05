@@ -128,11 +128,11 @@ root.ATLAS_V5_MODULE_GATE_FIXTURE = fixtureData;
 });
 
 test('isolated module gate rejects IDs that already belong to the active atlas', () => {
-  const moduleFile = path.resolve(root, 'data/mesopotamia.js');
-  const moduleData = require(moduleFile);
+  const moduleFile = path.resolve(root, 'data/mesopotamia.ts');
+  const { mesopotamiaData: moduleData } = require(moduleFile);
   const handoff = handoffFor(moduleFile, moduleData, {
     module: 'mesopotamia',
-    moduleFile: 'data/mesopotamia.js',
+    moduleFile: 'data/mesopotamia.ts',
     exportedGlobal: 'ATLAS_V5_MESOPOTAMIA',
     assetDirectory: 'assets/images/mesopotamia'
   });

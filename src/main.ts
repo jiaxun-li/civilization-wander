@@ -5,7 +5,7 @@ import '../styles/v4/map.css';
 // Preserve the established V5 runtime dependency order while the remaining
 // JavaScript content modules are migrated to TypeScript incrementally.
 import './data/world-physical.ts';
-import '../data/mesopotamia.js';
+import '../data/mesopotamia.ts';
 import '../data/ancient-egypt.ts';
 import '../data/ancient-india.ts';
 import '../data/ancient-china.ts';

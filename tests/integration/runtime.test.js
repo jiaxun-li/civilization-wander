@@ -34,7 +34,7 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'styles/v4/cards.css',
     'styles/v4/map.css',
     'src/data/world-physical.ts',
-    'data/mesopotamia.js',
+    'data/mesopotamia.ts',
     'data/ancient-egypt.ts',
     'data/ancient-india.ts',
     'data/ancient-china.ts',

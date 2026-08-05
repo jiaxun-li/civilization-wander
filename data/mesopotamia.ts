@@ -1,31 +1,33 @@
-(function exposeSumerV5(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_SUMER = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createSumerV5Data() {
-  'use strict';
+import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
 
-  function timeSpan(start, end, label, approximate) {
-    const value = { start, end, label };
+type SourceIds = readonly string[];
+type SumerModule = Pick<
+  ContentModule,
+  'sources' | 'entities' | 'cards' | 'scenes' | 'cameraPresets' | 'geometries' | 'mapStates' | 'assets'
+>;
+
+export const sumerData: SumerModule = (() => {
+  function timeSpan(start: number | null, end: number | null, label: string, approximate = false): TimeSpan {
+    const value: { start?: number | null; end?: number | null; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     if (start === null) delete value.start;
     if (end === null) delete value.end;
-    return value;
+    return value as TimeSpan;
   }
 
-  function interpretation(id, text, sourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function fact(id, text, sourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function synthesis(id, text, sourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id, text, sourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
@@ -503,36 +505,29 @@
     mapStates,
     assets
   };
-}));
+})();
 
-(function exposeMesopotamiaV5(root, factory) {
-  const data = factory(root && root.ATLAS_V5_SUMER);
-  if (root) root.ATLAS_V5_MESOPOTAMIA = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createMesopotamiaV5Data(sumer) {
-  'use strict';
+  const sumer = sumerData;
 
-  if (!sumer) throw new Error('Sumer data must initialize inside data/mesopotamia.js');
-
-  function timeSpan(start, end, label, approximate) {
-    const value = { start, end, label };
+  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+    const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id, text, sourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id, text, sourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function synthesis(id, text, sourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id, text, sourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
@@ -1442,7 +1437,6 @@
     {
       id: 'event-ur-iii-formation',
       kind: 'historicalEvent',
-      kind: 'historicalEvent',
       title: '乌尔第三王朝形成',
       timeSpan: timeSpan(-2112, -2095, '乌尔那木统治时期，约公元前2112—前2095年', true),
       participantEntityIds: ['ur-iii-kingdom'],
@@ -1464,7 +1458,6 @@
     },
     {
       id: 'event-ur-iii-fragmentation',
-      kind: 'historicalEvent',
       kind: 'historicalEvent',
       title: '乌尔第三王朝瓦解',
       timeSpan: timeSpan(-2028, -2004, '伊比辛统治后期至乌尔陷落，约公元前2028—前2004年', true),
@@ -1488,7 +1481,6 @@
     {
       id: 'event-hammurabi-conquests',
       kind: 'historicalEvent',
-      kind: 'historicalEvent',
       title: '汉谟拉比统一南部与中部美索不达米亚',
       timeSpan: timeSpan(-1764, -1755, '汉谟拉比统治后期，约公元前1764—前1755年', true),
       participantEntityIds: ['old-babylonian-kingdom'],
@@ -1509,7 +1501,6 @@
     {
       id: 'event-old-babylonian-fragmentation',
       kind: 'historicalEvent',
-      kind: 'historicalEvent',
       title: '古巴比伦王国收缩并结束',
       timeSpan: timeSpan(-1749, -1595, '约公元前1749—前1595年', true),
       participantEntityIds: ['old-babylonian-kingdom'],
@@ -1529,7 +1520,6 @@
     },
     {
       id: 'event-hammurabi-code-stele',
-      kind: 'historicalEvent',
       kind: 'historicalEvent',
       title: '汉谟拉比法典石碑建立',
       timeSpan: timeSpan(-1750, -1750, '约公元前1750年', true),
@@ -1552,7 +1542,6 @@
     },
     {
       id: 'event-etemenanki-rebuilding',
-      kind: 'historicalProcess',
       kind: 'historicalProcess',
       title: '埃特曼安吉塔庙重建',
       timeSpan: timeSpan(-689, -562, '约公元前689—前562年', true),
@@ -3410,7 +3399,7 @@
     { id: 'asset-babel-etemenanki-ruins', type: 'image', src: 'assets/images/mesopotamia/babel-etemenanki-ruins.webp', title: '埃特曼安吉地基遗址', alt: '平坦遗址中残留一片积水和低矮土层，昔日高塔已不再直立。', sourceIds: ['source-wikimedia-etemenanki-ruins', 'source-george-tower-of-babel'] }
   ];
 
-  return {
+  export const mesopotamiaData = {
     sources: sumer.sources.concat(sources),
     entities: sumer.entities.concat(entities),
     events,
@@ -3425,5 +3414,12 @@
     mapStates: sumer.mapStates.concat(mapStates),
     mapAnnotations,
     assets: sumer.assets.concat(assets)
-  };
-}));
+  } satisfies ContentModule;
+
+const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
+  ATLAS_V5_SUMER?: SumerModule;
+  ATLAS_V5_MESOPOTAMIA?: ContentModule;
+};
+
+root.ATLAS_V5_SUMER = sumerData;
+root.ATLAS_V5_MESOPOTAMIA = mesopotamiaData;
