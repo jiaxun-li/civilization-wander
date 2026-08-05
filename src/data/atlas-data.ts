@@ -1,7 +1,7 @@
 import '../../data/mesopotamia.js';
 import '../../data/ancient-egypt.js';
 import '../../data/ancient-india.ts';
-import '../../data/ancient-china.js';
+import '../../data/ancient-china.ts';
 import '../../data/late-bronze-age.ts';
 import '../../data/aegean.js';
 import '../../data/iron-age-near-east.js';
@@ -79,9 +79,9 @@ const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
     missingDependencyError: 'data/ancient-india.ts must load before src/data/atlas-data.ts'
   },
   {
-    file: 'data/ancient-china.js',
+    file: 'data/ancient-china.ts',
     globalName: 'ATLAS_V5_ANCIENT_CHINA',
-    missingDependencyError: 'data/ancient-china.js must load before data/atlas-data.js'
+    missingDependencyError: 'data/ancient-china.ts must load before src/data/atlas-data.ts'
   },
   {
     file: 'data/late-bronze-age.ts',

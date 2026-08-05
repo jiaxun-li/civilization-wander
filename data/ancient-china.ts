@@ -1,37 +1,40 @@
-(function exposeAncientChinaV5(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_ANCIENT_CHINA = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createAncientChinaV5Data() {
-  'use strict';
+import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
 
-  function timeSpan(start, end, label, approximate) {
-    const value = { start, end, label };
+type SourceIds = readonly string[];
+
+  function timeSpan(start: number, end: number, label: string, approximate = false): TimeSpan {
+    const value: { start: number; end: number; label: string; approximate?: true } = { start, end, label };
     if (approximate) value.approximate = true;
     return value;
   }
 
-  function fact(id, text, sourceIds) {
+  function fact(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalFact', text, sourceIds };
   }
 
-  function interpretation(id, text, sourceIds) {
+  function interpretation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'interpretation', text, sourceIds };
   }
 
-  function historicalCase(id, title, text, eventIds, sourceIds) {
+  function historicalCase(id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'historicalCase', title, text, eventIds, sourceIds };
   }
 
-  function synthesis(id, text, sourceIds) {
+  function synthesis(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'editorialSynthesis', text, sourceIds };
   }
 
-  function limitation(id, text, sourceIds) {
+  function limitation(id: string, text: string, sourceIds: SourceIds): ContentRecord {
     return { id, kind: 'limitation', text, sourceIds };
   }
 
-  function review(limitations, counterexamples, uncertainties, alternatives, sourceIds) {
+  function review(
+    limitations: readonly ContentRecord[],
+    counterexamples: readonly ContentRecord[],
+    uncertainties: readonly ContentRecord[],
+    alternatives: readonly ContentRecord[],
+    sourceIds: SourceIds
+  ): ContentRecord {
     return {
       limitations: limitations || [],
       counterexamples: counterexamples || [],
@@ -41,8 +44,8 @@
     };
   }
 
-  const mapPresentation = (mapStateId, layers, caption) => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
-  const mapLayer = (entityId, annotationId, sourceIds) => ({ kind: 'entity', entityId, annotationId, sourceIds });
+  const mapPresentation = (mapStateId: string, layers: readonly ContentRecord[], caption: string): ContentRecord => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
+  const mapLayer = (entityId: string, annotationId: string, sourceIds: SourceIds): ContentRecord => ({ kind: 'entity', entityId, annotationId, sourceIds });
 
   const sources = [
     { id: 'source-unesco-liangzhu', title: 'Archaeological Ruins of Liangzhu City', publisher: 'UNESCO World Heritage Centre', url: 'https://whc.unesco.org/en/list/1592/' },
@@ -1426,7 +1429,7 @@
     { id: 'asset-jinsha-sun-bird-disc', type: 'image', src: 'assets/images/ancient-china/jinsha-gold-sun-bird-disc.webp', title: '金沙遗址太阳神鸟金饰', alt: '一枚圆形金饰，中央是太阳形纹样，周围环绕四只飞行的鸟。', sourceIds: ['source-wikimedia-jinsha-sun-bird', 'source-sxd-southwest-exchange-2024'] }
   ];
 
-  return {
+  export const ancientChinaData = {
     sources,
     entities,
     events,
@@ -1441,5 +1444,10 @@
     geometries,
     mapAnnotations,
     assets
-  };
-}));
+  } satisfies ContentModule;
+
+const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
+  ATLAS_V5_ANCIENT_CHINA?: ContentModule;
+};
+
+root.ATLAS_V5_ANCIENT_CHINA = ancientChinaData;

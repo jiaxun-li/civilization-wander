@@ -37,7 +37,7 @@ test('Vite entrypoint loads only the V5 main path in dependency order', () => {
     'data/mesopotamia.js',
     'data/ancient-egypt.js',
     'data/ancient-india.ts',
-    'data/ancient-china.js',
+    'data/ancient-china.ts',
     'data/late-bronze-age.ts',
     'data/aegean.js',
     'data/iron-age-near-east.js',
