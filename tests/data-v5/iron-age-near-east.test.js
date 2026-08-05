@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const moduleData = require('../../data/iron-age-near-east.js');
+const { ironAgeNearEastData: moduleData } = require('../../data/iron-age-near-east.ts');
 const { atlasData: data } = require('../../src/data/atlas-data.ts');
 const { queriesModule: queries } = require('../../src/data/queries.ts');
 

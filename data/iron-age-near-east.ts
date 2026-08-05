@@ -1,19 +1,16 @@
-(function exposeIronAgeNearEastV5(root, factory) {
-  const data = factory();
-  if (root) root.ATLAS_V5_IRON_AGE_NEAR_EAST = data;
-  if (typeof module === 'object' && module.exports) module.exports = data;
-}(typeof window !== 'undefined' ? window : globalThis, function createIronAgeNearEastV5Data() {
-  'use strict';
+import type { ContentModule, ContentRecord, TimeSpan } from '../src/types/runtime.ts';
 
-  const timeSpan = (start, end, label, approximate) => Object.assign({ start, end, label }, approximate ? { approximate: true } : {});
-  const fact = (id, text, sourceIds) => ({ id, kind: 'historicalFact', text, sourceIds });
-  const interpretation = (id, text, sourceIds) => ({ id, kind: 'interpretation', text, sourceIds });
-  const synthesis = (id, text, sourceIds) => ({ id, kind: 'editorialSynthesis', text, sourceIds });
-  const limitation = (id, text, sourceIds) => ({ id, kind: 'limitation', text, sourceIds });
-  const historicalCase = (id, title, text, eventIds, sourceIds) => ({ id, kind: 'historicalCase', title, text, eventIds, sourceIds });
-  const review = (limitations, counterexamples, uncertainties, alternatives, sourceIds) => ({ limitations, counterexamples, uncertainties, alternativeExplanations: alternatives, sourceIds });
-  const mapPresentation = (mapStateId, layers, caption) => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
-  const mapLayer = (entityId, annotationId, sourceIds) => ({ kind: 'entity', entityId, annotationId, sourceIds });
+type SourceIds = readonly string[];
+
+  const timeSpan = (start: number, end: number, label: string, approximate = false): TimeSpan => Object.assign({ start, end, label }, approximate ? { approximate: true as const } : {});
+  const fact = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'historicalFact', text, sourceIds });
+  const interpretation = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'interpretation', text, sourceIds });
+  const synthesis = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'editorialSynthesis', text, sourceIds });
+  const limitation = (id: string, text: string, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'limitation', text, sourceIds });
+  const historicalCase = (id: string, title: string, text: string, eventIds: SourceIds, sourceIds: SourceIds): ContentRecord => ({ id, kind: 'historicalCase', title, text, eventIds, sourceIds });
+  const review = (limitations: readonly ContentRecord[], counterexamples: readonly ContentRecord[], uncertainties: readonly ContentRecord[], alternatives: readonly ContentRecord[], sourceIds: SourceIds): ContentRecord => ({ limitations, counterexamples, uncertainties, alternativeExplanations: alternatives, sourceIds });
+  const mapPresentation = (mapStateId: string, layers: readonly ContentRecord[], caption: string): ContentRecord => ({ kind: 'mapAndText', map: { mapStateId, transition: 'cut', structureViewIds: [], layers, caption } });
+  const mapLayer = (entityId: string, annotationId: string, sourceIds: SourceIds): ContentRecord => ({ kind: 'entity', entityId, annotationId, sourceIds });
 
   const sources = [
     { id: 'source-met-old-assyrian-caravan', title: 'Trade between Assur and Anatolia', publisher: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/assy/hd_assy.htm' },
@@ -336,9 +333,9 @@
     ['map-iane-babylon-succeeds-assyria', 'camera-iane-babylon-transition', 'geometry-iane-babylon-succeeds-assyria', -626, -605, '公元前626—前605年', ['source-met-babylon', 'source-met-assyria', 'source-natural-earth']],
     ['map-iane-lydia-sardis-corridor', 'camera-iane-lydia', 'geometry-iane-lydia-sardis-corridor', -700, -560, '约公元前700—前560年', ['source-met-sardis', 'source-sardis-introduction', 'source-natural-earth']],
     ['map-iane-lydia-persian-transfer', 'camera-iane-lydia-persia', 'geometry-iane-lydia-persian-transfer', -546, -500, '约公元前546—前500年', ['source-met-sardis', 'source-iranica-cyrus', 'source-natural-earth']]
-  ].map(item => ({ id: item[0], cameraPresetId: item[1], layers: [{ kind: 'geometry', geometryId: item[2], timeSpan: timeSpan(item[3], item[4], item[5], item[5].startsWith('约')), sourceIds: item[6] }] }));
+  ].map(item => ({ id: item[0], cameraPresetId: item[1], layers: [{ kind: 'geometry', geometryId: item[2], timeSpan: timeSpan(item[3] as number, item[4] as number, item[5] as string, (item[5] as string).startsWith('约')), sourceIds: item[6] }] }));
 
-  const annotation = (id, entityId, coordinates, sourceIds, placement, label) => ({ id, subject: { kind: 'entity', entityId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label });
+  const annotation = (id: string, entityId: string, coordinates: readonly number[], sourceIds: SourceIds, placement: string, label: string): ContentRecord => ({ id, subject: { kind: 'entity', entityId }, anchor: { kind: 'geo', coordinates }, anchorMeaning: 'associatedWith', approximate: true, sourceIds, placement, label });
   const mapAnnotations = [
     annotation('annotation-iane-iron-hattusa-collapse', 'iron', [34.62, 40.02], ['source-erb-satullo-iron-adoption'], 'right', '安纳托利亚'), annotation('annotation-iane-iron-aegean', 'iron', [25.1, 35.2], ['source-bsa-aegean-iron-technologies'], 'left', '爱琴海'), annotation('annotation-iane-iron-cyprus', 'iron', [33.2, 35.1], ['source-bsa-aegean-iron-technologies'], 'below', '塞浦路斯'),
     annotation('annotation-iane-iron-dor', 'iron', [34.92, 32.62], ['source-npj-dor-iron-blooms'], 'left', '多尔港'), annotation('annotation-iane-iron-cyprus-sea', 'iron', [33.2, 35.1], ['source-met-phoenician-sailing'], 'right', '塞浦路斯'), annotation('annotation-iane-iron-west-sea', 'iron', [14.2, 37.6], ['source-met-phoenician-sailing'], 'right', '中地中海方向'),
@@ -383,9 +380,14 @@
     { id: 'asset-iane-croesus-gold-stater', type: 'image', src: 'assets/images/iron-age-near-east/lydia-croesus-gold-stater.webp', title: '克洛伊索斯时期的吕底亚金币', alt: '灰色背景上放着一枚小型不规则圆形金币，可见相对的狮头和牛头图案。', sourceIds: ['source-met-croesus-stater'] }
   ];
 
-  return {
+  export const ironAgeNearEastData = {
     sources, entities, events, structuralEdges, cards, scenes, structureViews: [], navigationOptions, navigationPlacements,
     cameraPresets, mapStates, geometries, mapAnnotations,
     assets
-  };
-}));
+  } satisfies ContentModule;
+
+const root = (typeof window !== 'undefined' ? window : globalThis) as typeof globalThis & {
+  ATLAS_V5_IRON_AGE_NEAR_EAST?: ContentModule;
+};
+
+root.ATLAS_V5_IRON_AGE_NEAR_EAST = ironAgeNearEastData;

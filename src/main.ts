@@ -11,7 +11,7 @@ import '../data/ancient-india.ts';
 import '../data/ancient-china.ts';
 import '../data/late-bronze-age.ts';
 import '../data/aegean.js';
-import '../data/iron-age-near-east.js';
+import '../data/iron-age-near-east.ts';
 import './data/atlas-data.ts';
 import './data/queries.ts';
 import './reader/card-components.ts';

@@ -4,7 +4,7 @@ import '../../data/ancient-india.ts';
 import '../../data/ancient-china.ts';
 import '../../data/late-bronze-age.ts';
 import '../../data/aegean.js';
-import '../../data/iron-age-near-east.js';
+import '../../data/iron-age-near-east.ts';
 
 import type {
   Asset,
@@ -94,9 +94,9 @@ const MODULE_DEFINITIONS: readonly ModuleDefinition[] = [
     missingDependencyError: 'data/aegean.js must load before data/atlas-data.js'
   },
   {
-    file: 'data/iron-age-near-east.js',
+    file: 'data/iron-age-near-east.ts',
     globalName: 'ATLAS_V5_IRON_AGE_NEAR_EAST',
-    missingDependencyError: 'data/iron-age-near-east.js must load before data/atlas-data.js'
+    missingDependencyError: 'data/iron-age-near-east.ts must load before src/data/atlas-data.ts'
   }
 ];
 

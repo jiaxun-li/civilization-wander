@@ -17,7 +17,7 @@
     "test:e2e": "node --test tests/e2e/*.test.js",
     "test:browser": "playwright test",
     "test:browser:install": "playwright install chromium",
-    "check:syntax": "node --check data/mesopotamia.js && node --check data/ancient-egypt.js && node --check data/aegean.js && node --check data/iron-age-near-east.js && node --check data/query-node-runtime.js && node --check scripts/content-module-runtime.js && node --check scripts/migrate-v4-content-to-v5.js && node --check scripts/migrate-v5-asset-metadata-audit.js && node --check scripts/generate-asset-manifests.js && node --check scripts/validate-content-module.js && node --check scripts/check-runtime-manifests.js && node --check scripts/report-atlas-counts.js",
+    "check:syntax": "node --check data/mesopotamia.js && node --check data/ancient-egypt.js && node --check data/aegean.js && node --check data/query-node-runtime.js && node --check scripts/content-module-runtime.js && node --check scripts/migrate-v4-content-to-v5.js && node --check scripts/migrate-v5-asset-metadata-audit.js && node --check scripts/generate-asset-manifests.js && node --check scripts/validate-content-module.js && node --check scripts/check-runtime-manifests.js && node --check scripts/report-atlas-counts.js",
     "check:manifests": "node scripts/check-runtime-manifests.js",
     "check:pages": "node --test tests/integration/pages.test.js",
     "report:counts": "node scripts/report-atlas-counts.js"
