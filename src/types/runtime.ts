@@ -497,6 +497,7 @@ export interface CardReaderModule {
     previewRenderer?: NavigationPreviewRenderer;
     root: HTMLElement;
     windowRef: AtlasWindow;
+    onBeforeCardChange?: () => void;
     onPresentationChange: (presentation: ScenePresentation, scene: Scene, context: ReaderContext) => void;
     onMapStateChange: (mapState: MapState | null, scene: Scene, mapConfig: MapPresentationConfig | null, context: ReaderContext) => void;
     onStructureViewsChange: (views: readonly StructureView[], scene: Scene, context: ReaderContext) => void;

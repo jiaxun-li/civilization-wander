@@ -96,6 +96,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       previewRenderer,
       root,
       windowRef,
+      onBeforeCardChange = () => {},
       onPresentationChange = () => {},
       onMapStateChange = () => {},
       onStructureViewsChange = () => {},
@@ -417,6 +418,7 @@ export function createCardReader(options: CreateCardReaderOptions): CardReader {
       }
       announcedSceneId = null;
       restoringHistorySnapshot = preserveHistorySnapshot || Number.isFinite(restoreScrollY);
+      onBeforeCardChange();
       closePreview();
       replaceCardMarkup(
         components.renderMainCard(card.id, { activeSceneId: resolvedScene.id }),

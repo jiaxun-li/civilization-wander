@@ -3,6 +3,7 @@ import { queriesModule } from './data/queries.ts';
 import { cardsModule } from './reader/card-components.ts';
 import { cardReaderModule } from './reader/card-reader.ts';
 import { createNavigationPreviewRenderer } from './reader/navigation-preview.ts';
+import { createMediaCaptionController } from './media/media-caption.ts';
 import { naturalEarthModule } from './map/natural-earth-base.ts';
 import { mapModule } from './map/map-renderer.ts';
 import {
@@ -316,6 +317,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     }, handleStoryBack);
     const components = cardsModule.createCardComponents({ data, queries });
     const previewRenderer = createNavigationPreviewRenderer({ components, queries });
+    const mediaCaptionController = createMediaCaptionController();
 
     let reader: CardReader | null = null;
     let readerStarted = false;
@@ -592,8 +594,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
         nextContainer.append(incomingImage);
         nextContainer.querySelector('[data-v4-map]')?.setAttribute('aria-hidden', 'true');
         transitionMediaImage(nextContainer, incomingImage, outgoingImage);
-        const caption = cardRoot.querySelector<HTMLElement>('[data-media-caption]');
-        if (caption) caption.textContent = asset.title;
+        mediaCaptionController.update(asset.title);
       }).catch(() => {
         if (requestSequence !== mediaImageRequestSequence || activeImageAssetId !== asset.id) return;
         activeImageAssetId = outgoingAssetId;
@@ -607,12 +608,14 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
       previewRenderer,
       root: cardRoot,
       windowRef: root,
+      onBeforeCardChange() {
+        mediaCaptionController.detach();
+      },
       onPresentationChange(presentation: ScenePresentation, scene: Scene, context: ReaderContext) {
         setMediaVisibility(presentation);
         if (presentation.kind === 'textOnly') {
           invalidateMediaImageRequest();
-          const caption = cardRoot.querySelector<HTMLElement>('[data-media-caption]');
-          if (caption) caption.textContent = '';
+          mediaCaptionController.update('');
         } else if (presentation.kind === 'image' || presentation.kind === 'imageAndText') {
           renderImagePresentation(presentation, scene, context);
         }
@@ -631,8 +634,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
           mapConfig,
           context
         );
-        const caption = cardRoot.querySelector<HTMLElement>('[data-media-caption]');
-        if (caption) caption.textContent = mapConfig.caption || '范围、选点与路线均为近似教学表达。';
+        mediaCaptionController.update(mapConfig.caption || '范围、选点与路线均为近似教学表达。');
       },
       onStructureViewsChange(views: readonly StructureView[], scene: Scene, context: ReaderContext) {
         const presentationScene = context?.presentationScene;
@@ -646,6 +648,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
         }
       },
       onCardChange(card: Card) {
+        mediaCaptionController.attach(cardRoot.querySelector<HTMLElement>('[data-media-caption]'));
         if (shouldResetMediaCard(activeMediaCardId, card.id)) {
           invalidateMediaImageRequest();
           clearMediaImageTransition();

@@ -45,6 +45,7 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
     const element = image as HTMLImageElement;
     return element.complete && element.naturalWidth > 0;
   })).toBe(true);
+  await expect(page.locator('[data-media-caption]')).not.toHaveText('');
 
   const secondScene = page.locator('[data-scene-id]').nth(1);
   await secondScene.scrollIntoViewIfNeeded();

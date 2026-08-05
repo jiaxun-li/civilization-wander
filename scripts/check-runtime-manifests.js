@@ -26,6 +26,7 @@ const runtimeSources = [
   'src/reader/navigation-preview.ts',
   'src/map/natural-earth-base.ts',
   'src/map/map-renderer.ts',
+  'src/media/media-caption.ts',
   'data/query-node-runtime.js'
 ].map(relative => [relative, read(relative)]);
 const atlasModules = [...atlasSource.matchAll(/from\s+['"]\.\.\/\.\.\/(data\/[^'"]+\.ts)['"]/g)]

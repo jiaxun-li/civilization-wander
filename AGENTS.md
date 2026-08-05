@@ -507,6 +507,9 @@ only client-side runtime dependencies and currently own only the home view:
 - `src/reader/navigation-preview.ts` renders navigation preview cards with
   React; Reader remains responsible for hover/focus timing, coarse-pointer
   confirmation, and following navigation.
+- `src/media/media-caption.ts` renders the current media caption with React;
+  App remains responsible for resolving image titles, map captions, and
+  text-only clearing.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.

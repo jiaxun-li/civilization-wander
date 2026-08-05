@@ -12,6 +12,7 @@ const homeView = read('src/home/home-view.ts');
 const siteHeader = read('src/shell/site-header.ts');
 const storyNavigation = read('src/shell/story-navigation.ts');
 const navigationPreview = read('src/reader/navigation-preview.ts');
+const mediaCaption = read('src/media/media-caption.ts');
 const viteConfig = read('vite.config.mts');
 const playwrightConfig = read('playwright.config.ts');
 const deployWorkflow = read('.github/workflows/deploy-pages.yml');
@@ -85,6 +86,16 @@ test('React renders navigation previews while Reader retains preview timing', ()
   assert.match(reader, /previewRenderer\.open\(layer, navigationId\)/);
   assert.match(reader, /previewTimer = windowRef\.setTimeout/);
   assert.doesNotMatch(navigationPreview, /setTimeout|mouseenter|mouseleave|followNavigation/);
+});
+
+test('React renders media captions while App retains presentation decisions', () => {
+  const reader = read('src/reader/card-reader.ts');
+  assert.match(app, /createMediaCaptionController\(\)/);
+  assert.match(app, /mediaCaptionController\.update\(asset\.title\)/);
+  assert.match(mediaCaption, /function MediaCaption\(/);
+  assert.match(mediaCaption, /createRoot\(container\)/);
+  assert.match(reader, /onBeforeCardChange\(\)/);
+  assert.doesNotMatch(mediaCaption, /getAsset|renderMapState|presentation\.kind/);
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {
