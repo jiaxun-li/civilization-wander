@@ -33,6 +33,9 @@ test('production build opens a Card, activates a scrolled Scene, and loads its i
   await expect(page.locator('#home-view')).toBeHidden();
   await expect(page.locator('#card-view')).toBeVisible();
   await expect(page.locator('[data-card-id="odyssey-name-and-home"]')).toBeVisible();
+  await expect(page.locator('.v4-main-card__header h1')).toHaveText('失去姓名，才能回家');
+  await expect(page.locator('.v4-main-card__coordinate')).not.toHaveText('');
+  await expect(page.locator('.v4-main-card__introduction')).not.toHaveText('');
 
   const previewTrigger = page.locator('[data-preview-navigation-id]').first();
   await previewTrigger.hover();

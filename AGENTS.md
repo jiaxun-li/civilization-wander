@@ -510,6 +510,9 @@ only client-side runtime dependencies and currently own only the home view:
 - `src/media/media-caption.ts` renders the current media caption with React;
   App remains responsible for resolving image titles, map captions, and
   text-only clearing.
+- `src/reader/card-header.ts` renders the Card coordinate, title, and
+  introduction with React from an App-owned typed view model; Scene content
+  and Reader lifecycle remain outside that root.
 - `src/types/runtime.ts` defines the typed consumer and authoring boundary between the
   application, the TypeScript content modules, the typed V5 aggregation/query
   modules, and the typed Reader, Cards, and Map modules.

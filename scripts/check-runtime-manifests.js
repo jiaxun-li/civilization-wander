@@ -22,6 +22,7 @@ const runtimeSources = [
   'src/data/query-browser-runtime.ts',
   'src/data/world-physical.ts',
   'src/reader/card-components.ts',
+  'src/reader/card-header.ts',
   'src/reader/card-reader.ts',
   'src/reader/navigation-preview.ts',
   'src/map/natural-earth-base.ts',

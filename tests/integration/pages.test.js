@@ -13,6 +13,7 @@ const siteHeader = read('src/shell/site-header.ts');
 const storyNavigation = read('src/shell/story-navigation.ts');
 const navigationPreview = read('src/reader/navigation-preview.ts');
 const mediaCaption = read('src/media/media-caption.ts');
+const cardHeader = read('src/reader/card-header.ts');
 const viteConfig = read('vite.config.mts');
 const playwrightConfig = read('playwright.config.ts');
 const deployWorkflow = read('.github/workflows/deploy-pages.yml');
@@ -96,6 +97,16 @@ test('React renders media captions while App retains presentation decisions', ()
   assert.match(mediaCaption, /createRoot\(container\)/);
   assert.match(reader, /onBeforeCardChange\(\)/);
   assert.doesNotMatch(mediaCaption, /getAsset|renderMapState|presentation\.kind/);
+});
+
+test('React renders Card headers from App-owned view models', () => {
+  const reader = read('src/reader/card-reader.ts');
+  assert.match(app, /createCardHeaderController\(\)/);
+  assert.match(app, /cardsModule\.formatTimeSpan/);
+  assert.match(cardHeader, /function CardHeader\(/);
+  assert.match(cardHeader, /v4-main-card__introduction/);
+  assert.match(reader, /onBeforeCardChange\(\)/);
+  assert.doesNotMatch(cardHeader, /getCard|getEntity|history\.|renderCard/);
 });
 
 test('Vite build targets the GitHub Pages project path and preserves runtime assets', () => {

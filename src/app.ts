@@ -3,6 +3,7 @@ import { queriesModule } from './data/queries.ts';
 import { cardsModule } from './reader/card-components.ts';
 import { cardReaderModule } from './reader/card-reader.ts';
 import { createNavigationPreviewRenderer } from './reader/navigation-preview.ts';
+import { createCardHeaderController } from './reader/card-header.ts';
 import { createMediaCaptionController } from './media/media-caption.ts';
 import { naturalEarthModule } from './map/natural-earth-base.ts';
 import { mapModule } from './map/map-renderer.ts';
@@ -318,6 +319,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
     const components = cardsModule.createCardComponents({ data, queries });
     const previewRenderer = createNavigationPreviewRenderer({ components, queries });
     const mediaCaptionController = createMediaCaptionController();
+    const cardHeaderController = createCardHeaderController();
 
     let reader: CardReader | null = null;
     let readerStarted = false;
@@ -609,6 +611,7 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
       root: cardRoot,
       windowRef: root,
       onBeforeCardChange() {
+        cardHeaderController.detach();
         mediaCaptionController.detach();
       },
       onPresentationChange(presentation: ScenePresentation, scene: Scene, context: ReaderContext) {
@@ -648,6 +651,18 @@ export const appInternals = (function startCivilizationAtlas(root: AtlasWindow, 
         }
       },
       onCardChange(card: Card) {
+        const primaryEntity = queries.getEntity(card.primaryEntityId);
+        cardHeaderController.attach(
+          cardRoot.querySelector<HTMLElement>('.v4-main-card__header'),
+          {
+            coordinate: [
+              primaryEntity?.name || '',
+              cardsModule.formatTimeSpan(primaryEntity?.timeSpan || card.timeSpan)
+            ].filter(Boolean).join(' · '),
+            title: card.title,
+            introduction: card.introduction
+          }
+        );
         mediaCaptionController.attach(cardRoot.querySelector<HTMLElement>('[data-media-caption]'));
         if (shouldResetMediaCard(activeMediaCardId, card.id)) {
           invalidateMediaImageRequest();

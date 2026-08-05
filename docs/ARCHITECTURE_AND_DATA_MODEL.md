@@ -39,6 +39,7 @@ flowchart TD
     A --> SN["src/shell/story-navigation.ts\nReact back + trail"]
     A --> NP["src/reader/navigation-preview.ts\nReact navigation preview"]
     A --> MC["src/media/media-caption.ts\nReact media caption"]
+    A --> CH["src/reader/card-header.ts\nReact Card header"]
     A --> D["src/data/atlas-data.ts\natlasData"]
     D --> CM["data/content-module.ts\nnamed ContentModule export"]
     Q["src/data/queries.ts\nqueriesModule"] --> D
@@ -477,6 +478,7 @@ pnpm run test:browser
 | `src/shell/story-navigation.ts` | React 返回控件与漫游足迹；App 继续拥有 history、Reader 状态和返回决策。 |
 | `src/reader/navigation-preview.ts` | React 导航预览卡；Reader 继续拥有 hover/focus 延时、粗指针二次确认和实际导航。 |
 | `src/media/media-caption.ts` | React 媒体说明文字；App 继续决定图片标题、地图说明与 textOnly 清空。 |
+| `src/reader/card-header.ts` | React Card 坐标、标题与导语；App 提供类型化视图模型，Scene 正文和 Reader 生命周期仍在其外。 |
 | `src/types/runtime.ts` | 十四个内容集合、Claim 判别联合、App/Queries/Cards/Reader/Map 与必要浏览器 API 外观的编译期结构契约；不保存运行时模块全局变量，语义规则仍由 validator 执行。 |
 | `vite.config.mts` | GitHub Pages base、正式构建和本地运行时 Asset 复制。 |
 | `tsconfig.json` | TypeScript 运行时与正式内容模块的类型检查边界；Node 支持脚本和测试仍由各自的 JavaScript 检查覆盖。 |
