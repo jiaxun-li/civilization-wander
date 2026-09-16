@@ -57,7 +57,19 @@ jobs:
             test-results/
           if-no-files-found: ignore
           retention-days: 14
+          
+      - name: Validate and build V6
+        run: |
+          pnpm check:v6
+          pnpm report:v6-coverage --require-complete
+          pnpm check:v6-preview
 
+      - name: Include V6 in website
+        run: |
+          mkdir -p dist/v6
+          cp -R dist-v6-preview/. dist/v6/
+          cp dist/v6/knowledge-space-preview.html dist/v6/index.html
+          
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
