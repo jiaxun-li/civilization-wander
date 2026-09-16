@@ -1,0 +1,120 @@
+{
+  "handoffVersion": 1,
+  "sourceModule": "data/late-bronze-age.ts",
+  "status": "readyForIntegration",
+  "coverage": {
+    "entities": 6,
+    "events": 9,
+    "scenes": 37,
+    "structuralEdges": 4
+  },
+  "v6RuntimeCounts": {
+    "entities": 4,
+    "entityPhases": 7,
+    "events": 4,
+    "temporalRelations": 1
+  },
+  "scenePhaseSignalCount": 37,
+  "entitySignalCount": 59,
+  "unresolvedRelationCandidateCount": 2,
+  "checks": {
+    "baselineGenerated": true,
+    "entityDecisionsComplete": true,
+    "eventDecisionsComplete": true,
+    "phasesReviewed": true,
+    "edgeDecisionsComplete": true,
+    "relationCandidatesReviewed": true
+  },
+  "externalDependencies": [
+    {
+      "ownerModule": "data/mesopotamia.ts",
+      "entityId": "old-babylonian-kingdom",
+      "phaseId": "old-babylonian-city-kingdom-emergence",
+      "usedByEventIds": [
+        "event-hittite-sack-babylon"
+      ]
+    },
+    {
+      "ownerModule": "data/mesopotamia.ts",
+      "entityId": "cuneiform",
+      "phaseId": "cuneiform-eastern-mediterranean-diplomacy",
+      "usedByEventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ]
+    },
+    {
+      "ownerModule": "data/ancient-egypt.ts",
+      "entityId": "egypt-new-kingdom",
+      "phaseId": "egypt-new-kingdom-imperial-court-order",
+      "usedByEventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ]
+    },
+    {
+      "ownerModule": "data/ancient-egypt.ts",
+      "eventIds": [
+        "event-battle-of-kadesh",
+        "event-egypt-hatti-treaty"
+      ],
+      "usedBySceneSignalIds": [
+        "signal-hittite-carchemish-supervision",
+        "signal-kadesh-two-powers-meet",
+        "signal-kadesh-false-message",
+        "signal-kadesh-chariots-camp",
+        "signal-kadesh-city-not-taken",
+        "signal-kadesh-temple-victory",
+        "signal-kadesh-treaty-later"
+      ],
+      "usedByEdgeDecisionIds": [
+        "edge-kadesh-hittite-participant"
+      ]
+    }
+  ],
+  "providedExternalIdentities": [
+    {
+      "consumerModule": "data/ancient-egypt.ts",
+      "entityId": "hittite-empire",
+      "phaseId": "hittite-syrian-control",
+      "coverage": "约公元前1300—前1200年，覆盖卡迭石战役与埃及—赫梯条约"
+    }
+  ],
+  "migrationOnlyExternalReferences": [
+    {
+      "futureOwnerModule": "data/aegean.ts",
+      "eventIds": [
+        "event-mycenaean-palaces-end",
+        "event-aegean-localizes-after-palaces"
+      ],
+      "scope": "Scene dispositions and RelationCandidate audit only; no runtime object is copied or referenced by the module export."
+    }
+  ],
+  "gateResults": {
+    "typecheck": {
+      "command": "node node_modules/typescript/bin/tsc -p v6/tsconfig.json",
+      "status": "passed"
+    },
+    "moduleTest": {
+      "command": "node --test v6/data/late-bronze-age/late-bronze-age.test.ts",
+      "status": "passed",
+      "result": "7/7 passed"
+    },
+    "migrationCoverage": {
+      "command": "node v6/validation/report-coverage.ts",
+      "status": "passed",
+      "result": "valid=true; Late Bronze Age pending=0; repository-wide pending belongs only to modules still in migration"
+    },
+    "fullV6Tests": {
+      "command": "node --test v6/tests/*.test.ts v6/data/*/*.test.ts",
+      "status": "passed",
+      "result": "73/73 passed"
+    }
+  },
+  "notes": [
+    "Six V5 Entity decisions are closed: four stable V6 Entities with seven EntityPhases, battle-of-kadesh-war is converted to the existing event-battle-of-kadesh subject, and late-bronze-palace-system is deferred as a modern comparative umbrella rather than a stable Entity.",
+    "Four historicalEvent records enter the accepted core; five historicalProcess records remain available only in the pending review export.",
+    "All 37 Scenes are closed as sixteen merged, nine mapped, eleven eventOnly, and one narrativeOnly disposition.",
+    "One local Ugarit-Hittite TemporalRelation is created; the other three V5 StructuralEdges are represented by phase-bound Events to avoid duplicate cross-module relations.",
+    "Two audited RelationCandidates retain unstable northern-group identities and the multi-regional palace-crisis causal model outside runtime; the latter now treats the compared palace institutions as an unresolved subject rather than a known umbrella Entity.",
+    "late-bronze-palace-system and its two accepted Phase drafts were removed from the authoritative V6 core because they duplicate several distinct polities and institutions. The frozen V5 baseline remains unchanged as migration evidence."
+  ]
+}

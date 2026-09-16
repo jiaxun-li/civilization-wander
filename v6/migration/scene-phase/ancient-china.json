@@ -1,0 +1,3240 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-china.ts",
+  "scenePhaseSignals": [
+    {
+      "id": "signal-western-zhou-muye-victory",
+      "v5SceneId": "western-zhou-muye-victory",
+      "v5OwnerCardId": "western-zhou-bronze-commands",
+      "timeSpan": {
+        "start": -1046,
+        "end": -1046,
+        "label": "约公元前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-zhou-conquest-of-shang"
+        }
+      ],
+      "eventIds": [
+        "event-zhou-conquest-of-shang"
+      ],
+      "sourceIds": [
+        "source-anyang-fall",
+        "source-khayutina-cultural-memory",
+        "source-li-feng-early-china",
+        "source-national-museum-li-gui",
+        "source-wikimedia-li-gui"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-regional-rule",
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-western-zhou-eastern-center",
+      "v5SceneId": "western-zhou-eastern-center",
+      "v5OwnerCardId": "western-zhou-bronze-commands",
+      "timeSpan": {
+        "start": -1045,
+        "end": -1000,
+        "label": "约公元前1045—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "western-zhou",
+          "basis": "eventParticipant",
+          "referenceId": "event-western-zhou-eastern-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-western-zhou-eastern-expansion"
+      ],
+      "sourceIds": [
+        "source-li-feng-early-china",
+        "source-natural-earth",
+        "source-western-zhou-domain"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-western-zhou-allies-regional-centers",
+      "v5SceneId": "western-zhou-allies-regional-centers",
+      "v5OwnerCardId": "western-zhou-bronze-commands",
+      "timeSpan": {
+        "start": -1040,
+        "end": -950,
+        "label": "约公元前1040—前950年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "western-zhou",
+          "basis": "eventParticipant",
+          "referenceId": "event-western-zhou-eastern-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-western-zhou-eastern-expansion"
+      ],
+      "sourceIds": [
+        "source-li-feng-bronze-offices",
+        "source-li-feng-early-china",
+        "source-natural-earth",
+        "source-western-zhou-domain"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-western-zhou-command-cast-in-ding",
+      "v5SceneId": "western-zhou-command-cast-in-ding",
+      "v5OwnerCardId": "western-zhou-bronze-commands",
+      "timeSpan": {
+        "start": -1000,
+        "end": -950,
+        "label": "约公元前1000—前950年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "western-zhou",
+          "basis": "eventParticipant",
+          "referenceId": "event-western-zhou-investiture"
+        }
+      ],
+      "eventIds": [
+        "event-western-zhou-investiture"
+      ],
+      "sourceIds": [
+        "source-generated-western-zhou-investiture",
+        "source-national-museum-ceming",
+        "source-national-museum-da-yu-ding"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-western-zhou-rites-and-armies",
+      "v5SceneId": "western-zhou-rites-and-armies",
+      "v5OwnerCardId": "western-zhou-bronze-commands",
+      "timeSpan": {
+        "start": -950,
+        "end": -850,
+        "label": "约公元前950—前850年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "western-zhou",
+          "basis": "eventParticipant",
+          "referenceId": "event-western-zhou-investiture"
+        }
+      ],
+      "eventIds": [
+        "event-western-zhou-investiture"
+      ],
+      "sourceIds": [
+        "source-cook-western-zhou-rites",
+        "source-li-feng-bronze-offices",
+        "source-national-museum-ceming",
+        "source-national-museum-da-yu-ding",
+        "source-national-museum-guoji-zibai-pan"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-western-zhou-capital-falls",
+      "v5SceneId": "western-zhou-capital-falls",
+      "v5OwnerCardId": "western-zhou-bronze-commands",
+      "timeSpan": {
+        "start": -850,
+        "end": -771,
+        "label": "约公元前850—前771年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "western-zhou",
+          "basis": "eventParticipant",
+          "referenceId": "event-western-zhou-capitals-fall"
+        }
+      ],
+      "eventIds": [
+        "event-western-zhou-capitals-fall"
+      ],
+      "sourceIds": [
+        "source-li-feng-early-china",
+        "source-li-feng-western-zhou-fall",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-china-bronze-before-bronze",
+      "v5SceneId": "china-bronze-before-bronze",
+      "v5OwnerCardId": "china-early-bronze-connected-worlds",
+      "timeSpan": {
+        "start": -3300,
+        "end": -1900,
+        "label": "约公元前3300—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "china-early-bronze-world",
+          "basis": "eventParticipant",
+          "referenceId": "event-early-china-regional-centers-emerge"
+        }
+      ],
+      "eventIds": [
+        "event-early-china-regional-centers-emerge"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-liu-chen-archaeology-china",
+        "source-natural-earth",
+        "source-sxd-antiquity-2022",
+        "source-unesco-liangzhu"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该场景是多个区域中心的广域编辑综合，不是任何单一稳定 Entity 的历史阶段。"
+      }
+    },
+    {
+      "id": "signal-china-bronze-materials-fire",
+      "v5SceneId": "china-bronze-materials-fire",
+      "v5OwnerCardId": "china-early-bronze-connected-worlds",
+      "timeSpan": {
+        "start": -2000,
+        "end": -771,
+        "label": "约公元前2000—前771年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        },
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        }
+      ],
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-met-shang-zhou-bronze",
+        "source-smithsonian-bronze-casting",
+        "source-wikimedia-bronze-casting-apparatus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-bronzes-erligang-production",
+          "shang-bronzes-late-ritual-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-china-bronze-erlitou-center",
+      "v5SceneId": "china-bronze-erlitou-center",
+      "v5OwnerCardId": "china-early-bronze-connected-worlds",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1500,
+        "label": "约公元前1900—前1500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "erlitou-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-erlitou-urban-consolidation"
+        }
+      ],
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-radiocarbon",
+        "source-erlitou-turquoise-restoration",
+        "source-wikimedia-erlitou-plaque",
+        "source-zhao-erlitou-settlement"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "erlitou-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-china-bronze-shang-cities",
+      "v5SceneId": "china-bronze-shang-cities",
+      "v5OwnerCardId": "china-early-bronze-connected-worlds",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1250,
+        "label": "约公元前1600—前1250年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-erligang-urban-expansion"
+        },
+        {
+          "entityId": "western-zhou",
+          "basis": "eventParticipant",
+          "referenceId": "event-erligang-urban-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-erligang-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-an-zhengzhou-shang-city",
+        "source-bagley-shang-archaeology",
+        "source-natural-earth",
+        "source-steinke-erligang",
+        "source-unesco-yinxu"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-china-bronze-ancestors-records",
+      "v5SceneId": "china-bronze-ancestors-records",
+      "v5OwnerCardId": "china-early-bronze-connected-worlds",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        },
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination",
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-met-shang-zhou-bronze",
+        "source-smithsonian-bronze-casting",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-fuhao-cooking-vessels"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-bronzes-late-ritual-use",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-china-bronze-sanxingdui-world",
+      "v5SceneId": "china-bronze-sanxingdui-world",
+      "v5OwnerCardId": "china-early-bronze-connected-worlds",
+      "timeSpan": {
+        "start": -1200,
+        "end": -950,
+        "label": "约公元前1200—前950年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sanxingdui-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-sanxingdui-ritual-object-deposition"
+        }
+      ],
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-ritual-pits-2025",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-writing-2021",
+        "source-wikimedia-sxd-gold-mask-head"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "sanxingdui-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-china-bronze-zhou-changes",
+      "v5SceneId": "china-bronze-zhou-changes",
+      "v5OwnerCardId": "china-early-bronze-connected-worlds",
+      "timeSpan": {
+        "start": -1046,
+        "end": -771,
+        "label": "约公元前1046—前771年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-zhou-conquest-of-shang"
+        }
+      ],
+      "eventIds": [
+        "event-zhou-conquest-of-shang"
+      ],
+      "sourceIds": [
+        "source-anyang-fall",
+        "source-cook-western-zhou-rites",
+        "source-khayutina-cultural-memory",
+        "source-met-shang-zhou-bronze",
+        "source-national-museum-li-gui",
+        "source-wikimedia-li-gui"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-erlitou-roads-cross-city",
+      "v5SceneId": "erlitou-roads-cross-city",
+      "v5OwnerCardId": "erlitou-ritual-world",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1600,
+        "label": "约公元前1900—前1600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "erlitou-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-erlitou-urban-consolidation"
+        }
+      ],
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-radiocarbon",
+        "source-natural-earth",
+        "source-zhao-erlitou-settlement"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "erlitou-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-erlitou-enclosed-center",
+      "v5SceneId": "erlitou-enclosed-center",
+      "v5OwnerCardId": "erlitou-ritual-world",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1550,
+        "label": "约公元前1800—前1550年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "erlitou-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-erlitou-urban-consolidation"
+        }
+      ],
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-radiocarbon",
+        "source-erlitou-rethinking",
+        "source-natural-earth",
+        "source-zhao-erlitou-settlement"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "erlitou-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-erlitou-rare-materials-workshop",
+      "v5SceneId": "erlitou-rare-materials-workshop",
+      "v5OwnerCardId": "erlitou-ritual-world",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1550,
+        "label": "约公元前1800—前1550年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "erlitou-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-erlitou-urban-consolidation"
+        }
+      ],
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-radiocarbon",
+        "source-liu-chen-archaeology-china",
+        "source-wikimedia-erlitou-plaque",
+        "source-zhao-erlitou-settlement"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "erlitou-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-erlitou-objects-enter-burials",
+      "v5SceneId": "erlitou-objects-enter-burials",
+      "v5OwnerCardId": "erlitou-ritual-world",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1550,
+        "label": "约公元前1750—前1550年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "erlitou-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-erlitou-urban-consolidation"
+        }
+      ],
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-radiocarbon",
+        "source-erlitou-turquoise-restoration",
+        "source-liu-chen-archaeology-china",
+        "source-wikimedia-erlitou-dragon",
+        "source-zhao-erlitou-settlement"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "erlitou-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-erlitou-xia-name-absent",
+      "v5SceneId": "erlitou-xia-name-absent",
+      "v5OwnerCardId": "erlitou-ritual-world",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1500,
+        "label": "约公元前1900—前1500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "erlitou-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-erlitou-urban-consolidation"
+        }
+      ],
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-radiocarbon",
+        "source-erlitou-rethinking",
+        "source-thorp-erlitou-xia",
+        "source-wikimedia-erlitou-site",
+        "source-xu-xia-debate",
+        "source-zhao-erlitou-settlement"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 讨论遗址与夏名认同的证据边界，不构成独立历史阶段。"
+      }
+    },
+    {
+      "id": "signal-shang-civilization-forms-between-cities",
+      "v5SceneId": "shang-civilization-forms-between-cities",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1400,
+        "label": "约公元前1600—前1400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-erligang-urban-expansion"
+        },
+        {
+          "entityId": "western-zhou",
+          "basis": "eventParticipant",
+          "referenceId": "event-erligang-urban-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-erligang-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-an-zhengzhou-shang-city",
+        "source-bagley-shang-archaeology",
+        "source-natural-earth",
+        "source-steinke-erligang"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-dead-remain-in-family",
+      "v5SceneId": "shang-dead-remain-in-family",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-liu-shang-ancestors",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-yinxu-royal-tombs-exhibit"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-meal-for-ancestors",
+      "v5SceneId": "shang-meal-for-ancestors",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1046,
+        "label": "约公元前1400—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-met-shang-zhou-bronze",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-shang-gu"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-when-bone-cracks",
+      "v5SceneId": "shang-when-bone-cracks",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-bones"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-fu-hao-two-records",
+      "v5SceneId": "shang-fu-hao-two-records",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1190,
+        "label": "约公元前1250—前1190年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-fu-hao-activities"
+        }
+      ],
+      "eventIds": [
+        "event-fu-hao-activities"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-mizoguchi-xibeigang",
+        "source-smarthistory-fu-hao",
+        "source-wikimedia-fu-hao-tomb"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-war-enters-sacrifice",
+      "v5SceneId": "shang-war-enters-sacrifice",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-campbell-violence-kinship",
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-smarthistory-fu-hao",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-shang-dagger-axes"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-people-beyond-royal-house",
+      "v5SceneId": "shang-people-beyond-royal-house",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-smithsonian-anyang-neighborhood",
+        "source-unesco-oracle-bones",
+        "source-unesco-yinxu",
+        "source-wikimedia-shang-pottery"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-last-king-story-spreads",
+      "v5SceneId": "shang-last-king-story-spreads",
+      "v5OwnerCardId": "shang-ancestors-world",
+      "timeSpan": {
+        "start": -1050,
+        "end": -1000,
+        "label": "约公元前1050—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-zhou-conquest-of-shang"
+        }
+      ],
+      "eventIds": [
+        "event-zhou-conquest-of-shang"
+      ],
+      "sourceIds": [
+        "source-anyang-fall",
+        "source-cook-western-zhou-rites",
+        "source-khayutina-cultural-memory",
+        "source-li-feng-early-china",
+        "source-national-museum-li-gui",
+        "source-natural-earth",
+        "source-western-zhou-domain"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-regional-rule",
+          "western-zhou-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-oracle-fire-opens-bone",
+      "v5SceneId": "shang-oracle-fire-opens-bone",
+      "v5OwnerCardId": "shang-oracle-bones-record",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-pit-marks"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-oracle-divination-becomes-record",
+      "v5SceneId": "shang-oracle-divination-becomes-record",
+      "v5OwnerCardId": "shang-oracle-bones-record",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-nivison-question",
+        "source-schwartz-zhen",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-bones"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-oracle-question-repeated",
+      "v5SceneId": "shang-oracle-question-repeated",
+      "v5OwnerCardId": "shang-oracle-bones-record",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-schwartz-huayuanzhuang",
+        "source-schwartz-zhen",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-huayuanzhuang-plastron"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-oracle-ancestors-calendar",
+      "v5SceneId": "shang-oracle-ancestors-calendar",
+      "v5OwnerCardId": "shang-oracle-bones-record",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-boltz-sexagenary-cycle",
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-eclipse"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-oracle-royal-questions-survive",
+      "v5SceneId": "shang-oracle-royal-questions-survive",
+      "v5OwnerCardId": "shang-oracle-bones-record",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "basis": "eventParticipant",
+          "referenceId": "event-late-shang-royal-divination"
+        }
+      ],
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-schwartz-huayuanzhuang",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-collection"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-oracle-bone-royal-divination-corpus",
+          "shang-regional-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-bronze-materials-reach-workshop",
+      "v5SceneId": "shang-bronze-materials-reach-workshop",
+      "v5OwnerCardId": "shang-bronzes-ancestor-feast",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1046,
+        "label": "约公元前1600—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        },
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        }
+      ],
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-met-shang-zhou-bronze",
+        "source-smithsonian-anyang-kings",
+        "source-smithsonian-bronze-casting",
+        "source-wikimedia-bronze-casting-apparatus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-bronzes-erligang-production",
+          "shang-bronzes-late-ritual-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-bronze-clay-mould-shapes-vessel",
+      "v5SceneId": "shang-bronze-clay-mould-shapes-vessel",
+      "v5OwnerCardId": "shang-bronzes-ancestor-feast",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1046,
+        "label": "约公元前1600—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        },
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        }
+      ],
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-met-shang-zhou-bronze",
+        "source-smithsonian-bronze-casting",
+        "source-wikimedia-bronze-mould"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-bronzes-erligang-production",
+          "shang-bronzes-late-ritual-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-bronze-vessels-form-feast",
+      "v5SceneId": "shang-bronze-vessels-form-feast",
+      "v5OwnerCardId": "shang-bronzes-ancestor-feast",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1046,
+        "label": "约公元前1400—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        },
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        }
+      ],
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-keightley-ancestral-landscape",
+        "source-met-shang-zhou-bronze",
+        "source-smithsonian-bronze-casting",
+        "source-wikimedia-fuhao-cooking-vessels"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-bronzes-late-ritual-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-bronze-mask-and-name",
+      "v5SceneId": "shang-bronze-mask-and-name",
+      "v5OwnerCardId": "shang-bronzes-ancestor-feast",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1046,
+        "label": "约公元前1400—前1046年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        },
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        }
+      ],
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-met-shang-zhou-bronze",
+        "source-smithsonian-bronze-casting",
+        "source-wikimedia-shang-gu"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-bronzes-late-ritual-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-shang-bronze-follows-owner-to-tomb",
+      "v5SceneId": "shang-bronze-follows-owner-to-tomb",
+      "v5OwnerCardId": "shang-bronzes-ancestor-feast",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1000,
+        "label": "约公元前1250—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        },
+        {
+          "entityId": "shang-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-shang-bronze-production-and-ritual-use"
+        }
+      ],
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-cook-western-zhou-rites",
+        "source-keightley-shang-history",
+        "source-met-shang-zhou-bronze",
+        "source-smarthistory-fu-hao",
+        "source-smithsonian-bronze-casting",
+        "source-wikimedia-fu-hao-tomb"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "shang-bronzes-late-ritual-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-sanxingdui-pits-beneath-city",
+      "v5SceneId": "sanxingdui-pits-beneath-city",
+      "v5OwnerCardId": "sanxingdui-ritual-world",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1000,
+        "label": "约公元前1800—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sanxingdui-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-sanxingdui-ritual-object-deposition"
+        }
+      ],
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-natural-earth",
+        "source-sxd-antiquity-2022",
+        "source-sxd-ritual-pits-2025",
+        "source-sxd-sacrificial-area-2023"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "sanxingdui-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-sanxingdui-bronze-faces-watch",
+      "v5SceneId": "sanxingdui-bronze-faces-watch",
+      "v5OwnerCardId": "sanxingdui-ritual-world",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1000,
+        "label": "约公元前1200—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sanxingdui-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-sanxingdui-ritual-object-deposition"
+        }
+      ],
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-ritual-pits-2025",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-sxd-gold-mask-head"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "sanxingdui-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-sanxingdui-people-tree-birds",
+      "v5SceneId": "sanxingdui-people-tree-birds",
+      "v5OwnerCardId": "sanxingdui-ritual-world",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1000,
+        "label": "约公元前1200—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sanxingdui-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-sanxingdui-ritual-object-deposition"
+        }
+      ],
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-ritual-pits-2025",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-sxd-bronze-tree"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "sanxingdui-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-sanxingdui-materials-meet",
+      "v5SceneId": "sanxingdui-materials-meet",
+      "v5OwnerCardId": "sanxingdui-ritual-world",
+      "timeSpan": {
+        "start": -1300,
+        "end": -1000,
+        "label": "约公元前1300—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sanxingdui-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-sanxingdui-ritual-object-deposition"
+        }
+      ],
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-ritual-pits-2025",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-sxd-ivory-tusk"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "sanxingdui-site-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-sanxingdui-ritual-world-is-buried",
+      "v5SceneId": "sanxingdui-ritual-world-is-buried",
+      "v5OwnerCardId": "sanxingdui-ritual-world",
+      "timeSpan": {
+        "start": -1200,
+        "end": -950,
+        "label": "约公元前1200—前950年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sanxingdui-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-sanxingdui-ritual-object-deposition"
+        }
+      ],
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-ritual-pits-2025",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-jinsha-sun-bird"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "sanxingdui-site-presence"
+        ]
+      }
+    }
+  ],
+  "audit": [
+    {
+      "scenePhaseSignalId": "signal-western-zhou-muye-victory",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "western-zhou",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-zhou-conquest-of-shang"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-zhou-conquest-of-shang",
+              "timeSpan": {
+                "start": -1050,
+                "end": -1040,
+                "label": "公元前十一世纪中叶",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1046,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-western-zhou-eastern-center",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "western-zhou",
+      "entityEvidence": [
+        {
+          "entityId": "western-zhou",
+          "eventIds": [
+            "event-western-zhou-eastern-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-western-zhou-eastern-expansion",
+              "timeSpan": {
+                "start": -1045,
+                "end": -1000,
+                "label": "约公元前1045—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1045,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-western-zhou-allies-regional-centers",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "western-zhou",
+      "entityEvidence": [
+        {
+          "entityId": "western-zhou",
+          "eventIds": [
+            "event-western-zhou-eastern-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-western-zhou-eastern-expansion",
+              "timeSpan": {
+                "start": -1045,
+                "end": -1000,
+                "label": "约公元前1045—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1040,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-western-zhou-command-cast-in-ding",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "western-zhou",
+      "entityEvidence": [
+        {
+          "entityId": "western-zhou",
+          "eventIds": [
+            "event-western-zhou-investiture"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-western-zhou-investiture",
+              "timeSpan": {
+                "start": -1020,
+                "end": -850,
+                "label": "约公元前1020—前850年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -950,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-western-zhou-rites-and-armies",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "western-zhou",
+      "entityEvidence": [
+        {
+          "entityId": "western-zhou",
+          "eventIds": [
+            "event-western-zhou-investiture"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-western-zhou-investiture",
+              "timeSpan": {
+                "start": -1020,
+                "end": -850,
+                "label": "约公元前1020—前850年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -950,
+            "end": -850,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-western-zhou-capital-falls",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "western-zhou",
+      "entityEvidence": [
+        {
+          "entityId": "western-zhou",
+          "eventIds": [
+            "event-western-zhou-capitals-fall"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-western-zhou-capitals-fall",
+              "timeSpan": {
+                "start": -771,
+                "end": -771,
+                "label": "公元前771年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -771,
+            "end": -771,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-china-bronze-before-bronze",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "china-early-bronze-world",
+      "entityEvidence": [
+        {
+          "entityId": "china-early-bronze-world",
+          "eventIds": [
+            "event-early-china-regional-centers-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-early-china-regional-centers-emerge",
+              "timeSpan": {
+                "start": -3300,
+                "end": -1900,
+                "label": "约公元前3300—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-china-bronze-materials-fire",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "china-early-bronze-world",
+      "entityEvidence": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-china-bronze-erlitou-center",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "china-early-bronze-world",
+      "entityEvidence": [
+        {
+          "entityId": "erlitou-site",
+          "eventIds": [
+            "event-erlitou-urban-consolidation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erlitou-urban-consolidation",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1600,
+                "label": "二里头文化第二至第三期",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1800,
+            "end": -1600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-china-bronze-shang-cities",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "china-early-bronze-world",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-erligang-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erligang-urban-expansion",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1400,
+                "label": "约公元前1600—前1400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1400,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "western-zhou",
+          "eventIds": [
+            "event-erligang-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erligang-urban-expansion",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1400,
+                "label": "约公元前1600—前1400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1400,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-china-bronze-ancestors-records",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "china-early-bronze-world",
+      "entityEvidence": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination",
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-china-bronze-sanxingdui-world",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "china-early-bronze-world",
+      "entityEvidence": [
+        {
+          "entityId": "sanxingdui-site",
+          "eventIds": [
+            "event-sanxingdui-ritual-object-deposition"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-sanxingdui-ritual-object-deposition",
+              "timeSpan": {
+                "start": -1200,
+                "end": -950,
+                "label": "约公元前1200—前950年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -950,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-china-bronze-zhou-changes",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "china-early-bronze-world",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-zhou-conquest-of-shang"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-zhou-conquest-of-shang",
+              "timeSpan": {
+                "start": -1050,
+                "end": -1040,
+                "label": "公元前十一世纪中叶",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1046,
+            "end": -1040,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-erlitou-roads-cross-city",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "erlitou-site",
+      "entityEvidence": [
+        {
+          "entityId": "erlitou-site",
+          "eventIds": [
+            "event-erlitou-urban-consolidation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erlitou-urban-consolidation",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1600,
+                "label": "二里头文化第二至第三期",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1800,
+            "end": -1600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-erlitou-enclosed-center",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "erlitou-site",
+      "entityEvidence": [
+        {
+          "entityId": "erlitou-site",
+          "eventIds": [
+            "event-erlitou-urban-consolidation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erlitou-urban-consolidation",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1600,
+                "label": "二里头文化第二至第三期",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1800,
+            "end": -1600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-erlitou-rare-materials-workshop",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "erlitou-site",
+      "entityEvidence": [
+        {
+          "entityId": "erlitou-site",
+          "eventIds": [
+            "event-erlitou-urban-consolidation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erlitou-urban-consolidation",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1600,
+                "label": "二里头文化第二至第三期",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1800,
+            "end": -1600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-erlitou-objects-enter-burials",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "erlitou-site",
+      "entityEvidence": [
+        {
+          "entityId": "erlitou-site",
+          "eventIds": [
+            "event-erlitou-urban-consolidation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erlitou-urban-consolidation",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1600,
+                "label": "二里头文化第二至第三期",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-erlitou-xia-name-absent",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "erlitou-site",
+      "entityEvidence": [
+        {
+          "entityId": "erlitou-site",
+          "eventIds": [
+            "event-erlitou-urban-consolidation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erlitou-urban-consolidation",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1600,
+                "label": "二里头文化第二至第三期",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1800,
+            "end": -1600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-civilization-forms-between-cities",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-erligang-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erligang-urban-expansion",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1400,
+                "label": "约公元前1600—前1400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1400,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "western-zhou",
+          "eventIds": [
+            "event-erligang-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-erligang-urban-expansion",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1400,
+                "label": "约公元前1600—前1400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1400,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-dead-remain-in-family",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-meal-for-ancestors",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-when-bone-cracks",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-fu-hao-two-records",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-fu-hao-activities"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-fu-hao-activities",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1190,
+                "label": "公元前十三世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1190,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-war-enters-sacrifice",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-people-beyond-royal-house",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-last-king-story-spreads",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-zhou-conquest-of-shang"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-zhou-conquest-of-shang",
+              "timeSpan": {
+                "start": -1050,
+                "end": -1040,
+                "label": "公元前十一世纪中叶",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1050,
+            "end": -1040,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-oracle-fire-opens-bone",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-oracle-divination-becomes-record",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-oracle-question-repeated",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-oracle-ancestors-calendar",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-oracle-royal-questions-survive",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions",
+      "entityEvidence": [
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-oracle-bone-inscriptions",
+          "eventIds": [
+            "event-late-shang-royal-divination"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-late-shang-royal-divination",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1046,
+                "label": "约公元前1250—前1046年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-bronze-materials-reach-workshop",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels",
+      "entityEvidence": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-bronze-clay-mould-shapes-vessel",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels",
+      "entityEvidence": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1600,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-bronze-vessels-form-feast",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels",
+      "entityEvidence": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1400,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1400,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-bronze-mask-and-name",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels",
+      "entityEvidence": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1400,
+            "end": -1046,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1400,
+            "end": -1046,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-shang-bronze-follows-owner-to-tomb",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels",
+      "entityEvidence": [
+        {
+          "entityId": "shang-bronze-ritual-vessels",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "shang-civilization",
+          "eventIds": [
+            "event-shang-bronze-production-and-ritual-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-shang-bronze-production-and-ritual-use",
+              "timeSpan": {
+                "start": -1600,
+                "end": -1000,
+                "label": "约公元前1600—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sanxingdui-pits-beneath-city",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "sanxingdui-site",
+      "entityEvidence": [
+        {
+          "entityId": "sanxingdui-site",
+          "eventIds": [
+            "event-sanxingdui-ritual-object-deposition"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-sanxingdui-ritual-object-deposition",
+              "timeSpan": {
+                "start": -1200,
+                "end": -950,
+                "label": "约公元前1200—前950年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-sanxingdui-bronze-faces-watch",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "sanxingdui-site",
+      "entityEvidence": [
+        {
+          "entityId": "sanxingdui-site",
+          "eventIds": [
+            "event-sanxingdui-ritual-object-deposition"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-sanxingdui-ritual-object-deposition",
+              "timeSpan": {
+                "start": -1200,
+                "end": -950,
+                "label": "约公元前1200—前950年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-sanxingdui-people-tree-birds",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "sanxingdui-site",
+      "entityEvidence": [
+        {
+          "entityId": "sanxingdui-site",
+          "eventIds": [
+            "event-sanxingdui-ritual-object-deposition"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-sanxingdui-ritual-object-deposition",
+              "timeSpan": {
+                "start": -1200,
+                "end": -950,
+                "label": "约公元前1200—前950年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-sanxingdui-materials-meet",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "sanxingdui-site",
+      "entityEvidence": [
+        {
+          "entityId": "sanxingdui-site",
+          "eventIds": [
+            "event-sanxingdui-ritual-object-deposition"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-sanxingdui-ritual-object-deposition",
+              "timeSpan": {
+                "start": -1200,
+                "end": -950,
+                "label": "约公元前1200—前950年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-sanxingdui-ritual-world-is-buried",
+      "sourceModule": "data/ancient-china.ts",
+      "cardPrimaryEntityId": "sanxingdui-site",
+      "entityEvidence": [
+        {
+          "entityId": "sanxingdui-site",
+          "eventIds": [
+            "event-sanxingdui-ritual-object-deposition"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-sanxingdui-ritual-object-deposition",
+              "timeSpan": {
+                "start": -1200,
+                "end": -950,
+                "label": "约公元前1200—前950年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -950,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    }
+  ]
+}

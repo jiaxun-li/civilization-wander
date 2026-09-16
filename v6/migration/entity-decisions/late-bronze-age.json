@@ -1,0 +1,135 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/late-bronze-age.ts",
+  "decisions": [
+    {
+      "entityId": "hittite-empire",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "hittite-early-central-kingship",
+        "hittite-syrian-control"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "hittite-empire"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "ugarit-kingdom",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "ugarit-kingdom-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "ugarit-kingdom"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "battle-of-kadesh-war",
+      "oldType": "war",
+      "recommendedDisposition": "convertToEventSubject",
+      "proposedEntityTypes": [],
+      "proposedConceptLayers": [
+        "eventAndConflict"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "convertedToEvent",
+        "eventId": "event-battle-of-kadesh"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "amarna-letters-corpus",
+      "oldType": "TextDocument",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "documentCorpus",
+        "literaryTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge",
+        "artAndLiterature",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "documentCorpus",
+      "acceptedConceptLayerId": "materialAndArchitecture",
+      "acceptedPhaseIds": [
+        "amarna-diplomatic-correspondence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "amarna-letters-corpus"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "medinet-habu-war-records",
+      "oldType": "CulturalObject",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "artifactClass",
+        "documentCorpus",
+        "monument"
+      ],
+      "proposedConceptLayers": [
+        "materialAndArchitecture",
+        "languageAndKnowledge",
+        "artAndLiterature"
+      ],
+      "acceptedEntityType": "documentCorpus",
+      "acceptedConceptLayerId": "materialAndArchitecture",
+      "acceptedPhaseIds": [
+        "medinet-habu-war-records-created"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "medinet-habu-war-records"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "late-bronze-palace-system",
+      "oldType": "institution",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "institution"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "Late Bronze Age palace systems are a modern comparative umbrella for several distinct polities and institutions, not one stable V6 Entity. Preserve the V5 record as migration evidence and review concrete palaces, archives, Events, and relations separately."
+      },
+      "status": "accepted"
+    }
+  ]
+}

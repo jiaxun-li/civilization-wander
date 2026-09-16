@@ -1,0 +1,213 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-egypt.ts",
+  "decisions": [
+    {
+      "eventId": "event-upper-lower-egypt-unified",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-upper-lower-egypt-unified"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-nile-annual-cycle-organizes-life",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "deferAfterPseudoEntityRemoval",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "尼罗河年周期、河运与王权社会不是同一个稳定 Event、Entity 或 EntityPhase；删除古埃及文明伪实体后继续留在非运行时迁移审计。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "这是一项跨越多个王朝的环境与社会连续性，不是独立历史事件，也不再用于制造古埃及文明的长期连续性 Phase。"
+      ]
+    },
+    {
+      "eventId": "event-sinuhe-story-composed-and-copied",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "convertedToEntity",
+        "entityId": "sinuhe-work"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "只保留《辛努赫的故事》的代表成文作品；旧 Event 中抄写传播部分不再建立独立 Entity 或延续 Phase。"
+      ]
+    },
+    {
+      "eventId": "event-hatshepsut-rules-as-pharaoh",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "按用户本轮精简决定，删除哈特谢普苏特统治的独立 Event，减少政权层的附加条目；埃及新王国政权及原 V5 冻结基线中的历史证据保留。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-old-kingdom-pyramid-complexes-develop",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-old-kingdom-pyramid-complexes-develop"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "convertedToEntity",
+        "entityId": "egyptian-religion"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "用户批准简化：移除总语料实体与两阶段；金字塔文、棺材文及《死者之书》说明合入古埃及丧葬信仰，乌尼斯刻写事件保留。"
+      ]
+    },
+    {
+      "eventId": "event-egyptian-formal-art-conventions-persist",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-egyptian-formal-art-conventions-persist"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-egyptian-writing-system-changes",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-egyptian-writing-system-changes"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-old-kingdom-fragmentation",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-old-kingdom-fragmentation"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-middle-kingdom-reunification",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-middle-kingdom-reunification"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-middle-kingdom-fragmentation",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-middle-kingdom-fragmentation"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-ahmose-captures-avaris",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-ahmose-captures-avaris"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-amarna-reform",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-amarna-reform"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-battle-of-kadesh",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-battle-of-kadesh"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-egypt-hatti-treaty",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-egypt-hatti-treaty"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-new-kingdom-fragmentation",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-new-kingdom-fragmentation"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-khufu-great-pyramid-construction",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-khufu-great-pyramid-construction"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-unas-pyramid-text-inscription",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-unas-pyramid-text-inscription"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

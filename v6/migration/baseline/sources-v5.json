@@ -1,0 +1,3505 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "digestAlgorithm": "sha256",
+  "digest": "8c050b3877308c5429974cec75d8640182952357668fcf38b6db4cb4e5cec82b",
+  "count": 503,
+  "sources": [
+    {
+      "id": "source-natural-earth",
+      "title": "Natural Earth 1:50m Physical Vectors",
+      "author": "Natural Earth",
+      "year": 2025,
+      "publisher": "Natural Earth",
+      "url": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/"
+    },
+    {
+      "id": "source-getty-uruk",
+      "title": "Uruk: First City of the Ancient World",
+      "author": "Nicola Crüsemann et al., eds.",
+      "year": 2019,
+      "publisher": "J. Paul Getty Museum",
+      "url": "https://books.google.com/books/about/Uruk.html?id=muCvDwAAQBAJ"
+    },
+    {
+      "id": "source-mcmahon-early-urbanism",
+      "title": "Early Urbanism in Northern Mesopotamia",
+      "author": "Augusta McMahon",
+      "year": 2020,
+      "publisher": "Journal of Archaeological Research",
+      "url": "https://link.springer.com/article/10.1007/s10814-019-09136-7"
+    },
+    {
+      "id": "source-adams-heartland-cities",
+      "title": "Heartland of Cities: Surveys of Ancient Settlement and Land Use on the Central Floodplain of the Euphrates",
+      "author": "Robert McC. Adams",
+      "year": 1981,
+      "publisher": "Oriental Institute of the University of Chicago",
+      "url": "https://isac.uchicago.edu/research/publications/misc/heartland-cities-surveys-ancient-settlement-and-land-use-central"
+    },
+    {
+      "id": "source-englund-proto-cuneiform",
+      "title": "Proto-Cuneiform Account-Books and Journals",
+      "author": "Robert K. Englund",
+      "year": 2004,
+      "publisher": "Cuneiform Digital Library Initiative",
+      "url": "https://cdli.mpiwg-berlin.mpg.de/files-up/publications/englund2004a.pdf"
+    },
+    {
+      "id": "source-met-origins-writing",
+      "title": "The Origins of Writing",
+      "author": "Ira Spar",
+      "year": 2004,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-origins-of-writing"
+    },
+    {
+      "id": "source-met-uruk-first-city",
+      "title": "Uruk: The First City",
+      "year": 2003,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/uruk-the-first-city"
+    },
+    {
+      "id": "source-pollock-household-production",
+      "title": "Household Production at the Uruk Mound, Abu Salabikh, Iraq",
+      "author": "Susan Pollock, Melody Pope, and Cheryl Coursey",
+      "year": 1996,
+      "publisher": "American Journal of Archaeology",
+      "url": "https://www.journals.uchicago.edu/doi/10.2307/506673"
+    },
+    {
+      "id": "source-dai-uruk",
+      "title": "Uruk (Warka)",
+      "author": "German Archaeological Institute",
+      "publisher": "German Archaeological Institute",
+      "url": "https://www.dainst.org/forschung/projekte/noslug/2604"
+    },
+    {
+      "id": "source-wikimedia-uruk-white-temple-ziggurat",
+      "title": "White Temple Ziggurat in Uruk, CC BY-SA 2.0 photograph",
+      "author": "tobeytravels",
+      "year": 2020,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:White_Temple_ziggurat_in_Uruk.jpg"
+    },
+    {
+      "id": "source-met-grain-tablet",
+      "title": "Cuneiform tablet: administrative account concerning the distribution of barley and emmer",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/327384"
+    },
+    {
+      "id": "source-met-uruk-cylinder-seal",
+      "title": "Cylinder seal and modern impression: ritual scene before a temple facade",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/326721"
+    },
+    {
+      "id": "source-british-museum-bevelled-rim-bowl",
+      "title": "Bevelled-rim bowl from Uruk",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1919-1011-513"
+    },
+    {
+      "id": "source-unesco-uruk-location",
+      "title": "The Ahwar of Southern Iraq: supplemental information and location of Uruk",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/document/169033"
+    },
+    {
+      "id": "source-met-late-uruk-mosaic-cone",
+      "title": "Mosaic cone, Late Uruk, ca. 3500–3100 BCE",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/325523"
+    },
+    {
+      "id": "source-wikimedia-bevelled-rim-bowl-photo",
+      "title": "Bevelled-rim bowl from Nineveh, Late Uruk period, CC0 photograph",
+      "author": "Vassil",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:British_Museum_Middle_east_14022019_Beveled_rim_bowl_Nineveh_Late_Uruk_Period_3672.jpg"
+    },
+    {
+      "id": "source-wikimedia-warka-vase-360",
+      "title": "Warka Vase, four-view CC BY-SA 4.0 photograph",
+      "author": "Osama Shukir Muhammed Amin",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Warka_vase_(360).jpg"
+    },
+    {
+      "id": "source-isac-irrigation-southern-mesopotamia",
+      "title": "The Organization of Irrigated Agriculture in Southern Mesopotamia",
+      "author": "Stephanie Rost",
+      "publisher": "Institute for the Study of Ancient Cultures, University of Chicago",
+      "url": "https://isac.uchicago.edu/article/lecture-stephanie-rost-organization-irrigated-agriculture-southern-mesopotamia"
+    },
+    {
+      "id": "source-proust-mesopotamian-mathematics",
+      "title": "Numerical and Metrological Graphemes: From Cuneiform to Transliteration",
+      "author": "Christine Proust",
+      "year": 2009,
+      "publisher": "Cuneiform Digital Library Journal",
+      "url": "https://cdli.earth/articles/cdlj/2009-1"
+    },
+    {
+      "id": "source-firth-sumerian-calendars",
+      "title": "Sumerian Calendars and Calendar Reform in the Ur III Period",
+      "author": "Richard Firth",
+      "year": 2016,
+      "publisher": "Cuneiform Digital Library Journal",
+      "url": "https://cdli.earth/articles/cdlj/2016-1.pdf"
+    },
+    {
+      "id": "source-met-ushumgal-stele",
+      "title": "Stele of Ushumgal and Shara-igizi-Abzu",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/329079"
+    },
+    {
+      "id": "source-morgan-warka-vase",
+      "title": "Plaster Cast of the Uruk Vase",
+      "publisher": "The Morgan Library & Museum",
+      "url": "https://www.themorgan.org/exhibitions/online/she-who-wrote/uruk-vase"
+    },
+    {
+      "id": "source-smarthistory-warka-vase",
+      "title": "Warka Vase",
+      "publisher": "Smarthistory",
+      "url": "https://smarthistory.org/warka-vase/"
+    },
+    {
+      "id": "source-yale-ubaid-summary",
+      "title": "The Ubaid Period: Summary",
+      "publisher": "Yale University eHRAF Archaeology",
+      "url": "https://ehrafarchaeology.yale.edu/traditions/mh55/summary"
+    },
+    {
+      "id": "source-met-mesopotamian-deities",
+      "title": "Mesopotamian Deities",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/mesopotamian-deities"
+    },
+    {
+      "id": "source-met-ur-ziggurat",
+      "title": "Ur: The Ziggurat",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/ur-the-ziggurat"
+    },
+    {
+      "id": "source-goddeeris-old-babylonian-economy",
+      "title": "The Old Babylonian Economy",
+      "author": "Anne Goddeeris",
+      "publisher": "Routledge",
+      "url": "https://www.taylorfrancis.com/chapters/edit/10.4324/9780203946237-16/old-babylonian-economy-anne-goddeeris"
+    },
+    {
+      "id": "source-met-isin-larsa-old-babylonian",
+      "title": "The Isin-Larsa and Old Babylonian Periods",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-isin-larsa-and-old-babylonian-periods-2004-1595-b-c"
+    },
+    {
+      "id": "source-damerow-writing-epistemology",
+      "title": "The Origins of Writing as a Problem of Historical Epistemology",
+      "author": "Peter Damerow",
+      "year": 2006,
+      "publisher": "Cuneiform Digital Library Journal",
+      "url": "https://cdli.mpiwg-berlin.mpg.de/articles/cdlj/2006-1.pdf"
+    },
+    {
+      "id": "source-wikimedia-proto-cuneiform-barley-tablet-pd",
+      "title": "Proto-Cuneiform Administrative Account of Barley Distribution, Public Domain",
+      "publisher": "Wikimedia Commons / The Metropolitan Museum of Art",
+      "url": "https://commons.wikimedia.org/wiki/File:Cuneiform_tablet-_administrative_account_of_barley_distribution_with_cylinder_seal_impression_of_a_male_figure,_hunting_dogs,_and_boars_MET_DT847.jpg"
+    },
+    {
+      "id": "source-penn-uses-writing",
+      "title": "The Uses of Writing",
+      "publisher": "Penn Museum",
+      "url": "https://www.penn.museum/sites/expedition/the-uses-of-writing/"
+    },
+    {
+      "id": "source-isac-writing-early-mesopotamia",
+      "title": "Writing in Early Mesopotamia",
+      "publisher": "Institute for the Study of Ancient Cultures, University of Chicago",
+      "url": "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/11-20/13-14/ar2013-14.pdf"
+    },
+    {
+      "id": "source-british-museum-cuneiform",
+      "title": "How to Write Cuneiform",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/blog/how-write-cuneiform"
+    },
+    {
+      "id": "source-british-museum-gilgamesh-tablet-i",
+      "title": "Cuneiform Tablet: Epic of Gilgamesh, Tablet I",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-913"
+    },
+    {
+      "id": "source-met-akkadian-period",
+      "title": "The Akkadian Period (ca. 2350–2150 B.C.)",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-akkadian-period-ca-2350-2150-b-c"
+    },
+    {
+      "id": "source-westenholz-kingdom-akkad",
+      "title": "The Kingdom of Akkad",
+      "author": "Aage Westenholz",
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/book/37433/chapter-abstract/331534882"
+    },
+    {
+      "id": "source-fordham-sargon-birth-legend",
+      "title": "The Legend of Sargon of Akkad",
+      "publisher": "Internet History Sourcebooks Project, Fordham University",
+      "url": "https://sourcebooks.web.fordham.edu/ancient/2300sargon1.asp"
+    },
+    {
+      "id": "source-etcsl-sargon-ur-zababa",
+      "title": "Sargon and Ur-Zababa",
+      "publisher": "Electronic Text Corpus of Sumerian Literature, University of Oxford",
+      "url": "https://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=t.2.1.4"
+    },
+    {
+      "id": "source-british-museum-enheduanna",
+      "title": "Enheduanna",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/term/BIOG132760"
+    },
+    {
+      "id": "source-wikimedia-sargon-legend-tablet",
+      "title": "Birth Legend of Sargon of Akkad, Louvre AO 7673, CC BY-SA 4.0 photograph",
+      "author": "0x010C",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:2015-12_Birth_Sargon_of_Akkad_Louvre-AO_7673.jpg"
+    },
+    {
+      "id": "source-wikimedia-enheduanna-disk",
+      "title": "Disk of Enheduanna, CC0 photograph",
+      "author": "Mefman00",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Disk_of_Enheduanna.JPG"
+    },
+    {
+      "id": "source-foster-sargonic-administration",
+      "title": "Administration and Use of Institutional Land in Sargonic Sumer",
+      "author": "Benjamin R. Foster",
+      "publisher": "Yale University eHRAF Archaeology",
+      "url": "https://ehrafarchaeology.yale.edu/traditions/mh66/documents/003"
+    },
+    {
+      "id": "source-frayne-sargonic-inscriptions",
+      "title": "Sargonic and Gutian Periods Royal Inscriptions",
+      "author": "Douglas Frayne",
+      "publisher": "Cuneiform Digital Library Initiative",
+      "url": "https://cdli.earth/publications/56940"
+    },
+    {
+      "id": "source-eckart-akkadian-empire",
+      "title": "The Akkadian Empire",
+      "author": "Walther Sallaberger and Aage Westenholz",
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/book/28459/chapter-abstract/229049037"
+    },
+    {
+      "id": "source-lawrence-climate-urbanism",
+      "title": "Climate Change and Ancient Urban Societies",
+      "publisher": "WIREs Climate Change",
+      "url": "https://wires.onlinelibrary.wiley.com/doi/10.1002/wcc.741"
+    },
+    {
+      "id": "source-wikimedia-ur-ziggurat-photo",
+      "title": "Photograph of the Ziggurat of Ur, CC BY-SA 4.0",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:%D8%B2%D9%82%D9%88%D8%B1%D8%A9_%D8%A7%D9%88%D8%B1_%D8%A7%D9%84%D8%A7%D8%AB%D8%B1%D9%8A%D8%A9.jpg"
+    },
+    {
+      "id": "source-wikimedia-eanna-4b-plan",
+      "title": "Eanna District of Uruk IVb Plan, CC BY-SA 3.0",
+      "author": "Lamassu Design",
+      "year": 2009,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Eanna4b.svg"
+    },
+    {
+      "id": "source-wikimedia-etemenanki-reconstruction",
+      "title": "Etemenanki Reconstruction Based on Hansjörg Schmid, Public Domain",
+      "author": "Jona Lendering",
+      "year": 2007,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Etemenanki_drawing.gif"
+    },
+    {
+      "id": "source-british-museum-etemenanki-tablet",
+      "title": "Neo-Babylonian Building Inscription about Etemenanki",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1894-0115-10"
+    },
+    {
+      "id": "source-met-student-exercise-object",
+      "title": "Cuneiform Tablet: Student Exercise Tablet",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/321878"
+    },
+    {
+      "id": "source-wikimedia-gilgamesh-flood-tablet",
+      "title": "British Museum Flood Tablet, CC0 photograph",
+      "author": "BabelStone",
+      "year": 2010,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:British_Museum_Flood_Tablet.jpg"
+    },
+    {
+      "id": "source-wikimedia-gilgamesh-old-babylonian-fragments",
+      "title": "Epic of Gilgamesh, three Old Babylonian fragments, CC0 photograph",
+      "author": "Daderot",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Epic_of_Gilgamesh,_three_fragments_-_Oriental_Institute_Museum,_University_of_Chicago_-_DSC07124.JPG"
+    },
+    {
+      "id": "source-met-grammatical-text-object",
+      "title": "Cuneiform Tablet: Late Babylonian Grammatical Text",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/321677"
+    },
+    {
+      "id": "source-wikimedia-akkadian-ruler-head",
+      "title": "Bronze Head of an Akkadian Ruler, public-domain photograph",
+      "author": "Unknown photographer",
+      "year": 1936,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Sargon_of_Akkad.jpg"
+    },
+    {
+      "id": "source-wikimedia-sargon-victory-stele",
+      "title": "Sargon on His Victory Stele, CC BY-SA 2.0 photograph",
+      "author": "ALFGRN",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Sargon_on_his_victory_stele.jpg"
+    },
+    {
+      "id": "source-wikimedia-naram-sin-victory-stele",
+      "title": "Victory Stele of Naram-Sin, CC BY-SA photograph",
+      "author": "Rama",
+      "year": 2007,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Victory_stele_of_Naram_Sin_9065.jpg"
+    },
+    {
+      "id": "source-louvre-naram-sin-victory-stele",
+      "title": "Stèle de Naram-Sin",
+      "publisher": "Musée du Louvre",
+      "url": "https://collections.louvre.fr/en/ark:/53355/cl010123450"
+    },
+    {
+      "id": "source-met-akkadian-inscribed-bowl-object",
+      "title": "Inscribed Bowl of Shar-Kali-Sharri",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/324054"
+    },
+    {
+      "id": "source-met-ur-nammu-foundation-figure-object",
+      "title": "Foundation Figure of Ur-Namma Holding a Basket",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/329067"
+    },
+    {
+      "id": "source-george-babylonian-gilgamesh-epic",
+      "title": "The Babylonian Gilgamesh Epic: Introduction, Critical Edition and Cuneiform Texts",
+      "author": "Andrew R. George",
+      "year": 2003,
+      "publisher": "Oxford University Press"
+    },
+    {
+      "id": "source-george-gilgamesh-whats-new",
+      "title": "What's New in the Gilgamesh Epic?",
+      "author": "Andrew R. George",
+      "publisher": "SOAS Research Online",
+      "url": "https://eprints.soas.ac.uk/3251/1/GilgameshWhat%27sNew.pdf"
+    },
+    {
+      "id": "source-oxford-classical-dictionary-gilgamesh",
+      "title": "Gilgamesh",
+      "year": 2025,
+      "publisher": "Oxford Classical Dictionary",
+      "url": "https://doi.org/10.1093/acrefore/9780199381135.013.9025"
+    },
+    {
+      "id": "source-met-gilgamesh-overview",
+      "title": "Gilgamesh",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/es/essays/gilgamesh"
+    },
+    {
+      "id": "source-george-civilizing-enkidu",
+      "title": "The Civilizing of Ea-Enkidu: An Unusual Tablet of the Babylonian Gilgamesh Epic",
+      "author": "Andrew R. George",
+      "year": 2007,
+      "publisher": "Revue d’assyriologie et d’archéologie orientale",
+      "url": "https://eprints.soas.ac.uk/6088/1/RA101George.pdf"
+    },
+    {
+      "id": "source-british-museum-gilgamesh-tablet-vi",
+      "title": "Cuneiform Tablet: Epic of Gilgamesh, Tablet VI",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_K-231"
+    },
+    {
+      "id": "source-british-museum-gilgamesh-flood-tablet",
+      "title": "Cuneiform Tablet: Epic of Gilgamesh, Flood Tablet",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_K-3375"
+    },
+    {
+      "id": "source-soas-gilgamesh-old-babylonian-x",
+      "title": "Gilgamesh X: Old Babylonian Version",
+      "publisher": "SOAS Babylonian and Assyrian Poetry and Literature Archive",
+      "url": "https://www.soas.ac.uk/baplar/recordings/gilgamesh-x-read-john-huehnergard"
+    },
+    {
+      "id": "source-soas-gilgamesh-old-babylonian-grief",
+      "title": "Epic of Gilgamesh: Old Babylonian Version, VA+BM Tablet",
+      "publisher": "SOAS Babylonian and Assyrian Poetry and Literature Archive",
+      "url": "https://www.soas.ac.uk/baplar/recordings/epic-gilgamesh-old-babylonian-version-part-vabm-tablet-read-martin-west"
+    },
+    {
+      "id": "source-soas-gilgamesh-xi-opening",
+      "title": "Epic of Gilgamesh, Standard Version, Tablet XI, Lines 1–34",
+      "publisher": "SOAS Babylonian and Assyrian Poetry and Literature Archive",
+      "url": "https://www.soas.ac.uk/baplar/recordings/epic-gilgames-standard-version-tablet-xi-lines-1-34-read-nathan-wasserman"
+    },
+    {
+      "id": "source-soas-gilgamesh-xi-flood",
+      "title": "Epic of Gilgamesh, Standard Version, Tablet XI, Lines 92–139",
+      "publisher": "SOAS Babylonian and Assyrian Poetry and Literature Archive",
+      "url": "https://www.soas.ac.uk/baplar/recordings/epic-gilgames-standard-version-tablet-xi-lines-92-139-read-martin-west"
+    },
+    {
+      "id": "source-etcsl-gilgamesh-stories",
+      "title": "The Electronic Text Corpus of Sumerian Literature: Gilgamesh Stories",
+      "publisher": "University of Oxford",
+      "url": "https://etcsl.orinst.ox.ac.uk/catalogue/catalogue1.htm"
+    },
+    {
+      "id": "source-garfinkle-kingdom-ur",
+      "title": "The Kingdom of Ur",
+      "author": "Steven J. Garfinkle",
+      "year": 2022,
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/book/43915/chapter/370990907"
+    },
+    {
+      "id": "source-corcoran-tadd-livestock-early-states",
+      "title": "The Political Economy of Livestock in Early States",
+      "author": "Noah Corcoran-Tadd et al.",
+      "year": 2023,
+      "publisher": "Cambridge Archaeological Journal",
+      "url": "https://www.cambridge.org/core/journals/cambridge-archaeological-journal/article/political-economy-of-livestock-in-early-states/A94F5FBA63DE00BCE461E86D13F4FD89"
+    },
+    {
+      "id": "source-steinkeller-ur-iii-core-periphery",
+      "title": "The Administrative and Economic Organization of the Ur III State: The Core and the Periphery",
+      "author": "Piotr Steinkeller",
+      "year": 1987,
+      "publisher": "Oriental Institute of the University of Chicago",
+      "url": "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/saoc46.pdf"
+    },
+    {
+      "id": "source-hilgert-drehem-administrative-documents",
+      "title": "Cuneiform Texts from the Ur III Period in the Oriental Institute, Volume 1: Drehem Administrative Documents",
+      "author": "Markus Hilgert",
+      "year": 1998,
+      "publisher": "Oriental Institute of the University of Chicago",
+      "url": "https://isac.uchicago.edu/research/publications/oip/cuneiform-texts-ur-iii-period-oriental-institute-volume-1-drehem"
+    },
+    {
+      "id": "source-rost-ur-iii-irrigation-umma",
+      "title": "Irrigation Management in the Ur III Period: The Case of I-sala in Umma",
+      "author": "Stephanie Rost",
+      "publisher": "Institute for the Study of Ancient Cultures, University of Chicago",
+      "url": "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/Publications/OIS/ois13.pdf"
+    },
+    {
+      "id": "source-oracc-ur-namma-inscriptions",
+      "title": "Electronic Text Corpus of Sumerian Royal Inscriptions: Ur-Namma Inscriptions",
+      "publisher": "Open Richly Annotated Cuneiform Corpus",
+      "url": "https://oracc.museum.upenn.edu/etcsri/"
+    },
+    {
+      "id": "source-british-museum-ur-iii-barley-rations",
+      "title": "Cuneiform Tablet Recording Barley Rations",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1895-1017-219"
+    },
+    {
+      "id": "source-british-museum-ur-iii-drehem-sheep",
+      "title": "Cuneiform Tablet Recording Sheep at Drehem",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_2010-6022-2"
+    },
+    {
+      "id": "source-british-museum-ur-iii-fields-yields",
+      "title": "Cuneiform Tablet Recording Fields and Yields",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1914-0404-182"
+    },
+    {
+      "id": "source-met-ur-iii-dugga-account",
+      "title": "Cuneiform Tablet: Balanced Account of Dugga",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/322447"
+    },
+    {
+      "id": "source-cambridge-ur-iii-old-babylonian-transition",
+      "title": "The Ur III–Old Babylonian Transition: An Archaeological Perspective",
+      "publisher": "Iraq",
+      "url": "https://www.cambridge.org/core/journals/iraq/article/ur-iiiold-babylonian-transition-an-archaeological-perspective/42C3A224B7D64BA31EED67E620732C10"
+    },
+    {
+      "id": "source-wikimedia-ur-iii-administrative-tablet",
+      "title": "Administrative Tablet, Third Dynasty of Ur, 2026 BC, CC0 photograph",
+      "author": "Gary Todd",
+      "year": 2017,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Administrative_Tablet,_Third_Dynasty_of_Ur,_2026_BC.jpg"
+    },
+    {
+      "id": "source-wikimedia-lament-for-ur-penn",
+      "title": "CBS7080 Lament for Ur, CC BY-SA 4.0 photograph",
+      "author": "Onceinawhile",
+      "year": 2022,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:CBS7080_Lament_for_Ur_Penn_Museum.jpg"
+    },
+    {
+      "id": "source-podany-hammurabi-babylon",
+      "title": "Hammurabi of Babylon",
+      "author": "Amanda H. Podany",
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/book/43915"
+    },
+    {
+      "id": "source-cdli-hammurabi-year-names",
+      "title": "Hammurabi Year Names",
+      "publisher": "Cuneiform Digital Library Initiative",
+      "url": "https://cdli.earth/dl/year-names/HTML/T12K9.htm"
+    },
+    {
+      "id": "source-cdli-samsuiluna-year-names",
+      "title": "Samsuiluna Year Names",
+      "publisher": "Cuneiform Digital Library Initiative",
+      "url": "https://cdli.earth/dl/year-names/HTML/T12K10.htm"
+    },
+    {
+      "id": "source-brinkman-kassite-history",
+      "title": "Materials and Studies for Kassite History, Volume I",
+      "author": "J. A. Brinkman",
+      "year": 1976,
+      "publisher": "Oriental Institute of the University of Chicago"
+    },
+    {
+      "id": "source-met-kassite-period",
+      "title": "The Middle Babylonian / Kassite Period (ca. 1595–1155 B.C.) in Mesopotamia",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-middle-babylonian-kassite-period-ca-1595-1155-b-c-in-mesopotamia"
+    },
+    {
+      "id": "source-wikimedia-kurigalzu-kudurru",
+      "title": "Kudurru mentioning the name of the Kassite king Kurigalzu II, CC BY-SA 4.0 photograph",
+      "author": "Osama Shukir Muhammed Amin",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Kudurru_mentioning_the_name_of_the_Kassite_king_Kurigalzu_II,_from_Nippur,_Iraq,_Ancient_Orient_Museum.jpg"
+    },
+    {
+      "id": "source-van-de-mieroop-ancient-near-east",
+      "title": "A History of the Ancient Near East, ca. 3000–323 BC",
+      "author": "Marc Van De Mieroop",
+      "year": 2016,
+      "publisher": "Wiley Blackwell"
+    },
+    {
+      "id": "source-radner-ancient-assyria",
+      "title": "Ancient Assyria: A Very Short Introduction",
+      "author": "Karen Radner",
+      "year": 2015,
+      "publisher": "Oxford University Press"
+    },
+    {
+      "id": "source-wikimedia-hammurabi-letter",
+      "title": "Letter from Hammurabi to Sin-iddinam, CC BY-SA 4.0 photograph",
+      "author": "Zunkir",
+      "year": 2020,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lettre_de_Hammurabi_a_Sin-iddinam_AO_5420.jpg"
+    },
+    {
+      "id": "source-louvre-hammurabi-code",
+      "title": "Law Code of Hammurabi, King of Babylon",
+      "publisher": "Musée du Louvre",
+      "url": "https://collections.louvre.fr/en/ark:/53355/cl010174436"
+    },
+    {
+      "id": "source-ehammurabi-laws",
+      "title": "The Laws of Hammurabi: Electronic Edition",
+      "publisher": "eHammurabi",
+      "url": "https://ehammurabi.org/law"
+    },
+    {
+      "id": "source-cdli-law-collections",
+      "title": "Law Collections from Mesopotamia and Asia Minor",
+      "publisher": "Cuneiform Digital Library Initiative",
+      "url": "https://cdli.earth/publications/2464389"
+    },
+    {
+      "id": "source-isac-law-society",
+      "title": "Law and Society in the Ancient Near East",
+      "publisher": "Institute for the Study of Ancient Cultures, University of Chicago",
+      "url": "https://isac.uchicago.edu/research/publications/saoc/saoc-62-law-and-society-ancient-near-east"
+    },
+    {
+      "id": "source-cambridge-hammurabi-copies",
+      "title": "The Laws of Hammurabi in the First Millennium",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/laws-of-hammurabi/"
+    },
+    {
+      "id": "source-wikimedia-hammurabi-stele",
+      "title": "Code of Hammurabi Stele, CC BY-SA 2.0 photograph",
+      "author": "Urko Dorronsoro",
+      "year": 2011,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Code_Of_Hammurabi.jpg"
+    },
+    {
+      "id": "source-wikimedia-hammurabi-trial-1915",
+      "title": "Trial Before Hammurabi, public-domain historical illustration",
+      "author": "Anonymous",
+      "year": 1915,
+      "publisher": "Wikimedia Commons / Hutchinson's Story of the Nations",
+      "url": "https://commons.wikimedia.org/wiki/File:Trial_Before_Hammurabi.jpg"
+    },
+    {
+      "id": "source-wikimedia-babylonian-canals-1898",
+      "title": "Ancient Babylonian Canals, no known copyright restrictions",
+      "author": "Unknown",
+      "year": 1898,
+      "publisher": "Wikimedia Commons / Internet Archive Book Images",
+      "url": "https://commons.wikimedia.org/wiki/File:Ancient_Babylonian_canals.jpg"
+    },
+    {
+      "id": "source-wikimedia-hammurabi-full-stele",
+      "title": "Code of Hammurabi Stele, public-domain photograph",
+      "author": "Rlunaro",
+      "year": 2009,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Hammurabi_code.jpg"
+    },
+    {
+      "id": "source-wikimedia-hammurabi-discovery",
+      "title": "Discovery of the Hammurabi Stele, public-domain photograph",
+      "year": 1902,
+      "publisher": "Wikimedia Commons / Musée du Louvre",
+      "url": "https://commons.wikimedia.org/wiki/File:Code_of_Hammurabi_104.jpg"
+    },
+    {
+      "id": "source-sefaria-genesis-11",
+      "title": "Genesis 11:1–9",
+      "publisher": "Sefaria",
+      "url": "https://www.sefaria.org/Genesis.11.1-9"
+    },
+    {
+      "id": "source-george-tower-of-babel",
+      "title": "The Tower of Babel: Archaeology, History and Cuneiform Texts",
+      "author": "Andrew R. George",
+      "publisher": "SOAS Research Online",
+      "url": "https://soas-repository.worktribe.com/output/421527/the-tower-of-babel-archaeology-history-and-cuneiform-texts"
+    },
+    {
+      "id": "source-met-etemenanki-cylinder",
+      "title": "Cuneiform Cylinder Commemorating the Reconstruction of Etemenanki",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/321908"
+    },
+    {
+      "id": "source-oracc-nebuchadnezzar-etemenanki",
+      "title": "Nebuchadnezzar II Inscriptions Concerning Etemenanki",
+      "publisher": "Open Richly Annotated Cuneiform Corpus",
+      "url": "https://oracc.museum.upenn.edu/ribo/babylon7/"
+    },
+    {
+      "id": "source-wikimedia-bruegel-babel",
+      "title": "The Tower of Babel by Pieter Bruegel the Elder, Public Domain",
+      "author": "Pieter Bruegel the Elder",
+      "year": 1563,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project.jpg"
+    },
+    {
+      "id": "source-wikimedia-dore-confusion",
+      "title": "The Confusion of Tongues by Gustave Doré, Public Domain",
+      "author": "Gustave Doré",
+      "year": 1865,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Confusion_of_Tongues.png"
+    },
+    {
+      "id": "source-wikimedia-esagil-tablet",
+      "title": "Esagil Tablet Fragment BM 40813, CC BY-SA 4.0 photograph",
+      "author": "Zunkir",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Esagil_tablet_fragment_BM_40813.jpg"
+    },
+    {
+      "id": "source-wikimedia-etemenanki-ruins",
+      "title": "Remains of the Foundations of Etemenanki, CC0 photograph",
+      "author": "Marjon Verburg",
+      "year": 2012,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Remains_of_the_foundations_of_the_Etemnanki_Zigurat.jpg"
+    },
+    {
+      "id": "source-ucl-narmer",
+      "title": "Narmer",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/narmer.html"
+    },
+    {
+      "id": "source-met-telling-time-egypt",
+      "title": "Telling Time in Ancient Egypt",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/telling-time-in-ancient-egypt"
+    },
+    {
+      "id": "source-met-egypt-1000-1",
+      "title": "Egypt, 1000 B.C.–1 A.D.",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/ht/04/afe.html"
+    },
+    {
+      "id": "source-met-old-kingdom",
+      "title": "Egypt in the Old Kingdom",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/egypt-in-the-old-kingdom-ca-2649-2130-b-c"
+    },
+    {
+      "id": "source-met-ancient-egypt-art",
+      "title": "The Art of Ancient Egypt: A Resource for Educators",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/-/media/files/learn/for-educators/publications-for-educators/the-art-of-ancient-egypt.pdf"
+    },
+    {
+      "id": "source-arnold-pyramids",
+      "title": "When the Pyramids Were Built: Egyptian Art of the Old Kingdom",
+      "author": "Dorothea Arnold",
+      "year": 1999,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/met-publications/when-the-pyramids-were-built-egyptian-art-of-the-old-kingdom"
+    },
+    {
+      "id": "source-wikimedia-giza-pyramids",
+      "title": "Giza pyramids photograph, CC0",
+      "author": "Gary Todd",
+      "year": 2013,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Giza_Pyramids_of_Khufu,_Khafre_%26_Menkaure_(9793903476).jpg"
+    },
+    {
+      "id": "source-wikimedia-unas-pyramid-texts",
+      "title": "Unas pyramid texts historical photograph, public domain",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Unas_Pyramidentexte.jpg"
+    },
+    {
+      "id": "source-met-sahure-statue",
+      "title": "King Sahure Accompanied by a Divine Figure",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/543882"
+    },
+    {
+      "id": "source-met-mitry-statue",
+      "title": "Statue of Mitry",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/543872"
+    },
+    {
+      "id": "source-muller-old-kingdom-end",
+      "title": "The End of the Old Kingdom",
+      "author": "Renate Müller-Wollermann",
+      "publisher": "UCLA Encyclopedia of Egyptology",
+      "url": "https://escholarship.org/uc/item/2ns3652b"
+    },
+    {
+      "id": "source-ucl-middle-kingdom",
+      "title": "Middle Kingdom",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/mk/index.html"
+    },
+    {
+      "id": "source-met-middle-kingdom",
+      "title": "Egypt in the Middle Kingdom (ca. 2030–1650 B.C.)",
+      "author": "Adela Oppenheim",
+      "year": 2019,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/egypt-in-the-middle-kingdom-2030-1640-b-c"
+    },
+    {
+      "id": "source-ucl-mentuhotep-ii",
+      "title": "Mentuhotep II",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/mentuhotepII.html"
+    },
+    {
+      "id": "source-ucl-middle-kingdom-art",
+      "title": "Middle Kingdom Art",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/art/mk.html"
+    },
+    {
+      "id": "source-met-senwosret-iii",
+      "title": "Face of Senwosret III",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544184"
+    },
+    {
+      "id": "source-ucl-sinuhe",
+      "title": "The Story of Sinuhe",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/sinuhe.html"
+    },
+    {
+      "id": "source-bm-sinuhe-literature",
+      "title": "Page turners: literature in ancient Egypt",
+      "author": "Ilona Regulski",
+      "year": 2023,
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/blog/page-turners-literature-ancient-egypt"
+    },
+    {
+      "id": "source-bm-sinuhe-ostracon",
+      "title": "Ostracon of the Tale of Sinuhe (EA5629)",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/Y_EA5629"
+    },
+    {
+      "id": "source-wikimedia-sinuhe-papyrus",
+      "title": "Sinuhe Papyrus facsimile, public domain",
+      "author": "Georg Möller",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Sinuhe-Papyrus_(Papyrus_Berlin_3022).jpg"
+    },
+    {
+      "id": "source-ucl-nubia-middle-kingdom",
+      "title": "Middle Kingdom Egypt and Nubia",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/nubia/mk.html"
+    },
+    {
+      "id": "source-ucl-buhen-middle-kingdom",
+      "title": "Buhen in the Middle Kingdom",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/buhen/mk.html"
+    },
+    {
+      "id": "source-ucl-second-intermediate",
+      "title": "Second Intermediate Period",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/2interkings/index.html"
+    },
+    {
+      "id": "source-uee-second-intermediate",
+      "title": "Second Intermediate Period",
+      "author": "Alexander Ilin-Tomich",
+      "year": 2016,
+      "publisher": "UCLA Encyclopedia of Egyptology",
+      "url": "https://escholarship.org/uc/item/72q561r2"
+    },
+    {
+      "id": "source-ucl-ahmose",
+      "title": "Ahmose",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/ahmose.html"
+    },
+    {
+      "id": "source-met-new-kingdom",
+      "title": "Egypt in the New Kingdom",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/egypt-in-the-new-kingdom-ca-1550-1070-b-c"
+    },
+    {
+      "id": "source-ucl-nubia-new-kingdom",
+      "title": "Nubia in the New Kingdom",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/nubia/nk.html"
+    },
+    {
+      "id": "source-met-hatshepsut",
+      "title": "Seated Statue of Hatshepsut",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544450"
+    },
+    {
+      "id": "source-met-hatshepsut-exhibition",
+      "title": "Hatshepsut: From Queen to Pharaoh",
+      "year": 2006,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/exhibitions/listings/2006/hatshepsut"
+    },
+    {
+      "id": "source-met-hatshepsut-female-pharaoh",
+      "title": "The Female Pharaoh Hatshepsut",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544849"
+    },
+    {
+      "id": "source-ucl-sobeknofru",
+      "title": "Sobeknofru",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/sobeknofru.html"
+    },
+    {
+      "id": "source-met-amarna-letters",
+      "title": "The Amarna Letters",
+      "author": "Elizabeth Knott",
+      "year": 2016,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-amarna-letters"
+    },
+    {
+      "id": "source-met-amarna-letter-object",
+      "title": "Royal Letter from Ashur-uballit to the King of Egypt",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544695"
+    },
+    {
+      "id": "source-met-akhenaten-duck",
+      "title": "Akhenaten Sacrificing a Duck",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544056"
+    },
+    {
+      "id": "source-met-akhenaten-city",
+      "title": "Art, Architecture, and the City in the Reign of Amenhotep IV / Akhenaten",
+      "author": "Marsha Hill",
+      "year": 2014,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/art-architecture-and-the-city-in-the-reign-of-amenhotep-iv-akhenaten-ca-13531336-b-c"
+    },
+    {
+      "id": "source-smb-nefertiti",
+      "title": "Bust of Nefertiti",
+      "publisher": "Staatliche Museen zu Berlin",
+      "url": "https://www.smb.museum/en/museums-institutions/aegyptisches-museum-und-papyrussammlung/collection-research/bust-of-nefertiti/"
+    },
+    {
+      "id": "source-smb-nefertiti-image-cc-by-sa",
+      "title": "Bust of Queen Nefertiti, Sandra Steiß photograph (CC BY-SA 4.0)",
+      "author": "Sandra Steiß",
+      "publisher": "Staatliche Museen zu Berlin",
+      "url": "https://search.smb.museum/object/obj-606189"
+    },
+    {
+      "id": "source-ucl-tutankhamun",
+      "title": "Tutankhamun",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/tutankhamun.html"
+    },
+    {
+      "id": "source-met-amun-head",
+      "title": "Head of the God Amun",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544780"
+    },
+    {
+      "id": "source-hayes-scepter-ii",
+      "title": "The Scepter of Egypt, Volume II",
+      "author": "William C. Hayes",
+      "year": 1959,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/met-publications/the-scepter-of-egypt-vol-2-the-hyksos-period-and-the-new-kingdom-1675-1080-bc"
+    },
+    {
+      "id": "source-wikimedia-abu-simbel",
+      "title": "Abu Simbel historical photograph, no known copyright restrictions",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:S10.08_Abu_Simbel,_image_9930.jpg"
+    },
+    {
+      "id": "source-bm-kadesh-sallier",
+      "title": "Papyrus Sallier III and the Battle of Kadesh",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/Y_EA10181"
+    },
+    {
+      "id": "source-un-egypt-hatti-treaty",
+      "title": "Treaty of Kadesh replica and historical note",
+      "publisher": "United Nations",
+      "url": "https://www.un.org/ungifts/treaty-kadesh"
+    },
+    {
+      "id": "source-grandet-ramesses-iii",
+      "title": "The Medinet Habu Records of the Foreign Wars of Ramesses III",
+      "author": "Pierre Grandet",
+      "publisher": "Oriental Institute of the University of Chicago",
+      "url": "https://isac.uchicago.edu/research/publications/oip/medinet-habu-records-foreign-wars-ramesses-iii"
+    },
+    {
+      "id": "source-turin-strike-papyrus",
+      "title": "Strike Papyrus",
+      "publisher": "Museo Egizio",
+      "url": "https://collezioni.museoegizio.it/en-GB/material/Cat_1880"
+    },
+    {
+      "id": "source-uee-early-mid-20th-dynasty",
+      "title": "Early to Mid-20th Dynasty",
+      "author": "Pierre Grandet",
+      "year": 2014,
+      "publisher": "UCLA Encyclopedia of Egyptology",
+      "url": "https://escholarship.org/uc/item/0d84248t"
+    },
+    {
+      "id": "source-met-third-intermediate",
+      "title": "Egypt in the Third Intermediate Period (ca. 1070–664 B.C.)",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/egypt-in-the-third-intermediate-period-1070-712-b-c"
+    },
+    {
+      "id": "source-ucl-pyramid-shape",
+      "title": "Development of the Pyramid Shape",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/pyramids/shape.html"
+    },
+    {
+      "id": "source-ucl-pyramids-overview",
+      "title": "Pyramids: An Overview",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/pyramids/index.html"
+    },
+    {
+      "id": "source-ucl-pyramid-towns",
+      "title": "Pyramid Towns",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/pyramids/town.html"
+    },
+    {
+      "id": "source-ucl-king-cult",
+      "title": "The Cult of the King",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/ideology/king/cult.html"
+    },
+    {
+      "id": "source-aera-lost-city",
+      "title": "The Lost City of the Pyramids",
+      "publisher": "Ancient Egypt Research Associates",
+      "url": "https://aeraweb.org/projects/lost-city/"
+    },
+    {
+      "id": "source-aera-feeding-workers",
+      "title": "Feeding Pyramid Workers",
+      "publisher": "Ancient Egypt Research Associates",
+      "url": "https://aeraweb.org/feeding-pyramid-workers/"
+    },
+    {
+      "id": "source-ifao-merer-log",
+      "title": "Les papyrus de la mer Rouge I: Le «Journal de Merer»",
+      "author": "Pierre Tallet",
+      "year": 2017,
+      "publisher": "Institut français d’archéologie orientale",
+      "url": "https://www.ifao.egnet.net/uploads/publications/divers/MIFAO136_ann_01.pdf"
+    },
+    {
+      "id": "source-met-oarsmen-official",
+      "title": "Oarsmen and an Official",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/552238"
+    },
+    {
+      "id": "source-wikimedia-oarsmen-official",
+      "title": "Oarsmen and an Official photograph, CC0",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Oarsmen_and_an_Official_MET_DP251956.jpg"
+    },
+    {
+      "id": "source-wikimedia-giza-complex-map",
+      "title": "Giza Pyramid Complex Map, CC BY-SA 3.0",
+      "author": "MesserWoland",
+      "year": 2006,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Giza_pyramid_complex_(map).svg"
+    },
+    {
+      "id": "source-wikimedia-djoser-step",
+      "title": "Saqqara Stepped Pyramid Photograph, Public Domain",
+      "author": "Charles J. Sharp",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Saqqara_stepped_pyramid.jpg"
+    },
+    {
+      "id": "source-wikimedia-bent-pyramid",
+      "title": "Bent Pyramid Angle Photograph, CC BY-SA 3.0",
+      "author": "Timsdad",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Bent_Pyramid_angle.jpg"
+    },
+    {
+      "id": "source-met-offering-bearers",
+      "title": "Offering Bearers, Old Kingdom",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/547738"
+    },
+    {
+      "id": "source-met-neferiu-false-door",
+      "title": "False Door of Neferiu",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/543863"
+    },
+    {
+      "id": "source-ucl-burial-customs",
+      "title": "Ancient Egyptian Burial Customs",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/burialcustoms/index.html"
+    },
+    {
+      "id": "source-ucl-mummies",
+      "title": "Mummies",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/mummy/index.html"
+    },
+    {
+      "id": "source-met-life-along-nile",
+      "title": "Life Along the Nile: Three Egyptians of Ancient Thebes",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://resources.metmuseum.org/resources/metpublications/pdf/Life_Along_the_Nile_Three_Egyptians_of_Ancient_Thebes_The_Metropolitan_Museum_of_Art_Bulletin_v_60_no_1_Summer_2002.pdf"
+    },
+    {
+      "id": "source-ucl-tombs",
+      "title": "Tombs",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/burialcustoms/tombs.html"
+    },
+    {
+      "id": "source-ucl-cult-offerings",
+      "title": "Cult and Offerings",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/religion/cultindex.html"
+    },
+    {
+      "id": "source-ucl-religious-texts",
+      "title": "Ancient Egyptian Religious Texts",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/index.html"
+    },
+    {
+      "id": "source-ucl-coffin-texts",
+      "title": "Coffin Texts",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/coffin.html"
+    },
+    {
+      "id": "source-ucl-book-of-dead-faq",
+      "title": "Questions about the Book of the Dead",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/bdquestions.html"
+    },
+    {
+      "id": "source-bm-book-of-dead",
+      "title": "What Is the Book of the Dead?",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/blog/what-book-dead"
+    },
+    {
+      "id": "source-met-transforming-dead",
+      "title": "Transforming the Dead: Culturally Modified Egyptian Mummies in the Predynastic Period",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/-/media/files/about-the-met/curatorial-departments/egyptian/facsimiles/2014_transformingthedead_web.pdf"
+    },
+    {
+      "id": "source-bm-egyptian-gods",
+      "title": "Ancient Egyptian Gods and Goddesses",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/learn/schools/ages-7-11/ancient-egypt/ancient-egyptian-gods-and-goddesses"
+    },
+    {
+      "id": "source-ucl-shabtis",
+      "title": "Shabtis",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/burialcustoms/shabtis.html"
+    },
+    {
+      "id": "source-ucl-book-of-dead-125",
+      "title": "Book of the Dead, Chapter 125",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/religious/bd125a.html"
+    },
+    {
+      "id": "source-bm-afterlife-journey",
+      "title": "Journey to the Afterlife",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/learn/schools/ages-7-11/ancient-egypt/journey-afterlife"
+    },
+    {
+      "id": "source-met-wah-statuette",
+      "title": "Statuette of Wah",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/545111"
+    },
+    {
+      "id": "source-met-heart-scarab",
+      "title": "Heart Scarab",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/550986"
+    },
+    {
+      "id": "source-met-ukhhotep-coffin",
+      "title": "Outer Coffin of Ukhhotep",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/546303"
+    },
+    {
+      "id": "source-met-nesiamun-book-dead",
+      "title": "Book of the Dead for the Chantress of Amun, Nesi-amun",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/550820"
+    },
+    {
+      "id": "source-met-hatnefer-osiris",
+      "title": "Osiris Figure from the Burial of Hatnefer",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/548954"
+    },
+    {
+      "id": "source-met-anubis-weighing-heart",
+      "title": "Anubis Weighing the Heart",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/557830"
+    },
+    {
+      "id": "source-met-seti-i-shabti",
+      "title": "Shabti of Seti I",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544763"
+    },
+    {
+      "id": "source-met-hatshepsut-publication",
+      "title": "Hatshepsut: From Queen to Pharaoh",
+      "year": 2005,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/met-publications/hatshepsut-from-queen-to-pharaoh"
+    },
+    {
+      "id": "source-bm-ramesses-ii-colossal-statue",
+      "title": "Colossal Statue of Ramesses II",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/galleries/egyptian-sculpture/colossal-statue-ramesses-ii"
+    },
+    {
+      "id": "source-egypt-monuments-abu-simbel",
+      "title": "Abu Simbel",
+      "publisher": "Ministry of Tourism and Antiquities, Egypt",
+      "url": "https://egymonuments.gov.eg/en/archaeological-sites/abu-simbel/"
+    },
+    {
+      "id": "source-ucl-hieroglyphic-system",
+      "title": "The System of Egyptian Hieroglyphic Writing",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/writing/system.html"
+    },
+    {
+      "id": "source-ucl-art-script",
+      "title": "Art and Script in Ancient Egypt",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/art/artscript.html"
+    },
+    {
+      "id": "source-ucl-writing-development",
+      "title": "Development of Writing",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/writing/development.html"
+    },
+    {
+      "id": "source-ucl-hieratic",
+      "title": "Hieratic Script",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/writing/hieratic.html"
+    },
+    {
+      "id": "source-ucl-demotic",
+      "title": "Demotic",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/writing/demotic.html"
+    },
+    {
+      "id": "source-ucl-coptic",
+      "title": "Coptic",
+      "publisher": "UCL Digital Egypt for Universities",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/writing/coptic.html"
+    },
+    {
+      "id": "source-bm-hieroglyphs-decipherment",
+      "title": "Egyptian Hieroglyphs: Decipherment Timeline",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/exhibitions/hieroglyphs-unlocking-ancient-egypt/egyptian-hieroglyphs-decipherment-timeline"
+    },
+    {
+      "id": "source-bm-hieroglyphs-resources",
+      "title": "Hieroglyphs Resources",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/hieroglyphs-resources"
+    },
+    {
+      "id": "source-yale-wadi-el-hol",
+      "title": "Two Early Alphabetic Inscriptions from the Wadi el-Hol",
+      "publisher": "Yale University",
+      "url": "https://nelc.yale.edu/publications/two-early-alphabetic-inscriptions-wadi-el-hol-new-evidence-origin-alphabet-western"
+    },
+    {
+      "id": "source-isac-visible-language",
+      "title": "Visible Language: Inventions of Writing in the Ancient Middle East and Beyond",
+      "year": 2010,
+      "publisher": "Institute for the Study of Ancient Cultures, University of Chicago",
+      "url": "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/oimp32.pdf"
+    },
+    {
+      "id": "source-wikimedia-narmer-palette-cc0",
+      "title": "The Narmer Palette Photograph, CC0",
+      "author": "Joe deSousa",
+      "year": 2023,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Narmer_Palette_(53250074700).jpg"
+    },
+    {
+      "id": "source-met-coptic-manuscript",
+      "title": "Manuscript Leaves Fragment, Coptic",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/475055"
+    },
+    {
+      "id": "source-wikimedia-champollion-table-pd",
+      "title": "Champollion Table of Hieroglyphic and Demotic Phonetic Signs, Public Domain",
+      "author": "Jean-François Champollion",
+      "year": 1822,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Champollion_table.jpg"
+    },
+    {
+      "id": "source-wikimedia-karnak-hieroglyphs",
+      "title": "Colourful Egyptian Hieroglyphs at Karnak, CC BY-SA 4.0",
+      "author": "Sandy Gamal",
+      "year": 2023,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Egyptian_Hieroglyphs.jpg"
+    },
+    {
+      "id": "source-wikimedia-unas-exterior",
+      "title": "Pyramid of Unas Photograph, CC BY-SA 3.0",
+      "author": "Markh",
+      "year": 2006,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Pyramid_of_Unas.jpg"
+    },
+    {
+      "id": "source-thinkzone-alphabet-chart",
+      "title": "Egyptian Hieroglyphs to Latin Alphabet Chart, CC BY-SA 4.0",
+      "author": "Keith Enevoldsen",
+      "year": 2021,
+      "publisher": "Keith's Think Zone",
+      "url": "https://thinkzone.wlonk.com/AlphabetHistory/EgyptianToLatin.html"
+    },
+    {
+      "id": "source-wikimedia-abu-simbel-color",
+      "title": "Abu Simbel Great Temple Façade Photograph, CC BY 2.0",
+      "author": "Arian Zwegers",
+      "year": 1998,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Abu_Simbel,_fa%C3%A7ade_of_the_Great_Temple_(6201194723).jpg"
+    },
+    {
+      "id": "source-wright-ancient-indus",
+      "title": "The Ancient Indus: Urbanism, Economy, and Society",
+      "author": "Rita P. Wright",
+      "year": 2010,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.britishmuseum.org/collection/term/BIB8384"
+    },
+    {
+      "id": "source-kenoyer-indus-civilisation",
+      "title": "The Indus Civilisation",
+      "author": "Jonathan Mark Kenoyer",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-world-prehistory/indus-civilisation/6D73243ABD6561B46B84EE198929CC5E"
+    },
+    {
+      "id": "source-unesco-mohenjo-daro",
+      "title": "Archaeological Ruins at Moenjodaro",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/138/"
+    },
+    {
+      "id": "source-jansen-mohenjo-water",
+      "title": "Water Supply and Sewage Disposal at Mohenjo-Daro",
+      "author": "Michael Jansen",
+      "year": 1989,
+      "publisher": "World Archaeology",
+      "url": "https://architexturez.net/doc/10-1080/00438243-1989-9980100"
+    },
+    {
+      "id": "source-nakamura-mohenjo-drainage",
+      "title": "A Reconsideration of the Drainage System at Mohenjo-Daro",
+      "author": "Tetsuo Nakamura et al.",
+      "year": 1995,
+      "publisher": "Journal of Historical Studies in Civil Engineering",
+      "url": "https://www.jstage.jst.go.jp/article/journalhs1990/15/0/15_0_87/_article"
+    },
+    {
+      "id": "source-green-priest-king",
+      "title": "Killing the Priest-King: Addressing Egalitarianism in the Indus Civilization",
+      "author": "Adam S. Green",
+      "year": 2020,
+      "publisher": "Journal of Archaeological Research",
+      "url": "https://link.springer.com/article/10.1007/s10814-020-09147-9"
+    },
+    {
+      "id": "source-green-indus-public-goods",
+      "title": "Collective Action and Public Goods in the Indus Civilization",
+      "author": "Adam S. Green",
+      "year": 2022,
+      "publisher": "Frontiers in Political Science",
+      "url": "https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2022.823071/full"
+    },
+    {
+      "id": "source-kenoyer-harappan-measurement",
+      "title": "Measuring the Harappan World",
+      "author": "Jonathan Mark Kenoyer",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/archaeology-of-measurement/measuring-the-harappan-world-insights-into-the-indus-order-and-cosmology/CA35A61C8206304939641CD63DE42450"
+    },
+    {
+      "id": "source-kenoyer-indus-seals",
+      "title": "Indus Seals: An Overview of Iconography and Style",
+      "author": "Jonathan Mark Kenoyer",
+      "publisher": "Harappa.com",
+      "url": "https://www.harappa.com/content/indus-seals-overview-iconography-and-style-0"
+    },
+    {
+      "id": "source-kenoyer-inscribed-objects",
+      "title": "Inscribed Objects from Harappa Excavations 1986–2007",
+      "author": "Jonathan Mark Kenoyer and Richard H. Meadow",
+      "publisher": "Harappa.com",
+      "url": "https://www.harappa.com/content/inscribed-objects-harappa-excavations-1986-2007"
+    },
+    {
+      "id": "source-rao-indus-script",
+      "title": "Entropic Evidence for Linguistic Structure in the Indus Script",
+      "author": "Rajesh P. N. Rao et al.",
+      "year": 2009,
+      "publisher": "Science",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2721819/"
+    },
+    {
+      "id": "source-farmer-indus-script",
+      "title": "The Collapse of the Indus-Script Thesis",
+      "author": "Steve Farmer, Richard Sproat and Michael Witzel",
+      "year": 2004,
+      "publisher": "Electronic Journal of Vedic Studies",
+      "url": "https://safarmer.com/files/fsw3.pdf"
+    },
+    {
+      "id": "source-parpola-indus-script",
+      "title": "Deciphering the Indus Script",
+      "author": "Asko Parpola",
+      "year": 1994,
+      "publisher": "Cambridge University Press",
+      "url": "https://books.google.com/books/about/Deciphering_the_Indus_Script.html?id=m1WNQgAACAAJ"
+    },
+    {
+      "id": "source-possehl-indus-mesopotamia",
+      "title": "Meluhha",
+      "author": "Gregory L. Possehl",
+      "year": 2002,
+      "publisher": "Iranica Antiqua",
+      "url": "https://poj.peeters-leuven.be/content.php?id=127&journal_code=IA&url=article.php"
+    },
+    {
+      "id": "source-oracc-sargon-meluhha",
+      "title": "Sargon 11",
+      "publisher": "ORACC: Electronic Text Corpus of Sumerian Royal Inscriptions",
+      "url": "https://oracc.museum.upenn.edu/etcsri/Q001403"
+    },
+    {
+      "id": "source-bm-gulf-seal-ur",
+      "title": "Gulf type stamp seal found at Ur",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1932-1008-178"
+    },
+    {
+      "id": "source-laursen-dilmun-seals",
+      "title": "Seals and Sealing Technology in the Dilmun Culture",
+      "author": "Steffen Laursen",
+      "year": 2018,
+      "publisher": "Aarhus University Press",
+      "url": "https://pure.au.dk/portal/da/publications/seals-and-sealing-technology-in-the-dilmun-culture-the-post-harap/"
+    },
+    {
+      "id": "source-kenoyer-kish-carnelian",
+      "title": "Tracing the Origins of Etched Carnelian Beads from Kish",
+      "author": "Jonathan Mark Kenoyer et al.",
+      "year": 2026,
+      "publisher": "Archaeometry",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/arcm.13098"
+    },
+    {
+      "id": "source-giosan-harappan-transformation",
+      "title": "Neoglacial Climate Anomalies and the Harappan Metamorphosis",
+      "author": "Liviu Giosan et al.",
+      "year": 2018,
+      "publisher": "Climate of the Past",
+      "url": "https://cp.copernicus.org/articles/14/1669/2018/index.html"
+    },
+    {
+      "id": "source-wikimedia-mohenjo-well",
+      "title": "Monejodaro well photograph, CC BY 3.0",
+      "author": "Najamuddin Shahwani",
+      "year": 2010,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Monejodaro_well_-_panoramio.jpg"
+    },
+    {
+      "id": "source-wikimedia-mohenjo-street",
+      "title": "Street at Mohenjo-daro photograph, CC BY-SA 3.0",
+      "author": "Saqib Qayyum",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Street_-_Mohenjodaro.JPG"
+    },
+    {
+      "id": "source-wikimedia-mohenjo-great-bath",
+      "title": "Great Bath of Mohenjo-daro photograph, CC BY-SA 3.0",
+      "author": "Soban",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Great_Bath_of_Mohenjo-daro.jpg"
+    },
+    {
+      "id": "source-wikimedia-mohenjo-overview",
+      "title": "Mohenjo-daro excavated ruins photograph, CC BY-SA 3.0",
+      "author": "Saqib Qayyum",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Mohenjo-daro.jpg"
+    },
+    {
+      "id": "source-wikimedia-cemetery-h-pottery",
+      "title": "Painted pottery urns from Harappa, Cemetery H period, CC BY-SA 4.0",
+      "author": "Avantiputra7",
+      "year": 2017,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Cemetery_H_Pottery.png"
+    },
+    {
+      "id": "source-met-indus-unicorn-seal",
+      "title": "Stamp seal and modern impression: unicorn and incense burner (?)",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/324062"
+    },
+    {
+      "id": "source-met-indus-carnelian-bead",
+      "title": "Carnelian bead from Nippur",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/324872"
+    },
+    {
+      "id": "source-shinde-rakhigarhi-genome",
+      "title": "An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers",
+      "author": "Vasant Shinde et al.",
+      "year": 2019,
+      "publisher": "Cell",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31495572/"
+    },
+    {
+      "id": "source-narasimhan-south-central-asia",
+      "title": "The Formation of Human Populations in South and Central Asia",
+      "author": "Vagheesh M. Narasimhan et al.",
+      "year": 2019,
+      "publisher": "Science",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6822619/"
+    },
+    {
+      "id": "source-jamison-brereton-rigveda",
+      "title": "The Rigveda: The Earliest Religious Poetry of India",
+      "author": "Stephanie W. Jamison and Joel P. Brereton",
+      "year": 2014,
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/book/33632"
+    },
+    {
+      "id": "source-oxford-vedic-oral-tradition",
+      "title": "Vedic Oral Tradition",
+      "publisher": "Oxford Bibliographies",
+      "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554520720"
+    },
+    {
+      "id": "source-cambridge-veda-before-print",
+      "title": "The Veda before Print",
+      "year": 2022,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/kingdoms-of-memory-empires-of-ink/veda-before-print/57AD64AC6E5B8E08F619DFD392FD72B0"
+    },
+    {
+      "id": "source-singh-ancient-india",
+      "title": "A History of Ancient and Early Medieval India",
+      "author": "Upinder Singh",
+      "year": 2008,
+      "publisher": "Pearson Longman",
+      "url": "https://books.google.com/books?id=Pq2iCwAAQBAJ"
+    },
+    {
+      "id": "source-generated-vedic-recitation",
+      "title": "Early Vedic recitation teaching illustration",
+      "year": 2026,
+      "publisher": "OpenAI image generation"
+    },
+    {
+      "id": "source-unesco-liangzhu",
+      "title": "Archaeological Ruins of Liangzhu City",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1592/"
+    },
+    {
+      "id": "source-erlitou-cass-report",
+      "title": "Erlitou, 1999–2006",
+      "author": "Institute of Archaeology, Chinese Academy of Social Sciences",
+      "year": 2014,
+      "publisher": "Encyclopaedia of China Publishing House"
+    },
+    {
+      "id": "source-erlitou-rethinking",
+      "title": "Rethinking Erlitou: Legend, History and Chinese Archaeology",
+      "author": "Li Liu and Hong Xu",
+      "year": 2007,
+      "publisher": "Antiquity",
+      "url": "https://www.cambridge.org/core/journals/antiquity/article/abs/rethinking-erlitou-legend-history-and-chinese-archaeology/FDBD0E8E7C661FC180CAD54AD9742E31"
+    },
+    {
+      "id": "source-liu-chen-archaeology-china",
+      "title": "The Archaeology of China: From the Late Paleolithic to the Early Bronze Age",
+      "author": "Li Liu and Xingcan Chen",
+      "year": 2012,
+      "publisher": "Cambridge University Press"
+    },
+    {
+      "id": "source-xu-xia-debate",
+      "title": "The Erlitou Culture and the Search for the Xia Dynasty",
+      "author": "Hong Xu",
+      "year": 2020,
+      "publisher": "The Oxford Handbook of Early China",
+      "url": "https://academic.oup.com/edited-volume/34296"
+    },
+    {
+      "id": "source-erlitou-radiocarbon",
+      "title": "14C Dating of the Erlitou Site",
+      "author": "Zhang et al.",
+      "year": 2021,
+      "publisher": "Radiocarbon",
+      "url": "https://www.cambridge.org/core/journals/radiocarbon/article/14c-dating-of-the-erlitou-site/475359D750D8F9AE70E5126CF4744A4C"
+    },
+    {
+      "id": "source-zhao-erlitou-settlement",
+      "title": "New Insights into the Settlement Patterns of the Capital City at Erlitou",
+      "author": "Haitao Zhao",
+      "year": 2021,
+      "publisher": "Chinese Archaeology",
+      "url": "https://doi.org/10.1515/char-2021-0012"
+    },
+    {
+      "id": "source-thorp-erlitou-xia",
+      "title": "Erlitou and the Search for the Xia",
+      "author": "Robert L. Thorp",
+      "publisher": "Early China"
+    },
+    {
+      "id": "source-erlitou-turquoise-restoration",
+      "title": "Study on Archaeological Cleaning and Restoration of Turquoise-Inlaid Dragon-Shaped Artifact from Erlitou Site",
+      "year": 2024,
+      "publisher": "Journal of Gems and Gemmology",
+      "url": "https://jogg.cug.edu.cn/article/doi/10.15964/j.cnki.027jgg.2024.05.002"
+    },
+    {
+      "id": "source-bagley-shang-archaeology",
+      "title": "Shang Archaeology",
+      "author": "Robert Bagley",
+      "year": 1999,
+      "publisher": "The Cambridge History of Ancient China",
+      "url": "https://doi.org/10.1017/CHOL9780521470308.005"
+    },
+    {
+      "id": "source-keightley-shang-history",
+      "title": "Sources of Shang History: The Oracle-Bone Inscriptions of Bronze Age China",
+      "author": "David N. Keightley",
+      "year": 1978,
+      "publisher": "University of California Press",
+      "url": "https://books.google.com/books?id=8j3pPZqFQVkC"
+    },
+    {
+      "id": "source-keightley-ancestral-landscape",
+      "title": "The Ancestral Landscape",
+      "author": "David N. Keightley",
+      "year": 2000,
+      "publisher": "Institute of East Asian Studies, University of California, Berkeley",
+      "url": "https://www.ucpress.edu/books/the-ancestral-landscape/paper"
+    },
+    {
+      "id": "source-campbell-violence-kinship",
+      "title": "Violence, Kinship and the Early Chinese State",
+      "author": "Roderick Campbell",
+      "year": 2018,
+      "publisher": "Cambridge University Press"
+    },
+    {
+      "id": "source-liu-shang-ancestors",
+      "title": "Who Were the Ancestors? The Origins of Chinese Ancestral Cult",
+      "author": "Li Liu",
+      "year": 1999,
+      "publisher": "Antiquity"
+    },
+    {
+      "id": "source-unesco-yinxu",
+      "title": "Yin Xu",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1114"
+    },
+    {
+      "id": "source-unesco-oracle-bones",
+      "title": "Chinese Oracle-Bone Inscriptions",
+      "publisher": "UNESCO Memory of the World",
+      "url": "https://www.unesco.org/en/memory-world/chinese-oracle-bone-inscriptions"
+    },
+    {
+      "id": "source-smithsonian-anyang-neighborhood",
+      "title": "Life in the City: An Anyang Neighborhood",
+      "publisher": "Smithsonian National Museum of Asian Art",
+      "url": "https://asia.si.edu/interactives/anyang/life-in-the-city/index.html"
+    },
+    {
+      "id": "source-mizoguchi-xibeigang",
+      "title": "The Xibeigang Royal Cemetery at Anyang",
+      "author": "Koji Mizoguchi and Kazuya Uchida",
+      "year": 2018,
+      "publisher": "Routledge"
+    },
+    {
+      "id": "source-smarthistory-fu-hao",
+      "title": "War and Sacrifice: The Tomb of Fu Hao",
+      "author": "Cortney E. Chaffin",
+      "year": 2021,
+      "publisher": "Smarthistory",
+      "url": "https://smarthistory.org/tomb-of-fu-hao/"
+    },
+    {
+      "id": "source-met-shang-zhou-bronze",
+      "title": "Shang and Zhou Dynasties: The Bronze Age of China",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/shzh/hd_shzh.htm"
+    },
+    {
+      "id": "source-an-zhengzhou-shang-city",
+      "title": "The Shang City at Zhengzhou and Related Problems",
+      "author": "Jinhuai An",
+      "publisher": "Early China",
+      "url": "https://www.cambridge.org/core/journals/early-china/article/2-the-shang-city-at-zhengzhou-and-related-problems/CC79184977EE1B2D6143C9EB03FA9720"
+    },
+    {
+      "id": "source-steinke-erligang",
+      "title": "Art and Archaeology of the Erligang Civilization",
+      "author": "Kyle Steinke and Dora C. Y. Ching",
+      "year": 2014,
+      "publisher": "Princeton University Press",
+      "url": "https://tang.princeton.edu/publications/art-and-archaeology-erligang-civilization"
+    },
+    {
+      "id": "source-li-feng-early-china",
+      "title": "Early China: A Social and Cultural History",
+      "author": "Li Feng",
+      "year": 2013,
+      "publisher": "Cambridge University Press"
+    },
+    {
+      "id": "source-national-museum-li-gui",
+      "title": "Li Vessel (Gui)",
+      "publisher": "National Museum of China",
+      "url": "https://en.chnmuseum.cn/collections_577/collection_highlights_608/201911/t20191121_172589.html"
+    },
+    {
+      "id": "source-national-museum-guoji-zibai-pan",
+      "title": "Guoji Zibai Pan",
+      "publisher": "National Museum of China",
+      "url": "https://www.chnmuseum.cn/zp/zpml/csp/202008/t20200826_247376.shtml"
+    },
+    {
+      "id": "source-anyang-fall",
+      "title": "Annihilation or Decline: The Fall of Anyang as an Urban Center",
+      "author": "Yung-ti Li, Zhanwei Yue and Yuling He",
+      "year": 2018,
+      "publisher": "Archaeological Research in Asia",
+      "url": "https://doi.org/10.1016/j.ara.2017.06.003"
+    },
+    {
+      "id": "source-cook-western-zhou-rites",
+      "title": "Western Zhou Ritual and the Transformation of Ancestral Practice",
+      "author": "Constance A. Cook",
+      "year": 2020,
+      "publisher": "The Oxford Handbook of Early China"
+    },
+    {
+      "id": "source-khayutina-cultural-memory",
+      "title": "The Beginning of Cultural Memory Production in China and the Memory Policy of the Zhou Royal House",
+      "author": "Maria Khayutina",
+      "year": 2021,
+      "publisher": "Early China",
+      "url": "https://epub.ub.uni-muenchen.de/91298/1/91298.pdf"
+    },
+    {
+      "id": "source-schwartz-huayuanzhuang",
+      "title": "The Oracle Bone Inscriptions from Huayuanzhuang East",
+      "author": "Adam C. Schwartz",
+      "year": 2019,
+      "publisher": "De Gruyter",
+      "url": "https://doi.org/10.1515/9781501505294"
+    },
+    {
+      "id": "source-schwartz-zhen",
+      "title": "A Glimpse of China’s Earliest Decision-Making: The Meaning of Zhēn 貞 “Test” in the Huāyuánzhuāng East Oracular Inscriptions",
+      "author": "Adam Craig Schwartz",
+      "year": 2022,
+      "publisher": "Old World: Journal of Ancient Africa and Eurasia"
+    },
+    {
+      "id": "source-nivison-question",
+      "title": "The “Question” Question",
+      "author": "David S. Nivison",
+      "year": 1990,
+      "publisher": "Early China"
+    },
+    {
+      "id": "source-boltz-sexagenary-cycle",
+      "title": "The Chinese Sexagenary Cycle and the Origin of the Chinese Writing System",
+      "author": "William G. Boltz",
+      "year": 2019,
+      "publisher": "Max Planck Research Library for the History and Development of Knowledge",
+      "url": "https://www.mprl-series.mpg.de/media/proceedings/11/5/Proceedings11Chap05.pdf"
+    },
+    {
+      "id": "source-smithsonian-bronze-casting",
+      "title": "Bronze Age Casting",
+      "publisher": "Smithsonian National Museum of Asian Art",
+      "url": "https://asia-archive.si.edu/learn/ancient-chinese-bronzes/bronze-age-casting/"
+    },
+    {
+      "id": "source-smithsonian-anyang-kings",
+      "title": "Anyang: China’s Ancient City of Kings",
+      "publisher": "Smithsonian National Museum of Asian Art",
+      "url": "https://asia.si.edu/exhibition/anyang-chinas-ancient-city-of-kings/"
+    },
+    {
+      "id": "source-wikimedia-erlitou-plaque",
+      "title": "Erlitou turquoise-inlaid bronze plaque photograph, CC BY-SA 4.0",
+      "author": "Siyuwj",
+      "year": 2024,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:嵌绿松石铜牌饰（87VIM57）,_2024-06-22.jpg"
+    },
+    {
+      "id": "source-wikimedia-erlitou-dragon",
+      "title": "Erlitou turquoise dragon-form artifact and bronze bell photograph, CC BY-SA 4.0",
+      "author": "Siyuwj",
+      "year": 2024,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:绿松石龙形器及铜铃,_2024-06-23.jpg"
+    },
+    {
+      "id": "source-wikimedia-erlitou-site",
+      "title": "Erlitou archaeological site photograph, CC BY-SA 4.0",
+      "author": "Windmemories",
+      "year": 2024,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:20240815_Erlitou_Site_01.jpg"
+    },
+    {
+      "id": "source-wikimedia-guoji-zibai-pan",
+      "title": "Western Zhou bronze pan photograph, CC0",
+      "author": "Gary Todd",
+      "year": 2013,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Western_Zhou_Bronze_Pan_(9830469116).jpg"
+    },
+    {
+      "id": "source-wikimedia-yinxu-royal-tombs-exhibit",
+      "title": "Yinxu Royal Tombs exhibit photograph, CC BY 2.0",
+      "author": "xiquinhosilva",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Yinxu_Royal_Tombs_(53565371094).jpg"
+    },
+    {
+      "id": "source-wikimedia-shang-gu",
+      "title": "Shang bronze gu wine vessel photograph, CC BY-SA 3.0",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Gu_wine_vessel_from_the_Shang_Dynasty.jpg"
+    },
+    {
+      "id": "source-wikimedia-oracle-bones",
+      "title": "Shang inscribed ox scapula photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2013,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Inscribed_Ox_Scapula_(for_divination).jpg"
+    },
+    {
+      "id": "source-wikimedia-fu-hao-tomb",
+      "title": "Reconstructed Tomb of Fu Hao photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2008,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Fu_Hao_Tomb,_c._1200_BC,_Reign_of_King_Wu_Ding,_Shang_Dynasty_(10197552004).jpg"
+    },
+    {
+      "id": "source-wikimedia-shang-dagger-axes",
+      "title": "Shang bronze dagger-axes from Yinxu photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2018,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Bronze_Ge_Dagger-Axes,_Yinxu,_Anyang.jpg"
+    },
+    {
+      "id": "source-wikimedia-shang-pottery",
+      "title": "Shang pottery workshop display photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2018,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Pottery_Workshop_(45146511164).jpg"
+    },
+    {
+      "id": "source-wikimedia-li-gui",
+      "title": "Early Western Zhou Li gui photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Early_Western_Zhou_Bronze_Gui_01.jpg"
+    },
+    {
+      "id": "source-wikimedia-oracle-pit-marks",
+      "title": "Chinese oracle bone with pit marks photograph, CC0",
+      "publisher": "British Library via Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Chinese_oracle_bone_(16th-10th_C_BC)_-_BL_Or._7694.jpg"
+    },
+    {
+      "id": "source-wikimedia-huayuanzhuang-plastron",
+      "title": "Shang turtle plastron with oracle-bone script photograph, CC BY-SA 3.0",
+      "author": "BabelStone",
+      "year": 2016,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Ningxia_Museum_Shang_dynasty_turtle_plastron_oracle_bone.jpg"
+    },
+    {
+      "id": "source-wikimedia-oracle-eclipse",
+      "title": "Shang inscribed ox bone recording an eclipse divination photograph, CC0",
+      "author": "Gary Todd",
+      "year": 2011,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Inscribed_Ox_Bone_(9830543424).jpg"
+    },
+    {
+      "id": "source-wikimedia-oracle-collection",
+      "title": "Shang ox-bone oracle-bone collection photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2009,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Ox_Bone_Oracle_Bones.jpg"
+    },
+    {
+      "id": "source-wikimedia-bronze-casting-apparatus",
+      "title": "Shang bronze-casting apparatus and clay moulds photograph, CC0",
+      "author": "Gary Todd",
+      "year": 2018,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Bronze_Casting_Apparatus_%26_Clay_Moulds_(30934169087).jpg"
+    },
+    {
+      "id": "source-wikimedia-bronze-mould",
+      "title": "Shang pottery mould for casting bronze photograph, CC0",
+      "author": "Gary Todd",
+      "year": 2008,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Pottery_Mould_for_Casting_Bronze_(10197668873).jpg"
+    },
+    {
+      "id": "source-wikimedia-fuhao-cooking-vessels",
+      "title": "Shang bronze cooking vessels from the Tomb of Fu Hao photograph, CC0",
+      "author": "Gary Todd",
+      "year": 2018,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Shang_Bronze_Cooking_Vessels_(45001649745).jpg"
+    },
+    {
+      "id": "source-sxd-antiquity-2022",
+      "title": "New Discoveries at the Sanxingdui Bronze Age Site in South-west China",
+      "author": "Honglin Ran and colleagues",
+      "year": 2022,
+      "publisher": "Antiquity",
+      "url": "https://doi.org/10.15184/aqy.2022.150"
+    },
+    {
+      "id": "source-sxd-sacrificial-area-2023",
+      "title": "The Sacrificial Area at the Sanxingdui Site in Guanghan, Sichuan",
+      "author": "Sacrificial Area Archaeological Team of the Sanxingdui Site",
+      "year": 2023,
+      "publisher": "Chinese Archaeology",
+      "url": "https://doi.org/10.1515/char-2023-0003"
+    },
+    {
+      "id": "source-sxd-ritual-pits-2025",
+      "title": "Newly Discovered Sacrificial Pits at the Sanxingdui Site: Insights into Bronze Age Ritual Remains in Southwest China",
+      "author": "Honglin Ran and colleagues",
+      "year": 2025,
+      "publisher": "Archaeological Research in Asia",
+      "url": "https://doi.org/10.1016/j.ara.2025.100621"
+    },
+    {
+      "id": "source-sxd-southwest-exchange-2024",
+      "title": "The Southwest Silk Road: Artistic Exchange and Transmission in Early China",
+      "year": 2024,
+      "publisher": "Bulletin of the School of Oriental and African Studies",
+      "url": "https://doi.org/10.1017/S0041977X24000120"
+    },
+    {
+      "id": "source-sxd-writing-2021",
+      "title": "New Archeological Marvels of Ancient Shu Civilization",
+      "author": "Weijie Zhao",
+      "year": 2021,
+      "publisher": "National Science Review",
+      "url": "https://doi.org/10.1093/nsr/nwab071"
+    },
+    {
+      "id": "source-wikimedia-sxd-gold-mask-head",
+      "title": "Sanxingdui bronze head with gold foil mask photograph, CC BY 2.0",
+      "author": "momo",
+      "year": 2011,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Gold_Mask_(黄金面罩).jpg"
+    },
+    {
+      "id": "source-wikimedia-sxd-bronze-tree",
+      "title": "三星堆出土青铜神树 photograph, CC BY-SA 4.0",
+      "author": "Siyuwj",
+      "year": 2017,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:三星堆出土青铜神树,_2017-09-17.jpg"
+    },
+    {
+      "id": "source-wikimedia-sxd-ivory-tusk",
+      "title": "Sanxingdui ivory tusk photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2008,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Sanxingdui_Ivory_Tusk_(9950882376).jpg"
+    },
+    {
+      "id": "source-wikimedia-jinsha-sun-bird",
+      "title": "Jinsha gold sun-bird disc photograph, CC0",
+      "author": "Gary Lee Todd",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:2014_Jinsha_Gold_Sun-Bird_Disc.jpg"
+    },
+    {
+      "id": "source-western-zhou-domain",
+      "title": "Archaeological Perspectives on the Western Zhou State and Its Domain",
+      "year": 2018,
+      "publisher": "Archaeological Research in Asia",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352226717300570"
+    },
+    {
+      "id": "source-national-museum-da-yu-ding",
+      "title": "大盂鼎与西周册命",
+      "publisher": "中国国家博物馆",
+      "url": "https://www.chnmuseum.cn/zl/zlhg/201812/t20181220_32409.shtml"
+    },
+    {
+      "id": "source-national-museum-ceming",
+      "title": "西周册命礼研究",
+      "publisher": "中国国家博物馆",
+      "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_36456.shtml"
+    },
+    {
+      "id": "source-li-feng-bronze-offices",
+      "title": "Offices in Bronze Inscriptions and Western Zhou Government Administration",
+      "author": "Li Feng",
+      "publisher": "Early China",
+      "url": "https://www.cambridge.org/core/journals/early-china/article/abs/offices-in-bronze-inscriptions-and-western-zhou-government-administration/55732DE5CD51B308243EC7233C630834"
+    },
+    {
+      "id": "source-li-feng-western-zhou-fall",
+      "title": "The Fall of the Western Zhou: Partisan Struggle and Spatial Collapse",
+      "author": "Li Feng",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/landscape-and-power-in-early-china/fall-of-the-western-zhou-partisan-struggle-and-spatial-collapse/9ED3767010631C65EBB52B4BAF9E5766"
+    },
+    {
+      "id": "source-generated-western-zhou-investiture",
+      "title": "西周册命仪式教学插图",
+      "author": "OpenAI image generation, edited and reviewed for Civilization Wander",
+      "year": 2026,
+      "publisher": "Civilization Wander"
+    },
+    {
+      "id": "source-bryce-hittite-kingdom",
+      "title": "The Kingdom of the Hittites, 2nd edition",
+      "author": "Trevor Bryce",
+      "year": 2005,
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/book/36172"
+    },
+    {
+      "id": "source-bryce-neo-hittite-kingdoms",
+      "title": "The World of the Neo-Hittite Kingdoms",
+      "author": "Trevor Bryce",
+      "year": 2012,
+      "publisher": "Oxford University Press",
+      "url": "https://academic.oup.com/book/9649"
+    },
+    {
+      "id": "source-beckman-hittite-diplomatic-texts",
+      "title": "Hittite Diplomatic Texts, 2nd edition",
+      "author": "Gary Beckman",
+      "year": 1999,
+      "publisher": "Society of Biblical Literature",
+      "url": "https://cart.sbl-site.org/books/061507E"
+    },
+    {
+      "id": "source-unesco-hattusha",
+      "title": "Hattusha: the Hittite Capital",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/377"
+    },
+    {
+      "id": "source-met-hittites",
+      "title": "The Hittites",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-hittites"
+    },
+    {
+      "id": "source-yon-city-of-ugarit",
+      "title": "The City of Ugarit at Tell Ras Shamra",
+      "author": "Marguerite Yon",
+      "year": 2006,
+      "publisher": "Eisenbrauns",
+      "url": "https://commons.library.stonybrook.edu/amar/163/"
+    },
+    {
+      "id": "source-met-ugarit",
+      "title": "Ugarit",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/ugarit"
+    },
+    {
+      "id": "source-heltzer-ugarit-metal-trade",
+      "title": "The Metal Trade of Ugarit and the Problem of Transportation of Commercial Goods",
+      "author": "Michael Heltzer",
+      "year": 1977,
+      "publisher": "Iraq",
+      "url": "https://www.cambridge.org/core/journals/iraq/article/abs/metal-trade-of-ugarit-and-the-problem-of-transportation-of-commercial-goods/288D631EBD77E72D691B387AAD0453D3"
+    },
+    {
+      "id": "source-boyes-writing-ugarit",
+      "title": "Writing and Social Diversity in Late Bronze Age Ugarit",
+      "author": "Philip Boyes",
+      "publisher": "Papers from the Institute of Archaeology",
+      "url": "https://student-journals.ucl.ac.uk/pia/article/id/1379/"
+    },
+    {
+      "id": "source-french-ugarit-exchange",
+      "title": "Un centre d’échange majeur",
+      "publisher": "Ministère de la Culture, Mission archéologique d’Ougarit",
+      "url": "https://archeologie.culture.gouv.fr/ougarit/fr/un-centre-dechange-majeur"
+    },
+    {
+      "id": "source-french-ugarit-texts",
+      "title": "Corpus et langues : la documentation textuelle d’Ougarit",
+      "publisher": "Ministère de la Culture, Mission archéologique d’Ougarit",
+      "url": "https://archeologie.culture.gouv.fr/ougarit/fr/corpus-et-langue-la-documentation-textuelle-dougarit"
+    },
+    {
+      "id": "source-french-ugarit-history",
+      "title": "Une histoire pluri-millénaire",
+      "publisher": "Ministère de la Culture, Mission archéologique d’Ougarit",
+      "url": "https://archeologie.culture.gouv.fr/ougarit/fr/une-histoire-pluri-millenaire"
+    },
+    {
+      "id": "source-leriche-ugarit-after-1180",
+      "title": "Réflexions sur Ougarit après ca 1180 av. J.-C.",
+      "author": "Pierre Leriche",
+      "year": 2008,
+      "publisher": "Persée",
+      "url": "https://www.persee.fr/doc/mom_1955-4982_2008_act_47_1_2523"
+    },
+    {
+      "id": "source-spalinger-war-egypt",
+      "title": "War in Ancient Egypt: The New Kingdom",
+      "author": "Anthony Spalinger",
+      "year": 2005,
+      "publisher": "Wiley-Blackwell",
+      "url": "https://www.wiley-vch.de/en/areas-interest/humanities-social-sciences/classical-studies-12cl/ancient-classical-history-12cl4/ancient-egyptian-history-12cl41/war-in-ancient-egypt-978-1-4051-1372-4"
+    },
+    {
+      "id": "source-langdon-gardiner-egypt-hatti-treaty",
+      "title": "The Treaty of Alliance between Hattusili, King of the Hittites, and the Pharaoh Ramesses II of Egypt",
+      "author": "Stephen Langdon and Alan Gardiner",
+      "year": 1920,
+      "publisher": "The Journal of Egyptian Archaeology",
+      "url": "https://doi.org/10.1177/030751332000600119"
+    },
+    {
+      "id": "source-wikimedia-hattusa-wall",
+      "title": "Reconstructed Hittite city wall at Hattusa, CC BY-SA 3.0",
+      "author": "Bernard Gagnon",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Hattusa_-_Hittite_city_wall_01.jpg"
+    },
+    {
+      "id": "source-wikimedia-inandik-vase",
+      "title": "İnandık Vase with relief scenes of a sacred festival, CC BY-SA 2.0",
+      "author": "Carole Raddato",
+      "year": 2016,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:The_%C4%B0nand%C4%B1k_vase%2C_a_Hittite_four-handled_large_terracota_vase_with_scenes_in_relief_depicting_a_sacred_wedding_ceremony%2C_mid_17th_century%2C_found_in_%C4%B0nand%C4%B1ktepe%2C_Museum_of_Anatolian_Civilizations%2C_Ankara_%2826167755270%29.jpg"
+    },
+    {
+      "id": "source-wikimedia-aleppo-treaty",
+      "title": "Hittite treaty tablet with the king of Aleppo, CC BY-SA 4.0",
+      "author": "Zunkir",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Aleppo_treaty_-_Hittites.jpg"
+    },
+    {
+      "id": "source-wikimedia-hattusa-ruins",
+      "title": "Büyükkaya ruins at Hattusa, freely licensed photograph",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Hattusa_B%C3%BCy%C3%BCkkaya.JPG"
+    },
+    {
+      "id": "source-wikimedia-ugarit-palace",
+      "title": "Royal Palace ruins at Ugarit, CC BY-SA 4.0",
+      "author": "Dosseman",
+      "year": 2008,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Ugarit_Royal_Tombs_3928.jpg"
+    },
+    {
+      "id": "source-wikimedia-ugarit-law-tablet",
+      "title": "Akkadian legal text of King Niqmepa from Ugarit, CC BY-SA 2.0",
+      "author": "ALFGRN",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Text_of_Law_in_Akkadian_by_King_Niqmepa_with_dynastic_seal_Ras_Shamra_Louvre_Museum.jpg"
+    },
+    {
+      "id": "source-wikimedia-uluburun-reconstruction",
+      "title": "Uluburun shipwreck and cargo reconstruction at the Bodrum Museum, CC BY-SA 4.0",
+      "author": "Dosseman",
+      "year": 2015,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Bodrum_Museum_Uluburun_shipwreck_reconstruction_in_2015_3704_Panorama.jpg"
+    },
+    {
+      "id": "source-wikimedia-ugarit-admin-tablet",
+      "title": "Administrative tablet in Ugaritic from Ugarit, freely licensed photograph",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Tablette_administrative_Ugarit_AO19967.jpg"
+    },
+    {
+      "id": "source-wikimedia-pylos-linear-b-tablet",
+      "title": "Linear B tablet PY Ub 1318 from the Palace of Pylos, CC BY 2.0",
+      "author": "Sharon Mollerus",
+      "year": 2009,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:NAMA_Linear_B_tablet_of_Pylos.jpg"
+    },
+    {
+      "id": "source-wikimedia-ugarit-throne-hall",
+      "title": "Throne hall in the Royal Palace of Ugarit, CC BY-SA 4.0",
+      "author": "Dosseman",
+      "year": 2008,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Ugarit_Royal_Palace_throne_hall_3909.jpg"
+    },
+    {
+      "id": "source-wikimedia-kadesh-spies",
+      "title": "Relief of captured scouts in the Kadesh narrative, public domain",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Ancient_carving_-_Shasu_spies_being_beaten_by_Egyptians.png"
+    },
+    {
+      "id": "source-wikimedia-kadesh-attack-map",
+      "title": "English adaptation of the Kadesh surprise-attack teaching map, CC BY-SA 3.0",
+      "author": "Zunkir; English adaptation by Civilization Wander",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Qadesh_-_attaque_hittite.svg"
+    },
+    {
+      "id": "source-wikimedia-kadesh-relief",
+      "title": "Ramesses II relief at Abu Simbel depicting Kadesh, public domain",
+      "author": "Mustang Joe",
+      "year": 2023,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Ramesses_II_relief_in_the_tomb_at_Abu_Simbel.jpg"
+    },
+    {
+      "id": "source-wikimedia-kadesh-treaty",
+      "title": "Egyptian-Hittite treaty tablet in Istanbul, attribution license",
+      "author": "Giovanni Dall’Orto",
+      "year": 2006,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Istanbul_-_Museo_archeol._-_Trattato_di_Qadesh_fra_ittiti_ed_egizi_(1269_a.C.)_-_Foto_G._Dall%27Orto_28-5-2006.jpg"
+    },
+    {
+      "id": "source-moran-amarna-letters",
+      "title": "The Amarna Letters",
+      "author": "William L. Moran",
+      "year": 1992,
+      "publisher": "Johns Hopkins University Press",
+      "url": "https://www.press.jhu.edu/books/title/2462/amarna-letters"
+    },
+    {
+      "id": "source-runeberg-egypt-mail-carrier",
+      "title": "Ancient Egyptian mail carrier, anonymous 1915 book illustration after a Theban painting, public domain",
+      "year": 1915,
+      "publisher": "Nordisk familjebok / Project Runeberg",
+      "url": "https://runeberg.org/nfcb/0040.html"
+    },
+    {
+      "id": "source-met-four-foreign-rulers",
+      "title": "Four Foreign Rulers, Tomb of Puyemre, twentieth-century facsimile of a New Kingdom painting, public domain",
+      "author": "Norman de Garis Davies",
+      "year": 1915,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/544596"
+    },
+    {
+      "id": "source-wikimedia-tushratta-marriage-letter",
+      "title": "Amarna letter from Tushratta to Amenhotep III concerning diplomatic marriage and gold, CC BY-SA 4.0",
+      "author": "Osama Shukir Muhammed Amin",
+      "year": 2016,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Amarna_letter._Letter_from_Tushratta_king_of_Mitanni_to_Amenhotep_III._From_Tell_el-Amarna,_Egypt._1st_half_of_the_14th_century_BCE._British_Museum.jpg"
+    },
+    {
+      "id": "source-isac-medinet-habu-i",
+      "title": "Medinet Habu I: Earlier Historical Records of Ramses III",
+      "author": "The Epigraphic Survey",
+      "year": 1930,
+      "publisher": "University of Chicago Press",
+      "url": "https://isac.uchicago.edu/research/projects/epigraphic-survey-bibliography"
+    },
+    {
+      "id": "source-edgerton-wilson-ramesses-iii",
+      "title": "Historical Records of Ramses III: The Texts in Medinet Habu Volumes I and II",
+      "author": "William F. Edgerton and John A. Wilson",
+      "year": 1936,
+      "publisher": "University of Chicago Press",
+      "url": "https://isac.uchicago.edu/research/publications/saoc/saoc-12-historical-records-ramses-iii-texts-medinet-habu-volumes-1-and-2"
+    },
+    {
+      "id": "source-cifola-ramesses-sea-peoples",
+      "title": "Ramses III and the Sea Peoples: A Structural Analysis of the Medinet Habu Inscriptions",
+      "author": "Barbara Cifola",
+      "year": 1988,
+      "publisher": "Orientalia 57.3",
+      "url": "https://ixtheo.de/Record/179821718X"
+    },
+    {
+      "id": "source-yasur-landau-philistines",
+      "title": "The Philistines and Aegean Migration at the End of the Late Bronze Age",
+      "author": "Assaf Yasur-Landau",
+      "year": 2010,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/the-philistines-and-aegean-migration-at-the-end-of-the-late-bronze-age/47F89801F12D8073A797FFE775CE5856"
+    },
+    {
+      "id": "source-knapp-manning-crisis",
+      "title": "Crisis in Context: The End of the Late Bronze Age in the Eastern Mediterranean",
+      "author": "A. Bernard Knapp and Sturt W. Manning",
+      "year": 2016,
+      "publisher": "American Journal of Archaeology 120.1",
+      "url": "https://www.journals.uchicago.edu/doi/10.3764/aja.120.1.0099"
+    },
+    {
+      "id": "source-deger-jalkotzy-aftermath",
+      "title": "Decline, Destruction, Aftermath",
+      "author": "Sigrid Deger-Jalkotzy",
+      "year": 2008,
+      "publisher": "The Cambridge Companion to the Aegean Bronze Age",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-aegean-bronze-age/decline-destruction-aftermath/6F5022A91B80E31A3B6CB086909FE1BD"
+    },
+    {
+      "id": "source-middleton-understanding-collapse",
+      "title": "Understanding Collapse: Ancient History and Modern Myths",
+      "author": "Guy D. Middleton",
+      "year": 2017,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/understanding-collapse/understanding-collapse/1895D096EF873882EEF97F93F38A922C"
+    },
+    {
+      "id": "source-wikimedia-medinet-habu-temple",
+      "title": "Medinet Habu temple exterior, freely licensed photograph",
+      "author": "Walaa",
+      "year": 2024,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Medinet_Habu,_Egypt003.jpg"
+    },
+    {
+      "id": "source-wikimedia-medinet-habu-naval",
+      "title": "Nineteenth-century photograph of the Medinet Habu naval battle relief, CC0",
+      "publisher": "Museo Egizio Photo Archive",
+      "url": "https://commons.wikimedia.org/wiki/File:Theban_region,_Medinet_Habu,_19th_century_pictures,_1870-1896,_photo_44_of_51_-_Archivio_fotografico_Museo_Egizio,_Turin_INV10_001_cropped.JPG"
+    },
+    {
+      "id": "source-wikimedia-medinet-habu-land-battle",
+      "title": "Medinet Habu plate 50: oxcart and warriors of the Sea Peoples, public domain",
+      "author": "The Epigraphic Survey",
+      "year": 1930,
+      "publisher": "University of Chicago Press",
+      "url": "https://isac.uchicago.edu/research/projects/epigraphic-survey-bibliography"
+    },
+    {
+      "id": "source-unesco-minoan-palatial-centres",
+      "title": "Minoan Palatial Centres",
+      "year": 2025,
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/decisions/8959/"
+    },
+    {
+      "id": "source-met-minoan-crete",
+      "title": "Minoan Crete",
+      "author": "Seán Hemingway and Colette Hemingway",
+      "year": 2002,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/minoan-crete"
+    },
+    {
+      "id": "source-salgarella-writing-bronze-age-crete",
+      "title": "Writing in Bronze Age Crete",
+      "author": "Ester Salgarella",
+      "year": 2025,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/elements/writing-in-bronze-age-crete/5D5094CF9E6B118C94AD0554E3D9762A"
+    },
+    {
+      "id": "source-hooker-linear-a",
+      "title": "Problems and Methods in the Decipherment of Linear A",
+      "author": "J. T. Hooker",
+      "publisher": "Journal of the Royal Asiatic Society",
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7F3FA8E3EFED6A575EB2E8EA8F3556F5/S0035869X0013285Xa.pdf/problems-and-methods-in-the-decipherment-of-linear-a.pdf"
+    },
+    {
+      "id": "source-poursat-minoan-artworks",
+      "title": "The Historical Framework",
+      "author": "Jean-Claude Poursat",
+      "year": 2022,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/product/identifier/9781108630672%23CN-bp-19/type/book_part"
+    },
+    {
+      "id": "source-met-mycenaean-civilization",
+      "title": "Mycenaean Civilization",
+      "author": "Colette Hemingway and Seán Hemingway",
+      "year": 2003,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/mycenaean-civilization"
+    },
+    {
+      "id": "source-killen-mycenaean-society",
+      "title": "Mycenaean Society and Political Systems",
+      "author": "John T. Killen",
+      "year": 2024,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/new-documents-in-mycenaean-greek/mycenaean-society-and-political-systems/C5357CAFD444CBF3477838D3ECB464FE"
+    },
+    {
+      "id": "source-bsa-linear-b",
+      "title": "Linear B",
+      "year": 2022,
+      "publisher": "Annual of the British School at Athens",
+      "url": "https://www.cambridge.org/core/journals/annual-of-the-british-school-at-athens/linear-b"
+    },
+    {
+      "id": "source-cambridge-mycenaean-religion",
+      "title": "Mycenaean Religion",
+      "author": "Thomas G. Palaima",
+      "year": 2008,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-aegean-bronze-age/mycenaean-religion/190D846912C9E577315915FE29724D1C"
+    },
+    {
+      "id": "source-cambridge-guide-homer",
+      "title": "The Cambridge Guide to Homer: Introduction",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/cambridge-guide-to-homer/introduction/A758931C64C54C11EE43039C00C011D5"
+    },
+    {
+      "id": "source-cambridge-mycenaean-transformation",
+      "title": "The Transformation of the Mycenaean World",
+      "year": 2026,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-greek-iron-age/transformation-of-the-mycenaean-world/3FA169AC1267D35EC5365067710D44D5"
+    },
+    {
+      "id": "source-bsa-aegean-iron-technologies",
+      "title": "Tradition and Innovation in Aegean Iron Technologies",
+      "year": 2022,
+      "publisher": "Annual of the British School at Athens",
+      "url": "https://www.cambridge.org/core/journals/annual-of-the-british-school-at-athens/article/tradition-and-innovation-in-aegean-iron-technologies-a-view-from-early-iron-age-ionia/278E96D4E7813F158D8A71FA133466F9"
+    },
+    {
+      "id": "source-cambridge-greek-iron-age-pottery",
+      "title": "Greek Iron Age Pottery in the Mediterranean World",
+      "year": 2024,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/greek-iron-age-pottery-in-the-mediterranean-world/722978787F9792B9C404234D2D1C9CFA"
+    },
+    {
+      "id": "source-lupack-local-horizon",
+      "title": "Mycenaean Greek Worship in the Local Horizon",
+      "author": "Susan Lupack",
+      "year": 2023,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/religion-and-cult-in-the-dodecanese-during-the-first-millennium-bc/mycenaean-greek-worship-in-the-local-horizon/66B141B08B0782957E8C7D5B6B0AD478"
+    },
+    {
+      "id": "source-rutherford-greek-religion-lba-eia",
+      "title": "Greek Religion in the Late Bronze Age and Early Iron Age",
+      "author": "Ian Rutherford",
+      "year": 2020,
+      "publisher": "Oxford Research Encyclopedia of Religion",
+      "url": "https://oxfordre.com/religion/display/10.1093/acrefore/9780199340378.001.0001/acrefore-9780199340378-e-815"
+    },
+    {
+      "id": "source-cambridge-companion-greek-mythology",
+      "title": "The Cambridge Companion to Greek Mythology",
+      "author": "Roger D. Woodard (ed.)",
+      "year": 2007,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/cambridge-companion-to-greek-mythology/80BE198A50A04D30FA79A4B9FC6B9640"
+    },
+    {
+      "id": "source-perseus-hesiod-theogony",
+      "title": "Hesiod, Theogony",
+      "author": "Hesiod",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0130"
+    },
+    {
+      "id": "source-perseus-homeric-hymn-demeter",
+      "title": "Homeric Hymn to Demeter",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0138:hymn=2"
+    },
+    {
+      "id": "source-met-greek-gods-practices",
+      "title": "Greek Gods and Religious Practices",
+      "author": "Colette Hemingway",
+      "year": 2003,
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/greek-gods-and-religious-practices"
+    },
+    {
+      "id": "source-perseus-iliad",
+      "title": "Homer, Iliad",
+      "author": "Homer",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0134"
+    },
+    {
+      "id": "source-perseus-odyssey-eight",
+      "title": "Homer, Odyssey, Book 8",
+      "author": "Homer",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0136:book=8"
+    },
+    {
+      "id": "source-cambridge-guide-mycenae",
+      "title": "Mycenae",
+      "publisher": "The Cambridge Guide to Homer",
+      "url": "https://www.cambridge.org/core/books/cambridge-guide-to-homer/mycenae/FE2680102FA57DCE7E5349929036E40B"
+    },
+    {
+      "id": "source-rhodes-homeric-state",
+      "title": "The Homeric State",
+      "author": "P. J. Rhodes",
+      "year": 2019,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/cambridge-guide-to-homer/homeric-state/7DC9CDF0E391EAC2884D7D8E91664D49"
+    },
+    {
+      "id": "source-stafford-herakles",
+      "title": "Herakles between Gods and Heroes",
+      "author": "Emma Stafford",
+      "year": 2010,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/gods-and-heroes-in-ancient-greece/herakles-between-gods-and-heroes/39DC8D47D37C7D1060680510BEA8E7D5"
+    },
+    {
+      "id": "source-perseus-apollodorus-library",
+      "title": "Pseudo-Apollodorus, Library",
+      "author": "Pseudo-Apollodorus",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0022"
+    },
+    {
+      "id": "source-wikimedia-knossos-central-court",
+      "title": "Panoramic view of the central court at Knossos, CC BY-SA 3.0",
+      "author": "C messier",
+      "year": 2011,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Knossos_Central_Court_Panoramic.JPG"
+    },
+    {
+      "id": "source-wikimedia-linear-a-akrotiri",
+      "title": "Linear A tablets from Akrotiri, CC BY-SA 3.0",
+      "author": "Portum",
+      "year": 2004,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Linear_A_tablets.jpg"
+    },
+    {
+      "id": "source-wikimedia-akrotiri-flotilla",
+      "title": "Bronze Age flotilla fresco from Akrotiri, public domain artwork",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Minoan_fresco,_showing_a_fleet_and_settlement_Akrotiri.jpg"
+    },
+    {
+      "id": "source-wikimedia-knossos-linear-b",
+      "title": "Knossos tablet KN Fp 13, CC BY 2.0",
+      "author": "vintagedept",
+      "year": 2010,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Clay_Tablet_inscribed_with_Linear_B_script.jpg"
+    },
+    {
+      "id": "source-wikimedia-mouliana-krater",
+      "title": "Late Minoan IIIC krater from Mouliana, CC BY-SA 4.0",
+      "author": "ArchaiOptix",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LM_IIIC_dark_on_light_ware_krater_from_Mouliana_-_Herakleion_AM_-_01.jpg"
+    },
+    {
+      "id": "source-wikimedia-mycenae-gold-mask",
+      "title": "Gold funerary mask from Mycenae Grave Circle A, CC0",
+      "author": "Gary Todd",
+      "year": 2016,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Gold_death-mask_known_as_%E2%80%98Mask_of_Agamemnon,%E2%80%99_Mycenae,_Grave_Circle_A,_Grave_V,_16th_cent._BC._%2828423089016%29.jpg"
+    },
+    {
+      "id": "source-wikimedia-mycenae-athena-tablet",
+      "title": "Linear B tablet from Mycenae mentioning Athena, CC BY-SA 4.0",
+      "author": "Zde",
+      "year": 2020,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Linear_B_tablet,_AM_of_Mycenae,_201725.jpg"
+    },
+    {
+      "id": "source-wikimedia-mycenae-warrior-krater",
+      "title": "Mycenaean warrior krater, CC0",
+      "author": "Gary Todd",
+      "year": 2016,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Mycenaean_Ceramic_Krater_depicting_Warriors_departing_for_battle,_from_Mycenae_Acropolis,_c._1200_BC.jpg"
+    },
+    {
+      "id": "source-wikimedia-protogeometric-amphora",
+      "title": "Protogeometric pottery amphora, CC0",
+      "author": "Gary Todd",
+      "year": 2016,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Ancient_Greek_Protogeometric_Pottery_Amphora_%2827856941833%29.jpg"
+    },
+    {
+      "id": "source-wikimedia-naxos-geometric-pottery",
+      "title": "Geometric pottery from Donoussa dated 830–800 BCE, CC BY-SA 3.0",
+      "author": "Zde",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Geometric_pottery,_830-800_BC,_AM_Naxos,_143284.jpg"
+    },
+    {
+      "id": "source-wikimedia-rhea-cronus",
+      "title": "Rhea presenting Cronus the stone wrapped in cloth, public domain",
+      "year": 1878,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Rhea_presenting_Cronus_the_stone_wrapped_in_cloth.jpg"
+    },
+    {
+      "id": "source-wikimedia-three-realms",
+      "title": "Jupiter, Neptune and Pluto dividing the universe, public domain",
+      "publisher": "The Metropolitan Museum of Art / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Jupiter,_Neptune_and_Pluto_dividing_the_universe_MET_DP812462.jpg"
+    },
+    {
+      "id": "source-wikimedia-council-gods-met",
+      "title": "Council of the Gods by Jacopo Zoboli, CC0",
+      "author": "Jacopo Zoboli",
+      "publisher": "The Metropolitan Museum of Art / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Council_of_the_Gods_MET_DP331998.jpg"
+    },
+    {
+      "id": "source-wikimedia-zeus-iris-libation",
+      "title": "Zeus and Iris in a libation scene, photograph released to the public domain",
+      "author": "Tangopaso",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Zeus_et_Iris_dans_une_sc%C3%A8ne_de_libation_(Louvre,_Cp_699).jpg"
+    },
+    {
+      "id": "source-wikimedia-demeter-persephone-batten",
+      "title": "Demeter and Persephone by John Dickson Batten, public domain",
+      "author": "John Dickson Batten",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Demeter_and_Persephone).jpg"
+    },
+    {
+      "id": "source-wikimedia-athena-achilles-illustration",
+      "title": "Athene suppressing the fury of Achilles, public domain",
+      "author": "John Flaxman",
+      "year": 1895,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Athene_suppressing_the_fury_of_Achilles.jpg"
+    },
+    {
+      "id": "source-wikimedia-mycenae-lion-gate-clear",
+      "title": "Lion Gate, Mycenae, CC BY-SA 4.0",
+      "author": "Zde",
+      "year": 2020,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lion_Gate,_Mycenae,_201505.jpg"
+    },
+    {
+      "id": "source-wikimedia-demodocus-flaxman",
+      "title": "Demodocus singing before Odysseus by John Flaxman, public domain",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseyDemodokos.png"
+    },
+    {
+      "id": "source-wikimedia-achilles-thetis-preller",
+      "title": "Achilles and Thetis by Friedrich Preller the Younger, public domain",
+      "author": "Friedrich Preller the Younger",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Preller_Achilles_and_Thetis.jpg"
+    },
+    {
+      "id": "source-wikimedia-heracles-lion-bm",
+      "title": "Herakles and the Nemean lion on an Attic vase, photograph released to the public domain",
+      "author": "Jastrow",
+      "year": 2006,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Herakles_Nemean_lion_BM_B621.jpg"
+    },
+    {
+      "id": "source-wikimedia-argonauts-roberti",
+      "title": "The Argonauts Leaving Colchis by Ercole de’ Roberti, public domain",
+      "author": "Ercole de’ Roberti",
+      "year": 1480,
+      "publisher": "Museo Nacional Thyssen-Bornemisza / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Roberti_-_The_Argonauts_Leaving_Colchis,_ca._1480,_344_(1934.41).jpg"
+    },
+    {
+      "id": "source-wikimedia-oedipus-sphinx-moreau",
+      "title": "Oedipus and the Sphinx by Gustave Moreau, public domain",
+      "author": "Gustave Moreau",
+      "year": 1864,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Oedipus_and_the_Sphinx_1864.jpg"
+    },
+    {
+      "id": "source-wikimedia-achilles-hector-groeninge",
+      "title": "Achilles kills Hector, CC0",
+      "author": "Léonce Legendre",
+      "publisher": "Groeningemuseum / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Achilles_doodt_Hector,_circa_1831_-_circa_1893,_Groeningemuseum,_0041065000.jpg"
+    },
+    {
+      "id": "source-wikimedia-odysseus-return-pinturicchio",
+      "title": "The Return of Odysseus by Pinturicchio, public domain",
+      "author": "Pinturicchio",
+      "year": 1509,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Pinturicchio,_Return_of_Odysseus.jpg"
+    },
+    {
+      "id": "source-unesco-troy",
+      "title": "Archaeological Site of Troy",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/849/"
+    },
+    {
+      "id": "source-british-museum-lost-troy",
+      "title": "The search for the lost city of Troy",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/blog/search-lost-city-troy"
+    },
+    {
+      "id": "source-cambridge-hittite-troy",
+      "title": "Hittite Literary Evidence",
+      "publisher": "The Cambridge Guide to Homer",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-guide-to-homer/hittite-literary-evidence/37462517BA9895BCE28F55C5F7A94924"
+    },
+    {
+      "id": "source-british-museum-alaksandu-wilusa",
+      "title": "Tablet recording the treaty between Muwatalli II and Alaksandu of Wilusa",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1913-1011-22"
+    },
+    {
+      "id": "source-cambridge-iliad-overview",
+      "title": "The Iliad: An Overview",
+      "publisher": "The Cambridge Guide to Homer",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-guide-to-homer/iliad-an-overview/9EE503F97F456C5FA0CB870960B07298"
+    },
+    {
+      "id": "source-cambridge-odyssey-overview",
+      "title": "The Odyssey: An Overview",
+      "publisher": "The Cambridge Guide to Homer",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-guide-to-homer/odyssey-an-overview/87B5831A2781A4BC4F3C65737EAD93F9"
+    },
+    {
+      "id": "source-perseus-odyssey",
+      "title": "Homer, Odyssey",
+      "author": "Homer",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0136"
+    },
+    {
+      "id": "source-beck-odyssey-home-family",
+      "title": "Homer, Odyssey: Heroism, Home, and Family",
+      "author": "Deborah Beck",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/stories-of-similes-in-greek-and-roman-epic/homer-odyssey/05E073DD67F6CF985933EE334EFDBC48"
+    },
+    {
+      "id": "source-cambridge-iliad-history-fiction",
+      "title": "History and Fiction in the Iliad",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/abs/iliad-a-commentary/history-and-fiction-in-the-iliad/69095136EB6ADE71D4F92DE362E54E36"
+    },
+    {
+      "id": "source-wikimedia-troy-vi-walls",
+      "title": "Legendary walls of Troy, CC BY 2.0, original 4288 × 2848",
+      "author": "Jorge Láscar",
+      "year": 2012,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Legendary_walls_of_Troy_(8708672267).jpg"
+    },
+    {
+      "id": "source-wikimedia-troy-wilusa-treaty",
+      "title": "Hittite treaty tablet of Alaksandu and Muwatalli II, CC BY-SA 4.0, original 2992 × 4095",
+      "author": "Dosseman",
+      "year": 2018,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Troy_Museum_Hittite_Treaty_0022.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-title",
+      "title": "Title plate for Flaxman’s Iliad engravings, CC BY 3.0, original 2337 × 1739",
+      "author": "John Flaxman; engraving by Tommaso Piroli; photograph by H.-P. Haack",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(0)_Flaxman_Ilias_Kupferstiche_1795,_Titelblatt,_182_x_251_mm.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-thetis-zeus",
+      "title": "Thetis appeals to Zeus, public domain, original 3110 × 2316",
+      "author": "John Flaxman; engraving by Tommaso Piroli",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(2)_Flaxman_Ilias_1793,_gestochen_1795,_185_x_251_mm.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-embassy",
+      "title": "The embassy to Achilles, public domain, original 800 × 501",
+      "author": "John Flaxman; engraving by Tommaso Piroli",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(14)_Flaxman_Ilias_1795,_Zeichnung_1793,_185_x_296_mm.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-patroclus",
+      "title": "Greeks and Trojans fight over Patroclus, public domain, original 2682 × 1533",
+      "author": "John Flaxman; engraving by Tommaso Piroli",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(22)_Flaxman_Ilias_1795,_Zeichnung_1793,_188_x_344_mm.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-armor",
+      "title": "Thetis brings new armor to Achilles, public domain, original 1973 × 1355",
+      "author": "John Flaxman; engraving by Tommaso Piroli",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(27)_Flaxman_Ilias_1795,_Zeichnung_1793,_189_x_284_mm.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-hector",
+      "title": "Achilles with the body of Hector, public domain, original 1714 × 1271",
+      "author": "John Flaxman; engraving by Tommaso Piroli",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(30)_Flaxman_Ilias_1793,_gestochen_1795,_187_x_256.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-priam",
+      "title": "Priam before Achilles, public domain, original 2481 × 1378",
+      "author": "John Flaxman; engraving by Tommaso Piroli",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(33)_Flaxman_Ilias_1793,_gestochen_1795,_184_x_340_mm.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-iliad-funeral",
+      "title": "The funeral of Hector, public domain, original 2518 × 1377",
+      "author": "John Flaxman; engraving by Tommaso Piroli",
+      "year": 1795,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:(34)_Flaxman_Ilias_1793,_gestochen_1795,_184_x_346_mm.jpg"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-suitors",
+      "title": "The suitors discover Penelope’s ruse, public domain, original 2124 × 1548",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseySuitors.png"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-hermes",
+      "title": "Hermes orders Calypso to release Odysseus, public domain, original 1884 × 1488",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseyHermes.png"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-nausicaa",
+      "title": "Nausicaa and her companions, public domain, original 2322 × 1584",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseyNausikaa.png"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-polyphemus",
+      "title": "Odysseus and Polyphemus, public domain, original 2088 × 1608",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseyPolyphemos.png"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-antiphates",
+      "title": "Antiphates attacks Odysseus’s crew, public domain, original 2148 × 1656",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseyAntiphates.png"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-circe",
+      "title": "Odysseus asks Circe to restore his companions, public domain, original 2244 × 1452",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseyCirce.png"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-sirens",
+      "title": "Odysseus hears the Sirens, public domain, original 2112 × 1404",
+      "author": "John Flaxman",
+      "year": 1810,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:OdysseySirens.png"
+    },
+    {
+      "id": "source-wikimedia-flaxman-odyssey-argus",
+      "title": "Odysseus and his dog Argus, public domain, original 2048 × 1536",
+      "author": "John Flaxman",
+      "year": 1835,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Flaxman_Odyssey_Ulysses_and_his_dog.jpg"
+    },
+    {
+      "id": "source-met-old-assyrian-caravan",
+      "title": "Trade between Assur and Anatolia",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/assy/hd_assy.htm"
+    },
+    {
+      "id": "source-met-assyria",
+      "title": "Assyria, 1365–609 B.C.",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/assy/hd_assy.htm"
+    },
+    {
+      "id": "source-bm-introducing-assyrians",
+      "title": "Introducing the Assyrians",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/blog/introducing-assyrians"
+    },
+    {
+      "id": "source-oracc-middle-assyrian",
+      "title": "The Middle Assyrian Period",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/saao/knpp/essentials/assyria/middleassyrian/index.html"
+    },
+    {
+      "id": "source-oracc-royal-inscriptions",
+      "title": "Assyrian Royal Inscriptions",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/nimrud/ancientkalhu/thewritings/royalinscriptions/index.html"
+    },
+    {
+      "id": "source-oracc-governance",
+      "title": "Governance in the Assyrian Empire",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/saao/knpp/essentials/governance/index.html"
+    },
+    {
+      "id": "source-oracc-kings-road",
+      "title": "The King's Road",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/saao/knpp/essentials/communications/roads/index.html"
+    },
+    {
+      "id": "source-oracc-deportation",
+      "title": "Mass Deportation: The Assyrian Resettlement Policy",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/saao/knpp/essentials/deportation/index.html"
+    },
+    {
+      "id": "source-bm-ashurbanipal-library",
+      "title": "What was Ashurbanipal's Library?",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/research/projects/what-was-ashurbanipals-library"
+    },
+    {
+      "id": "source-oracc-ashurbanipal-library",
+      "title": "What is the Library?",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/asbp/whatisthelibrary/"
+    },
+    {
+      "id": "source-oracc-assembling-library",
+      "title": "Assembling the Library",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/asbp/rlasb/AssemblingtheLibrary/index.html"
+    },
+    {
+      "id": "source-sefaria-isaiah",
+      "title": "Isaiah",
+      "publisher": "Sefaria",
+      "url": "https://www.sefaria.org/Isaiah.10.5"
+    },
+    {
+      "id": "source-sefaria-nahum",
+      "title": "Nahum",
+      "publisher": "Sefaria",
+      "url": "https://www.sefaria.org/Nahum?tab=contents"
+    },
+    {
+      "id": "source-wikimedia-assyrian-trade-tablet",
+      "title": "Cuneiform Tablet from an Assyrian Trading Post, public-domain museum image",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Cuneiform_Tablet_from_an_Assyrian_Trading_Post_LACMA_M.84.31.6_(2_of_2).jpg"
+    },
+    {
+      "id": "source-wikimedia-assyrian-siege",
+      "title": "Assyrian siege relief, public domain",
+      "author": "ChrisO",
+      "year": 2008,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Assyrian_siege.jpg"
+    },
+    {
+      "id": "source-wikimedia-flood-tablet",
+      "title": "British Museum Flood Tablet, CC0",
+      "author": "BabelStone",
+      "year": 2010,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:British_Museum_Flood_Tablet.jpg"
+    },
+    {
+      "id": "source-met-phoenicians",
+      "title": "The Phoenicians (1500–300 B.C.)",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-phoenicians-1500-300-b-c"
+    },
+    {
+      "id": "source-met-phoenician-sailing",
+      "title": "From Assyria to Iberia: Crossing Continents",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/it/perspectives/bajo"
+    },
+    {
+      "id": "source-bm-phoenician",
+      "title": "Phoenician collections",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/collection/term/x14403"
+    },
+    {
+      "id": "source-antiquity-phoenician-diaspora",
+      "title": "The Phoenician diaspora in the westernmost Mediterranean",
+      "publisher": "Antiquity",
+      "url": "https://www.cambridge.org/core/journals/antiquity/article/phoenician-diaspora-in-the-westernmost-mediterranean-recent-discoveries/B361A50780BF2606D085C3601A2C2680"
+    },
+    {
+      "id": "source-met-alphabet",
+      "title": "The Phoenician Alphabet and its Legacy",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/phoe/hd_phoe.htm"
+    },
+    {
+      "id": "source-wikimedia-phoenician-bronze-bowl",
+      "title": "Bronze bowl MET DP20119, CC0",
+      "publisher": "The Metropolitan Museum of Art / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Bronze_bowl_MET_DP20119.jpg"
+    },
+    {
+      "id": "source-wikimedia-phoenician-tribute-gate",
+      "title": "Fragments of Bands from a Gate, free-use museum image",
+      "publisher": "Walters Art Museum / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Assyrian_-_Fragments_of_Bands_from_a_Gate_-_Walters_542335_-_View_A.jpg"
+    },
+    {
+      "id": "source-wikimedia-carthage-punic-ports",
+      "title": "Aerial view of the Punic ports of Carthage, CC BY-SA 3.0",
+      "author": "Citizen59",
+      "year": 2007,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:PortsPuniquesCarthage.JPG"
+    },
+    {
+      "id": "source-genesis-jacob",
+      "title": "Genesis 32",
+      "publisher": "Sefaria",
+      "url": "https://www.sefaria.org/Genesis.32"
+    },
+    {
+      "id": "source-met-ancient-israel",
+      "title": "The Kingdoms of Israel and Judah",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/isra/hd_isra.htm"
+    },
+    {
+      "id": "source-bm-black-obelisk",
+      "title": "The Black Obelisk of Shalmaneser III",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1848-1104-1"
+    },
+    {
+      "id": "source-oracc-israel",
+      "title": "Israel and the Assyrian Empire",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/saao/knpp/essentials/countries/israel/index.html"
+    },
+    {
+      "id": "source-bm-lachish",
+      "title": "The siege of Lachish",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/collection/galleries/assyria-nineveh"
+    },
+    {
+      "id": "source-bm-babylonian-chronicle",
+      "title": "Babylonian Chronicle for 605–595 BC",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51"
+    },
+    {
+      "id": "source-sefaria-kings",
+      "title": "II Kings",
+      "publisher": "Sefaria",
+      "url": "https://www.sefaria.org/II_Kings?tab=contents"
+    },
+    {
+      "id": "source-met-cyrus-return",
+      "title": "The Achaemenid Persian Empire",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/acha/hd_acha.htm"
+    },
+    {
+      "id": "source-wikimedia-lachish-captives",
+      "title": "Judean captives in the Lachish relief, public domain",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lachishsiege1.PNG"
+    },
+    {
+      "id": "source-wikimedia-jacob-wrestling",
+      "title": "Jacob wrestling the angel, CC0",
+      "publisher": "The Metropolitan Museum of Art / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Jacob_wrestling_the_angel_Met_DP885515.jpg"
+    },
+    {
+      "id": "source-wikimedia-israel-judah-map",
+      "title": "Approximate map of the kingdoms of Israel and Judah, CC BY-SA 3.0",
+      "author": "FinnWikiNo and Richardprins",
+      "year": 2010,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Kingdoms_of_Israel_and_Judah_map_830.svg"
+    },
+    {
+      "id": "source-wikimedia-babylonian-chronicle",
+      "title": "Babylonian Chronicle ABC 5, CC0",
+      "author": "Jona Lendering",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:ABC_05_Early_Years_of_Nebuchadnezzar_chronicle.jpg"
+    },
+    {
+      "id": "source-wikimedia-jehoiachin-ration-tablet",
+      "title": "Jehoiachin's Rations Tablet, CC BY-SA 4.0",
+      "author": "Scallaham",
+      "year": 2011,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Jehoiachin_Ration_Tablet.JPG"
+    },
+    {
+      "id": "source-oxford-aramaeans",
+      "title": "The Aramaeans of Syria: Some Considerations on Their Origin and Material Culture",
+      "publisher": "Oxford Reference",
+      "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554094159"
+    },
+    {
+      "id": "source-brill-aramaeans",
+      "title": "The Aramaeans in Ancient Syria",
+      "publisher": "Brill",
+      "url": "https://brill.com/edcollbook/title/18381"
+    },
+    {
+      "id": "source-oracc-aramaic-hebrew",
+      "title": "Aramaic and Hebrew",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/nimrud/ancientkalhu/thewritings/aramaichebrew/index.html"
+    },
+    {
+      "id": "source-oracc-palace-scribe",
+      "title": "The Palace Scribe",
+      "publisher": "ORACC, University of Pennsylvania",
+      "url": "https://oracc.museum.upenn.edu/saao/aebp/essentials/governors/thepalacescribe/index.html"
+    },
+    {
+      "id": "source-iranica-aramaic",
+      "title": "Aramaic",
+      "publisher": "Encyclopaedia Iranica",
+      "url": "https://www.iranicaonline.org/articles/aramaic/i-general/"
+    },
+    {
+      "id": "source-wikimedia-bar-rakib",
+      "title": "Stele of Bar-Rakib and his scribe, CC0",
+      "author": "Gary Todd",
+      "year": 2016,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Basalt_Stele_Bas-Relief_of_King_Bar-Rakib_and_His_Scribe,_Sam%27al,_Anatolia,_c._730_BC.jpg"
+    },
+    {
+      "id": "source-wikimedia-assyrian-scribes",
+      "title": "Assyrian scribes, public-domain relief reproduction",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Assyrian_scribes.jpg"
+    },
+    {
+      "id": "source-met-babylon",
+      "title": "Babylon",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/de/essays/babylon"
+    },
+    {
+      "id": "source-met-esarhaddon-prism",
+      "title": "Prism of Esarhaddon",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/321907"
+    },
+    {
+      "id": "source-met-babylon-lion",
+      "title": "Panel with striding lion from Babylon",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/322585"
+    },
+    {
+      "id": "source-met-nebuchadnezzar-cylinder",
+      "title": "Cylinder of Nebuchadnezzar II",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/321614"
+    },
+    {
+      "id": "source-bm-cyrus-cylinder",
+      "title": "The Cyrus Cylinder",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941"
+    },
+    {
+      "id": "source-livius-cyrus-cylinder",
+      "title": "Cyrus Cylinder, CC0 image",
+      "author": "Marco Prins",
+      "publisher": "Livius.org",
+      "url": "https://www.livius.org/pictures/a/tablets/cyrus-cylinder/"
+    },
+    {
+      "id": "source-met-sardis",
+      "title": "Sardis",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/fr/essays/sardis"
+    },
+    {
+      "id": "source-met-lydia-phrygia",
+      "title": "Lydia and Phrygia",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/ko/essays/lydia-and-phrygia"
+    },
+    {
+      "id": "source-met-coinage-greece",
+      "title": "Silver in Ancient Egypt",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/silver-in-ancient-egypt"
+    },
+    {
+      "id": "source-sardis-introduction",
+      "title": "Sardis: An Introduction",
+      "publisher": "Sardis Expedition, Harvard University",
+      "url": "https://sardisexpedition.org/en/essays/latw-greenewalt-introduction"
+    },
+    {
+      "id": "source-sardis-coins",
+      "title": "Coins of Sardis",
+      "publisher": "Sardis Expedition, Harvard University",
+      "url": "https://sardisexpedition.org/en/essays/latw-kroll-coins-of-sardis"
+    },
+    {
+      "id": "source-sardis-refining",
+      "title": "Gold and Silver Refining at Sardis",
+      "publisher": "Sardis Expedition, Harvard University",
+      "url": "https://sardisexpedition.org/en/essays/latw-greenewalt-gold-silver-refining"
+    },
+    {
+      "id": "source-iranica-cyrus",
+      "title": "Cyrus II",
+      "publisher": "Encyclopaedia Iranica",
+      "url": "https://www.iranicaonline.org/articles/cyrus-iiI/"
+    },
+    {
+      "id": "source-wikimedia-electrum-trite",
+      "title": "Electrum trite of Lydia, CC BY-SA 3.0",
+      "author": "Classical Numismatic Group",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Electrum_trite,_Alyattes,_Lydia,_620-563_BC.jpg"
+    },
+    {
+      "id": "source-met-croesus-stater",
+      "title": "Gold stater of Croesus",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/252456"
+    },
+    {
+      "id": "source-wikimedia-lydian-electrum-lions",
+      "title": "Lydian electrum lion coins, CC BY-SA 2.0",
+      "author": "brewbooks",
+      "year": 2014,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lydian_electrum_Lion_coins_-_Flickr_-_brewbooks.jpg"
+    },
+    {
+      "id": "source-erb-satullo-iron-adoption",
+      "title": "The Innovation and Adoption of Iron in the Ancient Near East",
+      "author": "Nathaniel L. Erb-Satullo",
+      "year": 2019,
+      "publisher": "Journal of Archaeological Research",
+      "url": "https://link.springer.com/article/10.1007/s10814-019-09129-6"
+    },
+    {
+      "id": "source-matsui-tutankhamun-dagger",
+      "title": "The manufacture and origin of the Tutankhamen meteoritic iron dagger",
+      "author": "T. Matsui et al.",
+      "year": 2022,
+      "publisher": "Meteoritics & Planetary Science",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/maps.13787"
+    },
+    {
+      "id": "source-npj-dor-iron-blooms",
+      "title": "Earliest iron blooms discovered off Carmel coast",
+      "year": 2026,
+      "publisher": "npj Heritage Science",
+      "url": "https://www.nature.com/articles/s40494-026-02409-7"
+    },
+    {
+      "id": "source-maxwell-hyslop-assyrian-iron",
+      "title": "Assyrian Sources of Iron",
+      "author": "K. R. Maxwell-Hyslop and M. E. L. Mallowan",
+      "publisher": "Iraq",
+      "url": "https://www.cambridge.org/core/journals/iraq/article/abs/assyrian-sources-of-iron/47BA9E62EA6C6E0982BBE5E7A34CB9BA"
+    },
+    {
+      "id": "source-cambridge-south-asia-archaeology",
+      "title": "The Archaeology of South Asia: Introduction and Definitions",
+      "year": 2021,
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/archaeology-of-south-asia/introduction-and-definitions/F261F83202B05ADE3F9B5A4BA02C9CA2"
+    },
+    {
+      "id": "source-qian-huang-cast-iron-china",
+      "title": "The invention of cast iron in ancient China",
+      "author": "Qian Wei and Huang Xing",
+      "year": 2021,
+      "publisher": "Journal of Materials Research and Technology",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2667136021000017"
+    },
+    {
+      "id": "source-intarch-iron-china",
+      "title": "Early Iron Technology in China",
+      "year": 2025,
+      "publisher": "Internet Archaeology",
+      "url": "https://intarch.ac.uk/journal/issue69/14/full-text.html"
+    },
+    {
+      "id": "source-wikimedia-tutankhamun-dagger",
+      "title": "Tutankhamun's meteoritic iron dagger, CC BY 3.0",
+      "author": "Olaf Tausch",
+      "year": 2019,
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Kairo_Museum_Eisendolch_Tutanchamun_01.jpg"
+    },
+    {
+      "id": "source-kbo-1-14",
+      "title": "Keilschrifttexte aus Boghazkoi, Heft 1, Nr. 14",
+      "author": "H. H. Figulla and E. F. Weidner",
+      "year": 1916,
+      "publisher": "Deutsche Orient-Gesellschaft",
+      "url": "https://etana.org/sites/default/files/coretexts/14865.pdf"
+    },
+    {
+      "id": "source-cdli-kbo-1-14",
+      "title": "KBo 1.14 / VAT 7430 (P282480)",
+      "publisher": "Cuneiform Digital Library Initiative",
+      "url": "https://cdli.earth/artifacts/282480"
+    },
+    {
+      "id": "source-generated-iron-teaching",
+      "title": "铁器早期材料与块炼炉教学插图",
+      "author": "OpenAI image generation, edited and reviewed for Civilization Wander",
+      "year": 2026,
+      "publisher": "Civilization Wander"
+    }
+  ]
+}

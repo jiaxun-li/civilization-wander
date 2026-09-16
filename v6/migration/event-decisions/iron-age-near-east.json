@@ -1,0 +1,243 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/iron-age-near-east.ts",
+  "decisions": [
+    {
+      "eventId": "event-meteoric-iron-prestige-use",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-meteoric-iron-prestige-use"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-old-assyrian-trade-networks",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-old-assyrian-trade-networks"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-ashurbanipal-collections-assembled",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-ashurbanipal-collections-assembled"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-jacob-renamed-israel-tradition",
+      "oldKind": "traditionalNarrative",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "convertedToEntity",
+        "entityId": "ancient-israelite-tradition"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "保留宗教传统身份；雅各故事不构成可定年的宗教地域阶段，阶段已撤下。"
+      ]
+    },
+    {
+      "eventId": "event-israel-and-judah-develop-separate-kingships",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-israel-and-judah-develop-separate-kingships"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-judean-communities-continue-after-exile",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-judean-communities-continue-after-exile"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "V5 把已于前586年终结的 kingdom-of-judah 用作前586—前500年参与者；V6 删除该 polity participant，仅保留延续中的文化传统 Phase。"
+      ]
+    },
+    {
+      "eventId": "event-babylon-destroyed-and-rebuilt-under-assyria",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-babylon-destroyed-and-rebuilt-under-assyria"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-nebuchadnezzar-rebuilds-babylon",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-nebuchadnezzar-rebuilds-babylon"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-neo-assyrian-expansion",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-neo-assyrian-expansion"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-nineveh-falls",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：与政权起止或现有法典对象重复，移除独立事件，事实及来源保留于相关对象说明。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-phoenician-westward-connections",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-phoenician-westward-connections"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-israel-falls-to-assyria",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-israel-falls-to-assyria"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-lachish-captured",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-lachish-captured"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-aramaic-enters-imperial-administration",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-aramaic-enters-imperial-administration"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-neo-babylonian-western-campaigns",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-neo-babylonian-western-campaigns"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-persia-conquers-babylon",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：与政权起止或现有法典对象重复，移除独立事件，事实及来源保留于相关对象说明。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-lydian-coinage-emerges",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-lydian-coinage-emerges"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-persia-conquers-sardis",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：与政权起止或现有法典对象重复，移除独立事件，事实及来源保留于相关对象说明。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-extractive-iron-metallurgy-develops",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-extractive-iron-metallurgy-develops"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-iron-use-expands-after-palaces",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-iron-use-expands-after-palaces"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-cast-iron-develops-in-china",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-cast-iron-develops-in-china"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

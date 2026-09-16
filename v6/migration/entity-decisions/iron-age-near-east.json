@@ -1,0 +1,248 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/iron-age-near-east.ts",
+  "decisions": [
+    {
+      "entityId": "assur-community",
+      "oldType": "peopleGroup",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "community"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "community",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "assur-old-assyrian-trade-community",
+        "assur-middle-assyrian-urban-tradition"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "assur-community"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "babylon-city",
+      "oldType": "SettlementSite",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "settlement",
+        "archaeologicalSite"
+      ],
+      "proposedConceptLayers": [
+        "placeAndSite"
+      ],
+      "acceptedEntityType": "settlement",
+      "acceptedConceptLayerId": "placeAndSite",
+      "acceptedPhaseIds": [
+        "babylon-city-late-iron-age-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "babylon-city"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "kingdom-of-judah",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "judah-kingdom-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "kingdom-of-judah"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "ancient-israelite-tradition",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "religiousTradition",
+      "acceptedConceptLayerId": "religionAndThought",
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "ancient-israelite-tradition"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "neo-assyrian-empire",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "neo-assyrian-expansion",
+        "neo-assyrian-syrian-provinces",
+        "neo-assyrian-imperial-administration",
+        "neo-assyrian-western-contraction",
+        "neo-assyrian-collapse"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "neo-assyrian-empire"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "phoenician-tradition",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "tradeNetwork",
+      "acceptedConceptLayerId": "technologyAndExchange",
+      "acceptedPhaseIds": [
+        "phoenician-maritime-connections"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "phoenician-tradition"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "kingdom-of-israel",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "israel-kingdom-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "kingdom-of-israel"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "aramaic-language",
+      "oldType": "languageSystem",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "language"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge"
+      ],
+      "acceptedEntityType": "language",
+      "acceptedConceptLayerId": "languageAndKnowledge",
+      "acceptedPhaseIds": [
+        "aramaic-northern-levant-use",
+        "aramaic-southern-levant-use",
+        "aramaic-in-assyrian-administration",
+        "aramaic-later-imperial-administration"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "aramaic-language"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "neo-babylonian-empire",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "neo-babylonian-rise-against-assyria",
+        "neo-babylonian-capital-and-rule"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "neo-babylonian-empire"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "lydian-kingdom",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "lydian-kingdom-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "lydian-kingdom"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "iron",
+      "oldType": "Commodity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "technology"
+      ],
+      "proposedConceptLayers": [
+        "technologyAndExchange"
+      ],
+      "acceptedEntityType": "technology",
+      "acceptedConceptLayerId": "technologyAndExchange",
+      "acceptedPhaseIds": [
+        "iron-post-palatial-diffusion",
+        "iron-chinese-cast-iron"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "iron"
+      },
+      "status": "accepted"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/iron-age-near-east.ts",
+  "decisions": [
+    {
+      "structuralEdgeId": "edge-assyria-conquers-israel",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-assyria-conquers-israel"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-assyria-subordinates-phoenician-cities",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "candidate",
+        "candidateId": "candidate-assyria-phoenician-specific-polities"
+      },
+      "participantRolesResolved": false,
+      "phaseBindingsResolved": false,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-phoenician-script-influences-aramaic",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "candidate",
+        "candidateId": "candidate-phoenician-aramaic-script-influence"
+      },
+      "participantRolesResolved": false,
+      "phaseBindingsResolved": false,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-assyria-uses-aramaic",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-assyria-uses-aramaic"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-neo-babylon-succeeds-assyria",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-neo-babylon-succeeds-assyria"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

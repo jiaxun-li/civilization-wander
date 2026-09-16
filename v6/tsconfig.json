@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "schema/**/*.ts",
+    "catalogs/**/*.ts",
+    "data/**/*.ts",
+    "migration/**/*.ts",
+    "validation/**/*.ts",
+    "tests/**/*.ts",
+    "knowledge-core.ts",
+    "module-registry.ts"
+  ]
+}

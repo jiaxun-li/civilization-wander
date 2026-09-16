@@ -1,0 +1,3019 @@
+{
+  "reviewDate": "2026-09-16",
+  "scope": "Political entity and urban community descriptions and reviewed spatial phases. V5 unchanged.",
+  "limitations": [
+    "Regions express selected regional presence, not full cartographic boundaries.",
+    "Urban community dates scope the selected urban networks, not the start or end of a civilization.",
+    "Old Babylonian continuous core does not reconstruct successive conquests; a linked Event supplies the dated expansion in details.",
+    "Egypt chronology uses UCL consistently; other chronologies remain in source evidence."
+  ],
+  "previousRecords": [
+    {
+      "entity": {
+        "id": "akkadian-empire",
+        "type": "polity",
+        "name": "阿卡德王朝",
+        "alternativeNames": [
+          "Akkadian Empire",
+          "Kingdom of Akkad"
+        ],
+        "canonicalSummary": "约公元前2350—前2150年，由萨尔贡及其继承者建立和维持，连接南部美索不达米亚城邦与更广区域的早期王朝政治秩序。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "akkadian-imperial-order",
+          "akkadian-fragmentation"
+        ],
+        "tags": [
+          "西亚",
+          "政治实体",
+          "阿卡德"
+        ],
+        "sourceIds": [
+          "source-met-akkadian-period",
+          "source-westenholz-kingdom-akkad"
+        ]
+      },
+      "phases": [
+        {
+          "id": "akkadian-imperial-order",
+          "entityId": "akkadian-empire",
+          "title": "以中部为核心并控制南部城邦",
+          "timeSpan": {
+            "start": -2350,
+            "end": -2200,
+            "label": "约公元前2350—前2200年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-akkadian-period",
+                "source-westenholz-kingdom-akkad"
+              ]
+            },
+            {
+              "regionId": "southern-mesopotamia",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-akkadian-period",
+                "source-westenholz-kingdom-akkad"
+              ]
+            },
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "influence",
+              "approximate": true,
+              "sourceIds": [
+                "source-westenholz-kingdom-akkad",
+                "source-frayne-sargonic-inscriptions"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-akkadian-period",
+            "source-westenholz-kingdom-akkad",
+            "source-frayne-sargonic-inscriptions"
+          ]
+        },
+        {
+          "id": "akkadian-fragmentation",
+          "entityId": "akkadian-empire",
+          "title": "收缩至阿卡德城周边",
+          "timeSpan": {
+            "start": -2200,
+            "end": -2150,
+            "label": "约公元前2200—前2150年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-akkadian-period"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-akkadian-ur-iii-transition"
+          ],
+          "sourceIds": [
+            "source-met-akkadian-period"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "ur-iii-kingdom",
+        "type": "polity",
+        "name": "乌尔第三王朝",
+        "alternativeNames": [
+          "Ur III Kingdom",
+          "Third Dynasty of Ur"
+        ],
+        "canonicalSummary": "约公元前2112—前2004年，以乌尔为王权中心的政治实体。阿卡德王朝瓦解后，乌尔纳姆及其继承者通过营建、书写和资源征集重建南部城邦间的政治秩序。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "ur-iii-kingdom-order",
+          "ur-iii-fragmentation"
+        ],
+        "tags": [
+          "西亚",
+          "政治实体",
+          "乌尔第三王朝"
+        ],
+        "sourceIds": [
+          "source-garfinkle-kingdom-ur",
+          "source-oracc-ur-namma-inscriptions",
+          "source-steinkeller-ur-iii-core-periphery"
+        ]
+      },
+      "phases": [
+        {
+          "id": "ur-iii-kingdom-order",
+          "entityId": "ur-iii-kingdom",
+          "title": "覆盖南部并影响上美索不达米亚",
+          "timeSpan": {
+            "start": -2112,
+            "end": -2004,
+            "label": "约公元前2112—前2004年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "southern-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-garfinkle-kingdom-ur"
+              ]
+            },
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "influence",
+              "approximate": true,
+              "sourceIds": [
+                "source-steinkeller-ur-iii-core-periphery"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-akkadian-ur-iii-transition"
+          ],
+          "sourceIds": [
+            "source-garfinkle-kingdom-ur",
+            "source-steinkeller-ur-iii-core-periphery"
+          ]
+        },
+        {
+          "id": "ur-iii-fragmentation",
+          "entityId": "ur-iii-kingdom",
+          "title": "范围收缩至南部美索不达米亚",
+          "timeSpan": {
+            "start": -2028,
+            "end": -2004,
+            "label": "约公元前2028—前2004年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "southern-mesopotamia",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-garfinkle-kingdom-ur",
+                "source-cambridge-ur-iii-old-babylonian-transition"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-garfinkle-kingdom-ur",
+            "source-cambridge-ur-iii-old-babylonian-transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "old-babylonian-kingdom",
+        "type": "polity",
+        "name": "古巴比伦王国",
+        "alternativeNames": [
+          "Old Babylonian Kingdom",
+          "First Dynasty of Babylon"
+        ],
+        "canonicalSummary": "约公元前1894—前1595年，以巴比伦城为中心、在汉谟拉比晚年迅速扩张，又在其继承者时期逐步收缩的第一王朝政治实体。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "old-babylonian-city-kingdom-emergence",
+          "old-babylonian-hammurabi-expansion",
+          "old-babylonian-contraction"
+        ],
+        "tags": [
+          "西亚",
+          "政治实体",
+          "巴比伦"
+        ],
+        "sourceIds": [
+          "source-met-isin-larsa-old-babylonian",
+          "source-podany-hammurabi-babylon"
+        ]
+      },
+      "phases": [
+        {
+          "id": "old-babylonian-city-kingdom-emergence",
+          "entityId": "old-babylonian-kingdom",
+          "title": "中部美索不达米亚核心阶段",
+          "timeSpan": {
+            "start": -1894,
+            "end": -1765,
+            "label": "约公元前1894—前1765年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-isin-larsa-old-babylonian",
+                "source-podany-hammurabi-babylon"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-isin-larsa-old-babylonian",
+            "source-podany-hammurabi-babylon"
+          ]
+        },
+        {
+          "id": "old-babylonian-hammurabi-expansion",
+          "entityId": "old-babylonian-kingdom",
+          "title": "控制范围扩展至幼发拉底河中游",
+          "timeSpan": {
+            "start": -1764,
+            "end": -1750,
+            "label": "约公元前1764—前1750年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-podany-hammurabi-babylon"
+              ]
+            },
+            {
+              "regionId": "southern-mesopotamia",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-cdli-hammurabi-year-names",
+                "source-podany-hammurabi-babylon"
+              ]
+            },
+            {
+              "regionId": "middle-euphrates",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-cdli-hammurabi-year-names",
+                "source-podany-hammurabi-babylon"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-cdli-hammurabi-year-names",
+            "source-podany-hammurabi-babylon"
+          ]
+        },
+        {
+          "id": "old-babylonian-contraction",
+          "entityId": "old-babylonian-kingdom",
+          "title": "范围收缩至中部美索不达米亚",
+          "timeSpan": {
+            "start": -1749,
+            "end": -1595,
+            "label": "约公元前1749—前1595年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-cdli-samsuiluna-year-names",
+                "source-met-isin-larsa-old-babylonian"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-cdli-samsuiluna-year-names",
+            "source-met-isin-larsa-old-babylonian"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "egypt-old-kingdom",
+        "type": "polity",
+        "name": "古埃及古王国",
+        "alternativeNames": [
+          "Old Kingdom of Egypt"
+        ],
+        "canonicalSummary": "约公元前2686—前2181年，以统一王权、大型王室陵墓和不断扩展的行政网络为重要特征的古埃及政治实体。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "egypt-old-kingdom-regional-presence"
+        ],
+        "tags": [
+          "非洲",
+          "古埃及",
+          "政治实体"
+        ],
+        "sourceIds": [
+          "source-met-old-kingdom",
+          "source-muller-old-kingdom-end"
+        ]
+      },
+      "phases": [
+        {
+          "id": "egypt-old-kingdom-regional-presence",
+          "entityId": "egypt-old-kingdom",
+          "title": "尼罗河谷与三角洲分布阶段",
+          "timeSpan": {
+            "start": -2700,
+            "end": -2181,
+            "label": "约公元前2700—前2181年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-old-kingdom",
+                "source-muller-old-kingdom-end"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-old-kingdom",
+                "source-muller-old-kingdom-end"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-egypt-old-middle-kingdom-transition"
+          ],
+          "sourceIds": [
+            "source-met-old-kingdom",
+            "source-muller-old-kingdom-end"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "egypt-middle-kingdom",
+        "type": "polity",
+        "name": "古埃及中王国",
+        "alternativeNames": [
+          "Middle Kingdom of Egypt"
+        ],
+        "canonicalSummary": "约公元前2055—前1650年，由底比斯王室重新统一埃及后形成，并以文学、王权重组和后期政治分裂留下鲜明证据的政治实体。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "egypt-middle-kingdom-reunification",
+          "egypt-middle-kingdom-consolidated-order",
+          "egypt-middle-kingdom-fragmentation"
+        ],
+        "tags": [
+          "非洲",
+          "古埃及",
+          "政治实体"
+        ],
+        "sourceIds": [
+          "source-ucl-middle-kingdom",
+          "source-met-middle-kingdom",
+          "source-uee-second-intermediate"
+        ]
+      },
+      "phases": [
+        {
+          "id": "egypt-middle-kingdom-reunification",
+          "entityId": "egypt-middle-kingdom",
+          "title": "尼罗河谷与三角洲核心阶段",
+          "timeSpan": {
+            "start": -2055,
+            "end": -2040,
+            "label": "约公元前2055—前2040年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-mentuhotep-ii",
+                "source-ucl-middle-kingdom"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-mentuhotep-ii"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-egypt-old-middle-kingdom-transition"
+          ],
+          "sourceIds": [
+            "source-ucl-mentuhotep-ii",
+            "source-ucl-middle-kingdom"
+          ]
+        },
+        {
+          "id": "egypt-middle-kingdom-consolidated-order",
+          "entityId": "egypt-middle-kingdom",
+          "title": "影响扩展至努比亚阶段",
+          "timeSpan": {
+            "start": -2040,
+            "end": -1700,
+            "label": "约公元前2040—前1700年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-middle-kingdom",
+                "source-met-middle-kingdom"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-middle-kingdom"
+              ]
+            },
+            {
+              "regionId": "nubia",
+              "role": "influence",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-nubia-middle-kingdom",
+                "source-ucl-buhen-middle-kingdom"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-ucl-middle-kingdom",
+            "source-met-middle-kingdom",
+            "source-ucl-nubia-middle-kingdom"
+          ]
+        },
+        {
+          "id": "egypt-middle-kingdom-fragmentation",
+          "entityId": "egypt-middle-kingdom",
+          "title": "范围收缩至尼罗河谷与三角洲",
+          "timeSpan": {
+            "start": -1700,
+            "end": -1650,
+            "label": "约公元前1700—前1650年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-uee-second-intermediate"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-second-intermediate",
+                "source-uee-second-intermediate"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-egypt-middle-new-kingdom-transition"
+          ],
+          "sourceIds": [
+            "source-met-middle-kingdom",
+            "source-ucl-second-intermediate",
+            "source-uee-second-intermediate"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "egypt-new-kingdom",
+        "type": "polity",
+        "name": "古埃及新王国",
+        "alternativeNames": [
+          "New Kingdom of Egypt"
+        ],
+        "canonicalSummary": "约公元前1550—前1069年，从重新统一走向跨区域扩张，并经历阿玛尔纳改革、拉美西斯时代和晚期收缩的古埃及政治实体。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "egypt-new-kingdom-reunification",
+          "egypt-new-kingdom-imperial-court-order",
+          "egypt-new-kingdom-fragmentation"
+        ],
+        "tags": [
+          "非洲",
+          "古埃及",
+          "政治实体"
+        ],
+        "sourceIds": [
+          "source-met-new-kingdom",
+          "source-hayes-scepter-ii"
+        ]
+      },
+      "phases": [
+        {
+          "id": "egypt-new-kingdom-reunification",
+          "entityId": "egypt-new-kingdom",
+          "title": "尼罗河谷与三角洲核心阶段",
+          "timeSpan": {
+            "start": -1555,
+            "end": -1450,
+            "label": "约公元前1555—前1450年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-ahmose",
+                "source-met-new-kingdom"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-ahmose"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-egypt-middle-new-kingdom-transition"
+          ],
+          "sourceIds": [
+            "source-ucl-ahmose",
+            "source-met-new-kingdom"
+          ]
+        },
+        {
+          "id": "egypt-new-kingdom-imperial-court-order",
+          "entityId": "egypt-new-kingdom",
+          "title": "扩展至努比亚并影响南黎凡特",
+          "timeSpan": {
+            "start": -1450,
+            "end": -1186,
+            "label": "约公元前1450—前1186年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-new-kingdom",
+                "source-hayes-scepter-ii"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-new-kingdom"
+              ]
+            },
+            {
+              "regionId": "nubia",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-nubia-new-kingdom"
+              ]
+            },
+            {
+              "regionId": "southern-levant",
+              "role": "influence",
+              "approximate": true,
+              "sourceIds": [
+                "source-hayes-scepter-ii"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-new-kingdom",
+            "source-hayes-scepter-ii",
+            "source-ucl-nubia-new-kingdom"
+          ]
+        },
+        {
+          "id": "egypt-new-kingdom-fragmentation",
+          "entityId": "egypt-new-kingdom",
+          "title": "范围收缩至尼罗河谷与三角洲",
+          "timeSpan": {
+            "start": -1186,
+            "end": -1069,
+            "label": "约公元前1186—前1069年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-uee-early-mid-20th-dynasty",
+                "source-met-third-intermediate"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-third-intermediate"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-turin-strike-papyrus",
+            "source-uee-early-mid-20th-dynasty",
+            "source-met-third-intermediate"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "indus-civilization",
+        "type": "culturalTradition",
+        "name": "印度河文明",
+        "alternativeNames": [
+          "Indus Civilization",
+          "Harappan Civilization"
+        ],
+        "canonicalSummary": "约公元前3300—前1300年分布于印度河流域及周边的文化传统，以城市网络、标准化器物、印章和远距离交换留下考古证据。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "indus-civilization-core-presence",
+          "indus-regional-transformation"
+        ],
+        "tags": [
+          "南亚",
+          "文化传统",
+          "早期城市"
+        ],
+        "sourceIds": [
+          "source-wright-ancient-indus",
+          "source-kenoyer-indus-civilisation"
+        ]
+      },
+      "phases": [
+        {
+          "id": "indus-civilization-core-presence",
+          "entityId": "indus-civilization",
+          "title": "印度河流域核心阶段",
+          "timeSpan": {
+            "start": -3300,
+            "end": -1900,
+            "label": "约公元前3300—前1900年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "indus-basin",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-wright-ancient-indus",
+                "source-kenoyer-indus-civilisation"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-mohenjo-daro-indus-civilization"
+          ],
+          "sourceIds": [
+            "source-wright-ancient-indus",
+            "source-kenoyer-indus-civilisation",
+            "source-possehl-indus-mesopotamia"
+          ]
+        },
+        {
+          "id": "indus-regional-transformation",
+          "entityId": "indus-civilization",
+          "title": "分布扩展至南亚西北部",
+          "timeSpan": {
+            "start": -2000,
+            "end": -1300,
+            "label": "约公元前2000—前1300年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "indus-basin",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-wright-ancient-indus",
+                "source-giosan-harappan-transformation"
+              ]
+            },
+            {
+              "regionId": "south-asia-northwest",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-kenoyer-indus-civilisation",
+                "source-giosan-harappan-transformation"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-wright-ancient-indus",
+            "source-kenoyer-indus-civilisation",
+            "source-giosan-harappan-transformation"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "western-zhou",
+        "type": "polity",
+        "name": "西周",
+        "alternativeNames": [
+          "Western Zhou"
+        ],
+        "canonicalSummary": "约公元前1046—前771年，周王室以关中宗周和洛阳附近成周为重要中心，通过亲族与盟友、册命、军事义务和祖先祭祀连接多个区域政治中心。公元前771年王都失守，此后王室东迁。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "western-zhou-regional-rule",
+          "western-zhou-contraction-and-fall"
+        ],
+        "tags": [
+          "古中国",
+          "政治实体",
+          "青铜时代"
+        ],
+        "sourceIds": [
+          "source-national-museum-li-gui",
+          "source-western-zhou-domain",
+          "source-cook-western-zhou-rites",
+          "source-li-feng-western-zhou-fall"
+        ]
+      },
+      "phases": [
+        {
+          "id": "western-zhou-regional-rule",
+          "entityId": "western-zhou",
+          "title": "控制范围包括黄河中游与华北平原",
+          "timeSpan": {
+            "start": -1046,
+            "end": -850,
+            "label": "约公元前1046—前850年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "middle-yellow-river",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-national-museum-li-gui",
+                "source-national-museum-da-yu-ding"
+              ]
+            },
+            {
+              "regionId": "north-china-plain",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-western-zhou-domain"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-national-museum-li-gui",
+            "source-national-museum-da-yu-ding",
+            "source-national-museum-ceming",
+            "source-western-zhou-domain",
+            "source-cook-western-zhou-rites",
+            "source-li-feng-early-china"
+          ]
+        },
+        {
+          "id": "western-zhou-contraction-and-fall",
+          "entityId": "western-zhou",
+          "title": "范围收缩至黄河中游",
+          "timeSpan": {
+            "start": -850,
+            "end": -771,
+            "label": "约公元前850—前771年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "middle-yellow-river",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-li-feng-western-zhou-fall"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-li-feng-western-zhou-fall",
+            "source-li-feng-early-china"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "shang-civilization",
+        "type": "polity",
+        "name": "商王朝",
+        "alternativeNames": [
+          "Shang dynasty",
+          "商"
+        ],
+        "canonicalSummary": "约公元前1600—前1046年，以城市、青铜礼器、甲骨文字、祖先祭祀和跨区域联系留下丰富材料的王朝政治实体；政治控制范围和方式随时期与地点变化。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "shang-regional-rule"
+        ],
+        "tags": [
+          "古中国",
+          "政治实体",
+          "青铜时代"
+        ],
+        "sourceIds": [
+          "source-bagley-shang-archaeology",
+          "source-keightley-ancestral-landscape",
+          "source-unesco-yinxu"
+        ]
+      },
+      "phases": [
+        {
+          "id": "shang-regional-rule",
+          "entityId": "shang-civilization",
+          "title": "黄河中游与华北平原统治范围",
+          "timeSpan": {
+            "start": -1600,
+            "end": -1046,
+            "label": "约公元前1600—前1046年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "middle-yellow-river",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-an-zhengzhou-shang-city",
+                "source-bagley-shang-archaeology"
+              ]
+            },
+            {
+              "regionId": "north-china-plain",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-steinke-erligang",
+                "source-unesco-yinxu"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-erlitou-shang-transition"
+          ],
+          "sourceIds": [
+            "source-an-zhengzhou-shang-city",
+            "source-steinke-erligang",
+            "source-bagley-shang-archaeology",
+            "source-keightley-ancestral-landscape",
+            "source-unesco-yinxu",
+            "source-national-museum-li-gui",
+            "source-anyang-fall",
+            "source-khayutina-cultural-memory"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "hittite-empire",
+        "type": "polity",
+        "name": "赫梯帝国",
+        "alternativeNames": [
+          "Hittite Empire",
+          "赫梯王国"
+        ],
+        "canonicalSummary": "约公元前1650—前1180年以哈图沙为中心，在安纳托利亚和叙利亚通过王族驻地、战争与条约组织政治网络的王国。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "hittite-early-central-kingship",
+          "hittite-syrian-control"
+        ],
+        "tags": [
+          "安纳托利亚",
+          "政权",
+          "晚青铜时代"
+        ],
+        "sourceIds": [
+          "source-bryce-hittite-kingdom",
+          "source-beckman-hittite-diplomatic-texts",
+          "source-unesco-hattusha",
+          "source-met-hittites"
+        ]
+      },
+      "phases": [
+        {
+          "id": "hittite-early-central-kingship",
+          "entityId": "hittite-empire",
+          "title": "安纳托利亚中部核心阶段",
+          "timeSpan": {
+            "start": -1650,
+            "end": -1350,
+            "label": "约公元前1650—前1350年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-anatolia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-bryce-hittite-kingdom",
+                "source-unesco-hattusha"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-bryce-hittite-kingdom",
+            "source-unesco-hattusha"
+          ]
+        },
+        {
+          "id": "hittite-syrian-control",
+          "entityId": "hittite-empire",
+          "title": "控制范围扩展至叙利亚内陆",
+          "timeSpan": {
+            "start": -1350,
+            "end": -1180,
+            "label": "约公元前1350—前1180年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-anatolia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-bryce-hittite-kingdom"
+              ]
+            },
+            {
+              "regionId": "syria-northern-levant",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-bryce-hittite-kingdom",
+                "source-beckman-hittite-diplomatic-texts",
+                "source-bm-kadesh-sallier",
+                "source-spalinger-war-egypt",
+                "source-bryce-neo-hittite-kingdoms"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-ugarit-hittite-vassal"
+          ],
+          "sourceIds": [
+            "source-bryce-hittite-kingdom",
+            "source-met-hittites",
+            "source-beckman-hittite-diplomatic-texts",
+            "source-bm-kadesh-sallier",
+            "source-spalinger-war-egypt",
+            "source-un-egypt-hatti-treaty",
+            "source-bryce-neo-hittite-kingdoms"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "ugarit-kingdom",
+        "type": "polity",
+        "name": "乌加里特王国",
+        "alternativeNames": [
+          "Kingdom of Ugarit",
+          "Ugarit"
+        ],
+        "canonicalSummary": "东地中海沿岸以乌加里特王城和港口为中心的晚青铜时代王国，其宫廷、商人和多语书吏连接内陆与海上网络。前12世纪初王城遭严重毁坏，原有宫殿行政体系未恢复。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "ugarit-kingdom-presence"
+        ],
+        "tags": [
+          "黎凡特",
+          "港口王国",
+          "晚青铜时代"
+        ],
+        "sourceIds": [
+          "source-yon-city-of-ugarit",
+          "source-met-ugarit",
+          "source-french-ugarit-history"
+        ]
+      },
+      "phases": [
+        {
+          "id": "ugarit-kingdom-presence",
+          "entityId": "ugarit-kingdom",
+          "title": "乌加里特王国存在期",
+          "timeSpan": {
+            "start": -1800,
+            "end": -1180,
+            "label": "约公元前1800—前1180年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "syria-northern-levant",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-yon-city-of-ugarit",
+                "source-met-ugarit"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-ugarit-hittite-vassal"
+          ],
+          "sourceIds": [
+            "source-yon-city-of-ugarit",
+            "source-met-ugarit",
+            "source-french-ugarit-history",
+            "source-leriche-ugarit-after-1180"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "minoan-palatial-civilization",
+        "type": "culturalTradition",
+        "name": "克里特宫殿文明",
+        "alternativeNames": [
+          "Minoan palatial civilization"
+        ],
+        "canonicalSummary": "约公元前2000—前1100年，以克里特多座宫殿中心、海上联系和线形文字传统为重要证据，并在宫殿重建与行政变化中持续转型的文化传统。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "minoan-first-palatial-centres",
+          "minoan-rebuilt-palatial-network",
+          "minoan-knossos-linear-b-reorganization"
+        ],
+        "tags": [
+          "爱琴海",
+          "克里特",
+          "宫殿传统"
+        ],
+        "sourceIds": [
+          "source-unesco-minoan-palatial-centres",
+          "source-met-minoan-crete"
+        ]
+      },
+      "phases": [
+        {
+          "id": "minoan-first-palatial-centres",
+          "entityId": "minoan-palatial-civilization",
+          "title": "克里特核心阶段",
+          "timeSpan": {
+            "start": -2000,
+            "end": -1700,
+            "label": "约公元前2000—前1700年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "crete",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-unesco-minoan-palatial-centres",
+                "source-met-minoan-crete"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-unesco-minoan-palatial-centres",
+            "source-met-minoan-crete"
+          ]
+        },
+        {
+          "id": "minoan-rebuilt-palatial-network",
+          "entityId": "minoan-palatial-civilization",
+          "title": "联系扩展至爱琴海岛屿",
+          "timeSpan": {
+            "start": -1700,
+            "end": -1450,
+            "label": "约公元前1700—前1450年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "crete",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-unesco-minoan-palatial-centres",
+                "source-met-minoan-crete"
+              ]
+            },
+            {
+              "regionId": "aegean-islands",
+              "role": "exchange",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-minoan-crete"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-unesco-minoan-palatial-centres",
+            "source-met-minoan-crete"
+          ]
+        },
+        {
+          "id": "minoan-knossos-linear-b-reorganization",
+          "entityId": "minoan-palatial-civilization",
+          "title": "范围收缩至克里特",
+          "timeSpan": {
+            "start": -1450,
+            "end": -1375,
+            "label": "约公元前1450—前1375年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "crete",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-salgarella-writing-bronze-age-crete",
+                "source-bsa-linear-b"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-minoan-mycenaean-administration"
+          ],
+          "sourceIds": [
+            "source-salgarella-writing-bronze-age-crete",
+            "source-bsa-linear-b"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "mycenaean-civilization",
+        "type": "culturalTradition",
+        "name": "迈锡尼文明",
+        "alternativeNames": [
+          "Mycenaean civilization"
+        ],
+        "canonicalSummary": "约公元前1700—前1050年在希腊大陆形成，从竖井墓精英、宫殿行政和线形文字B体系发展到宫殿终结后地方化延续的文化传统。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "mycenaean-shaft-grave-elites",
+          "mycenaean-palatial-administration",
+          "mycenaean-palace-end-and-transformation"
+        ],
+        "tags": [
+          "爱琴海",
+          "希腊大陆",
+          "宫殿传统"
+        ],
+        "sourceIds": [
+          "source-met-mycenaean-civilization",
+          "source-killen-mycenaean-society"
+        ]
+      },
+      "phases": [
+        {
+          "id": "mycenaean-shaft-grave-elites",
+          "entityId": "mycenaean-civilization",
+          "title": "希腊大陆核心阶段",
+          "timeSpan": {
+            "start": -1700,
+            "end": -1450,
+            "label": "约公元前1700—前1450年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "greek-mainland",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-mycenaean-civilization",
+                "source-cambridge-guide-mycenae"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-mycenaean-civilization",
+            "source-cambridge-guide-mycenae"
+          ]
+        },
+        {
+          "id": "mycenaean-palatial-administration",
+          "entityId": "mycenaean-civilization",
+          "title": "控制范围扩展至克里特",
+          "timeSpan": {
+            "start": -1450,
+            "end": -1250,
+            "label": "约公元前1450—前1250年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "greek-mainland",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-killen-mycenaean-society",
+                "source-bsa-linear-b"
+              ]
+            },
+            {
+              "regionId": "crete",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-bsa-linear-b"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-minoan-mycenaean-administration",
+            "relation-mycenaean-divine-names"
+          ],
+          "sourceIds": [
+            "source-killen-mycenaean-society",
+            "source-bsa-linear-b",
+            "source-cambridge-mycenaean-religion"
+          ]
+        },
+        {
+          "id": "mycenaean-palace-end-and-transformation",
+          "entityId": "mycenaean-civilization",
+          "title": "范围收缩至希腊大陆",
+          "timeSpan": {
+            "start": -1250,
+            "end": -1050,
+            "label": "约公元前1250—前1050年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "greek-mainland",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-deger-jalkotzy-aftermath",
+                "source-knapp-manning-crisis"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-mycenaean-dark-age-reorganization",
+            "relation-mycenaean-divine-names"
+          ],
+          "sourceIds": [
+            "source-deger-jalkotzy-aftermath",
+            "source-knapp-manning-crisis",
+            "source-cambridge-mycenaean-transformation"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "greek-dark-age-communities",
+        "type": "culturalTradition",
+        "name": "希腊黑暗时代社会",
+        "alternativeNames": [
+          "Greek Early Iron Age communities",
+          "Greek Dark Age communities"
+        ],
+        "canonicalSummary": "约公元前1200—前800年，在迈锡尼宫殿体系终结后形成的地方社区世界，经历人口与聚落调整，并逐渐恢复跨区域海路、铁器和陶器联系。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "greek-postpalatial-local-communities",
+          "greek-early-iron-age-regional-links"
+        ],
+        "tags": [
+          "爱琴海",
+          "后宫殿社会",
+          "早期铁器时代"
+        ],
+        "sourceIds": [
+          "source-cambridge-mycenaean-transformation",
+          "source-cambridge-greek-iron-age-pottery"
+        ]
+      },
+      "phases": [
+        {
+          "id": "greek-postpalatial-local-communities",
+          "entityId": "greek-dark-age-communities",
+          "title": "希腊大陆核心与爱琴海岛屿关联阶段",
+          "timeSpan": {
+            "start": -1200,
+            "end": -1050,
+            "label": "约公元前1200—前1050年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "greek-mainland",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-deger-jalkotzy-aftermath",
+                "source-cambridge-mycenaean-transformation"
+              ]
+            },
+            {
+              "regionId": "aegean-islands",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-cambridge-mycenaean-transformation"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-mycenaean-dark-age-reorganization"
+          ],
+          "sourceIds": [
+            "source-deger-jalkotzy-aftermath",
+            "source-cambridge-mycenaean-transformation"
+          ]
+        },
+        {
+          "id": "greek-early-iron-age-regional-links",
+          "entityId": "greek-dark-age-communities",
+          "title": "爱琴海岛屿交换联系增强",
+          "timeSpan": {
+            "start": -1050,
+            "end": -800,
+            "label": "约公元前1050—前800年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "greek-mainland",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-bsa-aegean-iron-technologies",
+                "source-cambridge-greek-iron-age-pottery"
+              ]
+            },
+            {
+              "regionId": "aegean-islands",
+              "role": "exchange",
+              "approximate": true,
+              "sourceIds": [
+                "source-cambridge-greek-iron-age-pottery"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-bsa-aegean-iron-technologies",
+            "source-cambridge-greek-iron-age-pottery"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "assur-community",
+        "type": "community",
+        "name": "亚述城社群",
+        "canonicalSummary": "以亚述城为中心、在古亚述和中亚述时期具有不同政治与商业组织形态的城市社群。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "assur-old-assyrian-trade-community",
+          "assur-middle-assyrian-urban-tradition"
+        ],
+        "tags": [
+          "近东",
+          "亚述",
+          "城市社群"
+        ],
+        "sourceIds": [
+          "source-met-old-assyrian-caravan",
+          "source-oracc-middle-assyrian"
+        ]
+      },
+      "phases": [
+        {
+          "id": "assur-old-assyrian-trade-community",
+          "entityId": "assur-community",
+          "title": "古亚述时期",
+          "timeSpan": {
+            "start": -2000,
+            "end": -1750,
+            "label": "约公元前2000—前1750年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-old-assyrian-caravan"
+              ]
+            },
+            {
+              "regionId": "central-anatolia",
+              "role": "exchange",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-old-assyrian-caravan"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-old-assyrian-caravan"
+          ]
+        },
+        {
+          "id": "assur-middle-assyrian-urban-tradition",
+          "entityId": "assur-community",
+          "title": "中亚述时期",
+          "timeSpan": {
+            "start": -1400,
+            "end": -1000,
+            "label": "约公元前1400—前1000年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-oracc-middle-assyrian"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-oracc-middle-assyrian"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "kingdom-of-judah",
+        "type": "polity",
+        "name": "犹大王国",
+        "canonicalSummary": "约公元前900—前586年，以耶路撒冷为王都，先后面对亚述与新巴比伦扩张并最终被后者终结的黎凡特王国。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "judah-kingdom-presence"
+        ],
+        "tags": [
+          "黎凡特",
+          "铁器时代"
+        ],
+        "sourceIds": [
+          "source-met-ancient-israel",
+          "source-bm-babylonian-chronicle"
+        ]
+      },
+      "phases": [
+        {
+          "id": "judah-kingdom-presence",
+          "entityId": "kingdom-of-judah",
+          "title": "南黎凡特统治范围",
+          "timeSpan": {
+            "start": -900,
+            "end": -586,
+            "label": "约公元前900—前586年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "southern-levant",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-ancient-israel",
+                "source-bm-lachish",
+                "source-bm-babylonian-chronicle"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-ancient-israel",
+            "source-bm-lachish",
+            "source-bm-babylonian-chronicle"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "neo-assyrian-empire",
+        "type": "polity",
+        "name": "新亚述帝国",
+        "canonicalSummary": "约公元前911—前609年，以亚述城、卡尔胡和尼尼微等王都为中心，通过战争、行省、道路、迁徙与书吏组织大片领土的帝国。尼尼微于前612年被攻陷，亚述残余政权仍延续至前609年。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "neo-assyrian-expansion",
+          "neo-assyrian-imperial-administration",
+          "neo-assyrian-collapse"
+        ],
+        "tags": [
+          "近东",
+          "铁器时代",
+          "帝国"
+        ],
+        "sourceIds": [
+          "source-met-assyria",
+          "source-bm-introducing-assyrians"
+        ]
+      },
+      "phases": [
+        {
+          "id": "neo-assyrian-expansion",
+          "entityId": "neo-assyrian-empire",
+          "title": "扩展至叙利亚内陆与南黎凡特",
+          "timeSpan": {
+            "start": -911,
+            "end": -700,
+            "label": "约公元前911—前700年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-assyria"
+              ]
+            },
+            {
+              "regionId": "syria-northern-levant",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-oracc-governance"
+              ]
+            },
+            {
+              "regionId": "southern-levant",
+              "role": "influence",
+              "approximate": true,
+              "sourceIds": [
+                "source-oracc-israel"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-assyria-conquers-israel"
+          ],
+          "sourceIds": [
+            "source-met-assyria",
+            "source-oracc-governance",
+            "source-oracc-deportation"
+          ]
+        },
+        {
+          "id": "neo-assyrian-imperial-administration",
+          "entityId": "neo-assyrian-empire",
+          "title": "范围收缩至上美索不达米亚与叙利亚内陆",
+          "timeSpan": {
+            "start": -800,
+            "end": -609,
+            "label": "约公元前800—前609年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-oracc-governance"
+              ]
+            },
+            {
+              "regionId": "syria-northern-levant",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-oracc-deportation"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-assyria-uses-aramaic"
+          ],
+          "sourceIds": [
+            "source-oracc-governance",
+            "source-oracc-deportation",
+            "source-bm-ashurbanipal-library"
+          ]
+        },
+        {
+          "id": "neo-assyrian-collapse",
+          "entityId": "neo-assyrian-empire",
+          "title": "范围收缩至上美索不达米亚",
+          "timeSpan": {
+            "start": -631,
+            "end": -609,
+            "label": "公元前631—前609年"
+          },
+          "regions": [
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "associated",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-assyria"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-neo-babylon-succeeds-assyria"
+          ],
+          "sourceIds": [
+            "source-met-assyria"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "kingdom-of-israel",
+        "type": "polity",
+        "name": "以色列王国",
+        "canonicalSummary": "约公元前930—前720年，以撒马利亚为后期王都、先后与亚述结盟、纳贡和交战并最终被吞并的北方王国。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "israel-kingdom-presence"
+        ],
+        "tags": [
+          "黎凡特",
+          "铁器时代"
+        ],
+        "sourceIds": [
+          "source-met-ancient-israel",
+          "source-oracc-israel"
+        ]
+      },
+      "phases": [
+        {
+          "id": "israel-kingdom-presence",
+          "entityId": "kingdom-of-israel",
+          "title": "南黎凡特统治范围",
+          "timeSpan": {
+            "start": -930,
+            "end": -720,
+            "label": "约公元前930—前720年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "southern-levant",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-ancient-israel",
+                "source-oracc-israel"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-assyria-conquers-israel"
+          ],
+          "sourceIds": [
+            "source-met-ancient-israel",
+            "source-bm-black-obelisk",
+            "source-oracc-israel"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "neo-babylonian-empire",
+        "type": "polity",
+        "name": "新巴比伦帝国",
+        "canonicalSummary": "公元前626—前539年，以巴比伦为首都、推翻亚述并继续争夺叙利亚与黎凡特的帝国；前539年居鲁士征服巴比伦，王朝结束。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "neo-babylonian-rise-against-assyria",
+          "neo-babylonian-western-campaigns",
+          "neo-babylonian-capital-and-rule"
+        ],
+        "tags": [
+          "近东",
+          "铁器时代",
+          "帝国"
+        ],
+        "sourceIds": [
+          "source-met-babylon"
+        ]
+      },
+      "phases": [
+        {
+          "id": "neo-babylonian-rise-against-assyria",
+          "entityId": "neo-babylonian-empire",
+          "title": "推翻亚述并争夺其帝国空间",
+          "timeSpan": {
+            "start": -626,
+            "end": -605,
+            "label": "公元前626—前605年"
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-babylon"
+              ]
+            },
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "controlled",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-assyria"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-neo-babylon-succeeds-assyria"
+          ],
+          "sourceIds": [
+            "source-met-babylon",
+            "source-met-assyria"
+          ]
+        },
+        {
+          "id": "neo-babylonian-western-campaigns",
+          "entityId": "neo-babylonian-empire",
+          "title": "向黎凡特用兵并建立宗主势力",
+          "timeSpan": {
+            "start": -605,
+            "end": -586,
+            "label": "公元前605—前586年"
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-babylon"
+              ]
+            },
+            {
+              "regionId": "southern-levant",
+              "role": "influence",
+              "approximate": true,
+              "sourceIds": [
+                "source-bm-babylonian-chronicle",
+                "source-met-cyrus-return"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-babylon",
+            "source-bm-babylonian-chronicle",
+            "source-met-cyrus-return"
+          ]
+        },
+        {
+          "id": "neo-babylonian-capital-and-rule",
+          "entityId": "neo-babylonian-empire",
+          "title": "重建首都并维持帝国统治直至波斯征服",
+          "timeSpan": {
+            "start": -605,
+            "end": -539,
+            "label": "公元前605—前539年"
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-babylon-lion",
+                "source-met-nebuchadnezzar-cylinder"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-babylon-lion",
+            "source-met-nebuchadnezzar-cylinder",
+            "source-bm-cyrus-cylinder"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "lydian-kingdom",
+        "type": "polity",
+        "name": "吕底亚王国",
+        "canonicalSummary": "约公元前680—前546年，以萨迪斯为中心并控制安纳托利亚西部的王国。首都被居鲁士攻取，具体定年约在前547—前546年。",
+        "conceptLayerId": "polityAndSociety",
+        "phaseIds": [
+          "lydian-kingdom-presence"
+        ],
+        "tags": [
+          "安纳托利亚",
+          "铁器时代",
+          "政权"
+        ],
+        "sourceIds": [
+          "source-met-sardis",
+          "source-iranica-cyrus"
+        ]
+      },
+      "phases": [
+        {
+          "id": "lydian-kingdom-presence",
+          "entityId": "lydian-kingdom",
+          "title": "西安纳托利亚统治范围",
+          "timeSpan": {
+            "start": -680,
+            "end": -546,
+            "label": "约公元前680—前546年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "western-anatolia",
+              "role": "core",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-sardis"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-sardis",
+            "source-sardis-introduction",
+            "source-iranica-cyrus"
+          ]
+        }
+      ]
+    }
+  ],
+  "research": {
+    "mesopotamia": {
+      "scope": "Read-only audit; no core files edited. Conservative proposals for coordinator review.",
+      "proposals": [
+        {
+          "entityId": "akkadian-empire",
+          "action": "Keep both phases and their approximate touching boundary at -2200. Met explicitly supports late contraction to vicinity of Agade. No need to invent extra phases.",
+          "keep": [
+            "akkadian-imperial-order",
+            "akkadian-fragmentation"
+          ],
+          "summary": "萨尔贡及其继承者征服南部城邦，建立了以阿卡德为中心的跨地区王朝。",
+          "centres": "阿卡德城。",
+          "core": "两河中部与南部城邦。",
+          "rule": "王权通过征服统合各城，继任国王继续维持统治。",
+          "sourceIds": [
+            "source-met-akkadian-period"
+          ],
+          "internal": "Agade archaeological location unknown; do not assign an exact city coordinate. Summary does not repeat dates. Northern influence is not equivalent to permanent control."
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "action": "Merge into ur-iii-kingdom-order, -2112..-2004 approximate, southern-mesopotamia core. Remove upper-mesopotamia influence as continuous phase placement until duration is independently established; preserve the supporting source internally. Delete ur-iii-fragmentation and rebind participants/ledger pointers to surviving phase. Do not create a -2028 border-change date from accession alone.",
+          "keep": [
+            "ur-iii-kingdom-order"
+          ],
+          "remove": [
+            "ur-iii-fragmentation"
+          ],
+          "summary": "以乌尔为王都，重新联结两河南部城邦，以贡赋征集和密集的文书记录组织王国。",
+          "centres": "乌尔；尼普尔是重要宗教中心。",
+          "core": "两河南部的城市与农业腹地。",
+          "rule": "国王依靠贡赋征集与官员网络组织资源，书吏记录物资和劳役。",
+          "sourceIds": [
+            "source-garfinkle-kingdom-ur",
+            "source-met-isin-larsa-old-babylonian",
+            "source-steinkeller-ur-iii-core-periphery"
+          ],
+          "internal": "Garfinkle chapter abstract verifies unification of Babylonia, tributary economy, patronage and record keeping. Exact territorial withdrawal sequence is not in accessible abstract. Do not add central-mesopotamia controlled solely by interpreting Babylonia broadly."
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "action": "Strongest minimal correction is one core phase: retain old-babylonian-city-kingdom-emergence, rename title to 以巴比伦为中心的王国, -1894..-1595 approximate, central-mesopotamia core. Remove separate expansion and contraction placements after transferring their sources internally; preserve event-hammurabi-conquests and its chronology as Event evidence. Expansion and later southern resistance can be described in a brief table row without asserting a fabricated exact frontier cutover. If preserving expansion phase is a product requirement, research that phase separately before editing its end date.",
+          "keep": [
+            "old-babylonian-city-kingdom-emergence"
+          ],
+          "remove": [
+            "old-babylonian-hammurabi-expansion",
+            "old-babylonian-contraction"
+          ],
+          "summary": "巴比伦第一王朝在汉谟拉比时期征服多个两河城邦，使巴比伦成为重要的政治中心。",
+          "centres": "巴比伦。",
+          "core": "巴比伦及两河中部地区。",
+          "rule": "国王主持战争、营建和司法，以王室命令与裁判维护统治。",
+          "sourceIds": [
+            "source-met-isin-larsa-old-babylonian",
+            "source-louvre-hammurabi-code"
+          ],
+          "internal": "Current -1749 contraction incorrectly equals accession of successor. Samsuiluna year-name campaigns do not themselves prove all southern land was lost. Do not replace with -1739 mechanically. Dalley 2021 chapter disputes simple devastation/collapse narrative. Existing Podany source points to an entire book, not chapter; verify exact author/chapter before relying on it.",
+          "additionalResearchUrl": "https://www.cambridge.org/core/books/abs/city-of-babylon/from-the-great-rebellion-to-the-end-of-the-first-dynasty-c-17321592/1F79E84307D58FABCD32489201750197"
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "action": "Merge into neo-assyrian-imperial-administration, -911..-609 approximate, upper-mesopotamia core. This is an explicitly conservative core placement; broad western expansion remains in narrative/table evidence rather than false century-long territory states. Remove expansion/collapse phases and migrate references. If full regional shape must be retained, independently review dated region control before adding replacement states; 745 and 631 are not sufficient territorial cutovers.",
+          "keep": [
+            "neo-assyrian-imperial-administration"
+          ],
+          "remove": [
+            "neo-assyrian-expansion",
+            "neo-assyrian-collapse"
+          ],
+          "summary": "从两河北部兴起，通过战争、行省治理和人口迁徙建立横跨近东的帝国。",
+          "centres": "亚述城、卡尔胡、杜尔沙鲁金与尼尼微先后承担王都职能。",
+          "core": "底格里斯河上游，亚述城至尼尼微一带。",
+          "rule": "国王统领军队与官僚，行省官员、书吏和驿传网络共同管理帝国。",
+          "sourceIds": [
+            "source-met-assyria",
+            "source-bm-introducing-assyrians",
+            "source-oracc-governance"
+          ],
+          "sourceUrlRepair": "https://oracc.museum.upenn.edu/saao/aebp/Essentials/Governors/index.html",
+          "internal": "Met verifies expansion in 8th/7th centuries and attack on Memphis in 671; current -800..-609 contraction is wrong. BM supports gradual collapse following c.631, not instantaneous loss of all western regions at 631. Last Harran stage may be researched via RINAP5/3 rather than derived from a reign boundary.",
+          "additionalResearchUrl": "https://oracc.museum.upenn.edu/rinap/downloads/0RINAP5_3_final.pdf"
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "action": "Keep rise -626..-605 with central-mesopotamia core only; remove upper-mesopotamia controlled from the very first year. Merge western-campaigns into capital-and-rule -605..-539: central-mesopotamia core, southern-levant influence; add syria-northern-levant controlled supported by Met's Gulf-to-Mediterranean empire summary. Do not turn capital reconstruction into separate simultaneous geographical state. Use approximate for -605 territorial transition. Additional southern/upper Mesopotamian placements require separate region mapping review.",
+          "keep": [
+            "neo-babylonian-rise-against-assyria",
+            "neo-babylonian-capital-and-rule"
+          ],
+          "remove": [
+            "neo-babylonian-western-campaigns"
+          ],
+          "summary": "以巴比伦为首都，击败亚述并向地中海扩张；王室同时大规模重建首都。",
+          "centres": "巴比伦。",
+          "core": "巴比伦及两河下游城市地区。",
+          "rule": "王室通过战争和人口迁移巩固帝国，并以神庙祭仪与营建彰显王权。",
+          "sourceIds": [
+            "source-met-babylon"
+          ],
+          "internal": "This preserves western reach through the period rather than ending it at 586. Source describes Nebuchadnezzar's empire in sixth century; it does not warrant exact control of every western city starting in 605. southern-levant influence intentionally covers changing vassal/direct control without claiming every place was a province."
+        }
+      ],
+      "coreReferences": {
+        "relation-akkadian-ur-iii-transition": [
+          "akkadian-fragmentation",
+          "ur-iii-kingdom-order"
+        ],
+        "relation-assyria-conquers-israel": [
+          "neo-assyrian-expansion"
+        ],
+        "relation-assyria-uses-aramaic": [
+          "neo-assyrian-imperial-administration"
+        ],
+        "relation-neo-babylon-succeeds-assyria": [
+          "neo-babylonian-rise-against-assyria",
+          "neo-assyrian-collapse"
+        ]
+      },
+      "affectedMigrationFiles": [
+        "v6/migration/entity-decisions/mesopotamia.json",
+        "v6/migration/entity-decisions/iron-age-near-east.json",
+        "v6/migration/scene-phase/mesopotamia.json",
+        "v6/migration/scene-phase/iron-age-near-east.json",
+        "v6/migration/relation-candidates/mesopotamia.json",
+        "v6/migration/relation-candidates/iron-age-near-east.json",
+        "v6/migration/handoffs/late-bronze-age.json",
+        "v6/migration/handoffs/ancient-india.json"
+      ],
+      "otherReferences": [
+        "v6/data/mesopotamia/events.ts: old Babylonian emergence, Kassite continuity, Hammurabi conquests participant phases",
+        "v6/data/late-bronze-age/events.ts: event-hittite-sack-babylon -> old-babylonian-contraction",
+        "v6/data/ancient-india/events.ts: Meluhha/Akkad participant -> akkadian-imperial-order (unchanged)",
+        "v6/data/iron-age-near-east/events.ts: Ashurbanipal collections, Babylon destruction/rebuild, Neo-Assyrian expansion, Israel annexation, Lachish, Aramaic administration, Babylon reconstruction, Babylon west campaigns",
+        "Module tests assert phase IDs and old region lists; adjust with the reviewed decision. Do not edit frozen baseline JSON or V5 runtime."
+      ],
+      "sceneSignalReferences": {
+        "mesopotamia": [
+          {
+            "id": "signal-sumer-methods-outlast-dynasties",
+            "phaseIds": [
+              "akkadian-imperial-order",
+              "ur-iii-kingdom-order"
+            ]
+          },
+          {
+            "id": "signal-mesopotamia-akkad-gathers-cities",
+            "phaseIds": [
+              "akkadian-imperial-order"
+            ]
+          },
+          {
+            "id": "signal-mesopotamia-ur-tablets-reorder-cities",
+            "phaseIds": [
+              "ur-iii-kingdom-order",
+              "ur-iii-fragmentation"
+            ]
+          },
+          {
+            "id": "signal-mesopotamia-babylon-becomes-center",
+            "phaseIds": [
+              "ur-iii-fragmentation",
+              "old-babylonian-city-kingdom-emergence",
+              "old-babylonian-hammurabi-expansion",
+              "old-babylonian-contraction"
+            ]
+          },
+          {
+            "id": "signal-mesopotamia-babylon-writes-assyria-grows",
+            "phaseIds": [
+              "old-babylonian-contraction"
+            ]
+          },
+          {
+            "id": "signal-mesopotamia-cities-do-not-go-dark",
+            "phaseIds": [
+              "old-babylonian-contraction"
+            ]
+          },
+          {
+            "id": "signal-mesopotamian-temple-ur",
+            "phaseIds": [
+              "ur-iii-kingdom-order"
+            ]
+          },
+          {
+            "id": "signal-mesopotamian-temple-old-babylonian",
+            "phaseIds": [
+              "ur-iii-fragmentation",
+              "old-babylonian-city-kingdom-emergence"
+            ]
+          },
+          {
+            "id": "signal-akkadian-empire-city-states",
+            "phaseIds": [
+              "akkadian-imperial-order"
+            ]
+          },
+          {
+            "id": "signal-akkadian-empire-sargon-memory",
+            "phaseIds": [
+              "akkadian-imperial-order"
+            ]
+          },
+          {
+            "id": "signal-akkadian-empire-conquests",
+            "phaseIds": [
+              "akkadian-imperial-order"
+            ]
+          },
+          {
+            "id": "signal-akkadian-empire-fragmentation",
+            "phaseIds": [
+              "akkadian-fragmentation",
+              "ur-iii-kingdom-order"
+            ]
+          },
+          {
+            "id": "signal-ur-iii-rises-after-akkad",
+            "phaseIds": [
+              "ur-iii-kingdom-order"
+            ]
+          },
+          {
+            "id": "signal-ur-iii-building-order",
+            "phaseIds": [
+              "ur-iii-kingdom-order"
+            ]
+          },
+          {
+            "id": "signal-ur-iii-tablet-administration",
+            "phaseIds": [
+              "ur-iii-kingdom-order",
+              "ur-iii-fragmentation"
+            ]
+          },
+          {
+            "id": "signal-ur-iii-fragmentation",
+            "phaseIds": [
+              "ur-iii-fragmentation"
+            ]
+          },
+          {
+            "id": "signal-old-babylonian-after-ur-iii",
+            "phaseIds": [
+              "ur-iii-fragmentation",
+              "old-babylonian-city-kingdom-emergence"
+            ]
+          },
+          {
+            "id": "signal-old-babylonian-small-river-kingdom",
+            "phaseIds": [
+              "ur-iii-fragmentation",
+              "old-babylonian-city-kingdom-emergence"
+            ]
+          },
+          {
+            "id": "signal-old-babylonian-orders-and-institutions",
+            "phaseIds": [
+              "old-babylonian-hammurabi-expansion"
+            ]
+          },
+          {
+            "id": "signal-old-babylonian-fragmentation",
+            "phaseIds": [
+              "old-babylonian-contraction"
+            ]
+          }
+        ],
+        "iron-age-near-east": [
+          {
+            "id": "signal-assyria-kings-prove-through-war",
+            "phaseIds": [
+              "neo-assyrian-expansion"
+            ]
+          },
+          {
+            "id": "signal-assyria-rebellion-sees-consequences",
+            "phaseIds": [
+              "neo-assyrian-imperial-administration",
+              "neo-assyrian-expansion"
+            ]
+          },
+          {
+            "id": "signal-assyria-conquest-becomes-government",
+            "phaseIds": [
+              "neo-assyrian-imperial-administration",
+              "neo-assyrian-expansion"
+            ]
+          },
+          {
+            "id": "signal-assyria-people-moved-elsewhere",
+            "phaseIds": [
+              "neo-assyrian-imperial-administration"
+            ]
+          },
+          {
+            "id": "signal-assyria-nineveh-collects-knowledge",
+            "phaseIds": [
+              "neo-assyrian-imperial-administration"
+            ]
+          },
+          {
+            "id": "signal-assyria-violent-city-silenced",
+            "phaseIds": [
+              "neo-assyrian-collapse"
+            ]
+          },
+          {
+            "id": "signal-israel-enters-and-falls-to-assyria",
+            "phaseIds": [
+              "neo-assyrian-expansion"
+            ]
+          },
+          {
+            "id": "signal-judah-lachish-falls-jerusalem-remains",
+            "phaseIds": [
+              "neo-assyrian-expansion"
+            ]
+          },
+          {
+            "id": "signal-judah-babylon-twice-enters-jerusalem",
+            "phaseIds": [
+              "neo-babylonian-western-campaigns"
+            ]
+          },
+          {
+            "id": "signal-aramaic-conquest-moves-speakers",
+            "phaseIds": [
+              "neo-assyrian-imperial-administration"
+            ]
+          },
+          {
+            "id": "signal-aramaic-two-scribes-one-palace",
+            "phaseIds": [
+              "neo-assyrian-imperial-administration"
+            ]
+          },
+          {
+            "id": "signal-babylon-city-refuses-submission",
+            "phaseIds": [
+              "neo-assyrian-imperial-administration"
+            ]
+          },
+          {
+            "id": "signal-babylon-war-continues-west",
+            "phaseIds": [
+              "neo-assyrian-collapse",
+              "neo-babylonian-rise-against-assyria"
+            ]
+          },
+          {
+            "id": "signal-babylon-colored-bricks-stage-capital",
+            "phaseIds": [
+              "neo-babylonian-capital-and-rule"
+            ]
+          },
+          {
+            "id": "signal-babylon-king-name-in-bricks",
+            "phaseIds": [
+              "neo-babylonian-capital-and-rule"
+            ]
+          },
+          {
+            "id": "signal-babylon-empire-enters-households",
+            "phaseIds": [
+              "neo-babylonian-capital-and-rule",
+              "neo-babylonian-western-campaigns"
+            ]
+          },
+          {
+            "id": "signal-babylon-conqueror-borrows-language",
+            "phaseIds": [
+              "neo-babylonian-capital-and-rule"
+            ]
+          }
+        ]
+      },
+      "neoAssyrianFiveStageRevision": {
+        "status": "Supersedes single-core recommendation for Assyria; coordinated request permits five sequential states. Approximate frontier withdrawals are editorial synthesis, preserved internally.",
+        "phases": [
+          {
+            "id": "neo-assyrian-expansion",
+            "start": -911,
+            "end": -740,
+            "approximate": true,
+            "title": "以上美索不达米亚为核心",
+            "regions": [
+              [
+                "upper-mesopotamia",
+                "core"
+              ]
+            ],
+            "publicDescription": "以上美索不达米亚为核心，逐步恢复力量并向西用兵。",
+            "sources": [
+              "source-met-assyria",
+              "source-bm-introducing-assyrians"
+            ],
+            "internal": "Earlier Syrian tribute and intermittent hegemony omitted rather than depicted as continuous controlled territory from 911."
+          },
+          {
+            "id": "neo-assyrian-syrian-provinces",
+            "start": -740,
+            "end": -732,
+            "approximate": false,
+            "title": "在叙利亚建立行省",
+            "regions": [
+              [
+                "upper-mesopotamia",
+                "core"
+              ],
+              [
+                "syria-northern-levant",
+                "controlled"
+              ]
+            ],
+            "publicDescription": "攻下阿尔帕德，并将北叙利亚的征服地区改设行省。",
+            "sources": [
+              "source-oracc-tiglath-pileser-territory-reviewed"
+            ],
+            "internal": "740 Arpad conquest/provincialization explicit in Radner ORACC; 738 Hamat NW and Unqu add within same coarse Region, no new phase needed."
+          },
+          {
+            "id": "neo-assyrian-imperial-administration",
+            "start": -732,
+            "end": -630,
+            "approximate": true,
+            "title": "控制扩展至南黎凡特",
+            "regions": [
+              [
+                "upper-mesopotamia",
+                "core"
+              ],
+              [
+                "syria-northern-levant",
+                "controlled"
+              ],
+              [
+                "southern-levant",
+                "controlled"
+              ]
+            ],
+            "publicDescription": "吞并大马士革和以色列北部，西部行省延伸至米吉多一带。",
+            "sources": [
+              "source-oracc-tiglath-pileser-territory-reviewed",
+              "source-oracc-israel",
+              "source-eshel-silver-levant-2025"
+            ],
+            "internal": "732 exact start for Megiddo province. Region controlled means presence in part of Region, not Judah/Moab or every place annexed. c630 exit is rounded approximation: Eshel explicitly 640/630 for Assyrian withdrawal; no claim of a single dated treaty/battle. Alternative scholarship gives630–625. Keep approximation true."
+          },
+          {
+            "id": "neo-assyrian-western-contraction",
+            "start": -630,
+            "end": -612,
+            "approximate": true,
+            "title": "南黎凡特控制收缩",
+            "regions": [
+              [
+                "upper-mesopotamia",
+                "core"
+              ],
+              [
+                "syria-northern-levant",
+                "controlled"
+              ]
+            ],
+            "publicDescription": "退出南黎凡特后，仍据两河北部与北叙利亚部分地区。",
+            "sources": [
+              "source-eshel-silver-levant-2025",
+              "source-met-assyria",
+              "source-bm-fall-nineveh-chronicle-reviewed"
+            ],
+            "internal": "Broad c630–c612 snapshot; NOT a claim that every Syrian province persisted until612. Direct source for Syria-wide withdrawal exactly612 not found. 614–610 final-war loss interval, 612 approximate editorial divider for collapse of western provincial network and remnant concentration at Harran. Do not remove approximation or assert uniform province-loss year."
+          },
+          {
+            "id": "neo-assyrian-collapse",
+            "start": -612,
+            "end": -609,
+            "approximate": true,
+            "title": "退守哈兰一带",
+            "regions": [
+              [
+                "upper-mesopotamia",
+                "associated"
+              ]
+            ],
+            "publicDescription": "尼尼微陷落后，残余王权在哈兰重整，最终失去据点。",
+            "sources": [
+              "source-bm-fall-nineveh-chronicle-reviewed"
+            ],
+            "internal": "BM Chronicle explicitly Nineveh612, Harran rally, withdrawal610/9 and failed retaking609. Role associated for entire final interval avoids asserting uninterrupted sovereignty in Harran after its capture. Switching core to associated is not sole phase distinction: Syrian Region is removed."
+          }
+        ],
+        "newSources": [
+          {
+            "id": "source-oracc-tiglath-pileser-territory-reviewed",
+            "title": "Tiglath-pileser III, king of Assyria (744–727 BC)",
+            "author": "Karen Radner",
+            "publisher": "ORACC / University College London",
+            "year": 2025,
+            "url": "https://oracc.museum.upenn.edu/saao/aebp/Essentials/Kings/Tiglath-pileserIII/index.html",
+            "supports": "740 Arpad into two provinces;738 Unqu and NW Hamat;732 Damascus and Megiddo annexations."
+          },
+          {
+            "id": "source-eshel-silver-levant-2025",
+            "title": "Keseph: The Use of Silver Money in the Southern Levant from the Middle Bronze Age to the End of the Iron Age",
+            "author": "Tzilla Eshel",
+            "publisher": "Journal of World Prehistory",
+            "year": 2025,
+            "url": "https://doi.org/10.1007/s10963-025-09191-7",
+            "inspectedCopy": "https://d-nb.info/1379346223/34",
+            "supports": "PDF pp72–73 (zero-based71–72): withdrawal640/630 followed by Egyptian dominance. Approximate630 is supportable rounded endpoint."
+          },
+          {
+            "id": "source-bm-fall-nineveh-chronicle-reviewed",
+            "title": "Cuneiform tablet with part of the Babylonian Chronicle (616–609 BC)",
+            "publisher": "British Museum",
+            "url": "https://artsandculture.google.com/asset/cuneiform-tablet-with-part-of-the-babylonian-chronicle-616-609-bc/xAEPSobA2ozDxw?hl=en",
+            "objectId": "1896,0409.6",
+            "supports": "Museum-authored primary-object description: Nineveh612, remnant atHarran, sack610/9, failedrecapture609."
+          }
+        ],
+        "referenceChanges": [
+          "relation-assyria-conquers-israel -> neo-assyrian-imperial-administration (overlap734–720 begins2 years before phase; if full-containment validator exists use entity ref or adjust relationship period only with separate review).",
+          "event-lachish-captured -> neo-assyrian-imperial-administration",
+          "relation-assyria-uses-aramaic spans800–700, keep administration endpoint because relation overlaps phase732–630; do not pretend phase contains entire language-adoption process.",
+          "event-israel-falls-to-assyria and other pending events with expansion participant may need rebind to administration where their dates/meaning concern732 onward.",
+          "relation-neo-babylon-succeeds-assyria still uses neo-assyrian-collapse612–609, overlapping relation626–605.",
+          "entity.phaseIds and entity decision add2 newIDs; scene signals should map to all genuinely overlapping states, not mechanically replace oldexpansion with one earlyphase."
+        ],
+        "publicationRecommendation": "Rows list concrete outcomes; no public research caveats. Internal614–610 interval is mandatory record because612 is not demonstrated as uniform Syrian territorial exit."
+      }
+    },
+    "communities": {
+      "reviewedAt": "2026-09-16",
+      "scope": "Read-only source review; only this handoff file authored. Stable entity IDs retained.",
+      "recommendation": "Convert the four culturalTradition entities to community. Scope visible marks to urban/palatial communities rather than the whole cultural lifespan; civilization backdrop remains broader. Preferred public names avoid claiming every early Greek settlement was a city.",
+      "entities": [
+        {
+          "id": "minoan-palatial-civilization",
+          "name": "克里特宫殿社群",
+          "type": "community",
+          "summary": "克里特围绕多座宫殿形成的城市社群，宫殿集中行政、储藏、手工业与祭仪活动。",
+          "centres": "克诺索斯、费斯托斯、马利亚、扎克罗斯。",
+          "core": "克里特岛各宫殿及周边聚落。",
+          "organization": "各宫殿组织周边地区的物资储藏、生产与祭仪，并通过海路交换物产。",
+          "sourceIds": [
+            "source-unesco-minoan-palatial-centres",
+            "source-met-minoan-crete"
+          ],
+          "phaseRecommendation": {
+            "keepId": "minoan-first-palatial-centres",
+            "start": -1900,
+            "end": -1450,
+            "approximate": true,
+            "regions": [
+              {
+                "regionId": "crete",
+                "role": "core"
+              }
+            ],
+            "title": "克里特宫殿中心",
+            "mergeIds": [
+              "minoan-rebuilt-palatial-network"
+            ],
+            "removeAsSeparateSpatialStage": [
+              "minoan-knossos-linear-b-reorganization"
+            ],
+            "reason": "Met explicitly dates major palace establishments c1900 and widespread destruction c1450. These are a coherent multi-palace network scope. Do not label the post1450 Knossos administration as territorial contraction of a Minoan state. If the parent chooses to include Knossos successor community, retain that separately as localized attestation with a reviewed endpoint, not a generic whole-island late phase. Existing1375 is not established by the opened broad sources; Heraklion municipality gives1350, museum objects1375–1300, so do not silently pick one."
+          },
+          "mappingNotes": "The administration relation spans1450–1375 and two phases are cited by pending palace rebuilding process. Map former phases to surviving identity only after checking relation temporal constraints; boundary1450 overlap exists, but participant semantics must change from existing living administration to predecessor palace context if scope ends1450."
+        },
+        {
+          "id": "mycenaean-civilization",
+          "name": "迈锡尼城市社群",
+          "type": "community",
+          "summary": "希腊大陆以城堡与宫殿为中心的城市社群，依靠农业、手工业和海上贸易发展。",
+          "centres": "迈锡尼、梯林斯、皮洛斯与底比斯。",
+          "core": "伯罗奔尼撒及希腊中部的宫殿地区。",
+          "organization": "各宫殿由国王及官员组织生产和物资分配，书吏用线形文字B记账。",
+          "sourceIds": [
+            "source-met-mycenaean-civilization",
+            "source-killen-mycenaean-society"
+          ],
+          "phaseRecommendation": {
+            "keepId": "mycenaean-palatial-administration",
+            "start": -1600,
+            "end": -1200,
+            "approximate": true,
+            "regions": [
+              {
+                "regionId": "greek-mainland",
+                "role": "core"
+              }
+            ],
+            "title": "希腊大陆城市与宫殿",
+            "mergeIds": [
+              "mycenaean-shaft-grave-elites"
+            ],
+            "removeAsSeparateSpatialStage": [
+              "mycenaean-palace-end-and-transformation"
+            ],
+            "reason": "1600 beginning supported by Met and UNESCO. Cambridge transformation establishes palatial system end c1200. Scope explicitly mainland palace-centred communities, while successor small communities belong to existing greek-dark-age-communities entity. Existing1250 decline boundary and Crete controlled claim not supported by broad sources; c1450 Knossos administration is real but should not imply an empire controlling all Crete. The parent may separately model Crete attestation if retained; do not infer end1250 from loss of local phase references."
+          },
+          "mappingNotes": "Replace religious relation's two duplicate Mycenaean participants with one surviving palace phase. Reorganization relation becomes transition from palace entity to successor community with boundary1200, or remains a broader historical transition whose source endpoint phase only overlaps start; do not change history solely to satisfy containment."
+        },
+        {
+          "id": "indus-civilization",
+          "name": "印度河城市社群",
+          "type": "community",
+          "summary": "印度河流域及邻近地区的城市社群，以规划街区、排水设施、标准化器物和远距离贸易相互联系。",
+          "centres": "哈拉帕、摩亨佐-达罗、拉基加里与多拉维拉。",
+          "core": "印度河流域及南亚西北部的城市地区。",
+          "organization": "城市居民组织街区建设、供水排水与专业手工业，跨城交换广泛使用标准化度量衡。",
+          "sourceIds": [
+            "source-green-indus-public-goods",
+            "source-wright-ancient-indus",
+            "source-kenoyer-indus-civilisation"
+          ],
+          "phaseRecommendation": {
+            "keepId": "indus-civilization-core-presence",
+            "start": -2600,
+            "end": -1900,
+            "approximate": true,
+            "regions": [
+              {
+                "regionId": "indus-basin",
+                "role": "core"
+              },
+              {
+                "regionId": "south-asia-northwest",
+                "role": "attested"
+              }
+            ],
+            "title": "成熟城市网络",
+            "removeIds": [
+              "indus-regional-transformation"
+            ],
+            "reason": "Green paper dates mature urban society2600–1900, names all four centres and describes distributed public infrastructure. Existing core3300–1900 folds preurban development into cities. Existing second stage2000–1300 falsely calls rural reorganization expansion, overlaps mature phase, and puts northwest only in later phase despite Rakhigarhi etc. Do not claim an egalitarian democracy/no rulers as settled fact from Green's interpretation."
+          },
+          "mappingNotes": "relation-mohenjo-daro-indus-civilization already points surviving core. Pending event-indus-mesopotamia-exchange remains compatible. Pending event-indus-urban-transformation's phase participant should map surviving core for contraction endpoint if overlap is allowed (2000–1900), otherwise make entity-only historical participant per schema; scene-phase records now leading to removed late phase should be explicitly deferred/excluded as posturban transformation, not blindly remapped to1900-ended phase."
+        },
+        {
+          "id": "greek-dark-age-communities",
+          "name": "希腊早期聚落社群",
+          "type": "community",
+          "summary": "迈锡尼宫殿衰落后，希腊大陆与爱琴海岛屿的地方聚落继续耕作、制造器物并开展海上交往。",
+          "centres": "梯林斯、雅典、莱夫坎迪等聚落。",
+          "core": "希腊大陆与爱琴海岛屿。",
+          "organization": "生活围绕地方聚落和小型社群展开，各地通过交换、竞争与往来保持联系。",
+          "sourceIds": [
+            "source-cambridge-mycenaean-transformation",
+            "source-cambridge-greek-iron-age-pottery",
+            "source-oxford-lefkandi-reviewed"
+          ],
+          "phaseRecommendation": {
+            "keepId": "greek-postpalatial-local-communities",
+            "start": -1200,
+            "end": -800,
+            "approximate": true,
+            "regions": [
+              {
+                "regionId": "greek-mainland",
+                "role": "core"
+              },
+              {
+                "regionId": "aegean-islands",
+                "role": "attested"
+              }
+            ],
+            "title": "大陆与岛屿聚落",
+            "mergeIds": [
+              "greek-early-iron-age-regional-links"
+            ],
+            "reason": "1050 is chronological pottery-period boundary, not proved spatial footprint change. Existing associated→exchange islands switch implies a false onset of contact. One geographically stable phase is sufficient; local organization changes remain prose. Cambridge transformation covers1200–1050; Oxford excavations show early Iron Age Lefkandi and eastern imports, project bibliography covers town2100–700. This is region-level aggregate presence, not every named settlement continuous."
+          },
+          "mappingNotes": "relation-mycenaean-dark-age-reorganization retains surviving phase. Pending event-greek-early-iron-age-regional-links (verify exact event ID in events.ts) and entity-decision/scene-phase refs to merged phase should point surviving. Do not force label 城市 to imply urbanism for all villages; public grouping can remain community."
+        },
+        {
+          "id": "assur-community",
+          "name": "亚述城社群",
+          "type": "community",
+          "summary": "以亚述城为中心的城市社群，商人沿陆路经营安纳托利亚贸易，城市也长期承担宗教与政治职能。",
+          "centres": "亚述城；古亚述商人在卡尼什设有商贸社群。",
+          "core": "底格里斯河畔的亚述城及周边地区。",
+          "organization": "古亚述时期，统治者与城市议会共同处理公共事务，商人家族组织商队和异地交易。",
+          "sourceIds": [
+            "source-met-old-assyrian-community-reviewed",
+            "source-met-assyrian-caravan-object-reviewed",
+            "source-oracc-assyrian-heartland-reviewed"
+          ],
+          "phaseRecommendation": {
+            "keepIds": [
+              "assur-old-assyrian-trade-community",
+              "assur-middle-assyrian-urban-tradition"
+            ],
+            "keepTimeGap": true,
+            "reason": "Existing two phases2000–1750 and1400–1000 are different attested trade/urban contexts. Neither gap nor disappearance is established by source. Do not invent a bridging phase merely to smooth display. Keep honest dated rows labelled 古亚述商贸网络 and 中亚述城址; no change claim that Assur vanished1750 then was refounded1400. ORACC general Middle Assyrian URL fails, while core Assyria page confirms Assur/Nineveh/Arbela dominated second millennium; existing numerical middle endpoint remains inherited, not newly verified precisely."
+          },
+          "mappingNotes": "No mandatory remap when phases retained. entity-decisions/iron-age-near-east.json and scene-phase/iron-age-near-east.json contain second phase. pending event-old-assyrian-trade-networks uses first."
+        }
+      ],
+      "newSources": [
+        {
+          "id": "source-met-old-assyrian-community-reviewed",
+          "title": "The Old Assyrian Period (ca. 2000–1600 B.C.)",
+          "publisher": "The Metropolitan Museum of Art",
+          "url": "https://www.metmuseum.org/essays/the-old-assyrian-period",
+          "verified": "Opened; Ashur city, merchant families, Anatolian settlements, ruler+city assembly."
+        },
+        {
+          "id": "source-met-assyrian-caravan-object-reviewed",
+          "title": "Cuneiform tablet: caravan account",
+          "publisher": "The Metropolitan Museum of Art",
+          "url": "https://www.metmuseum.org/art/collection/search/325851",
+          "verified": "Primary museum object search result; caravan commerce, tin/textiles, private household archives,1900s."
+        },
+        {
+          "id": "source-oracc-assyrian-heartland-reviewed",
+          "title": "Central Assyria, the lands between Assur, Nineveh and Arbela",
+          "author": "Karen Radner",
+          "publisher": "ORACC / University College London",
+          "year": 2025,
+          "url": "https://oracc2.museum.upenn.edu/saao/aebp/Essentials/Countries/CentralAssyria/index.html",
+          "verified": "Research project search result; second millennium cities and Middle Assyrian provinces."
+        },
+        {
+          "id": "source-oxford-lefkandi-reviewed",
+          "title": "Early Excavations at Lefkandi: The Protogeometric Building and the Cemetery of Toumba",
+          "publisher": "University of Oxford Lefkandi Excavations",
+          "url": "https://lefkandi.classics.ox.ac.uk/Toumba.html",
+          "verified": "Opened; tenth-century monumental building, grave goods and eastern Mediterranean imports. Do not present elite tomb alone as nationwide governing institution."
+        }
+      ],
+      "verifiedExistingUrls": {
+        "source-unesco-minoan-palatial-centres": "https://whc.unesco.org/en/decisions/8959/",
+        "source-met-minoan-crete": "https://www.metmuseum.org/essays/minoan-crete",
+        "source-met-mycenaean-civilization": "https://www.metmuseum.org/essays/mycenaean-civilization",
+        "source-green-indus-public-goods": "https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2022.823071/full",
+        "source-giosan-harappan-transformation": "https://cp.copernicus.org/articles/14/1669/2018/index.html",
+        "source-cambridge-mycenaean-transformation": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-greek-iron-age/transformation-of-the-mycenaean-world/3FA169AC1267D35EC5365067710D44D5"
+      },
+      "sourceCorrections": [
+        "source-met-old-assyrian-caravan current URL redirects to Assyria1365–609, not trade as its title implies; replace references with new reviewed IDs rather than altering frozen snapshot.",
+        "source-green-indus-public-goods title is actually Of Revenue Without Rulers: Public Goods in the Egalitarian Cities of the Indus Civilization; original catalog title is imprecise.",
+        "Do not equate one scholar's Indus egalitarian model with certain constitutional structure. Use observable shared construction and organization only."
+      ],
+      "affectedFiles": [
+        "v6/data/aegean/entities.ts",
+        "v6/data/aegean/events.ts",
+        "v6/data/aegean/relations.ts",
+        "v6/data/aegean/aegean.test.ts",
+        "v6/data/ancient-india/entities.ts",
+        "v6/data/ancient-india/events.ts",
+        "v6/data/ancient-india/relations.ts",
+        "v6/data/ancient-india/ancient-india.test.ts",
+        "v6/data/iron-age-near-east/entities.ts",
+        "v6/data/iron-age-near-east/events.ts",
+        "v6/migration/entity-decisions/aegean.json",
+        "v6/migration/entity-decisions/ancient-india.json",
+        "v6/migration/entity-decisions/iron-age-near-east.json",
+        "v6/migration/scene-phase/aegean.json",
+        "v6/migration/scene-phase/ancient-india.json",
+        "v6/migration/scene-phase/iron-age-near-east.json",
+        "v6/migration/relation-candidates/ancient-india.json"
+      ],
+      "migrationRules": "Keep baseline immutable. Review mapping record meaning; do not blanket substitute deleted phase IDs where a scene covers only posturban successor periods. Preserve rejected old content in internal review rather than invalid authoritative phase. All event historicalProcess references are authored/pending and may still need reference validity."
+    },
+    "egyptAndChina": {
+      "scope": "只读核查交接；未编辑核心文件。全部年代近似。",
+      "chronology": {
+        "finding": "现有埃及阶段混用了不同分期：UCL总表为古2686–2181、中2025–1700、新1550–1069；Met分别2649–2130、2030–1650、1550–1070。当前2055/2040、1555不由所引页面支持。",
+        "recommendation": "统一采用UCL总表；简介删除重复年代。古王国阶段起点改-2686；新王国改-1550。中王国若采用UCL则全期-2025..-1700，并删除原-1700..-1650的伪收缩阶段。这是来源口径修正，不是为消重叠缩短。",
+        "source": {
+          "id": "source-ucl-egypt-chronology",
+          "title": "Egyptian Chronology",
+          "publisher": "UCL Digital Egypt for Universities",
+          "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/index.html"
+        }
+      },
+      "phaseRecommendations": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "action": "保留单阶段，起点统一2686，名称改尼罗河谷与三角洲；不增加兴衰分期",
+          "phases": [
+            {
+              "id": "egypt-old-kingdom-regional-presence",
+              "start": -2686,
+              "end": -2181,
+              "regions": {
+                "nile-valley": "core",
+                "nile-delta": "controlled"
+              }
+            }
+          ],
+          "references": "phaseId保留；pyramid event等旧日期可不变，只要求实际相交。古王国年代差异归入内部审核。"
+        },
+        {
+          "entityId": "egypt-middle-kingdom",
+          "action": "建议两阶段：核心统一与下努比亚扩展；移除后期associated假收缩。源文说明努比亚丧失发生在第二中间期，不能以末期文化延续冒充中王国统治阶段。",
+          "phases": [
+            {
+              "id": "egypt-middle-kingdom-reunification",
+              "start": -2025,
+              "end": -1960,
+              "regions": {
+                "nile-valley": "core",
+                "nile-delta": "controlled"
+              }
+            },
+            {
+              "id": "egypt-middle-kingdom-consolidated-order",
+              "start": -1960,
+              "end": -1700,
+              "regions": {
+                "nile-valley": "core",
+                "nile-delta": "controlled",
+                "nubia": "influence"
+              }
+            }
+          ],
+          "boundaryEvidence": "约1960来自UCL努比亚页森努塞特一世1956–1911/10修堡。内部注明取世纪近似；nubia父地区过宽，保留influence，详情必须写下努比亚要塞，不写控制整个努比亚。若坚持controlled应新增Lower Nubia region并作为子区。",
+          "remap": {
+            "egypt-middle-kingdom-fragmentation": "egypt-middle-kingdom-consolidated-order"
+          },
+          "references": [
+            "v6/data/ancient-egypt/relations.ts: relation-egypt-middle-new-kingdom-transition (phase remap, timeSpan.start -1700)",
+            "relation-egypt-old-middle-kingdom-transition end应统一-2025",
+            "v6/data/ancient-egypt/events.ts: pending event-middle-kingdom-fragmentation participant remap；pending event-middle-kingdom-reunification -2055..-2040应复核成约-2025点事件或相交近似窗",
+            "v6/migration/scene-phase/ancient-egypt.json",
+            "v6/migration/entity-decisions/ancient-egypt.json"
+          ],
+          "sourceIds": [
+            "source-ucl-middle-kingdom",
+            "source-ucl-mentuhotep-ii",
+            "source-ucl-nubia-middle-kingdom",
+            "source-ucl-buhen-middle-kingdom",
+            "source-uee-second-intermediate",
+            "source-ucl-egypt-chronology"
+          ]
+        },
+        {
+          "entityId": "egypt-new-kingdom",
+          "action": "现1186界是第20王朝起点，非同年失去努比亚、黎凡特。取消该界。UCL明确南黎凡特撤出在拉美西斯四世后，约1145；努比亚控制持续至新王国末。",
+          "minimalThreePhaseOption": [
+            {
+              "id": "egypt-new-kingdom-reunification",
+              "start": -1550,
+              "end": -1450,
+              "regions": {
+                "nile-valley": "core",
+                "nile-delta": "controlled"
+              }
+            },
+            {
+              "id": "egypt-new-kingdom-imperial-court-order",
+              "start": -1450,
+              "end": -1145,
+              "regions": {
+                "nile-valley": "core",
+                "nile-delta": "controlled",
+                "nubia": "controlled",
+                "southern-levant": "influence"
+              }
+            },
+            {
+              "id": "egypt-new-kingdom-fragmentation",
+              "start": -1145,
+              "end": -1069,
+              "regions": {
+                "nile-valley": "core",
+                "nile-delta": "controlled",
+                "nubia": "controlled"
+              }
+            }
+          ],
+          "minimalOptionLimitation": "此三行只修正过早撤出，仍漏掉约1500–1450努比亚扩展。更准确应把第一段1550–1500两核心，新增1500–1450两核心+努比亚controlled；原第二段1450–1145增加南黎凡特influence；第三段1145–1069移除黎凡特。四行每次增删地域，不凑王朝段。1500为图特摩斯一世征服的近似值。",
+          "referenceWarning": "late-bronze-age里的海上来敌事件约1177，必须从fragmentation改连imperial-court-order，否则新末段1145才开始不相交。不要机械全局替换所有fragmentation refs。",
+          "references": [
+            "v6/data/late-bronze-age/events.ts: defendingPolity participant",
+            "v6/data/late-bronze-age/late-bronze-age.test.ts: line131 phase assertion",
+            "v6/migration/handoffs/late-bronze-age.json",
+            "v6/migration/relation-candidates/late-bronze-age.json",
+            "v6/migration/scene-phase/late-bronze-age.json",
+            "v6/migration/scene-phase/ancient-egypt.json:选阶段需按具体scene年代",
+            "v6/migration/entity-decisions/ancient-egypt.json",
+            "v6/data/ancient-egypt/events.ts:末期fragmentation为pending process，1186–1069跨第二、第三阶段可保留相交但叙述审核"
+          ],
+          "newSourcesNeeded": [
+            "source-ucl-egypt-asia-new-kingdom",
+            "source-ucl-ramesses-iv",
+            "source-akmenkalns-nubian-egyptian-interactions"
+          ]
+        },
+        {
+          "entityId": "western-zhou",
+          "action": "将无据的前850年收缩并回全期。Li Feng原文指出771年结束对黄河中下游的统治，不支持850年失去整个华北平原。",
+          "phases": [
+            {
+              "id": "western-zhou-regional-rule",
+              "start": -1046,
+              "end": -771,
+              "regions": {
+                "middle-yellow-river": "core",
+                "north-china-plain": "controlled"
+              }
+            }
+          ],
+          "remap": {
+            "western-zhou-contraction-and-fall": "western-zhou-regional-rule"
+          },
+          "references": [
+            "v6/migration/entity-decisions/ancient-china.json",
+            "v6/migration/scene-phase/ancient-china.json"
+          ],
+          "sourceIds": [
+            "source-li-feng-western-zhou-fall",
+            "source-western-zhou-domain"
+          ],
+          "interpretation": "详情范围写关中、洛阳与东方封国；north-china-plain controlled在文案明确通过封国统治，不表示郡县式直接行政。没有relation引用旧末期ID。"
+        },
+        {
+          "entityId": "shang-civilization",
+          "action": "保留 shang-regional-rule -1600..-1046 两地区。简介去防御性文句，迁都只进入中心栏，不新增同地域的phase。"
+        }
+      ],
+      "copy": {
+        "egypt-old-kingdom": {
+          "summary": "统一王权组织尼罗河流域的资源，建造金字塔与大型王室陵墓。",
+          "centers": "孟菲斯。",
+          "core": "尼罗河谷与三角洲。",
+          "organization": "国王居于统治中心，宫廷官员与地方长官组织各地事务和王室工程。",
+          "sourceIds": [
+            "source-met-old-kingdom",
+            "source-ucl-memphis-background"
+          ]
+        },
+        "egypt-middle-kingdom": {
+          "summary": "底比斯王室重新统一埃及，随后向下努比亚扩展，并迎来文学与艺术的繁荣。",
+          "centers": "底比斯；第十二王朝起以伊奇塔维为行政中心。",
+          "core": "尼罗河谷与三角洲。",
+          "organization": "王室通过官员和地方统治者治理各地，后期加强中央对地方的掌握。",
+          "sourceIds": [
+            "source-met-middle-kingdom",
+            "source-ucl-middle-kingdom",
+            "source-ucl-middle-kingdom-guide",
+            "source-ucl-nubia-middle-kingdom"
+          ]
+        },
+        "egypt-new-kingdom": {
+          "summary": "埃及王权向努比亚与黎凡特扩展，王室以远征、外交和大型神庙连接各地。",
+          "centers": "底比斯与孟菲斯；阿玛尔纳时期以阿赫塔顿为王都，拉美西斯二世迁都皮拉美西斯。",
+          "core": "尼罗河谷与三角洲。",
+          "organization": "王室以官员和军队治理埃及及努比亚，并通过属国与驻军维持黎凡特的统治。",
+          "sourceIds": [
+            "source-met-new-kingdom",
+            "source-ucl-memphis-background",
+            "source-met-akhenaten-city",
+            "source-ucl-ramesses-ii",
+            "source-ucl-egypt-asia-new-kingdom"
+          ]
+        },
+        "western-zhou": {
+          "summary": "周王室以关中和洛阳为中心，通过封国、册命与祖先祭祀连接黄河中下游的政治中心。",
+          "centers": "丰镐（宗周），洛邑（成周）。",
+          "core": "关中渭河流域与洛阳盆地。",
+          "organization": "周王授予贵族土地、人口与职事，以宗族关系、朝贡和军事义务联系各地封国。",
+          "sourceIds": [
+            "source-li-feng-western-zhou-fall",
+            "source-western-zhou-domain",
+            "source-national-museum-da-yu-ding",
+            "source-national-museum-ceming",
+            "source-cook-western-zhou-rites",
+            "source-hk-history-museum-zhou-organization"
+          ],
+          "verification": "首都和黄河范围直接核过Li Feng摘要；册命原馆页仅展览摘要，新正文建议核source-national-museum-ceming全文或用新增香港历史博物馆介绍来源。"
+        },
+        "shang-civilization": {
+          "summary": "以王室、城市和祖先祭祀为中心的早期王朝，发展了青铜礼器与甲骨占卜。",
+          "centers": "早期以郑州商城等为中心；晚期王都位于安阳殷墟。",
+          "core": "黄河中游与华北平原。",
+          "organization": "商王掌握军事与祭祀权力，通过王室和地方贵族组织各地事务。",
+          "sourceIds": [
+            "source-an-zhengzhou-shang-city",
+            "source-bagley-shang-archaeology",
+            "source-unesco-yinxu",
+            "source-smithsonian-shang-dynasty",
+            "source-keightley-ancestral-landscape"
+          ]
+        }
+      },
+      "newSourceUrls": [
+        {
+          "id": "source-ucl-memphis-background",
+          "title": "Memphis, background",
+          "publisher": "UCL Digital Egypt for Universities",
+          "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/memphis/background.html"
+        },
+        {
+          "id": "source-ucl-middle-kingdom-guide",
+          "title": "A Guided Tour: Middle Kingdom",
+          "publisher": "UCL Digital Egypt for Universities",
+          "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/main/guidemk.html"
+        },
+        {
+          "id": "source-ucl-egypt-asia-new-kingdom",
+          "title": "Asia: foreign relations with Egypt in the New Kingdom",
+          "publisher": "UCL Digital Egypt for Universities",
+          "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/foreignrelations/asiank.html"
+        },
+        {
+          "id": "source-ucl-ramesses-iv",
+          "title": "Ramesses IV",
+          "publisher": "UCL Digital Egypt for Universities",
+          "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/ramsesiv.html"
+        },
+        {
+          "id": "source-ucl-ramesses-ii",
+          "title": "Ramesses II",
+          "publisher": "UCL Digital Egypt for Universities",
+          "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/ramsesii.html"
+        },
+        {
+          "id": "source-akmenkalns-nubian-egyptian-interactions",
+          "title": "Cultural Continuity and Change in the Wake of Ancient Nubian-Egyptian Interactions",
+          "author": "Jessika Louise Groth Akmenkalns",
+          "year": 2018,
+          "publisher": "University of California, Santa Barbara",
+          "url": "https://escholarship.org/uc/item/40f8g7vn"
+        },
+        {
+          "id": "source-smithsonian-shang-dynasty",
+          "title": "Shang dynasty (ca. 1600–1050 BCE)",
+          "publisher": "Smithsonian National Museum of Asian Art",
+          "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/explore-by-dynasty/shang-dynasty-2/"
+        },
+        {
+          "id": "source-hk-history-museum-zhou-organization",
+          "title": "歷史博物館展出夏商周珍貴文物",
+          "publisher": "香港政府新聞公報／香港歷史博物館",
+          "year": 2007,
+          "url": "https://www.info.gov.hk/gia/general/200702/13/P200702130088.htm"
+        }
+      ],
+      "doNotTouch": "v6/migration/baseline 冻结原始快照不能改；只改entity-decisions/scene-phase/handoffs等可变审核映射。"
+    }
+  },
+  "phaseRemaps": {
+    "ur-iii-fragmentation": "ur-iii-kingdom-order",
+    "old-babylonian-hammurabi-expansion": "old-babylonian-city-kingdom-emergence",
+    "old-babylonian-contraction": "old-babylonian-city-kingdom-emergence",
+    "neo-babylonian-western-campaigns": "neo-babylonian-capital-and-rule",
+    "western-zhou-contraction-and-fall": "western-zhou-regional-rule",
+    "egypt-middle-kingdom-fragmentation": "egypt-middle-kingdom-consolidated-order",
+    "minoan-rebuilt-palatial-network": "minoan-first-palatial-centres",
+    "mycenaean-shaft-grave-elites": "mycenaean-palatial-administration",
+    "mycenaean-palace-end-and-transformation": "mycenaean-palatial-administration",
+    "indus-regional-transformation": "indus-civilization-core-presence",
+    "greek-early-iron-age-regional-links": "greek-postpalatial-local-communities"
+  },
+  "finalDecisions": [
+    "Retain Knossos as a localized Cretan palace community c1450–1350 after the multi-palace network. Municipality source supports the chosen approximate endpoint; museum alternative is later. This is not territorial contraction of a unified Minoan polity.",
+    "Use five sequential Neo-Assyrian spatial states from the supplemental review. c630 and c612 withdrawal dividers remain approximate editorial synthesis.",
+    "Relations spanning several Assyrian states now reference all corresponding phases; historical dates were not shortened to fit a new phase."
+  ]
+}

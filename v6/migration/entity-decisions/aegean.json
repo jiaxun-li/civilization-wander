@@ -1,0 +1,189 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/aegean.ts",
+  "decisions": [
+    {
+      "entityId": "minoan-palatial-civilization",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "community",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "minoan-first-palatial-centres",
+        "minoan-knossos-linear-b-reorganization"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "minoan-palatial-civilization"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "mycenaean-civilization",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "community",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "mycenaean-palatial-administration"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "mycenaean-civilization"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "greek-dark-age-communities",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "community",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "greek-postpalatial-local-communities"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "greek-dark-age-communities"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "greek-divine-tradition",
+      "oldType": "religionAndMyth",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "religiousTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "religiousTradition",
+      "acceptedConceptLayerId": "religionAndThought",
+      "acceptedPhaseIds": [
+        "greek-divine-mycenaean-attestations"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "greek-divine-tradition"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "greek-heroic-tradition",
+      "oldType": "religionAndMyth",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "religiousTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "religionAndThought"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "按本轮知识核心精简决定，不保留独立的口头形成或传播传统；原始证据与叙事信号留在迁移审计，不再作为现存 V6 对象迁入。"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "troy-archaeological-site",
+      "oldType": "SettlementSite",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "settlement",
+        "archaeologicalSite"
+      ],
+      "proposedConceptLayers": [
+        "placeAndSite"
+      ],
+      "acceptedEntityType": "archaeologicalSite",
+      "acceptedConceptLayerId": "placeAndSite",
+      "acceptedPhaseIds": [
+        "troy-late-bronze-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "troy-archaeological-site"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "iliad-text",
+      "oldType": "TextDocument",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "documentCorpus",
+        "literaryWork",
+        "literaryTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge",
+        "artAndLiterature",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "literaryWork",
+      "acceptedConceptLayerId": "artAndLiterature",
+      "acceptedPhaseIds": [
+        "iliad-work-formation"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "iliad-text"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "odyssey-text",
+      "oldType": "TextDocument",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "documentCorpus",
+        "literaryWork",
+        "literaryTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge",
+        "artAndLiterature",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "literaryWork",
+      "acceptedConceptLayerId": "artAndLiterature",
+      "acceptedPhaseIds": [
+        "odyssey-work-formation"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "odyssey-text"
+      },
+      "status": "accepted"
+    }
+  ]
+}

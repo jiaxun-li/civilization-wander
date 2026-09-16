@@ -1,0 +1,105 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/late-bronze-age.ts",
+  "decisions": [
+    {
+      "eventId": "event-hittite-central-kingship-consolidates",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-hittite-central-kingship-consolidates"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-ugarit-palace-port-network-operates",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-ugarit-palace-port-network-operates"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-amarna-diplomatic-correspondence-operates",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-amarna-diplomatic-correspondence-operates"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-hittite-sack-babylon",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-hittite-sack-babylon"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-hittite-syrian-expansion",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-hittite-syrian-expansion"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-hittite-ugarit-treaty",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-hittite-ugarit-treaty"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-hittite-central-kingdom-ends",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-hittite-central-kingdom-ends"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-ugarit-destruction",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "deferAfterEditorialSimplification",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准精简重复政权终结事件；毁坏和未恢复的历史信息及来源保留在乌加里特王国详情。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-ramesses-iii-northern-invasions",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-ramesses-iii-northern-invasions"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

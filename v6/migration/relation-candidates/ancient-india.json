@@ -1,0 +1,96 @@
+{
+  "ledgerVersion": 1,
+  "runtimeCollection": false,
+  "sourceModule": "data/ancient-india.ts",
+  "candidates": [
+    {
+      "candidate": {
+        "id": "candidate-vedic-contact-population-and-language-identities",
+        "sourceSceneIds": [
+          "indo-aryan-local-settlements",
+          "indo-aryan-steppe-groups-move-south",
+          "indo-aryan-language-enters-northwest",
+          "indo-aryan-new-society-forms"
+        ],
+        "proposedFamily": "social",
+        "proposedType": "populationLanguageContactDuringTraditionFormation",
+        "proposedOrientation": "multiParty",
+        "proposedTimeSpan": {
+          "start": -2000,
+          "end": -1000,
+          "label": "约公元前2000—前1000年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "vedic-tradition"
+            },
+            "proposedRole": "formingCulturalTradition"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "草原相关迁入人群",
+            "proposedEntityTypes": [
+              "community"
+            ],
+            "notes": "遗传学中的祖源成分不能直接稳定化为一个有统一名称、边界和行动能力的历史社群。"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "南亚西北部地方社群",
+            "proposedEntityTypes": [
+              "community"
+            ],
+            "notes": "地方人口和聚落具有区域差异，现有Scene不足以建立单一社群Entity。"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "早期印度—雅利安语言传播",
+            "proposedEntityTypes": [
+              "language"
+            ],
+            "notes": "语言传播与遗传祖源、文化身份不能逐一对应；需先确定语言Entity的范围和时间分期。"
+          }
+        ],
+        "summary": "人口移动、地方接触与语言传播共同参与早期吠陀传统形成，但现阶段不能把每个Scene中的人群、社群或迁徙描述分别制造成稳定Entity。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousTargetKind",
+          "insufficientEvidence"
+        ],
+        "unresolvedQuestions": [
+          "草原相关祖源是否能支持任何具名community Entity，还是只应留作Event证据？",
+          "南亚西北部地方社群应按遗址、区域还是考古文化分别建模？",
+          "早期印度—雅利安语言应何时建立独立language Entity并如何分期？",
+          "人口移动、语言传播和吠陀传统形成应拆成几条TemporalRelation？"
+        ],
+        "sourceIds": [
+          "source-narasimhan-south-central-asia",
+          "source-shinde-rakhigarhi-genome",
+          "source-singh-ancient-india",
+          "source-jamison-brereton-rigveda",
+          "source-wright-ancient-indus",
+          "source-giosan-harappan-transformation"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/ancient-india.ts",
+        "originatingEntityId": "vedic-tradition",
+        "originatingPhaseCandidateIds": [
+          "vedic-early-hymn-oral-tradition",
+          "indus-civilization-core-presence"
+        ],
+        "sourceEventIds": [
+          "event-steppe-related-ancestry-enters-south-asia",
+          "event-rigveda-composed-transmitted",
+          "event-indus-urban-transformation"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    }
+  ]
+}

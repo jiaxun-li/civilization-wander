@@ -303,6 +303,126 @@ should be concise and shown only when a map is present.
 - Do not hide invalid data through renderer-only filtering when validation can
   reject it earlier.
 
+## V5 runtime and V6 migration/preview boundary
+
+- V5 remains the only official website runtime and the only data source for
+  GitHub Pages. The official dependency graph rooted at `index.html` and
+  `src/main.ts`, including `src/app.ts`, `src/data/atlas-data.ts`, the normal
+  V5 Vite build, and the Pages workflow, must not import from `v6/` during the
+  current migration stage.
+- `v6/` remains the non-runtime, structure-only historical knowledge staging
+  area. It is not a parallel deployable release. A separately addressed,
+  local-only knowledge-space preview may consume the accepted V6 knowledge
+  core through its own HTML/TypeScript entry and build command, but that
+  preview is a development consumer of V6 data, not a V6 website runtime and
+  not authorization to migrate Cards, Scenes, Assets, navigation, or Pages.
+- The knowledge-space presentation contract is owned by
+  `docs/KNOWLEDGE_SPACE_VISUALIZATION.md`. Its first implementation is limited
+  to a Region-by-time slice with one locked concept layer. It must keep the
+  renderer-neutral knowledge-space model separate from SVG output so a future
+  3D renderer can consume the same model.
+- Run the isolated preview with `pnpm dev:v6-preview`; run its complete local
+  production gate with `pnpm check:v6-preview`. These commands and
+  `knowledge-space-preview.html` remain outside the official V5 entry graph,
+  `dist/`, and Pages workflow.
+- Knowledge-space marks use exactly five semantic kinds: solid `block`,
+  diamond `node`, solid `trace`, `crayonStrip`, and `crayonField`. Persistent
+  abstract phenomena default to `crayonStrip`. `crayonField` is allowed only
+  for a source-supported EntityPhase whose presence is explicitly reviewed as
+  pervasive across the stated Regions; language, writing, or religion type
+  alone is insufficient. Approximation changes boundary treatment, not mark
+  kind.
+- The local preview selects one knowledge subject at a time, never a
+  Region-plus-time mark instance. Selecting an Entity highlights every visible
+  Phase and Region placement of that Entity; selecting an Event highlights all
+  visible placements of that Event. Region-group expansion is keyed by Region
+  identity, persists across concept-layer changes and local reloads, defaults
+  to collapsed, and collapsed groups retain a non-interactive timeline
+  thumbnail. Hover and persistent-selection details must render outside normal
+  document flow so they cannot move a mark out from under the pointer. Desktop
+  selection details use a stable side column; narrow screens use a fixed bottom
+  overlay. The time axis and current Region-group heading may remain sticky,
+  but there is no separate sticky concept-slice status bar.
+- In the first preview, only `block` marks receive visible inline names. Do not
+  add labels to `trace`, `node`, `crayonStrip`, or `crayonField` until a later
+  density and collision design is approved. For one Entity in one Region row,
+  touching, overlapping, or consecutive-calendar-year `block` Phases render as
+  one continuous visual run; BCE 1 is followed by CE 1 because the historical
+  display calendar has no year zero. Retain the Phase members and a subtle
+  internal boundary for inspection, and never bridge a real time gap. The
+  selection panel lists the Entity once, each
+  Phase once, and merges that Phase's Region names into one line.
+- V6 `Event.kind` controls the event/process mark form, not its concept slice.
+  Every authoritative V6 Event must have an explicitly reviewed
+  `conceptLayerId`; warfare and political turning points may use
+  `eventAndConflict`, while technical, linguistic, artistic, religious, spatial,
+  and social events or processes belong to their own principal concept layer.
+  Never default all Events to `eventAndConflict`, and do not retain an
+  environmental condition or generic continuity label as an Event merely to
+  preserve a V5 Scene link.
+- During the current V6 re-audit, every authored `historicalProcess` is
+  quarantined in the module registry as a machine-readable `pending` review
+  record and must not enter the authoritative `events` collection or preview.
+  Promotion requires an explicit later decision that it is truly an Event
+  rather than an EntityPhase or TemporalRelation; this quarantine happens at
+  the integration boundary, never through renderer filtering.
+- An Entity may have an empty `phaseIds` array. Never invent a continuity,
+  persistence, or regional-reorganization Phase merely to make the Entity
+  visible. EntityPhase has no `conceptLayerId`: it must remain a genuine
+  time-bounded state of its owning Entity and inherits that Entity's one
+  concept layer. In the preview, the Entity name is the primary label and an
+  optional Phase title is secondary.
+- EntityPhase is a spatial state in the Region-by-time model, not a narrative
+  chapter or a ruler-period label. A new ruler, battle, reform, rise, decline,
+  or conventional early/middle/late period does not justify a new Phase by
+  itself. For a `polity`, adjacent Phases must add or remove at least one
+  Region; changing only RegionalRole wording is not territorial expansion or
+  contraction. For other Entity types, adjacent Phases must change at least
+  one Region or RegionalRole. The validator rejects repeated adjacent spatial
+  signatures. If the Region catalog is too coarse to express a sourced change,
+  refine the Region model or defer the split; do not encode the claim only in a
+  Phase title. Put discrete occurrences in Event, inter-object changes in
+  TemporalRelation, and narrative detail in Card/Scene or migration audit.
+- The three planned slice contracts are Region-by-time with a locked concept
+  layer, concept-by-time with a locked Region, and Region-by-concept with a
+  locked time window. Only the first is authorized for the initial local
+  preview. Relations, cross-layer projection, Card prose/media, search,
+  filtering, and an interactive 3D overview remain outside that preview.
+- The authoritative V6 knowledge core currently has exactly six collections:
+  `sources`, `regions`, `entities`, `entityPhases`, `events`, and
+  `temporalRelations`. Module files own only the latter four; shared Sources
+  and Regions are supplied by the V6 knowledge-core integration boundary.
+- `RelationCandidate` is migration-audit data, never a seventh runtime
+  collection. It must not enter the authoritative V6 knowledge core until an
+  Integration Agent resolves and promotes it to a valid `TemporalRelation`.
+- `v6/module-registry.ts` is the single manually maintained identity, order,
+  and accepted-data registry for the seven modules in the current migration
+  scope. `v6/knowledge-core.ts` consumes that registry rather than maintaining
+  a second module list. Changes to the migration scope or order must update the
+  registry in one integration task and pass the V6 gates; prose documentation
+  must not duplicate the module names or live object counts as another mutable
+  manifest.
+- V6 Sources come from the frozen V5 snapshot under
+  `v6/migration/baseline/`, not from a live runtime import. V5 drift must be
+  reported and reviewed instead of silently changing accepted V6 data.
+- V6 editorial revisions may explicitly add reviewed Sources in
+  `v6/catalogs/sources.ts` without altering the frozen baseline. Myth and epic
+  works use one representative composition placement by default; do not
+  recreate separately deleted oral/transmission identities or add expansion
+  layers merely to preserve discarded material. Approximate composition dates
+  remain approximate, and uncertain dates must not be invented.
+- The standard V6 structure gate is `pnpm check:v6`. Migration coverage is a
+  separate required gate: `pnpm report:v6-coverage --require-complete` must
+  report both `valid: true` and `complete: true` before the structure-only
+  migration stage is considered complete.
+- Completing these gates or the isolated knowledge-space preview does not
+  authorize a runtime switch. Cutover requires a separately approved task that
+  migrates Card, Scene, Asset, query, and official UI consumers and passes full
+  production-browser acceptance before changing the V5 aggregator or Pages
+  entry.
+- The formal three-stage V5 content authoring workflow remains unchanged by
+  this structure-only migration.
+
 ## Multi-agent content integration ownership
 
 When several agents work on content or presentation in parallel, the active

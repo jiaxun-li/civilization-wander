@@ -1,0 +1,129 @@
+{
+  "ledgerVersion": 1,
+  "runtimeCollection": false,
+  "sourceModule": "data/ancient-egypt.ts",
+  "candidates": [
+    {
+      "candidate": {
+        "id": "candidate-egypt-pyramids-nile-transport-system",
+        "sourceSceneIds": [
+          "ancient-egypt-river-returns",
+          "egypt-pyramid-merer-boats"
+        ],
+        "proposedFamily": "economic",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -2580,
+          "end": -2560,
+          "label": "胡夫大金字塔工程时期",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "egypt-pyramids"
+            },
+            "proposedPhaseId": "egypt-pyramids-nile-presence",
+            "proposedRole": "constructionDestination"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "尼罗河运输与物资调度系统",
+            "proposedEntityTypes": [
+              "naturalFeature",
+              "tradeNetwork",
+              "productionSystem"
+            ],
+            "notes": "尼罗河流域已经由 V6 Region 维度定位，但 Region 不等于可参与知识关系的 Entity。只有未来确需可连接的 naturalFeature、航运网络或工程调度身份，并能稳定区分三者时，才可晋级。"
+          }
+        ],
+        "summary": "梅勒日志与尼罗河交通材料显示，胡夫工程依赖沿河运输和物资调度；但该目标究竟应拆成自然地理、运输网络和生产制度，尚未完成身份判定。",
+        "reasons": [
+          "missingTarget",
+          "ambiguousTargetKind"
+        ],
+        "unresolvedQuestions": [
+          "Region 维度之外，尼罗河自然地理与沿河运输网络是否确有必要分别建立可连接 Entity？",
+          "工程调度应作为 productionSystem，还是只作为 Event 参与者角色表达？"
+        ],
+        "sourceIds": [
+          "source-met-life-along-nile",
+          "source-ifao-merer-log"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/ancient-egypt.ts",
+        "originatingEntityId": "egypt-pyramids",
+        "originatingPhaseCandidateIds": [
+          "egypt-pyramids-great-projects"
+        ],
+        "sourceEventIds": [
+          "event-nile-annual-cycle-organizes-life",
+          "event-khufu-great-pyramid-construction"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-egypt-pyramids-funerary-cult-institution",
+        "sourceSceneIds": [
+          "egypt-pyramid-cult-continues",
+          "egypt-afterlife-offerings-continue"
+        ],
+        "proposedFamily": "religious",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -2600,
+          "end": -2200,
+          "label": "古王国金字塔祭祀延续期",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "egypt-pyramids"
+            },
+            "proposedRole": "cultMonumentComplex"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "王室金字塔祭祀与供奉制度",
+            "proposedEntityTypes": [
+              "institution"
+            ],
+            "notes": "现有 egyptian-religion 是广义宗教传统，不能冒充具有人员、供给与长期职责的独立祭祀制度。"
+          }
+        ],
+        "summary": "金字塔下葬后仍需要供奉、人员和资源维持，但现有结构没有一个能够稳定代表具体王室祭祀组织的 Entity。",
+        "reasons": [
+          "missingTarget",
+          "ambiguousIdentity"
+        ],
+        "unresolvedQuestions": [
+          "不同金字塔祭祀组织应分别建 Entity，还是合并为一个制度类型？",
+          "哪些来源足以界定人员、资源与持续时间，而不把广义宗教传统实体化为行政机构？"
+        ],
+        "sourceIds": [
+          "source-ucl-king-cult",
+          "source-ucl-cult-offerings"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/ancient-egypt.ts",
+        "originatingEntityId": "egypt-pyramids",
+        "originatingPhaseCandidateIds": [],
+        "sourceEventIds": [
+          "event-egyptian-funerary-texts-and-rituals-expand"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    }
+  ]
+}

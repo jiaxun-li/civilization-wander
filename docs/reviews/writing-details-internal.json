@@ -1,0 +1,791 @@
+{
+  "reviewDate": "2026-09-16",
+  "scope": "All writingSystem descriptions; unchanged numeric dates, regional associations and marks.",
+  "limitations": [
+    "Time endpoints describe the existing curated display coverage, not universal invention or extinction dates.",
+    "Materials and uses summarize selected surviving examples rather than all historical writing activity.",
+    "Linear A remains undeciphered; Minoan is a conventional designation, not a demonstrated language-family affiliation.",
+    "Indus sign meanings and language attribution remain unresolved; the panel describes material uses without claiming specific trade, legal or religious meanings."
+  ],
+  "previousRecords": [
+    {
+      "entity": {
+        "id": "cuneiform",
+        "type": "writingSystem",
+        "name": "楔形文字",
+        "alternativeNames": [
+          "Cuneiform"
+        ],
+        "canonicalSummary": "起源于美索不达米亚的文字系统，从早期管理记录发展为可记录多种语言的楔形书写。苏美尔语和阿卡德语共享这种文字；两河南部的使用跨越多个王朝。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "cuneiform-hittite-use",
+          "cuneiform-early-development",
+          "cuneiform-multilingual-transmission",
+          "cuneiform-eastern-mediterranean-diplomacy"
+        ],
+        "tags": [
+          "西亚",
+          "文字系统",
+          "泥板"
+        ],
+        "sourceIds": [
+          "source-englund-proto-cuneiform",
+          "source-british-museum-cuneiform",
+          "source-met-grammatical-text-object",
+          "source-chicago-hittite-language-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "cuneiform-hittite-use",
+          "entityId": "cuneiform",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -1650,
+            "end": -1180,
+            "approximate": true,
+            "label": "约公元前1650—前1180年，所录使用范围"
+          },
+          "regions": [
+            {
+              "regionId": "central-anatolia",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-chicago-hittite-language-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-chicago-hittite-language-reviewed"
+          ]
+        },
+        {
+          "id": "cuneiform-early-development",
+          "entityId": "cuneiform",
+          "title": "两河南部长期书写",
+          "timeSpan": {
+            "start": -3350,
+            "end": -300,
+            "label": "约公元前3350年起；本期收录至前300年，非停止使用时间",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "southern-mesopotamia",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-englund-proto-cuneiform",
+                "source-met-origins-writing",
+                "source-oracc-language-continuity"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-englund-proto-cuneiform",
+            "source-met-origins-writing",
+            "source-british-museum-cuneiform",
+            "source-penn-uses-writing",
+            "source-oracc-language-continuity"
+          ]
+        },
+        {
+          "id": "cuneiform-multilingual-transmission",
+          "entityId": "cuneiform",
+          "title": "巴比伦及周边的书写见证",
+          "timeSpan": {
+            "start": -2000,
+            "end": 75,
+            "label": "约公元前2000—公元75年，选定见证范围",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "central-mesopotamia",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-babylon",
+                "source-met-grammatical-text-object"
+              ]
+            }
+          ],
+          "relationIds": [
+            "relation-cuneiform-gilgamesh"
+          ],
+          "sourceIds": [
+            "source-met-babylon",
+            "source-met-grammatical-text-object",
+            "source-british-museum-cuneiform"
+          ]
+        },
+        {
+          "id": "cuneiform-eastern-mediterranean-diplomacy",
+          "entityId": "cuneiform",
+          "title": "阿玛尔纳时代黎凡特外交文书见证",
+          "timeSpan": {
+            "start": -1400,
+            "end": -1300,
+            "label": "约公元前14世纪，文书见证范围",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "southern-levant",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-met-amarna-letters"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-met-amarna-letters",
+            "source-moran-amarna-letters"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "egyptian-hieratic",
+        "type": "writingSystem",
+        "name": "僧侣体",
+        "canonicalSummary": "书写埃及语的草写形式，长期用于文书与文学；世俗体兴起后，僧侣体仍用于宗教文本。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "hieratic-nile-use"
+        ],
+        "sourceIds": [
+          "source-ucl-writing-scope",
+          "source-ucl-hieratic"
+        ]
+      },
+      "phases": [
+        {
+          "id": "hieratic-nile-use",
+          "entityId": "egyptian-hieratic",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -3000,
+            "end": -300,
+            "label": "约公元前3000年起；本期收录至前300年，非消亡时间",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-writing-scope",
+                "source-ucl-hieratic"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-ucl-writing-scope",
+            "source-ucl-hieratic"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "egyptian-demotic",
+        "type": "writingSystem",
+        "name": "世俗体",
+        "canonicalSummary": "由埃及草写传统发展而来的文字，用于文书、书信和文学，与象形文字和僧侣体并存。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "demotic-nile-use"
+        ],
+        "sourceIds": [
+          "source-ucl-demotic",
+          "source-ucl-writing-scope"
+        ]
+      },
+      "phases": [
+        {
+          "id": "demotic-nile-use",
+          "entityId": "egyptian-demotic",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -650,
+            "end": -300,
+            "label": "约公元前650年起；本期收录至前300年，非消亡时间",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-demotic",
+                "source-ucl-writing-scope"
+              ]
+            },
+            {
+              "regionId": "nile-delta",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-demotic",
+                "source-ucl-writing-scope"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-ucl-demotic",
+            "source-ucl-writing-scope"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "egyptian-hieroglyphs",
+        "type": "writingSystem",
+        "name": "古埃及象形文字",
+        "alternativeNames": [
+          "Egyptian hieroglyphs"
+        ],
+        "canonicalSummary": "以词符、辅音符号与限定符记录古埃及语的书写系统，约前3250年开始形成，末次已知象形文字铭文见于公元394年的菲莱。这里收录尼罗河谷的见证；象形文字与僧侣体、世俗体是不同书体。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "egyptian-hieroglyphs-monumental-and-cursive-use"
+        ],
+        "tags": [
+          "非洲",
+          "古埃及",
+          "文字系统",
+          "语言"
+        ],
+        "sourceIds": [
+          "source-ucl-hieroglyphic-system",
+          "source-ucl-writing-development",
+          "source-bm-hieroglyphs-decipherment"
+        ]
+      },
+      "phases": [
+        {
+          "id": "egyptian-hieroglyphs-monumental-and-cursive-use",
+          "entityId": "egyptian-hieroglyphs",
+          "title": "尼罗河谷象形文字见证",
+          "timeSpan": {
+            "start": -3250,
+            "end": 394,
+            "label": "约公元前3250—公元394年",
+            "approximate": true
+          },
+          "regions": [
+            {
+              "regionId": "nile-valley",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-ucl-writing-development",
+                "source-ucl-hieroglyphic-system",
+                "source-bm-hieroglyphs-decipherment"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-ucl-writing-development",
+            "source-ucl-hieroglyphic-system",
+            "source-bm-hieroglyphs-decipherment"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "indus-sign-system",
+        "name": "印度河符号系统",
+        "type": "writingSystem",
+        "canonicalSummary": "成熟印度河城市的印章和器物上使用的符号系统，尚未获得公认释读。这里不为它指定梵语、达罗毗荼语或其他确定的语言归属。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "indus-sign-system-use"
+        ],
+        "sourceIds": [
+          "source-kenoyer-indus-signs-reviewed",
+          "source-indus-undeciphered-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "indus-sign-system-use",
+          "entityId": "indus-sign-system",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true,
+            "label": "约公元前2600—前1900年，所录使用范围"
+          },
+          "regions": [
+            {
+              "regionId": "indus-basin",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-kenoyer-indus-signs-reviewed",
+                "source-indus-undeciphered-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-kenoyer-indus-signs-reviewed",
+            "source-indus-undeciphered-reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "chinese-writing-system",
+        "name": "汉字",
+        "type": "writingSystem",
+        "canonicalSummary": "从甲骨卜辞、青铜器铭文到战国书写，汉字在不同材料和形态中延续。甲骨文、金文在这里作为同一系统的不同书写形态，不分别增加轨迹。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "chinese-writing-system-anyang-use",
+          "chinese-writing-system-zhou-use"
+        ],
+        "sourceIds": [
+          "source-schuessler-old-chinese-reviewed",
+          "source-penn-oracle-bone-reviewed",
+          "source-met-zhou-inscriptions-reviewed",
+          "source-unesco-oracle-bones",
+          "source-national-museum-li-gui"
+        ]
+      },
+      "phases": [
+        {
+          "id": "chinese-writing-system-anyang-use",
+          "entityId": "chinese-writing-system",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -1250,
+            "end": -300,
+            "approximate": true,
+            "label": "约公元前1250年起；本期收录至前300年，非消亡时间"
+          },
+          "regions": [
+            {
+              "regionId": "north-china-plain",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-schuessler-old-chinese-reviewed",
+                "source-penn-oracle-bone-reviewed",
+                "source-unesco-oracle-bones"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-schuessler-old-chinese-reviewed",
+            "source-penn-oracle-bone-reviewed",
+            "source-unesco-oracle-bones"
+          ]
+        },
+        {
+          "id": "chinese-writing-system-zhou-use",
+          "entityId": "chinese-writing-system",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -1046,
+            "end": -300,
+            "approximate": true,
+            "label": "约公元前1046年起；本期收录至前300年，非消亡时间"
+          },
+          "regions": [
+            {
+              "regionId": "middle-yellow-river",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-schuessler-old-chinese-reviewed",
+                "source-met-zhou-inscriptions-reviewed",
+                "source-national-museum-li-gui"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-schuessler-old-chinese-reviewed",
+            "source-met-zhou-inscriptions-reviewed",
+            "source-national-museum-li-gui"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "greek-alphabet",
+        "name": "希腊字母",
+        "type": "writingSystem",
+        "canonicalSummary": "由腓尼基字母发展而来，以字母记录希腊语，使用于希腊大陆与爱琴海岛屿。更早的迈锡尼宫殿文书曾使用线形文字B。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "greek-alphabet-use"
+        ],
+        "sourceIds": [
+          "source-bm-greek-alphabet-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "greek-alphabet-use",
+          "entityId": "greek-alphabet",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -800,
+            "end": -300,
+            "approximate": true,
+            "label": "约公元前800年起；本期收录至前300年，非消亡时间"
+          },
+          "regions": [
+            {
+              "regionId": "greek-mainland",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-bm-greek-alphabet-reviewed"
+              ]
+            },
+            {
+              "regionId": "aegean-islands",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-bm-greek-alphabet-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-bm-greek-alphabet-reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "linear-a",
+        "name": "线形文字A",
+        "type": "writingSystem",
+        "canonicalSummary": "克里特青铜时代使用的文字，见于行政记录和其他器物。尚未获得公认释读，不能把它记录的语言直接当作希腊语。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "linear-a-crete-use"
+        ],
+        "sourceIds": [
+          "source-cambridge-linear-a-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "linear-a-crete-use",
+          "entityId": "linear-a",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -1800,
+            "end": -1450,
+            "approximate": true,
+            "label": "约公元前1800—前1450年，所录使用范围"
+          },
+          "regions": [
+            {
+              "regionId": "crete",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-cambridge-linear-a-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-cambridge-linear-a-reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "linear-b",
+        "name": "线形文字B",
+        "type": "writingSystem",
+        "canonicalSummary": "迈锡尼宫殿书吏记录早期希腊语的音节文字，主要保存行政事务。它与后来的希腊字母不是同一种书写系统。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "linear-b-palace-use"
+        ],
+        "sourceIds": [
+          "source-cambridge-linear-b-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "linear-b-palace-use",
+          "entityId": "linear-b",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -1400,
+            "end": -1200,
+            "approximate": true,
+            "label": "约公元前1400—前1200年，所录使用范围"
+          },
+          "regions": [
+            {
+              "regionId": "greek-mainland",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-cambridge-linear-b-reviewed"
+              ]
+            },
+            {
+              "regionId": "crete",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-cambridge-linear-b-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-cambridge-linear-b-reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "lydian-alphabet",
+        "name": "吕底亚字母",
+        "type": "writingSystem",
+        "canonicalSummary": "在希腊字母基础上形成的本地书写系统，主要见于萨第斯及周边的吕底亚语铭文。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "lydian-alphabet-west-use"
+        ],
+        "sourceIds": [
+          "source-sardis-lydian-language-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "lydian-alphabet-west-use",
+          "entityId": "lydian-alphabet",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -650,
+            "end": -300,
+            "approximate": true,
+            "label": "约公元前650年起；本期收录至前300年，非消亡时间"
+          },
+          "regions": [
+            {
+              "regionId": "western-anatolia",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-sardis-lydian-language-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-sardis-lydian-language-reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "phoenician-alphabet",
+        "name": "腓尼基字母",
+        "type": "writingSystem",
+        "canonicalSummary": "主要记录辅音的字母系统，后来影响希腊、阿拉米等字母。这里展示黎凡特沿海的使用，不将贸易到达之处都视为语言覆盖区。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "phoenician-alphabet-coastal-use"
+        ],
+        "sourceIds": [
+          "source-sns-phoenician-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "phoenician-alphabet-coastal-use",
+          "entityId": "phoenician-alphabet",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -1200,
+            "end": -300,
+            "approximate": true,
+            "label": "约公元前1200年起；本期收录至前300年，非消亡时间"
+          },
+          "regions": [
+            {
+              "regionId": "syria-northern-levant",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-sns-phoenician-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-sns-phoenician-reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "paleo-hebrew-alphabet",
+        "name": "古希伯来字母",
+        "type": "writingSystem",
+        "canonicalSummary": "早期希伯来语使用的字母形式。波斯时期阿拉米文字影响增大，旧字母仍在部分场合延续；这里选它作为南黎凡特的代表文字。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "paleo-hebrew-southern-levant"
+        ],
+        "sourceIds": [
+          "source-sns-hebrew-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "paleo-hebrew-southern-levant",
+          "entityId": "paleo-hebrew-alphabet",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -800,
+            "end": -300,
+            "approximate": true,
+            "label": "约公元前800年起；本期收录至前300年，非消亡时间"
+          },
+          "regions": [
+            {
+              "regionId": "southern-levant",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-sns-hebrew-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-sns-hebrew-reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "aramaic-alphabet",
+        "name": "阿拉米字母",
+        "type": "writingSystem",
+        "canonicalSummary": "用于书写阿拉米语，随近东交流和行政网络传播。总览在上美索不达米亚显示这条轨迹，其余地区的并用情况保留在详情。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "aramaic-alphabet-upper-use"
+        ],
+        "sourceIds": [
+          "source-iranica-aramaic-periods-reviewed",
+          "source-oracc-aramaic-hebrew"
+        ]
+      },
+      "phases": [
+        {
+          "id": "aramaic-alphabet-upper-use",
+          "entityId": "aramaic-alphabet",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -800,
+            "end": -300,
+            "approximate": true,
+            "label": "约公元前800年起；本期收录至前300年，非消亡时间"
+          },
+          "regions": [
+            {
+              "regionId": "upper-mesopotamia",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-iranica-aramaic-periods-reviewed",
+                "source-oracc-aramaic-hebrew"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-iranica-aramaic-periods-reviewed",
+            "source-oracc-aramaic-hebrew"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "id": "old-persian-cuneiform",
+        "name": "古波斯楔形文字",
+        "type": "writingSystem",
+        "canonicalSummary": "阿契美尼德王室碑铭使用的专门书写系统，与书写阿卡德语和埃兰语的美索不达米亚楔形文字有别。",
+        "conceptLayerId": "languageAndKnowledge",
+        "phaseIds": [
+          "old-persian-script-royal-use"
+        ],
+        "sourceIds": [
+          "source-iranica-old-persian-epigraphy-reviewed"
+        ]
+      },
+      "phases": [
+        {
+          "id": "old-persian-script-royal-use",
+          "entityId": "old-persian-cuneiform",
+          "title": "主要使用范围",
+          "timeSpan": {
+            "start": -520,
+            "end": -330,
+            "approximate": true,
+            "label": "约公元前520—前330年，所录使用范围"
+          },
+          "regions": [
+            {
+              "regionId": "iranian-plateau",
+              "role": "attested",
+              "approximate": true,
+              "sourceIds": [
+                "source-iranica-old-persian-epigraphy-reviewed"
+              ]
+            }
+          ],
+          "relationIds": [],
+          "sourceIds": [
+            "source-iranica-old-persian-epigraphy-reviewed"
+          ]
+        }
+      ]
+    }
+  ]
+}

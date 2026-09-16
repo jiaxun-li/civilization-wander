@@ -1,0 +1,83 @@
+{
+  "ledgerVersion": 1,
+  "runtimeCollection": false,
+  "sourceModule": "data/aegean.ts",
+  "candidates": [
+    {
+      "candidate": {
+        "id": "candidate-wilusa-polity-troy-site-identification",
+        "originatingV5StructuralEdgeId": "edge-hittite-wilusa-treaty",
+        "sourceSceneIds": [
+          "troy-wilusa-enters-treaty"
+        ],
+        "proposedFamily": "political",
+        "proposedType": "vassalTreaty",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -1300,
+          "end": -1250,
+          "label": "约公元前1300—前1250年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "hittite-empire"
+            },
+            "proposedPhaseId": "hittite-syrian-control",
+            "proposedRole": "treatyGreatKingdom"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "troy-archaeological-site"
+            },
+            "proposedPhaseId": "troy-late-bronze-presence",
+            "proposedRole": "proposedGeographicAssociation"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "维鲁萨政治实体",
+            "proposedEntityTypes": [
+              "polity",
+              "settlement"
+            ],
+            "notes": "条约参与者是维鲁萨国王与其政治实体，不能用现代考古遗址 Entity 直接冒充；维鲁萨与希萨尔勒克遗址的对应仍需保留识别不确定性。"
+          }
+        ],
+        "summary": "赫梯—维鲁萨条约是历史文本事实，但现有 Aegean Entity 只有特洛伊考古遗址，没有可稳定代表条约政治参与者的维鲁萨 Entity。",
+        "reasons": [
+          "missingTarget",
+          "ambiguousIdentity",
+          "ambiguousTargetKind"
+        ],
+        "unresolvedQuestions": [
+          "是否有足够证据建立独立的 Wilusa polity Entity？",
+          "该 Entity 与特洛伊遗址应使用 spatialAssociation 还是更谨慎的 proposedIdentification 关系？"
+        ],
+        "sourceIds": [
+          "source-cambridge-hittite-troy",
+          "source-british-museum-alaksandu-wilusa"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/aegean.ts",
+        "originatingEntityId": "troy-archaeological-site",
+        "originatingPhaseCandidateIds": [
+          "troy-viia-destruction-and-rebuilding",
+          "hittite-kadesh-campaign"
+        ],
+        "sourceEventIds": [
+          "event-hittite-wilusa-treaty"
+        ],
+        "sourceStructuralEdgeIds": [
+          "edge-hittite-wilusa-treaty"
+        ]
+      }
+    }
+  ]
+}

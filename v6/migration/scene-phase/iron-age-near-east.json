@@ -1,0 +1,3004 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/iron-age-near-east.ts",
+  "scenePhaseSignals": [
+    {
+      "id": "signal-iron-first-falls-from-sky",
+      "v5SceneId": "iron-first-falls-from-sky",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -3400,
+        "end": -1300,
+        "label": "约公元前3400—前1300年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-meteoric-iron-prestige-use"
+        }
+      ],
+      "eventIds": [
+        "event-meteoric-iron-prestige-use"
+      ],
+      "sourceIds": [
+        "source-matsui-tutankhamun-dagger",
+        "source-wikimedia-tutankhamun-dagger"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "本轮撤销此 Scene 所对应的扩展、传播或应用 Phase；原始来源保留作研究与叙事材料，不把该信号重绑到其他地区或年代的代表节点。"
+      }
+    },
+    {
+      "id": "signal-iron-bloom-leaves-furnace",
+      "v5SceneId": "iron-bloom-leaves-furnace",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1000,
+        "label": "约公元前2000—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-extractive-iron-metallurgy-develops"
+        }
+      ],
+      "eventIds": [
+        "event-extractive-iron-metallurgy-develops"
+      ],
+      "sourceIds": [
+        "source-erb-satullo-iron-adoption",
+        "source-generated-iron-teaching"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "本轮撤销此 Scene 所对应的扩展、传播或应用 Phase；原始来源保留作研究与叙事材料，不把该信号重绑到其他地区或年代的代表节点。"
+      }
+    },
+    {
+      "id": "signal-iron-hittite-court-smiths",
+      "v5SceneId": "iron-hittite-court-smiths",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -1650,
+        "end": -1200,
+        "label": "约公元前1650—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-extractive-iron-metallurgy-develops"
+        }
+      ],
+      "eventIds": [
+        "event-extractive-iron-metallurgy-develops"
+      ],
+      "sourceIds": [
+        "source-cdli-kbo-1-14",
+        "source-erb-satullo-iron-adoption",
+        "source-kbo-1-14"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "本轮撤销此 Scene 所对应的扩展、传播或应用 Phase；原始来源保留作研究与叙事材料，不把该信号重绑到其他地区或年代的代表节点。"
+      }
+    },
+    {
+      "id": "signal-iron-workshops-after-palaces",
+      "v5SceneId": "iron-workshops-after-palaces",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -1200,
+        "end": -900,
+        "label": "约公元前1200—前900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-iron-use-expands-after-palaces"
+        }
+      ],
+      "eventIds": [
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-erb-satullo-iron-adoption",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "iron-post-palatial-diffusion"
+        ]
+      }
+    },
+    {
+      "id": "signal-iron-blooms-travel-by-sea",
+      "v5SceneId": "iron-blooms-travel-by-sea",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -800,
+        "end": -550,
+        "label": "约公元前800—前550年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-iron-use-expands-after-palaces"
+        }
+      ],
+      "eventIds": [
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-erb-satullo-iron-adoption",
+        "source-met-phoenician-sailing",
+        "source-natural-earth",
+        "source-npj-dor-iron-blooms"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "本轮撤销此 Scene 所对应的扩展、传播或应用 Phase；原始来源保留作研究与叙事材料，不把该信号重绑到其他地区或年代的代表节点。"
+      }
+    },
+    {
+      "id": "signal-iron-assyrian-armies-building",
+      "v5SceneId": "iron-assyrian-armies-building",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -900,
+        "end": -600,
+        "label": "约公元前900—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-iron-use-expands-after-palaces"
+        }
+      ],
+      "eventIds": [
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-erb-satullo-iron-adoption",
+        "source-maxwell-hyslop-assyrian-iron",
+        "source-met-assyria",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "本轮撤销此 Scene 所对应的扩展、传播或应用 Phase；原始来源保留作研究与叙事材料，不把该信号重绑到其他地区或年代的代表节点。"
+      }
+    },
+    {
+      "id": "signal-iron-south-asia-regional-paths",
+      "v5SceneId": "iron-south-asia-regional-paths",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -1300,
+        "end": -500,
+        "label": "约公元前1300—前500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-extractive-iron-metallurgy-develops"
+        }
+      ],
+      "eventIds": [
+        "event-extractive-iron-metallurgy-develops",
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-cambridge-south-asia-archaeology",
+        "source-erb-satullo-iron-adoption",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "本轮撤销此 Scene 所对应的扩展、传播或应用 Phase；原始来源保留作研究与叙事材料，不把该信号重绑到其他地区或年代的代表节点。"
+      }
+    },
+    {
+      "id": "signal-iron-china-casts-metal",
+      "v5SceneId": "iron-china-casts-metal",
+      "v5OwnerCardId": "iron-crosses-empires-routes",
+      "timeSpan": {
+        "start": -800,
+        "end": -300,
+        "label": "约公元前800—前300年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "iron",
+          "basis": "eventParticipant",
+          "referenceId": "event-cast-iron-develops-in-china"
+        }
+      ],
+      "eventIds": [
+        "event-cast-iron-develops-in-china"
+      ],
+      "sourceIds": [
+        "source-intarch-iron-china",
+        "source-natural-earth",
+        "source-qian-huang-cast-iron-china"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "iron-chinese-cast-iron"
+        ]
+      }
+    },
+    {
+      "id": "signal-assyria-merchants-before-empire",
+      "v5SceneId": "assyria-merchants-before-empire",
+      "v5OwnerCardId": "assyria-orders-cross-empire",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1000,
+        "label": "约公元前2000—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "assur-community",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-assyrian-trade-networks"
+        }
+      ],
+      "eventIds": [
+        "event-old-assyrian-trade-networks"
+      ],
+      "sourceIds": [
+        "source-met-old-assyrian-caravan",
+        "source-oracc-middle-assyrian",
+        "source-wikimedia-assyrian-trade-tablet"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "assur-old-assyrian-trade-community",
+          "assur-middle-assyrian-urban-tradition"
+        ]
+      }
+    },
+    {
+      "id": "signal-assyria-kings-prove-through-war",
+      "v5SceneId": "assyria-kings-prove-through-war",
+      "v5OwnerCardId": "assyria-orders-cross-empire",
+      "timeSpan": {
+        "start": -911,
+        "end": -745,
+        "label": "公元前911—前745年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-neo-assyrian-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-bm-introducing-assyrians",
+        "source-met-assyria",
+        "source-oracc-deportation",
+        "source-oracc-governance",
+        "source-oracc-royal-inscriptions",
+        "source-wikimedia-assyrian-siege"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-assyrian-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-assyria-rebellion-sees-consequences",
+      "v5SceneId": "assyria-rebellion-sees-consequences",
+      "v5OwnerCardId": "assyria-orders-cross-empire",
+      "timeSpan": {
+        "start": -883,
+        "end": -627,
+        "label": "公元前883—前627年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-neo-assyrian-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-met-assyria",
+        "source-oracc-deportation",
+        "source-oracc-governance",
+        "source-oracc-royal-inscriptions",
+        "source-sefaria-isaiah",
+        "source-sefaria-nahum",
+        "source-wikimedia-assyrian-siege"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-assyrian-expansion",
+          "neo-assyrian-syrian-provinces",
+          "neo-assyrian-imperial-administration",
+          "neo-assyrian-western-contraction"
+        ]
+      }
+    },
+    {
+      "id": "signal-assyria-conquest-becomes-government",
+      "v5SceneId": "assyria-conquest-becomes-government",
+      "v5OwnerCardId": "assyria-orders-cross-empire",
+      "timeSpan": {
+        "start": -744,
+        "end": -705,
+        "label": "公元前744—前705年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-neo-assyrian-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-bm-introducing-assyrians",
+        "source-met-assyria",
+        "source-met-phoenicians",
+        "source-natural-earth",
+        "source-oracc-deportation",
+        "source-oracc-governance",
+        "source-oracc-israel",
+        "source-oracc-kings-road"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-assyrian-expansion",
+          "neo-assyrian-syrian-provinces",
+          "neo-assyrian-imperial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-assyria-people-moved-elsewhere",
+      "v5SceneId": "assyria-people-moved-elsewhere",
+      "v5OwnerCardId": "assyria-orders-cross-empire",
+      "timeSpan": {
+        "start": -745,
+        "end": -627,
+        "label": "公元前745—前627年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-neo-assyrian-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-brill-aramaeans",
+        "source-met-assyria",
+        "source-natural-earth",
+        "source-oracc-deportation",
+        "source-oracc-governance",
+        "source-oracc-israel"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-assyrian-expansion",
+          "neo-assyrian-syrian-provinces",
+          "neo-assyrian-imperial-administration",
+          "neo-assyrian-western-contraction"
+        ]
+      }
+    },
+    {
+      "id": "signal-assyria-nineveh-collects-knowledge",
+      "v5SceneId": "assyria-nineveh-collects-knowledge",
+      "v5OwnerCardId": "assyria-orders-cross-empire",
+      "timeSpan": {
+        "start": -668,
+        "end": -631,
+        "label": "公元前668—前631年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-ashurbanipal-collections-assembled"
+        }
+      ],
+      "eventIds": [
+        "event-ashurbanipal-collections-assembled"
+      ],
+      "sourceIds": [
+        "source-bm-ashurbanipal-library",
+        "source-oracc-ashurbanipal-library",
+        "source-oracc-assembling-library",
+        "source-wikimedia-flood-tablet"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-assyrian-imperial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-assyria-violent-city-silenced",
+      "v5SceneId": "assyria-violent-city-silenced",
+      "v5OwnerCardId": "assyria-orders-cross-empire",
+      "timeSpan": {
+        "start": -631,
+        "end": -609,
+        "label": "公元前631—前609年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-nineveh-falls"
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-nineveh-falls"
+        }
+      ],
+      "eventIds": [
+        "event-nineveh-falls"
+      ],
+      "sourceIds": [
+        "source-bm-ashurbanipal-library",
+        "source-met-assyria",
+        "source-met-babylon",
+        "source-natural-earth",
+        "source-sefaria-nahum"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-assyrian-imperial-administration",
+          "neo-assyrian-western-contraction",
+          "neo-assyrian-collapse"
+        ]
+      }
+    },
+    {
+      "id": "signal-phoenicia-four-coastal-kings",
+      "v5SceneId": "phoenicia-four-coastal-kings",
+      "v5OwnerCardId": "phoenician-cities-sail-mediterranean",
+      "timeSpan": {
+        "start": -1200,
+        "end": -900,
+        "label": "约公元前1200—前900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "phoenician-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-phoenician-westward-connections"
+        }
+      ],
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-antiquity-phoenician-diaspora",
+        "source-bm-phoenician",
+        "source-met-phoenician-sailing",
+        "source-met-phoenicians",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "phoenician-maritime-connections"
+        ]
+      }
+    },
+    {
+      "id": "signal-phoenicia-cargo-many-hands",
+      "v5SceneId": "phoenicia-cargo-many-hands",
+      "v5OwnerCardId": "phoenician-cities-sail-mediterranean",
+      "timeSpan": {
+        "start": -1100,
+        "end": -800,
+        "label": "约公元前1100—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "phoenician-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-phoenician-westward-connections"
+        }
+      ],
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-antiquity-phoenician-diaspora",
+        "source-bm-phoenician",
+        "source-met-phoenician-sailing",
+        "source-met-phoenicians",
+        "source-wikimedia-phoenician-bronze-bowl"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "phoenician-maritime-connections"
+        ]
+      }
+    },
+    {
+      "id": "signal-phoenicia-islands-link-voyage",
+      "v5SceneId": "phoenicia-islands-link-voyage",
+      "v5OwnerCardId": "phoenician-cities-sail-mediterranean",
+      "timeSpan": {
+        "start": -900,
+        "end": -700,
+        "label": "公元前900—前700年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "phoenician-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-phoenician-westward-connections"
+        }
+      ],
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-antiquity-phoenician-diaspora",
+        "source-met-phoenician-sailing",
+        "source-met-phoenicians",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "phoenician-maritime-connections"
+        ]
+      }
+    },
+    {
+      "id": "signal-phoenicia-beyond-mediterranean-gate",
+      "v5SceneId": "phoenicia-beyond-mediterranean-gate",
+      "v5OwnerCardId": "phoenician-cities-sail-mediterranean",
+      "timeSpan": {
+        "start": -850,
+        "end": -700,
+        "label": "约公元前850—前700年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "phoenician-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-phoenician-westward-connections"
+        }
+      ],
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-antiquity-phoenician-diaspora",
+        "source-met-phoenician-sailing",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "phoenician-maritime-connections"
+        ]
+      }
+    },
+    {
+      "id": "signal-phoenicia-ships-bring-tribute",
+      "v5SceneId": "phoenicia-ships-bring-tribute",
+      "v5OwnerCardId": "phoenician-cities-sail-mediterranean",
+      "timeSpan": {
+        "start": -876,
+        "end": -630,
+        "label": "约公元前876—前630年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "phoenician-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-phoenician-westward-connections"
+        }
+      ],
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-antiquity-phoenician-diaspora",
+        "source-met-assyria",
+        "source-met-phoenician-sailing",
+        "source-met-phoenicians",
+        "source-wikimedia-phoenician-tribute-gate"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "phoenician-maritime-connections"
+        ]
+      }
+    },
+    {
+      "id": "signal-phoenicia-distant-ports-centres",
+      "v5SceneId": "phoenicia-distant-ports-centres",
+      "v5OwnerCardId": "phoenician-cities-sail-mediterranean",
+      "timeSpan": {
+        "start": -850,
+        "end": -300,
+        "label": "约公元前850—前300年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "phoenician-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-phoenician-westward-connections"
+        }
+      ],
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-antiquity-phoenician-diaspora",
+        "source-bm-phoenician",
+        "source-met-alphabet",
+        "source-met-phoenician-sailing",
+        "source-wikimedia-carthage-punic-ports"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "phoenician-maritime-connections"
+        ]
+      }
+    },
+    {
+      "id": "signal-israel-jacob-gets-another-name",
+      "v5SceneId": "israel-jacob-gets-another-name",
+      "v5OwnerCardId": "two-kingdoms-two-falls",
+      "timeSpan": {
+        "start": -800,
+        "end": -500,
+        "label": "约公元前800—前500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ancient-israelite-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-jacob-renamed-israel-tradition"
+        }
+      ],
+      "eventIds": [
+        "event-jacob-renamed-israel-tradition"
+      ],
+      "sourceIds": [
+        "source-genesis-jacob",
+        "source-wikimedia-jacob-wrestling"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "2026-09-15用户批准独立V6内容精简；原叙事及来源留在迁移审计，不为旧版映射重建已撤下的阶段或事件。"
+      }
+    },
+    {
+      "id": "signal-israel-one-tradition-two-capitals",
+      "v5SceneId": "israel-one-tradition-two-capitals",
+      "v5OwnerCardId": "two-kingdoms-two-falls",
+      "timeSpan": {
+        "start": -930,
+        "end": -853,
+        "label": "约公元前930—前853年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "kingdom-of-israel",
+          "basis": "eventParticipant",
+          "referenceId": "event-israel-and-judah-develop-separate-kingships"
+        },
+        {
+          "entityId": "kingdom-of-judah",
+          "basis": "eventParticipant",
+          "referenceId": "event-israel-and-judah-develop-separate-kingships"
+        }
+      ],
+      "eventIds": [
+        "event-israel-and-judah-develop-separate-kingships"
+      ],
+      "sourceIds": [
+        "source-met-ancient-israel",
+        "source-wikimedia-israel-judah-map"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "israel-kingdom-presence",
+          "judah-kingdom-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-israel-enters-and-falls-to-assyria",
+      "v5SceneId": "israel-enters-and-falls-to-assyria",
+      "v5OwnerCardId": "two-kingdoms-two-falls",
+      "timeSpan": {
+        "start": -853,
+        "end": -720,
+        "label": "公元前853—前720年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "kingdom-of-israel",
+          "basis": "eventParticipant",
+          "referenceId": "event-israel-falls-to-assyria"
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-israel-falls-to-assyria"
+        }
+      ],
+      "eventIds": [
+        "event-israel-falls-to-assyria"
+      ],
+      "sourceIds": [
+        "source-bm-black-obelisk",
+        "source-natural-earth",
+        "source-oracc-israel"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "israel-kingdom-presence",
+          "neo-assyrian-expansion",
+          "neo-assyrian-syrian-provinces",
+          "neo-assyrian-imperial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-judah-lachish-falls-jerusalem-remains",
+      "v5SceneId": "judah-lachish-falls-jerusalem-remains",
+      "v5OwnerCardId": "two-kingdoms-two-falls",
+      "timeSpan": {
+        "start": -701,
+        "end": -701,
+        "label": "公元前701年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-lachish-captured"
+        }
+      ],
+      "eventIds": [
+        "event-lachish-captured"
+      ],
+      "sourceIds": [
+        "source-bm-lachish",
+        "source-met-ancient-israel",
+        "source-sefaria-kings",
+        "source-wikimedia-lachish-captives"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "judah-kingdom-presence",
+          "neo-assyrian-imperial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-judah-babylon-twice-enters-jerusalem",
+      "v5SceneId": "judah-babylon-twice-enters-jerusalem",
+      "v5OwnerCardId": "two-kingdoms-two-falls",
+      "timeSpan": {
+        "start": -597,
+        "end": -586,
+        "label": "公元前597—前586年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-neo-babylonian-western-campaigns"
+        }
+      ],
+      "eventIds": [
+        "event-neo-babylonian-western-campaigns"
+      ],
+      "sourceIds": [
+        "source-bm-babylonian-chronicle",
+        "source-met-babylon",
+        "source-sefaria-kings",
+        "source-wikimedia-babylonian-chronicle"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "judah-kingdom-presence",
+          "neo-babylonian-capital-and-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-judah-people-continue-two-places",
+      "v5SceneId": "judah-people-continue-two-places",
+      "v5OwnerCardId": "two-kingdoms-two-falls",
+      "timeSpan": {
+        "start": -586,
+        "end": -500,
+        "label": "约公元前586—前500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ancient-israelite-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-judean-communities-continue-after-exile"
+        },
+        {
+          "entityId": "kingdom-of-judah",
+          "basis": "eventParticipant",
+          "referenceId": "event-judean-communities-continue-after-exile"
+        }
+      ],
+      "eventIds": [
+        "event-judean-communities-continue-after-exile"
+      ],
+      "sourceIds": [
+        "source-met-cyrus-return",
+        "source-sefaria-kings",
+        "source-wikimedia-jehoiachin-ration-tablet"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "2026-09-15用户批准独立V6内容精简；原叙事及来源留在迁移审计，不为旧版映射重建已撤下的阶段或事件。"
+      }
+    },
+    {
+      "id": "signal-aramaic-small-states-one-language",
+      "v5SceneId": "aramaic-small-states-one-language",
+      "v5OwnerCardId": "aramaic-crosses-empires",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "aramaic-language",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        }
+      ],
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-brill-aramaeans",
+        "source-iranica-aramaic",
+        "source-oracc-aramaic-hebrew",
+        "source-oracc-palace-scribe",
+        "source-oxford-aramaeans",
+        "source-wikimedia-bar-rakib"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "2026-09-15用户批准独立V6内容精简；原叙事及来源留在迁移审计，不为旧版映射重建已撤下的阶段或事件。"
+      }
+    },
+    {
+      "id": "signal-aramaic-conquest-moves-speakers",
+      "v5SceneId": "aramaic-conquest-moves-speakers",
+      "v5OwnerCardId": "aramaic-crosses-empires",
+      "timeSpan": {
+        "start": -900,
+        "end": -700,
+        "label": "约公元前900—前700年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "aramaic-language",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        }
+      ],
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-brill-aramaeans",
+        "source-iranica-aramaic",
+        "source-natural-earth",
+        "source-oracc-deportation",
+        "source-oracc-palace-scribe"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "aramaic-in-assyrian-administration",
+          "neo-assyrian-expansion",
+          "neo-assyrian-syrian-provinces",
+          "neo-assyrian-imperial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-aramaic-two-scribes-one-palace",
+      "v5SceneId": "aramaic-two-scribes-one-palace",
+      "v5OwnerCardId": "aramaic-crosses-empires",
+      "timeSpan": {
+        "start": -800,
+        "end": -650,
+        "label": "约公元前800—前650年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "aramaic-language",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        }
+      ],
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-iranica-aramaic",
+        "source-oracc-aramaic-hebrew",
+        "source-oracc-palace-scribe",
+        "source-wikimedia-assyrian-scribes"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "aramaic-in-assyrian-administration",
+          "neo-assyrian-expansion",
+          "neo-assyrian-syrian-provinces",
+          "neo-assyrian-imperial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-aramaic-outlives-empires",
+      "v5SceneId": "aramaic-outlives-empires",
+      "v5OwnerCardId": "aramaic-crosses-empires",
+      "timeSpan": {
+        "start": -600,
+        "end": -330,
+        "label": "约公元前600—前330年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "aramaic-language",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-aramaic-enters-imperial-administration"
+        }
+      ],
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-iranica-aramaic",
+        "source-natural-earth",
+        "source-oracc-palace-scribe"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "aramaic-later-imperial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-babylon-city-refuses-submission",
+      "v5SceneId": "babylon-city-refuses-submission",
+      "v5OwnerCardId": "babylon-inherits-assyrian-empire",
+      "timeSpan": {
+        "start": -689,
+        "end": -626,
+        "label": "公元前689—前626年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "babylon-city",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylon-destroyed-and-rebuilt-under-assyria"
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylon-destroyed-and-rebuilt-under-assyria"
+        }
+      ],
+      "eventIds": [
+        "event-babylon-destroyed-and-rebuilt-under-assyria"
+      ],
+      "sourceIds": [
+        "source-met-esarhaddon-prism"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "babylon-city-late-iron-age-presence",
+          "neo-assyrian-imperial-administration",
+          "neo-assyrian-western-contraction"
+        ]
+      }
+    },
+    {
+      "id": "signal-babylon-war-continues-west",
+      "v5SceneId": "babylon-war-continues-west",
+      "v5OwnerCardId": "babylon-inherits-assyrian-empire",
+      "timeSpan": {
+        "start": -626,
+        "end": -605,
+        "label": "公元前626—前605年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-nineveh-falls"
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-nineveh-falls"
+        }
+      ],
+      "eventIds": [
+        "event-nineveh-falls",
+        "event-neo-babylonian-western-campaigns"
+      ],
+      "sourceIds": [
+        "source-bm-babylonian-chronicle",
+        "source-met-assyria",
+        "source-met-babylon",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-babylonian-rise-against-assyria",
+          "neo-babylonian-capital-and-rule",
+          "neo-assyrian-western-contraction",
+          "neo-assyrian-collapse"
+        ]
+      }
+    },
+    {
+      "id": "signal-babylon-colored-bricks-stage-capital",
+      "v5SceneId": "babylon-colored-bricks-stage-capital",
+      "v5OwnerCardId": "babylon-inherits-assyrian-empire",
+      "timeSpan": {
+        "start": -605,
+        "end": -562,
+        "label": "公元前605—前562年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-nebuchadnezzar-rebuilds-babylon"
+        }
+      ],
+      "eventIds": [
+        "event-nebuchadnezzar-rebuilds-babylon"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-met-babylon-lion",
+        "source-met-nebuchadnezzar-cylinder"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "babylon-city-late-iron-age-presence",
+          "neo-babylonian-rise-against-assyria",
+          "neo-babylonian-capital-and-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-babylon-king-name-in-bricks",
+      "v5SceneId": "babylon-king-name-in-bricks",
+      "v5OwnerCardId": "babylon-inherits-assyrian-empire",
+      "timeSpan": {
+        "start": -605,
+        "end": -562,
+        "label": "公元前605—前562年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-nebuchadnezzar-rebuilds-babylon"
+        }
+      ],
+      "eventIds": [
+        "event-nebuchadnezzar-rebuilds-babylon"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-met-babylon-lion",
+        "source-met-nebuchadnezzar-cylinder"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "babylon-city-late-iron-age-presence",
+          "neo-babylonian-rise-against-assyria",
+          "neo-babylonian-capital-and-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-babylon-empire-enters-households",
+      "v5SceneId": "babylon-empire-enters-households",
+      "v5OwnerCardId": "babylon-inherits-assyrian-empire",
+      "timeSpan": {
+        "start": -597,
+        "end": -562,
+        "label": "公元前597—前562年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-nebuchadnezzar-rebuilds-babylon"
+        }
+      ],
+      "eventIds": [
+        "event-nebuchadnezzar-rebuilds-babylon"
+      ],
+      "sourceIds": [
+        "source-bm-babylonian-chronicle",
+        "source-met-babylon",
+        "source-met-babylon-lion",
+        "source-met-nebuchadnezzar-cylinder",
+        "source-wikimedia-babylonian-chronicle"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "neo-babylonian-capital-and-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-babylon-conqueror-borrows-language",
+      "v5SceneId": "babylon-conqueror-borrows-language",
+      "v5OwnerCardId": "babylon-inherits-assyrian-empire",
+      "timeSpan": {
+        "start": -539,
+        "end": -539,
+        "label": "公元前539年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-persia-conquers-babylon"
+        }
+      ],
+      "eventIds": [
+        "event-persia-conquers-babylon"
+      ],
+      "sourceIds": [
+        "source-bm-cyrus-cylinder",
+        "source-livius-cyrus-cylinder",
+        "source-met-babylon"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "babylon-city-late-iron-age-presence",
+          "neo-babylonian-capital-and-rule"
+        ]
+      }
+    },
+    {
+      "id": "signal-lydia-roads-gold-kingship-sardis",
+      "v5SceneId": "lydia-roads-gold-kingship-sardis",
+      "v5OwnerCardId": "lydia-coins-gold-silver",
+      "timeSpan": {
+        "start": -700,
+        "end": -560,
+        "label": "约公元前700—前560年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "lydian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-lydian-coinage-emerges"
+        }
+      ],
+      "eventIds": [
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-met-sardis",
+        "source-natural-earth",
+        "source-sardis-coins",
+        "source-sardis-introduction"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "lydian-kingdom-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-lydia-mark-makes-alloy-speak",
+      "v5SceneId": "lydia-mark-makes-alloy-speak",
+      "v5OwnerCardId": "lydia-coins-gold-silver",
+      "timeSpan": {
+        "start": -650,
+        "end": -560,
+        "label": "约公元前650—前560年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "lydian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-lydian-coinage-emerges"
+        }
+      ],
+      "eventIds": [
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-met-lydia-phrygia",
+        "source-met-sardis",
+        "source-sardis-coins",
+        "source-wikimedia-lydian-electrum-lions"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly"
+      }
+    },
+    {
+      "id": "signal-lydia-croesus-separates-gold-silver",
+      "v5SceneId": "lydia-croesus-separates-gold-silver",
+      "v5OwnerCardId": "lydia-coins-gold-silver",
+      "timeSpan": {
+        "start": -560,
+        "end": -546,
+        "label": "公元前560—前546年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "lydian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-lydian-coinage-emerges"
+        }
+      ],
+      "eventIds": [
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-met-croesus-stater",
+        "source-met-lydia-phrygia",
+        "source-met-sardis",
+        "source-sardis-coins",
+        "source-sardis-refining"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly"
+      }
+    },
+    {
+      "id": "signal-lydia-kingdom-falls-mint-continues",
+      "v5SceneId": "lydia-kingdom-falls-mint-continues",
+      "v5OwnerCardId": "lydia-coins-gold-silver",
+      "timeSpan": {
+        "start": -546,
+        "end": -500,
+        "label": "约公元前546—前500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "lydian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-persia-conquers-sardis"
+        }
+      ],
+      "eventIds": [
+        "event-persia-conquers-sardis",
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-iranica-cyrus",
+        "source-met-coinage-greece",
+        "source-met-sardis",
+        "source-natural-earth",
+        "source-sardis-coins"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-lydian-coinage-emerges"
+        ]
+      }
+    }
+  ],
+  "audit": [
+    {
+      "scenePhaseSignalId": "signal-iron-first-falls-from-sky",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-meteoric-iron-prestige-use"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-meteoric-iron-prestige-use",
+              "timeSpan": {
+                "start": -3400,
+                "end": -1300,
+                "label": "约公元前3400—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3400,
+            "end": -1300,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-iron-bloom-leaves-furnace",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-extractive-iron-metallurgy-develops"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-extractive-iron-metallurgy-develops",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1000,
+                "label": "约公元前2000—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-iron-hittite-court-smiths",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-extractive-iron-metallurgy-develops"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-extractive-iron-metallurgy-develops",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1000,
+                "label": "约公元前2000—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1650,
+            "end": -1200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-iron-workshops-after-palaces",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-iron-use-expands-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iron-use-expands-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-iron-blooms-travel-by-sea",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-iron-use-expands-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iron-use-expands-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-iron-assyrian-armies-building",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-iron-use-expands-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iron-use-expands-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -900,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-iron-south-asia-regional-paths",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-extractive-iron-metallurgy-develops",
+            "event-iron-use-expands-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-extractive-iron-metallurgy-develops",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1000,
+                "label": "约公元前2000—前1000年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-iron-use-expands-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iron-china-casts-metal",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "iron",
+      "entityEvidence": [
+        {
+          "entityId": "iron",
+          "eventIds": [
+            "event-cast-iron-develops-in-china"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cast-iron-develops-in-china",
+              "timeSpan": {
+                "start": -800,
+                "end": -300,
+                "label": "约公元前800—前300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -300,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-assyria-merchants-before-empire",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-assyrian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "assur-community",
+          "eventIds": [
+            "event-old-assyrian-trade-networks"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-assyrian-trade-networks",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1750,
+                "label": "约公元前2000—前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-assyria-kings-prove-through-war",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-assyrian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-neo-assyrian-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-neo-assyrian-expansion",
+              "timeSpan": {
+                "start": -911,
+                "end": -700,
+                "label": "约公元前911—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -911,
+            "end": -745,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-assyria-rebellion-sees-consequences",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-assyrian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-neo-assyrian-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-neo-assyrian-expansion",
+              "timeSpan": {
+                "start": -911,
+                "end": -700,
+                "label": "约公元前911—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -883,
+            "end": -700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-assyria-conquest-becomes-government",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-assyrian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-neo-assyrian-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-neo-assyrian-expansion",
+              "timeSpan": {
+                "start": -911,
+                "end": -700,
+                "label": "约公元前911—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -744,
+            "end": -705,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-assyria-people-moved-elsewhere",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-assyrian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-neo-assyrian-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-neo-assyrian-expansion",
+              "timeSpan": {
+                "start": -911,
+                "end": -700,
+                "label": "约公元前911—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -745,
+            "end": -700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-assyria-nineveh-collects-knowledge",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-assyrian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-ashurbanipal-collections-assembled"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ashurbanipal-collections-assembled",
+              "timeSpan": {
+                "start": -668,
+                "end": -631,
+                "label": "公元前668—前631年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -668,
+            "end": -631,
+            "approximate": false
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-assyria-violent-city-silenced",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-assyrian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-nineveh-falls"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nineveh-falls",
+              "timeSpan": {
+                "start": -612,
+                "end": -609,
+                "label": "公元前612—前609年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -612,
+            "end": -609,
+            "approximate": false
+          }
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-nineveh-falls"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nineveh-falls",
+              "timeSpan": {
+                "start": -612,
+                "end": -609,
+                "label": "公元前612—前609年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -612,
+            "end": -609,
+            "approximate": false
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-phoenicia-four-coastal-kings",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "phoenician-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "phoenician-tradition",
+          "eventIds": [
+            "event-phoenician-westward-connections"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-phoenician-westward-connections",
+              "timeSpan": {
+                "start": -1000,
+                "end": -700,
+                "label": "约公元前1000—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-phoenicia-cargo-many-hands",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "phoenician-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "phoenician-tradition",
+          "eventIds": [
+            "event-phoenician-westward-connections"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-phoenician-westward-connections",
+              "timeSpan": {
+                "start": -1000,
+                "end": -700,
+                "label": "约公元前1000—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-phoenicia-islands-link-voyage",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "phoenician-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "phoenician-tradition",
+          "eventIds": [
+            "event-phoenician-westward-connections"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-phoenician-westward-connections",
+              "timeSpan": {
+                "start": -1000,
+                "end": -700,
+                "label": "约公元前1000—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -900,
+            "end": -700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-phoenicia-beyond-mediterranean-gate",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "phoenician-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "phoenician-tradition",
+          "eventIds": [
+            "event-phoenician-westward-connections"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-phoenician-westward-connections",
+              "timeSpan": {
+                "start": -1000,
+                "end": -700,
+                "label": "约公元前1000—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -850,
+            "end": -700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-phoenicia-ships-bring-tribute",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "phoenician-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "phoenician-tradition",
+          "eventIds": [
+            "event-phoenician-westward-connections"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-phoenician-westward-connections",
+              "timeSpan": {
+                "start": -1000,
+                "end": -700,
+                "label": "约公元前1000—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -876,
+            "end": -700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-phoenicia-distant-ports-centres",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "phoenician-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "phoenician-tradition",
+          "eventIds": [
+            "event-phoenician-westward-connections"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-phoenician-westward-connections",
+              "timeSpan": {
+                "start": -1000,
+                "end": -700,
+                "label": "约公元前1000—前700年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -850,
+            "end": -700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-israel-jacob-gets-another-name",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "ancient-israelite-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "ancient-israelite-tradition",
+          "eventIds": [
+            "event-jacob-renamed-israel-tradition"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-jacob-renamed-israel-tradition",
+              "timeSpan": {
+                "start": -800,
+                "end": -500,
+                "label": "约公元前800—前500年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -500,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-israel-one-tradition-two-capitals",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "ancient-israelite-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "kingdom-of-israel",
+          "eventIds": [
+            "event-israel-and-judah-develop-separate-kingships"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-israel-and-judah-develop-separate-kingships",
+              "timeSpan": {
+                "start": -930,
+                "end": -853,
+                "label": "约公元前930—前853年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -930,
+            "end": -853,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "kingdom-of-judah",
+          "eventIds": [
+            "event-israel-and-judah-develop-separate-kingships"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-israel-and-judah-develop-separate-kingships",
+              "timeSpan": {
+                "start": -930,
+                "end": -853,
+                "label": "约公元前930—前853年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -930,
+            "end": -853,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-israel-enters-and-falls-to-assyria",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "ancient-israelite-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "kingdom-of-israel",
+          "eventIds": [
+            "event-israel-falls-to-assyria"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-israel-falls-to-assyria",
+              "timeSpan": {
+                "start": -853,
+                "end": -720,
+                "label": "公元前853—前720年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -853,
+            "end": -720,
+            "approximate": false
+          }
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-israel-falls-to-assyria"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-israel-falls-to-assyria",
+              "timeSpan": {
+                "start": -853,
+                "end": -720,
+                "label": "公元前853—前720年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -853,
+            "end": -720,
+            "approximate": false
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-judah-lachish-falls-jerusalem-remains",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "ancient-israelite-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-lachish-captured"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-lachish-captured",
+              "timeSpan": {
+                "start": -701,
+                "end": -701,
+                "label": "公元前701年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -701,
+            "end": -701,
+            "approximate": false
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-judah-babylon-twice-enters-jerusalem",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "ancient-israelite-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-neo-babylonian-western-campaigns"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-neo-babylonian-western-campaigns",
+              "timeSpan": {
+                "start": -605,
+                "end": -586,
+                "label": "公元前605—前586年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -597,
+            "end": -586,
+            "approximate": false
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-judah-people-continue-two-places",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "ancient-israelite-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "ancient-israelite-tradition",
+          "eventIds": [
+            "event-judean-communities-continue-after-exile"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-judean-communities-continue-after-exile",
+              "timeSpan": {
+                "start": -586,
+                "end": -500,
+                "label": "约公元前586—前500年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -586,
+            "end": -500,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "kingdom-of-judah",
+          "eventIds": [
+            "event-judean-communities-continue-after-exile"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-judean-communities-continue-after-exile",
+              "timeSpan": {
+                "start": -586,
+                "end": -500,
+                "label": "约公元前586—前500年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -586,
+            "end": -500,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-aramaic-small-states-one-language",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "aramaic-language",
+      "entityEvidence": [
+        {
+          "entityId": "aramaic-language",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-aramaic-conquest-moves-speakers",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "aramaic-language",
+      "entityEvidence": [
+        {
+          "entityId": "aramaic-language",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -700,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -700,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-aramaic-two-scribes-one-palace",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "aramaic-language",
+      "entityEvidence": [
+        {
+          "entityId": "aramaic-language",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -650,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -650,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -800,
+            "end": -650,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-aramaic-outlives-empires",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "aramaic-language",
+      "entityEvidence": [
+        {
+          "entityId": "aramaic-language",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -600,
+            "end": -330,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -600,
+            "end": -330,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-aramaic-enters-imperial-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aramaic-enters-imperial-administration",
+              "timeSpan": {
+                "start": -800,
+                "end": -330,
+                "label": "约公元前800—前330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -600,
+            "end": -330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-babylon-city-refuses-submission",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-babylonian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "babylon-city",
+          "eventIds": [
+            "event-babylon-destroyed-and-rebuilt-under-assyria"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylon-destroyed-and-rebuilt-under-assyria",
+              "timeSpan": {
+                "start": -689,
+                "end": -626,
+                "label": "公元前689—前626年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -626,
+            "approximate": false
+          }
+        },
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-babylon-destroyed-and-rebuilt-under-assyria"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylon-destroyed-and-rebuilt-under-assyria",
+              "timeSpan": {
+                "start": -689,
+                "end": -626,
+                "label": "公元前689—前626年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -626,
+            "approximate": false
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-babylon-war-continues-west",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-babylonian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-assyrian-empire",
+          "eventIds": [
+            "event-nineveh-falls"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nineveh-falls",
+              "timeSpan": {
+                "start": -612,
+                "end": -609,
+                "label": "公元前612—前609年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -612,
+            "end": -609,
+            "approximate": false
+          }
+        },
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-nineveh-falls",
+            "event-neo-babylonian-western-campaigns"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nineveh-falls",
+              "timeSpan": {
+                "start": -612,
+                "end": -609,
+                "label": "公元前612—前609年"
+              }
+            },
+            {
+              "eventId": "event-neo-babylonian-western-campaigns",
+              "timeSpan": {
+                "start": -605,
+                "end": -586,
+                "label": "公元前605—前586年"
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-babylon-colored-bricks-stage-capital",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-babylonian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-nebuchadnezzar-rebuilds-babylon"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nebuchadnezzar-rebuilds-babylon",
+              "timeSpan": {
+                "start": -605,
+                "end": -562,
+                "label": "约公元前605—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -605,
+            "end": -562,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-babylon-king-name-in-bricks",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-babylonian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-nebuchadnezzar-rebuilds-babylon"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nebuchadnezzar-rebuilds-babylon",
+              "timeSpan": {
+                "start": -605,
+                "end": -562,
+                "label": "约公元前605—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -605,
+            "end": -562,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-babylon-empire-enters-households",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-babylonian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-nebuchadnezzar-rebuilds-babylon"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nebuchadnezzar-rebuilds-babylon",
+              "timeSpan": {
+                "start": -605,
+                "end": -562,
+                "label": "约公元前605—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -597,
+            "end": -562,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-babylon-conqueror-borrows-language",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "neo-babylonian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "neo-babylonian-empire",
+          "eventIds": [
+            "event-persia-conquers-babylon"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-persia-conquers-babylon",
+              "timeSpan": {
+                "start": -539,
+                "end": -539,
+                "label": "公元前539年"
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -539,
+            "end": -539,
+            "approximate": false
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-lydia-roads-gold-kingship-sardis",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "lydian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "lydian-kingdom",
+          "eventIds": [
+            "event-lydian-coinage-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-lydian-coinage-emerges",
+              "timeSpan": {
+                "start": -650,
+                "end": -546,
+                "label": "约公元前650—前546年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -650,
+            "end": -560,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-lydia-mark-makes-alloy-speak",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "lydian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "lydian-kingdom",
+          "eventIds": [
+            "event-lydian-coinage-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-lydian-coinage-emerges",
+              "timeSpan": {
+                "start": -650,
+                "end": -546,
+                "label": "约公元前650—前546年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -650,
+            "end": -560,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-lydia-croesus-separates-gold-silver",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "lydian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "lydian-kingdom",
+          "eventIds": [
+            "event-lydian-coinage-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-lydian-coinage-emerges",
+              "timeSpan": {
+                "start": -650,
+                "end": -546,
+                "label": "约公元前650—前546年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -560,
+            "end": -546,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-lydia-kingdom-falls-mint-continues",
+      "sourceModule": "data/iron-age-near-east.ts",
+      "cardPrimaryEntityId": "lydian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "lydian-kingdom",
+          "eventIds": [
+            "event-persia-conquers-sardis",
+            "event-lydian-coinage-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-persia-conquers-sardis",
+              "timeSpan": {
+                "start": -547,
+                "end": -546,
+                "label": "约公元前547—前546年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-lydian-coinage-emerges",
+              "timeSpan": {
+                "start": -650,
+                "end": -546,
+                "label": "约公元前650—前546年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents"
+      ]
+    }
+  ]
+}

@@ -266,6 +266,15 @@
 - renderer 是否支持：
 - 是否存在实现问题：
 
+**仅当任务涉及 V6 EntityPhase 时填写：**
+
+- 本次是否新增或拆分 EntityPhase：是／否
+- 前后 Phase 的 Region 覆盖差异：
+- 前后 Phase 的 RegionalRole 差异（非政权，或作为政权的补充说明）：
+- 为什么不能由 Event、TemporalRelation、Card／Scene 或迁移审计表达：
+- 若 Region 粒度不足，拟新增／细分的 Region，或暂缓分期的决定：
+- 已确认不存在仅由换任统治者、战争、改革、“早期／鼎盛期／末期”等叙事标签造成的分段：是／否
+
 ### 并行集成交接记录
 
 > 单 Agent 连续完成本内容包时也应简要记录实际所有者；多 Agent 并行时必须完整填写。模块级通过不等于已经接入主运行时。“集成中”只写在本记录或任务状态中，不得写成未经 schema 批准的 runtime 字段。

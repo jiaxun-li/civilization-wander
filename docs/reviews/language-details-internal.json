@@ -1,0 +1,169 @@
+{
+  "reviewDate": "2026-09-16",
+  "scope": "All language entities; public descriptions separated from internal display and evidence qualifications.",
+  "limitations": [
+    "Time endpoints are the existing reviewed preview coverage, not universal birth or extinction dates.",
+    "Named social groups summarize documented uses; they do not imply exclusive use or literacy by all speakers.",
+    "Regional placements are broad editorial units; no new geographic or chronological claims are added."
+  ],
+  "previousRecords": [
+    {
+      "entityId": "sumerian-language",
+      "canonicalSummary": "古代两河南部的语言，以楔形文字书写。约前2000年前后逐渐退出日常口语，此后仍用于书吏教育、文学和祭仪。所示长带包含这种书写延续，不表示一直是当地人的母语。",
+      "phaseLabels": [
+        {
+          "phaseId": "sumerian-southern-use",
+          "label": "约公元前2900年起；本期收录至前300年，非消亡时间"
+        }
+      ]
+    },
+    {
+      "entityId": "akkadian-language",
+      "canonicalSummary": "两河流域长期使用的语言，以楔形文字书写，与苏美尔语曾长期并存。巴比伦与亚述的语言形态在这里合并展示，不随王朝更替切断。",
+      "phaseLabels": [
+        {
+          "phaseId": "akkadian-southern-use",
+          "label": "约公元前2500年起；本期收录至前300年，非消亡时间"
+        },
+        {
+          "phaseId": "akkadian-babylonian-use",
+          "label": "约公元前2000年起；本期收录至前300年，非消亡时间"
+        },
+        {
+          "phaseId": "akkadian-assyrian-use",
+          "label": "约公元前2000—前600年，所录亚述语文献范围"
+        }
+      ]
+    },
+    {
+      "entityId": "egyptian-language",
+      "canonicalSummary": "尼罗河谷与三角洲长期使用的语言。象形文字、僧侣体和世俗体用于不同场合；语言本身没有随王朝更替而中断，后来的历史形态在本期不另拆条目。",
+      "phaseLabels": [
+        {
+          "phaseId": "egyptian-language-nile-use",
+          "label": "约公元前3000年起；本期收录至前300年，非消亡时间"
+        }
+      ]
+    },
+    {
+      "entityId": "vedic-sanskrit-language",
+      "canonicalSummary": "吠陀诗歌使用的古老梵语，长期通过口传保存。这里展示南亚西北部的早期传统，不把它当作所有当地居民的统一口语；所录时期结束不表示梵语消失。",
+      "phaseLabels": [
+        {
+          "phaseId": "vedic-sanskrit-northwest-use",
+          "label": "约公元前1500—前400年，所录使用范围"
+        }
+      ]
+    },
+    {
+      "entityId": "old-chinese-language",
+      "canonicalSummary": "商周甲骨、青铜器铭文和传世文献保存了早期汉语。这里选取安阳及西周黄河中游的使用范围，不把整个东亚视为同一种语言，也不按王朝拆分语言。",
+      "phaseLabels": [
+        {
+          "phaseId": "old-chinese-language-anyang-use",
+          "label": "约公元前1250年起；本期收录至前300年，非消亡时间"
+        },
+        {
+          "phaseId": "old-chinese-language-zhou-use",
+          "label": "约公元前1046年起；本期收录至前300年，非消亡时间"
+        }
+      ]
+    },
+    {
+      "entityId": "hittite-language",
+      "canonicalSummary": "赫梯王国的书吏用楔形文字记录的语言，文献包括法令、条约和仪式。主要见证来自哈图沙，不表示王国内所有人都使用同一种语言。",
+      "phaseLabels": [
+        {
+          "phaseId": "hittite-language-central-use",
+          "label": "约公元前1650—前1180年，所录使用范围"
+        }
+      ]
+    },
+    {
+      "entityId": "greek-language",
+      "canonicalSummary": "线形文字B保存了早期希腊语，后来希腊字母成为主要书写系统。这里将迈锡尼和后来的希腊语合并展示，不因宫殿终结而把语言截断；文字材料的空白不等于语言消失。",
+      "phaseLabels": [
+        {
+          "phaseId": "greek-mainland-crete-use",
+          "label": "约公元前1400年起；本期收录至前300年，非消亡时间"
+        },
+        {
+          "phaseId": "greek-islands-use",
+          "label": "约公元前800年起；本期收录至前300年，非消亡时间"
+        }
+      ]
+    },
+    {
+      "entityId": "lydian-language",
+      "canonicalSummary": "萨第斯及其周围的语言，用本地字母书写。铭文跨越吕底亚王国与波斯统治时期，现存词汇仍有不少难以理解之处。",
+      "phaseLabels": [
+        {
+          "phaseId": "lydian-language-west-use",
+          "label": "约公元前650年起；本期收录至前300年，非消亡时间"
+        }
+      ]
+    },
+    {
+      "entityId": "phoenician-language",
+      "canonicalSummary": "黎凡特沿海城市使用的语言，以腓尼基字母书写，随商人和海上交往传播。这里集中展示其东地中海沿岸的使用。",
+      "phaseLabels": [
+        {
+          "phaseId": "phoenician-language-coastal-use",
+          "label": "约公元前1200年起；本期收录至前300年，非消亡时间"
+        }
+      ]
+    },
+    {
+      "entityId": "hebrew-language",
+      "canonicalSummary": "古代以色列与犹大使用的语言，留存在铭文和文献中；后来与阿拉米语并存，未因王国灭亡而立即消失。",
+      "phaseLabels": [
+        {
+          "phaseId": "hebrew-language-southern-levant",
+          "label": "约公元前800年起；本期收录至前300年，非消亡时间"
+        }
+      ]
+    },
+    {
+      "entityId": "elamite-language",
+      "canonicalSummary": "伊朗西南部长期使用的语言，见于苏萨与法尔斯等地的文献。波斯帝国建立后仍用于部分行政记录；这里的高原范围仅表示西南部见证，不代表全伊朗。",
+      "phaseLabels": [
+        {
+          "phaseId": "elamite-language-southwest-use",
+          "label": "约公元前2300—前350年，所录使用范围"
+        }
+      ]
+    },
+    {
+      "entityId": "old-persian-language",
+      "canonicalSummary": "波斯人的古代语言，主要由阿契美尼德王室碑铭保存。采用专门的古波斯楔形文字，不代表帝国境内所有居民的口语。",
+      "phaseLabels": [
+        {
+          "phaseId": "old-persian-royal-use",
+          "label": "约公元前520—前330年，所录使用范围"
+        }
+      ]
+    },
+    {
+      "entityId": "aramaic-language",
+      "canonicalSummary": "起源于叙利亚一带，逐渐成为近东广泛使用的交流和行政语言。与腓尼基语、希伯来语等并存；伊朗的记录主要反映行政用途，不表示全境居民改说阿拉米语。",
+      "phaseLabels": [
+        {
+          "phaseId": "aramaic-northern-levant-use",
+          "label": "约公元前950年起；本期收录至前300年，非消亡时间"
+        },
+        {
+          "phaseId": "aramaic-southern-levant-use",
+          "label": "约公元前500年起；本期收录至前300年，非消亡时间"
+        },
+        {
+          "phaseId": "aramaic-in-assyrian-administration",
+          "label": "约公元前800年起；本期收录至前300年，非消亡时间"
+        },
+        {
+          "phaseId": "aramaic-later-imperial-administration",
+          "label": "约公元前5世纪，所选铭文见证"
+        }
+      ]
+    }
+  ]
+}

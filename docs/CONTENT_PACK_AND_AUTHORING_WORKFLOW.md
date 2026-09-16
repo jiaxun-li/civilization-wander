@@ -208,6 +208,15 @@ Scene 还必须满足：
 - 同一张 Card 内不得出现两个指向同一目标 Card 的可见链接；
 - 两张 Card 之间只要一方提供进入另一方的可见链接，另一方也必须提供语义明确的反向链接。反向链接不必出现在对应 Scene，也不必使用对称文案，但必须具有独立的叙事价值。
 
+#### V6 EntityPhase 附加规则（仅在任务明确涉及 V6 时）
+
+- EntityPhase 是同一 Entity 在 Region×时间模型中的空间状态，不是 Scene 摘要、历史章节或统治者分期；
+- 政权只有 Region 覆盖集合实际增加或减少时才创建新 Phase；同一批 Region 只改变 `core`、`controlled`、`associated` 等文字，不足以证明疆域变化；
+- 其他 Entity 只有 Region 或 RegionalRole 改变时才创建新 Phase；新增事实但空间状态不变，应继续使用原 Phase；
+- 换任统治者、建立、战争、改革、鼎盛、衰落和灭亡分别进入 Event、TemporalRelation、Card／Scene 或迁移审计，不得机械写成“早期／扩张期／末期”Phase；
+- 若来源支持空间变化但当前 Region 粒度无法表达，应先提交 Region 细化方案或暂缓分期；不得只用 Phase 标题代替结构数据；
+- 同一 Entity 的相邻 Phase 空间签名相同会被 V6 validator 拒绝，置入前必须合并。
+
 ### EditorialReview
 
 完整故事必须在内部记录至少一项 limitation、counterexample、uncertainty、dispute 或 alternative explanation。这些内容进入数据与验证层，但当前版本默认不向用户显示。

@@ -1,0 +1,4077 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-egypt.ts",
+  "scenePhaseSignals": [
+    {
+      "id": "signal-ancient-egypt-two-lands",
+      "v5SceneId": "ancient-egypt-two-lands",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -3300,
+        "end": -2686,
+        "label": "约公元前3300—前2686年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ancient-egypt-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-upper-lower-egypt-unified"
+        }
+      ],
+      "eventIds": [
+        "event-upper-lower-egypt-unified"
+      ],
+      "sourceIds": [
+        "source-ucl-narmer",
+        "source-wikimedia-narmer-palette-cc0"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "原映射仅指向已删除的概括或混合 EntityPhase，保留为迁移审计。"
+      }
+    },
+    {
+      "id": "signal-ancient-egypt-river-returns",
+      "v5SceneId": "ancient-egypt-river-returns",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -3100,
+        "end": -30,
+        "label": "约公元前3100—前30年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ancient-egypt-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-nile-annual-cycle-organizes-life"
+        }
+      ],
+      "eventIds": [
+        "event-nile-annual-cycle-organizes-life"
+      ],
+      "sourceIds": [
+        "source-met-life-along-nile",
+        "source-met-telling-time-egypt",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "原映射仅指向已删除的概括或混合 EntityPhase，保留为迁移审计。"
+      }
+    },
+    {
+      "id": "signal-ancient-egypt-pyramid-kingdom",
+      "v5SceneId": "ancient-egypt-pyramid-kingdom",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -2686,
+        "end": -2181,
+        "label": "约公元前2686—前2181年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop",
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-aera-feeding-workers",
+        "source-aera-lost-city",
+        "source-ifao-merer-log",
+        "source-met-oarsmen-official",
+        "source-met-old-kingdom",
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-ancient-egypt-visible-identity",
+      "v5SceneId": "ancient-egypt-visible-identity",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -3100,
+        "end": -30,
+        "label": "约公元前3100—前30年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        },
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-writing-system-changes"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist",
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut-publication",
+        "source-ucl-art-script",
+        "source-ucl-coptic",
+        "source-ucl-demotic",
+        "source-ucl-hieratic",
+        "source-ucl-hieroglyphic-system",
+        "source-ucl-writing-development",
+        "source-wikimedia-karnak-hieroglyphs"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions",
+          "egyptian-hieroglyphs-monumental-and-cursive-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-ancient-egypt-dead-needs",
+      "v5SceneId": "ancient-egypt-dead-needs",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -2686,
+        "end": -30,
+        "label": "约公元前2686—前30年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-afterlife-journey",
+        "source-bm-book-of-dead",
+        "source-met-ukhhotep-coffin",
+        "source-ucl-burial-customs",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-ancient-egypt-reunifications",
+      "v5SceneId": "ancient-egypt-reunifications",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -2181,
+        "end": -1550,
+        "label": "约公元前2181—前1550年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-middle-kingdom-reunification"
+        },
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-fragmentation"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-fragmentation",
+        "event-middle-kingdom-reunification",
+        "event-middle-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-met-middle-kingdom",
+        "source-muller-old-kingdom-end",
+        "source-natural-earth",
+        "source-ucl-mentuhotep-ii",
+        "source-ucl-middle-kingdom",
+        "source-uee-second-intermediate"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-old-kingdom-regional-presence",
+          "egypt-middle-kingdom-reunification",
+          "egypt-middle-kingdom-consolidated-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-ancient-egypt-power-far-away",
+      "v5SceneId": "ancient-egypt-power-far-away",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        },
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ahmose-captures-avaris"
+        }
+      ],
+      "eventIds": [
+        "event-ahmose-captures-avaris",
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-met-new-kingdom",
+        "source-moran-amarna-letters",
+        "source-natural-earth",
+        "source-ucl-ahmose",
+        "source-ucl-nubia-new-kingdom"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-new-kingdom-reunification",
+          "egypt-new-kingdom-nubian-expansion",
+          "egypt-new-kingdom-imperial-court-order",
+          "egypt-new-kingdom-fragmentation"
+        ]
+      }
+    },
+    {
+      "id": "signal-ancient-egypt-survives-palaces",
+      "v5SceneId": "ancient-egypt-survives-palaces",
+      "v5OwnerCardId": "ancient-egypt-gift-of-nile",
+      "timeSpan": {
+        "start": -1250,
+        "end": -30,
+        "label": "约公元前1250—前30年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-new-kingdom-fragmentation"
+        }
+      ],
+      "eventIds": [
+        "event-new-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-cifola-ramesses-sea-peoples",
+        "source-isac-medinet-habu-i",
+        "source-knapp-manning-crisis",
+        "source-met-egypt-1000-1",
+        "source-met-third-intermediate",
+        "source-turin-strike-papyrus",
+        "source-uee-early-mid-20th-dynasty",
+        "source-wikimedia-medinet-habu-temple"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-new-kingdom-imperial-court-order",
+          "egypt-new-kingdom-fragmentation"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-old-two-lands",
+      "v5SceneId": "egypt-old-two-lands",
+      "v5OwnerCardId": "egypt-old-kingdom-overview",
+      "timeSpan": {
+        "start": -3150,
+        "end": -3050,
+        "label": "约公元前3150—前3050年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ancient-egypt-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-upper-lower-egypt-unified"
+        }
+      ],
+      "eventIds": [
+        "event-upper-lower-egypt-unified"
+      ],
+      "sourceIds": [
+        "source-natural-earth",
+        "source-ucl-narmer"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "原映射仅指向已删除的概括或混合 EntityPhase，保留为迁移审计。"
+      }
+    },
+    {
+      "id": "signal-egypt-old-pyramids-horizon",
+      "v5SceneId": "egypt-old-pyramids-horizon",
+      "v5OwnerCardId": "egypt-old-kingdom-overview",
+      "timeSpan": {
+        "start": -2686,
+        "end": -2490,
+        "label": "约公元前2686—前2490年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-arnold-pyramids",
+        "source-met-ancient-egypt-art",
+        "source-met-old-kingdom",
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview",
+        "source-wikimedia-giza-pyramids"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-old-afterlife-road",
+      "v5SceneId": "egypt-old-afterlife-road",
+      "v5OwnerCardId": "egypt-old-kingdom-overview",
+      "timeSpan": {
+        "start": -2375,
+        "end": -2345,
+        "label": "约公元前2375—前2345年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-unas-pyramid-text-inscription"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-unas-pyramid-text-inscription"
+        },
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-unas-pyramid-text-inscription"
+        }
+      ],
+      "eventIds": [
+        "event-unas-pyramid-text-inscription",
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-book-of-dead",
+        "source-met-old-kingdom",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts",
+        "source-wikimedia-unas-exterior",
+        "source-wikimedia-unas-pyramid-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-old-officials",
+      "v5SceneId": "egypt-old-officials",
+      "v5OwnerCardId": "egypt-old-kingdom-overview",
+      "timeSpan": {
+        "start": -2345,
+        "end": -2181,
+        "label": "约公元前2345—前2181年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-met-mitry-statue",
+        "source-met-old-kingdom",
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-old-north-south",
+      "v5SceneId": "egypt-old-north-south",
+      "v5OwnerCardId": "egypt-old-kingdom-overview",
+      "timeSpan": {
+        "start": -2250,
+        "end": -2055,
+        "label": "约公元前2250—前2055年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-fragmentation"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-muller-old-kingdom-end",
+        "source-natural-earth",
+        "source-ucl-mentuhotep-ii"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-middle-thebes-reunifies",
+      "v5SceneId": "egypt-middle-thebes-reunifies",
+      "v5OwnerCardId": "egypt-middle-kingdom-overview",
+      "timeSpan": {
+        "start": -2055,
+        "end": -2010,
+        "label": "约公元前2055—前2010年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-middle-kingdom-reunification"
+        }
+      ],
+      "eventIds": [
+        "event-middle-kingdom-reunification"
+      ],
+      "sourceIds": [
+        "source-met-middle-kingdom",
+        "source-muller-old-kingdom-end",
+        "source-natural-earth",
+        "source-ucl-mentuhotep-ii",
+        "source-ucl-middle-kingdom"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-middle-kingdom-reunification"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-middle-sinuhe-home",
+      "v5SceneId": "egypt-middle-sinuhe-home",
+      "v5OwnerCardId": "egypt-middle-kingdom-overview",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1800,
+        "label": "约公元前2000—前1800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-sinuhe-story-composed-and-copied"
+        }
+      ],
+      "eventIds": [
+        "event-sinuhe-story-composed-and-copied"
+      ],
+      "sourceIds": [
+        "source-bm-sinuhe-literature",
+        "source-bm-sinuhe-ostracon",
+        "source-ucl-sinuhe",
+        "source-wikimedia-sinuhe-papyrus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "sinuhe-work-formation",
+          "egypt-middle-kingdom-reunification",
+          "egypt-middle-kingdom-consolidated-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-middle-avaris",
+      "v5SceneId": "egypt-middle-avaris",
+      "v5OwnerCardId": "egypt-middle-kingdom-overview",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1550,
+        "label": "约公元前1700—前1550年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-middle-kingdom-fragmentation"
+        }
+      ],
+      "eventIds": [
+        "event-middle-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-met-middle-kingdom",
+        "source-natural-earth",
+        "source-ucl-ahmose",
+        "source-uee-second-intermediate"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-middle-kingdom-consolidated-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-new-ahmose-avaris",
+      "v5SceneId": "egypt-new-ahmose-avaris",
+      "v5OwnerCardId": "egypt-new-kingdom-overview",
+      "timeSpan": {
+        "start": -1555,
+        "end": -1525,
+        "label": "约公元前1555—前1525年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ahmose-captures-avaris"
+        }
+      ],
+      "eventIds": [
+        "event-ahmose-captures-avaris"
+      ],
+      "sourceIds": [
+        "source-met-new-kingdom",
+        "source-natural-earth",
+        "source-ucl-ahmose"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-new-kingdom-reunification"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-new-beyond-borders",
+      "v5SceneId": "egypt-new-beyond-borders",
+      "v5OwnerCardId": "egypt-new-kingdom-overview",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1350,
+        "label": "约公元前1550—前1350年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-met-new-kingdom",
+        "source-moran-amarna-letters",
+        "source-natural-earth",
+        "source-ucl-nubia-new-kingdom"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-amarna-diplomatic-correspondence-operates"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-new-hatshepsut",
+      "v5SceneId": "egypt-new-hatshepsut",
+      "v5OwnerCardId": "egypt-new-kingdom-overview",
+      "timeSpan": {
+        "start": -1479,
+        "end": -1458,
+        "label": "约公元前1479—前1458年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hatshepsut-rules-as-pharaoh"
+        },
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-hatshepsut-rules-as-pharaoh"
+        }
+      ],
+      "eventIds": [
+        "event-hatshepsut-rules-as-pharaoh"
+      ],
+      "sourceIds": [
+        "source-met-hatshepsut",
+        "source-met-hatshepsut-exhibition",
+        "source-met-hatshepsut-female-pharaoh",
+        "source-met-hatshepsut-publication",
+        "source-ucl-sobeknofru"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions",
+          "egypt-new-kingdom-nubian-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-new-amarna-letters",
+      "v5SceneId": "egypt-new-amarna-letters",
+      "v5OwnerCardId": "egypt-new-kingdom-overview",
+      "timeSpan": {
+        "start": -1353,
+        "end": -1336,
+        "label": "约公元前1353—前1336年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letter-object",
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-amarna-diplomatic-correspondence-operates"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-new-akhenaten-city",
+      "v5SceneId": "egypt-new-akhenaten-city",
+      "v5OwnerCardId": "egypt-new-kingdom-overview",
+      "timeSpan": {
+        "start": -1353,
+        "end": -1336,
+        "label": "约公元前1353—前1336年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-reform"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-reform"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-akhenaten-duck",
+        "source-ucl-tutankhamun"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-new-kingdom-imperial-court-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-new-kadesh",
+      "v5SceneId": "egypt-new-kadesh",
+      "v5OwnerCardId": "egypt-new-kingdom-overview",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1258,
+        "label": "约公元前1274—前1258年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-hayes-scepter-ii",
+        "source-natural-earth",
+        "source-un-egypt-hatti-treaty"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-new-kingdom-imperial-court-order",
+          "hittite-syrian-control"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-new-contraction",
+      "v5SceneId": "egypt-new-contraction",
+      "v5OwnerCardId": "egypt-new-kingdom-overview",
+      "timeSpan": {
+        "start": -1186,
+        "end": -1069,
+        "label": "约公元前1186—前1069年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-new-kingdom-fragmentation"
+        }
+      ],
+      "eventIds": [
+        "event-new-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-met-third-intermediate",
+        "source-turin-strike-papyrus",
+        "source-uee-early-mid-20th-dynasty"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-new-kingdom-imperial-court-order",
+          "egypt-new-kingdom-fragmentation"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-stone-grows",
+      "v5SceneId": "egypt-pyramid-stone-grows",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2700,
+        "end": -2630,
+        "label": "约公元前2700—前2630年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-met-old-kingdom",
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview",
+        "source-wikimedia-djoser-step"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-sneferu-three",
+      "v5SceneId": "egypt-pyramid-sneferu-three",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2630,
+        "end": -2580,
+        "label": "约公元前2630—前2580年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-met-old-kingdom",
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview",
+        "source-wikimedia-bent-pyramid"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-whole-complex",
+      "v5SceneId": "egypt-pyramid-whole-complex",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2450,
+        "label": "约公元前2600—前2450年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-kingdom-pyramid-complexes-develop"
+        }
+      ],
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-met-old-kingdom",
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview",
+        "source-wikimedia-giza-pyramids"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-merer-boats",
+      "v5SceneId": "egypt-pyramid-merer-boats",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2580,
+        "end": -2560,
+        "label": "约公元前2580—前2560年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        }
+      ],
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-aera-feeding-workers",
+        "source-aera-lost-city",
+        "source-ifao-merer-log",
+        "source-met-oarsmen-official",
+        "source-wikimedia-oarsmen-official"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-workers-city",
+      "v5SceneId": "egypt-pyramid-workers-city",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2500,
+        "label": "约公元前2600—前2500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        }
+      ],
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-aera-feeding-workers",
+        "source-aera-lost-city",
+        "source-ifao-merer-log",
+        "source-ucl-pyramid-towns",
+        "source-wikimedia-giza-complex-map"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-feeding-city",
+      "v5SceneId": "egypt-pyramid-feeding-city",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2500,
+        "label": "约公元前2600—前2500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        }
+      ],
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-aera-feeding-workers",
+        "source-aera-lost-city",
+        "source-ifao-merer-log",
+        "source-met-offering-bearers"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-cult-continues",
+      "v5SceneId": "egypt-pyramid-cult-continues",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2200,
+        "label": "约公元前2600—前2200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-khufu-great-pyramid-construction"
+        }
+      ],
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-aera-feeding-workers",
+        "source-aera-lost-city",
+        "source-ifao-merer-log",
+        "source-met-neferiu-false-door",
+        "source-ucl-cult-offerings",
+        "source-ucl-king-cult"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egypt-pyramids-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-pyramid-walls-speak",
+      "v5SceneId": "egypt-pyramid-walls-speak",
+      "v5OwnerCardId": "egypt-pyramids-kingdom-at-work",
+      "timeSpan": {
+        "start": -2375,
+        "end": -2325,
+        "label": "约公元前2375—前2325年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-unas-pyramid-text-inscription"
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "basis": "eventParticipant",
+          "referenceId": "event-unas-pyramid-text-inscription"
+        },
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-unas-pyramid-text-inscription"
+        }
+      ],
+      "eventIds": [
+        "event-unas-pyramid-text-inscription"
+      ],
+      "sourceIds": [
+        "source-ucl-religious-texts",
+        "source-wikimedia-unas-pyramid-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence",
+          "egypt-old-kingdom-regional-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-wah-wrapped",
+      "v5SceneId": "egypt-afterlife-wah-wrapped",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1900,
+        "label": "约公元前2000—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-book-of-dead",
+        "source-met-life-along-nile",
+        "source-met-wah-statuette",
+        "source-ucl-coffin-texts",
+        "source-ucl-mummies",
+        "source-ucl-religious-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-many-parts",
+      "v5SceneId": "egypt-afterlife-many-parts",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1100,
+        "label": "约公元前2000—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-book-of-dead",
+        "source-met-heart-scarab",
+        "source-met-transforming-dead",
+        "source-ucl-burial-customs",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-offerings-continue",
+      "v5SceneId": "egypt-afterlife-offerings-continue",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -2200,
+        "end": -1100,
+        "label": "约公元前2200—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-book-of-dead",
+        "source-met-neferiu-false-door",
+        "source-ucl-coffin-texts",
+        "source-ucl-cult-offerings",
+        "source-ucl-religious-texts",
+        "source-ucl-tombs"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-pyramid-spells",
+      "v5SceneId": "egypt-afterlife-pyramid-spells",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -2375,
+        "end": -2325,
+        "label": "约公元前2375—前2325年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-book-of-dead",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts",
+        "source-wikimedia-unas-pyramid-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-coffin-texts",
+      "v5SceneId": "egypt-afterlife-coffin-texts",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -2050,
+        "end": -1750,
+        "label": "约公元前2050—前1750年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-book-of-dead",
+        "source-met-ukhhotep-coffin",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-travel-guide",
+      "v5SceneId": "egypt-afterlife-travel-guide",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-book-of-dead",
+        "source-met-nesiamun-book-dead",
+        "source-ucl-book-of-dead-faq",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-gods-on-road",
+      "v5SceneId": "egypt-afterlife-gods-on-road",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-afterlife-journey",
+        "source-bm-book-of-dead",
+        "source-bm-egyptian-gods",
+        "source-met-hatnefer-osiris",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-heart-trial",
+      "v5SceneId": "egypt-afterlife-heart-trial",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-afterlife-journey",
+        "source-bm-book-of-dead",
+        "source-met-anubis-weighing-heart",
+        "source-ucl-book-of-dead-125",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-afterlife-field-work",
+      "v5SceneId": "egypt-afterlife-field-work",
+      "v5OwnerCardId": "egypt-afterlife-journey",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-religion",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-funerary-texts-and-rituals-expand"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-afterlife-journey",
+        "source-bm-book-of-dead",
+        "source-met-seti-i-shabti",
+        "source-ucl-coffin-texts",
+        "source-ucl-religious-texts",
+        "source-ucl-shabtis"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-religion-nile-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-art-images-work",
+      "v5SceneId": "egypt-art-images-work",
+      "v5OwnerCardId": "egyptian-art-identity-eternity",
+      "timeSpan": {
+        "start": -2700,
+        "end": -1100,
+        "label": "约公元前2700—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut-publication",
+        "source-met-offering-bearers"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-art-composite-body",
+      "v5SceneId": "egypt-art-composite-body",
+      "v5OwnerCardId": "egyptian-art-identity-eternity",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-ancient-egypt-art",
+        "source-met-anubis-weighing-heart",
+        "source-met-hatshepsut-publication"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-art-size-status",
+      "v5SceneId": "egypt-art-size-status",
+      "v5OwnerCardId": "egyptian-art-identity-eternity",
+      "timeSpan": {
+        "start": -2458,
+        "end": -2446,
+        "label": "约公元前2458—前2446年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut-publication",
+        "source-met-sahure-statue"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-art-statues-live",
+      "v5SceneId": "egypt-art-statues-live",
+      "v5OwnerCardId": "egyptian-art-identity-eternity",
+      "timeSpan": {
+        "start": -2345,
+        "end": -2181,
+        "label": "约公元前2345—前2181年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-arnold-pyramids",
+        "source-met-akhenaten-city",
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut-publication",
+        "source-met-mitry-statue"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-art-hatshepsut-pharaoh",
+      "v5SceneId": "egypt-art-hatshepsut-pharaoh",
+      "v5OwnerCardId": "egyptian-art-identity-eternity",
+      "timeSpan": {
+        "start": -1479,
+        "end": -1458,
+        "label": "约公元前1479—前1458年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hatshepsut-rules-as-pharaoh"
+        },
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist",
+        "event-hatshepsut-rules-as-pharaoh"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut",
+        "source-met-hatshepsut-publication"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions",
+          "egypt-new-kingdom-nubian-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-art-amarna-motion",
+      "v5SceneId": "egypt-art-amarna-motion",
+      "v5OwnerCardId": "egyptian-art-identity-eternity",
+      "timeSpan": {
+        "start": -1353,
+        "end": -1336,
+        "label": "约公元前1353—前1336年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-reform"
+        },
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist",
+        "event-amarna-reform"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-akhenaten-duck",
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut-publication",
+        "source-ucl-tutankhamun"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions",
+          "egypt-new-kingdom-imperial-court-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-art-abu-simbel-scale",
+      "v5SceneId": "egypt-art-abu-simbel-scale",
+      "v5OwnerCardId": "egyptian-art-identity-eternity",
+      "timeSpan": {
+        "start": -1279,
+        "end": -1213,
+        "label": "约公元前1279—前1213年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-art",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-formal-art-conventions-persist"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-bm-ramesses-ii-colossal-statue",
+        "source-egypt-monuments-abu-simbel",
+        "source-met-akhenaten-city",
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut-publication",
+        "source-wikimedia-abu-simbel-color"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-art-formal-conventions"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-hieroglyph-narmer-name",
+      "v5SceneId": "egypt-hieroglyph-narmer-name",
+      "v5OwnerCardId": "egyptian-hieroglyphs-words-sounds",
+      "timeSpan": {
+        "start": -3150,
+        "end": -3050,
+        "label": "约公元前3150—前3050年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-writing-system-changes"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-coptic",
+        "source-ucl-demotic",
+        "source-ucl-hieratic",
+        "source-ucl-narmer",
+        "source-ucl-writing-development",
+        "source-wikimedia-narmer-palette-cc0"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-hieroglyphs-monumental-and-cursive-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-hieroglyph-word-sound",
+      "v5SceneId": "egypt-hieroglyph-word-sound",
+      "v5OwnerCardId": "egyptian-hieroglyphs-words-sounds",
+      "timeSpan": {
+        "start": -2400,
+        "end": -2200,
+        "label": "约公元前2400—前2200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-writing-system-changes"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-bm-hieroglyphs-decipherment",
+        "source-ucl-coptic",
+        "source-ucl-demotic",
+        "source-ucl-hieratic",
+        "source-ucl-hieroglyphic-system",
+        "source-ucl-writing-development",
+        "source-wikimedia-champollion-table-pd"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-hieroglyphs-monumental-and-cursive-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-hieroglyph-silent-guides",
+      "v5SceneId": "egypt-hieroglyph-silent-guides",
+      "v5OwnerCardId": "egyptian-hieroglyphs-words-sounds",
+      "timeSpan": {
+        "start": -2700,
+        "end": -1100,
+        "label": "约公元前2700—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-writing-system-changes"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-art-script",
+        "source-ucl-coptic",
+        "source-ucl-demotic",
+        "source-ucl-hieratic",
+        "source-ucl-hieroglyphic-system",
+        "source-ucl-writing-development",
+        "source-wikimedia-karnak-hieroglyphs"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-hieroglyphs-monumental-and-cursive-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-hieroglyph-stone-papyrus",
+      "v5SceneId": "egypt-hieroglyph-stone-papyrus",
+      "v5OwnerCardId": "egyptian-hieroglyphs-words-sounds",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1600,
+        "label": "约公元前2000—前1600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-writing-system-changes"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-bm-hieroglyphs-resources",
+        "source-ucl-coptic",
+        "source-ucl-demotic",
+        "source-ucl-hieratic",
+        "source-ucl-writing-development",
+        "source-wikimedia-sinuhe-papyrus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-hieroglyphs-monumental-and-cursive-use"
+        ]
+      }
+    },
+    {
+      "id": "signal-egypt-hieroglyph-language-changes",
+      "v5SceneId": "egypt-hieroglyph-language-changes",
+      "v5OwnerCardId": "egyptian-hieroglyphs-words-sounds",
+      "timeSpan": {
+        "start": -700,
+        "end": 400,
+        "label": "约公元前700—公元400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-writing-system-changes"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-bm-hieroglyphs-decipherment",
+        "source-met-coptic-manuscript",
+        "source-ucl-coptic",
+        "source-ucl-demotic",
+        "source-ucl-hieratic",
+        "source-ucl-writing-development"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "原映射仅指向已删除的概括或混合 EntityPhase，保留为迁移审计。"
+      }
+    },
+    {
+      "id": "signal-egypt-hieroglyph-alphabet-road",
+      "v5SceneId": "egypt-hieroglyph-alphabet-road",
+      "v5OwnerCardId": "egyptian-hieroglyphs-words-sounds",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1500,
+        "label": "约公元前1900—前1500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "basis": "eventParticipant",
+          "referenceId": "event-egyptian-writing-system-changes"
+        }
+      ],
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-isac-visible-language",
+        "source-thinkzone-alphabet-chart",
+        "source-ucl-coptic",
+        "source-ucl-demotic",
+        "source-ucl-hieratic",
+        "source-ucl-writing-development",
+        "source-yale-wadi-el-hol"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "egyptian-hieroglyphs-monumental-and-cursive-use"
+        ]
+      }
+    }
+  ],
+  "audit": [
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-two-lands",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "ancient-egypt-civilization",
+          "eventIds": [
+            "event-upper-lower-egypt-unified"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-upper-lower-egypt-unified",
+              "timeSpan": {
+                "start": -3300,
+                "end": -3050,
+                "label": "约公元前3300—前3050年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -3050,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-river-returns",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "ancient-egypt-civilization",
+          "eventIds": [
+            "event-nile-annual-cycle-organizes-life"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-nile-annual-cycle-organizes-life",
+              "timeSpan": {
+                "start": -3100,
+                "end": -30,
+                "label": "约公元前3100—前30年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3100,
+            "end": -30,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-pyramid-kingdom",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop",
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop",
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-visible-identity",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2700,
+            "end": -1100,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "eventIds": [
+            "event-egyptian-writing-system-changes"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-writing-system-changes",
+              "timeSpan": {
+                "start": -3150,
+                "end": 400,
+                "label": "约公元前3150—公元400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3100,
+            "end": -30,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-dead-needs",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2400,
+            "end": -1069,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-reunifications",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "eventIds": [
+            "event-middle-kingdom-reunification",
+            "event-middle-kingdom-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-middle-kingdom-reunification",
+              "timeSpan": {
+                "start": -2055,
+                "end": -2040,
+                "label": "约公元前21世纪",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-middle-kingdom-fragmentation",
+              "timeSpan": {
+                "start": -1700,
+                "end": -1650,
+                "label": "约公元前18—前17世纪",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-fragmentation",
+              "timeSpan": {
+                "start": -2250,
+                "end": -2181,
+                "label": "约公元前23—前22世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2181,
+            "end": -2181,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-power-far-away",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1330,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ahmose-captures-avaris"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ahmose-captures-avaris",
+              "timeSpan": {
+                "start": -1555,
+                "end": -1545,
+                "label": "约公元前1550年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1550,
+            "end": -1545,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ancient-egypt-survives-palaces",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "ancient-egypt-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-new-kingdom-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-new-kingdom-fragmentation",
+              "timeSpan": {
+                "start": -1186,
+                "end": -1069,
+                "label": "约公元前1186—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1186,
+            "end": -1069,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-old-two-lands",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-old-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ancient-egypt-civilization",
+          "eventIds": [
+            "event-upper-lower-egypt-unified"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-upper-lower-egypt-unified",
+              "timeSpan": {
+                "start": -3300,
+                "end": -3050,
+                "label": "约公元前3300—前3050年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3150,
+            "end": -3050,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-old-pyramids-horizon",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-old-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2686,
+            "end": -2490,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2686,
+            "end": -2490,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-old-afterlife-road",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-old-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-unas-pyramid-text-inscription"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-unas-pyramid-text-inscription",
+              "timeSpan": {
+                "start": -2375,
+                "end": -2325,
+                "label": "约公元前24世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2375,
+            "end": -2345,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-unas-pyramid-text-inscription"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-unas-pyramid-text-inscription",
+              "timeSpan": {
+                "start": -2375,
+                "end": -2325,
+                "label": "约公元前24世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2375,
+            "end": -2345,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-unas-pyramid-text-inscription",
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-unas-pyramid-text-inscription",
+              "timeSpan": {
+                "start": -2375,
+                "end": -2325,
+                "label": "约公元前24世纪",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-old-officials",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-old-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2345,
+            "end": -2300,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2345,
+            "end": -2300,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-old-north-south",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-old-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-fragmentation",
+              "timeSpan": {
+                "start": -2250,
+                "end": -2181,
+                "label": "约公元前23—前22世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2250,
+            "end": -2181,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-middle-thebes-reunifies",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-middle-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "eventIds": [
+            "event-middle-kingdom-reunification"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-middle-kingdom-reunification",
+              "timeSpan": {
+                "start": -2055,
+                "end": -2040,
+                "label": "约公元前21世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2055,
+            "end": -2040,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-middle-sinuhe-home",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-middle-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "eventIds": [
+            "event-sinuhe-story-composed-and-copied"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-sinuhe-story-composed-and-copied",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1100,
+                "label": "约公元前2000—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-middle-avaris",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-middle-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-middle-kingdom",
+          "eventIds": [
+            "event-middle-kingdom-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-middle-kingdom-fragmentation",
+              "timeSpan": {
+                "start": -1700,
+                "end": -1650,
+                "label": "约公元前18—前17世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1700,
+            "end": -1650,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-new-ahmose-avaris",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-new-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ahmose-captures-avaris"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ahmose-captures-avaris",
+              "timeSpan": {
+                "start": -1555,
+                "end": -1545,
+                "label": "约公元前1550年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1555,
+            "end": -1545,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-new-beyond-borders",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-new-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1350,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-new-hatshepsut",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-new-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-hatshepsut-rules-as-pharaoh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hatshepsut-rules-as-pharaoh",
+              "timeSpan": {
+                "start": -1479,
+                "end": -1458,
+                "label": "约公元前1479—前1458年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1479,
+            "end": -1458,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-hatshepsut-rules-as-pharaoh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hatshepsut-rules-as-pharaoh",
+              "timeSpan": {
+                "start": -1479,
+                "end": -1458,
+                "label": "约公元前1479—前1458年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1479,
+            "end": -1458,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-new-amarna-letters",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-new-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1353,
+            "end": -1336,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-new-akhenaten-city",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-new-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-amarna-reform"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-reform",
+              "timeSpan": {
+                "start": -1353,
+                "end": -1336,
+                "label": "约公元前1353—前1336年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1353,
+            "end": -1336,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-new-kadesh",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-new-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-new-contraction",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-new-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-new-kingdom-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-new-kingdom-fragmentation",
+              "timeSpan": {
+                "start": -1186,
+                "end": -1069,
+                "label": "约公元前1186—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1186,
+            "end": -1069,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-stone-grows",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2700,
+            "end": -2630,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2700,
+            "end": -2630,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-sneferu-three",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2630,
+            "end": -2580,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2630,
+            "end": -2580,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-whole-complex",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -2450,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-old-kingdom-pyramid-complexes-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-kingdom-pyramid-complexes-develop",
+              "timeSpan": {
+                "start": -2700,
+                "end": -2300,
+                "label": "约公元前2700—前2300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -2450,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-merer-boats",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-workers-city",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-feeding-city",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-cult-continues",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-khufu-great-pyramid-construction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-khufu-great-pyramid-construction",
+              "timeSpan": {
+                "start": -2580,
+                "end": -2560,
+                "label": "约公元前26世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2580,
+            "end": -2560,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-pyramid-walls-speak",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egypt-pyramids",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-old-kingdom",
+          "eventIds": [
+            "event-unas-pyramid-text-inscription"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-unas-pyramid-text-inscription",
+              "timeSpan": {
+                "start": -2375,
+                "end": -2325,
+                "label": "约公元前24世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2375,
+            "end": -2325,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egypt-pyramids",
+          "eventIds": [
+            "event-unas-pyramid-text-inscription"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-unas-pyramid-text-inscription",
+              "timeSpan": {
+                "start": -2375,
+                "end": -2325,
+                "label": "约公元前24世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2375,
+            "end": -2325,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-unas-pyramid-text-inscription"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-unas-pyramid-text-inscription",
+              "timeSpan": {
+                "start": -2375,
+                "end": -2325,
+                "label": "约公元前24世纪",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2375,
+            "end": -2325,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-wah-wrapped",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-many-parts",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1100,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-offerings-continue",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2200,
+            "end": -1100,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-pyramid-spells",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2375,
+            "end": -2325,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-coffin-texts",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2050,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-travel-guide",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1550,
+            "end": -1069,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-gods-on-road",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1550,
+            "end": -1069,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-heart-trial",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1550,
+            "end": -1069,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-afterlife-field-work",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-religion",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-religion",
+          "eventIds": [
+            "event-egyptian-funerary-texts-and-rituals-expand"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-funerary-texts-and-rituals-expand",
+              "timeSpan": {
+                "start": -2400,
+                "end": -1069,
+                "label": "约公元前2400—前1069年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1550,
+            "end": -1069,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-art-images-work",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-art",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2700,
+            "end": -1100,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-art-composite-body",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-art",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1550,
+            "end": -1100,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-art-size-status",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-art",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2458,
+            "end": -2446,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-art-statues-live",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-art",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2345,
+            "end": -2181,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-art-hatshepsut-pharaoh",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-art",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-hatshepsut-rules-as-pharaoh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hatshepsut-rules-as-pharaoh",
+              "timeSpan": {
+                "start": -1479,
+                "end": -1458,
+                "label": "约公元前1479—前1458年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1479,
+            "end": -1458,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist",
+            "event-hatshepsut-rules-as-pharaoh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-hatshepsut-rules-as-pharaoh",
+              "timeSpan": {
+                "start": -1479,
+                "end": -1458,
+                "label": "约公元前1479—前1458年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-art-amarna-motion",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-art",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-amarna-reform"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-reform",
+              "timeSpan": {
+                "start": -1353,
+                "end": -1336,
+                "label": "约公元前1353—前1336年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1353,
+            "end": -1336,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1353,
+            "end": -1336,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-art-abu-simbel-scale",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-art",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-art",
+          "eventIds": [
+            "event-egyptian-formal-art-conventions-persist"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-formal-art-conventions-persist",
+              "timeSpan": {
+                "start": -2700,
+                "end": -1100,
+                "label": "约公元前2700—前1100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1279,
+            "end": -1213,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-hieroglyph-narmer-name",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "eventIds": [
+            "event-egyptian-writing-system-changes"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-writing-system-changes",
+              "timeSpan": {
+                "start": -3150,
+                "end": 400,
+                "label": "约公元前3150—公元400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3150,
+            "end": -3050,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-hieroglyph-word-sound",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "eventIds": [
+            "event-egyptian-writing-system-changes"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-writing-system-changes",
+              "timeSpan": {
+                "start": -3150,
+                "end": 400,
+                "label": "约公元前3150—公元400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2400,
+            "end": -2200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-hieroglyph-silent-guides",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "eventIds": [
+            "event-egyptian-writing-system-changes"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-writing-system-changes",
+              "timeSpan": {
+                "start": -3150,
+                "end": 400,
+                "label": "约公元前3150—公元400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2700,
+            "end": -1100,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-hieroglyph-stone-papyrus",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "eventIds": [
+            "event-egyptian-writing-system-changes"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-writing-system-changes",
+              "timeSpan": {
+                "start": -3150,
+                "end": 400,
+                "label": "约公元前3150—公元400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-hieroglyph-language-changes",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "eventIds": [
+            "event-egyptian-writing-system-changes"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-writing-system-changes",
+              "timeSpan": {
+                "start": -3150,
+                "end": 400,
+                "label": "约公元前3150—公元400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -700,
+            "end": 400,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-egypt-hieroglyph-alphabet-road",
+      "sourceModule": "data/ancient-egypt.ts",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs",
+      "entityEvidence": [
+        {
+          "entityId": "egyptian-hieroglyphs",
+          "eventIds": [
+            "event-egyptian-writing-system-changes"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-egyptian-writing-system-changes",
+              "timeSpan": {
+                "start": -3150,
+                "end": 400,
+                "label": "约公元前3150—公元400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1900,
+            "end": -1500,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    }
+  ]
+}

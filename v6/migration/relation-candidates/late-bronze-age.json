@@ -1,0 +1,159 @@
+{
+  "ledgerVersion": 1,
+  "runtimeCollection": false,
+  "sourceModule": "data/late-bronze-age.ts",
+  "candidates": [
+    {
+      "candidate": {
+        "id": "candidate-medinet-habu-northern-group-identities",
+        "sourceSceneIds": [
+          "medinet-habu-temple-record",
+          "medinet-habu-delta-battle",
+          "medinet-habu-families-carts",
+          "medinet-habu-king-order",
+          "medinet-habu-egypt-contracts"
+        ],
+        "proposedFamily": "military",
+        "proposedType": "royalRecordOfMultipleNorthernGroups",
+        "proposedOrientation": "multiParty",
+        "proposedTimeSpan": {
+          "start": -1180,
+          "end": -1100,
+          "label": "约公元前1180—前1100年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "medinet-habu-war-records"
+            },
+            "proposedPhaseId": "medinet-habu-war-records-created",
+            "proposedRole": "royalRepresentationalCorpus"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "egypt-new-kingdom"
+            },
+            "proposedPhaseId": "egypt-new-kingdom-imperial-court-order",
+            "proposedRole": "recordingAndDefendingPolity"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "麦迪奈特哈布所列北方来敌群体",
+            "proposedEntityTypes": [
+              "community"
+            ],
+            "notes": "王室记录列出多个族名；来源、彼此关系、人数和行动方式不能合并成一个统一的“海上民族”Entity。"
+          }
+        ],
+        "summary": "麦迪奈特哈布材料把多个北方群体纳入埃及王室胜利叙事，但现有证据不足以稳定化一个统一社群或确定各名称之间的关系。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousRelationKind",
+          "insufficientEvidence"
+        ],
+        "unresolvedQuestions": [
+          "各族名应分别建立community Entity，还是只作为Event中的不稳定标签？",
+          "家庭车辆、战士与船只是否代表迁徙、劫掠、雇佣兵活动或多种过程并存？",
+          "如何区分王室图像叙事中的组合场景与可重建的历史关系？"
+        ],
+        "sourceIds": [
+          "source-isac-medinet-habu-i",
+          "source-edgerton-wilson-ramesses-iii",
+          "source-grandet-ramesses-iii",
+          "source-cifola-ramesses-sea-peoples",
+          "source-yasur-landau-philistines",
+          "source-uee-early-mid-20th-dynasty"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/late-bronze-age.ts",
+        "originatingEntityId": "medinet-habu-war-records",
+        "originatingPhaseCandidateIds": [
+          "medinet-habu-war-records-created",
+          "egypt-new-kingdom-imperial-court-order"
+        ],
+        "sourceEventIds": [
+          "event-ramesses-iii-northern-invasions"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-late-bronze-palace-crisis-causal-network",
+        "sourceSceneIds": [
+          "palaces-connect-kingdoms",
+          "palaces-archaeologists-causes",
+          "palaces-life-reorganizes"
+        ],
+        "proposedFamily": "historicalTransition",
+        "proposedType": "multiRegionalPalatialCrisisAndReorganization",
+        "proposedOrientation": "multiParty",
+        "proposedTimeSpan": {
+          "start": -1250,
+          "end": -1050,
+          "label": "约公元前1250—前1050年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "晚青铜时代各地宫殿制度",
+            "notes": "这是对埃及、赫梯、乌加里特和爱琴海不同制度的比较性概括，不是一个稳定V6 Entity；只能在具体制度身份和关系分别审定后再连接。"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "各地后宫殿继承社会",
+            "notes": "这些地方社群不是已经终结的宫殿体系自身阶段，必须按地区稳定化后再分别建立身份和阶段。"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "跨区域宫殿危机的因果组合",
+            "notes": "战争、气候、贸易、生产、内部政治和人口移动可能共同作用；这可能只是解释框架而不是稳定知识主体。"
+          }
+        ],
+        "summary": "赫梯、乌加里特、爱琴海和埃及在相近时期经历不同变化，但同步比较不能自动证明单一原因或统一崩溃关系。",
+        "reasons": [
+          "ambiguousRelationKind",
+          "insufficientEvidence",
+          "ordinaryExplanationOnly"
+        ],
+        "unresolvedQuestions": [
+          "应建立一条多方historicalTransition，还是保留各地区独立Event并只在查询层比较？",
+          "哪些因果机制有足够来源成为可复用关系，哪些仅是解释候选？",
+          "后宫殿重组应按地区分别连接哪些稳定EntityPhase？"
+        ],
+        "sourceIds": [
+          "source-knapp-manning-crisis",
+          "source-deger-jalkotzy-aftermath",
+          "source-middleton-understanding-collapse",
+          "source-bryce-hittite-kingdom",
+          "source-yon-city-of-ugarit",
+          "source-uee-early-mid-20th-dynasty"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/late-bronze-age.ts",
+        "originatingEntityId": "late-bronze-palace-system",
+        "originatingPhaseCandidateIds": [
+          "late-bronze-palace-system-crisis"
+        ],
+        "sourceEventIds": [
+          "event-hittite-central-kingdom-ends",
+          "event-ugarit-destruction",
+          "event-mycenaean-palaces-end",
+          "event-ramesses-iii-northern-invasions",
+          "event-aegean-localizes-after-palaces"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    }
+  ]
+}

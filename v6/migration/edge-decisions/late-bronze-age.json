@@ -1,0 +1,58 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/late-bronze-age.ts",
+  "decisions": [
+    {
+      "structuralEdgeId": "edge-hittite-old-babylon-raid",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "representedByEvent",
+        "eventId": "event-hittite-sack-babylon"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-ugarit-hittite-vassal",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-ugarit-hittite-vassal"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-kadesh-hittite-participant",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "representedByEvent",
+        "eventId": "event-battle-of-kadesh"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-amarna-cuneiform",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "representedByEvent",
+        "eventId": "event-amarna-diplomatic-correspondence-operates"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

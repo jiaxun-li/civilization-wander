@@ -1,0 +1,133 @@
+{
+  "reviewedAt": "2026-09-15",
+  "status": "complete; integrated and verified",
+  "module": "ancient-egypt",
+  "items": [
+    {
+      "id": "egypt-pyramids",
+      "status": "modified",
+      "result": "名称与说明收窄为古王国早期金字塔营建；保留约前2700—前2400年的一段一地，明确不是全部金字塔寿命。",
+      "sourceIds": [
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview",
+        "source-met-old-kingdom"
+      ]
+    },
+    {
+      "id": "egyptian-hieroglyphs",
+      "status": "modified",
+      "result": "合并尼罗河谷为一段，撤去未核实覆盖全时期的三角洲支线及僧侣体来源；依据BM时间线修订约前3250—394的文字见证，不将不同书体相续。",
+      "sourceIds": [
+        "source-ucl-writing-development",
+        "source-bm-hieroglyphs-decipherment"
+      ]
+    },
+    {
+      "id": "egyptian-funerary-text-corpora",
+      "status": "deleted",
+      "result": "删除总语料实体、两展示阶段及重复关联；文献名称、内容和来源合入egyptian-religion，保留乌尼斯刻写事件。"
+    },
+    {
+      "id": "egyptian-religion",
+      "status": "modified",
+      "result": "名称收窄为古埃及丧葬信仰，详情吸收金字塔文、棺材文与死者之书；原古王国至新王国的收录范围明确是见证片段。"
+    },
+    {
+      "id": "egyptian-art",
+      "status": "modified",
+      "result": "合并河谷前2700—前1100年为一个见证段；撤努比亚前1550—前1100年支线，阿玛尔纳、阿布辛贝及来源留在详情。"
+    },
+    {
+      "id": "sinuhe-work",
+      "status": "modified",
+      "result": "保留约前1850年作品节点；摘要改为离乡、异乡生活与返乡，移除建模话语。"
+    },
+    {
+      "id": "event-ahmose-captures-avaris",
+      "status": "modified",
+      "result": "只在东部尼罗河三角洲标为attested，撤河谷受控结果放置；统一结果留参与者说明，原近似日期注明定年范围而非十年攻城。",
+      "sourceIds": [
+        "source-ucl-ahmose",
+        "source-oeaw-avaris"
+      ]
+    },
+    {
+      "id": "event-unas-pyramid-text-inscription",
+      "status": "retained-and-cleaned",
+      "result": "名称简为乌尼斯金字塔文，保留刻写事件与原日期、来源，移除已删总语料参与者。"
+    },
+    {
+      "id": "event-battle-of-kadesh",
+      "status": "retained",
+      "result": "保留日期、双方参与者和单战场位置。"
+    },
+    {
+      "id": "event-egypt-hatti-treaty",
+      "status": "retained",
+      "result": "保留日期、双方参与者及两地associated语义。"
+    }
+  ],
+  "deletedEntityIds": [
+    "egyptian-funerary-text-corpora"
+  ],
+  "deletedRelationIds": [
+    "relation-egyptian-funerary-corpora-religion"
+  ],
+  "phaseMappings": {
+    "egyptian-art-new-kingdom-royal-transformations": "egyptian-art-formal-conventions",
+    "egyptian-hieroglyphs-formation": "egyptian-hieroglyphs-monumental-and-cursive-use",
+    "egyptian-funerary-corpora-pyramid-texts": "egyptian-religion-nile-presence",
+    "egyptian-funerary-corpora-later-texts": "egyptian-religion-nile-presence"
+  },
+  "newSources": [
+    {
+      "id": "source-oeaw-avaris",
+      "title": "Tell el-Dabʿa / Avaris",
+      "publisher": "Austrian Archaeological Institute, Austrian Academy of Sciences",
+      "url": "https://www.oeaw.ac.at/en/oeai/institute/branches/cairo/excavations-projects/tell-el-dab%CA%BFa"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/writing/development.html",
+      "result": "实际读取；支持早期书写逐步标准化，但不支持三角洲整段连续见证。"
+    },
+    {
+      "url": "https://www.britishmuseum.org/exhibitions/hieroglyphs-unlocking-ancient-egypt/egyptian-hieroglyphs-decipherment-timeline",
+      "result": "检索返回完整开篇与相关段落，支持约前3250年形成和菲莱394年末铭；随后open返回403。"
+    },
+    {
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/ahmose.html",
+      "result": "实际读取；驱逐希克索斯及后续统一，明确统一年份未知。"
+    },
+    {
+      "url": "https://www.oeaw.ac.at/en/oeai/institute/branches/cairo/excavations-projects/tell-el-dab%CA%BFa",
+      "result": "实际检索全文，Avaris可靠对应Tell el-Dabʿa东部三角洲。"
+    },
+    {
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/pyramids/shape.html",
+      "result": "实际读取，左塞尔阶梯、斯尼夫鲁真金字塔、后续中王国营建表明当前条目需限范围。"
+    },
+    {
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/pyramids/index.html",
+      "result": "实际打开核对overview；不增补后续各期。"
+    }
+  ],
+  "integrationNotes": [
+    "更新v6/migration/scene-phase和entity-decisions内已删除phase目标。",
+    "删除Egypt主题中已删除corpus主体的引用。",
+    "新增source由主agent加入共享catalog，已通知。",
+    "event-decisions/ancient-egypt.json已把funerary textualTradition归到egyptian-religion。",
+    "未触及V5、frozen baseline、medinet或共享UI；原有pending historicalProcess仍隔离。"
+  ],
+  "validation": {
+    "command": "node --test v6/data/ancient-egypt/ancient-egypt.test.ts",
+    "passed": 9,
+    "failed": 0
+  },
+  "integrationVerification": {
+    "structure": "passed",
+    "coverage": "valid and complete",
+    "preview": "42 model tests and 20 browser tests passed"
+  }
+}

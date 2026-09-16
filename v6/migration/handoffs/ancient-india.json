@@ -1,0 +1,62 @@
+{
+  "handoffVersion": 1,
+  "sourceModule": "data/ancient-india.ts",
+  "status": "readyForIntegration",
+  "coverage": {
+    "entities": 3,
+    "events": 4,
+    "scenes": 17,
+    "structuralEdges": 2
+  },
+  "scenePhaseSignalCount": 17,
+  "entitySignalCount": 30,
+  "unresolvedRelationCandidateCount": 1,
+  "checks": {
+    "baselineGenerated": true,
+    "entityDecisionsComplete": true,
+    "eventDecisionsComplete": true,
+    "phasesReviewed": true,
+    "edgeDecisionsComplete": true,
+    "relationCandidatesReviewed": true
+  },
+  "externalDependencies": [
+    {
+      "ownerModule": "data/mesopotamia.ts",
+      "entityId": "akkadian-empire",
+      "phaseId": "akkadian-imperial-order",
+      "usedByEventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "usedByRelationIds": [],
+      "integrationRequirement": "Mesopotamia V6 data must be present before validating or aggregating Ancient India; Ancient India does not duplicate either external object."
+    }
+  ],
+  "gateResults": {
+    "typecheck": {
+      "command": "node node_modules/typescript/bin/tsc -p v6/tsconfig.json",
+      "status": "passed"
+    },
+    "moduleTest": {
+      "command": "node --test v6/data/ancient-india/ancient-india.test.ts",
+      "status": "passed",
+      "result": "6/6 passed"
+    },
+    "fullV6Tests": {
+      "command": "node --test v6/data/ancient-india/ancient-india.test.ts v6/tests/*.test.ts",
+      "status": "passed",
+      "result": "24/24 passed"
+    },
+    "migrationCoverage": {
+      "command": "node v6/validation/report-coverage.ts",
+      "status": "passed",
+      "result": "valid=true; Ancient India pending=0; repository-wide pending belongs to other modules"
+    }
+  },
+  "notes": [
+    "Three V5 Entities migrated to three V6 Entities and six reviewed EntityPhases; Mohenjo-daro is classified as archaeologicalSite from its current site-centered identity and evidence.",
+    "Three historical Events remain runtime Events; event-rigveda-composed-transmitted became evidence for vedic-early-hymn-oral-tradition.",
+    "The mixed population-mobility-language contact signal is narrative-only and remains in the unresolved Vedic contact candidate instead of becoming an EntityPhase.",
+    "edge-mohenjo-daro-indus-civilization migrated to a local TemporalRelation; edge-indus-akkadian-exchange is represented by the phase-bound cross-module Event instead of duplicating the same network as a second relation.",
+    "One unresolved Vedic contact candidate retains unstable population, community, and language identities outside runtime; no placeholder Entity was created."
+  ]
+}

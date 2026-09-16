@@ -1,0 +1,127 @@
+{
+  "reviewDate": "2026-09-15",
+  "status": "complete; integrated and verified",
+  "entries": [
+    {
+      "id": "shang-bronze-ritual-vessels",
+      "result": "modified",
+      "implementation": "保留两段真实地域增量，阶段名改为地域见证，取消未独立证明的前1046至前1000年尾部。Met原来源明确商王朝约前1600—前1046；相应三星堆比较关系范围也收于前1046。"
+    },
+    {
+      "id": "mohenjo-daro",
+      "result": "retained",
+      "implementation": "成熟期单段单地域不变。"
+    },
+    {
+      "id": "erlitou-site",
+      "result": "retained",
+      "implementation": "遗址身份及既有近似年代不变。"
+    },
+    {
+      "id": "sanxingdui-site",
+      "result": "retained",
+      "implementation": "保留城址发展范围，阶段名明确城址发展见证，不与埋藏行为等同。"
+    },
+    {
+      "id": "troy-archaeological-site",
+      "result": "modified",
+      "implementation": "阶段改晚青铜时代城址，摘要明确当前展示片段；保留近似前1700—前1180，不误称全寿命。"
+    },
+    {
+      "id": "shang-oracle-bone-inscriptions",
+      "result": "retained",
+      "implementation": "简名甲骨卜辞，文献群身份、地域和年代不变。"
+    },
+    {
+      "id": "iliad-text",
+      "result": "retained",
+      "implementation": "保留约前700年单作品节点。"
+    },
+    {
+      "id": "odyssey-text",
+      "result": "retained",
+      "implementation": "保留约前700年独立作品节点。"
+    },
+    {
+      "id": "vedic-tradition",
+      "result": "modified",
+      "implementation": "改名吠陀传统；删除未核定具体见证范围的恒河影响支线，原同一西北核心两段合一，保留前1500—前500既有范围，联系留摘要。"
+    },
+    {
+      "id": "greek-divine-tradition",
+      "result": "modified",
+      "implementation": "删除叙事关联的岛屿支线；克里特见证成立但整段端点不能核实，移至摘要。原大陆相邻见证合一，已收录范围约前1450—前800不等于诞生消亡。"
+    },
+    {
+      "id": "event-sanxingdui-ritual-object-deposition",
+      "result": "retained",
+      "implementation": "简名三星堆器物埋藏，原前1200—前950区间保留并明确是定年范围，不改成虚构单年。"
+    },
+    {
+      "id": "event-western-zhou-capitals-fall",
+      "result": "deleted",
+      "implementation": "与政权终点重复，删除独立事件；王都失守和东迁保留西周摘要与来源。"
+    },
+    {
+      "id": "event-zhou-conquest-of-shang",
+      "result": "modified",
+      "implementation": "简称武王克商，依据Met商周界限及国博利簋说明采用约前1046年；不再以10年范围表现持续战争，双方参与及定年不确定审校保留。"
+    },
+    {
+      "id": "event-mycenaean-palaces-end",
+      "result": "deleted",
+      "implementation": "七十年汇总变化移出事件；迈锡尼现有摘要和阶段已经保留宫殿终结后地方延续。"
+    },
+    {
+      "id": "event-troy-vi-viia-destruction",
+      "result": "deleted",
+      "implementation": "现有来源未复核到可以新立的独立毁坏年份，按批准的证据不足删除分支执行；考古变迁保留遗址摘要。"
+    },
+    {
+      "id": "event-hittite-wilusa-treaty",
+      "result": "modified",
+      "implementation": "删除Troy遗址作为参与者，仅存已建模的赫梯政权；条约另一王方仍在标题，关联地理不变。保留原不确定年代界限并标注签约定年范围，不采用未核实的1280年。"
+    }
+  ],
+  "phaseReplacements": {
+    "greek-divine-postpalatial-cult-and-song": "greek-divine-mycenaean-attestations",
+    "vedic-later-tradition-development": "vedic-early-hymn-oral-tradition"
+  },
+  "deletedEvents": [
+    "event-mycenaean-palaces-end",
+    "event-troy-vi-viia-destruction",
+    "event-western-zhou-capitals-fall"
+  ],
+  "newSources": [],
+  "crossModuleIntegration": [
+    "全局migration scene-phase/entity/candidate账本处理两个phase合并映射；本agent仅更新aegean/ancient-china event-decisions。",
+    "如预览详情使用冻结证据摘要覆盖canonicalSummary，清理旧事件/旧分期说明并补日期为定年区间。"
+  ],
+  "verification": {
+    "command": "node --test v6/data/aegean/aegean.test.ts v6/data/ancient-china/ancient-china.test.ts v6/data/ancient-india/ancient-india.test.ts",
+    "passed": 23
+  },
+  "sourcesChecked": [
+    {
+      "url": "https://www.metmuseum.org/essays/shang-and-zhou-dynasties-the-bronze-age-of-china",
+      "finding": "明确商约1600—1046 BCE、西周1046—771 BCE；使用既有source-met-shang-zhou-bronze。"
+    },
+    {
+      "url": "https://www.chnmuseum.cn/portals/0/web/zt/100n/guobao_content-5.html?id=27",
+      "finding": "国博利簋说明采用1046年，同时交代断代分歧；作为核验旁证，未添加新来源。"
+    },
+    {
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-aegean-bronze-age/mycenaean-religion/190D846912C9E577315915FE29724D1C",
+      "finding": "可读摘要说明Linear B宗教记录及局限，不支持把神名见证扩成完整神话叙事。"
+    },
+    {
+      "url": "https://academic.oup.com/book/33632",
+      "finding": "可读书目，未获得足以给恒河支线独立定年的新证据。"
+    }
+  ],
+  "integrationVerification": {
+    "structure": "passed",
+    "coverage": "valid and complete",
+    "preview": "42 model tests and 20 browser tests passed"
+  }
+}

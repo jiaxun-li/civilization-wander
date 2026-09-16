@@ -1,0 +1,592 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "sourceModule": "data/ancient-india.ts",
+  "counts": {
+    "entities": 3,
+    "events": 4,
+    "scenes": 17,
+    "structuralEdges": 2
+  },
+  "entities": [
+    {
+      "id": "indus-civilization",
+      "type": "culturalTradition",
+      "name": "印度河文明",
+      "alternativeNames": [
+        "Indus Civilization",
+        "Harappan Civilization"
+      ],
+      "timeSpan": {
+        "start": -3300,
+        "end": -1300,
+        "label": "约公元前3300—前1300年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-wright-ancient-indus",
+        "source-kenoyer-indus-civilisation"
+      ]
+    },
+    {
+      "id": "mohenjo-daro",
+      "type": "SettlementSite",
+      "name": "摩亨佐-达罗",
+      "alternativeNames": [
+        "Mohenjo-daro",
+        "Moenjodaro"
+      ],
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-unesco-mohenjo-daro",
+        "source-wright-ancient-indus"
+      ]
+    },
+    {
+      "id": "vedic-tradition",
+      "type": "culturalTradition",
+      "name": "早期吠陀传统",
+      "alternativeNames": [
+        "Early Vedic Tradition"
+      ],
+      "timeSpan": {
+        "start": -1500,
+        "end": -500,
+        "label": "约公元前1500—前500年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-jamison-brereton-rigveda",
+        "source-oxford-vedic-oral-tradition",
+        "source-singh-ancient-india"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-steppe-related-ancestry-enters-south-asia",
+      "kind": "historicalProcess",
+      "title": "草原相关人群进入南亚",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1500,
+        "label": "约公元前2000—前1500年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "vedic-tradition"
+      ],
+      "sourceIds": [
+        "source-narasimhan-south-central-asia",
+        "source-shinde-rakhigarhi-genome"
+      ]
+    },
+    {
+      "id": "event-rigveda-composed-transmitted",
+      "kind": "textualTradition",
+      "title": "《梨俱吠陀》赞歌形成并口传",
+      "timeSpan": {
+        "start": -1500,
+        "end": -1000,
+        "label": "约公元前1500—前1000年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "vedic-tradition"
+      ],
+      "sourceIds": [
+        "source-jamison-brereton-rigveda",
+        "source-oxford-vedic-oral-tradition",
+        "source-cambridge-veda-before-print"
+      ]
+    },
+    {
+      "id": "event-indus-mesopotamia-exchange",
+      "kind": "historicalProcess",
+      "title": "印度河与两河流域开展海上交换",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "indus-civilization",
+        "akkadian-empire"
+      ],
+      "sourceIds": [
+        "source-possehl-indus-mesopotamia",
+        "source-oracc-sargon-meluhha",
+        "source-bm-gulf-seal-ur"
+      ]
+    },
+    {
+      "id": "event-indus-urban-transformation",
+      "kind": "historicalProcess",
+      "title": "印度河大城市网络转型",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1300,
+        "label": "约公元前2000—前1300年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "indus-civilization",
+        "mohenjo-daro"
+      ],
+      "sourceIds": [
+        "source-wright-ancient-indus",
+        "source-kenoyer-indus-civilisation",
+        "source-giosan-harappan-transformation"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "mohenjo-daro-partial-city",
+      "title": "一座尚未完全看见的城市",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-unesco-mohenjo-daro",
+        "source-green-indus-public-goods",
+        "source-natural-earth"
+      ],
+      "cardId": "mohenjo-daro-urban-order",
+      "cardPrimaryEntityId": "mohenjo-daro"
+    },
+    {
+      "id": "mohenjo-daro-neighborhood-wells",
+      "title": "水井进入街区和住宅",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-jansen-mohenjo-water",
+        "source-wikimedia-mohenjo-well"
+      ],
+      "cardId": "mohenjo-daro-urban-order",
+      "cardPrimaryEntityId": "mohenjo-daro"
+    },
+    {
+      "id": "mohenjo-daro-water-leaves-home",
+      "title": "用过的水流出房屋",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-jansen-mohenjo-water",
+        "source-nakamura-mohenjo-drainage",
+        "source-green-indus-public-goods",
+        "source-wikimedia-mohenjo-street"
+      ],
+      "cardId": "mohenjo-daro-urban-order",
+      "cardPrimaryEntityId": "mohenjo-daro"
+    },
+    {
+      "id": "mohenjo-daro-great-bath",
+      "title": "大浴池留下功能空白",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-unesco-mohenjo-daro",
+        "source-jansen-mohenjo-water",
+        "source-wikimedia-mohenjo-great-bath"
+      ],
+      "cardId": "mohenjo-daro-urban-order",
+      "cardPrimaryEntityId": "mohenjo-daro"
+    },
+    {
+      "id": "mohenjo-daro-unnamed-managers",
+      "title": "城市秩序没有留下管理者的名字",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1800,
+        "label": "约公元前2600—前1800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-green-priest-king",
+        "source-green-indus-public-goods",
+        "source-giosan-harappan-transformation",
+        "source-wikimedia-mohenjo-overview"
+      ],
+      "cardId": "mohenjo-daro-urban-order",
+      "cardPrimaryEntityId": "mohenjo-daro"
+    },
+    {
+      "id": "indus-shared-measures",
+      "title": "多座城市共享一种尺度",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-wright-ancient-indus",
+        "source-kenoyer-indus-civilisation",
+        "source-kenoyer-harappan-measurement",
+        "source-natural-earth"
+      ],
+      "cardId": "indus-civilization-network",
+      "cardPrimaryEntityId": "indus-civilization"
+    },
+    {
+      "id": "indus-seals-image-and-signs",
+      "title": "印章把图像和符号放在一起",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-kenoyer-indus-seals",
+        "source-kenoyer-inscribed-objects",
+        "source-met-indus-unicorn-seal"
+      ],
+      "cardId": "indus-civilization-network",
+      "cardPrimaryEntityId": "indus-civilization"
+    },
+    {
+      "id": "indus-short-unread-script",
+      "title": "短短的文字仍无法读懂",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-rao-indus-script",
+        "source-farmer-indus-script",
+        "source-parpola-indus-script",
+        "source-met-indus-unicorn-seal"
+      ],
+      "cardId": "indus-civilization-network",
+      "cardPrimaryEntityId": "indus-civilization"
+    },
+    {
+      "id": "indus-carnelian-goes-west",
+      "title": "红玉髓走向西方",
+      "timeSpan": {
+        "start": -2900,
+        "end": -1900,
+        "label": "约公元前2900—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-kenoyer-kish-carnelian",
+        "source-met-indus-carnelian-bead"
+      ],
+      "cardId": "indus-civilization-network",
+      "cardPrimaryEntityId": "indus-civilization"
+    },
+    {
+      "id": "indus-meluhha-ships",
+      "title": "梅鲁哈的船来到阿卡德",
+      "timeSpan": {
+        "start": -2334,
+        "end": -2154,
+        "label": "约公元前2334—前2154年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-oracc-sargon-meluhha",
+        "source-possehl-indus-mesopotamia",
+        "source-bm-gulf-seal-ur",
+        "source-laursen-dilmun-seals",
+        "source-natural-earth"
+      ],
+      "cardId": "indus-civilization-network",
+      "cardPrimaryEntityId": "indus-civilization"
+    },
+    {
+      "id": "indus-network-changes-shape",
+      "title": "城市网络改变了形状",
+      "timeSpan": {
+        "start": -2100,
+        "end": -1300,
+        "label": "约公元前2100—前1300年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-wright-ancient-indus",
+        "source-kenoyer-indus-civilisation",
+        "source-giosan-harappan-transformation",
+        "source-natural-earth"
+      ],
+      "cardId": "indus-civilization-network",
+      "cardPrimaryEntityId": "indus-civilization"
+    },
+    {
+      "id": "indo-aryan-cities-change-first",
+      "title": "大城市先改变了",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1700,
+        "label": "约公元前1900—前1700年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-wright-ancient-indus",
+        "source-kenoyer-indus-civilisation",
+        "source-giosan-harappan-transformation",
+        "source-wikimedia-mohenjo-overview",
+        "source-unesco-mohenjo-daro"
+      ],
+      "cardId": "indo-aryan-enters-south-asia",
+      "cardPrimaryEntityId": "vedic-tradition"
+    },
+    {
+      "id": "indo-aryan-local-settlements",
+      "title": "生活转入地方聚落",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1300,
+        "label": "约公元前1900—前1300年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-wright-ancient-indus",
+        "source-giosan-harappan-transformation",
+        "source-singh-ancient-india",
+        "source-wikimedia-cemetery-h-pottery"
+      ],
+      "cardId": "indo-aryan-enters-south-asia",
+      "cardPrimaryEntityId": "vedic-tradition"
+    },
+    {
+      "id": "indo-aryan-steppe-groups-move-south",
+      "title": "草原人群向南移动",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1500,
+        "label": "约公元前2000—前1500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-steppe-related-ancestry-enters-south-asia"
+      ],
+      "sourceIds": [
+        "source-narasimhan-south-central-asia",
+        "source-singh-ancient-india",
+        "source-natural-earth"
+      ],
+      "cardId": "indo-aryan-enters-south-asia",
+      "cardPrimaryEntityId": "vedic-tradition"
+    },
+    {
+      "id": "indo-aryan-language-enters-northwest",
+      "title": "印度—雅利安语进入西北部",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1200,
+        "label": "约公元前1700—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-steppe-related-ancestry-enters-south-asia"
+      ],
+      "sourceIds": [
+        "source-jamison-brereton-rigveda",
+        "source-narasimhan-south-central-asia",
+        "source-singh-ancient-india",
+        "source-natural-earth"
+      ],
+      "cardId": "indo-aryan-enters-south-asia",
+      "cardPrimaryEntityId": "vedic-tradition"
+    },
+    {
+      "id": "indo-aryan-poets-sing-rivers-fire",
+      "title": "诗人歌唱河流与祭火",
+      "timeSpan": {
+        "start": -1500,
+        "end": -1000,
+        "label": "约公元前1500—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-rigveda-composed-transmitted"
+      ],
+      "sourceIds": [
+        "source-jamison-brereton-rigveda",
+        "source-oxford-vedic-oral-tradition",
+        "source-cambridge-veda-before-print",
+        "source-generated-vedic-recitation"
+      ],
+      "cardId": "indo-aryan-enters-south-asia",
+      "cardPrimaryEntityId": "vedic-tradition"
+    },
+    {
+      "id": "indo-aryan-new-society-forms",
+      "title": "相遇形成新的社会",
+      "timeSpan": {
+        "start": -1500,
+        "end": -1000,
+        "label": "约公元前1500—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-steppe-related-ancestry-enters-south-asia",
+        "event-rigveda-composed-transmitted"
+      ],
+      "sourceIds": [
+        "source-narasimhan-south-central-asia",
+        "source-jamison-brereton-rigveda",
+        "source-singh-ancient-india",
+        "source-giosan-harappan-transformation",
+        "source-natural-earth"
+      ],
+      "cardId": "indo-aryan-enters-south-asia",
+      "cardPrimaryEntityId": "vedic-tradition"
+    }
+  ],
+  "structuralEdges": [
+    {
+      "id": "edge-mohenjo-daro-indus-civilization",
+      "family": "historicalNetwork",
+      "type": "part_of_cultural_network",
+      "source": {
+        "kind": "entity",
+        "id": "mohenjo-daro"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "indus-civilization"
+      },
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "印度河文明成熟期",
+        "approximate": true
+      },
+      "label": {
+        "forward": "属于印度河城市网络",
+        "reverse": "包含摩亨佐-达罗的城市生活"
+      },
+      "summaries": {
+        "canonical": "摩亨佐-达罗是印度河文明成熟期的重要城市遗址之一，城市细部与广域网络构成两个互补的故事视角。"
+      },
+      "qualifiers": [
+        "不把一座城市的证据视为整个文明所有地区的统一状况"
+      ],
+      "sourceIds": [
+        "source-wright-ancient-indus",
+        "source-kenoyer-indus-civilisation",
+        "source-unesco-mohenjo-daro"
+      ]
+    },
+    {
+      "id": "edge-indus-akkadian-exchange",
+      "family": "historicalNetwork",
+      "type": "exchanged_with",
+      "source": {
+        "kind": "entity",
+        "id": "indus-civilization"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "akkadian-empire"
+      },
+      "timeSpan": {
+        "start": -2334,
+        "end": -2154,
+        "label": "阿卡德帝国时期",
+        "approximate": true
+      },
+      "label": {
+        "forward": "物品与船只向西连接",
+        "reverse": "铭文与物证指向东方联系"
+      },
+      "summaries": {
+        "canonical": "阿卡德时期的铭文以及两河流域、海湾地区的物证，共同显示印度河世界与西亚之间存在远距离交换。"
+      },
+      "qualifiers": [
+        "不把梅鲁哈直接写成已经确认的印度河自称",
+        "不把教学联系线表示成唯一航线"
+      ],
+      "sourceIds": [
+        "source-possehl-indus-mesopotamia",
+        "source-oracc-sargon-meluhha",
+        "source-bm-gulf-seal-ur"
+      ]
+    }
+  ]
+}

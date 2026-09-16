@@ -1,0 +1,1820 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "sourceModule": "data/aegean.ts",
+  "counts": {
+    "entities": 8,
+    "events": 13,
+    "scenes": 50,
+    "structuralEdges": 11
+  },
+  "entities": [
+    {
+      "id": "minoan-palatial-civilization",
+      "type": "culturalTradition",
+      "name": "克里特宫殿文明",
+      "alternativeNames": [
+        "米诺斯文明",
+        "Minoan civilization"
+      ],
+      "timeSpan": {
+        "start": -2000,
+        "end": -1100,
+        "label": "约公元前2000—前1100年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-unesco-minoan-palatial-centres",
+        "source-met-minoan-crete"
+      ]
+    },
+    {
+      "id": "mycenaean-civilization",
+      "type": "culturalTradition",
+      "name": "迈锡尼文明",
+      "alternativeNames": [
+        "Mycenaean civilization"
+      ],
+      "timeSpan": {
+        "start": -1700,
+        "end": -1050,
+        "label": "约公元前1700—前1050年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-mycenaean-civilization",
+        "source-killen-mycenaean-society"
+      ]
+    },
+    {
+      "id": "greek-dark-age-communities",
+      "type": "culturalTradition",
+      "name": "希腊黑暗时代社会",
+      "alternativeNames": [
+        "Early Iron Age Greece"
+      ],
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-cambridge-mycenaean-transformation",
+        "source-cambridge-greek-iron-age-pottery"
+      ]
+    },
+    {
+      "id": "greek-divine-tradition",
+      "type": "religionAndMyth",
+      "name": "希腊诸神传统",
+      "alternativeNames": [
+        "Greek divine tradition"
+      ],
+      "timeSpan": {
+        "start": -1450,
+        "end": -800,
+        "label": "约公元前1450—前800年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-cambridge-mycenaean-religion",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-cambridge-companion-greek-mythology"
+      ]
+    },
+    {
+      "id": "greek-heroic-tradition",
+      "type": "religionAndMyth",
+      "name": "希腊英雄传统",
+      "alternativeNames": [
+        "Greek heroic tradition"
+      ],
+      "timeSpan": {
+        "start": -1600,
+        "end": -800,
+        "label": "约公元前1600—前800年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-guide-mycenae",
+        "source-cambridge-companion-greek-mythology"
+      ]
+    },
+    {
+      "id": "troy-archaeological-site",
+      "type": "SettlementSite",
+      "name": "特洛伊遗址",
+      "alternativeNames": [
+        "维鲁萨",
+        "Troy",
+        "Wilusa"
+      ],
+      "timeSpan": {
+        "start": -1700,
+        "end": -800,
+        "label": "约公元前1700—前800年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-unesco-troy",
+        "source-british-museum-lost-troy",
+        "source-cambridge-hittite-troy"
+      ]
+    },
+    {
+      "id": "iliad-text",
+      "type": "TextDocument",
+      "name": "《伊利亚特》",
+      "alternativeNames": [
+        "Iliad"
+      ],
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad"
+      ]
+    },
+    {
+      "id": "odyssey-text",
+      "type": "TextDocument",
+      "name": "《奥德赛》",
+      "alternativeNames": [
+        "Odyssey"
+      ],
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-mycenaean-shaft-grave-elites-emerge",
+      "kind": "historicalProcess",
+      "title": "迈锡尼竖井墓精英形成",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1450,
+        "label": "约公元前1700—前1450年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "mycenaean-civilization"
+      ],
+      "sourceIds": [
+        "source-met-mycenaean-civilization",
+        "source-cambridge-guide-mycenae"
+      ]
+    },
+    {
+      "id": "event-greek-divine-narratives-form-in-song",
+      "kind": "textualTradition",
+      "title": "希腊诸神叙事在祭祀与歌唱中重组",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "greek-divine-tradition",
+        "greek-dark-age-communities"
+      ],
+      "sourceIds": [
+        "source-rutherford-greek-religion-lba-eia",
+        "source-cambridge-companion-greek-mythology",
+        "source-perseus-hesiod-theogony"
+      ]
+    },
+    {
+      "id": "event-greek-heroic-songs-form-and-circulate",
+      "kind": "textualTradition",
+      "title": "希腊英雄歌在口头表演中形成并传播",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "greek-heroic-tradition",
+        "greek-dark-age-communities"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-rhodes-homeric-state",
+        "source-perseus-odyssey-eight"
+      ]
+    },
+    {
+      "id": "event-iliad-oral-composition-and-transmission",
+      "kind": "textualTradition",
+      "title": "《伊利亚特》在口头作诗传统中形成",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "iliad-text",
+        "greek-heroic-tradition",
+        "greek-divine-tradition"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad"
+      ]
+    },
+    {
+      "id": "event-odyssey-oral-composition-and-transmission",
+      "kind": "textualTradition",
+      "title": "《奥德赛》在归乡歌传统中形成",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "odyssey-text",
+        "greek-heroic-tradition",
+        "greek-dark-age-communities"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey"
+      ]
+    },
+    {
+      "id": "event-crete-palaces-emerge-and-rebuild",
+      "kind": "historicalProcess",
+      "title": "克里特宫殿出现并重建",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1450,
+        "label": "约公元前2000—前1450年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "minoan-palatial-civilization"
+      ],
+      "sourceIds": [
+        "source-unesco-minoan-palatial-centres",
+        "source-met-minoan-crete"
+      ]
+    },
+    {
+      "id": "event-knossos-linear-b-administration",
+      "kind": "historicalProcess",
+      "title": "克诺索斯改用线形文字B",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1375,
+        "label": "约公元前1450—前1375年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "minoan-palatial-civilization",
+        "mycenaean-civilization"
+      ],
+      "sourceIds": [
+        "source-salgarella-writing-bronze-age-crete",
+        "source-bsa-linear-b"
+      ]
+    },
+    {
+      "id": "event-mycenaean-palace-administration",
+      "kind": "historicalProcess",
+      "title": "迈锡尼宫殿行政扩展",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1200,
+        "label": "约公元前1450—前1200年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "mycenaean-civilization"
+      ],
+      "sourceIds": [
+        "source-killen-mycenaean-society",
+        "source-bsa-linear-b",
+        "source-cambridge-mycenaean-religion"
+      ]
+    },
+    {
+      "id": "event-mycenaean-palaces-end",
+      "kind": "historicalEvent",
+      "title": "迈锡尼宫殿接连终结",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1180,
+        "label": "约公元前1250—前1180年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "mycenaean-civilization",
+        "greek-dark-age-communities"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-knapp-manning-crisis"
+      ]
+    },
+    {
+      "id": "event-aegean-localizes-after-palaces",
+      "kind": "historicalProcess",
+      "title": "爱琴海社会转向地方社区",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1050,
+        "label": "约公元前1200—前1050年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "mycenaean-civilization",
+        "greek-dark-age-communities"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-cambridge-mycenaean-transformation"
+      ]
+    },
+    {
+      "id": "event-aegean-regional-links-renew",
+      "kind": "historicalProcess",
+      "title": "爱琴海区域联系重新增密",
+      "timeSpan": {
+        "start": -1050,
+        "end": -800,
+        "label": "约公元前1050—前800年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "greek-dark-age-communities"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-cambridge-greek-iron-age-pottery"
+      ]
+    },
+    {
+      "id": "event-troy-vi-viia-destruction",
+      "kind": "historicalEvent",
+      "title": "特洛伊VI与VIIa经历毁坏和重建",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1180,
+        "label": "约公元前1700—前1180年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "troy-archaeological-site"
+      ],
+      "sourceIds": [
+        "source-unesco-troy",
+        "source-british-museum-lost-troy"
+      ]
+    },
+    {
+      "id": "event-hittite-wilusa-treaty",
+      "kind": "historicalEvent",
+      "title": "赫梯大王与维鲁萨国王缔结条约",
+      "timeSpan": {
+        "start": -1300,
+        "end": -1250,
+        "label": "约公元前1300—前1250年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "hittite-empire",
+        "troy-archaeological-site"
+      ],
+      "sourceIds": [
+        "source-cambridge-hittite-troy",
+        "source-british-museum-alaksandu-wilusa"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "crete-court-palace-daily-life",
+      "title": "庭院装下宫殿的日常",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1700,
+        "label": "约公元前2000—前1700年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-crete-palaces-emerge-and-rebuild"
+      ],
+      "sourceIds": [
+        "source-unesco-minoan-palatial-centres",
+        "source-met-minoan-crete",
+        "source-wikimedia-knossos-central-court"
+      ],
+      "cardId": "crete-through-palatial-age",
+      "cardPrimaryEntityId": "minoan-palatial-civilization"
+    },
+    {
+      "id": "crete-linear-a-at-work",
+      "title": "线形文字A开始工作",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1450,
+        "label": "约公元前1900—前1450年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-crete-palaces-emerge-and-rebuild"
+      ],
+      "sourceIds": [
+        "source-salgarella-writing-bronze-age-crete",
+        "source-hooker-linear-a",
+        "source-wikimedia-linear-a-akrotiri"
+      ],
+      "cardId": "crete-through-palatial-age",
+      "cardPrimaryEntityId": "minoan-palatial-civilization"
+    },
+    {
+      "id": "crete-palaces-rebuild-seaward",
+      "title": "重建的宫殿望向海上",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1450,
+        "label": "约公元前1700—前1450年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-crete-palaces-emerge-and-rebuild"
+      ],
+      "sourceIds": [
+        "source-unesco-minoan-palatial-centres",
+        "source-met-minoan-crete",
+        "source-poursat-minoan-artworks",
+        "source-wikimedia-akrotiri-flotilla"
+      ],
+      "cardId": "crete-through-palatial-age",
+      "cardPrimaryEntityId": "minoan-palatial-civilization"
+    },
+    {
+      "id": "crete-tablets-change-language",
+      "title": "泥版换了一种语言",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1375,
+        "label": "约公元前1450—前1375年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-knossos-linear-b-administration"
+      ],
+      "sourceIds": [
+        "source-met-minoan-crete",
+        "source-salgarella-writing-bronze-age-crete",
+        "source-bsa-linear-b",
+        "source-wikimedia-knossos-linear-b"
+      ],
+      "cardId": "crete-through-palatial-age",
+      "cardPrimaryEntityId": "minoan-palatial-civilization"
+    },
+    {
+      "id": "crete-palaces-end-island-continues",
+      "title": "宫殿结束，岛屿继续生活",
+      "timeSpan": {
+        "start": -1375,
+        "end": -1100,
+        "label": "约公元前1375—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-palaces-end",
+        "event-aegean-localizes-after-palaces"
+      ],
+      "sourceIds": [
+        "source-met-minoan-crete",
+        "source-poursat-minoan-artworks",
+        "source-deger-jalkotzy-aftermath",
+        "source-wikimedia-mouliana-krater"
+      ],
+      "cardId": "crete-through-palatial-age",
+      "cardPrimaryEntityId": "minoan-palatial-civilization"
+    },
+    {
+      "id": "mycenae-gold-enters-graves",
+      "title": "黄金先进入墓穴",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1450,
+        "label": "约公元前1700—前1450年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-shaft-grave-elites-emerge"
+      ],
+      "sourceIds": [
+        "source-met-mycenaean-civilization",
+        "source-wikimedia-mycenae-gold-mask"
+      ],
+      "cardId": "mycenae-graves-palaces-tablets",
+      "cardPrimaryEntityId": "mycenaean-civilization"
+    },
+    {
+      "id": "mycenae-linear-b-writes-greek",
+      "title": "线形文字B写下希腊语",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1400,
+        "label": "约公元前1450—前1400年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-knossos-linear-b-administration",
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-salgarella-writing-bronze-age-crete",
+        "source-bsa-linear-b",
+        "source-wikimedia-knossos-linear-b"
+      ],
+      "cardId": "mycenae-graves-palaces-tablets",
+      "cardPrimaryEntityId": "mycenaean-civilization"
+    },
+    {
+      "id": "mycenae-palaces-write-needs",
+      "title": "宫殿把需要的事情写进泥板",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1200,
+        "label": "约公元前1400—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-killen-mycenaean-society",
+        "source-bsa-linear-b",
+        "source-cambridge-mycenaean-religion",
+        "source-wikimedia-mycenae-athena-tablet"
+      ],
+      "cardId": "mycenae-graves-palaces-tablets",
+      "cardPrimaryEntityId": "mycenaean-civilization"
+    },
+    {
+      "id": "mycenae-palaces-stop-commanding",
+      "title": "宫殿接连停止发令",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1180,
+        "label": "约公元前1250—前1180年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-palaces-end"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-knapp-manning-crisis"
+      ],
+      "cardId": "mycenae-graves-palaces-tablets",
+      "cardPrimaryEntityId": "mycenaean-civilization"
+    },
+    {
+      "id": "mycenae-hero-stories-travel",
+      "title": "宫殿消失，英雄故事开始远行",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1050,
+        "label": "约公元前1180—前1050年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aegean-localizes-after-palaces",
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-cambridge-guide-homer",
+        "source-wikimedia-mycenae-warrior-krater"
+      ],
+      "cardId": "mycenae-graves-palaces-tablets",
+      "cardPrimaryEntityId": "mycenaean-civilization"
+    },
+    {
+      "id": "dark-age-orders-stop-tablets",
+      "title": "命令停在烧硬的泥版上",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1050,
+        "label": "约公元前1200—前1050年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-palaces-end",
+        "event-aegean-localizes-after-palaces"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-cambridge-mycenaean-transformation",
+        "source-wikimedia-mycenae-warrior-krater"
+      ],
+      "cardId": "greece-reconnects-after-palaces",
+      "cardPrimaryEntityId": "greek-dark-age-communities"
+    },
+    {
+      "id": "dark-age-iron-enters-bronze-world",
+      "title": "铁器进入仍有青铜的世界",
+      "timeSpan": {
+        "start": -1050,
+        "end": -900,
+        "label": "约公元前1050—前900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aegean-localizes-after-palaces",
+        "event-aegean-regional-links-renew"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-cambridge-greek-iron-age-pottery",
+        "source-wikimedia-protogeometric-amphora"
+      ],
+      "cardId": "greece-reconnects-after-palaces",
+      "cardPrimaryEntityId": "greek-dark-age-communities"
+    },
+    {
+      "id": "dark-age-sea-routes-return",
+      "title": "海路带着货物和故事回来",
+      "timeSpan": {
+        "start": -900,
+        "end": -800,
+        "label": "约公元前900—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aegean-regional-links-renew"
+      ],
+      "sourceIds": [
+        "source-cambridge-greek-iron-age-pottery",
+        "source-cambridge-guide-homer",
+        "source-wikimedia-naxos-geometric-pottery"
+      ],
+      "cardId": "greece-reconnects-after-palaces",
+      "cardPrimaryEntityId": "greek-dark-age-communities"
+    },
+    {
+      "id": "gods-names-enter-tablets",
+      "title": "泥版已经写下神的名字",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1200,
+        "label": "约公元前1450—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-cambridge-mycenaean-religion",
+        "source-lupack-local-horizon",
+        "source-wikimedia-mycenae-athena-tablet"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "gods-survive-palaces",
+      "title": "宫殿消失，神没有离开",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-palaces-end",
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-rutherford-greek-religion-lba-eia",
+        "source-cambridge-guide-homer",
+        "source-wikimedia-naxos-geometric-pottery"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "gods-younger-overthrow-older",
+      "title": "新神推翻旧神",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-perseus-hesiod-theogony",
+        "source-cambridge-companion-greek-mythology",
+        "source-wikimedia-rhea-cronus"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "gods-three-brothers-divide-world",
+      "title": "三兄弟分掌世界",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-perseus-hesiod-theogony",
+        "source-cambridge-companion-greek-mythology",
+        "source-wikimedia-three-realms"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "gods-olympus-quarrels",
+      "title": "奥林匹斯是一个争吵的家庭",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-perseus-hesiod-theogony",
+        "source-cambridge-companion-greek-mythology",
+        "source-wikimedia-council-gods-met"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "gods-gifts-and-requests",
+      "title": "神要求祭品，也回应请求",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-met-greek-gods-practices",
+        "source-perseus-iliad",
+        "source-wikimedia-zeus-iris-libation"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "gods-demeter-persephone-return",
+      "title": "季节、死亡与重新归来",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-perseus-homeric-hymn-demeter",
+        "source-cambridge-companion-greek-mythology",
+        "source-wikimedia-demeter-persephone-batten"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "gods-turn-to-heroes",
+      "title": "众神把目光投向英雄",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-cambridge-companion-greek-mythology",
+        "source-wikimedia-athena-achilles-illustration"
+      ],
+      "cardId": "greek-gods-leave-palaces",
+      "cardPrimaryEntityId": "greek-divine-tradition"
+    },
+    {
+      "id": "heroes-ruins-hold-stronger-past",
+      "title": "废墟留下一个更强大的过去",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1200,
+        "label": "约公元前1600—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-shaft-grave-elites-emerge",
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-mycenae",
+        "source-met-mycenaean-civilization",
+        "source-wikimedia-mycenae-lion-gate-clear"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "heroes-singers-remake-lost-age",
+      "title": "歌者重新组织失去的时代",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-perseus-odyssey-eight",
+        "source-wikimedia-demodocus-flaxman"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "heroes-between-gods-and-mortals",
+      "title": "英雄站在神与凡人之间",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-perseus-apollodorus-library",
+        "source-wikimedia-achilles-thetis-preller"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "heroes-monsters-wait",
+      "title": "怪物守在道路尽头",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-stafford-herakles",
+        "source-perseus-apollodorus-library",
+        "source-wikimedia-heracles-lion-bm"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "heroes-board-argo",
+      "title": "一群英雄登上同一条船",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-perseus-apollodorus-library",
+        "source-cambridge-companion-greek-mythology",
+        "source-wikimedia-argonauts-roberti"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "heroes-curses-cross-generations",
+      "title": "家族把诅咒传给下一代",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-perseus-apollodorus-library",
+        "source-cambridge-companion-greek-mythology",
+        "source-wikimedia-oedipus-sphinx-moreau"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "heroes-gather-at-troy",
+      "title": "英雄聚集在特洛伊城下",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-cambridge-guide-homer",
+        "source-wikimedia-achilles-hector-groeninge"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "heroes-homecomings-continue",
+      "title": "战争结束，归乡仍未结束",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey-eight",
+        "source-cambridge-guide-homer",
+        "source-wikimedia-odysseus-return-pinturicchio"
+      ],
+      "cardId": "greek-heroes-live-in-song",
+      "cardPrimaryEntityId": "greek-heroic-tradition"
+    },
+    {
+      "id": "troy-walls-fall-city-rebuilds",
+      "title": "高墙倒下，城市再次重建",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1180,
+        "label": "约公元前1700—前1180年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-troy-vi-viia-destruction"
+      ],
+      "sourceIds": [
+        "source-unesco-troy",
+        "source-british-museum-lost-troy",
+        "source-cambridge-iliad-history-fiction",
+        "source-wikimedia-troy-vi-walls"
+      ],
+      "cardId": "troy-layered-city",
+      "cardPrimaryEntityId": "troy-archaeological-site"
+    },
+    {
+      "id": "troy-wilusa-enters-treaty",
+      "title": "赫梯书吏把维鲁萨写进条约",
+      "timeSpan": {
+        "start": -1300,
+        "end": -1250,
+        "label": "约公元前1300—前1250年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-wilusa-treaty"
+      ],
+      "sourceIds": [
+        "source-cambridge-hittite-troy",
+        "source-british-museum-alaksandu-wilusa",
+        "source-wikimedia-troy-wilusa-treaty"
+      ],
+      "cardId": "troy-layered-city",
+      "cardPrimaryEntityId": "troy-archaeological-site"
+    },
+    {
+      "id": "troy-ruins-gain-heroic-names",
+      "title": "废墟后来得到英雄的姓名",
+      "timeSpan": {
+        "start": -1180,
+        "end": -800,
+        "label": "约公元前1180—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-british-museum-lost-troy",
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-history-fiction",
+        "source-wikimedia-flaxman-iliad-funeral"
+      ],
+      "cardId": "troy-layered-city",
+      "cardPrimaryEntityId": "troy-archaeological-site"
+    },
+    {
+      "id": "iliad-singer-starts-near-war-end",
+      "title": "歌者从战争末期开始",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-title"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "iliad-two-captives-start-quarrel",
+      "title": "两个俘虏引爆统帅之间的争吵",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-wikimedia-athena-achilles-illustration"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "iliad-achilles-lets-greeks-fail",
+      "title": "阿喀琉斯让自己人尝到失败",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-thetis-zeus"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "iliad-hector-reaches-ships",
+      "title": "赫克托耳把敌人逼回船边",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-embassy"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "iliad-patroclus-wears-armor",
+      "title": "帕特罗克洛斯穿上朋友的铠甲",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-patroclus"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "iliad-new-shield-returns-hero",
+      "title": "一面新盾把英雄送回战场",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-armor"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "iliad-hector-dies-outside-walls",
+      "title": "赫克托耳死在自己的城墙之外",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-hector"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "iliad-priam-enters-enemy-camp",
+      "title": "失去儿子的父亲走进敌营",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-priam"
+      ],
+      "cardId": "iliad-achilles-anger",
+      "cardPrimaryEntityId": "iliad-text"
+    },
+    {
+      "id": "odyssey-return-songs-become-poem",
+      "title": "许多归乡歌汇成一部长诗",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-demodocus-flaxman"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-suitors-consume-house",
+      "title": "求婚者正在吃空奥德修斯的家",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-beck-odyssey-home-family",
+        "source-wikimedia-flaxman-odyssey-suitors"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-calypso-releases-hero",
+      "title": "海上女神终于放走奥德修斯",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-hermes"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-princess-leads-stranger",
+      "title": "一位公主把陌生人带进宫廷",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-nausicaa"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-nobody-defeats-cyclops",
+      "title": "他用“无人”战胜独眼巨人",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-polyphemus"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-wind-bag-opens",
+      "title": "风袋在家乡岸外被打开",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-antiphates"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-witch-and-dead-guide-home",
+      "title": "女巫与死者指出归途",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-circe"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-songs-monsters-taboo-kill-crew",
+      "title": "歌声、怪物和禁令夺走所有同伴",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-sirens"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-beggar-enters-own-hall",
+      "title": "乞丐走进自己的宫室",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-beck-odyssey-home-family",
+        "source-wikimedia-flaxman-odyssey-argus"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    },
+    {
+      "id": "odyssey-bow-and-bed-restore-name",
+      "title": "弓弦与床榻恢复他的姓名",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-perseus-odyssey",
+        "source-beck-odyssey-home-family",
+        "source-wikimedia-odysseus-return-pinturicchio"
+      ],
+      "cardId": "odyssey-name-and-home",
+      "cardPrimaryEntityId": "odyssey-text"
+    }
+  ],
+  "structuralEdges": [
+    {
+      "id": "edge-minoan-mycenaean-administration",
+      "family": "historicalNetwork",
+      "type": "adapted_administrative_practice",
+      "source": {
+        "kind": "entity",
+        "id": "mycenaean-civilization"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "minoan-palatial-civilization"
+      },
+      "timeSpan": {
+        "start": -1450,
+        "end": -1375,
+        "label": "约公元前1450—前1375年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "调整并采用其书写行政传统",
+        "reverse": "其行政工具被迈锡尼统治者采用"
+      },
+      "summaries": {
+        "canonical": "迈锡尼书吏在克里特已有线形书写传统上调整出记录早期希腊语的线形文字B。"
+      },
+      "qualifiers": [
+        "文字相似不表示线形文字A与线形文字B记录同一种语言"
+      ],
+      "sourceIds": [
+        "source-salgarella-writing-bronze-age-crete",
+        "source-bsa-linear-b"
+      ]
+    },
+    {
+      "id": "edge-mycenaean-dark-age-reorganization",
+      "family": "historicalNetwork",
+      "type": "reorganized_after",
+      "source": {
+        "kind": "entity",
+        "id": "greek-dark-age-communities"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "mycenaean-civilization"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -1050,
+        "label": "约公元前1200—前1050年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "在宫殿终结后重新组织生活",
+        "reverse": "宫殿终结后由地方社区延续部分传统"
+      },
+      "summaries": {
+        "canonical": "迈锡尼宫殿终结后，爱琴海社区缩小并地方化，同时延续部分陶器、金属加工和航海传统。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-cambridge-mycenaean-transformation"
+      ]
+    },
+    {
+      "id": "edge-mycenaean-divine-names",
+      "family": "historicalNetwork",
+      "type": "preserved_divine_names",
+      "source": {
+        "kind": "entity",
+        "id": "greek-divine-tradition"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "mycenaean-civilization"
+      },
+      "timeSpan": {
+        "start": -1450,
+        "end": -1200,
+        "label": "约公元前1450—前1200年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "部分神名见于宫殿泥版",
+        "reverse": "泥版记录了后来仍熟悉的神名"
+      },
+      "summaries": {
+        "canonical": "迈锡尼宫殿泥版记录了宙斯、波塞冬、赫拉等神名和献祭物，但没有保存完整神话。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-cambridge-mycenaean-religion",
+        "source-lupack-local-horizon"
+      ]
+    },
+    {
+      "id": "edge-mycenaean-heroic-memory",
+      "family": "historicalNetwork",
+      "type": "reworked_as_heroic_memory",
+      "source": {
+        "kind": "entity",
+        "id": "greek-heroic-tradition"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "mycenaean-civilization"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "把遗迹与旧名重组为英雄过去",
+        "reverse": "遗迹与物质记忆进入英雄歌唱"
+      },
+      "summaries": {
+        "canonical": "青铜时代城墙、墓葬、器物和旧地名进入长期口头创作，但英雄故事不是宫殿档案的直接转写。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-guide-mycenae"
+      ]
+    },
+    {
+      "id": "edge-dark-age-heroic-song",
+      "family": "historicalNetwork",
+      "type": "performed_in_oral_tradition",
+      "source": {
+        "kind": "entity",
+        "id": "greek-heroic-tradition"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "greek-dark-age-communities"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "在口头表演中形成共同过去",
+        "reverse": "通过歌者重组英雄故事"
+      },
+      "summaries": {
+        "canonical": "宫殿书写停止后，英雄故事通过宴会与公共表演中的歌者不断重组并传递。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-perseus-odyssey-eight"
+      ]
+    },
+    {
+      "id": "edge-gods-shape-heroic-fates",
+      "family": "historicalNetwork",
+      "type": "divine_intervention_in_heroic_story",
+      "source": {
+        "kind": "entity",
+        "id": "greek-divine-tradition"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "greek-heroic-tradition"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "神话叙事约在公元前800年前形成",
+        "approximate": true
+      },
+      "label": {
+        "forward": "介入英雄的选择与命运",
+        "reverse": "在神意帮助与惩罚中行动"
+      },
+      "summaries": {
+        "canonical": "英雄叙事把诸神写成帮助者、阻碍者和冲突参与者，使神界争端在人间产生后果。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-perseus-iliad",
+        "source-cambridge-companion-greek-mythology"
+      ]
+    },
+    {
+      "id": "edge-hittite-wilusa-treaty",
+      "family": "historicalNetwork",
+      "type": "vassal_treaty",
+      "source": {
+        "kind": "entity",
+        "id": "troy-archaeological-site"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "hittite-empire"
+      },
+      "timeSpan": {
+        "start": -1300,
+        "end": -1250,
+        "label": "约公元前1300—前1250年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "以维鲁萨国王身份进入赫梯条约网络",
+        "reverse": "通过条约约束维鲁萨国王"
+      },
+      "summaries": {
+        "canonical": "穆瓦塔利二世与阿拉克桑杜的条约把维鲁萨纳入赫梯大王与地方统治者的外交网络。"
+      },
+      "qualifiers": [
+        "维鲁萨与特洛伊的对应属于学术识别"
+      ],
+      "sourceIds": [
+        "source-cambridge-hittite-troy",
+        "source-british-museum-alaksandu-wilusa"
+      ]
+    },
+    {
+      "id": "edge-troy-iliad-memory",
+      "family": "historicalNetwork",
+      "type": "reworked_in_epic_tradition",
+      "source": {
+        "kind": "entity",
+        "id": "iliad-text"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "troy-archaeological-site"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "把废墟与战争记忆重组为英雄故事",
+        "reverse": "在长期歌唱中获得英雄姓名"
+      },
+      "summaries": {
+        "canonical": "《伊利亚特》的口头传统把特洛伊城、跨海战争与英雄人物组织为诗歌，但遗址不能证明诗中人物的历史身份。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-history-fiction",
+        "source-british-museum-lost-troy"
+      ]
+    },
+    {
+      "id": "edge-iliad-heroic-tradition",
+      "family": "historicalNetwork",
+      "type": "part_of_heroic_song_tradition",
+      "source": {
+        "kind": "entity",
+        "id": "iliad-text"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "greek-heroic-tradition"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "聚焦英雄时代的一次愤怒",
+        "reverse": "在阿喀琉斯与赫克托耳的故事中汇聚"
+      },
+      "summaries": {
+        "canonical": "《伊利亚特》从更广阔的英雄传统中截取阿喀琉斯愤怒所造成的一连串后果。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad"
+      ]
+    },
+    {
+      "id": "edge-odyssey-heroic-tradition",
+      "family": "historicalNetwork",
+      "type": "part_of_heroic_return_tradition",
+      "source": {
+        "kind": "entity",
+        "id": "odyssey-text"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "greek-heroic-tradition"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "把英雄时代延伸到漫长归乡",
+        "reverse": "在奥德修斯的归乡歌中继续"
+      },
+      "summaries": {
+        "canonical": "《奥德赛》把特洛伊战争后的归乡传统组织为身份、待客、家庭与暴力秩序的故事。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey"
+      ]
+    },
+    {
+      "id": "edge-dark-age-odyssey-song",
+      "family": "historicalNetwork",
+      "type": "performed_in_oral_tradition",
+      "source": {
+        "kind": "entity",
+        "id": "odyssey-text"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "greek-dark-age-communities"
+      },
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "在后宫殿社会的歌唱中重组归乡",
+        "reverse": "以宴会、航海和家庭经验承载归乡歌"
+      },
+      "summaries": {
+        "canonical": "宫殿文字消失后的歌者把漂泊、待客和归家反复重讲，逐渐形成《奥德赛》的海上世界。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-cambridge-greek-iron-age-pottery"
+      ]
+    }
+  ]
+}

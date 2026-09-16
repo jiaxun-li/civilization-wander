@@ -1,0 +1,170 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/aegean.ts",
+  "decisions": [
+    {
+      "structuralEdgeId": "edge-minoan-mycenaean-administration",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-minoan-mycenaean-administration"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-mycenaean-dark-age-reorganization",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-mycenaean-dark-age-reorganization"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-mycenaean-divine-names",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-mycenaean-divine-names"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-mycenaean-heroic-memory",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "retired",
+        "reason": "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      },
+      "participantRolesResolved": false,
+      "phaseBindingsResolved": false,
+      "relationFamilyResolved": false,
+      "relationTypeResolved": false,
+      "status": "accepted",
+      "notes": [
+        "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      ]
+    },
+    {
+      "structuralEdgeId": "edge-dark-age-heroic-song",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "retired",
+        "reason": "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted",
+      "notes": [
+        "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      ]
+    },
+    {
+      "structuralEdgeId": "edge-gods-shape-heroic-fates",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "retired",
+        "reason": "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted",
+      "notes": [
+        "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      ]
+    },
+    {
+      "structuralEdgeId": "edge-hittite-wilusa-treaty",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "candidate",
+        "candidateId": "candidate-wilusa-polity-troy-site-identification"
+      },
+      "participantRolesResolved": false,
+      "phaseBindingsResolved": false,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-troy-iliad-memory",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "retired",
+        "reason": "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      },
+      "participantRolesResolved": false,
+      "phaseBindingsResolved": false,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted",
+      "notes": [
+        "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      ]
+    },
+    {
+      "structuralEdgeId": "edge-iliad-heroic-tradition",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "retired",
+        "reason": "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted",
+      "notes": [
+        "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      ]
+    },
+    {
+      "structuralEdgeId": "edge-odyssey-heroic-tradition",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "retired",
+        "reason": "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted",
+      "notes": [
+        "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      ]
+    },
+    {
+      "structuralEdgeId": "edge-dark-age-odyssey-song",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "retired",
+        "reason": "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted",
+      "notes": [
+        "独立英雄或史诗传播传统已撤销，本轮不把原传播关系转写为作品成文关系；原始关系保留于冻结来源与本处置记录。"
+      ]
+    }
+  ]
+}

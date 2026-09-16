@@ -1,0 +1,4954 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/aegean.ts",
+  "scenePhaseSignals": [
+    {
+      "id": "signal-crete-court-palace-daily-life",
+      "v5SceneId": "crete-court-palace-daily-life",
+      "v5OwnerCardId": "crete-through-palatial-age",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1700,
+        "label": "约公元前2000—前1700年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-crete-palaces-emerge-and-rebuild"
+        }
+      ],
+      "eventIds": [
+        "event-crete-palaces-emerge-and-rebuild"
+      ],
+      "sourceIds": [
+        "source-met-minoan-crete",
+        "source-unesco-minoan-palatial-centres",
+        "source-wikimedia-knossos-central-court"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "minoan-first-palatial-centres"
+        ]
+      }
+    },
+    {
+      "id": "signal-crete-linear-a-at-work",
+      "v5SceneId": "crete-linear-a-at-work",
+      "v5OwnerCardId": "crete-through-palatial-age",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1450,
+        "label": "约公元前1900—前1450年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-crete-palaces-emerge-and-rebuild"
+        }
+      ],
+      "eventIds": [
+        "event-crete-palaces-emerge-and-rebuild"
+      ],
+      "sourceIds": [
+        "source-hooker-linear-a",
+        "source-met-minoan-crete",
+        "source-salgarella-writing-bronze-age-crete",
+        "source-unesco-minoan-palatial-centres",
+        "source-wikimedia-linear-a-akrotiri"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "minoan-first-palatial-centres",
+          "minoan-knossos-linear-b-reorganization"
+        ]
+      }
+    },
+    {
+      "id": "signal-crete-palaces-rebuild-seaward",
+      "v5SceneId": "crete-palaces-rebuild-seaward",
+      "v5OwnerCardId": "crete-through-palatial-age",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1450,
+        "label": "约公元前1700—前1450年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-crete-palaces-emerge-and-rebuild"
+        }
+      ],
+      "eventIds": [
+        "event-crete-palaces-emerge-and-rebuild"
+      ],
+      "sourceIds": [
+        "source-met-minoan-crete",
+        "source-poursat-minoan-artworks",
+        "source-unesco-minoan-palatial-centres",
+        "source-wikimedia-akrotiri-flotilla"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "minoan-first-palatial-centres",
+          "minoan-knossos-linear-b-reorganization"
+        ]
+      }
+    },
+    {
+      "id": "signal-crete-tablets-change-language",
+      "v5SceneId": "crete-tablets-change-language",
+      "v5OwnerCardId": "crete-through-palatial-age",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1375,
+        "label": "约公元前1450—前1375年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-knossos-linear-b-administration"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-knossos-linear-b-administration"
+        }
+      ],
+      "eventIds": [
+        "event-knossos-linear-b-administration"
+      ],
+      "sourceIds": [
+        "source-bsa-linear-b",
+        "source-met-minoan-crete",
+        "source-salgarella-writing-bronze-age-crete",
+        "source-wikimedia-knossos-linear-b"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration",
+          "minoan-first-palatial-centres",
+          "minoan-knossos-linear-b-reorganization"
+        ]
+      }
+    },
+    {
+      "id": "signal-crete-palaces-end-island-continues",
+      "v5SceneId": "crete-palaces-end-island-continues",
+      "v5OwnerCardId": "crete-through-palatial-age",
+      "timeSpan": {
+        "start": -1375,
+        "end": -1100,
+        "label": "约公元前1375—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-palaces-end",
+        "event-aegean-localizes-after-palaces"
+      ],
+      "sourceIds": [
+        "source-cambridge-mycenaean-transformation",
+        "source-deger-jalkotzy-aftermath",
+        "source-knapp-manning-crisis",
+        "source-met-minoan-crete",
+        "source-poursat-minoan-artworks",
+        "source-wikimedia-mouliana-krater"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration",
+          "greek-postpalatial-local-communities"
+        ]
+      }
+    },
+    {
+      "id": "signal-mycenae-gold-enters-graves",
+      "v5SceneId": "mycenae-gold-enters-graves",
+      "v5OwnerCardId": "mycenae-graves-palaces-tablets",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1450,
+        "label": "约公元前1700—前1450年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-shaft-grave-elites-emerge"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-shaft-grave-elites-emerge"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-mycenae",
+        "source-met-mycenaean-civilization",
+        "source-wikimedia-mycenae-gold-mask"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-mycenae-linear-b-writes-greek",
+      "v5SceneId": "mycenae-linear-b-writes-greek",
+      "v5OwnerCardId": "mycenae-graves-palaces-tablets",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1400,
+        "label": "约公元前1450—前1400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-knossos-linear-b-administration"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-knossos-linear-b-administration"
+        }
+      ],
+      "eventIds": [
+        "event-knossos-linear-b-administration",
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-bsa-linear-b",
+        "source-cambridge-mycenaean-religion",
+        "source-killen-mycenaean-society",
+        "source-salgarella-writing-bronze-age-crete",
+        "source-wikimedia-knossos-linear-b"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration",
+          "minoan-first-palatial-centres",
+          "minoan-knossos-linear-b-reorganization"
+        ]
+      }
+    },
+    {
+      "id": "signal-mycenae-palaces-write-needs",
+      "v5SceneId": "mycenae-palaces-write-needs",
+      "v5OwnerCardId": "mycenae-graves-palaces-tablets",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1200,
+        "label": "约公元前1400—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palace-administration"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-bsa-linear-b",
+        "source-cambridge-mycenaean-religion",
+        "source-killen-mycenaean-society",
+        "source-wikimedia-mycenae-athena-tablet"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-mycenae-palaces-stop-commanding",
+      "v5SceneId": "mycenae-palaces-stop-commanding",
+      "v5OwnerCardId": "mycenae-graves-palaces-tablets",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1180,
+        "label": "约公元前1250—前1180年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-palaces-end"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-knapp-manning-crisis"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration",
+          "greek-postpalatial-local-communities"
+        ]
+      }
+    },
+    {
+      "id": "signal-mycenae-hero-stories-travel",
+      "v5SceneId": "mycenae-hero-stories-travel",
+      "v5OwnerCardId": "mycenae-graves-palaces-tablets",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1050,
+        "label": "约公元前1180—前1050年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-aegean-localizes-after-palaces"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-aegean-localizes-after-palaces"
+        }
+      ],
+      "eventIds": [
+        "event-aegean-localizes-after-palaces",
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-mycenaean-transformation",
+        "source-deger-jalkotzy-aftermath",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-mycenae-warrior-krater"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "此 Scene 表达英雄叙事、口头表演或后世接受，不是独立空间状态，也不用于确定代表作品的成文年代；来源信号保留在本迁移审计。"
+      }
+    },
+    {
+      "id": "signal-dark-age-orders-stop-tablets",
+      "v5SceneId": "dark-age-orders-stop-tablets",
+      "v5OwnerCardId": "greece-reconnects-after-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1050,
+        "label": "约公元前1200—前1050年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-palaces-end",
+        "event-aegean-localizes-after-palaces"
+      ],
+      "sourceIds": [
+        "source-cambridge-mycenaean-transformation",
+        "source-deger-jalkotzy-aftermath",
+        "source-knapp-manning-crisis",
+        "source-wikimedia-mycenae-warrior-krater"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration",
+          "greek-postpalatial-local-communities"
+        ]
+      }
+    },
+    {
+      "id": "signal-dark-age-iron-enters-bronze-world",
+      "v5SceneId": "dark-age-iron-enters-bronze-world",
+      "v5OwnerCardId": "greece-reconnects-after-palaces",
+      "timeSpan": {
+        "start": -1050,
+        "end": -900,
+        "label": "约公元前1050—前900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-aegean-localizes-after-palaces"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-aegean-localizes-after-palaces"
+        }
+      ],
+      "eventIds": [
+        "event-aegean-localizes-after-palaces",
+        "event-aegean-regional-links-renew"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-cambridge-greek-iron-age-pottery",
+        "source-cambridge-mycenaean-transformation",
+        "source-deger-jalkotzy-aftermath",
+        "source-wikimedia-protogeometric-amphora"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "greek-postpalatial-local-communities"
+        ]
+      }
+    },
+    {
+      "id": "signal-dark-age-sea-routes-return",
+      "v5SceneId": "dark-age-sea-routes-return",
+      "v5OwnerCardId": "greece-reconnects-after-palaces",
+      "timeSpan": {
+        "start": -900,
+        "end": -800,
+        "label": "约公元前900—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-aegean-regional-links-renew"
+        }
+      ],
+      "eventIds": [
+        "event-aegean-regional-links-renew"
+      ],
+      "sourceIds": [
+        "source-bsa-aegean-iron-technologies",
+        "source-cambridge-greek-iron-age-pottery",
+        "source-cambridge-guide-homer",
+        "source-wikimedia-naxos-geometric-pottery"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "greek-postpalatial-local-communities"
+        ]
+      }
+    },
+    {
+      "id": "signal-gods-names-enter-tablets",
+      "v5SceneId": "gods-names-enter-tablets",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1200,
+        "label": "约公元前1450—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palace-administration"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-bsa-linear-b",
+        "source-cambridge-mycenaean-religion",
+        "source-killen-mycenaean-society",
+        "source-lupack-local-horizon",
+        "source-wikimedia-mycenae-athena-tablet"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "greek-divine-mycenaean-attestations",
+          "mycenaean-palatial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-gods-survive-palaces",
+      "v5SceneId": "gods-survive-palaces",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-palaces-end",
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-cambridge-guide-homer",
+        "source-deger-jalkotzy-aftermath",
+        "source-knapp-manning-crisis",
+        "source-perseus-hesiod-theogony",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-wikimedia-naxos-geometric-pottery"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "greek-divine-mycenaean-attestations",
+          "mycenaean-palatial-administration",
+          "greek-postpalatial-local-communities"
+        ]
+      }
+    },
+    {
+      "id": "signal-gods-younger-overthrow-older",
+      "v5SceneId": "gods-younger-overthrow-older",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        }
+      ],
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-perseus-hesiod-theogony",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-wikimedia-rhea-cronus"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-gods-three-brothers-divide-world",
+      "v5SceneId": "gods-three-brothers-divide-world",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        }
+      ],
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-perseus-hesiod-theogony",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-wikimedia-three-realms"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-gods-olympus-quarrels",
+      "v5SceneId": "gods-olympus-quarrels",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        }
+      ],
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-perseus-hesiod-theogony",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-wikimedia-council-gods-met"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-gods-gifts-and-requests",
+      "v5SceneId": "gods-gifts-and-requests",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        }
+      ],
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-met-greek-gods-practices",
+        "source-perseus-hesiod-theogony",
+        "source-perseus-iliad",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-wikimedia-zeus-iris-libation"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-gods-demeter-persephone-return",
+      "v5SceneId": "gods-demeter-persephone-return",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        }
+      ],
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-perseus-hesiod-theogony",
+        "source-perseus-homeric-hymn-demeter",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-wikimedia-demeter-persephone-batten"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-gods-turn-to-heroes",
+      "v5SceneId": "gods-turn-to-heroes",
+      "v5OwnerCardId": "greek-gods-leave-palaces",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-divine-narratives-form-in-song"
+        }
+      ],
+      "eventIds": [
+        "event-greek-divine-narratives-form-in-song"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-perseus-hesiod-theogony",
+        "source-perseus-iliad",
+        "source-rutherford-greek-religion-lba-eia",
+        "source-wikimedia-athena-achilles-illustration"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-heroes-ruins-hold-stronger-past",
+      "v5SceneId": "heroes-ruins-hold-stronger-past",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1200,
+        "label": "约公元前1600—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-shaft-grave-elites-emerge"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-shaft-grave-elites-emerge",
+        "event-mycenaean-palace-administration"
+      ],
+      "sourceIds": [
+        "source-bsa-linear-b",
+        "source-cambridge-guide-mycenae",
+        "source-cambridge-mycenaean-religion",
+        "source-killen-mycenaean-society",
+        "source-met-mycenaean-civilization",
+        "source-wikimedia-mycenae-lion-gate-clear"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mycenaean-palatial-administration"
+        ]
+      }
+    },
+    {
+      "id": "signal-heroes-singers-remake-lost-age",
+      "v5SceneId": "heroes-singers-remake-lost-age",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-demodocus-flaxman"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "此 Scene 表达英雄叙事、口头表演或后世接受，不是独立空间状态，也不用于确定代表作品的成文年代；来源信号保留在本迁移审计。"
+      }
+    },
+    {
+      "id": "signal-heroes-between-gods-and-mortals",
+      "v5SceneId": "heroes-between-gods-and-mortals",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-perseus-apollodorus-library",
+        "source-perseus-iliad",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-achilles-thetis-preller"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-heroes-monsters-wait",
+      "v5SceneId": "heroes-monsters-wait",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-perseus-apollodorus-library",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-stafford-herakles",
+        "source-wikimedia-heracles-lion-bm"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-heroes-board-argo",
+      "v5SceneId": "heroes-board-argo",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-cambridge-guide-homer",
+        "source-perseus-apollodorus-library",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-argonauts-roberti"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-heroes-curses-cross-generations",
+      "v5SceneId": "heroes-curses-cross-generations",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-companion-greek-mythology",
+        "source-cambridge-guide-homer",
+        "source-perseus-apollodorus-library",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-oedipus-sphinx-moreau"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-heroes-gather-at-troy",
+      "v5SceneId": "heroes-gather-at-troy",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-perseus-iliad",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-achilles-hector-groeninge"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-heroes-homecomings-continue",
+      "v5SceneId": "heroes-homecomings-continue",
+      "v5OwnerCardId": "greek-heroes-live-in-song",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-odysseus-return-pinturicchio"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-troy-walls-fall-city-rebuilds",
+      "v5SceneId": "troy-walls-fall-city-rebuilds",
+      "v5OwnerCardId": "troy-layered-city",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1180,
+        "label": "约公元前1700—前1180年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "troy-archaeological-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-troy-vi-viia-destruction"
+        }
+      ],
+      "eventIds": [
+        "event-troy-vi-viia-destruction"
+      ],
+      "sourceIds": [
+        "source-british-museum-lost-troy",
+        "source-cambridge-iliad-history-fiction",
+        "source-unesco-troy",
+        "source-wikimedia-troy-vi-walls"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "troy-late-bronze-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-troy-wilusa-enters-treaty",
+      "v5SceneId": "troy-wilusa-enters-treaty",
+      "v5OwnerCardId": "troy-layered-city",
+      "timeSpan": {
+        "start": -1300,
+        "end": -1250,
+        "label": "约公元前1300—前1250年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-wilusa-treaty"
+        },
+        {
+          "entityId": "troy-archaeological-site",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-wilusa-treaty"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-wilusa-treaty"
+      ],
+      "sourceIds": [
+        "source-british-museum-alaksandu-wilusa",
+        "source-cambridge-hittite-troy",
+        "source-wikimedia-troy-wilusa-treaty"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "troy-late-bronze-presence",
+          "hittite-syrian-control"
+        ]
+      }
+    },
+    {
+      "id": "signal-troy-ruins-gain-heroic-names",
+      "v5SceneId": "troy-ruins-gain-heroic-names",
+      "v5OwnerCardId": "troy-layered-city",
+      "timeSpan": {
+        "start": -1180,
+        "end": -800,
+        "label": "约公元前1180—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-greek-heroic-songs-form-and-circulate"
+        }
+      ],
+      "eventIds": [
+        "event-greek-heroic-songs-form-and-circulate"
+      ],
+      "sourceIds": [
+        "source-british-museum-lost-troy",
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-history-fiction",
+        "source-perseus-odyssey-eight",
+        "source-rhodes-homeric-state",
+        "source-wikimedia-flaxman-iliad-funeral"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "此 Scene 表达英雄叙事、口头表演或后世接受，不是独立空间状态，也不用于确定代表作品的成文年代；来源信号保留在本迁移审计。"
+      }
+    },
+    {
+      "id": "signal-iliad-singer-starts-near-war-end",
+      "v5SceneId": "iliad-singer-starts-near-war-end",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-title"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "此 Scene 表达英雄叙事、口头表演或后世接受，不是独立空间状态，也不用于确定代表作品的成文年代；来源信号保留在本迁移审计。"
+      }
+    },
+    {
+      "id": "signal-iliad-two-captives-start-quarrel",
+      "v5SceneId": "iliad-two-captives-start-quarrel",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-athena-achilles-illustration"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-iliad-achilles-lets-greeks-fail",
+      "v5SceneId": "iliad-achilles-lets-greeks-fail",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-thetis-zeus"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-iliad-hector-reaches-ships",
+      "v5SceneId": "iliad-hector-reaches-ships",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-embassy"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-iliad-patroclus-wears-armor",
+      "v5SceneId": "iliad-patroclus-wears-armor",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-patroclus"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-iliad-new-shield-returns-hero",
+      "v5SceneId": "iliad-new-shield-returns-hero",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-armor"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-iliad-hector-dies-outside-walls",
+      "v5SceneId": "iliad-hector-dies-outside-walls",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-hector"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-iliad-priam-enters-enemy-camp",
+      "v5SceneId": "iliad-priam-enters-enemy-camp",
+      "v5OwnerCardId": "iliad-achilles-anger",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-divine-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "iliad-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-iliad-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-iliad-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-iliad-overview",
+        "source-perseus-iliad",
+        "source-wikimedia-flaxman-iliad-priam"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-return-songs-become-poem",
+      "v5SceneId": "odyssey-return-songs-become-poem",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-demodocus-flaxman"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "此 Scene 表达英雄叙事、口头表演或后世接受，不是独立空间状态，也不用于确定代表作品的成文年代；来源信号保留在本迁移审计。"
+      }
+    },
+    {
+      "id": "signal-odyssey-suitors-consume-house",
+      "v5SceneId": "odyssey-suitors-consume-house",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-beck-odyssey-home-family",
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-suitors"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-calypso-releases-hero",
+      "v5SceneId": "odyssey-calypso-releases-hero",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-hermes"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-princess-leads-stranger",
+      "v5SceneId": "odyssey-princess-leads-stranger",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-nausicaa"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-nobody-defeats-cyclops",
+      "v5SceneId": "odyssey-nobody-defeats-cyclops",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-polyphemus"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-wind-bag-opens",
+      "v5SceneId": "odyssey-wind-bag-opens",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-antiphates"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-witch-and-dead-guide-home",
+      "v5SceneId": "odyssey-witch-and-dead-guide-home",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-circe"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-songs-monsters-taboo-kill-crew",
+      "v5SceneId": "odyssey-songs-monsters-taboo-kill-crew",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-sirens"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-beggar-enters-own-hall",
+      "v5SceneId": "odyssey-beggar-enters-own-hall",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-beck-odyssey-home-family",
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-flaxman-odyssey-argus"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    },
+    {
+      "id": "signal-odyssey-bow-and-bed-restore-name",
+      "v5SceneId": "odyssey-bow-and-bed-restore-name",
+      "v5OwnerCardId": "odyssey-name-and-home",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        },
+        {
+          "entityId": "odyssey-text",
+          "basis": "eventParticipant",
+          "referenceId": "event-odyssey-oral-composition-and-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-odyssey-oral-composition-and-transmission"
+      ],
+      "sourceIds": [
+        "source-beck-odyssey-home-family",
+        "source-cambridge-guide-homer",
+        "source-cambridge-odyssey-overview",
+        "source-perseus-odyssey",
+        "source-wikimedia-odysseus-return-pinturicchio"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "该 Scene 叙述神话或史诗内部情节；继承的前1200—前800年标签只定位传统形成背景，不是情节发生的历史年代。"
+      }
+    }
+  ],
+  "audit": [
+    {
+      "scenePhaseSignalId": "signal-crete-court-palace-daily-life",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "minoan-palatial-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "eventIds": [
+            "event-crete-palaces-emerge-and-rebuild"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-crete-palaces-emerge-and-rebuild",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1450,
+                "label": "约公元前2000—前1450年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-crete-linear-a-at-work",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "minoan-palatial-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "eventIds": [
+            "event-crete-palaces-emerge-and-rebuild"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-crete-palaces-emerge-and-rebuild",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1450,
+                "label": "约公元前2000—前1450年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1900,
+            "end": -1450,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-crete-palaces-rebuild-seaward",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "minoan-palatial-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "eventIds": [
+            "event-crete-palaces-emerge-and-rebuild"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-crete-palaces-emerge-and-rebuild",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1450,
+                "label": "约公元前2000—前1450年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1700,
+            "end": -1450,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-crete-tablets-change-language",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "minoan-palatial-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "eventIds": [
+            "event-knossos-linear-b-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-knossos-linear-b-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1375,
+                "label": "约公元前1450—前1375年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1450,
+            "end": -1375,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-knossos-linear-b-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-knossos-linear-b-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1375,
+                "label": "约公元前1450—前1375年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1450,
+            "end": -1375,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-crete-palaces-end-island-continues",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "minoan-palatial-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-mycenaean-palaces-end",
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palaces-end",
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mycenae-gold-enters-graves",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "mycenaean-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-shaft-grave-elites-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-shaft-grave-elites-emerge",
+              "timeSpan": {
+                "start": -1700,
+                "end": -1450,
+                "label": "约公元前1700—前1450年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1700,
+            "end": -1450,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-mycenae-linear-b-writes-greek",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "mycenaean-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "minoan-palatial-civilization",
+          "eventIds": [
+            "event-knossos-linear-b-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-knossos-linear-b-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1375,
+                "label": "约公元前1450—前1375年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1450,
+            "end": -1400,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-knossos-linear-b-administration",
+            "event-mycenaean-palace-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-knossos-linear-b-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1375,
+                "label": "约公元前1450—前1375年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-mycenaean-palace-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1200,
+                "label": "约公元前1450—前1200年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mycenae-palaces-write-needs",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "mycenaean-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palace-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palace-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1200,
+                "label": "约公元前1450—前1200年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1400,
+            "end": -1200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-mycenae-palaces-stop-commanding",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "mycenaean-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mycenae-hero-stories-travel",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "mycenaean-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-aegean-localizes-after-palaces",
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1180,
+            "end": -1050,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1180,
+            "end": -1050,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-dark-age-orders-stop-tablets",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-dark-age-communities",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-mycenaean-palaces-end",
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palaces-end",
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-dark-age-iron-enters-bronze-world",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-dark-age-communities",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-aegean-localizes-after-palaces",
+            "event-aegean-regional-links-renew"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-aegean-regional-links-renew",
+              "timeSpan": {
+                "start": -1050,
+                "end": -800,
+                "label": "约公元前1050—前800年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1050,
+            "end": -1050,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-dark-age-sea-routes-return",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-dark-age-communities",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-aegean-regional-links-renew"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aegean-regional-links-renew",
+              "timeSpan": {
+                "start": -1050,
+                "end": -800,
+                "label": "约公元前1050—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -900,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-names-enter-tablets",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palace-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palace-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1200,
+                "label": "约公元前1450—前1200年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1450,
+            "end": -1200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-survive-palaces",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-mycenaean-palaces-end",
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-younger-overthrow-older",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-three-brothers-divide-world",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-olympus-quarrels",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-gifts-and-requests",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-demeter-persephone-return",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gods-turn-to-heroes",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-divine-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-greek-divine-narratives-form-in-song"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-divine-narratives-form-in-song",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-ruins-hold-stronger-past",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-shaft-grave-elites-emerge",
+            "event-mycenaean-palace-administration"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-shaft-grave-elites-emerge",
+              "timeSpan": {
+                "start": -1700,
+                "end": -1450,
+                "label": "约公元前1700—前1450年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-mycenaean-palace-administration",
+              "timeSpan": {
+                "start": -1450,
+                "end": -1200,
+                "label": "约公元前1450—前1200年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-singers-remake-lost-age",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-between-gods-and-mortals",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-monsters-wait",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-board-argo",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-curses-cross-generations",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-gather-at-troy",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-heroes-homecomings-continue",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "greek-heroic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-troy-walls-fall-city-rebuilds",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "troy-archaeological-site",
+      "entityEvidence": [
+        {
+          "entityId": "troy-archaeological-site",
+          "eventIds": [
+            "event-troy-vi-viia-destruction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-troy-vi-viia-destruction",
+              "timeSpan": {
+                "start": -1700,
+                "end": -1180,
+                "label": "约公元前1700—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1700,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-troy-wilusa-enters-treaty",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "troy-archaeological-site",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-wilusa-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-wilusa-treaty",
+              "timeSpan": {
+                "start": -1300,
+                "end": -1250,
+                "label": "约公元前1300—前1250年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1300,
+            "end": -1250,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "troy-archaeological-site",
+          "eventIds": [
+            "event-hittite-wilusa-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-wilusa-treaty",
+              "timeSpan": {
+                "start": -1300,
+                "end": -1250,
+                "label": "约公元前1300—前1250年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1300,
+            "end": -1250,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-troy-ruins-gain-heroic-names",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "troy-archaeological-site",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1180,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-greek-heroic-songs-form-and-circulate"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-greek-heroic-songs-form-and-circulate",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1180,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-singer-starts-near-war-end",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-two-captives-start-quarrel",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-achilles-lets-greeks-fail",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-hector-reaches-ships",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-patroclus-wears-armor",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-new-shield-returns-hero",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-hector-dies-outside-walls",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-iliad-priam-enters-enemy-camp",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "iliad-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-divine-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "iliad-text",
+          "eventIds": [
+            "event-iliad-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-iliad-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-return-songs-become-poem",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-suitors-consume-house",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-calypso-releases-hero",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-princess-leads-stranger",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-nobody-defeats-cyclops",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-wind-bag-opens",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-witch-and-dead-guide-home",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-songs-monsters-taboo-kill-crew",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-beggar-enters-own-hall",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-odyssey-bow-and-bed-restore-name",
+      "sourceModule": "data/aegean.ts",
+      "cardPrimaryEntityId": "odyssey-text",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-heroic-tradition",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "odyssey-text",
+          "eventIds": [
+            "event-odyssey-oral-composition-and-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-odyssey-oral-composition-and-transmission",
+              "timeSpan": {
+                "start": -1200,
+                "end": -800,
+                "label": "约公元前1200—前800年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    }
+  ]
+}

@@ -20,5 +20,8 @@
     "data/**/*.ts",
     "tests/fixtures/module-gate-valid.ts",
     "vite.config.mts"
+  ],
+  "exclude": [
+    "src/knowledge-space/**"
   ]
 }

@@ -1,0 +1,163 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-china.ts",
+  "decisions": [
+    {
+      "entityId": "western-zhou",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "western-zhou-regional-rule"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "western-zhou"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "china-early-bronze-world",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "这是把跨区域聚落、青铜生产、礼仪与多个政权合并成单一身份的迁移期伪文明；V6 删除该运行时 Entity，待具体稳定对象分别建模。"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "erlitou-site",
+      "oldType": "SettlementSite",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "settlement",
+        "archaeologicalSite"
+      ],
+      "proposedConceptLayers": [
+        "placeAndSite"
+      ],
+      "acceptedEntityType": "archaeologicalSite",
+      "acceptedConceptLayerId": "placeAndSite",
+      "acceptedPhaseIds": [
+        "erlitou-site-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "erlitou-site"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "shang-civilization",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "shang-regional-rule"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "shang-civilization"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "shang-oracle-bone-inscriptions",
+      "oldType": "TextDocument",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "documentCorpus",
+        "literaryTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge",
+        "artAndLiterature",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "documentCorpus",
+      "acceptedConceptLayerId": "materialAndArchitecture",
+      "acceptedPhaseIds": [
+        "shang-oracle-bone-royal-divination-corpus"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "shang-oracle-bone-inscriptions"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "shang-bronze-ritual-vessels",
+      "oldType": "CulturalObject",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "artifactClass",
+        "documentCorpus",
+        "monument"
+      ],
+      "proposedConceptLayers": [
+        "materialAndArchitecture",
+        "languageAndKnowledge",
+        "artAndLiterature"
+      ],
+      "acceptedEntityType": "artifactClass",
+      "acceptedConceptLayerId": "materialAndArchitecture",
+      "acceptedPhaseIds": [
+        "shang-bronzes-erligang-production",
+        "shang-bronzes-late-ritual-use"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "shang-bronze-ritual-vessels"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "sanxingdui-site",
+      "oldType": "SettlementSite",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "settlement",
+        "archaeologicalSite"
+      ],
+      "proposedConceptLayers": [
+        "placeAndSite"
+      ],
+      "acceptedEntityType": "archaeologicalSite",
+      "acceptedConceptLayerId": "placeAndSite",
+      "acceptedPhaseIds": [
+        "sanxingdui-site-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "sanxingdui-site"
+      },
+      "status": "accepted"
+    }
+  ]
+}

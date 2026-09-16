@@ -1,0 +1,44 @@
+{
+  "handoffVersion": 1,
+  "sourceModule": "data/aegean.ts",
+  "status": "readyForIntegration",
+  "coverage": {
+    "entities": 8,
+    "events": 13,
+    "scenes": 50,
+    "structuralEdges": 11
+  },
+  "v6RuntimeCounts": {
+    "entities": 7,
+    "entityPhases": 13,
+    "events": 3,
+    "temporalRelations": 3
+  },
+  "scenePhaseSignalCount": 50,
+  "entitySignalCount": 111,
+  "unresolvedRelationCandidateCount": 1,
+  "checks": {
+    "baselineGenerated": true,
+    "entityDecisionsComplete": true,
+    "eventDecisionsComplete": true,
+    "phasesReviewed": true,
+    "edgeDecisionsComplete": true,
+    "relationCandidatesReviewed": true
+  },
+  "requiredExternalDependencies": [
+    {
+      "entityId": "hittite-empire",
+      "phaseId": "hittite-syrian-control",
+      "usedByEventIds": [
+        "event-hittite-wilusa-treaty"
+      ],
+      "integrationCondition": "Late Bronze Age V6 模块必须提供相同稳定 ID；Aegean 隔离 fixture 仅用于门禁，不进入运行时。"
+    }
+  ],
+  "notes": [
+    "保留《伊利亚特》《奥德赛》的代表成文作品节点，不保留独立口头传播与英雄传统 Entity、Phase 或相关关系。",
+    "原 V5 Entity、Event、StructuralEdge 与 Scene 信号仍完整保存在迁移审计；撤销目标通过 deferred、retired 或 narrativeOnly 明确处置，未修改冻结 baseline。",
+    "迈锡尼与克里特的社会空间状态、希腊宗教传统、特洛伊遗址和维鲁萨识别候选保持各自独立含义；没有将史诗情节投射为历史事件。",
+    "作品代表年代仅表达近似成文定位；原前1200—前800年歌唱传播范围不重绑为作品空间状态。"
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/mesopotamia.ts",
+  "decisions": [
+    {
+      "eventId": "event-southern-mesopotamia-water-land-management",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-southern-mesopotamia-water-land-management"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-proto-cuneiform-accounting-emerges",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-proto-cuneiform-accounting-emerges"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-mesopotamian-number-calendar-practices-develop",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-mesopotamian-number-calendar-practices-develop"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-uruk-urban-expansion",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-uruk-urban-expansion"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-early-mesopotamian-temple-centers-develop",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-early-mesopotamian-temple-centers-develop"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-cuneiform-multilingual-transmission",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-cuneiform-multilingual-transmission"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-akkadian-imperial-expansion",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "已接受本轮精简：该概括性事件重复政权空间阶段，不再迁入 V6 独立 Event；原 V5 证据保留在冻结迁移基线。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-akkadian-empire-fragments",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "已接受本轮精简：该概括性事件重复政权空间阶段，不再迁入 V6 独立 Event；原 V5 证据保留在冻结迁移基线。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-gilgamesh-textual-tradition-forms",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "convertedToEntity",
+        "entityId": "epic-of-gilgamesh"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "保留标准巴比伦版本的代表成文作品，约公元前12世纪；不把原来的前2000—前600年传播范围当作作品持续占位。"
+      ]
+    },
+    {
+      "eventId": "event-old-babylonian-city-kingdoms-emerge",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-old-babylonian-city-kingdoms-emerge"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-babylonian-scribal-urban-continuity",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-babylonian-scribal-urban-continuity"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-tower-babel-textual-tradition-forms",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "convertedToEntity",
+        "entityId": "tower-of-babel-tradition"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "保留巴别塔故事身份；成文日期不能从塔庙研究或叙事地点确定，撤下无据长阶段。"
+      ]
+    },
+    {
+      "eventId": "event-ur-iii-formation",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：与政权起止或现有法典对象重复，移除独立事件，事实及来源保留于相关对象说明。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-ur-iii-fragmentation",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "已接受本轮精简：该概括性事件重复政权空间阶段，不再迁入 V6 独立 Event；原 V5 证据保留在冻结迁移基线。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-hammurabi-conquests",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-hammurabi-conquests"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-old-babylonian-fragmentation",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "已接受本轮精简：该概括性事件重复政权空间阶段，不再迁入 V6 独立 Event；原 V5 证据保留在冻结迁移基线。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-hammurabi-code-stele",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：与政权起止或现有法典对象重复，移除独立事件，事实及来源保留于相关对象说明。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-etemenanki-rebuilding",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-etemenanki-rebuilding"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

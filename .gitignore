@@ -1,9 +1,11 @@
 .worktrees/
 node_modules/
 dist/
+dist-v6-preview/
 .pnpm-store/
 tmp/
 test-results/
 playwright-report/
+playwright-report-v6/
 coverage/
 *.log

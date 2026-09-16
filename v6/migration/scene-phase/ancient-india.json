@@ -1,0 +1,1489 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-india.ts",
+  "scenePhaseSignals": [
+    {
+      "id": "signal-mohenjo-daro-partial-city",
+      "v5SceneId": "mohenjo-daro-partial-city",
+      "v5OwnerCardId": "mohenjo-daro-urban-order",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-green-indus-public-goods",
+        "source-kenoyer-indus-civilisation",
+        "source-natural-earth",
+        "source-unesco-mohenjo-daro",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mohenjo-daro-mature-urban-settlement",
+          "indus-civilization-core-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-mohenjo-daro-neighborhood-wells",
+      "v5SceneId": "mohenjo-daro-neighborhood-wells",
+      "v5OwnerCardId": "mohenjo-daro-urban-order",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-jansen-mohenjo-water",
+        "source-kenoyer-indus-civilisation",
+        "source-wikimedia-mohenjo-well",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mohenjo-daro-mature-urban-settlement",
+          "indus-civilization-core-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-mohenjo-daro-water-leaves-home",
+      "v5SceneId": "mohenjo-daro-water-leaves-home",
+      "v5OwnerCardId": "mohenjo-daro-urban-order",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-green-indus-public-goods",
+        "source-jansen-mohenjo-water",
+        "source-kenoyer-indus-civilisation",
+        "source-nakamura-mohenjo-drainage",
+        "source-wikimedia-mohenjo-street",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mohenjo-daro-mature-urban-settlement",
+          "indus-civilization-core-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-mohenjo-daro-great-bath",
+      "v5SceneId": "mohenjo-daro-great-bath",
+      "v5OwnerCardId": "mohenjo-daro-urban-order",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-jansen-mohenjo-water",
+        "source-kenoyer-indus-civilisation",
+        "source-unesco-mohenjo-daro",
+        "source-wikimedia-mohenjo-great-bath",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mohenjo-daro-mature-urban-settlement",
+          "indus-civilization-core-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-mohenjo-daro-unnamed-managers",
+      "v5SceneId": "mohenjo-daro-unnamed-managers",
+      "v5OwnerCardId": "mohenjo-daro-urban-order",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1800,
+        "label": "约公元前2600—前1800年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-green-indus-public-goods",
+        "source-green-priest-king",
+        "source-kenoyer-indus-civilisation",
+        "source-wikimedia-mohenjo-overview",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mohenjo-daro-mature-urban-settlement",
+          "indus-civilization-core-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-indus-shared-measures",
+      "v5SceneId": "indus-shared-measures",
+      "v5OwnerCardId": "indus-civilization-network",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        },
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        }
+      ],
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-bm-gulf-seal-ur",
+        "source-kenoyer-harappan-measurement",
+        "source-kenoyer-indus-civilisation",
+        "source-natural-earth",
+        "source-oracc-sargon-meluhha",
+        "source-possehl-indus-mesopotamia",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "indus-civilization-core-presence"
+      }
+    },
+    {
+      "id": "signal-indus-seals-image-and-signs",
+      "v5SceneId": "indus-seals-image-and-signs",
+      "v5OwnerCardId": "indus-civilization-network",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        },
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        }
+      ],
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-bm-gulf-seal-ur",
+        "source-kenoyer-indus-seals",
+        "source-kenoyer-inscribed-objects",
+        "source-met-indus-unicorn-seal",
+        "source-oracc-sargon-meluhha",
+        "source-possehl-indus-mesopotamia"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "indus-civilization-core-presence"
+      }
+    },
+    {
+      "id": "signal-indus-short-unread-script",
+      "v5SceneId": "indus-short-unread-script",
+      "v5OwnerCardId": "indus-civilization-network",
+      "timeSpan": {
+        "start": -2600,
+        "end": -1900,
+        "label": "约公元前2600—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        },
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        }
+      ],
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-bm-gulf-seal-ur",
+        "source-farmer-indus-script",
+        "source-met-indus-unicorn-seal",
+        "source-oracc-sargon-meluhha",
+        "source-parpola-indus-script",
+        "source-possehl-indus-mesopotamia",
+        "source-rao-indus-script"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "indus-civilization-core-presence"
+      }
+    },
+    {
+      "id": "signal-indus-carnelian-goes-west",
+      "v5SceneId": "indus-carnelian-goes-west",
+      "v5OwnerCardId": "indus-civilization-network",
+      "timeSpan": {
+        "start": -2900,
+        "end": -1900,
+        "label": "约公元前2900—前1900年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        },
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        }
+      ],
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-bm-gulf-seal-ur",
+        "source-kenoyer-kish-carnelian",
+        "source-met-indus-carnelian-bead",
+        "source-oracc-sargon-meluhha",
+        "source-possehl-indus-mesopotamia"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-indus-mesopotamia-exchange"
+        ]
+      }
+    },
+    {
+      "id": "signal-indus-meluhha-ships",
+      "v5SceneId": "indus-meluhha-ships",
+      "v5OwnerCardId": "indus-civilization-network",
+      "timeSpan": {
+        "start": -2334,
+        "end": -2154,
+        "label": "约公元前2334—前2154年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        },
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-mesopotamia-exchange"
+        }
+      ],
+      "eventIds": [
+        "event-indus-mesopotamia-exchange"
+      ],
+      "sourceIds": [
+        "source-bm-gulf-seal-ur",
+        "source-laursen-dilmun-seals",
+        "source-natural-earth",
+        "source-oracc-sargon-meluhha",
+        "source-possehl-indus-mesopotamia"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-indus-mesopotamia-exchange"
+        ]
+      }
+    },
+    {
+      "id": "signal-indus-network-changes-shape",
+      "v5SceneId": "indus-network-changes-shape",
+      "v5OwnerCardId": "indus-civilization-network",
+      "timeSpan": {
+        "start": -2100,
+        "end": -1300,
+        "label": "约公元前2100—前1300年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-kenoyer-indus-civilisation",
+        "source-natural-earth",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "indus-civilization-core-presence"
+      }
+    },
+    {
+      "id": "signal-indo-aryan-cities-change-first",
+      "v5SceneId": "indo-aryan-cities-change-first",
+      "v5OwnerCardId": "indo-aryan-enters-south-asia",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1700,
+        "label": "约公元前1900—前1700年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-kenoyer-indus-civilisation",
+        "source-unesco-mohenjo-daro",
+        "source-wikimedia-mohenjo-overview",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "mohenjo-daro-mature-urban-settlement",
+          "indus-civilization-core-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-indo-aryan-local-settlements",
+      "v5SceneId": "indo-aryan-local-settlements",
+      "v5OwnerCardId": "indo-aryan-enters-south-asia",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1300,
+        "label": "约公元前1900—前1300年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "indus-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "basis": "eventParticipant",
+          "referenceId": "event-indus-urban-transformation"
+        }
+      ],
+      "eventIds": [
+        "event-indus-urban-transformation"
+      ],
+      "sourceIds": [
+        "source-giosan-harappan-transformation",
+        "source-kenoyer-indus-civilisation",
+        "source-singh-ancient-india",
+        "source-wikimedia-cemetery-h-pottery",
+        "source-wright-ancient-indus"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "indus-civilization-core-presence"
+      }
+    },
+    {
+      "id": "signal-indo-aryan-steppe-groups-move-south",
+      "v5SceneId": "indo-aryan-steppe-groups-move-south",
+      "v5OwnerCardId": "indo-aryan-enters-south-asia",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1500,
+        "label": "约公元前2000—前1500年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "vedic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-steppe-related-ancestry-enters-south-asia"
+        }
+      ],
+      "eventIds": [
+        "event-steppe-related-ancestry-enters-south-asia"
+      ],
+      "sourceIds": [
+        "source-narasimhan-south-central-asia",
+        "source-natural-earth",
+        "source-shinde-rakhigarhi-genome",
+        "source-singh-ancient-india"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-steppe-related-ancestry-enters-south-asia"
+        ]
+      }
+    },
+    {
+      "id": "signal-indo-aryan-language-enters-northwest",
+      "v5SceneId": "indo-aryan-language-enters-northwest",
+      "v5OwnerCardId": "indo-aryan-enters-south-asia",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1200,
+        "label": "约公元前1700—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "vedic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-steppe-related-ancestry-enters-south-asia"
+        }
+      ],
+      "eventIds": [
+        "event-steppe-related-ancestry-enters-south-asia"
+      ],
+      "sourceIds": [
+        "source-jamison-brereton-rigveda",
+        "source-narasimhan-south-central-asia",
+        "source-natural-earth",
+        "source-shinde-rakhigarhi-genome",
+        "source-singh-ancient-india"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly"
+      }
+    },
+    {
+      "id": "signal-indo-aryan-poets-sing-rivers-fire",
+      "v5SceneId": "indo-aryan-poets-sing-rivers-fire",
+      "v5OwnerCardId": "indo-aryan-enters-south-asia",
+      "timeSpan": {
+        "start": -1500,
+        "end": -1000,
+        "label": "约公元前1500—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "vedic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-rigveda-composed-transmitted"
+        }
+      ],
+      "eventIds": [
+        "event-rigveda-composed-transmitted"
+      ],
+      "sourceIds": [
+        "source-cambridge-veda-before-print",
+        "source-generated-vedic-recitation",
+        "source-jamison-brereton-rigveda",
+        "source-oxford-vedic-oral-tradition"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "vedic-early-hymn-oral-tradition"
+      }
+    },
+    {
+      "id": "signal-indo-aryan-new-society-forms",
+      "v5SceneId": "indo-aryan-new-society-forms",
+      "v5OwnerCardId": "indo-aryan-enters-south-asia",
+      "timeSpan": {
+        "start": -1500,
+        "end": -1000,
+        "label": "约公元前1500—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "vedic-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-steppe-related-ancestry-enters-south-asia"
+        }
+      ],
+      "eventIds": [
+        "event-steppe-related-ancestry-enters-south-asia",
+        "event-rigveda-composed-transmitted"
+      ],
+      "sourceIds": [
+        "source-cambridge-veda-before-print",
+        "source-giosan-harappan-transformation",
+        "source-jamison-brereton-rigveda",
+        "source-narasimhan-south-central-asia",
+        "source-natural-earth",
+        "source-oxford-vedic-oral-tradition",
+        "source-shinde-rakhigarhi-genome",
+        "source-singh-ancient-india"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "vedic-early-hymn-oral-tradition"
+        ]
+      }
+    }
+  ],
+  "audit": [
+    {
+      "scenePhaseSignalId": "signal-mohenjo-daro-partial-city",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "mohenjo-daro",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mohenjo-daro-neighborhood-wells",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "mohenjo-daro",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mohenjo-daro-water-leaves-home",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "mohenjo-daro",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mohenjo-daro-great-bath",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "mohenjo-daro",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mohenjo-daro-unnamed-managers",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "mohenjo-daro",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1800,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1800,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indus-shared-measures",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "indus-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indus-seals-image-and-signs",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "indus-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indus-short-unread-script",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "indus-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indus-carnelian-goes-west",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "indus-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": -1900,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indus-meluhha-ships",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "indus-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2334,
+            "end": -2154,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-mesopotamia-exchange"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-mesopotamia-exchange",
+              "timeSpan": {
+                "start": -2600,
+                "end": -1900,
+                "label": "约公元前2600—前1900年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2334,
+            "end": -2154,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indus-network-changes-shape",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "indus-civilization",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1300,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1300,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indo-aryan-cities-change-first",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "vedic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1900,
+            "end": -1700,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1900,
+            "end": -1700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indo-aryan-local-settlements",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "vedic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "indus-civilization",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1900,
+            "end": -1300,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mohenjo-daro",
+          "eventIds": [
+            "event-indus-urban-transformation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-indus-urban-transformation",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1300,
+                "label": "约公元前2000—前1300年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1900,
+            "end": -1300,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-indo-aryan-steppe-groups-move-south",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "vedic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "vedic-tradition",
+          "eventIds": [
+            "event-steppe-related-ancestry-enters-south-asia"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-steppe-related-ancestry-enters-south-asia",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1500,
+                "label": "约公元前2000—前1500年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -1500,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-indo-aryan-language-enters-northwest",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "vedic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "vedic-tradition",
+          "eventIds": [
+            "event-steppe-related-ancestry-enters-south-asia"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-steppe-related-ancestry-enters-south-asia",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1500,
+                "label": "约公元前2000—前1500年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1700,
+            "end": -1500,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-indo-aryan-poets-sing-rivers-fire",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "vedic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "vedic-tradition",
+          "eventIds": [
+            "event-rigveda-composed-transmitted"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-rigveda-composed-transmitted",
+              "timeSpan": {
+                "start": -1500,
+                "end": -1000,
+                "label": "约公元前1500—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1500,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-indo-aryan-new-society-forms",
+      "sourceModule": "data/ancient-india.ts",
+      "cardPrimaryEntityId": "vedic-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "vedic-tradition",
+          "eventIds": [
+            "event-steppe-related-ancestry-enters-south-asia",
+            "event-rigveda-composed-transmitted"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-steppe-related-ancestry-enters-south-asia",
+              "timeSpan": {
+                "start": -2000,
+                "end": -1500,
+                "label": "约公元前2000—前1500年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-rigveda-composed-transmitted",
+              "timeSpan": {
+                "start": -1500,
+                "end": -1000,
+                "label": "约公元前1500—前1000年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents"
+      ]
+    }
+  ]
+}

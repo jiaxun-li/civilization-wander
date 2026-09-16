@@ -1,0 +1,40 @@
+{
+  "status": "complete; integrated and verified",
+  "items": [
+    {
+      "id": "amarna-letters-corpus",
+      "result": "保留",
+      "implementation": "保留一处保存地及原书信形成时段，不铺通信网络。"
+    },
+    {
+      "id": "medinet-habu-war-records",
+      "result": "已修改",
+      "implementation": "展示名改为麦迪奈特哈布战争浮雕，转入艺术层，保留铭文与王室视角、制作范围、原来源。"
+    },
+    {
+      "id": "event-hittite-sack-babylon",
+      "result": "已修改",
+      "implementation": "只在中部美索不达米亚显示实际突袭；去掉安纳托利亚的第二发生点，保留赫梯与古巴比伦参与者。"
+    },
+    {
+      "id": "event-hittite-ugarit-treaty",
+      "result": "保留",
+      "implementation": "保留条约、双方参与者和原近似定年。"
+    },
+    {
+      "id": "event-ugarit-destruction",
+      "result": "已删除",
+      "implementation": "删除重复终点事件；毁坏、行政体系未恢复和来源并入乌加里特详情。"
+    },
+    {
+      "id": "event-ramesses-iii-northern-invasions",
+      "result": "保留",
+      "implementation": "保留三角洲抵御节点及王室记录，未泛化来敌身份。"
+    }
+  ],
+  "integrationVerification": {
+    "structure": "passed",
+    "coverage": "valid and complete",
+    "preview": "42 model tests and 20 browser tests passed"
+  }
+}

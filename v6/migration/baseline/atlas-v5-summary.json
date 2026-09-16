@@ -1,0 +1,100 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "totals": {
+    "entities": 54,
+    "events": 95,
+    "scenes": 297,
+    "structuralEdges": 34
+  },
+  "sourceCount": 503,
+  "sourceSnapshotDigest": "8c050b3877308c5429974cec75d8640182952357668fcf38b6db4cb4e5cec82b",
+  "scenePhaseSignalCount": 297,
+  "entitySignalCount": 514,
+  "modules": [
+    {
+      "sourceModule": "data/mesopotamia.ts",
+      "slug": "mesopotamia",
+      "counts": {
+        "entities": 11,
+        "events": 19,
+        "scenes": 58,
+        "structuralEdges": 8
+      },
+      "scenePhaseSignalCount": 58,
+      "entitySignalCount": 124
+    },
+    {
+      "sourceModule": "data/ancient-egypt.ts",
+      "slug": "ancient-egypt",
+      "counts": {
+        "entities": 8,
+        "events": 18,
+        "scenes": 53,
+        "structuralEdges": 2
+      },
+      "scenePhaseSignalCount": 53,
+      "entitySignalCount": 74
+    },
+    {
+      "sourceModule": "data/ancient-india.ts",
+      "slug": "ancient-india",
+      "counts": {
+        "entities": 3,
+        "events": 4,
+        "scenes": 17,
+        "structuralEdges": 2
+      },
+      "scenePhaseSignalCount": 17,
+      "entitySignalCount": 30
+    },
+    {
+      "sourceModule": "data/ancient-china.ts",
+      "slug": "ancient-china",
+      "counts": {
+        "entities": 7,
+        "events": 11,
+        "scenes": 41,
+        "structuralEdges": 2
+      },
+      "scenePhaseSignalCount": 41,
+      "entitySignalCount": 61
+    },
+    {
+      "sourceModule": "data/late-bronze-age.ts",
+      "slug": "late-bronze-age",
+      "counts": {
+        "entities": 6,
+        "events": 9,
+        "scenes": 37,
+        "structuralEdges": 4
+      },
+      "scenePhaseSignalCount": 37,
+      "entitySignalCount": 59
+    },
+    {
+      "sourceModule": "data/aegean.ts",
+      "slug": "aegean",
+      "counts": {
+        "entities": 8,
+        "events": 13,
+        "scenes": 50,
+        "structuralEdges": 11
+      },
+      "scenePhaseSignalCount": 50,
+      "entitySignalCount": 111
+    },
+    {
+      "sourceModule": "data/iron-age-near-east.ts",
+      "slug": "iron-age-near-east",
+      "counts": {
+        "entities": 11,
+        "events": 21,
+        "scenes": 41,
+        "structuralEdges": 5
+      },
+      "scenePhaseSignalCount": 41,
+      "entitySignalCount": 55
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "status": "complete; integrated and verified",
+  "newSources": [
+    {
+      "id": "source-qian-huang-cast-iron-reviewed",
+      "title": "Invention of cast iron smelting in early China: Archaeological survey and numerical simulation",
+      "author": "Wei Qian and Xing Huang",
+      "year": 2021,
+      "publisher": "Advances in Archaeomaterials 2(1), 4–14",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2667136021000017"
+    },
+    {
+      "id": "source-han-chen-casting-iron-reviewed",
+      "title": "Casting iron in ancient China",
+      "author": "Han Rubin and Chen Jianli",
+      "year": 2013,
+      "publisher": "Archaeometallurgy in Europe III, pp. 168–177; author copy hosted by Peking University",
+      "url": "https://archaeology.pku.edu.cn/2013Casting-iron-in-ancient-China.pdf"
+    },
+    {
+      "id": "source-cdli-hammurabi-year-31-reviewed",
+      "title": "Babylon Hammu-rabi 31a: defeat of Rim-Sin",
+      "publisher": "Cuneiform Digital Library Initiative",
+      "url": "https://cdli-gh.github.io/year-names/GLOSSAR/T12K06Y48.htm"
+    }
+  ],
+  "removedEvents": [
+    "event-ur-iii-formation",
+    "event-hammurabi-code-stele",
+    "event-nineveh-falls",
+    "event-persia-conquers-babylon",
+    "event-persia-conquers-sardis"
+  ],
+  "removedPhases": [
+    {
+      "id": "tower-of-babel-textual-formation",
+      "entityId": "tower-of-babel-tradition",
+      "replacementPhaseId": null,
+      "reason": "Sources describe the story and temple, not a defensible composition date."
+    },
+    {
+      "id": "israelite-jacob-name-tradition",
+      "entityId": "ancient-israelite-tradition",
+      "replacementPhaseId": null,
+      "reason": "Narrated Jacob episode does not date community religious presence."
+    },
+    {
+      "id": "israelite-exilic-community-traditions",
+      "entityId": "ancient-israelite-tradition",
+      "replacementPhaseId": null,
+      "reason": "Exile belongs in community history, not an unsupported spatial state."
+    },
+    {
+      "id": "aramaic-regional-alphabetic-language",
+      "entityId": "aramaic-language",
+      "replacementPhaseId": null,
+      "reason": "Twelfth-century people references do not establish twelfth-century language inscription distribution."
+    }
+  ],
+  "addedEntities": [
+    "rim-sin-i"
+  ],
+  "crossModuleReferences": [],
+  "actions": [
+    {
+      "reviewId": "uruk",
+      "status": "保留",
+      "result": "保留单段；详情明确所选城市发展片段。"
+    },
+    {
+      "reviewId": "cuneiform",
+      "status": "已修改",
+      "result": "撤去将同一长年代套到上美索不达米亚、安纳托利亚和南部的放置；中部以巴比伦文字见证为依据，南部保留早期范围，外交文书收窄为14世纪南黎凡特。"
+    },
+    {
+      "reviewId": "hammurabi-code",
+      "status": "保留并修说明",
+      "result": "吸收制作、王室委托和法律表达信息；独立立碑事件删除。"
+    },
+    {
+      "reviewId": "epic-of-gilgamesh",
+      "status": "保留",
+      "result": "仅保留原标准版本代表节点，不恢复任何传抄阶段。"
+    },
+    {
+      "reviewId": "tower-of-babel-tradition",
+      "status": "已修改",
+      "result": "保留文学身份，删除无法核定成文年代的600年时间带；SOAS塔庙论文不能当《创世记》成文日期。"
+    },
+    {
+      "reviewId": "event-ur-iii-formation",
+      "status": "已删除",
+      "result": "形成背景与铭文来源并入乌尔第三王朝。"
+    },
+    {
+      "reviewId": "event-hammurabi-conquests",
+      "status": "已修改",
+      "result": "名称简化，地域改为概略战事见证而非控制，添加来源直接支持的拉尔萨国王里姆辛一世作为对手，无新增展示阶段。"
+    },
+    {
+      "reviewId": "event-hammurabi-code-stele",
+      "status": "已删除",
+      "result": "信息并入法典作品。"
+    },
+    {
+      "reviewId": "babylon-city",
+      "status": "已修改",
+      "result": "阶段改名毁坏、重建与新巴比伦时期，明确选定片段，波斯征服并不表示城市结束。"
+    },
+    {
+      "reviewId": "phoenician-tradition",
+      "status": "保留",
+      "result": "保留一阶段三放置与核心、交换差异。"
+    },
+    {
+      "reviewId": "iron",
+      "status": "已修改",
+      "result": "简称铁器技术，明确两个独立地区实例；直接研究支持前8世纪黄河中游铸铁碎片，因此保留原范围并注明非成熟铸造全面存在。"
+    },
+    {
+      "reviewId": "aramaic-language",
+      "status": "已修改",
+      "result": "移除无据帝国接力分布，保留卡尔胡前8世纪书吏与波斯波利斯前5世纪铭文两处见证；非语言起止。关联亚述关系同步限定所选见证范围。"
+    },
+    {
+      "reviewId": "ancient-israelite-tradition",
+      "status": "已修改",
+      "result": "撤去雅各故事与流亡两个阶段，保留身份和简短社群叙述。"
+    },
+    {
+      "reviewId": "event-nineveh-falls",
+      "status": "已删除",
+      "result": "新亚述说明区分前612年城市陷落与前609年残余政权结束。"
+    },
+    {
+      "reviewId": "event-lachish-captured",
+      "status": "保留",
+      "result": "保留双方与王室浮雕审校。"
+    },
+    {
+      "reviewId": "event-persia-conquers-babylon",
+      "status": "已删除",
+      "result": "新巴比伦、巴比伦说明保留征服事实与来源。"
+    },
+    {
+      "reviewId": "event-persia-conquers-sardis",
+      "status": "已删除",
+      "result": "吕底亚说明保留前547—546年约略定年。"
+    }
+  ],
+  "tests": {
+    "command": "node --test v6/data/mesopotamia/mesopotamia.test.ts v6/data/iron-age-near-east/iron-age-near-east.test.ts",
+    "passed": 19,
+    "failed": 0
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.metmuseum.org/essays/babylon",
+      "finding": "巴比伦王权结束后城市继续存在；楔形文字文书延续到公元1世纪。"
+    },
+    {
+      "url": "https://www.metmuseum.org/essays/the-amarna-letters",
+      "finding": "14世纪外交文书、南黎凡特城市统治者的通信。"
+    },
+    {
+      "url": "https://oracc.museum.upenn.edu/nimrud/ancientkalhu/thewritings/aramaichebrew/",
+      "finding": "前8世纪早期卡尔胡宫廷配给表中已有阿拉米语书吏，不能由此推定前1200年语言地理范围。"
+    },
+    {
+      "url": "https://www.iranicaonline.org/articles/aramaic/i-general/",
+      "finding": "前9—8世纪铭文始见；波斯波利斯前5世纪器物铭文是直接行政见证。"
+    },
+    {
+      "url": "https://archaeology.pku.edu.cn/2013Casting-iron-in-ancient-China.pdf",
+      "finding": "pp168–170前9—8世纪山西天马曲村铸铁碎片，原形和有意制作不确定；pp171–176河南前5世纪以后工具生产。"
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S2667136021000017",
+      "finding": "研究摘要说明中国最早铸铁前8世纪；原catalog题名、期刊错误，新增reviewed source，未改冻结基线。"
+    },
+    {
+      "url": "https://cdli-gh.github.io/year-names/GLOSSAR/T12K06Y48.htm",
+      "finding": "汉谟拉比第31年原文年名及译文直接记载里姆辛被制服。"
+    },
+    {
+      "url": "https://eprints.soas.ac.uk/3858/2/TowerOfBabel.AfO.pdf",
+      "finding": "塔庙及Esangil泥板的制作问题不等同于巴别塔故事成文年代，不采区间中点。"
+    }
+  ],
+  "integrationNotes": [
+    "共享scene-phase台账的4个删除phase请改为deferred/identity，不映射到无时间重叠的其他phase。",
+    "共享preview详情中事件征服地域/对手说明如有独立副本，请同步；模块参与者description已包含说明。",
+    "待审historicalProcess继续quarantine，未提升任何过程。",
+    "新增人物仅为真实对手的稳定身份，无phase不进入政权可视条。"
+  ],
+  "integrationVerification": {
+    "structure": "passed",
+    "coverage": "valid and complete",
+    "preview": "42 model tests and 20 browser tests passed"
+  }
+}

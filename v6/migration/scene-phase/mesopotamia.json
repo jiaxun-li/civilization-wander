@@ -1,0 +1,5640 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/mesopotamia.ts",
+  "scenePhaseSignals": [
+    {
+      "id": "signal-sumer-water-network",
+      "v5SceneId": "sumer-water-network",
+      "v5OwnerCardId": "sumer-measuring-land-time",
+      "timeSpan": {
+        "start": -3500,
+        "end": -2000,
+        "label": "约公元前3500—前2000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-southern-mesopotamia-water-land-management"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-southern-mesopotamia-water-land-management"
+        }
+      ],
+      "eventIds": [
+        "event-southern-mesopotamia-water-land-management"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-isac-irrigation-southern-mesopotamia",
+        "source-natural-earth",
+        "source-proust-mesopotamian-mathematics",
+        "source-unesco-uruk-location"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-land-measurement",
+      "v5SceneId": "sumer-land-measurement",
+      "v5OwnerCardId": "sumer-measuring-land-time",
+      "timeSpan": {
+        "start": -3300,
+        "end": -2700,
+        "label": "约公元前3300—前2700年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-southern-mesopotamia-water-land-management"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-southern-mesopotamia-water-land-management"
+        }
+      ],
+      "eventIds": [
+        "event-southern-mesopotamia-water-land-management"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-isac-irrigation-southern-mesopotamia",
+        "source-met-ushumgal-stele",
+        "source-proust-mesopotamian-mathematics"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-clay-records",
+      "v5SceneId": "sumer-clay-records",
+      "v5OwnerCardId": "sumer-measuring-land-time",
+      "timeSpan": {
+        "start": -3300,
+        "end": -2600,
+        "label": "约公元前3300—前2600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        }
+      ],
+      "eventIds": [
+        "event-proto-cuneiform-accounting-emerges"
+      ],
+      "sourceIds": [
+        "source-englund-proto-cuneiform",
+        "source-isac-writing-early-mesopotamia",
+        "source-met-grain-tablet",
+        "source-met-origins-writing"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-early-development",
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-sixty-and-moon",
+      "v5SceneId": "sumer-sixty-and-moon",
+      "v5OwnerCardId": "sumer-measuring-land-time",
+      "timeSpan": {
+        "start": -3300,
+        "end": -2000,
+        "label": "约公元前3300—前2000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-mesopotamian-number-calendar-practices-develop"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-mesopotamian-number-calendar-practices-develop"
+        }
+      ],
+      "eventIds": [
+        "event-mesopotamian-number-calendar-practices-develop"
+      ],
+      "sourceIds": [
+        "source-firth-sumerian-calendars",
+        "source-met-ur-iii-dugga-account",
+        "source-proust-mesopotamian-mathematics"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-early-development"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-methods-outlast-dynasties",
+      "v5SceneId": "sumer-methods-outlast-dynasties",
+      "v5OwnerCardId": "sumer-measuring-land-time",
+      "timeSpan": {
+        "start": -2350,
+        "end": -2004,
+        "label": "约公元前2350—前2004年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-formation"
+        }
+      ],
+      "eventIds": [
+        "event-akkadian-imperial-expansion",
+        "event-ur-iii-formation"
+      ],
+      "sourceIds": [
+        "source-foster-sargonic-administration",
+        "source-frayne-sargonic-inscriptions",
+        "source-garfinkle-kingdom-ur",
+        "source-met-akkadian-period",
+        "source-met-ur-iii-dugga-account",
+        "source-oracc-ur-namma-inscriptions",
+        "source-steinkeller-ur-iii-core-periphery",
+        "source-westenholz-kingdom-akkad"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "akkadian-imperial-order",
+          "akkadian-fragmentation",
+          "ur-iii-kingdom-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-uruk-gathering",
+      "v5SceneId": "sumer-uruk-gathering",
+      "v5OwnerCardId": "sumer-uruk-city",
+      "timeSpan": {
+        "start": -3300,
+        "end": -3100,
+        "label": "约公元前3300—前3100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-uruk-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-getty-uruk",
+        "source-mcmahon-early-urbanism",
+        "source-met-origins-writing",
+        "source-met-uruk-first-city",
+        "source-natural-earth",
+        "source-unesco-uruk-location"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-uruk-feeding",
+      "v5SceneId": "sumer-uruk-feeding",
+      "v5OwnerCardId": "sumer-uruk-city",
+      "timeSpan": {
+        "start": -3500,
+        "end": -3000,
+        "label": "约公元前3500—前3000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-uruk-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-getty-uruk",
+        "source-met-uruk-first-city"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-uruk-public-center",
+      "v5SceneId": "sumer-uruk-public-center",
+      "v5OwnerCardId": "sumer-uruk-city",
+      "timeSpan": {
+        "start": -3500,
+        "end": -3000,
+        "label": "约公元前3500—前3000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-uruk-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-dai-uruk",
+        "source-getty-uruk",
+        "source-met-uruk-first-city",
+        "source-wikimedia-uruk-white-temple-ziggurat"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-sumer-uruk-strangers",
+      "v5SceneId": "sumer-uruk-strangers",
+      "v5OwnerCardId": "sumer-uruk-city",
+      "timeSpan": {
+        "start": -3500,
+        "end": -3000,
+        "label": "约公元前3500—前3000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-uruk-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-getty-uruk",
+        "source-met-uruk-first-city",
+        "source-morgan-warka-vase",
+        "source-smarthistory-warka-vase",
+        "source-wikimedia-warka-vase-360"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamia-many-cities-between-rivers",
+      "v5SceneId": "mesopotamia-many-cities-between-rivers",
+      "v5OwnerCardId": "mesopotamia-cities-outlast-dynasties",
+      "timeSpan": {
+        "start": -3500,
+        "end": -2350,
+        "label": "约公元前3500—前2350年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-uruk-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-getty-uruk",
+        "source-met-origins-writing",
+        "source-met-ur-ziggurat",
+        "source-met-uruk-first-city",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamia-akkad-gathers-cities",
+      "v5SceneId": "mesopotamia-akkad-gathers-cities",
+      "v5OwnerCardId": "mesopotamia-cities-outlast-dynasties",
+      "timeSpan": {
+        "start": -2350,
+        "end": -2150,
+        "label": "约公元前2350—前2150年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-akkadian-imperial-expansion"
+      ],
+      "sourceIds": [
+        "source-foster-sargonic-administration",
+        "source-frayne-sargonic-inscriptions",
+        "source-louvre-naram-sin-victory-stele",
+        "source-met-akkadian-period",
+        "source-westenholz-kingdom-akkad",
+        "source-wikimedia-naram-sin-victory-stele"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "akkadian-imperial-order",
+          "akkadian-fragmentation"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamia-ur-tablets-reorder-cities",
+      "v5SceneId": "mesopotamia-ur-tablets-reorder-cities",
+      "v5OwnerCardId": "mesopotamia-cities-outlast-dynasties",
+      "timeSpan": {
+        "start": -2112,
+        "end": -2004,
+        "label": "约公元前2112—前2004年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-formation"
+        }
+      ],
+      "eventIds": [
+        "event-ur-iii-formation",
+        "event-ur-iii-fragmentation"
+      ],
+      "sourceIds": [
+        "source-cambridge-ur-iii-old-babylonian-transition",
+        "source-garfinkle-kingdom-ur",
+        "source-met-ur-ziggurat",
+        "source-oracc-ur-namma-inscriptions",
+        "source-steinkeller-ur-iii-core-periphery",
+        "source-wikimedia-ur-ziggurat-photo"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ur-iii-kingdom-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamia-babylon-becomes-center",
+      "v5SceneId": "mesopotamia-babylon-becomes-center",
+      "v5OwnerCardId": "mesopotamia-cities-outlast-dynasties",
+      "timeSpan": {
+        "start": -2004,
+        "end": -1595,
+        "label": "约公元前2004—前1595年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        }
+      ],
+      "eventIds": [
+        "event-old-babylonian-city-kingdoms-emerge",
+        "event-hammurabi-conquests",
+        "event-old-babylonian-fragmentation"
+      ],
+      "sourceIds": [
+        "source-cambridge-ur-iii-old-babylonian-transition",
+        "source-cdli-hammurabi-year-names",
+        "source-cdli-samsuiluna-year-names",
+        "source-louvre-hammurabi-code",
+        "source-met-isin-larsa-old-babylonian",
+        "source-podany-hammurabi-babylon",
+        "source-wikimedia-hammurabi-full-stele"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ur-iii-kingdom-order",
+          "old-babylonian-city-kingdom-emergence"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamia-babylon-writes-assyria-grows",
+      "v5SceneId": "mesopotamia-babylon-writes-assyria-grows",
+      "v5OwnerCardId": "mesopotamia-cities-outlast-dynasties",
+      "timeSpan": {
+        "start": -1595,
+        "end": -1200,
+        "label": "约公元前1595—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylonian-scribal-urban-continuity"
+        },
+        {
+          "entityId": "mesopotamia-region",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylonian-scribal-urban-continuity"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylonian-scribal-urban-continuity"
+        }
+      ],
+      "eventIds": [
+        "event-babylonian-scribal-urban-continuity"
+      ],
+      "sourceIds": [
+        "source-brinkman-kassite-history",
+        "source-met-amarna-letters",
+        "source-met-kassite-period",
+        "source-moran-amarna-letters",
+        "source-oracc-middle-assyrian",
+        "source-van-de-mieroop-ancient-near-east",
+        "source-wikimedia-kurigalzu-kudurru"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-multilingual-transmission",
+          "old-babylonian-city-kingdom-emergence"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamia-cities-do-not-go-dark",
+      "v5SceneId": "mesopotamia-cities-do-not-go-dark",
+      "v5OwnerCardId": "mesopotamia-cities-outlast-dynasties",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1000,
+        "label": "约公元前1200—前1000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylonian-scribal-urban-continuity"
+        },
+        {
+          "entityId": "mesopotamia-region",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylonian-scribal-urban-continuity"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-babylonian-scribal-urban-continuity"
+        }
+      ],
+      "eventIds": [
+        "event-babylonian-scribal-urban-continuity"
+      ],
+      "sourceIds": [
+        "source-brinkman-kassite-history",
+        "source-met-kassite-period",
+        "source-natural-earth",
+        "source-oracc-middle-assyrian",
+        "source-radner-ancient-assyria",
+        "source-van-de-mieroop-ancient-near-east"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-multilingual-transmission"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamian-temple-eridu",
+      "v5SceneId": "mesopotamian-temple-eridu",
+      "v5OwnerCardId": "mesopotamian-temple-overview",
+      "timeSpan": {
+        "start": -5000,
+        "end": -4000,
+        "label": "约公元前5000—前4000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mesopotamian-temple",
+          "basis": "eventParticipant",
+          "referenceId": "event-early-mesopotamian-temple-centers-develop"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-early-mesopotamian-temple-centers-develop"
+        }
+      ],
+      "eventIds": [
+        "event-early-mesopotamian-temple-centers-develop"
+      ],
+      "sourceIds": [
+        "source-met-isin-larsa-old-babylonian",
+        "source-met-ur-ziggurat",
+        "source-met-uruk-first-city",
+        "source-natural-earth",
+        "source-yale-ubaid-summary"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamian-temple-uruk",
+      "v5SceneId": "mesopotamian-temple-uruk",
+      "v5OwnerCardId": "mesopotamian-temple-overview",
+      "timeSpan": {
+        "start": -3500,
+        "end": -3000,
+        "label": "约公元前3500—前3000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mesopotamian-temple",
+          "basis": "eventParticipant",
+          "referenceId": "event-early-mesopotamian-temple-centers-develop"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-uruk-urban-expansion"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-early-mesopotamian-temple-centers-develop"
+        }
+      ],
+      "eventIds": [
+        "event-early-mesopotamian-temple-centers-develop",
+        "event-uruk-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-adams-heartland-cities",
+        "source-dai-uruk",
+        "source-getty-uruk",
+        "source-met-mesopotamian-deities",
+        "source-met-uruk-first-city",
+        "source-wikimedia-eanna-4b-plan",
+        "source-yale-ubaid-summary"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamian-temple-ur",
+      "v5SceneId": "mesopotamian-temple-ur",
+      "v5OwnerCardId": "mesopotamian-temple-overview",
+      "timeSpan": {
+        "start": -2112,
+        "end": -2004,
+        "label": "约公元前2112—前2004年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-formation"
+        }
+      ],
+      "eventIds": [
+        "event-ur-iii-formation"
+      ],
+      "sourceIds": [
+        "source-garfinkle-kingdom-ur",
+        "source-goddeeris-old-babylonian-economy",
+        "source-met-ur-ziggurat",
+        "source-oracc-ur-namma-inscriptions",
+        "source-steinkeller-ur-iii-core-periphery"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ur-iii-kingdom-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-mesopotamian-temple-old-babylonian",
+      "v5SceneId": "mesopotamian-temple-old-babylonian",
+      "v5OwnerCardId": "mesopotamian-temple-overview",
+      "timeSpan": {
+        "start": -2004,
+        "end": -539,
+        "label": "约公元前2004—前539年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mesopotamian-temple",
+          "basis": "eventParticipant",
+          "referenceId": "event-etemenanki-rebuilding"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-etemenanki-rebuilding"
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        }
+      ],
+      "eventIds": [
+        "event-old-babylonian-city-kingdoms-emerge",
+        "event-etemenanki-rebuilding"
+      ],
+      "sourceIds": [
+        "source-british-museum-etemenanki-tablet",
+        "source-cambridge-ur-iii-old-babylonian-transition",
+        "source-george-tower-of-babel",
+        "source-goddeeris-old-babylonian-economy",
+        "source-met-etemenanki-cylinder",
+        "source-met-isin-larsa-old-babylonian",
+        "source-oracc-nebuchadnezzar-etemenanki",
+        "source-podany-hammurabi-babylon",
+        "source-wikimedia-etemenanki-reconstruction"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ur-iii-kingdom-order",
+          "old-babylonian-city-kingdom-emergence"
+        ]
+      }
+    },
+    {
+      "id": "signal-cuneiform-quantities",
+      "v5SceneId": "cuneiform-quantities",
+      "v5OwnerCardId": "cuneiform-overview",
+      "timeSpan": {
+        "start": -3350,
+        "end": -3000,
+        "label": "约公元前3350—前3000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        }
+      ],
+      "eventIds": [
+        "event-proto-cuneiform-accounting-emerges"
+      ],
+      "sourceIds": [
+        "source-englund-proto-cuneiform",
+        "source-isac-writing-early-mesopotamia",
+        "source-met-origins-writing"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-early-development",
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-cuneiform-before-sentences",
+      "v5SceneId": "cuneiform-before-sentences",
+      "v5OwnerCardId": "cuneiform-overview",
+      "timeSpan": {
+        "start": -3350,
+        "end": -3000,
+        "label": "约公元前3350—前3000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-proto-cuneiform-accounting-emerges"
+        }
+      ],
+      "eventIds": [
+        "event-proto-cuneiform-accounting-emerges"
+      ],
+      "sourceIds": [
+        "source-damerow-writing-epistemology",
+        "source-englund-proto-cuneiform",
+        "source-isac-writing-early-mesopotamia",
+        "source-met-origins-writing",
+        "source-wikimedia-proto-cuneiform-barley-tablet-pd"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-early-development",
+          "uruk-urban-expansion"
+        ]
+      }
+    },
+    {
+      "id": "signal-cuneiform-wedges",
+      "v5SceneId": "cuneiform-wedges",
+      "v5OwnerCardId": "cuneiform-overview",
+      "timeSpan": {
+        "start": -3000,
+        "end": -2000,
+        "label": "约公元前3000—前2000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-cuneiform-wedge-and-phonetic-writing-develop"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-cuneiform-wedge-and-phonetic-writing-develop"
+        }
+      ],
+      "eventIds": [
+        "event-cuneiform-wedge-and-phonetic-writing-develop"
+      ],
+      "sourceIds": [
+        "source-british-museum-cuneiform",
+        "source-damerow-writing-epistemology",
+        "source-penn-uses-writing"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-early-development"
+        ]
+      }
+    },
+    {
+      "id": "signal-cuneiform-sound",
+      "v5SceneId": "cuneiform-sound",
+      "v5OwnerCardId": "cuneiform-overview",
+      "timeSpan": {
+        "start": -3000,
+        "end": -2400,
+        "label": "约公元前3000—前2400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-cuneiform-wedge-and-phonetic-writing-develop"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-cuneiform-wedge-and-phonetic-writing-develop"
+        }
+      ],
+      "eventIds": [
+        "event-cuneiform-wedge-and-phonetic-writing-develop"
+      ],
+      "sourceIds": [
+        "source-british-museum-cuneiform",
+        "source-damerow-writing-epistemology",
+        "source-isac-writing-early-mesopotamia",
+        "source-penn-uses-writing"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-early-development"
+        ]
+      }
+    },
+    {
+      "id": "signal-cuneiform-language",
+      "v5SceneId": "cuneiform-language",
+      "v5OwnerCardId": "cuneiform-overview",
+      "timeSpan": {
+        "start": -2800,
+        "end": -2000,
+        "label": "约公元前2800—前2000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-cuneiform-wedge-and-phonetic-writing-develop"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-cuneiform-wedge-and-phonetic-writing-develop"
+        }
+      ],
+      "eventIds": [
+        "event-cuneiform-wedge-and-phonetic-writing-develop"
+      ],
+      "sourceIds": [
+        "source-british-museum-cuneiform",
+        "source-british-museum-gilgamesh-tablet-i",
+        "source-damerow-writing-epistemology",
+        "source-isac-writing-early-mesopotamia",
+        "source-penn-uses-writing"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-early-development"
+        ]
+      }
+    },
+    {
+      "id": "signal-cuneiform-many-languages",
+      "v5SceneId": "cuneiform-many-languages",
+      "v5OwnerCardId": "cuneiform-overview",
+      "timeSpan": {
+        "start": -2600,
+        "end": 75,
+        "label": "约公元前2600—公元75年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-cuneiform-multilingual-transmission"
+        }
+      ],
+      "eventIds": [
+        "event-cuneiform-multilingual-transmission"
+      ],
+      "sourceIds": [
+        "source-bm-ashurbanipal-library",
+        "source-british-museum-cuneiform",
+        "source-met-amarna-letters",
+        "source-met-grammatical-text-object",
+        "source-penn-uses-writing"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "cuneiform-multilingual-transmission"
+      }
+    },
+    {
+      "id": "signal-akkadian-empire-city-states",
+      "v5SceneId": "akkadian-empire-city-states",
+      "v5OwnerCardId": "akkadian-empire-overview",
+      "timeSpan": {
+        "start": -2400,
+        "end": -2300,
+        "label": "约公元前2400—前2300年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-akkadian-imperial-expansion"
+      ],
+      "sourceIds": [
+        "source-frayne-sargonic-inscriptions",
+        "source-met-akkadian-period",
+        "source-natural-earth",
+        "source-westenholz-kingdom-akkad"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "akkadian-imperial-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-akkadian-empire-sargon-memory",
+      "v5SceneId": "akkadian-empire-sargon-memory",
+      "v5OwnerCardId": "akkadian-empire-overview",
+      "timeSpan": {
+        "start": -2350,
+        "end": -600,
+        "label": "约公元前2350—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-akkadian-imperial-expansion"
+      ],
+      "sourceIds": [
+        "source-etcsl-sargon-ur-zababa",
+        "source-fordham-sargon-birth-legend",
+        "source-frayne-sargonic-inscriptions",
+        "source-met-akkadian-period",
+        "source-westenholz-kingdom-akkad",
+        "source-wikimedia-akkadian-ruler-head"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "akkadian-imperial-order",
+          "akkadian-fragmentation"
+        ]
+      }
+    },
+    {
+      "id": "signal-akkadian-empire-conquests",
+      "v5SceneId": "akkadian-empire-conquests",
+      "v5OwnerCardId": "akkadian-empire-overview",
+      "timeSpan": {
+        "start": -2350,
+        "end": -2150,
+        "label": "约公元前2350—前2150年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-imperial-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-akkadian-imperial-expansion"
+      ],
+      "sourceIds": [
+        "source-british-museum-enheduanna",
+        "source-foster-sargonic-administration",
+        "source-frayne-sargonic-inscriptions",
+        "source-met-akkadian-period",
+        "source-westenholz-kingdom-akkad",
+        "source-wikimedia-enheduanna-disk"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "akkadian-imperial-order",
+          "akkadian-fragmentation"
+        ]
+      }
+    },
+    {
+      "id": "signal-akkadian-empire-fragmentation",
+      "v5SceneId": "akkadian-empire-fragmentation",
+      "v5OwnerCardId": "akkadian-empire-overview",
+      "timeSpan": {
+        "start": -2200,
+        "end": -2000,
+        "label": "约公元前2200—前2000年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "akkadian-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-empire-fragments"
+        },
+        {
+          "entityId": "sumer",
+          "basis": "eventParticipant",
+          "referenceId": "event-akkadian-empire-fragments"
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-formation"
+        }
+      ],
+      "eventIds": [
+        "event-akkadian-empire-fragments",
+        "event-ur-iii-formation"
+      ],
+      "sourceIds": [
+        "source-eckart-akkadian-empire",
+        "source-garfinkle-kingdom-ur",
+        "source-met-akkadian-period",
+        "source-met-ur-nammu-foundation-figure-object",
+        "source-oracc-ur-namma-inscriptions",
+        "source-steinkeller-ur-iii-core-periphery",
+        "source-westenholz-kingdom-akkad"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "akkadian-imperial-order",
+          "akkadian-fragmentation",
+          "ur-iii-kingdom-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-gilgamesh-many-tablets",
+      "v5SceneId": "gilgamesh-many-tablets",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -2000,
+        "end": -600,
+        "label": "约公元前2000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-british-museum-gilgamesh-tablet-i",
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-george-gilgamesh-whats-new",
+        "source-oxford-classical-dictionary-gilgamesh",
+        "source-wikimedia-gilgamesh-old-babylonian-fragments"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "cuneiform-multilingual-transmission"
+        ]
+      }
+    },
+    {
+      "id": "signal-gilgamesh-enkidu-enters-uruk",
+      "v5SceneId": "gilgamesh-enkidu-enters-uruk",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-british-museum-gilgamesh-tablet-i",
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-george-civilizing-enkidu",
+        "source-oxford-classical-dictionary-gilgamesh"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "叙事片段只属于V5故事正文；不把故事中的乌鲁克或人物行动自动当作历史EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-gilgamesh-rivals-become-friends",
+      "v5SceneId": "gilgamesh-rivals-become-friends",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "叙事片段只属于V5故事正文；不从情节自动建立EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-gilgamesh-cedar-forest",
+      "v5SceneId": "gilgamesh-cedar-forest",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "叙事片段只属于V5故事正文；不从史诗远征情节自动建立历史Event或EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-gilgamesh-bull-of-heaven",
+      "v5SceneId": "gilgamesh-bull-of-heaven",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-british-museum-gilgamesh-tablet-vi",
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "神话叙事片段只属于V5故事正文；不自动建立历史Event或EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-gilgamesh-enkidu-dies",
+      "v5SceneId": "gilgamesh-enkidu-dies",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh",
+        "source-soas-gilgamesh-old-babylonian-grief"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "叙事片段只属于V5故事正文；不把角色死亡自动迁移为历史Event。"
+      }
+    },
+    {
+      "id": "signal-gilgamesh-worlds-end",
+      "v5SceneId": "gilgamesh-worlds-end",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh",
+        "source-soas-gilgamesh-old-babylonian-x"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "叙事片段只属于V5故事正文；不从情节自动建立EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-gilgamesh-flood-survivor",
+      "v5SceneId": "gilgamesh-flood-survivor",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-british-museum-gilgamesh-flood-tablet",
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-oxford-classical-dictionary-gilgamesh",
+        "source-soas-gilgamesh-xi-flood",
+        "source-soas-gilgamesh-xi-opening"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "神话叙事片段只属于V5故事正文；不自动建立历史Event或EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-gilgamesh-immortality-lost",
+      "v5SceneId": "gilgamesh-immortality-lost",
+      "v5OwnerCardId": "gilgamesh-mortality",
+      "timeSpan": {
+        "start": -1000,
+        "end": -600,
+        "label": "约公元前1000—前600年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "cuneiform",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        },
+        {
+          "entityId": "uruk",
+          "basis": "eventParticipant",
+          "referenceId": "event-gilgamesh-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-gilgamesh-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-etcsl-gilgamesh-stories",
+        "source-george-babylonian-gilgamesh-epic",
+        "source-met-gilgamesh-overview",
+        "source-oxford-classical-dictionary-gilgamesh"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "叙事片段只属于V5故事正文；不从情节自动建立EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-ur-iii-rises-after-akkad",
+      "v5SceneId": "ur-iii-rises-after-akkad",
+      "v5OwnerCardId": "ur-iii-reordered-city-world",
+      "timeSpan": {
+        "start": -2112,
+        "end": -2095,
+        "label": "约公元前2112—前2095年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-formation"
+        }
+      ],
+      "eventIds": [
+        "event-ur-iii-formation"
+      ],
+      "sourceIds": [
+        "source-garfinkle-kingdom-ur",
+        "source-natural-earth",
+        "source-oracc-ur-namma-inscriptions",
+        "source-steinkeller-ur-iii-core-periphery"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "ur-iii-kingdom-order"
+      }
+    },
+    {
+      "id": "signal-ur-iii-building-order",
+      "v5SceneId": "ur-iii-building-order",
+      "v5OwnerCardId": "ur-iii-reordered-city-world",
+      "timeSpan": {
+        "start": -2112,
+        "end": -2095,
+        "label": "约公元前2112—前2095年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-formation"
+        }
+      ],
+      "eventIds": [
+        "event-ur-iii-formation"
+      ],
+      "sourceIds": [
+        "source-garfinkle-kingdom-ur",
+        "source-met-ur-nammu-foundation-figure-object",
+        "source-met-ur-ziggurat",
+        "source-oracc-ur-namma-inscriptions",
+        "source-steinkeller-ur-iii-core-periphery"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "ur-iii-kingdom-order"
+      }
+    },
+    {
+      "id": "signal-ur-iii-tablet-administration",
+      "v5SceneId": "ur-iii-tablet-administration",
+      "v5OwnerCardId": "ur-iii-reordered-city-world",
+      "timeSpan": {
+        "start": -2112,
+        "end": -2004,
+        "label": "约公元前2112—前2004年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-formation"
+        }
+      ],
+      "eventIds": [
+        "event-ur-iii-formation",
+        "event-ur-iii-fragmentation"
+      ],
+      "sourceIds": [
+        "source-british-museum-ur-iii-barley-rations",
+        "source-british-museum-ur-iii-drehem-sheep",
+        "source-british-museum-ur-iii-fields-yields",
+        "source-cambridge-ur-iii-old-babylonian-transition",
+        "source-garfinkle-kingdom-ur",
+        "source-hilgert-drehem-administrative-documents",
+        "source-oracc-ur-namma-inscriptions",
+        "source-steinkeller-ur-iii-core-periphery",
+        "source-wikimedia-ur-iii-administrative-tablet"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ur-iii-kingdom-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-ur-iii-fragmentation",
+      "v5SceneId": "ur-iii-fragmentation",
+      "v5OwnerCardId": "ur-iii-reordered-city-world",
+      "timeSpan": {
+        "start": -2028,
+        "end": -2004,
+        "label": "约公元前2028—前2004年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ur-iii-fragmentation"
+        }
+      ],
+      "eventIds": [
+        "event-ur-iii-fragmentation"
+      ],
+      "sourceIds": [
+        "source-cambridge-ur-iii-old-babylonian-transition",
+        "source-garfinkle-kingdom-ur",
+        "source-wikimedia-lament-for-ur-penn"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ur-iii-kingdom-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-old-babylonian-after-ur-iii",
+      "v5SceneId": "old-babylonian-after-ur-iii",
+      "v5OwnerCardId": "old-babylonian-rise-and-fragmentation",
+      "timeSpan": {
+        "start": -2004,
+        "end": -1894,
+        "label": "约公元前2004—前1894年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        }
+      ],
+      "eventIds": [
+        "event-old-babylonian-city-kingdoms-emerge"
+      ],
+      "sourceIds": [
+        "source-cambridge-ur-iii-old-babylonian-transition",
+        "source-met-isin-larsa-old-babylonian",
+        "source-natural-earth",
+        "source-podany-hammurabi-babylon"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ur-iii-kingdom-order",
+          "old-babylonian-city-kingdom-emergence"
+        ]
+      }
+    },
+    {
+      "id": "signal-old-babylonian-small-river-kingdom",
+      "v5SceneId": "old-babylonian-small-river-kingdom",
+      "v5OwnerCardId": "old-babylonian-rise-and-fragmentation",
+      "timeSpan": {
+        "start": -1894,
+        "end": -1792,
+        "label": "约公元前1894—前1792年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-city-kingdoms-emerge"
+        }
+      ],
+      "eventIds": [
+        "event-old-babylonian-city-kingdoms-emerge"
+      ],
+      "sourceIds": [
+        "source-cambridge-ur-iii-old-babylonian-transition",
+        "source-met-isin-larsa-old-babylonian",
+        "source-natural-earth",
+        "source-podany-hammurabi-babylon"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "old-babylonian-city-kingdom-emergence"
+        ]
+      }
+    },
+    {
+      "id": "signal-old-babylonian-hammurabi-conquests",
+      "v5SceneId": "old-babylonian-hammurabi-conquests",
+      "v5OwnerCardId": "old-babylonian-rise-and-fragmentation",
+      "timeSpan": {
+        "start": -1792,
+        "end": -1750,
+        "label": "公元前1792—前1750年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-conquests"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-conquests"
+      ],
+      "sourceIds": [
+        "source-cdli-hammurabi-year-names",
+        "source-natural-earth",
+        "source-podany-hammurabi-babylon"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-hammurabi-conquests"
+        ]
+      }
+    },
+    {
+      "id": "signal-old-babylonian-orders-and-institutions",
+      "v5SceneId": "old-babylonian-orders-and-institutions",
+      "v5OwnerCardId": "old-babylonian-rise-and-fragmentation",
+      "timeSpan": {
+        "start": -1763,
+        "end": -1750,
+        "label": "约公元前1763—前1750年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hammurabi-code",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-conquests"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-conquests",
+        "event-hammurabi-code-stele"
+      ],
+      "sourceIds": [
+        "source-cdli-hammurabi-year-names",
+        "source-cdli-law-collections",
+        "source-ehammurabi-laws",
+        "source-goddeeris-old-babylonian-economy",
+        "source-louvre-hammurabi-code",
+        "source-podany-hammurabi-babylon",
+        "source-wikimedia-hammurabi-letter"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "hammurabi-code-stele-created",
+          "old-babylonian-city-kingdom-emergence"
+        ]
+      }
+    },
+    {
+      "id": "signal-old-babylonian-fragmentation",
+      "v5SceneId": "old-babylonian-fragmentation",
+      "v5OwnerCardId": "old-babylonian-rise-and-fragmentation",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1595,
+        "label": "公元前1750—前1595年"
+      },
+      "entitySignals": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-old-babylonian-fragmentation"
+        }
+      ],
+      "eventIds": [
+        "event-old-babylonian-fragmentation"
+      ],
+      "sourceIds": [
+        "source-cdli-samsuiluna-year-names",
+        "source-met-isin-larsa-old-babylonian",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "old-babylonian-city-kingdom-emergence"
+        ]
+      }
+    },
+    {
+      "id": "signal-hammurabi-code-divine-justice",
+      "v5SceneId": "hammurabi-code-divine-justice",
+      "v5OwnerCardId": "hammurabi-code-justice",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1750,
+        "label": "约公元前1750年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hammurabi-code",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-code-stele"
+      ],
+      "sourceIds": [
+        "source-cdli-law-collections",
+        "source-ehammurabi-laws",
+        "source-louvre-hammurabi-code",
+        "source-wikimedia-hammurabi-full-stele"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hammurabi-code-stele-created"
+      }
+    },
+    {
+      "id": "signal-hammurabi-code-final-judge",
+      "v5SceneId": "hammurabi-code-final-judge",
+      "v5OwnerCardId": "hammurabi-code-justice",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1750,
+        "label": "约公元前1750年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hammurabi-code",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-code-stele"
+      ],
+      "sourceIds": [
+        "source-cdli-law-collections",
+        "source-ehammurabi-laws",
+        "source-louvre-hammurabi-code",
+        "source-wikimedia-hammurabi-stele"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hammurabi-code-stele-created"
+      }
+    },
+    {
+      "id": "signal-hammurabi-code-equal-retaliation",
+      "v5SceneId": "hammurabi-code-equal-retaliation",
+      "v5OwnerCardId": "hammurabi-code-justice",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1750,
+        "label": "约公元前1750年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hammurabi-code",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-code-stele"
+      ],
+      "sourceIds": [
+        "source-cdli-law-collections",
+        "source-ehammurabi-laws",
+        "source-isac-law-society",
+        "source-louvre-hammurabi-code"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hammurabi-code-stele-created"
+      }
+    },
+    {
+      "id": "signal-hammurabi-code-status-inequality",
+      "v5SceneId": "hammurabi-code-status-inequality",
+      "v5OwnerCardId": "hammurabi-code-justice",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1750,
+        "label": "约公元前1750年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hammurabi-code",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-code-stele"
+      ],
+      "sourceIds": [
+        "source-cdli-law-collections",
+        "source-ehammurabi-laws",
+        "source-isac-law-society",
+        "source-louvre-hammurabi-code"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hammurabi-code-stele-created"
+      }
+    },
+    {
+      "id": "signal-hammurabi-code-property-welfare",
+      "v5SceneId": "hammurabi-code-property-welfare",
+      "v5OwnerCardId": "hammurabi-code-justice",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1750,
+        "label": "约公元前1750年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hammurabi-code",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-code-stele"
+      ],
+      "sourceIds": [
+        "source-cdli-law-collections",
+        "source-ehammurabi-laws",
+        "source-isac-law-society",
+        "source-louvre-hammurabi-code"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hammurabi-code-stele-created"
+      }
+    },
+    {
+      "id": "signal-hammurabi-code-transmission-discovery",
+      "v5SceneId": "hammurabi-code-transmission-discovery",
+      "v5OwnerCardId": "hammurabi-code-justice",
+      "timeSpan": {
+        "start": -1750,
+        "end": 1902,
+        "label": "约公元前1750—公元1902年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hammurabi-code",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hammurabi-code-stele"
+        }
+      ],
+      "eventIds": [
+        "event-hammurabi-code-stele"
+      ],
+      "sourceIds": [
+        "source-cambridge-hammurabi-copies",
+        "source-cdli-law-collections",
+        "source-ehammurabi-laws",
+        "source-louvre-hammurabi-code",
+        "source-wikimedia-hammurabi-discovery"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "后世传抄、出土与现代发现不属于公元前1750年的石碑创建Phase；关系身份留在RelationCandidate。"
+      }
+    },
+    {
+      "id": "signal-tower-of-babel-builders-stay-together",
+      "v5SceneId": "tower-of-babel-builders-stay-together",
+      "v5OwnerCardId": "tower-of-babel-story-and-etemenanki",
+      "timeSpan": {
+        "start": -1000,
+        "end": -400,
+        "label": "约公元前1000—前400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "tower-of-babel-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-tower-babel-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-tower-babel-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-george-tower-of-babel",
+        "source-sefaria-genesis-11",
+        "source-wikimedia-bruegel-babel"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "《创世记》情节只属于V5故事正文；不自动建立历史Event或EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-tower-of-babel-languages-stop-work",
+      "v5SceneId": "tower-of-babel-languages-stop-work",
+      "v5OwnerCardId": "tower-of-babel-story-and-etemenanki",
+      "timeSpan": {
+        "start": -1000,
+        "end": -400,
+        "label": "约公元前1000—前400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "tower-of-babel-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-tower-babel-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-tower-babel-textual-tradition-forms"
+      ],
+      "sourceIds": [
+        "source-george-tower-of-babel",
+        "source-sefaria-genesis-11",
+        "source-wikimedia-dore-confusion"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "《创世记》情节只属于V5故事正文；不自动建立历史Event或EntityPhase。"
+      }
+    },
+    {
+      "id": "signal-tower-of-babel-real-etemenanki",
+      "v5SceneId": "tower-of-babel-real-etemenanki",
+      "v5OwnerCardId": "tower-of-babel-story-and-etemenanki",
+      "timeSpan": {
+        "start": -689,
+        "end": -562,
+        "label": "约公元前689—前562年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mesopotamian-temple",
+          "basis": "eventParticipant",
+          "referenceId": "event-etemenanki-rebuilding"
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-etemenanki-rebuilding"
+        }
+      ],
+      "eventIds": [
+        "event-etemenanki-rebuilding"
+      ],
+      "sourceIds": [
+        "source-george-tower-of-babel",
+        "source-met-etemenanki-cylinder",
+        "source-oracc-nebuchadnezzar-etemenanki",
+        "source-wikimedia-etemenanki-reconstruction"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-etemenanki-rebuilding"
+        ]
+      }
+    },
+    {
+      "id": "signal-tower-of-babel-evidence-and-reconstruction",
+      "v5SceneId": "tower-of-babel-evidence-and-reconstruction",
+      "v5OwnerCardId": "tower-of-babel-story-and-etemenanki",
+      "timeSpan": {
+        "start": -689,
+        "end": -331,
+        "label": "约公元前689—前331年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mesopotamian-temple",
+          "basis": "eventParticipant",
+          "referenceId": "event-etemenanki-rebuilding"
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-etemenanki-rebuilding"
+        }
+      ],
+      "eventIds": [
+        "event-etemenanki-rebuilding"
+      ],
+      "sourceIds": [
+        "source-george-tower-of-babel",
+        "source-met-etemenanki-cylinder",
+        "source-oracc-nebuchadnezzar-etemenanki",
+        "source-wikimedia-esagil-tablet"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-etemenanki-rebuilding"
+        ]
+      }
+    },
+    {
+      "id": "signal-tower-of-babel-building-becomes-memory",
+      "v5SceneId": "tower-of-babel-building-becomes-memory",
+      "v5OwnerCardId": "tower-of-babel-story-and-etemenanki",
+      "timeSpan": {
+        "start": -700,
+        "end": -400,
+        "label": "约公元前700—前400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "mesopotamian-temple",
+          "basis": "eventParticipant",
+          "referenceId": "event-etemenanki-rebuilding"
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "basis": "eventParticipant",
+          "referenceId": "event-tower-babel-textual-tradition-forms"
+        }
+      ],
+      "eventIds": [
+        "event-tower-babel-textual-tradition-forms",
+        "event-etemenanki-rebuilding"
+      ],
+      "sourceIds": [
+        "source-george-tower-of-babel",
+        "source-met-etemenanki-cylinder",
+        "source-oracc-nebuchadnezzar-etemenanki",
+        "source-sefaria-genesis-11",
+        "source-wikimedia-etemenanki-ruins"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "2026-09-15用户批准独立V6内容精简；原叙事及来源留在迁移审计，不为旧版映射重建已撤下的阶段或事件。"
+      }
+    }
+  ],
+  "audit": [
+    {
+      "scenePhaseSignalId": "signal-sumer-water-network",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "sumer",
+      "entityEvidence": [
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-southern-mesopotamia-water-land-management"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-southern-mesopotamia-water-land-management",
+              "timeSpan": {
+                "start": -3500,
+                "end": -2000,
+                "label": "约公元前3500—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -2000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-southern-mesopotamia-water-land-management"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-southern-mesopotamia-water-land-management",
+              "timeSpan": {
+                "start": -3500,
+                "end": -2000,
+                "label": "约公元前3500—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -2000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-land-measurement",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "sumer",
+      "entityEvidence": [
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-southern-mesopotamia-water-land-management"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-southern-mesopotamia-water-land-management",
+              "timeSpan": {
+                "start": -3500,
+                "end": -2000,
+                "label": "约公元前3500—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -2700,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-southern-mesopotamia-water-land-management"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-southern-mesopotamia-water-land-management",
+              "timeSpan": {
+                "start": -3500,
+                "end": -2000,
+                "label": "约公元前3500—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -2700,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-clay-records",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "sumer",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -3000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-sixty-and-moon",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "sumer",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-mesopotamian-number-calendar-practices-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mesopotamian-number-calendar-practices-develop",
+              "timeSpan": {
+                "start": -3300,
+                "end": -2000,
+                "label": "约公元前3300—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -2000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-mesopotamian-number-calendar-practices-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mesopotamian-number-calendar-practices-develop",
+              "timeSpan": {
+                "start": -3300,
+                "end": -2000,
+                "label": "约公元前3300—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -2000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-methods-outlast-dynasties",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "sumer",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-formation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-formation",
+              "timeSpan": {
+                "start": -2112,
+                "end": -2095,
+                "label": "乌尔那木统治时期，约公元前2112—前2095年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2112,
+            "end": -2095,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-uruk-gathering",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "uruk",
+      "entityEvidence": [
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -3100,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3300,
+            "end": -3100,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-uruk-feeding",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "uruk",
+      "entityEvidence": [
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-uruk-public-center",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "uruk",
+      "entityEvidence": [
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-sumer-uruk-strangers",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "uruk",
+      "entityEvidence": [
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamia-many-cities-between-rivers",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamia-region",
+      "entityEvidence": [
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamia-akkad-gathers-cities",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamia-region",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamia-ur-tablets-reorder-cities",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamia-region",
+      "entityEvidence": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-formation",
+            "event-ur-iii-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-formation",
+              "timeSpan": {
+                "start": -2112,
+                "end": -2095,
+                "label": "乌尔那木统治时期，约公元前2112—前2095年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-ur-iii-fragmentation",
+              "timeSpan": {
+                "start": -2028,
+                "end": -2004,
+                "label": "伊比辛统治后期至乌尔陷落，约公元前2028—前2004年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamia-babylon-becomes-center",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamia-region",
+      "entityEvidence": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge",
+            "event-hammurabi-conquests",
+            "event-old-babylonian-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-hammurabi-conquests",
+              "timeSpan": {
+                "start": -1764,
+                "end": -1755,
+                "label": "汉谟拉比统治后期，约公元前1764—前1755年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-old-babylonian-fragmentation",
+              "timeSpan": {
+                "start": -1749,
+                "end": -1595,
+                "label": "约公元前1749—前1595年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2004,
+            "end": -1764,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamia-babylon-writes-assyria-grows",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamia-region",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-babylonian-scribal-urban-continuity"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylonian-scribal-urban-continuity",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1000,
+                "label": "约公元前1595—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1595,
+            "end": -1200,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mesopotamia-region",
+          "eventIds": [
+            "event-babylonian-scribal-urban-continuity"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylonian-scribal-urban-continuity",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1000,
+                "label": "约公元前1595—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1595,
+            "end": -1200,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-babylonian-scribal-urban-continuity"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylonian-scribal-urban-continuity",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1000,
+                "label": "约公元前1595—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1595,
+            "end": -1200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamia-cities-do-not-go-dark",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamia-region",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-babylonian-scribal-urban-continuity"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylonian-scribal-urban-continuity",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1000,
+                "label": "约公元前1595—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mesopotamia-region",
+          "eventIds": [
+            "event-babylonian-scribal-urban-continuity"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylonian-scribal-urban-continuity",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1000,
+                "label": "约公元前1595—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-babylonian-scribal-urban-continuity"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-babylonian-scribal-urban-continuity",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1000,
+                "label": "约公元前1595—前1000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamian-temple-eridu",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamian-temple",
+      "entityEvidence": [
+        {
+          "entityId": "mesopotamian-temple",
+          "eventIds": [
+            "event-early-mesopotamian-temple-centers-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-early-mesopotamian-temple-centers-develop",
+              "timeSpan": {
+                "start": -5000,
+                "end": -3000,
+                "label": "约公元前5000—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -5000,
+            "end": -4000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-early-mesopotamian-temple-centers-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-early-mesopotamian-temple-centers-develop",
+              "timeSpan": {
+                "start": -5000,
+                "end": -3000,
+                "label": "约公元前5000—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -5000,
+            "end": -4000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamian-temple-uruk",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamian-temple",
+      "entityEvidence": [
+        {
+          "entityId": "mesopotamian-temple",
+          "eventIds": [
+            "event-early-mesopotamian-temple-centers-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-early-mesopotamian-temple-centers-develop",
+              "timeSpan": {
+                "start": -5000,
+                "end": -3000,
+                "label": "约公元前5000—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3500,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-early-mesopotamian-temple-centers-develop",
+            "event-uruk-urban-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-early-mesopotamian-temple-centers-develop",
+              "timeSpan": {
+                "start": -5000,
+                "end": -3000,
+                "label": "约公元前5000—前3000年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-uruk-urban-expansion",
+              "timeSpan": {
+                "start": -3500,
+                "end": -3000,
+                "label": "约公元前3500—前3000年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamian-temple-ur",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamian-temple",
+      "entityEvidence": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-formation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-formation",
+              "timeSpan": {
+                "start": -2112,
+                "end": -2095,
+                "label": "乌尔那木统治时期，约公元前2112—前2095年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2112,
+            "end": -2095,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-mesopotamian-temple-old-babylonian",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "mesopotamian-temple",
+      "entityEvidence": [
+        {
+          "entityId": "mesopotamian-temple",
+          "eventIds": [
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -562,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2004,
+            "end": -1764,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "eventIds": [
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -562,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2004,
+            "end": -1764,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-cuneiform-quantities",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "cuneiform",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3350,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3350,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3350,
+            "end": -3000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-cuneiform-before-sentences",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "cuneiform",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3350,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3350,
+            "end": -3000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-proto-cuneiform-accounting-emerges"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-proto-cuneiform-accounting-emerges",
+              "timeSpan": {
+                "start": -3350,
+                "end": -3000,
+                "label": "约公元前3350—前3000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3350,
+            "end": -3000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-cuneiform-wedges",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "cuneiform",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-cuneiform-wedge-and-phonetic-writing-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop",
+              "timeSpan": {
+                "start": -3000,
+                "end": -2000,
+                "label": "约公元前3000—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3000,
+            "end": -2000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-cuneiform-wedge-and-phonetic-writing-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop",
+              "timeSpan": {
+                "start": -3000,
+                "end": -2000,
+                "label": "约公元前3000—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3000,
+            "end": -2000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-cuneiform-sound",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "cuneiform",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-cuneiform-wedge-and-phonetic-writing-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop",
+              "timeSpan": {
+                "start": -3000,
+                "end": -2000,
+                "label": "约公元前3000—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3000,
+            "end": -2400,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-cuneiform-wedge-and-phonetic-writing-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop",
+              "timeSpan": {
+                "start": -3000,
+                "end": -2000,
+                "label": "约公元前3000—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -3000,
+            "end": -2400,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-cuneiform-language",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "cuneiform",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-cuneiform-wedge-and-phonetic-writing-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop",
+              "timeSpan": {
+                "start": -3000,
+                "end": -2000,
+                "label": "约公元前3000—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2800,
+            "end": -2000,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-cuneiform-wedge-and-phonetic-writing-develop"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cuneiform-wedge-and-phonetic-writing-develop",
+              "timeSpan": {
+                "start": -3000,
+                "end": -2000,
+                "label": "约公元前3000—前2000年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2800,
+            "end": -2000,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-cuneiform-many-languages",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "cuneiform",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-cuneiform-multilingual-transmission"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-cuneiform-multilingual-transmission",
+              "timeSpan": {
+                "start": -2600,
+                "end": 75,
+                "label": "约公元前2600—公元75年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2600,
+            "end": 75,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-akkadian-empire-city-states",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "akkadian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2300,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2300,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-akkadian-empire-sargon-memory",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "akkadian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-akkadian-empire-conquests",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "akkadian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-akkadian-imperial-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-imperial-expansion",
+              "timeSpan": {
+                "start": -2350,
+                "end": -2150,
+                "label": "约公元前2350—前2150年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2350,
+            "end": -2150,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-akkadian-empire-fragmentation",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "akkadian-empire",
+      "entityEvidence": [
+        {
+          "entityId": "akkadian-empire",
+          "eventIds": [
+            "event-akkadian-empire-fragments"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-empire-fragments",
+              "timeSpan": {
+                "start": -2200,
+                "end": -2100,
+                "label": "约公元前2200—前2100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2200,
+            "end": -2100,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "sumer",
+          "eventIds": [
+            "event-akkadian-empire-fragments"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-akkadian-empire-fragments",
+              "timeSpan": {
+                "start": -2200,
+                "end": -2100,
+                "label": "约公元前2200—前2100年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2200,
+            "end": -2100,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-formation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-formation",
+              "timeSpan": {
+                "start": -2112,
+                "end": -2095,
+                "label": "乌尔那木统治时期，约公元前2112—前2095年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2112,
+            "end": -2095,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-many-tablets",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-enkidu-enters-uruk",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-rivals-become-friends",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-cedar-forest",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-bull-of-heaven",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-enkidu-dies",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-worlds-end",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-flood-survivor",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-gilgamesh-immortality-lost",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "epic-of-gilgamesh",
+      "entityEvidence": [
+        {
+          "entityId": "cuneiform",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "epic-of-gilgamesh",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "uruk",
+          "eventIds": [
+            "event-gilgamesh-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-gilgamesh-textual-tradition-forms",
+              "timeSpan": {
+                "start": -2000,
+                "end": -600,
+                "label": "约公元前2000—前600年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -600,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ur-iii-rises-after-akkad",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "ur-iii-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-formation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-formation",
+              "timeSpan": {
+                "start": -2112,
+                "end": -2095,
+                "label": "乌尔那木统治时期，约公元前2112—前2095年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2112,
+            "end": -2095,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ur-iii-building-order",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "ur-iii-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-formation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-formation",
+              "timeSpan": {
+                "start": -2112,
+                "end": -2095,
+                "label": "乌尔那木统治时期，约公元前2112—前2095年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2112,
+            "end": -2095,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ur-iii-tablet-administration",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "ur-iii-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-formation",
+            "event-ur-iii-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-formation",
+              "timeSpan": {
+                "start": -2112,
+                "end": -2095,
+                "label": "乌尔那木统治时期，约公元前2112—前2095年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-ur-iii-fragmentation",
+              "timeSpan": {
+                "start": -2028,
+                "end": -2004,
+                "label": "伊比辛统治后期至乌尔陷落，约公元前2028—前2004年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ur-iii-fragmentation",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "ur-iii-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-ur-iii-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ur-iii-fragmentation",
+              "timeSpan": {
+                "start": -2028,
+                "end": -2004,
+                "label": "伊比辛统治后期至乌尔陷落，约公元前2028—前2004年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2028,
+            "end": -2004,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-old-babylonian-after-ur-iii",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "old-babylonian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2004,
+            "end": -1894,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -2004,
+            "end": -1894,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-old-babylonian-small-river-kingdom",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "old-babylonian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1894,
+            "end": -1792,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ur-iii-kingdom",
+          "eventIds": [
+            "event-old-babylonian-city-kingdoms-emerge"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-city-kingdoms-emerge",
+              "timeSpan": {
+                "start": -2004,
+                "end": -1764,
+                "label": "约公元前2004—前1764年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1894,
+            "end": -1792,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-old-babylonian-hammurabi-conquests",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "old-babylonian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-conquests"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-conquests",
+              "timeSpan": {
+                "start": -1764,
+                "end": -1755,
+                "label": "汉谟拉比统治后期，约公元前1764—前1755年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1764,
+            "end": -1755,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-old-babylonian-orders-and-institutions",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "old-babylonian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "hammurabi-code",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-conquests",
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-conquests",
+              "timeSpan": {
+                "start": -1764,
+                "end": -1755,
+                "label": "汉谟拉比统治后期，约公元前1764—前1755年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-old-babylonian-fragmentation",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "old-babylonian-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-old-babylonian-fragmentation"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-old-babylonian-fragmentation",
+              "timeSpan": {
+                "start": -1749,
+                "end": -1595,
+                "label": "约公元前1749—前1595年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1749,
+            "end": -1595,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-hammurabi-code-divine-justice",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "hammurabi-code",
+      "entityEvidence": [
+        {
+          "entityId": "hammurabi-code",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hammurabi-code-final-judge",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "hammurabi-code",
+      "entityEvidence": [
+        {
+          "entityId": "hammurabi-code",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hammurabi-code-equal-retaliation",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "hammurabi-code",
+      "entityEvidence": [
+        {
+          "entityId": "hammurabi-code",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hammurabi-code-status-inequality",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "hammurabi-code",
+      "entityEvidence": [
+        {
+          "entityId": "hammurabi-code",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hammurabi-code-property-welfare",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "hammurabi-code",
+      "entityEvidence": [
+        {
+          "entityId": "hammurabi-code",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hammurabi-code-transmission-discovery",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "hammurabi-code",
+      "entityEvidence": [
+        {
+          "entityId": "hammurabi-code",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hammurabi-code-stele"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hammurabi-code-stele",
+              "timeSpan": {
+                "start": -1750,
+                "end": -1750,
+                "label": "约公元前1750年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1750,
+            "end": -1750,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-tower-of-babel-builders-stay-together",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "tower-of-babel-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "tower-of-babel-tradition",
+          "eventIds": [
+            "event-tower-babel-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-tower-babel-textual-tradition-forms",
+              "timeSpan": {
+                "start": -1000,
+                "end": -400,
+                "label": "约公元前1000—前400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -400,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-tower-of-babel-languages-stop-work",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "tower-of-babel-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "tower-of-babel-tradition",
+          "eventIds": [
+            "event-tower-babel-textual-tradition-forms"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-tower-babel-textual-tradition-forms",
+              "timeSpan": {
+                "start": -1000,
+                "end": -400,
+                "label": "约公元前1000—前400年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1000,
+            "end": -400,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "undatedNarrative"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-tower-of-babel-real-etemenanki",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "tower-of-babel-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "mesopotamian-temple",
+          "eventIds": [
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -562,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "eventIds": [
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -562,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-tower-of-babel-evidence-and-reconstruction",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "tower-of-babel-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "mesopotamian-temple",
+          "eventIds": [
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -562,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "eventIds": [
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -562,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-tower-of-babel-building-becomes-memory",
+      "sourceModule": "data/mesopotamia.ts",
+      "cardPrimaryEntityId": "tower-of-babel-tradition",
+      "entityEvidence": [
+        {
+          "entityId": "mesopotamian-temple",
+          "eventIds": [
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -689,
+            "end": -562,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "tower-of-babel-tradition",
+          "eventIds": [
+            "event-tower-babel-textual-tradition-forms",
+            "event-etemenanki-rebuilding"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-tower-babel-textual-tradition-forms",
+              "timeSpan": {
+                "start": -1000,
+                "end": -400,
+                "label": "约公元前1000—前400年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-etemenanki-rebuilding",
+              "timeSpan": {
+                "start": -689,
+                "end": -562,
+                "label": "约公元前689—前562年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    }
+  ]
+}

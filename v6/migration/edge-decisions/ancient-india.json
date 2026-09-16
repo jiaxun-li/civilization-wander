@@ -1,0 +1,32 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-india.ts",
+  "decisions": [
+    {
+      "structuralEdgeId": "edge-mohenjo-daro-indus-civilization",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-mohenjo-daro-indus-civilization"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-indus-akkadian-exchange",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "representedByEvent",
+        "eventId": "event-indus-mesopotamia-exchange"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

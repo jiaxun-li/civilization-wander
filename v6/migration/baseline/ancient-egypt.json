@@ -1,0 +1,1692 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "sourceModule": "data/ancient-egypt.ts",
+  "counts": {
+    "entities": 8,
+    "events": 18,
+    "scenes": 53,
+    "structuralEdges": 2
+  },
+  "entities": [
+    {
+      "id": "ancient-egypt-civilization",
+      "type": "culturalTradition",
+      "name": "古埃及文明",
+      "alternativeNames": [
+        "Ancient Egyptian civilization"
+      ],
+      "timeSpan": {
+        "start": -3100,
+        "end": -30,
+        "label": "约公元前3100—前30年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-ucl-narmer",
+        "source-met-telling-time-egypt",
+        "source-met-egypt-1000-1"
+      ]
+    },
+    {
+      "id": "egypt-old-kingdom",
+      "type": "polity",
+      "name": "古埃及古王国",
+      "alternativeNames": [
+        "Old Kingdom of Egypt"
+      ],
+      "timeSpan": {
+        "start": -2686,
+        "end": -2181,
+        "label": "约公元前2686—前2181年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-old-kingdom",
+        "source-muller-old-kingdom-end"
+      ]
+    },
+    {
+      "id": "egypt-middle-kingdom",
+      "type": "polity",
+      "name": "古埃及中王国",
+      "alternativeNames": [
+        "Middle Kingdom of Egypt"
+      ],
+      "timeSpan": {
+        "start": -2055,
+        "end": -1650,
+        "label": "约公元前2055—前1650年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-ucl-middle-kingdom",
+        "source-met-middle-kingdom",
+        "source-uee-second-intermediate"
+      ]
+    },
+    {
+      "id": "egypt-new-kingdom",
+      "type": "polity",
+      "name": "古埃及新王国",
+      "alternativeNames": [
+        "New Kingdom of Egypt"
+      ],
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-new-kingdom",
+        "source-hayes-scepter-ii"
+      ]
+    },
+    {
+      "id": "egypt-pyramids",
+      "type": "wonder",
+      "name": "古埃及金字塔",
+      "alternativeNames": [
+        "Egyptian pyramids"
+      ],
+      "timeSpan": {
+        "start": -2700,
+        "end": -2200,
+        "label": "约公元前27—前23世纪",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-old-kingdom",
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview"
+      ]
+    },
+    {
+      "id": "egyptian-religion",
+      "type": "religionAndMyth",
+      "name": "古埃及宗教",
+      "alternativeNames": [
+        "Ancient Egyptian religion"
+      ],
+      "timeSpan": {
+        "start": -2686,
+        "end": -1069,
+        "label": "古王国至新王国",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-ucl-burial-customs",
+        "source-ucl-religious-texts",
+        "source-bm-afterlife-journey"
+      ]
+    },
+    {
+      "id": "egyptian-art",
+      "type": "artStyle",
+      "name": "古埃及艺术",
+      "alternativeNames": [
+        "Ancient Egyptian art"
+      ],
+      "timeSpan": {
+        "start": -2700,
+        "end": -1100,
+        "label": "古王国至新王国",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-ancient-egypt-art",
+        "source-arnold-pyramids",
+        "source-met-akhenaten-city"
+      ]
+    },
+    {
+      "id": "egyptian-hieroglyphs",
+      "type": "writingSystem",
+      "name": "古埃及象形文字",
+      "alternativeNames": [
+        "Egyptian hieroglyphs"
+      ],
+      "timeSpan": {
+        "start": -3100,
+        "end": 400,
+        "label": "约公元前3100年至公元4世纪",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-ucl-hieroglyphic-system",
+        "source-ucl-writing-development",
+        "source-ucl-coptic"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-upper-lower-egypt-unified",
+      "kind": "historicalProcess",
+      "title": "上下埃及王权逐步统一",
+      "timeSpan": {
+        "start": -3300,
+        "end": -3050,
+        "label": "约公元前3300—前3050年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "ancient-egypt-civilization"
+      ],
+      "sourceIds": [
+        "source-ucl-narmer"
+      ]
+    },
+    {
+      "id": "event-nile-annual-cycle-organizes-life",
+      "kind": "historicalProcess",
+      "title": "尼罗河年周期持续组织生产与交通",
+      "timeSpan": {
+        "start": -3100,
+        "end": -30,
+        "label": "约公元前3100—前30年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "ancient-egypt-civilization"
+      ],
+      "sourceIds": [
+        "source-met-telling-time-egypt",
+        "source-met-life-along-nile"
+      ]
+    },
+    {
+      "id": "event-sinuhe-story-composed-and-copied",
+      "kind": "textualTradition",
+      "title": "《辛奴赫的故事》形成并持续抄写",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1100,
+        "label": "约公元前2000—前1100年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-middle-kingdom"
+      ],
+      "sourceIds": [
+        "source-ucl-sinuhe",
+        "source-bm-sinuhe-literature",
+        "source-bm-sinuhe-ostracon"
+      ]
+    },
+    {
+      "id": "event-hatshepsut-rules-as-pharaoh",
+      "kind": "historicalEvent",
+      "title": "哈特谢普苏特以法老身份统治",
+      "timeSpan": {
+        "start": -1479,
+        "end": -1458,
+        "label": "约公元前1479—前1458年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-new-kingdom",
+        "egyptian-art"
+      ],
+      "sourceIds": [
+        "source-met-hatshepsut",
+        "source-met-hatshepsut-publication"
+      ]
+    },
+    {
+      "id": "event-old-kingdom-pyramid-complexes-develop",
+      "kind": "historicalProcess",
+      "title": "古王国金字塔建筑群持续发展",
+      "timeSpan": {
+        "start": -2700,
+        "end": -2300,
+        "label": "约公元前2700—前2300年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-old-kingdom",
+        "egypt-pyramids"
+      ],
+      "sourceIds": [
+        "source-ucl-pyramid-shape",
+        "source-ucl-pyramids-overview",
+        "source-met-old-kingdom"
+      ]
+    },
+    {
+      "id": "event-egyptian-funerary-texts-and-rituals-expand",
+      "kind": "textualTradition",
+      "title": "丧葬文字与死后仪式扩展",
+      "timeSpan": {
+        "start": -2400,
+        "end": -1069,
+        "label": "约公元前2400—前1069年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egyptian-religion"
+      ],
+      "sourceIds": [
+        "source-ucl-religious-texts",
+        "source-ucl-coffin-texts",
+        "source-bm-book-of-dead"
+      ]
+    },
+    {
+      "id": "event-egyptian-formal-art-conventions-persist",
+      "kind": "historicalProcess",
+      "title": "古埃及正式艺术规则延续并被调整",
+      "timeSpan": {
+        "start": -2700,
+        "end": -1100,
+        "label": "约公元前2700—前1100年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egyptian-art"
+      ],
+      "sourceIds": [
+        "source-met-ancient-egypt-art",
+        "source-met-hatshepsut-publication",
+        "source-met-akhenaten-city"
+      ]
+    },
+    {
+      "id": "event-egyptian-writing-system-changes",
+      "kind": "historicalProcess",
+      "title": "埃及书写系统跨媒介与语言阶段变化",
+      "timeSpan": {
+        "start": -3150,
+        "end": 400,
+        "label": "约公元前3150—公元400年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egyptian-hieroglyphs"
+      ],
+      "sourceIds": [
+        "source-ucl-writing-development",
+        "source-ucl-hieratic",
+        "source-ucl-demotic",
+        "source-ucl-coptic"
+      ]
+    },
+    {
+      "id": "event-old-kingdom-fragmentation",
+      "kind": "historicalProcess",
+      "title": "古王国统一王权瓦解",
+      "timeSpan": {
+        "start": -2250,
+        "end": -2181,
+        "label": "约公元前23—前22世纪",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-old-kingdom"
+      ],
+      "sourceIds": [
+        "source-muller-old-kingdom-end"
+      ]
+    },
+    {
+      "id": "event-middle-kingdom-reunification",
+      "kind": "historicalProcess",
+      "title": "孟图霍特普二世重新统一埃及",
+      "timeSpan": {
+        "start": -2055,
+        "end": -2040,
+        "label": "约公元前21世纪",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-middle-kingdom"
+      ],
+      "sourceIds": [
+        "source-ucl-mentuhotep-ii",
+        "source-ucl-middle-kingdom"
+      ]
+    },
+    {
+      "id": "event-middle-kingdom-fragmentation",
+      "kind": "historicalProcess",
+      "title": "中王国统一王权结束",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1650,
+        "label": "约公元前18—前17世纪",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-middle-kingdom"
+      ],
+      "sourceIds": [
+        "source-met-middle-kingdom",
+        "source-uee-second-intermediate"
+      ]
+    },
+    {
+      "id": "event-ahmose-captures-avaris",
+      "kind": "historicalEvent",
+      "title": "雅赫摩斯攻下阿瓦里斯",
+      "timeSpan": {
+        "start": -1555,
+        "end": -1545,
+        "label": "约公元前1550年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-new-kingdom"
+      ],
+      "sourceIds": [
+        "source-ucl-ahmose"
+      ]
+    },
+    {
+      "id": "event-amarna-reform",
+      "kind": "historicalProcess",
+      "title": "阿肯那顿建立阿玛尔纳新秩序",
+      "timeSpan": {
+        "start": -1353,
+        "end": -1336,
+        "label": "约公元前1353—前1336年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-new-kingdom"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-akhenaten-duck",
+        "source-ucl-tutankhamun"
+      ]
+    },
+    {
+      "id": "event-battle-of-kadesh",
+      "kind": "historicalEvent",
+      "title": "卡迭石战役",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-new-kingdom",
+        "hittite-empire"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-hayes-scepter-ii"
+      ]
+    },
+    {
+      "id": "event-egypt-hatti-treaty",
+      "kind": "historicalEvent",
+      "title": "埃及与赫梯签订和平条约",
+      "timeSpan": {
+        "start": -1259,
+        "end": -1258,
+        "label": "约公元前1259年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-new-kingdom",
+        "hittite-empire"
+      ],
+      "sourceIds": [
+        "source-un-egypt-hatti-treaty"
+      ]
+    },
+    {
+      "id": "event-new-kingdom-fragmentation",
+      "kind": "historicalProcess",
+      "title": "新王国统一王权结束",
+      "timeSpan": {
+        "start": -1186,
+        "end": -1069,
+        "label": "约公元前1186—前1069年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-new-kingdom"
+      ],
+      "sourceIds": [
+        "source-turin-strike-papyrus",
+        "source-uee-early-mid-20th-dynasty",
+        "source-met-third-intermediate"
+      ]
+    },
+    {
+      "id": "event-khufu-great-pyramid-construction",
+      "kind": "historicalProcess",
+      "title": "胡夫大金字塔工程",
+      "timeSpan": {
+        "start": -2580,
+        "end": -2560,
+        "label": "约公元前26世纪",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-old-kingdom",
+        "egypt-pyramids"
+      ],
+      "sourceIds": [
+        "source-ifao-merer-log",
+        "source-aera-lost-city",
+        "source-aera-feeding-workers"
+      ]
+    },
+    {
+      "id": "event-unas-pyramid-text-inscription",
+      "kind": "historicalEvent",
+      "title": "乌尼斯金字塔铭文刻写",
+      "timeSpan": {
+        "start": -2375,
+        "end": -2325,
+        "label": "约公元前24世纪",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-old-kingdom",
+        "egypt-pyramids",
+        "egyptian-religion"
+      ],
+      "sourceIds": [
+        "source-ucl-religious-texts",
+        "source-wikimedia-unas-pyramid-texts"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ancient-egypt-two-lands",
+      "title": "两片土地成为一个王国",
+      "timeSpan": {
+        "start": -3300,
+        "end": -2686,
+        "label": "约公元前3300—前2686年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-upper-lower-egypt-unified"
+      ],
+      "sourceIds": [
+        "source-ucl-narmer",
+        "source-wikimedia-narmer-palette-cc0"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "ancient-egypt-river-returns",
+      "title": "河水每年回来",
+      "timeSpan": {
+        "start": -3100,
+        "end": -30,
+        "label": "约公元前3100—前30年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-nile-annual-cycle-organizes-life"
+      ],
+      "sourceIds": [
+        "source-met-telling-time-egypt",
+        "source-met-life-along-nile",
+        "source-natural-earth"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "ancient-egypt-pyramid-kingdom",
+      "title": "金字塔让整个王国忙起来",
+      "timeSpan": {
+        "start": -2686,
+        "end": -2181,
+        "label": "约公元前2686—前2181年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop",
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-ifao-merer-log",
+        "source-aera-lost-city",
+        "source-aera-feeding-workers",
+        "source-met-oarsmen-official"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "ancient-egypt-visible-identity",
+      "title": "文字和图像让身份被看见",
+      "timeSpan": {
+        "start": -3100,
+        "end": -30,
+        "label": "约公元前3100—前30年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist",
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-hieroglyphic-system",
+        "source-ucl-art-script",
+        "source-met-ancient-egypt-art",
+        "source-wikimedia-karnak-hieroglyphs"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "ancient-egypt-dead-needs",
+      "title": "死者仍需要身体、名字和食物",
+      "timeSpan": {
+        "start": -2686,
+        "end": -30,
+        "label": "约公元前2686—前30年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-burial-customs",
+        "source-ucl-religious-texts",
+        "source-bm-afterlife-journey",
+        "source-met-ukhhotep-coffin"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "ancient-egypt-reunifications",
+      "title": "王国分裂，又重新合在一起",
+      "timeSpan": {
+        "start": -2181,
+        "end": -1550,
+        "label": "约公元前2181—前1550年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-fragmentation",
+        "event-middle-kingdom-reunification",
+        "event-middle-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-muller-old-kingdom-end",
+        "source-ucl-mentuhotep-ii",
+        "source-uee-second-intermediate",
+        "source-natural-earth"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "ancient-egypt-power-far-away",
+      "title": "法老把权力伸向远方",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ahmose-captures-avaris",
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-new-kingdom",
+        "source-ucl-nubia-new-kingdom",
+        "source-met-amarna-letters",
+        "source-natural-earth"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "ancient-egypt-survives-palaces",
+      "title": "宫殿熄灭以后，埃及仍然继续",
+      "timeSpan": {
+        "start": -1250,
+        "end": -30,
+        "label": "约公元前1250—前30年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-new-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-cifola-ramesses-sea-peoples",
+        "source-knapp-manning-crisis",
+        "source-met-third-intermediate",
+        "source-met-egypt-1000-1",
+        "source-wikimedia-medinet-habu-temple"
+      ],
+      "cardId": "ancient-egypt-gift-of-nile",
+      "cardPrimaryEntityId": "ancient-egypt-civilization"
+    },
+    {
+      "id": "egypt-old-two-lands",
+      "title": "一位国王戴上两顶王冠",
+      "timeSpan": {
+        "start": -3150,
+        "end": -3050,
+        "label": "约公元前3150—前3050年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-upper-lower-egypt-unified"
+      ],
+      "sourceIds": [
+        "source-ucl-narmer",
+        "source-natural-earth"
+      ],
+      "cardId": "egypt-old-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-old-kingdom"
+    },
+    {
+      "id": "egypt-old-pyramids-horizon",
+      "title": "金字塔登上地平线",
+      "timeSpan": {
+        "start": -2686,
+        "end": -2490,
+        "label": "约公元前2686—前2490年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-met-ancient-egypt-art",
+        "source-arnold-pyramids",
+        "source-wikimedia-giza-pyramids"
+      ],
+      "cardId": "egypt-old-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-old-kingdom"
+    },
+    {
+      "id": "egypt-old-afterlife-road",
+      "title": "为死后的旅程写下道路",
+      "timeSpan": {
+        "start": -2375,
+        "end": -2345,
+        "label": "约公元前2375—前2345年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-unas-pyramid-text-inscription",
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-met-old-kingdom",
+        "source-wikimedia-unas-pyramid-texts",
+        "source-wikimedia-unas-exterior"
+      ],
+      "cardId": "egypt-old-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-old-kingdom"
+    },
+    {
+      "id": "egypt-old-officials",
+      "title": "国王之外的办事人",
+      "timeSpan": {
+        "start": -2345,
+        "end": -2181,
+        "label": "约公元前2345—前2181年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-met-mitry-statue",
+        "source-met-old-kingdom"
+      ],
+      "cardId": "egypt-old-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-old-kingdom"
+    },
+    {
+      "id": "egypt-old-north-south",
+      "title": "命令不再通向所有地方",
+      "timeSpan": {
+        "start": -2250,
+        "end": -2055,
+        "label": "约公元前2250—前2055年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-muller-old-kingdom-end",
+        "source-ucl-mentuhotep-ii",
+        "source-natural-earth"
+      ],
+      "cardId": "egypt-old-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-old-kingdom"
+    },
+    {
+      "id": "egypt-middle-thebes-reunifies",
+      "title": "国王从南方出发",
+      "timeSpan": {
+        "start": -2055,
+        "end": -2010,
+        "label": "约公元前2055—前2010年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-middle-kingdom-reunification"
+      ],
+      "sourceIds": [
+        "source-ucl-mentuhotep-ii",
+        "source-met-middle-kingdom",
+        "source-muller-old-kingdom-end",
+        "source-natural-earth"
+      ],
+      "cardId": "egypt-middle-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-middle-kingdom"
+    },
+    {
+      "id": "egypt-middle-sinuhe-home",
+      "title": "辛奴赫逃走，又回到埃及",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1800,
+        "label": "约公元前2000—前1800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-sinuhe-story-composed-and-copied"
+      ],
+      "sourceIds": [
+        "source-ucl-sinuhe",
+        "source-bm-sinuhe-literature",
+        "source-bm-sinuhe-ostracon",
+        "source-wikimedia-sinuhe-papyrus"
+      ],
+      "cardId": "egypt-middle-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-middle-kingdom"
+    },
+    {
+      "id": "egypt-middle-avaris",
+      "title": "埃及再次出现几个中心",
+      "timeSpan": {
+        "start": -1700,
+        "end": -1550,
+        "label": "约公元前1700—前1550年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-middle-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-met-middle-kingdom",
+        "source-uee-second-intermediate",
+        "source-ucl-ahmose",
+        "source-natural-earth"
+      ],
+      "cardId": "egypt-middle-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-middle-kingdom"
+    },
+    {
+      "id": "egypt-new-ahmose-avaris",
+      "title": "战争带来新王朝",
+      "timeSpan": {
+        "start": -1555,
+        "end": -1525,
+        "label": "约公元前1555—前1525年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ahmose-captures-avaris"
+      ],
+      "sourceIds": [
+        "source-ucl-ahmose",
+        "source-met-new-kingdom",
+        "source-natural-earth"
+      ],
+      "cardId": "egypt-new-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-new-kingdom"
+    },
+    {
+      "id": "egypt-new-beyond-borders",
+      "title": "法老把命令送到远方",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1350,
+        "label": "约公元前1550—前1350年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-new-kingdom",
+        "source-ucl-nubia-new-kingdom",
+        "source-natural-earth"
+      ],
+      "cardId": "egypt-new-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-new-kingdom"
+    },
+    {
+      "id": "egypt-new-hatshepsut",
+      "title": "哈特谢普苏特成为法老",
+      "timeSpan": {
+        "start": -1479,
+        "end": -1458,
+        "label": "约公元前1479—前1458年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hatshepsut-rules-as-pharaoh"
+      ],
+      "sourceIds": [
+        "source-met-hatshepsut",
+        "source-met-hatshepsut-exhibition",
+        "source-met-hatshepsut-female-pharaoh",
+        "source-ucl-sobeknofru"
+      ],
+      "cardId": "egypt-new-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-new-kingdom"
+    },
+    {
+      "id": "egypt-new-amarna-letters",
+      "title": "外国国王把法老叫作兄弟",
+      "timeSpan": {
+        "start": -1353,
+        "end": -1336,
+        "label": "约公元前1353—前1336年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-met-amarna-letter-object"
+      ],
+      "cardId": "egypt-new-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-new-kingdom"
+    },
+    {
+      "id": "egypt-new-akhenaten-city",
+      "title": "阿肯那顿要求埃及敬奉阿顿",
+      "timeSpan": {
+        "start": -1353,
+        "end": -1336,
+        "label": "约公元前1353—前1336年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-reform"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-akhenaten-duck",
+        "source-ucl-tutankhamun"
+      ],
+      "cardId": "egypt-new-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-new-kingdom"
+    },
+    {
+      "id": "egypt-new-kadesh",
+      "title": "拉美西斯把卡迭石写成胜利",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1258,
+        "label": "约公元前1274—前1258年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-un-egypt-hatti-treaty",
+        "source-natural-earth"
+      ],
+      "cardId": "egypt-new-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-new-kingdom"
+    },
+    {
+      "id": "egypt-new-contraction",
+      "title": "给法老修墓的人停工了",
+      "timeSpan": {
+        "start": -1186,
+        "end": -1069,
+        "label": "约公元前1186—前1069年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-new-kingdom-fragmentation"
+      ],
+      "sourceIds": [
+        "source-turin-strike-papyrus",
+        "source-uee-early-mid-20th-dynasty",
+        "source-met-third-intermediate"
+      ],
+      "cardId": "egypt-new-kingdom-overview",
+      "cardPrimaryEntityId": "egypt-new-kingdom"
+    },
+    {
+      "id": "egypt-pyramid-stone-grows",
+      "title": "石墓开始往天上长",
+      "timeSpan": {
+        "start": -2700,
+        "end": -2630,
+        "label": "约公元前2700—前2630年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-ucl-pyramid-shape",
+        "source-met-old-kingdom",
+        "source-wikimedia-djoser-step"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-pyramid-sneferu-three",
+      "title": "一位法老建了三座",
+      "timeSpan": {
+        "start": -2630,
+        "end": -2580,
+        "label": "约公元前2630—前2580年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-ucl-pyramid-shape",
+        "source-wikimedia-bent-pyramid"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-pyramid-whole-complex",
+      "title": "一座金字塔不止有一座塔",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2450,
+        "label": "约公元前2600—前2450年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-kingdom-pyramid-complexes-develop"
+      ],
+      "sourceIds": [
+        "source-ucl-pyramids-overview",
+        "source-met-old-kingdom",
+        "source-wikimedia-giza-pyramids"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-pyramid-merer-boats",
+      "title": "梅勒的船今天又出发了",
+      "timeSpan": {
+        "start": -2580,
+        "end": -2560,
+        "label": "约公元前2580—前2560年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-ifao-merer-log",
+        "source-met-oarsmen-official",
+        "source-wikimedia-oarsmen-official"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-pyramid-workers-city",
+      "title": "金字塔脚下也有一座城",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2500,
+        "label": "约公元前2600—前2500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-aera-lost-city",
+        "source-ucl-pyramid-towns",
+        "source-wikimedia-giza-complex-map"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-pyramid-feeding-city",
+      "title": "先让所有人吃上饭",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2500,
+        "label": "约公元前2600—前2500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-aera-feeding-workers",
+        "source-met-offering-bearers"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-pyramid-cult-continues",
+      "title": "法老下葬了，工作还没结束",
+      "timeSpan": {
+        "start": -2600,
+        "end": -2200,
+        "label": "约公元前2600—前2200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-khufu-great-pyramid-construction"
+      ],
+      "sourceIds": [
+        "source-ucl-king-cult",
+        "source-ucl-cult-offerings",
+        "source-met-neferiu-false-door"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-pyramid-walls-speak",
+      "title": "石墙开始说话",
+      "timeSpan": {
+        "start": -2375,
+        "end": -2325,
+        "label": "约公元前2375—前2325年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-unas-pyramid-text-inscription"
+      ],
+      "sourceIds": [
+        "source-ucl-religious-texts",
+        "source-wikimedia-unas-pyramid-texts"
+      ],
+      "cardId": "egypt-pyramids-kingdom-at-work",
+      "cardPrimaryEntityId": "egypt-pyramids"
+    },
+    {
+      "id": "egypt-afterlife-wah-wrapped",
+      "title": "瓦赫被一层层包好",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1900,
+        "label": "约公元前2000—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-mummies",
+        "source-met-life-along-nile",
+        "source-met-wah-statuette"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-many-parts",
+      "title": "一个人不只是一具身体",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1100,
+        "label": "约公元前2000—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-burial-customs",
+        "source-met-transforming-dead",
+        "source-met-heart-scarab"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-offerings-continue",
+      "title": "墓门关上，饭还要送来",
+      "timeSpan": {
+        "start": -2200,
+        "end": -1100,
+        "label": "约公元前2200—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-tombs",
+        "source-ucl-cult-offerings",
+        "source-met-neferiu-false-door"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-pyramid-spells",
+      "title": "咒语先写在国王的石墙上",
+      "timeSpan": {
+        "start": -2375,
+        "end": -2325,
+        "label": "约公元前2375—前2325年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-religious-texts",
+        "source-wikimedia-unas-pyramid-texts"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-coffin-texts",
+      "title": "文字搬进了棺材",
+      "timeSpan": {
+        "start": -2050,
+        "end": -1750,
+        "label": "约公元前2050—前1750年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-coffin-texts",
+        "source-met-ukhhotep-coffin"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-travel-guide",
+      "title": "一本带进墓里的旅行指南",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-book-of-dead-faq",
+        "source-bm-book-of-dead",
+        "source-met-nesiamun-book-dead"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-gods-on-road",
+      "title": "众神在路上各有事情",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-bm-egyptian-gods",
+        "source-bm-afterlife-journey",
+        "source-met-hatnefer-osiris"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-heart-trial",
+      "title": "心脏不能说谎",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-book-of-dead-125",
+        "source-bm-afterlife-journey",
+        "source-met-anubis-weighing-heart"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-afterlife-field-work",
+      "title": "死后的田野也要下地干活",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-funerary-texts-and-rituals-expand"
+      ],
+      "sourceIds": [
+        "source-ucl-shabtis",
+        "source-bm-afterlife-journey",
+        "source-met-seti-i-shabti"
+      ],
+      "cardId": "egypt-afterlife-journey",
+      "cardPrimaryEntityId": "egyptian-religion"
+    },
+    {
+      "id": "egypt-art-images-work",
+      "title": "图像也有工作要做",
+      "timeSpan": {
+        "start": -2700,
+        "end": -1100,
+        "label": "约公元前2700—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-met-ancient-egypt-art",
+        "source-met-offering-bearers"
+      ],
+      "cardId": "egyptian-art-identity-eternity",
+      "cardPrimaryEntityId": "egyptian-art"
+    },
+    {
+      "id": "egypt-art-composite-body",
+      "title": "身体一次朝向好几个方向",
+      "timeSpan": {
+        "start": -1550,
+        "end": -1069,
+        "label": "约公元前1550—前1069年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-met-ancient-egypt-art",
+        "source-met-anubis-weighing-heart"
+      ],
+      "cardId": "egyptian-art-identity-eternity",
+      "cardPrimaryEntityId": "egyptian-art"
+    },
+    {
+      "id": "egypt-art-size-status",
+      "title": "谁最大，谁最重要",
+      "timeSpan": {
+        "start": -2458,
+        "end": -2446,
+        "label": "约公元前2458—前2446年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-met-ancient-egypt-art",
+        "source-met-sahure-statue"
+      ],
+      "cardId": "egyptian-art-identity-eternity",
+      "cardPrimaryEntityId": "egyptian-art"
+    },
+    {
+      "id": "egypt-art-statues-live",
+      "title": "雕像替主人继续活着",
+      "timeSpan": {
+        "start": -2345,
+        "end": -2181,
+        "label": "约公元前2345—前2181年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-met-ancient-egypt-art",
+        "source-arnold-pyramids",
+        "source-met-mitry-statue"
+      ],
+      "cardId": "egyptian-art-identity-eternity",
+      "cardPrimaryEntityId": "egyptian-art"
+    },
+    {
+      "id": "egypt-art-hatshepsut-pharaoh",
+      "title": "哈特谢普苏特穿上法老的形象",
+      "timeSpan": {
+        "start": -1479,
+        "end": -1458,
+        "label": "约公元前1479—前1458年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist",
+        "event-hatshepsut-rules-as-pharaoh"
+      ],
+      "sourceIds": [
+        "source-met-hatshepsut",
+        "source-met-hatshepsut-publication"
+      ],
+      "cardId": "egyptian-art-identity-eternity",
+      "cardPrimaryEntityId": "egyptian-art"
+    },
+    {
+      "id": "egypt-art-amarna-motion",
+      "title": "阿玛尔纳让王室动起来",
+      "timeSpan": {
+        "start": -1353,
+        "end": -1336,
+        "label": "约公元前1353—前1336年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist",
+        "event-amarna-reform"
+      ],
+      "sourceIds": [
+        "source-met-akhenaten-city",
+        "source-met-akhenaten-duck"
+      ],
+      "cardId": "egyptian-art-identity-eternity",
+      "cardPrimaryEntityId": "egyptian-art"
+    },
+    {
+      "id": "egypt-art-abu-simbel-scale",
+      "title": "拉美西斯把自己刻得像山一样高",
+      "timeSpan": {
+        "start": -1279,
+        "end": -1213,
+        "label": "约公元前1279—前1213年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-formal-art-conventions-persist"
+      ],
+      "sourceIds": [
+        "source-bm-ramesses-ii-colossal-statue",
+        "source-egypt-monuments-abu-simbel",
+        "source-wikimedia-abu-simbel-color"
+      ],
+      "cardId": "egyptian-art-identity-eternity",
+      "cardPrimaryEntityId": "egyptian-art"
+    },
+    {
+      "id": "egypt-hieroglyph-narmer-name",
+      "title": "石板上写着国王的名字",
+      "timeSpan": {
+        "start": -3150,
+        "end": -3050,
+        "label": "约公元前3150—前3050年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-narmer",
+        "source-ucl-writing-development",
+        "source-wikimedia-narmer-palette-cc0"
+      ],
+      "cardId": "egyptian-hieroglyphs-words-sounds",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs"
+    },
+    {
+      "id": "egypt-hieroglyph-word-sound",
+      "title": "一幅图既可以是词，也可以是声音",
+      "timeSpan": {
+        "start": -2400,
+        "end": -2200,
+        "label": "约公元前2400—前2200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-hieroglyphic-system",
+        "source-bm-hieroglyphs-decipherment",
+        "source-wikimedia-champollion-table-pd"
+      ],
+      "cardId": "egyptian-hieroglyphs-words-sounds",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs"
+    },
+    {
+      "id": "egypt-hieroglyph-silent-guides",
+      "title": "不出声的符号也在帮助阅读",
+      "timeSpan": {
+        "start": -2700,
+        "end": -1100,
+        "label": "约公元前2700—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-hieroglyphic-system",
+        "source-ucl-art-script",
+        "source-wikimedia-karnak-hieroglyphs"
+      ],
+      "cardId": "egyptian-hieroglyphs-words-sounds",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs"
+    },
+    {
+      "id": "egypt-hieroglyph-stone-papyrus",
+      "title": "石墙上的字，纸草上的字",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1600,
+        "label": "约公元前2000—前1600年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-writing-development",
+        "source-ucl-hieratic",
+        "source-bm-hieroglyphs-resources",
+        "source-wikimedia-sinuhe-papyrus"
+      ],
+      "cardId": "egyptian-hieroglyphs-words-sounds",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs"
+    },
+    {
+      "id": "egypt-hieroglyph-language-changes",
+      "title": "语言变了，书写也跟着变化",
+      "timeSpan": {
+        "start": -700,
+        "end": 400,
+        "label": "约公元前700—公元400年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-ucl-demotic",
+        "source-ucl-coptic",
+        "source-bm-hieroglyphs-decipherment",
+        "source-met-coptic-manuscript"
+      ],
+      "cardId": "egyptian-hieroglyphs-words-sounds",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs"
+    },
+    {
+      "id": "egypt-hieroglyph-alphabet-road",
+      "title": "一头牛的名字变成了一个声音",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1500,
+        "label": "约公元前1900—前1500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-egyptian-writing-system-changes"
+      ],
+      "sourceIds": [
+        "source-yale-wadi-el-hol",
+        "source-isac-visible-language",
+        "source-thinkzone-alphabet-chart"
+      ],
+      "cardId": "egyptian-hieroglyphs-words-sounds",
+      "cardPrimaryEntityId": "egyptian-hieroglyphs"
+    }
+  ],
+  "structuralEdges": [
+    {
+      "id": "edge-egypt-old-middle-kingdom",
+      "family": "historicalNetwork",
+      "type": "reunified_after_fragmentation",
+      "source": {
+        "kind": "entity",
+        "id": "egypt-old-kingdom"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "egypt-middle-kingdom"
+      },
+      "timeSpan": {
+        "start": -2181,
+        "end": -2055,
+        "label": "古王国结束至中王国重新统一",
+        "approximate": true
+      },
+      "label": {
+        "forward": "分裂后形成新的统一王国",
+        "reverse": "继承并重组更早的王权传统"
+      },
+      "summaries": {
+        "canonical": "古王国结束后的南北分裂，构成底比斯王室重新统一埃及并建立中王国的直接前史。"
+      },
+      "qualifiers": [
+        "不把中王国视为古王国制度的简单恢复"
+      ],
+      "sourceIds": [
+        "source-muller-old-kingdom-end",
+        "source-ucl-mentuhotep-ii"
+      ]
+    },
+    {
+      "id": "edge-egypt-middle-new-kingdom",
+      "family": "historicalNetwork",
+      "type": "reunified_after_fragmentation",
+      "source": {
+        "kind": "entity",
+        "id": "egypt-middle-kingdom"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "egypt-new-kingdom"
+      },
+      "timeSpan": {
+        "start": -1650,
+        "end": -1550,
+        "label": "中王国结束至新王国重新统一",
+        "approximate": true
+      },
+      "label": {
+        "forward": "分裂后形成新的统一王国",
+        "reverse": "继承并扩大早期边界经验"
+      },
+      "summaries": {
+        "canonical": "中王国结束后的阿瓦里斯与底比斯对峙，构成雅赫摩斯重新统一埃及并建立新王国的直接前史。"
+      },
+      "qualifiers": [
+        "不把新王国扩张解释为单一战争的自动结果"
+      ],
+      "sourceIds": [
+        "source-ucl-second-intermediate",
+        "source-ucl-ahmose"
+      ]
+    }
+  ]
+}

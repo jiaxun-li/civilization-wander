@@ -1,0 +1,248 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/mesopotamia.ts",
+  "decisions": [
+    {
+      "entityId": "sumer",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "苏美尔是语言、城市文化与现代研究中的文化—地域统称，不是具有统一统治主体和连续疆域的政权；V6 删除普通 block，具体城市、政权、文字与知识传统分别建模。"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "uruk",
+      "oldType": "SettlementSite",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "settlement",
+        "archaeologicalSite"
+      ],
+      "proposedConceptLayers": [
+        "placeAndSite"
+      ],
+      "acceptedEntityType": "settlement",
+      "acceptedConceptLayerId": "placeAndSite",
+      "acceptedPhaseIds": [
+        "uruk-urban-expansion"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "uruk"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "mesopotamia-region",
+      "oldType": "GeographicFeature",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "geographicRegion",
+        "naturalFeature"
+      ],
+      "proposedConceptLayers": [
+        "placeAndSite"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "两河流域由正式 Region 维度表示；V6 不再用一个数千年的概括 Phase 重复创建地域 Entity。"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "mesopotamian-temple",
+      "oldType": "institution",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "institution"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "原对象混合具体建筑、宗教制度、城市组织和王权支持；需先稳定具体神庙或制度身份。"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "cuneiform",
+      "oldType": "writingSystem",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "writingSystem"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge"
+      ],
+      "acceptedEntityType": "writingSystem",
+      "acceptedConceptLayerId": "languageAndKnowledge",
+      "acceptedPhaseIds": [
+        "cuneiform-hittite-use",
+        "cuneiform-early-development",
+        "cuneiform-multilingual-transmission",
+        "cuneiform-eastern-mediterranean-diplomacy"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "cuneiform"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "akkadian-empire",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "akkadian-imperial-order",
+        "akkadian-fragmentation"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "akkadian-empire"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "epic-of-gilgamesh",
+      "oldType": "TextDocument",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "documentCorpus",
+        "literaryTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge",
+        "artAndLiterature",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "literaryWork",
+      "acceptedConceptLayerId": "artAndLiterature",
+      "acceptedPhaseIds": [
+        "gilgamesh-standard-version-composition"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "epic-of-gilgamesh"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "ur-iii-kingdom",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "ur-iii-kingdom-order"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "ur-iii-kingdom"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "old-babylonian-kingdom",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "old-babylonian-city-kingdom-emergence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "old-babylonian-kingdom"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "hammurabi-code",
+      "oldType": "TextDocument",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "documentCorpus",
+        "literaryTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge",
+        "artAndLiterature",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "documentCorpus",
+      "acceptedConceptLayerId": "materialAndArchitecture",
+      "acceptedPhaseIds": [
+        "hammurabi-code-stele-created"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "hammurabi-code"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "tower-of-babel-tradition",
+      "oldType": "TextDocument",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "documentCorpus",
+        "literaryTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge",
+        "artAndLiterature",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "literaryWork",
+      "acceptedConceptLayerId": "religionAndThought",
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "tower-of-babel-tradition"
+      },
+      "status": "accepted"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "ledgerVersion": 1,
+  "runtimeCollection": false,
+  "sourceModule": "data/iron-age-near-east.ts",
+  "candidates": [
+    {
+      "candidate": {
+        "id": "candidate-assyria-phoenician-specific-polities",
+        "originatingV5StructuralEdgeId": "edge-assyria-subordinates-phoenician-cities",
+        "sourceSceneIds": [
+          "phoenicia-ships-bring-tribute"
+        ],
+        "proposedFamily": "political",
+        "proposedType": "receivedTributeFromCoastalPolities",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -876,
+          "end": -630,
+          "label": "约公元前876—前630年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "neo-assyrian-empire"
+            },
+            "proposedPhaseId": "neo-assyrian-expansion",
+            "proposedRole": "tributeDemandingEmpire"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "受亚述控制或纳贡的具体腓尼基城邦",
+            "proposedEntityTypes": [
+              "polity",
+              "settlement"
+            ],
+            "notes": "腓尼基海上交换网络不是纳贡的政治行为者；需要先建立并核对具体城邦身份。"
+          }
+        ],
+        "summary": "亚述与部分腓尼基城邦之间存在远征、条约和贡赋关系，但不能把整个海上交换网络作为纳贡政体。",
+        "reasons": [
+          "missingTarget",
+          "ambiguousIdentity"
+        ],
+        "unresolvedQuestions": [
+          "哪些具体城邦在各时期纳贡？",
+          "每段关系应绑定哪一座城邦及其政权阶段？"
+        ],
+        "sourceIds": [
+          "source-met-phoenicians",
+          "source-met-assyria"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/iron-age-near-east.ts",
+        "originatingEntityId": "phoenician-tradition",
+        "originatingPhaseCandidateIds": [
+          "phoenician-maritime-connections",
+          "neo-assyrian-expansion"
+        ],
+        "sourceEventIds": [
+          "event-phoenician-westward-connections"
+        ],
+        "sourceStructuralEdgeIds": [
+          "edge-assyria-subordinates-phoenician-cities"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-phoenician-aramaic-script-influence",
+        "originatingV5StructuralEdgeId": "edge-phoenician-script-influences-aramaic",
+        "sourceSceneIds": [
+          "aramaic-small-states-one-language"
+        ],
+        "proposedFamily": "linguistic",
+        "proposedType": "alphabeticWritingInfluence",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -1000,
+          "end": -800,
+          "label": "约公元前1000—前800年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "腓尼基字母书写系统",
+            "proposedEntityTypes": [
+              "writingSystem"
+            ],
+            "notes": "海上交换网络不能代替字母书写系统；需要独立、稳定的书写系统 Entity。"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "aramaic-language"
+            },
+            "proposedRole": "developingLanguageTradition"
+          }
+        ],
+        "summary": "阿拉米字母与腓尼基字母传统存在历史联系，但当前缺少可作为关系来源端点的独立书写系统 Entity。",
+        "reasons": [
+          "missingTarget",
+          "ambiguousTargetKind"
+        ],
+        "unresolvedQuestions": [
+          "应建立腓尼基字母还是更宽的西北闪米特字母 Entity？",
+          "关系应指向语言还是阿拉米书写系统？"
+        ],
+        "sourceIds": [
+          "source-oracc-aramaic-hebrew",
+          "source-met-alphabet"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/iron-age-near-east.ts",
+        "originatingEntityId": "aramaic-language",
+        "originatingPhaseCandidateIds": [
+          "aramaic-regional-alphabetic-language"
+        ],
+        "sourceEventIds": [],
+        "sourceStructuralEdgeIds": [
+          "edge-phoenician-script-influences-aramaic"
+        ]
+      }
+    }
+  ]
+}

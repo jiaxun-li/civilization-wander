@@ -1,0 +1,139 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-china.ts",
+  "decisions": [
+    {
+      "eventId": "event-early-china-regional-centers-emerge",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-early-china-regional-centers-emerge"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-shang-bronze-production-and-ritual-use",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-shang-bronze-production-and-ritual-use"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "V6 将事件终点从前1000年收窄到商王朝结束的约前1046年；器物延续由 EntityPhase 表达。"
+      ]
+    },
+    {
+      "eventId": "event-western-zhou-eastern-expansion",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-western-zhou-eastern-expansion"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-western-zhou-investiture",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-western-zhou-investiture"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-western-zhou-capitals-fall",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：取消重复政权终点或长期遗址变化的独立事件，内容保留在所属对象说明与原始证据中。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "2026-09-15概念层审核已执行；不为V5兼容保留独立事件。"
+      ]
+    },
+    {
+      "eventId": "event-erlitou-urban-consolidation",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-erlitou-urban-consolidation"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-erligang-urban-expansion",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-erligang-urban-expansion"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "V5 把前1046年后才出现的 western-zhou 错挂到前1600—前1400年的二里岗过程；V6 删除该参与者，不伪造西周 Phase。"
+      ]
+    },
+    {
+      "eventId": "event-late-shang-royal-divination",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-late-shang-royal-divination"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-fu-hao-activities",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-fu-hao-activities"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-zhou-conquest-of-shang",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-zhou-conquest-of-shang"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "V6 补入 western-zhou 作为征服方；V5 仅列出被征服的商。"
+      ]
+    },
+    {
+      "eventId": "event-sanxingdui-ritual-object-deposition",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-sanxingdui-ritual-object-deposition"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "handoffVersion": 1,
+  "sourceModule": "data/ancient-china.ts",
+  "status": "readyForIntegration",
+  "coverage": {
+    "entities": 7,
+    "events": 11,
+    "scenes": 41,
+    "structuralEdges": 2
+  },
+  "v6RuntimeCounts": {
+    "entities": 6,
+    "entityPhases": 13,
+    "events": 3,
+    "temporalRelations": 2
+  },
+  "scenePhaseSignalCount": 41,
+  "entitySignalCount": 61,
+  "unresolvedRelationCandidateCount": 0,
+  "checks": {
+    "baselineGenerated": true,
+    "entityDecisionsComplete": true,
+    "eventDecisionsComplete": true,
+    "phasesReviewed": true,
+    "edgeDecisionsComplete": true,
+    "relationCandidatesReviewed": true
+  },
+  "notes": [
+    "仅迁移结构、标题与摘要；未迁移 Card、Scene 正文、图片、地图或导航。",
+    "二里头与三星堆按考古证据对象迁为 archaeologicalSite，而不是把未知古称当作稳定 settlement 身份。",
+    "商文明依据王室政治、征服与王朝结束证据保留为 polity；后于前1046年的器物延续由青铜礼器 EntityPhase 表达。",
+    "V5 event-erligang-urban-expansion 错含前1046年后才出现的 western-zhou；V6 已删除该参与者，相关 Scene 绑定 shang-erligang-order，不伪造西周阶段。",
+    "两条 V5 StructuralEdge 均有稳定端点、阶段与来源，已迁为 TemporalRelation；没有制造 RelationCandidate 或占位 Entity。",
+    "china-early-bronze-world 被确认为跨对象的迁移期伪文明，已从 V6 运行时删除；广域编辑综合不再制造替代 EntityPhase。",
+    "三个 historicalEvent 进入 accepted core；八个 historicalProcess 只保留在 pending review 导出。"
+  ]
+}

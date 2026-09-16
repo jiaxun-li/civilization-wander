@@ -1,0 +1,33 @@
+{
+  "handoffVersion": 1,
+  "sourceModule": "data/iron-age-near-east.ts",
+  "status": "readyForIntegration",
+  "coverage": {
+    "entities": 11,
+    "events": 21,
+    "scenes": 41,
+    "structuralEdges": 5
+  },
+  "scenePhaseSignalCount": 41,
+  "entitySignalCount": 55,
+  "unresolvedRelationCandidateCount": 2,
+  "checks": {
+    "baselineGenerated": true,
+    "entityDecisionsComplete": true,
+    "eventDecisionsComplete": true,
+    "phasesReviewed": true,
+    "edgeDecisionsComplete": true,
+    "relationCandidatesReviewed": true
+  },
+  "notes": [
+    "铁仅保留南黎凡特与黄河中游两个代表区域记录，不保留陨铁、宫廷生产、海上交换、帝国需求或南亚扩展的独立 Phase。",
+    "被撤销 Phase 的 Scene 信号保留来源与审计，处置为 narrativeOnly；未将不同年代和地区的应用过程重绑到代表节点。",
+    "待审 historicalProcess 仍不进入正式 events；原始覆盖计数与冻结 baseline 不变。"
+  ],
+  "v6RuntimeCounts": {
+    "entities": 11,
+    "entityPhases": 20,
+    "events": 4,
+    "temporalRelations": 3
+  }
+}

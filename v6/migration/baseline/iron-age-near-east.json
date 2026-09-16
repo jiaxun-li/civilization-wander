@@ -1,0 +1,1575 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "sourceModule": "data/iron-age-near-east.ts",
+  "counts": {
+    "entities": 11,
+    "events": 21,
+    "scenes": 41,
+    "structuralEdges": 5
+  },
+  "entities": [
+    {
+      "id": "assur-community",
+      "type": "peopleGroup",
+      "name": "亚述城社群",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -2000,
+        "end": -1000,
+        "label": "约公元前2000—前1000年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-old-assyrian-caravan",
+        "source-oracc-middle-assyrian"
+      ]
+    },
+    {
+      "id": "babylon-city",
+      "type": "SettlementSite",
+      "name": "巴比伦城",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -1900,
+        "end": -300,
+        "label": "约公元前1900—前300年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-esarhaddon-prism",
+        "source-met-babylon-lion"
+      ]
+    },
+    {
+      "id": "kingdom-of-judah",
+      "type": "polity",
+      "name": "犹大王国",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -900,
+        "end": -586,
+        "label": "约公元前900—前586年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-ancient-israel",
+        "source-bm-babylonian-chronicle"
+      ]
+    },
+    {
+      "id": "ancient-israelite-tradition",
+      "type": "culturalTradition",
+      "name": "古代以色列传统",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -1000,
+        "end": -500,
+        "label": "约公元前1000—前500年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-genesis-jacob",
+        "source-met-ancient-israel",
+        "source-sefaria-kings"
+      ]
+    },
+    {
+      "id": "neo-assyrian-empire",
+      "type": "polity",
+      "name": "新亚述帝国",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -911,
+        "end": -609,
+        "label": "约公元前911—前609年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-assyria",
+        "source-bm-introducing-assyrians"
+      ]
+    },
+    {
+      "id": "phoenician-tradition",
+      "type": "culturalTradition",
+      "name": "腓尼基城邦传统",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -1200,
+        "end": -300,
+        "label": "约公元前1200—前300年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-phoenicians",
+        "source-bm-phoenician"
+      ]
+    },
+    {
+      "id": "kingdom-of-israel",
+      "type": "polity",
+      "name": "以色列王国",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -930,
+        "end": -722,
+        "label": "约公元前930—前722年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-ancient-israel",
+        "source-oracc-israel"
+      ]
+    },
+    {
+      "id": "aramaic-language",
+      "type": "languageSystem",
+      "name": "阿拉米语",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -1000,
+        "end": -330,
+        "label": "约公元前1000—前330年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-oxford-aramaeans",
+        "source-oracc-aramaic-hebrew",
+        "source-iranica-aramaic"
+      ]
+    },
+    {
+      "id": "neo-babylonian-empire",
+      "type": "polity",
+      "name": "新巴比伦帝国",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -626,
+        "end": -539,
+        "label": "公元前626—前539年"
+      },
+      "sourceIds": [
+        "source-met-babylon"
+      ]
+    },
+    {
+      "id": "lydian-kingdom",
+      "type": "polity",
+      "name": "吕底亚王国",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -680,
+        "end": -546,
+        "label": "约公元前680—前546年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-sardis",
+        "source-sardis-coins"
+      ]
+    },
+    {
+      "id": "iron",
+      "type": "Commodity",
+      "name": "铁",
+      "alternativeNames": [],
+      "timeSpan": {
+        "start": -2000,
+        "end": -300,
+        "label": "约公元前2000—前300年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-erb-satullo-iron-adoption",
+        "source-cambridge-south-asia-archaeology",
+        "source-qian-huang-cast-iron-china"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-meteoric-iron-prestige-use",
+      "kind": "historicalProcess",
+      "title": "陨铁被制成稀有器物",
+      "timeSpan": {
+        "start": -3400,
+        "end": -1300,
+        "label": "约公元前3400—前1300年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "iron"
+      ],
+      "sourceIds": [
+        "source-matsui-tutankhamun-dagger"
+      ]
+    },
+    {
+      "id": "event-old-assyrian-trade-networks",
+      "kind": "historicalProcess",
+      "title": "古亚述商人经营安纳托利亚贸易",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1750,
+        "label": "约公元前2000—前1750年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "assur-community"
+      ],
+      "sourceIds": [
+        "source-met-old-assyrian-caravan"
+      ]
+    },
+    {
+      "id": "event-ashurbanipal-collections-assembled",
+      "kind": "historicalProcess",
+      "title": "亚述巴尼拔在尼尼微组织泥版收藏",
+      "timeSpan": {
+        "start": -668,
+        "end": -631,
+        "label": "公元前668—前631年"
+      },
+      "participantEntityIds": [
+        "neo-assyrian-empire"
+      ],
+      "sourceIds": [
+        "source-bm-ashurbanipal-library",
+        "source-oracc-assembling-library"
+      ]
+    },
+    {
+      "id": "event-jacob-renamed-israel-tradition",
+      "kind": "traditionalNarrative",
+      "title": "雅各改名为以色列的传统叙事",
+      "timeSpan": {
+        "start": -800,
+        "end": -500,
+        "label": "约公元前800—前500年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "ancient-israelite-tradition"
+      ],
+      "sourceIds": [
+        "source-genesis-jacob"
+      ]
+    },
+    {
+      "id": "event-israel-and-judah-develop-separate-kingships",
+      "kind": "historicalProcess",
+      "title": "以色列与犹大发展为两个王国",
+      "timeSpan": {
+        "start": -930,
+        "end": -853,
+        "label": "约公元前930—前853年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "kingdom-of-israel",
+        "kingdom-of-judah"
+      ],
+      "sourceIds": [
+        "source-met-ancient-israel"
+      ]
+    },
+    {
+      "id": "event-judean-communities-continue-after-exile",
+      "kind": "historicalProcess",
+      "title": "犹大社群在本地与巴比伦继续生活",
+      "timeSpan": {
+        "start": -586,
+        "end": -500,
+        "label": "约公元前586—前500年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "kingdom-of-judah",
+        "ancient-israelite-tradition"
+      ],
+      "sourceIds": [
+        "source-met-cyrus-return",
+        "source-sefaria-kings"
+      ]
+    },
+    {
+      "id": "event-babylon-destroyed-and-rebuilt-under-assyria",
+      "kind": "historicalProcess",
+      "title": "巴比伦在亚述统治下被毁并重建",
+      "timeSpan": {
+        "start": -689,
+        "end": -626,
+        "label": "公元前689—前626年"
+      },
+      "participantEntityIds": [
+        "babylon-city",
+        "neo-assyrian-empire"
+      ],
+      "sourceIds": [
+        "source-met-esarhaddon-prism"
+      ]
+    },
+    {
+      "id": "event-nebuchadnezzar-rebuilds-babylon",
+      "kind": "historicalProcess",
+      "title": "尼布甲尼撒二世重建巴比伦",
+      "timeSpan": {
+        "start": -605,
+        "end": -562,
+        "label": "约公元前605—前562年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "neo-babylonian-empire"
+      ],
+      "sourceIds": [
+        "source-met-babylon-lion",
+        "source-met-nebuchadnezzar-cylinder"
+      ]
+    },
+    {
+      "id": "event-neo-assyrian-expansion",
+      "kind": "historicalProcess",
+      "title": "新亚述帝国向外扩张",
+      "timeSpan": {
+        "start": -911,
+        "end": -700,
+        "label": "约公元前911—前700年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "neo-assyrian-empire"
+      ],
+      "sourceIds": [
+        "source-met-assyria",
+        "source-oracc-governance",
+        "source-oracc-deportation"
+      ]
+    },
+    {
+      "id": "event-nineveh-falls",
+      "kind": "historicalEvent",
+      "title": "尼尼微陷落",
+      "timeSpan": {
+        "start": -612,
+        "end": -609,
+        "label": "公元前612—前609年"
+      },
+      "participantEntityIds": [
+        "neo-assyrian-empire",
+        "neo-babylonian-empire"
+      ],
+      "sourceIds": [
+        "source-met-assyria",
+        "source-met-babylon"
+      ]
+    },
+    {
+      "id": "event-phoenician-westward-connections",
+      "kind": "historicalProcess",
+      "title": "腓尼基海上联系向西扩展",
+      "timeSpan": {
+        "start": -1000,
+        "end": -700,
+        "label": "约公元前1000—前700年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "phoenician-tradition"
+      ],
+      "sourceIds": [
+        "source-met-phoenician-sailing",
+        "source-antiquity-phoenician-diaspora"
+      ]
+    },
+    {
+      "id": "event-israel-falls-to-assyria",
+      "kind": "historicalProcess",
+      "title": "以色列王国被亚述吞并",
+      "timeSpan": {
+        "start": -853,
+        "end": -720,
+        "label": "公元前853—前720年"
+      },
+      "participantEntityIds": [
+        "kingdom-of-israel",
+        "neo-assyrian-empire"
+      ],
+      "sourceIds": [
+        "source-bm-black-obelisk",
+        "source-oracc-israel"
+      ]
+    },
+    {
+      "id": "event-lachish-captured",
+      "kind": "historicalEvent",
+      "title": "亚述攻陷拉吉",
+      "timeSpan": {
+        "start": -701,
+        "end": -701,
+        "label": "公元前701年"
+      },
+      "participantEntityIds": [
+        "neo-assyrian-empire"
+      ],
+      "sourceIds": [
+        "source-bm-lachish"
+      ]
+    },
+    {
+      "id": "event-aramaic-enters-imperial-administration",
+      "kind": "historicalProcess",
+      "title": "阿拉米语进入帝国行政",
+      "timeSpan": {
+        "start": -800,
+        "end": -330,
+        "label": "约公元前800—前330年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "aramaic-language",
+        "neo-assyrian-empire",
+        "neo-babylonian-empire"
+      ],
+      "sourceIds": [
+        "source-oracc-palace-scribe",
+        "source-iranica-aramaic"
+      ]
+    },
+    {
+      "id": "event-neo-babylonian-western-campaigns",
+      "kind": "historicalProcess",
+      "title": "新巴比伦帝国向西征服",
+      "timeSpan": {
+        "start": -605,
+        "end": -586,
+        "label": "公元前605—前586年"
+      },
+      "participantEntityIds": [
+        "neo-babylonian-empire"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-bm-babylonian-chronicle"
+      ]
+    },
+    {
+      "id": "event-persia-conquers-babylon",
+      "kind": "historicalEvent",
+      "title": "波斯征服巴比伦",
+      "timeSpan": {
+        "start": -539,
+        "end": -539,
+        "label": "公元前539年"
+      },
+      "participantEntityIds": [
+        "neo-babylonian-empire"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-bm-cyrus-cylinder"
+      ]
+    },
+    {
+      "id": "event-lydian-coinage-emerges",
+      "kind": "historicalProcess",
+      "title": "吕底亚出现早期钱币",
+      "timeSpan": {
+        "start": -650,
+        "end": -546,
+        "label": "约公元前650—前546年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "lydian-kingdom"
+      ],
+      "sourceIds": [
+        "source-sardis-coins",
+        "source-met-sardis"
+      ]
+    },
+    {
+      "id": "event-persia-conquers-sardis",
+      "kind": "historicalEvent",
+      "title": "波斯攻取萨迪斯",
+      "timeSpan": {
+        "start": -547,
+        "end": -546,
+        "label": "约公元前547—前546年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "lydian-kingdom"
+      ],
+      "sourceIds": [
+        "source-met-sardis",
+        "source-iranica-cyrus"
+      ]
+    },
+    {
+      "id": "event-extractive-iron-metallurgy-develops",
+      "kind": "historicalProcess",
+      "title": "工匠开始从矿石中获得铁坯",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1000,
+        "label": "约公元前2000—前1000年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "iron"
+      ],
+      "sourceIds": [
+        "source-erb-satullo-iron-adoption"
+      ]
+    },
+    {
+      "id": "event-iron-use-expands-after-palaces",
+      "kind": "historicalProcess",
+      "title": "宫殿时代之后铁器使用扩大",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "iron"
+      ],
+      "sourceIds": [
+        "source-erb-satullo-iron-adoption",
+        "source-bsa-aegean-iron-technologies"
+      ]
+    },
+    {
+      "id": "event-cast-iron-develops-in-china",
+      "kind": "historicalProcess",
+      "title": "中国工匠发展铸铁技术",
+      "timeSpan": {
+        "start": -800,
+        "end": -300,
+        "label": "约公元前800—前300年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "iron"
+      ],
+      "sourceIds": [
+        "source-qian-huang-cast-iron-china",
+        "source-intarch-iron-china"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "iron-first-falls-from-sky",
+      "title": "铁最初从天空来到人间",
+      "timeSpan": {
+        "start": -3400,
+        "end": -1300,
+        "label": "约公元前3400—前1300年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-meteoric-iron-prestige-use"
+      ],
+      "sourceIds": [
+        "source-matsui-tutankhamun-dagger",
+        "source-wikimedia-tutankhamun-dagger"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "iron-bloom-leaves-furnace",
+      "title": "铁匠从炉中取出一团铁坯",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1000,
+        "label": "约公元前2000—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-extractive-iron-metallurgy-develops"
+      ],
+      "sourceIds": [
+        "source-erb-satullo-iron-adoption",
+        "source-generated-iron-teaching"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "iron-hittite-court-smiths",
+      "title": "赫梯王把铁匠召进宫廷",
+      "timeSpan": {
+        "start": -1650,
+        "end": -1200,
+        "label": "约公元前1650—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-extractive-iron-metallurgy-develops"
+      ],
+      "sourceIds": [
+        "source-erb-satullo-iron-adoption",
+        "source-kbo-1-14",
+        "source-cdli-kbo-1-14"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "iron-workshops-after-palaces",
+      "title": "宫殿熄灭，地方作坊继续生火",
+      "timeSpan": {
+        "start": -1200,
+        "end": -900,
+        "label": "约公元前1200—前900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-erb-satullo-iron-adoption",
+        "source-bsa-aegean-iron-technologies",
+        "source-natural-earth"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "iron-blooms-travel-by-sea",
+      "title": "海船运送等待锻打的铁",
+      "timeSpan": {
+        "start": -800,
+        "end": -550,
+        "label": "约公元前800—前550年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-npj-dor-iron-blooms",
+        "source-met-phoenician-sailing",
+        "source-natural-earth"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "iron-assyrian-armies-building",
+      "title": "亚述的军队和工地都需要铁",
+      "timeSpan": {
+        "start": -900,
+        "end": -600,
+        "label": "约公元前900—前600年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-maxwell-hyslop-assyrian-iron",
+        "source-met-assyria",
+        "source-natural-earth"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "iron-south-asia-regional-paths",
+      "title": "南亚各地建立自己的铁器传统",
+      "timeSpan": {
+        "start": -1300,
+        "end": -500,
+        "label": "约公元前1300—前500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-extractive-iron-metallurgy-develops",
+        "event-iron-use-expands-after-palaces"
+      ],
+      "sourceIds": [
+        "source-cambridge-south-asia-archaeology",
+        "source-natural-earth"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "iron-china-casts-metal",
+      "title": "中国工匠把铁水倒进铸模",
+      "timeSpan": {
+        "start": -800,
+        "end": -300,
+        "label": "约公元前800—前300年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-cast-iron-develops-in-china"
+      ],
+      "sourceIds": [
+        "source-qian-huang-cast-iron-china",
+        "source-intarch-iron-china",
+        "source-natural-earth"
+      ],
+      "cardId": "iron-crosses-empires-routes",
+      "cardPrimaryEntityId": "iron"
+    },
+    {
+      "id": "assyria-merchants-before-empire",
+      "title": "商队早于帝国",
+      "timeSpan": {
+        "start": -2000,
+        "end": -1000,
+        "label": "约公元前2000—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-old-assyrian-trade-networks"
+      ],
+      "sourceIds": [
+        "source-met-old-assyrian-caravan",
+        "source-oracc-middle-assyrian",
+        "source-wikimedia-assyrian-trade-tablet"
+      ],
+      "cardId": "assyria-orders-cross-empire",
+      "cardPrimaryEntityId": "neo-assyrian-empire"
+    },
+    {
+      "id": "assyria-kings-prove-through-war",
+      "title": "国王用战争证明自己",
+      "timeSpan": {
+        "start": -911,
+        "end": -745,
+        "label": "公元前911—前745年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-bm-introducing-assyrians",
+        "source-oracc-royal-inscriptions",
+        "source-met-assyria",
+        "source-wikimedia-assyrian-siege"
+      ],
+      "cardId": "assyria-orders-cross-empire",
+      "cardPrimaryEntityId": "neo-assyrian-empire"
+    },
+    {
+      "id": "assyria-rebellion-sees-consequences",
+      "title": "让反抗者看见后果",
+      "timeSpan": {
+        "start": -883,
+        "end": -627,
+        "label": "公元前883—前627年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-oracc-royal-inscriptions",
+        "source-sefaria-isaiah",
+        "source-sefaria-nahum",
+        "source-wikimedia-assyrian-siege"
+      ],
+      "cardId": "assyria-orders-cross-empire",
+      "cardPrimaryEntityId": "neo-assyrian-empire"
+    },
+    {
+      "id": "assyria-conquest-becomes-government",
+      "title": "征服变成日常统治",
+      "timeSpan": {
+        "start": -744,
+        "end": -705,
+        "label": "公元前744—前705年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-oracc-governance",
+        "source-oracc-kings-road",
+        "source-oracc-israel",
+        "source-met-assyria",
+        "source-bm-introducing-assyrians",
+        "source-met-phoenicians",
+        "source-natural-earth"
+      ],
+      "cardId": "assyria-orders-cross-empire",
+      "cardPrimaryEntityId": "neo-assyrian-empire"
+    },
+    {
+      "id": "assyria-people-moved-elsewhere",
+      "title": "人口被移往别处",
+      "timeSpan": {
+        "start": -745,
+        "end": -627,
+        "label": "公元前745—前627年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-neo-assyrian-expansion"
+      ],
+      "sourceIds": [
+        "source-oracc-deportation",
+        "source-oracc-israel",
+        "source-brill-aramaeans",
+        "source-natural-earth"
+      ],
+      "cardId": "assyria-orders-cross-empire",
+      "cardPrimaryEntityId": "neo-assyrian-empire"
+    },
+    {
+      "id": "assyria-nineveh-collects-knowledge",
+      "title": "尼尼微收集泥板上的知识",
+      "timeSpan": {
+        "start": -668,
+        "end": -631,
+        "label": "公元前668—前631年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ashurbanipal-collections-assembled"
+      ],
+      "sourceIds": [
+        "source-bm-ashurbanipal-library",
+        "source-oracc-ashurbanipal-library",
+        "source-oracc-assembling-library",
+        "source-wikimedia-flood-tablet"
+      ],
+      "cardId": "assyria-orders-cross-empire",
+      "cardPrimaryEntityId": "neo-assyrian-empire"
+    },
+    {
+      "id": "assyria-violent-city-silenced",
+      "title": "暴君之城终于沉默",
+      "timeSpan": {
+        "start": -631,
+        "end": -609,
+        "label": "公元前631—前609年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-nineveh-falls"
+      ],
+      "sourceIds": [
+        "source-met-assyria",
+        "source-sefaria-nahum",
+        "source-bm-ashurbanipal-library",
+        "source-natural-earth"
+      ],
+      "cardId": "assyria-orders-cross-empire",
+      "cardPrimaryEntityId": "neo-assyrian-empire"
+    },
+    {
+      "id": "phoenicia-four-coastal-kings",
+      "title": "四座海岸城，各有自己的国王",
+      "timeSpan": {
+        "start": -1200,
+        "end": -900,
+        "label": "约公元前1200—前900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-met-phoenicians",
+        "source-bm-phoenician",
+        "source-natural-earth"
+      ],
+      "cardId": "phoenician-cities-sail-mediterranean",
+      "cardPrimaryEntityId": "phoenician-tradition"
+    },
+    {
+      "id": "phoenicia-cargo-many-hands",
+      "title": "一船货物来自许多双手",
+      "timeSpan": {
+        "start": -1100,
+        "end": -800,
+        "label": "约公元前1100—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-met-phoenicians",
+        "source-bm-phoenician",
+        "source-wikimedia-phoenician-bronze-bowl"
+      ],
+      "cardId": "phoenician-cities-sail-mediterranean",
+      "cardPrimaryEntityId": "phoenician-tradition"
+    },
+    {
+      "id": "phoenicia-islands-link-voyage",
+      "title": "岛屿把航程一段段接起",
+      "timeSpan": {
+        "start": -900,
+        "end": -700,
+        "label": "公元前900—前700年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-met-phoenician-sailing",
+        "source-met-phoenicians",
+        "source-natural-earth"
+      ],
+      "cardId": "phoenician-cities-sail-mediterranean",
+      "cardPrimaryEntityId": "phoenician-tradition"
+    },
+    {
+      "id": "phoenicia-beyond-mediterranean-gate",
+      "title": "船驶过地中海的出口",
+      "timeSpan": {
+        "start": -850,
+        "end": -700,
+        "label": "约公元前850—前700年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-met-phoenician-sailing",
+        "source-antiquity-phoenician-diaspora",
+        "source-natural-earth"
+      ],
+      "cardId": "phoenician-cities-sail-mediterranean",
+      "cardPrimaryEntityId": "phoenician-tradition"
+    },
+    {
+      "id": "phoenicia-ships-bring-tribute",
+      "title": "商船带着贡物靠岸",
+      "timeSpan": {
+        "start": -876,
+        "end": -630,
+        "label": "约公元前876—前630年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-met-phoenicians",
+        "source-met-assyria",
+        "source-wikimedia-phoenician-tribute-gate"
+      ],
+      "cardId": "phoenician-cities-sail-mediterranean",
+      "cardPrimaryEntityId": "phoenician-tradition"
+    },
+    {
+      "id": "phoenicia-distant-ports-centres",
+      "title": "远方港口变成新的中心",
+      "timeSpan": {
+        "start": -850,
+        "end": -300,
+        "label": "约公元前850—前300年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-phoenician-westward-connections"
+      ],
+      "sourceIds": [
+        "source-met-alphabet",
+        "source-met-phoenician-sailing",
+        "source-bm-phoenician",
+        "source-wikimedia-carthage-punic-ports"
+      ],
+      "cardId": "phoenician-cities-sail-mediterranean",
+      "cardPrimaryEntityId": "phoenician-tradition"
+    },
+    {
+      "id": "israel-jacob-gets-another-name",
+      "title": "雅各得到另一个名字",
+      "timeSpan": {
+        "start": -800,
+        "end": -500,
+        "label": "约公元前800—前500年",
+        "approximate": true
+      },
+      "timeDisplay": "undatedNarrative",
+      "eventIds": [
+        "event-jacob-renamed-israel-tradition"
+      ],
+      "sourceIds": [
+        "source-genesis-jacob",
+        "source-wikimedia-jacob-wrestling"
+      ],
+      "cardId": "two-kingdoms-two-falls",
+      "cardPrimaryEntityId": "ancient-israelite-tradition"
+    },
+    {
+      "id": "israel-one-tradition-two-capitals",
+      "title": "同一传统，两座王都",
+      "timeSpan": {
+        "start": -930,
+        "end": -853,
+        "label": "约公元前930—前853年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-israel-and-judah-develop-separate-kingships"
+      ],
+      "sourceIds": [
+        "source-met-ancient-israel",
+        "source-wikimedia-israel-judah-map"
+      ],
+      "cardId": "two-kingdoms-two-falls",
+      "cardPrimaryEntityId": "ancient-israelite-tradition"
+    },
+    {
+      "id": "israel-enters-and-falls-to-assyria",
+      "title": "北方王国走进亚述，也被亚述终结",
+      "timeSpan": {
+        "start": -853,
+        "end": -720,
+        "label": "公元前853—前720年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-israel-falls-to-assyria"
+      ],
+      "sourceIds": [
+        "source-bm-black-obelisk",
+        "source-oracc-israel",
+        "source-natural-earth"
+      ],
+      "cardId": "two-kingdoms-two-falls",
+      "cardPrimaryEntityId": "ancient-israelite-tradition"
+    },
+    {
+      "id": "judah-lachish-falls-jerusalem-remains",
+      "title": "拉吉陷落，耶路撒冷留下",
+      "timeSpan": {
+        "start": -701,
+        "end": -701,
+        "label": "公元前701年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-lachish-captured"
+      ],
+      "sourceIds": [
+        "source-bm-lachish",
+        "source-sefaria-kings",
+        "source-met-ancient-israel",
+        "source-wikimedia-lachish-captives"
+      ],
+      "cardId": "two-kingdoms-two-falls",
+      "cardPrimaryEntityId": "ancient-israelite-tradition"
+    },
+    {
+      "id": "judah-babylon-twice-enters-jerusalem",
+      "title": "巴比伦两次攻进耶路撒冷",
+      "timeSpan": {
+        "start": -597,
+        "end": -586,
+        "label": "公元前597—前586年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-neo-babylonian-western-campaigns"
+      ],
+      "sourceIds": [
+        "source-bm-babylonian-chronicle",
+        "source-sefaria-kings",
+        "source-wikimedia-babylonian-chronicle"
+      ],
+      "cardId": "two-kingdoms-two-falls",
+      "cardPrimaryEntityId": "ancient-israelite-tradition"
+    },
+    {
+      "id": "judah-people-continue-two-places",
+      "title": "人们在两处继续生活",
+      "timeSpan": {
+        "start": -586,
+        "end": -500,
+        "label": "约公元前586—前500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-judean-communities-continue-after-exile"
+      ],
+      "sourceIds": [
+        "source-met-cyrus-return",
+        "source-sefaria-kings",
+        "source-wikimedia-jehoiachin-ration-tablet"
+      ],
+      "cardId": "two-kingdoms-two-falls",
+      "cardPrimaryEntityId": "ancient-israelite-tradition"
+    },
+    {
+      "id": "aramaic-small-states-one-language",
+      "title": "许多小国写下同一种语言",
+      "timeSpan": {
+        "start": -1200,
+        "end": -800,
+        "label": "约公元前1200—前800年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-oxford-aramaeans",
+        "source-brill-aramaeans",
+        "source-oracc-aramaic-hebrew",
+        "source-wikimedia-bar-rakib"
+      ],
+      "cardId": "aramaic-crosses-empires",
+      "cardPrimaryEntityId": "aramaic-language"
+    },
+    {
+      "id": "aramaic-conquest-moves-speakers",
+      "title": "王国消失，说话的人被搬进帝国",
+      "timeSpan": {
+        "start": -900,
+        "end": -700,
+        "label": "约公元前900—前700年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-brill-aramaeans",
+        "source-oracc-deportation",
+        "source-natural-earth"
+      ],
+      "cardId": "aramaic-crosses-empires",
+      "cardPrimaryEntityId": "aramaic-language"
+    },
+    {
+      "id": "aramaic-two-scribes-one-palace",
+      "title": "被征服者的语言走进王宫",
+      "timeSpan": {
+        "start": -800,
+        "end": -650,
+        "label": "约公元前800—前650年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-oracc-aramaic-hebrew",
+        "source-oracc-palace-scribe",
+        "source-wikimedia-assyrian-scribes"
+      ],
+      "cardId": "aramaic-crosses-empires",
+      "cardPrimaryEntityId": "aramaic-language"
+    },
+    {
+      "id": "aramaic-outlives-empires",
+      "title": "征服者倒下，语言继续任职",
+      "timeSpan": {
+        "start": -600,
+        "end": -330,
+        "label": "约公元前600—前330年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aramaic-enters-imperial-administration"
+      ],
+      "sourceIds": [
+        "source-iranica-aramaic",
+        "source-natural-earth"
+      ],
+      "cardId": "aramaic-crosses-empires",
+      "cardPrimaryEntityId": "aramaic-language"
+    },
+    {
+      "id": "babylon-city-refuses-submission",
+      "title": "一座不肯安静服从的城市",
+      "timeSpan": {
+        "start": -689,
+        "end": -626,
+        "label": "公元前689—前626年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-babylon-destroyed-and-rebuilt-under-assyria"
+      ],
+      "sourceIds": [
+        "source-met-esarhaddon-prism"
+      ],
+      "cardId": "babylon-inherits-assyrian-empire",
+      "cardPrimaryEntityId": "neo-babylonian-empire"
+    },
+    {
+      "id": "babylon-war-continues-west",
+      "title": "推倒亚述之后，战争继续向西",
+      "timeSpan": {
+        "start": -626,
+        "end": -605,
+        "label": "公元前626—前605年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-nineveh-falls",
+        "event-neo-babylonian-western-campaigns"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-met-assyria",
+        "source-natural-earth"
+      ],
+      "cardId": "babylon-inherits-assyrian-empire",
+      "cardPrimaryEntityId": "neo-babylonian-empire"
+    },
+    {
+      "id": "babylon-colored-bricks-stage-capital",
+      "title": "彩色砖墙把首都变成舞台",
+      "timeSpan": {
+        "start": -605,
+        "end": -562,
+        "label": "公元前605—前562年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-nebuchadnezzar-rebuilds-babylon"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-met-babylon-lion",
+        "source-met-nebuchadnezzar-cylinder"
+      ],
+      "cardId": "babylon-inherits-assyrian-empire",
+      "cardPrimaryEntityId": "neo-babylonian-empire"
+    },
+    {
+      "id": "babylon-king-name-in-bricks",
+      "title": "国王把名字压进每一块砖",
+      "timeSpan": {
+        "start": -605,
+        "end": -562,
+        "label": "公元前605—前562年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-nebuchadnezzar-rebuilds-babylon"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-met-nebuchadnezzar-cylinder"
+      ],
+      "cardId": "babylon-inherits-assyrian-empire",
+      "cardPrimaryEntityId": "neo-babylonian-empire"
+    },
+    {
+      "id": "babylon-empire-enters-households",
+      "title": "帝国伸进一户人的家门",
+      "timeSpan": {
+        "start": -597,
+        "end": -562,
+        "label": "公元前597—前562年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-nebuchadnezzar-rebuilds-babylon"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-bm-babylonian-chronicle",
+        "source-wikimedia-babylonian-chronicle"
+      ],
+      "cardId": "babylon-inherits-assyrian-empire",
+      "cardPrimaryEntityId": "neo-babylonian-empire"
+    },
+    {
+      "id": "babylon-conqueror-borrows-language",
+      "title": "征服者借用巴比伦的语言",
+      "timeSpan": {
+        "start": -539,
+        "end": -539,
+        "label": "公元前539年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-persia-conquers-babylon"
+      ],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-bm-cyrus-cylinder",
+        "source-livius-cyrus-cylinder"
+      ],
+      "cardId": "babylon-inherits-assyrian-empire",
+      "cardPrimaryEntityId": "neo-babylonian-empire"
+    },
+    {
+      "id": "lydia-roads-gold-kingship-sardis",
+      "title": "道路、黄金和王权汇入萨迪斯",
+      "timeSpan": {
+        "start": -700,
+        "end": -560,
+        "label": "约公元前700—前560年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-met-sardis",
+        "source-sardis-introduction",
+        "source-natural-earth"
+      ],
+      "cardId": "lydia-coins-gold-silver",
+      "cardPrimaryEntityId": "lydian-kingdom"
+    },
+    {
+      "id": "lydia-mark-makes-alloy-speak",
+      "title": "印记让一块合金开始说话",
+      "timeSpan": {
+        "start": -650,
+        "end": -560,
+        "label": "约公元前650—前560年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-met-sardis",
+        "source-met-lydia-phrygia",
+        "source-sardis-coins",
+        "source-wikimedia-lydian-electrum-lions"
+      ],
+      "cardId": "lydia-coins-gold-silver",
+      "cardPrimaryEntityId": "lydian-kingdom"
+    },
+    {
+      "id": "lydia-croesus-separates-gold-silver",
+      "title": "克洛伊索斯把合金分成金与银",
+      "timeSpan": {
+        "start": -560,
+        "end": -546,
+        "label": "公元前560—前546年"
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-met-sardis",
+        "source-met-lydia-phrygia",
+        "source-sardis-coins",
+        "source-sardis-refining",
+        "source-met-croesus-stater"
+      ],
+      "cardId": "lydia-coins-gold-silver",
+      "cardPrimaryEntityId": "lydian-kingdom"
+    },
+    {
+      "id": "lydia-kingdom-falls-mint-continues",
+      "title": "王国灭亡，铸币制度继续扩展",
+      "timeSpan": {
+        "start": -546,
+        "end": -500,
+        "label": "约公元前546—前500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-persia-conquers-sardis",
+        "event-lydian-coinage-emerges"
+      ],
+      "sourceIds": [
+        "source-sardis-coins",
+        "source-iranica-cyrus",
+        "source-met-coinage-greece",
+        "source-natural-earth"
+      ],
+      "cardId": "lydia-coins-gold-silver",
+      "cardPrimaryEntityId": "lydian-kingdom"
+    }
+  ],
+  "structuralEdges": [
+    {
+      "id": "edge-assyria-conquers-israel",
+      "family": "historicalNetwork",
+      "type": "conquered",
+      "source": {
+        "kind": "entity",
+        "id": "neo-assyrian-empire"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "kingdom-of-israel"
+      },
+      "timeSpan": {
+        "start": -734,
+        "end": -720,
+        "label": "约公元前734—前720年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "吞并其领土",
+        "reverse": "被其吞并"
+      },
+      "summaries": {
+        "canonical": "亚述逐步削减并最终吞并以色列王国。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-oracc-israel"
+      ]
+    },
+    {
+      "id": "edge-assyria-subordinates-phoenician-cities",
+      "family": "historicalNetwork",
+      "type": "received_tribute_from",
+      "source": {
+        "kind": "entity",
+        "id": "neo-assyrian-empire"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "phoenician-tradition"
+      },
+      "timeSpan": {
+        "start": -876,
+        "end": -630,
+        "label": "约公元前876—前630年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "向海岸城邦索取贡物",
+        "reverse": "向其纳贡并周旋"
+      },
+      "summaries": {
+        "canonical": "亚述通过远征、条约和贡赋控制部分腓尼基城邦，却没有接管整片地中海航网。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-met-phoenicians",
+        "source-met-assyria"
+      ]
+    },
+    {
+      "id": "edge-phoenician-script-influences-aramaic",
+      "family": "historicalNetwork",
+      "type": "influenced_writing",
+      "source": {
+        "kind": "entity",
+        "id": "phoenician-tradition"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "aramaic-language"
+      },
+      "timeSpan": {
+        "start": -1000,
+        "end": -800,
+        "label": "约公元前1000—前800年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "影响其字母书写",
+        "reverse": "从其传统发展字母"
+      },
+      "summaries": {
+        "canonical": "早期阿拉米字母从腓尼基字母传统发展而来，又逐渐形成自己的书写样式。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-oracc-aramaic-hebrew",
+        "source-met-alphabet"
+      ]
+    },
+    {
+      "id": "edge-assyria-uses-aramaic",
+      "family": "historicalNetwork",
+      "type": "used_in_administration",
+      "source": {
+        "kind": "entity",
+        "id": "neo-assyrian-empire"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "aramaic-language"
+      },
+      "timeSpan": {
+        "start": -800,
+        "end": -609,
+        "label": "约公元前800—前609年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "在行政中使用",
+        "reverse": "进入其行政网络"
+      },
+      "summaries": {
+        "canonical": "新亚述宫廷和地方行政逐渐把阿拉米语书吏纳入多语言文书系统。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-oracc-aramaic-hebrew",
+        "source-oracc-palace-scribe"
+      ]
+    },
+    {
+      "id": "edge-neo-babylon-succeeds-assyria",
+      "family": "historicalNetwork",
+      "type": "succeeded",
+      "source": {
+        "kind": "entity",
+        "id": "neo-babylonian-empire"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "neo-assyrian-empire"
+      },
+      "timeSpan": {
+        "start": -626,
+        "end": -605,
+        "label": "公元前626—前605年"
+      },
+      "label": {
+        "forward": "推翻并接续其部分帝国空间",
+        "reverse": "被其推翻并接续"
+      },
+      "summaries": {
+        "canonical": "新巴比伦联合米底推翻亚述王权，并继续争夺亚述留下的叙利亚与黎凡特。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-met-babylon",
+        "source-met-assyria"
+      ]
+    }
+  ]
+}

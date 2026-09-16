@@ -1,0 +1,20 @@
+[
+  {"id":"event-ur-iii-formation","name":"乌尔第三王朝形成","layerId":"eventAndConflict","decision":"可删","reason":"当前内容主要重复政权条块的起点，且把十余年的形成概括当作单个事件。","action":"删去独立事件；形成背景并入乌尔第三王朝详情，不为原有页面引用保留。"},
+  {"id":"event-hammurabi-conquests","name":"汉谟拉比统一南部与中部美索不达米亚","layerId":"eventAndConflict","decision":"需修改","reason":"征服活动有独立价值，尤其政权层已去掉短扩张支线；但当前只列扩张方，并以控制范围充当事件发生范围。","action":"保留一项，简称“汉谟拉比征服战争”；核实并区分战争发生地与结果范围，补充来源已支持的对手，勿重新铺成长时期占领条块。"},
+  {"id":"event-ahmose-captures-avaris","name":"雅赫摩斯攻下阿瓦里斯","layerId":"eventAndConflict","decision":"需修改","reason":"具体攻城可以保留，但当前把尼罗河谷和三角洲都列为controlled，把统一结果混入攻城地点。","action":"保留攻城节点，按现有来源复核阿瓦里斯对应地域；统一结果放说明，取消以整个河谷受控范围表达该攻城的放置。"},
+  {"id":"event-battle-of-kadesh","name":"卡迭石战役","layerId":"eventAndConflict","decision":"保留","reason":"有明确交战双方和发生地域，是政权存在条块无法替代的具体战争。","action":"保持单一战役节点与现有近似日期；保留双方参与者和王室叙述的内部审校。"},
+  {"id":"event-egypt-hatti-treaty","name":"埃及与赫梯签订和平条约","layerId":"eventAndConflict","decision":"保留","reason":"和平条约提供战争之外的明确政治行动，不能由双方政权条块重叠代替。","action":"保留同一事件身份；两地放置继续标为关联，详情不得写成两个确定签署地点。"},
+  {"id":"event-western-zhou-capitals-fall","name":"西周王都失守","layerId":"eventAndConflict","decision":"可删","reason":"现有内容集中于西周结束，信息与西周条块终点高度重复，尚无独立展开的战斗内容。","action":"删去独立节点，王都失守说明保留在西周详情。"},
+  {"id":"event-zhou-conquest-of-shang","name":"周人征服商王朝","layerId":"eventAndConflict","decision":"需修改","reason":"虽位于王朝交接处，但征服行动和双方参与具有独立价值；当前十年范围需要明确是定年不确定区间还是战争持续时间。","action":"保留代表性战争项；依据已有证据收紧到具体行动，近似区间明确为定年范围，不能直接画成持续十年的战争。"},
+  {"id":"event-hittite-sack-babylon","name":"赫梯军队突袭巴比伦","layerId":"eventAndConflict","decision":"需修改","reason":"远征突袭比“古巴比伦结束”多出明确跨文明行动，值得保留；但安纳托利亚关联位置可能被误读为另一个袭击现场。","action":"以巴比伦所在地域保留发生节点；出发方的地域背景放详情，参与双方保留，不将关联地域渲染为第二个发生点。"},
+  {"id":"event-hittite-ugarit-treaty","name":"乌加里特进入赫梯条约体系","layerId":"eventAndConflict","decision":"保留","reason":"解释两个持续存在的政权如何建立条约关系，与简单起止点不同。","action":"保留一项及双方参与者；现有近似日期保留，详情区分条约安排与实际控制程度。"},
+  {"id":"event-ugarit-destruction","name":"乌加里特王国毁灭","layerId":"eventAndConflict","decision":"可删","reason":"当前主要表示乌加里特王国条块终结，没有确定的攻击方可使它成为更具体的战争项。","action":"删去独立毁灭节点；遗址破坏与原因不确定说明留在对象详情，不补造入侵者。"},
+  {"id":"event-ramesses-iii-northern-invasions","name":"拉美西斯三世抵御北方来敌","layerId":"eventAndConflict","decision":"保留","reason":"这是政权存续期间的具体抵御行动，不是另一个王朝末端标记。","action":"保留三角洲事件节点；维持来敌身份的不确定性，不把它泛化为覆盖整个地中海的统一战争。"},
+  {"id":"event-mycenaean-palaces-end","name":"迈锡尼宫殿接连终结","layerId":"eventAndConflict","decision":"可删","reason":"七十年间多处宫殿的接连变化属于汇总过程，目前与迈锡尼收缩和后宫殿社区说明重复；不能把宫殿终结等同于文明灭亡。","action":"删除这个汇总事件；宫殿体系变化并入迈锡尼详情，明确晚期延续，不任意挑一个毁灭年份替代。"},
+  {"id":"event-troy-vi-viia-destruction","name":"特洛伊VI与VIIa经历毁坏和重建","layerId":"eventAndConflict","decision":"需修改","reason":"当前跨度约五百二十年，实际承载遗址层位的长期存续和多次变迁，并重复登记同一参与者，不能视为一场事件。","action":"取消当前长事件表达；从现有来源审核是否可保留一个有独立定年的具体毁坏事件，其余归入特洛伊遗址详情；若证据不足则删除，不凭空压缩年代。"},
+  {"id":"event-hittite-wilusa-treaty","name":"赫梯大王与维鲁萨国王缔结条约","layerId":"eventAndConflict","decision":"需修改","reason":"外交行动值得保留，但当前把特洛伊考古遗址放入参与者；数据自己的说明已承认遗址不是缔约政权，且五十年时间范围语义不清。","action":"保留条约本身，移除遗址作为缔约参与者的表达，地理识别放关联说明；依据原来源审核政治参与者和定年，不把不确定区间当作条约签订持续时间。"},
+  {"id":"event-nineveh-falls","name":"尼尼微陷落","layerId":"eventAndConflict","decision":"可删","reason":"当前日期延伸到新亚述条块结束，混合城市陷落与帝国终结，内容主要重复政治交接。","action":"删去当前独立节点；城市陷落与帝国结束分别写入详情，避免沿用一个跨度混称。"},
+  {"id":"event-lachish-captured","name":"亚述攻陷拉吉","layerId":"eventAndConflict","decision":"保留","reason":"有具体攻城、双方参与和浮雕证据，并不意味着犹大政权终结，独立于政权条块。","action":"保留单年节点与双方参与者；攻城浮雕的王室视角继续作为内部审校。"},
+  {"id":"event-persia-conquers-babylon","name":"波斯征服巴比伦","layerId":"eventAndConflict","decision":"可删","reason":"在当前内容范围内主要充当新巴比伦条块末端，征服方尚未成为此数据中的参与对象。","action":"删去独立节点，征服说明与来源保留在新巴比伦及巴比伦详情；以后真正展开波斯战争时再单独审核。"},
+  {"id":"event-persia-conquers-sardis","name":"波斯攻取萨迪斯","layerId":"eventAndConflict","decision":"可删","reason":"当前只有被征服的吕底亚，主要重复其政权结束，未形成独立战争内容。","action":"删去独立节点，将攻取首都及定年不确定性保留在吕底亚详情。"}
+]

@@ -1,0 +1,167 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/aegean.ts",
+  "decisions": [
+    {
+      "eventId": "event-mycenaean-shaft-grave-elites-emerge",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-mycenaean-shaft-grave-elites-emerge"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-greek-divine-narratives-form-in-song",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "convertedToEntity",
+        "entityId": "greek-divine-tradition"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "V5 textualTradition 转入既有稳定 Entity 的口头形成/流通 Phase，不进入 V6 历史 Event；具体神话或史诗情节不作为历史 Phase。"
+      ]
+    },
+    {
+      "eventId": "event-greek-heroic-songs-form-and-circulate",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "按本轮知识核心精简决定，不保留独立的口头形成或传播传统；原始证据与叙事信号留在迁移审计，不再作为现存 V6 对象迁入。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "原 V5 Event 描述口头形成或传播过程，不等同于代表作品的成文节点；本轮不保留其独立运行时目标。"
+      ]
+    },
+    {
+      "eventId": "event-iliad-oral-composition-and-transmission",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "按本轮知识核心精简决定，不保留独立的口头形成或传播传统；原始证据与叙事信号留在迁移审计，不再作为现存 V6 对象迁入。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "原 V5 Event 描述口头形成或传播过程，不等同于代表作品的成文节点；本轮不保留其独立运行时目标。"
+      ]
+    },
+    {
+      "eventId": "event-odyssey-oral-composition-and-transmission",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "按本轮知识核心精简决定，不保留独立的口头形成或传播传统；原始证据与叙事信号留在迁移审计，不再作为现存 V6 对象迁入。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "原 V5 Event 描述口头形成或传播过程，不等同于代表作品的成文节点；本轮不保留其独立运行时目标。"
+      ]
+    },
+    {
+      "eventId": "event-crete-palaces-emerge-and-rebuild",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-crete-palaces-emerge-and-rebuild"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-knossos-linear-b-administration",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-knossos-linear-b-administration"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-mycenaean-palace-administration",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-mycenaean-palace-administration"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-mycenaean-palaces-end",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：取消重复政权终点或长期遗址变化的独立事件，内容保留在所属对象说明与原始证据中。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "2026-09-15概念层审核已执行；不为V5兼容保留独立事件。"
+      ]
+    },
+    {
+      "eventId": "event-aegean-localizes-after-palaces",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-aegean-localizes-after-palaces"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-aegean-regional-links-renew",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-aegean-regional-links-renew"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-troy-vi-viia-destruction",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "用户批准概念层精简：取消重复政权终点或长期遗址变化的独立事件，内容保留在所属对象说明与原始证据中。"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted",
+      "notes": [
+        "2026-09-15概念层审核已执行；不为V5兼容保留独立事件。"
+      ]
+    },
+    {
+      "eventId": "event-hittite-wilusa-treaty",
+      "oldKind": "historicalEvent",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-hittite-wilusa-treaty"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

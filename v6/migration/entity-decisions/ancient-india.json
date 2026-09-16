@@ -1,0 +1,72 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-india.ts",
+  "decisions": [
+    {
+      "entityId": "indus-civilization",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "community",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "indus-civilization-core-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "indus-civilization"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "mohenjo-daro",
+      "oldType": "SettlementSite",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "settlement",
+        "archaeologicalSite"
+      ],
+      "proposedConceptLayers": [
+        "placeAndSite"
+      ],
+      "acceptedEntityType": "archaeologicalSite",
+      "acceptedConceptLayerId": "placeAndSite",
+      "acceptedPhaseIds": [
+        "mohenjo-daro-mature-urban-settlement"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "mohenjo-daro"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "vedic-tradition",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "culturalTradition",
+      "acceptedConceptLayerId": "religionAndThought",
+      "acceptedPhaseIds": [
+        "vedic-early-hymn-oral-tradition"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "vedic-tradition"
+      },
+      "status": "accepted"
+    }
+  ]
+}

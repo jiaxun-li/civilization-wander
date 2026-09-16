@@ -1,0 +1,554 @@
+{
+  "ledgerVersion": 1,
+  "runtimeCollection": false,
+  "sourceModule": "data/mesopotamia.ts",
+  "candidates": [
+    {
+      "candidate": {
+        "id": "candidate-southern-mesopotamia-water-land-practice-identity",
+        "sourceSceneIds": [
+          "sumer-water-network",
+          "sumer-land-measurement"
+        ],
+        "proposedFamily": "technological",
+        "proposedType": "waterAndLandManagementPracticeIdentity",
+        "proposedOrientation": "multiParty",
+        "proposedTimeSpan": {
+          "start": -3500,
+          "end": -2000,
+          "label": "约公元前3500—前2000年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "南部美索不达米亚城市文化语境",
+            "proposedEntityTypes": [
+              "culturalTradition"
+            ],
+            "notes": "原 V5 以苏美尔文明作为统一端点；V6 已删除这一伪 block，尚不能确认是否需要另建稳定文化传统 Entity。"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "uruk"
+            },
+            "proposedPhaseId": "uruk-urban-expansion",
+            "proposedRole": "urbanAttestation"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "水渠与土地管理实践",
+            "proposedEntityTypes": [
+              "productionSystem",
+              "technology",
+              "institution"
+            ],
+            "notes": "尚不能确定这是可复用的生产体系、技术组合、制度，还是只应作为多个Event的普通解释。"
+          }
+        ],
+        "summary": "南部美索不达米亚的水渠、土地丈量和城市管理可能构成可复用的稳定关系目标，但其知识身份与边界尚未确定。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousTargetKind",
+          "ordinaryExplanationOnly"
+        ],
+        "unresolvedQuestions": [
+          "是否存在足够稳定、跨Scene复用的对象身份？",
+          "若建立Entity，应归类为productionSystem、technology还是institution？",
+          "土地丈量是否应与水渠管理拆成两个对象？"
+        ],
+        "sourceIds": [
+          "source-adams-heartland-cities",
+          "source-isac-irrigation-southern-mesopotamia",
+          "source-met-ushumgal-stele",
+          "source-proust-mesopotamian-mathematics"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "sumer",
+        "originatingPhaseCandidateIds": [
+          "sumer-city-and-knowledge-traditions",
+          "uruk-urban-expansion"
+        ],
+        "sourceEventIds": [
+          "event-southern-mesopotamia-water-land-management"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-mesopotamian-number-calendar-practice-identity",
+        "sourceSceneIds": [
+          "sumer-sixty-and-moon"
+        ],
+        "proposedFamily": "technological",
+        "proposedType": "numberAndCalendarPracticeIdentity",
+        "proposedOrientation": "multiParty",
+        "proposedTimeSpan": {
+          "start": -3300,
+          "end": -2000,
+          "label": "约公元前3300—前2000年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "南部美索不达米亚计数与历法语境",
+            "proposedEntityTypes": [
+              "culturalTradition"
+            ],
+            "notes": "原 V5 以苏美尔文明作为统一端点；V6 已删除这一伪 block，知识实践是否构成稳定文化传统仍待审核。"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "cuneiform"
+            },
+            "proposedPhaseId": "cuneiform-early-development",
+            "proposedRole": "recordingMedium"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "六十进位计数与历法实践",
+            "proposedEntityTypes": [
+              "technology",
+              "productionSystem",
+              "culturalTradition"
+            ],
+            "notes": "计数法、度量实践与历法是否共同构成一个稳定Entity，或仅是相关但不同的知识实践，尚未确定。"
+          }
+        ],
+        "summary": "计数、度量与历法实践在多个Scene中共同出现，但尚不足以决定应建立一个还是多个稳定知识对象。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousTargetKind"
+        ],
+        "unresolvedQuestions": [
+          "六十进位计数、土地度量与历法应合并还是拆分？",
+          "它们更适合作为technology、productionSystem、culturalTradition，还是只保留为Event过程？"
+        ],
+        "sourceIds": [
+          "source-firth-sumerian-calendars",
+          "source-met-ur-iii-dugga-account",
+          "source-proust-mesopotamian-mathematics"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "sumer",
+        "originatingPhaseCandidateIds": [
+          "sumer-city-and-knowledge-traditions",
+          "cuneiform-early-development"
+        ],
+        "sourceEventIds": [
+          "event-mesopotamian-number-calendar-practices-develop"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-babel-etemenanki-later-association",
+        "sourceSceneIds": [
+          "tower-of-babel-real-etemenanki",
+          "tower-of-babel-evidence-and-reconstruction",
+          "tower-of-babel-building-becomes-memory"
+        ],
+        "proposedFamily": "literary",
+        "proposedType": "laterInterpretiveAssociationWithMonument",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -700,
+          "end": -331,
+          "label": "约公元前700—前331年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "tower-of-babel-tradition"
+            },
+            "proposedRole": "laterTextualTradition"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "埃特曼安吉塔庙",
+            "proposedEntityTypes": [
+              "monument"
+            ],
+            "notes": "埃特曼安吉是具体建筑目标；当前V6只有较宽泛的mesopotamian-temple制度Entity，不能用它代替尚未稳定化的Monument身份。"
+          }
+        ],
+        "summary": "巴别塔故事后来常与巴比伦的埃特曼安吉塔庙联系，但不能把文本叙事与具体建筑直接等同。",
+        "reasons": [
+          "ambiguousRelationKind",
+          "insufficientEvidence"
+        ],
+        "unresolvedQuestions": [
+          "这应表示文本传统对建筑的后世联想、历史参照，还是现代解释史？",
+          "关联形成的时间范围能否由现有来源可靠界定？",
+          "是否需要先建立埃特曼安吉本身的稳定Monument Entity？"
+        ],
+        "sourceIds": [
+          "source-george-tower-of-babel",
+          "source-met-etemenanki-cylinder",
+          "source-oracc-nebuchadnezzar-etemenanki",
+          "source-sefaria-genesis-11",
+          "source-wikimedia-esagil-tablet",
+          "source-wikimedia-etemenanki-reconstruction",
+          "source-wikimedia-etemenanki-ruins"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "tower-of-babel-tradition",
+        "originatingPhaseCandidateIds": [
+          "tower-of-babel-textual-formation"
+        ],
+        "sourceEventIds": [
+          "event-tower-babel-textual-tradition-forms",
+          "event-etemenanki-rebuilding"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-hammurabi-code-transmission-discovery-chain",
+        "sourceSceneIds": [
+          "hammurabi-code-transmission-discovery"
+        ],
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -1750,
+          "end": 1902,
+          "label": "约公元前1750—公元1902年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "hammurabi-code"
+            },
+            "proposedPhaseId": "hammurabi-code-stele-created",
+            "proposedRole": "transmittedAndRediscoveredText"
+          },
+          {
+            "kind": "unresolvedSubject",
+            "label": "后世传抄、出土与现代发现链条",
+            "notes": "这可能应拆成后世文本传播、古代搬运或保存、1901—1902年出土发现等Event，而不是建立一个Entity。"
+          }
+        ],
+        "summary": "法典石碑的创建、后世抄本、古代移动与现代发现跨越过长时段，不应压进公元前1750年的创建Phase。",
+        "reasons": [
+          "ambiguousTargetKind",
+          "ambiguousRelationKind",
+          "ordinaryExplanationOnly"
+        ],
+        "unresolvedQuestions": [
+          "后世传抄与现代发现是否应拆成多个历史Event？",
+          "是否存在足够来源建立石碑移动或保存的独立关系？",
+          "现代考古发现是否属于本知识网络的运行时范围？"
+        ],
+        "sourceIds": [
+          "source-cambridge-hammurabi-copies",
+          "source-cdli-law-collections",
+          "source-ehammurabi-laws",
+          "source-louvre-hammurabi-code",
+          "source-wikimedia-hammurabi-discovery"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "hammurabi-code",
+        "originatingPhaseCandidateIds": [
+          "hammurabi-code-stele-created"
+        ],
+        "sourceEventIds": [
+          "event-hammurabi-code-stele"
+        ],
+        "sourceStructuralEdgeIds": []
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-sumer-uruk-cultural-context",
+        "originatingV5StructuralEdgeId": "edge-sumer-uruk",
+        "sourceSceneIds": [
+          "sumer-uruk-gathering"
+        ],
+        "proposedFamily": "spatial",
+        "proposedType": "cityWithinRegionalCulturalContext",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -3500,
+          "end": -3000,
+          "label": "约公元前3500—前3000年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "苏美尔城市文化语境",
+            "proposedEntityTypes": [
+              "culturalTradition"
+            ],
+            "notes": "苏美尔文明不再作为统一运行时 Entity；文化—地域统称是否需要稳定身份，等待文明背景方案另行审核。"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "uruk"
+            },
+            "proposedPhaseId": "uruk-urban-expansion",
+            "proposedRole": "urbanAttestation"
+          }
+        ],
+        "summary": "乌鲁克属于更广阔的南部美索不达米亚城市文化语境，但当前不把该语境实体化为政权式文明 block。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousTargetKind"
+        ],
+        "unresolvedQuestions": [
+          "未来文明背景是否足以表达这一语境？",
+          "是否还需要独立、非政权式的文化传统 Entity？"
+        ],
+        "sourceIds": [
+          "source-getty-uruk",
+          "source-adams-heartland-cities",
+          "source-met-uruk-first-city"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "sumer",
+        "originatingPhaseCandidateIds": [
+          "sumer-city-and-knowledge-traditions",
+          "uruk-urban-expansion"
+        ],
+        "sourceEventIds": [
+          "event-uruk-urban-expansion"
+        ],
+        "sourceStructuralEdgeIds": [
+          "edge-sumer-uruk"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-sumer-cuneiform-development-context",
+        "originatingV5StructuralEdgeId": "edge-sumer-cuneiform",
+        "sourceSceneIds": [
+          "sumer-clay-records",
+          "cuneiform-quantities"
+        ],
+        "proposedFamily": "linguistic",
+        "proposedType": "earlyWritingDevelopmentContext",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -3350,
+          "end": -2000,
+          "label": "约公元前3350—前2000年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "南部美索不达米亚城市书写语境",
+            "proposedEntityTypes": [
+              "culturalTradition"
+            ],
+            "notes": "原关系把苏美尔文明当成单一关系端点；应先判断城市管理实践、苏美尔语和文化语境是否需要拆成不同对象。"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "cuneiform"
+            },
+            "proposedPhaseId": "cuneiform-early-development",
+            "proposedRole": "developingWritingSystem"
+          }
+        ],
+        "summary": "早期楔形文字形成于南部城市的管理和语言实践中，但不能继续用苏美尔文明伪 block 充当因果或文化端点。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousRelationKind"
+        ],
+        "unresolvedQuestions": [
+          "关系另一端应是苏美尔语、城市管理实践还是文化背景？",
+          "这是否只是楔形文字 Phase 的普通解释？"
+        ],
+        "sourceIds": [
+          "source-englund-proto-cuneiform",
+          "source-met-origins-writing",
+          "source-damerow-writing-epistemology"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "sumer",
+        "originatingPhaseCandidateIds": [
+          "sumer-city-and-knowledge-traditions",
+          "cuneiform-early-development"
+        ],
+        "sourceEventIds": [
+          "event-proto-cuneiform-accounting-emerges",
+          "event-cuneiform-wedge-and-phonetic-writing-develop"
+        ],
+        "sourceStructuralEdgeIds": [
+          "edge-sumer-cuneiform"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-akkadian-southern-city-world-reorganization",
+        "originatingV5StructuralEdgeId": "edge-sumer-akkadian-empire",
+        "sourceSceneIds": [
+          "akkadian-empire-city-states"
+        ],
+        "proposedFamily": "political",
+        "proposedType": "conqueredAndReorganizedSouthernCityWorld",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -2350,
+          "end": -2150,
+          "label": "约公元前2350—前2150年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "南部美索不达米亚城邦世界",
+            "proposedEntityTypes": [
+              "community",
+              "culturalTradition"
+            ],
+            "notes": "多个南方城邦不能被一个苏美尔文明 Entity 代替；需要决定是建立复合关系、使用若干具体城市，还是只保留为阿卡德 Phase 与 Event 证据。"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "akkadian-empire"
+            },
+            "proposedPhaseId": "akkadian-imperial-order",
+            "proposedRole": "conqueringPolity"
+          }
+        ],
+        "summary": "阿卡德王朝征服并重组多个南方城邦，但这些城邦不应被压缩成一个苏美尔文明关系端点。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousTargetKind"
+        ],
+        "unresolvedQuestions": [
+          "是否应以多个具体城市作为关系参与者？",
+          "已保留的阿卡德政权空间阶段是否已经充分表达该变化，是否还需要具有具体城邦端点的独立关系？"
+        ],
+        "sourceIds": [
+          "source-met-akkadian-period",
+          "source-foster-sargonic-administration",
+          "source-frayne-sargonic-inscriptions"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "sumer",
+        "originatingPhaseCandidateIds": [
+          "sumer-city-and-knowledge-traditions",
+          "akkadian-imperial-order"
+        ],
+        "sourceEventIds": [
+          "event-akkadian-imperial-expansion"
+        ],
+        "sourceStructuralEdgeIds": [
+          "edge-sumer-akkadian-empire"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "id": "candidate-ur-iii-southern-city-traditions",
+        "originatingV5StructuralEdgeId": "edge-sumer-ur-iii",
+        "sourceSceneIds": [
+          "ur-iii-rises-after-akkad"
+        ],
+        "proposedFamily": "political",
+        "proposedType": "reorganizedSouthernCityTraditions",
+        "proposedOrientation": "directed",
+        "proposedTimeSpan": {
+          "start": -2112,
+          "end": -2004,
+          "label": "约公元前2112—前2004年",
+          "approximate": true
+        },
+        "participants": [
+          {
+            "kind": "unresolvedSubject",
+            "label": "南部美索不达米亚城市与知识传统",
+            "proposedEntityTypes": [
+              "culturalTradition"
+            ],
+            "notes": "原关系使用苏美尔文明作为统一端点；城市制度、苏美尔语书写和行政知识是否应拆分，尚未解决。"
+          },
+          {
+            "kind": "knownSubject",
+            "subject": {
+              "kind": "entity",
+              "id": "ur-iii-kingdom"
+            },
+            "proposedPhaseId": "ur-iii-kingdom-order",
+            "proposedRole": "reorganizingPolity"
+          }
+        ],
+        "summary": "乌尔第三王朝重新组织南部城市和行政书写传统，但不能以苏美尔文明伪 block 作为单一被组织对象。",
+        "reasons": [
+          "ambiguousIdentity",
+          "ambiguousTargetKind"
+        ],
+        "unresolvedQuestions": [
+          "关系应指向具体城市、苏美尔语书写传统还是行政制度？",
+          "该关系是否已经被乌尔第三王朝 Phase 和形成 Event 充分表达？"
+        ],
+        "sourceIds": [
+          "source-garfinkle-kingdom-ur",
+          "source-steinkeller-ur-iii-core-periphery",
+          "source-met-ur-iii-dugga-account"
+        ],
+        "status": "unresolved"
+      },
+      "audit": {
+        "sourceModule": "data/mesopotamia.ts",
+        "originatingEntityId": "sumer",
+        "originatingPhaseCandidateIds": [
+          "sumer-city-and-knowledge-traditions",
+          "ur-iii-kingdom-order"
+        ],
+        "sourceEventIds": [
+          "event-ur-iii-formation"
+        ],
+        "sourceStructuralEdgeIds": [
+          "edge-sumer-ur-iii"
+        ]
+      }
+    }
+  ]
+}

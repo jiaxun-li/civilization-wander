@@ -1,0 +1,32 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-egypt.ts",
+  "decisions": [
+    {
+      "structuralEdgeId": "edge-egypt-old-middle-kingdom",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-egypt-old-middle-kingdom-transition"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-egypt-middle-new-kingdom",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-egypt-middle-new-kingdom-transition"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-china.ts",
+  "decisions": [
+    {
+      "structuralEdgeId": "edge-erlitou-shang-transition",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-erlitou-shang-transition"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    },
+    {
+      "structuralEdgeId": "edge-sanxingdui-shang-bronze-comparison",
+      "recommendedDisposition": "reviewForTemporalRelation",
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "relationId": "relation-sanxingdui-shang-bronze-comparison"
+      },
+      "participantRolesResolved": true,
+      "phaseBindingsResolved": true,
+      "relationFamilyResolved": true,
+      "relationTypeResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

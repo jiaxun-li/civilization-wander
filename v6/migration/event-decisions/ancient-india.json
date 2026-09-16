@@ -1,0 +1,50 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-india.ts",
+  "decisions": [
+    {
+      "eventId": "event-steppe-related-ancestry-enters-south-asia",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-steppe-related-ancestry-enters-south-asia"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-rigveda-composed-transmitted",
+      "oldKind": "textualTradition",
+      "recommendedDisposition": "useAsPhaseEvidence",
+      "acceptedDisposition": {
+        "kind": "convertedToEntity",
+        "entityId": "vedic-tradition"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-indus-mesopotamia-exchange",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-indus-mesopotamia-exchange"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    },
+    {
+      "eventId": "event-indus-urban-transformation",
+      "oldKind": "historicalProcess",
+      "recommendedDisposition": "retainEvent",
+      "acceptedDisposition": {
+        "kind": "migratedAsEvent",
+        "eventId": "event-indus-urban-transformation"
+      },
+      "participantRolesResolved": true,
+      "status": "accepted"
+    }
+  ]
+}

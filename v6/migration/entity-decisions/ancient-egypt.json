@@ -1,0 +1,178 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/ancient-egypt.ts",
+  "decisions": [
+    {
+      "entityId": "ancient-egypt-civilization",
+      "oldType": "culturalTradition",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "culturalTradition"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety",
+        "religionAndThought"
+      ],
+      "acceptedEntityType": null,
+      "acceptedConceptLayerId": null,
+      "acceptedPhaseIds": [],
+      "acceptedDisposition": {
+        "kind": "deferred",
+        "reason": "古埃及文明是跨王朝分组总称，不再作为与古王国、中王国、新王国重叠的运行时 Entity。"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "egypt-old-kingdom",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "egypt-old-kingdom-regional-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "egypt-old-kingdom"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "egypt-middle-kingdom",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "egypt-middle-kingdom-reunification",
+        "egypt-middle-kingdom-consolidated-order"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "egypt-middle-kingdom"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "egypt-new-kingdom",
+      "oldType": "polity",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "polity"
+      ],
+      "proposedConceptLayers": [
+        "polityAndSociety"
+      ],
+      "acceptedEntityType": "polity",
+      "acceptedConceptLayerId": "polityAndSociety",
+      "acceptedPhaseIds": [
+        "egypt-new-kingdom-reunification",
+        "egypt-new-kingdom-nubian-expansion",
+        "egypt-new-kingdom-imperial-court-order",
+        "egypt-new-kingdom-fragmentation"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "egypt-new-kingdom"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "egypt-pyramids",
+      "oldType": "wonder",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "monument"
+      ],
+      "proposedConceptLayers": [
+        "materialAndArchitecture"
+      ],
+      "acceptedEntityType": "monument",
+      "acceptedConceptLayerId": "materialAndArchitecture",
+      "acceptedPhaseIds": [
+        "egypt-pyramids-nile-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "egypt-pyramids"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "egyptian-religion",
+      "oldType": "religionAndMyth",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "religiousTradition",
+        "mythicTradition"
+      ],
+      "proposedConceptLayers": [
+        "religionAndThought"
+      ],
+      "acceptedEntityType": "religiousTradition",
+      "acceptedConceptLayerId": "religionAndThought",
+      "acceptedPhaseIds": [
+        "egyptian-religion-nile-presence"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "egyptian-religion"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "egyptian-art",
+      "oldType": "artStyle",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "artisticTradition"
+      ],
+      "proposedConceptLayers": [
+        "artAndLiterature"
+      ],
+      "acceptedEntityType": "artisticTradition",
+      "acceptedConceptLayerId": "artAndLiterature",
+      "acceptedPhaseIds": [
+        "egyptian-art-formal-conventions"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "egyptian-art"
+      },
+      "status": "accepted"
+    },
+    {
+      "entityId": "egyptian-hieroglyphs",
+      "oldType": "writingSystem",
+      "recommendedDisposition": "migrateEntity",
+      "proposedEntityTypes": [
+        "writingSystem"
+      ],
+      "proposedConceptLayers": [
+        "languageAndKnowledge"
+      ],
+      "acceptedEntityType": "writingSystem",
+      "acceptedConceptLayerId": "languageAndKnowledge",
+      "acceptedPhaseIds": [
+        "egyptian-hieroglyphs-monumental-and-cursive-use"
+      ],
+      "acceptedDisposition": {
+        "kind": "migrated",
+        "entityId": "egyptian-hieroglyphs"
+      },
+      "status": "accepted"
+    }
+  ]
+}

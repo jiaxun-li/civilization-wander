@@ -1,0 +1,44 @@
+{
+  "handoffVersion": 1,
+  "sourceModule": "data/ancient-egypt.ts",
+  "status": "readyForIntegration",
+  "coverage": {
+    "entities": 8,
+    "events": 18,
+    "scenes": 53,
+    "structuralEdges": 2
+  },
+  "v6RuntimeCounts": {
+    "entities": 9,
+    "entityPhases": 16,
+    "events": 5,
+    "temporalRelations": 3
+  },
+  "scenePhaseSignalCount": 53,
+  "entitySignalCount": 74,
+  "unresolvedRelationCandidateCount": 2,
+  "checks": {
+    "baselineGenerated": true,
+    "entityDecisionsComplete": true,
+    "eventDecisionsComplete": true,
+    "phasesReviewed": true,
+    "edgeDecisionsComplete": true,
+    "relationCandidatesReviewed": true
+  },
+  "requiredExternalDependencies": [
+    {
+      "entityId": "hittite-empire",
+      "phaseId": "hittite-syrian-control",
+      "usedByEventIds": [
+        "event-battle-of-kadesh",
+        "event-egypt-hatti-treaty"
+      ],
+      "integrationCondition": "Late Bronze Age V6 模块必须提供同名 Entity 与覆盖约前1300—前1200年的同名 Phase；在最终 core 中以真实模块解析，测试 fixture 不进入运行时数据。"
+    }
+  ],
+  "notes": [
+    "《辛努赫的故事》仅保留代表成文作品，不保留独立文学传播传统及其 Phase、形成关系。",
+    "旧 Event 中作品形成部分归入 sinuhe-work，抄写与传播部分保留为迁移审计材料；埃及王国空间状态及其他知识对象保持独立。",
+    "原始覆盖计数和冻结 baseline 不变，运行时集合与 Scene 目标已按现存对象同步。"
+  ]
+}

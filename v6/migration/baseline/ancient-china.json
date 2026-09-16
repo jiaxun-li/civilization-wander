@@ -1,0 +1,1326 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "sourceModule": "data/ancient-china.ts",
+  "counts": {
+    "entities": 7,
+    "events": 11,
+    "scenes": 41,
+    "structuralEdges": 2
+  },
+  "entities": [
+    {
+      "id": "western-zhou",
+      "type": "polity",
+      "name": "西周",
+      "alternativeNames": [
+        "Western Zhou"
+      ],
+      "timeSpan": {
+        "start": -1046,
+        "end": -771,
+        "label": "约公元前1046—前771年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-national-museum-li-gui",
+        "source-western-zhou-domain",
+        "source-cook-western-zhou-rites"
+      ]
+    },
+    {
+      "id": "china-early-bronze-world",
+      "type": "culturalTradition",
+      "name": "中国早期青铜时代",
+      "alternativeNames": [
+        "Early Bronze Age China"
+      ],
+      "timeSpan": {
+        "start": -1900,
+        "end": -771,
+        "label": "约公元前1900—前771年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-liu-chen-archaeology-china",
+        "source-met-shang-zhou-bronze",
+        "source-unesco-liangzhu"
+      ]
+    },
+    {
+      "id": "erlitou-site",
+      "type": "SettlementSite",
+      "name": "二里头",
+      "alternativeNames": [
+        "Erlitou"
+      ],
+      "timeSpan": {
+        "start": -1900,
+        "end": -1500,
+        "label": "约公元前1900—前1500年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-zhao-erlitou-settlement",
+        "source-erlitou-radiocarbon"
+      ]
+    },
+    {
+      "id": "shang-civilization",
+      "type": "polity",
+      "name": "商文明",
+      "alternativeNames": [
+        "Shang civilization",
+        "商"
+      ],
+      "timeSpan": {
+        "start": -1600,
+        "end": -1000,
+        "label": "约公元前1600—前1000年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-keightley-ancestral-landscape",
+        "source-unesco-yinxu"
+      ]
+    },
+    {
+      "id": "shang-oracle-bone-inscriptions",
+      "type": "TextDocument",
+      "name": "商代甲骨卜辞",
+      "alternativeNames": [
+        "oracle-bone inscriptions",
+        "甲骨文"
+      ],
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "晚商时期",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-unesco-oracle-bones",
+        "source-schwartz-huayuanzhuang"
+      ]
+    },
+    {
+      "id": "shang-bronze-ritual-vessels",
+      "type": "CulturalObject",
+      "name": "商代青铜礼器",
+      "alternativeNames": [
+        "Shang ritual bronzes",
+        "青铜礼器"
+      ],
+      "timeSpan": {
+        "start": -1600,
+        "end": -1000,
+        "label": "约公元前1600—前1000年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-met-shang-zhou-bronze",
+        "source-smithsonian-bronze-casting"
+      ]
+    },
+    {
+      "id": "sanxingdui-site",
+      "type": "SettlementSite",
+      "name": "三星堆遗址",
+      "alternativeNames": [
+        "Sanxingdui"
+      ],
+      "timeSpan": {
+        "start": -1800,
+        "end": -1000,
+        "label": "约公元前1800—前1000年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-sacrificial-area-2023"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-early-china-regional-centers-emerge",
+      "kind": "historicalProcess",
+      "title": "中国多地大型聚落与区域中心形成",
+      "timeSpan": {
+        "start": -3300,
+        "end": -1900,
+        "label": "约公元前3300—前1900年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "china-early-bronze-world"
+      ],
+      "sourceIds": [
+        "source-unesco-liangzhu",
+        "source-liu-chen-archaeology-china"
+      ]
+    },
+    {
+      "id": "event-shang-bronze-production-and-ritual-use",
+      "kind": "historicalProcess",
+      "title": "商代青铜生产进入祖先礼仪",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1000,
+        "label": "约公元前1600—前1000年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "shang-bronze-ritual-vessels",
+        "shang-civilization"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-smithsonian-bronze-casting",
+        "source-met-shang-zhou-bronze"
+      ]
+    },
+    {
+      "id": "event-western-zhou-eastern-expansion",
+      "kind": "historicalProcess",
+      "title": "西周建设东方政治中心",
+      "timeSpan": {
+        "start": -1045,
+        "end": -1000,
+        "label": "约公元前1045—前1000年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "western-zhou"
+      ],
+      "sourceIds": [
+        "source-western-zhou-domain",
+        "source-li-feng-early-china"
+      ]
+    },
+    {
+      "id": "event-western-zhou-investiture",
+      "kind": "historicalProcess",
+      "title": "西周册命进入青铜铭文",
+      "timeSpan": {
+        "start": -1020,
+        "end": -850,
+        "label": "约公元前1020—前850年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "western-zhou"
+      ],
+      "sourceIds": [
+        "source-national-museum-da-yu-ding",
+        "source-national-museum-ceming"
+      ]
+    },
+    {
+      "id": "event-western-zhou-capitals-fall",
+      "kind": "historicalEvent",
+      "title": "西周王都失守",
+      "timeSpan": {
+        "start": -771,
+        "end": -771,
+        "label": "公元前771年"
+      },
+      "participantEntityIds": [
+        "western-zhou"
+      ],
+      "sourceIds": [
+        "source-li-feng-western-zhou-fall",
+        "source-li-feng-early-china"
+      ]
+    },
+    {
+      "id": "event-erlitou-urban-consolidation",
+      "kind": "historicalProcess",
+      "title": "二里头城市中心形成",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1600,
+        "label": "二里头文化第二至第三期",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "erlitou-site"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-zhao-erlitou-settlement",
+        "source-erlitou-radiocarbon"
+      ]
+    },
+    {
+      "id": "event-erligang-urban-expansion",
+      "kind": "historicalProcess",
+      "title": "二里岗城市与物质文化扩展",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1400,
+        "label": "约公元前1600—前1400年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "shang-civilization",
+        "western-zhou"
+      ],
+      "sourceIds": [
+        "source-an-zhengzhou-shang-city",
+        "source-steinke-erligang",
+        "source-bagley-shang-archaeology"
+      ]
+    },
+    {
+      "id": "event-late-shang-royal-divination",
+      "kind": "historicalProcess",
+      "title": "晚商王室占卜并保存甲骨记录",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "shang-civilization",
+        "shang-oracle-bone-inscriptions"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-keightley-ancestral-landscape",
+        "source-unesco-oracle-bones"
+      ]
+    },
+    {
+      "id": "event-fu-hao-activities",
+      "kind": "historicalProcess",
+      "title": "妇好参与晚商军事与祭祀活动",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1190,
+        "label": "公元前十三世纪",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "shang-civilization"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-smarthistory-fu-hao",
+        "source-mizoguchi-xibeigang"
+      ]
+    },
+    {
+      "id": "event-zhou-conquest-of-shang",
+      "kind": "historicalEvent",
+      "title": "周征服商王室",
+      "timeSpan": {
+        "start": -1050,
+        "end": -1040,
+        "label": "公元前十一世纪中叶",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "shang-civilization"
+      ],
+      "sourceIds": [
+        "source-national-museum-li-gui",
+        "source-anyang-fall",
+        "source-khayutina-cultural-memory"
+      ]
+    },
+    {
+      "id": "event-sanxingdui-ritual-object-deposition",
+      "kind": "historicalEvent",
+      "title": "三星堆仪式器物集中埋藏",
+      "timeSpan": {
+        "start": -1200,
+        "end": -950,
+        "label": "约公元前1200—前950年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "sanxingdui-site"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-ritual-pits-2025"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "western-zhou-muye-victory",
+      "title": "甲子日清晨，周军攻向商王",
+      "timeSpan": {
+        "start": -1046,
+        "end": -1046,
+        "label": "约公元前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-zhou-conquest-of-shang"
+      ],
+      "sourceIds": [
+        "source-national-museum-li-gui",
+        "source-li-feng-early-china",
+        "source-wikimedia-li-gui"
+      ],
+      "cardId": "western-zhou-bronze-commands",
+      "cardPrimaryEntityId": "western-zhou"
+    },
+    {
+      "id": "western-zhou-eastern-center",
+      "title": "周人在东方建起新的中心",
+      "timeSpan": {
+        "start": -1045,
+        "end": -1000,
+        "label": "约公元前1045—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-western-zhou-eastern-expansion"
+      ],
+      "sourceIds": [
+        "source-western-zhou-domain",
+        "source-li-feng-early-china",
+        "source-natural-earth"
+      ],
+      "cardId": "western-zhou-bronze-commands",
+      "cardPrimaryEntityId": "western-zhou"
+    },
+    {
+      "id": "western-zhou-allies-regional-centers",
+      "title": "亲族和盟友带着王命前往各地",
+      "timeSpan": {
+        "start": -1040,
+        "end": -950,
+        "label": "约公元前1040—前950年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-western-zhou-eastern-expansion"
+      ],
+      "sourceIds": [
+        "source-western-zhou-domain",
+        "source-li-feng-bronze-offices",
+        "source-natural-earth"
+      ],
+      "cardId": "western-zhou-bronze-commands",
+      "cardPrimaryEntityId": "western-zhou"
+    },
+    {
+      "id": "western-zhou-command-cast-in-ding",
+      "title": "一次任命被铸进大鼎",
+      "timeSpan": {
+        "start": -1000,
+        "end": -950,
+        "label": "约公元前1000—前950年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-western-zhou-investiture"
+      ],
+      "sourceIds": [
+        "source-national-museum-da-yu-ding",
+        "source-national-museum-ceming",
+        "source-generated-western-zhou-investiture"
+      ],
+      "cardId": "western-zhou-bronze-commands",
+      "cardPrimaryEntityId": "western-zhou"
+    },
+    {
+      "id": "western-zhou-rites-and-armies",
+      "title": "祭祖、宴饮和出兵维持王国",
+      "timeSpan": {
+        "start": -950,
+        "end": -850,
+        "label": "约公元前950—前850年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-western-zhou-investiture"
+      ],
+      "sourceIds": [
+        "source-cook-western-zhou-rites",
+        "source-national-museum-ceming",
+        "source-li-feng-bronze-offices",
+        "source-national-museum-guoji-zibai-pan"
+      ],
+      "cardId": "western-zhou-bronze-commands",
+      "cardPrimaryEntityId": "western-zhou"
+    },
+    {
+      "id": "western-zhou-capital-falls",
+      "title": "王都失守，周王室迁向东方",
+      "timeSpan": {
+        "start": -850,
+        "end": -771,
+        "label": "约公元前850—前771年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-western-zhou-capitals-fall"
+      ],
+      "sourceIds": [
+        "source-li-feng-western-zhou-fall",
+        "source-li-feng-early-china",
+        "source-natural-earth"
+      ],
+      "cardId": "western-zhou-bronze-commands",
+      "cardPrimaryEntityId": "western-zhou"
+    },
+    {
+      "id": "china-bronze-before-bronze",
+      "title": "青铜以前，城市已经出现",
+      "timeSpan": {
+        "start": -3300,
+        "end": -1900,
+        "label": "约公元前3300—前1900年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-early-china-regional-centers-emerge"
+      ],
+      "sourceIds": [
+        "source-unesco-liangzhu",
+        "source-liu-chen-archaeology-china",
+        "source-erlitou-cass-report",
+        "source-sxd-antiquity-2022",
+        "source-natural-earth"
+      ],
+      "cardId": "china-early-bronze-connected-worlds",
+      "cardPrimaryEntityId": "china-early-bronze-world"
+    },
+    {
+      "id": "china-bronze-materials-fire",
+      "title": "矿料在火中变成礼器",
+      "timeSpan": {
+        "start": -2000,
+        "end": -771,
+        "label": "约公元前2000—前771年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-smithsonian-bronze-casting",
+        "source-met-shang-zhou-bronze",
+        "source-wikimedia-bronze-casting-apparatus"
+      ],
+      "cardId": "china-early-bronze-connected-worlds",
+      "cardPrimaryEntityId": "china-early-bronze-world"
+    },
+    {
+      "id": "china-bronze-erlitou-center",
+      "title": "二里头把作坊放进城市中心",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1500,
+        "label": "约公元前1900—前1500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-zhao-erlitou-settlement",
+        "source-erlitou-turquoise-restoration",
+        "source-wikimedia-erlitou-plaque"
+      ],
+      "cardId": "china-early-bronze-connected-worlds",
+      "cardPrimaryEntityId": "china-early-bronze-world"
+    },
+    {
+      "id": "china-bronze-shang-cities",
+      "title": "商文明在城市之间成形",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1250,
+        "label": "约公元前1600—前1250年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erligang-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-an-zhengzhou-shang-city",
+        "source-steinke-erligang",
+        "source-unesco-yinxu",
+        "source-natural-earth"
+      ],
+      "cardId": "china-early-bronze-connected-worlds",
+      "cardPrimaryEntityId": "china-early-bronze-world"
+    },
+    {
+      "id": "china-bronze-ancestors-records",
+      "title": "青铜和甲骨把祖先请进王室",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination",
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-keightley-shang-history",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-fuhao-cooking-vessels"
+      ],
+      "cardId": "china-early-bronze-connected-worlds",
+      "cardPrimaryEntityId": "china-early-bronze-world"
+    },
+    {
+      "id": "china-bronze-sanxingdui-world",
+      "title": "三星堆铸出另一套神灵形象",
+      "timeSpan": {
+        "start": -1200,
+        "end": -950,
+        "label": "约公元前1200—前950年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-writing-2021",
+        "source-wikimedia-sxd-gold-mask-head"
+      ],
+      "cardId": "china-early-bronze-connected-worlds",
+      "cardPrimaryEntityId": "china-early-bronze-world"
+    },
+    {
+      "id": "china-bronze-zhou-changes",
+      "title": "周人接过青铜，也改变青铜",
+      "timeSpan": {
+        "start": -1046,
+        "end": -771,
+        "label": "约公元前1046—前771年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-zhou-conquest-of-shang"
+      ],
+      "sourceIds": [
+        "source-national-museum-li-gui",
+        "source-met-shang-zhou-bronze",
+        "source-cook-western-zhou-rites",
+        "source-wikimedia-li-gui"
+      ],
+      "cardId": "china-early-bronze-connected-worlds",
+      "cardPrimaryEntityId": "china-early-bronze-world"
+    },
+    {
+      "id": "erlitou-roads-cross-city",
+      "title": "道路穿过城市",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1600,
+        "label": "约公元前1900—前1600年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-radiocarbon",
+        "source-zhao-erlitou-settlement",
+        "source-natural-earth"
+      ],
+      "cardId": "erlitou-ritual-world",
+      "cardPrimaryEntityId": "erlitou-site"
+    },
+    {
+      "id": "erlitou-enclosed-center",
+      "title": "被围合的中心",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1550,
+        "label": "约公元前1800—前1550年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-erlitou-rethinking",
+        "source-zhao-erlitou-settlement",
+        "source-natural-earth"
+      ],
+      "cardId": "erlitou-ritual-world",
+      "cardPrimaryEntityId": "erlitou-site"
+    },
+    {
+      "id": "erlitou-rare-materials-workshop",
+      "title": "稀有材料进入作坊",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1550,
+        "label": "约公元前1800—前1550年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-liu-chen-archaeology-china",
+        "source-zhao-erlitou-settlement",
+        "source-wikimedia-erlitou-plaque"
+      ],
+      "cardId": "erlitou-ritual-world",
+      "cardPrimaryEntityId": "erlitou-site"
+    },
+    {
+      "id": "erlitou-objects-enter-burials",
+      "title": "器物跟随主人下葬",
+      "timeSpan": {
+        "start": -1750,
+        "end": -1550,
+        "label": "约公元前1750—前1550年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-cass-report",
+        "source-liu-chen-archaeology-china",
+        "source-erlitou-turquoise-restoration",
+        "source-wikimedia-erlitou-dragon"
+      ],
+      "cardId": "erlitou-ritual-world",
+      "cardPrimaryEntityId": "erlitou-site"
+    },
+    {
+      "id": "erlitou-xia-name-absent",
+      "title": "夏的名字没有写在遗址里",
+      "timeSpan": {
+        "start": -1900,
+        "end": -1500,
+        "label": "约公元前1900—前1500年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erlitou-urban-consolidation"
+      ],
+      "sourceIds": [
+        "source-erlitou-rethinking",
+        "source-xu-xia-debate",
+        "source-erlitou-radiocarbon",
+        "source-thorp-erlitou-xia",
+        "source-wikimedia-erlitou-site"
+      ],
+      "cardId": "erlitou-ritual-world",
+      "cardPrimaryEntityId": "erlitou-site"
+    },
+    {
+      "id": "shang-civilization-forms-between-cities",
+      "title": "商文明在城市之间成形",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1400,
+        "label": "约公元前1600—前1400年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-erligang-urban-expansion"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-an-zhengzhou-shang-city",
+        "source-steinke-erligang",
+        "source-natural-earth"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-dead-remain-in-family",
+      "title": "死者仍在家族之中",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-keightley-ancestral-landscape",
+        "source-liu-shang-ancestors",
+        "source-wikimedia-yinxu-royal-tombs-exhibit"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-meal-for-ancestors",
+      "title": "一餐送给祖先",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1046,
+        "label": "约公元前1400—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-keightley-ancestral-landscape",
+        "source-met-shang-zhou-bronze",
+        "source-wikimedia-shang-gu"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-when-bone-cracks",
+      "title": "骨头裂开时",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-keightley-ancestral-landscape",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-bones"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-fu-hao-two-records",
+      "title": "妇好留下两份记录",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1190,
+        "label": "约公元前1250—前1190年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-fu-hao-activities"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-mizoguchi-xibeigang",
+        "source-smarthistory-fu-hao",
+        "source-wikimedia-fu-hao-tomb"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-war-enters-sacrifice",
+      "title": "战争进入祭祀",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-campbell-violence-kinship",
+        "source-smarthistory-fu-hao",
+        "source-wikimedia-shang-dagger-axes"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-people-beyond-royal-house",
+      "title": "王室之外的商人",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-smithsonian-anyang-neighborhood",
+        "source-bagley-shang-archaeology",
+        "source-unesco-yinxu",
+        "source-wikimedia-shang-pottery"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-last-king-story-spreads",
+      "title": "亡国之君的故事开始流传",
+      "timeSpan": {
+        "start": -1050,
+        "end": -1000,
+        "label": "约公元前1050—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-zhou-conquest-of-shang"
+      ],
+      "sourceIds": [
+        "source-li-feng-early-china",
+        "source-national-museum-li-gui",
+        "source-anyang-fall",
+        "source-cook-western-zhou-rites",
+        "source-khayutina-cultural-memory",
+        "source-western-zhou-domain",
+        "source-natural-earth"
+      ],
+      "cardId": "shang-ancestors-world",
+      "cardPrimaryEntityId": "shang-civilization"
+    },
+    {
+      "id": "shang-oracle-fire-opens-bone",
+      "title": "火让骨头开口",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-keightley-ancestral-landscape",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-pit-marks"
+      ],
+      "cardId": "shang-oracle-bones-record",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions"
+    },
+    {
+      "id": "shang-oracle-divination-becomes-record",
+      "title": "一次占卜成为记录",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-nivison-question",
+        "source-schwartz-zhen",
+        "source-wikimedia-oracle-bones"
+      ],
+      "cardId": "shang-oracle-bones-record",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions"
+    },
+    {
+      "id": "shang-oracle-question-repeated",
+      "title": "同一件事问了不止一次",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-schwartz-huayuanzhuang",
+        "source-schwartz-zhen",
+        "source-wikimedia-huayuanzhuang-plastron"
+      ],
+      "cardId": "shang-oracle-bones-record",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions"
+    },
+    {
+      "id": "shang-oracle-ancestors-calendar",
+      "title": "祖先拥有自己的日程",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-ancestral-landscape",
+        "source-boltz-sexagenary-cycle",
+        "source-wikimedia-oracle-eclipse"
+      ],
+      "cardId": "shang-oracle-bones-record",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions"
+    },
+    {
+      "id": "shang-oracle-royal-questions-survive",
+      "title": "王室的问题留了下来",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1046,
+        "label": "约公元前1250—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-late-shang-royal-divination"
+      ],
+      "sourceIds": [
+        "source-keightley-shang-history",
+        "source-schwartz-huayuanzhuang",
+        "source-unesco-oracle-bones",
+        "source-wikimedia-oracle-collection"
+      ],
+      "cardId": "shang-oracle-bones-record",
+      "cardPrimaryEntityId": "shang-oracle-bone-inscriptions"
+    },
+    {
+      "id": "shang-bronze-materials-reach-workshop",
+      "title": "矿料来到王室作坊",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1046,
+        "label": "约公元前1600—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-smithsonian-bronze-casting",
+        "source-smithsonian-anyang-kings",
+        "source-wikimedia-bronze-casting-apparatus"
+      ],
+      "cardId": "shang-bronzes-ancestor-feast",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels"
+    },
+    {
+      "id": "shang-bronze-clay-mould-shapes-vessel",
+      "title": "泥范先做出器物",
+      "timeSpan": {
+        "start": -1600,
+        "end": -1046,
+        "label": "约公元前1600—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-smithsonian-bronze-casting",
+        "source-wikimedia-bronze-mould"
+      ],
+      "cardId": "shang-bronzes-ancestor-feast",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels"
+    },
+    {
+      "id": "shang-bronze-vessels-form-feast",
+      "title": "一件器物加入祖先宴席",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1046,
+        "label": "约公元前1400—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-keightley-ancestral-landscape",
+        "source-met-shang-zhou-bronze",
+        "source-wikimedia-fuhao-cooking-vessels"
+      ],
+      "cardId": "shang-bronzes-ancestor-feast",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels"
+    },
+    {
+      "id": "shang-bronze-mask-and-name",
+      "title": "兽面与名字留在器表",
+      "timeSpan": {
+        "start": -1400,
+        "end": -1046,
+        "label": "约公元前1400—前1046年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-bagley-shang-archaeology",
+        "source-met-shang-zhou-bronze",
+        "source-wikimedia-shang-gu"
+      ],
+      "cardId": "shang-bronzes-ancestor-feast",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels"
+    },
+    {
+      "id": "shang-bronze-follows-owner-to-tomb",
+      "title": "礼器跟随主人进入墓中",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1000,
+        "label": "约公元前1250—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-shang-bronze-production-and-ritual-use"
+      ],
+      "sourceIds": [
+        "source-smarthistory-fu-hao",
+        "source-keightley-shang-history",
+        "source-met-shang-zhou-bronze",
+        "source-cook-western-zhou-rites",
+        "source-wikimedia-fu-hao-tomb"
+      ],
+      "cardId": "shang-bronzes-ancestor-feast",
+      "cardPrimaryEntityId": "shang-bronze-ritual-vessels"
+    },
+    {
+      "id": "sanxingdui-pits-beneath-city",
+      "title": "一场仪式最后留下的坑",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1000,
+        "label": "约公元前1800—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-sacrificial-area-2023",
+        "source-natural-earth"
+      ],
+      "cardId": "sanxingdui-ritual-world",
+      "cardPrimaryEntityId": "sanxingdui-site"
+    },
+    {
+      "id": "sanxingdui-bronze-faces-watch",
+      "title": "面具让某个存在现身",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1000,
+        "label": "约公元前1200—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-sxd-gold-mask-head"
+      ],
+      "cardId": "sanxingdui-ritual-world",
+      "cardPrimaryEntityId": "sanxingdui-site"
+    },
+    {
+      "id": "sanxingdui-people-tree-birds",
+      "title": "人、树与鸟搭起向上的世界",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1000,
+        "label": "约公元前1200—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-sxd-bronze-tree"
+      ],
+      "cardId": "sanxingdui-ritual-world",
+      "cardPrimaryEntityId": "sanxingdui-site"
+    },
+    {
+      "id": "sanxingdui-materials-meet",
+      "title": "贵重材料把一场仪式聚到一起",
+      "timeSpan": {
+        "start": -1300,
+        "end": -1000,
+        "label": "约公元前1300—前1000年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-sxd-ivory-tusk"
+      ],
+      "cardId": "sanxingdui-ritual-world",
+      "cardPrimaryEntityId": "sanxingdui-site"
+    },
+    {
+      "id": "sanxingdui-ritual-world-is-buried",
+      "title": "埋下的不是谜底",
+      "timeSpan": {
+        "start": -1200,
+        "end": -950,
+        "label": "约公元前1200—前950年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-sanxingdui-ritual-object-deposition"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-sacrificial-area-2023",
+        "source-sxd-southwest-exchange-2024",
+        "source-wikimedia-jinsha-sun-bird"
+      ],
+      "cardId": "sanxingdui-ritual-world",
+      "cardPrimaryEntityId": "sanxingdui-site"
+    }
+  ],
+  "structuralEdges": [
+    {
+      "id": "edge-erlitou-shang-transition",
+      "family": "historicalNetwork",
+      "type": "preceded_and_overlapped_with_early_shang",
+      "source": {
+        "kind": "entity",
+        "id": "erlitou-site"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "shang-civilization"
+      },
+      "timeSpan": {
+        "start": -1700,
+        "end": -1500,
+        "label": "二里头晚期与早商物质文化交接时期",
+        "approximate": true
+      },
+      "label": {
+        "forward": "进入继起的商文明",
+        "reverse": "追溯更早的城市礼仪秩序"
+      },
+      "summaries": {
+        "canonical": "二里头晚期与早商物质文化在时间上存在交接和互动；两张故事分别从城市秩序与祖先礼仪观察这段变化。"
+      },
+      "qualifiers": [
+        "不把考古文化转换写成已经完全确定的单线王朝继承"
+      ],
+      "sourceIds": [
+        "source-erlitou-rethinking",
+        "source-liu-chen-archaeology-china",
+        "source-bagley-shang-archaeology"
+      ]
+    },
+    {
+      "id": "edge-sanxingdui-shang-bronze-comparison",
+      "family": "historicalNetwork",
+      "type": "shared_bronze_age_material_connections",
+      "source": {
+        "kind": "entity",
+        "id": "sanxingdui-site"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "shang-bronze-ritual-vessels"
+      },
+      "timeSpan": {
+        "start": -1300,
+        "end": -1000,
+        "label": "晚商至西周初期",
+        "approximate": true
+      },
+      "label": {
+        "forward": "比较两套青铜仪式",
+        "reverse": "进入成都平原的青铜世界"
+      },
+      "summaries": {
+        "canonical": "三星堆与商代青铜礼器共享青铜时代的材料与技术联系，却把器物组织进不同的仪式形象与使用方式。"
+      },
+      "qualifiers": [
+        "器物与技术联系不等于政治控制，也不等于单向模仿。"
+      ],
+      "sourceIds": [
+        "source-sxd-antiquity-2022",
+        "source-sxd-southwest-exchange-2024",
+        "source-bagley-shang-archaeology"
+      ]
+    }
+  ]
+}

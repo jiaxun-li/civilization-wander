@@ -1,0 +1,1245 @@
+{
+  "baselineVersion": 1,
+  "sourceSchemaVersion": 5,
+  "sourceModule": "data/late-bronze-age.ts",
+  "counts": {
+    "entities": 6,
+    "events": 9,
+    "scenes": 37,
+    "structuralEdges": 4
+  },
+  "entities": [
+    {
+      "id": "hittite-empire",
+      "type": "polity",
+      "name": "赫梯帝国",
+      "alternativeNames": [
+        "Hittite Empire",
+        "赫梯王国"
+      ],
+      "timeSpan": {
+        "start": -1650,
+        "end": -1180,
+        "label": "约公元前1650—前1180年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-beckman-hittite-diplomatic-texts",
+        "source-unesco-hattusha",
+        "source-met-hittites"
+      ]
+    },
+    {
+      "id": "ugarit-kingdom",
+      "type": "polity",
+      "name": "乌加里特王国",
+      "alternativeNames": [
+        "Kingdom of Ugarit",
+        "Ugarit"
+      ],
+      "timeSpan": {
+        "start": -1800,
+        "end": -1180,
+        "label": "约公元前1800—前1180年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-yon-city-of-ugarit",
+        "source-met-ugarit"
+      ]
+    },
+    {
+      "id": "battle-of-kadesh-war",
+      "type": "war",
+      "name": "卡迭石战役",
+      "alternativeNames": [
+        "Battle of Kadesh"
+      ],
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-spalinger-war-egypt",
+        "source-bryce-hittite-kingdom"
+      ]
+    },
+    {
+      "id": "amarna-letters-corpus",
+      "type": "TextDocument",
+      "name": "阿玛尔纳书信",
+      "alternativeNames": [
+        "Amarna Letters"
+      ],
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters"
+      ]
+    },
+    {
+      "id": "medinet-habu-war-records",
+      "type": "CulturalObject",
+      "name": "麦迪奈特哈布战争浮雕与铭文",
+      "alternativeNames": [
+        "Medinet Habu war reliefs and inscriptions"
+      ],
+      "timeSpan": {
+        "start": -1180,
+        "end": -1150,
+        "label": "约公元前1180—前1150年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii"
+      ]
+    },
+    {
+      "id": "late-bronze-palace-system",
+      "type": "institution",
+      "name": "晚青铜时代宫殿体系",
+      "alternativeNames": [
+        "Late Bronze Age palace systems"
+      ],
+      "timeSpan": {
+        "start": -1600,
+        "end": -1100,
+        "label": "约公元前1600—前1100年",
+        "approximate": true
+      },
+      "sourceIds": [
+        "source-knapp-manning-crisis",
+        "source-deger-jalkotzy-aftermath",
+        "source-middleton-understanding-collapse"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-hittite-central-kingship-consolidates",
+      "kind": "historicalProcess",
+      "title": "赫梯中央王权在哈图沙重组",
+      "timeSpan": {
+        "start": -1650,
+        "end": -1350,
+        "label": "约公元前1650—前1350年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "hittite-empire"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-unesco-hattusha"
+      ]
+    },
+    {
+      "id": "event-ugarit-palace-port-network-operates",
+      "kind": "historicalProcess",
+      "title": "乌加里特宫廷与港口网络运转",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1200,
+        "label": "约公元前1800—前1200年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "ugarit-kingdom"
+      ],
+      "sourceIds": [
+        "source-yon-city-of-ugarit",
+        "source-met-ugarit",
+        "source-french-ugarit-texts"
+      ]
+    },
+    {
+      "id": "event-amarna-diplomatic-correspondence-operates",
+      "kind": "historicalProcess",
+      "title": "阿玛尔纳外交书信网络运转",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "amarna-letters-corpus"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters"
+      ]
+    },
+    {
+      "id": "event-hittite-sack-babylon",
+      "kind": "historicalEvent",
+      "title": "赫梯军队突袭巴比伦",
+      "timeSpan": {
+        "start": -1595,
+        "end": -1595,
+        "label": "约公元前1595年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "hittite-empire",
+        "old-babylonian-kingdom"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-isin-larsa-old-babylonian"
+      ]
+    },
+    {
+      "id": "event-hittite-syrian-expansion",
+      "kind": "historicalProcess",
+      "title": "赫梯王权进入叙利亚",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1320,
+        "label": "约公元前1350—前1320年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "hittite-empire"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-hittites"
+      ]
+    },
+    {
+      "id": "event-hittite-ugarit-treaty",
+      "kind": "historicalEvent",
+      "title": "乌加里特进入赫梯条约体系",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1330,
+        "label": "约公元前1350—前1330年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "hittite-empire",
+        "ugarit-kingdom"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-met-ugarit"
+      ]
+    },
+    {
+      "id": "event-hittite-central-kingdom-ends",
+      "kind": "historicalProcess",
+      "title": "赫梯中央王国解体",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "hittite-empire"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-hittites"
+      ]
+    },
+    {
+      "id": "event-ugarit-destruction",
+      "kind": "historicalEvent",
+      "title": "乌加里特王国毁灭",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "ugarit-kingdom"
+      ],
+      "sourceIds": [
+        "source-yon-city-of-ugarit",
+        "source-french-ugarit-history",
+        "source-leriche-ugarit-after-1180"
+      ]
+    },
+    {
+      "id": "event-ramesses-iii-northern-invasions",
+      "kind": "historicalEvent",
+      "title": "拉美西斯三世抵御北方来敌",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1175,
+        "label": "约公元前1177—前1175年",
+        "approximate": true
+      },
+      "participantEntityIds": [
+        "egypt-new-kingdom"
+      ],
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hittite-hattusa-center",
+      "title": "一座旧城成为王国中心",
+      "timeSpan": {
+        "start": -1650,
+        "end": -1595,
+        "label": "约公元前1650—前1595年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-central-kingship-consolidates"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-unesco-hattusha",
+        "source-met-isin-larsa-old-babylonian",
+        "source-wikimedia-hattusa-wall"
+      ],
+      "cardId": "hittite-syria-treaties",
+      "cardPrimaryEntityId": "hittite-empire"
+    },
+    {
+      "id": "hittite-throne-crises",
+      "title": "远征回来，王位却失去秩序",
+      "timeSpan": {
+        "start": -1595,
+        "end": -1400,
+        "label": "约公元前1595—前1400年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-sack-babylon",
+        "event-hittite-central-kingship-consolidates"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-wikimedia-inandik-vase"
+      ],
+      "cardId": "hittite-syria-treaties",
+      "cardPrimaryEntityId": "hittite-empire"
+    },
+    {
+      "id": "hittite-syria-princes",
+      "title": "苏庇路里乌玛重建帝国",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1320,
+        "label": "约公元前1350—前1320年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-syrian-expansion"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-hittites",
+        "source-natural-earth"
+      ],
+      "cardId": "hittite-syria-treaties",
+      "cardPrimaryEntityId": "hittite-empire"
+    },
+    {
+      "id": "hittite-kings-treaty",
+      "title": "地方国王被写进条约",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1250,
+        "label": "约公元前1350—前1250年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-ugarit-treaty"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-met-ugarit",
+        "source-cambridge-hittite-troy",
+        "source-british-museum-alaksandu-wilusa",
+        "source-wikimedia-aleppo-treaty"
+      ],
+      "cardId": "hittite-syria-treaties",
+      "cardPrimaryEntityId": "hittite-empire"
+    },
+    {
+      "id": "hittite-carchemish-supervision",
+      "title": "卡迭石之后，敌手交换条约",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1258,
+        "label": "约公元前1274—前1258年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh",
+        "event-egypt-hatti-treaty"
+      ],
+      "sourceIds": [
+        "source-spalinger-war-egypt",
+        "source-bryce-hittite-kingdom",
+        "source-beckman-hittite-diplomatic-texts",
+        "source-un-egypt-hatti-treaty",
+        "source-wikimedia-kadesh-treaty"
+      ],
+      "cardId": "hittite-syria-treaties",
+      "cardPrimaryEntityId": "hittite-empire"
+    },
+    {
+      "id": "hittite-network-ends",
+      "title": "中央王国消失，赫梯之名继续存在",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-central-kingdom-ends"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-bryce-neo-hittite-kingdoms",
+        "source-met-hittites",
+        "source-wikimedia-hattusa-ruins"
+      ],
+      "cardId": "hittite-syria-treaties",
+      "cardPrimaryEntityId": "hittite-empire"
+    },
+    {
+      "id": "ugarit-old-city-kingdom",
+      "title": "一座旧城形成一个王国",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1450,
+        "label": "约公元前1800—前1450年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-yon-city-of-ugarit",
+        "source-met-ugarit",
+        "source-wikimedia-ugarit-palace"
+      ],
+      "cardId": "ugarit-kings-trade",
+      "cardPrimaryEntityId": "ugarit-kingdom"
+    },
+    {
+      "id": "ugarit-port-inland",
+      "title": "港口把王城接到海上",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1200,
+        "label": "约公元前1450—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-yon-city-of-ugarit",
+        "source-french-ugarit-exchange",
+        "source-met-ugarit",
+        "source-natural-earth"
+      ],
+      "cardId": "ugarit-kings-trade",
+      "cardPrimaryEntityId": "ugarit-kingdom"
+    },
+    {
+      "id": "ugarit-treaty-tribute",
+      "title": "一份条约保住王位，也规定贡赋",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1320,
+        "label": "约公元前1350—前1320年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-ugarit-treaty",
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-met-ugarit",
+        "source-wikimedia-ugarit-law-tablet"
+      ],
+      "cardId": "ugarit-kings-trade",
+      "cardPrimaryEntityId": "ugarit-kingdom"
+    },
+    {
+      "id": "ugarit-merchants-palace",
+      "title": "货物经过商人，也经过王宫",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1200,
+        "label": "约公元前1350—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-met-ugarit",
+        "source-heltzer-ugarit-metal-trade",
+        "source-yon-city-of-ugarit",
+        "source-wikimedia-uluburun-reconstruction"
+      ],
+      "cardId": "ugarit-kings-trade",
+      "cardPrimaryEntityId": "ugarit-kingdom"
+    },
+    {
+      "id": "ugarit-scribes-languages",
+      "title": "书吏在几种文字之间工作",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1200,
+        "label": "约公元前1350—前1200年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-boyes-writing-ugarit",
+        "source-french-ugarit-texts",
+        "source-met-ugarit",
+        "source-wikimedia-ugarit-admin-tablet"
+      ],
+      "cardId": "ugarit-kings-trade",
+      "cardPrimaryEntityId": "ugarit-kingdom"
+    },
+    {
+      "id": "ugarit-destruction-layer",
+      "title": "生意停止在毁灭层里",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1150,
+        "label": "约公元前1200—前1150年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ugarit-destruction"
+      ],
+      "sourceIds": [
+        "source-yon-city-of-ugarit",
+        "source-french-ugarit-history",
+        "source-leriche-ugarit-after-1180",
+        "source-wikimedia-ugarit-palace"
+      ],
+      "cardId": "ugarit-kings-trade",
+      "cardPrimaryEntityId": "ugarit-kingdom"
+    },
+    {
+      "id": "kadesh-two-powers-meet",
+      "title": "两大王权在卡迭石相遇",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-spalinger-war-egypt",
+        "source-hayes-scepter-ii",
+        "source-natural-earth"
+      ],
+      "cardId": "kadesh-did-not-end-war",
+      "cardPrimaryEntityId": "battle-of-kadesh-war"
+    },
+    {
+      "id": "kadesh-false-message",
+      "title": "法老先听见了错误的消息",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-spalinger-war-egypt",
+        "source-wikimedia-kadesh-spies"
+      ],
+      "cardId": "kadesh-did-not-end-war",
+      "cardPrimaryEntityId": "battle-of-kadesh-war"
+    },
+    {
+      "id": "kadesh-chariots-camp",
+      "title": "战车冲进尚未集结的营地",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-spalinger-war-egypt",
+        "source-wikimedia-kadesh-attack-map"
+      ],
+      "cardId": "kadesh-did-not-end-war",
+      "cardPrimaryEntityId": "battle-of-kadesh-war"
+    },
+    {
+      "id": "kadesh-city-not-taken",
+      "title": "法老脱险，却没有得到卡迭石",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-spalinger-war-egypt",
+        "source-hayes-scepter-ii",
+        "source-natural-earth"
+      ],
+      "cardId": "kadesh-did-not-end-war",
+      "cardPrimaryEntityId": "battle-of-kadesh-war"
+    },
+    {
+      "id": "kadesh-temple-victory",
+      "title": "战役在神庙墙上变成胜利",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1259,
+        "label": "约公元前1274—前1259年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-hayes-scepter-ii",
+        "source-wikimedia-kadesh-relief"
+      ],
+      "cardId": "kadesh-did-not-end-war",
+      "cardPrimaryEntityId": "battle-of-kadesh-war"
+    },
+    {
+      "id": "kadesh-treaty-later",
+      "title": "十五年后，双方才交换条约",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1258,
+        "label": "约公元前1274—前1258年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-battle-of-kadesh",
+        "event-egypt-hatti-treaty"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-bryce-hittite-kingdom",
+        "source-langdon-gardiner-egypt-hatti-treaty",
+        "source-un-egypt-hatti-treaty",
+        "source-wikimedia-kadesh-treaty"
+      ],
+      "cardId": "kadesh-did-not-end-war",
+      "cardPrimaryEntityId": "battle-of-kadesh-war"
+    },
+    {
+      "id": "amarna-letters-remain",
+      "title": "战争之外，诸王仍要彼此说话",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-met-amarna-letter-object",
+        "source-moran-amarna-letters"
+      ],
+      "cardId": "amarna-kings-write-world",
+      "cardPrimaryEntityId": "amarna-letters-corpus"
+    },
+    {
+      "id": "amarna-shared-writing",
+      "title": "不同宫廷共用一种外交文字",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-runeberg-egypt-mail-carrier"
+      ],
+      "cardId": "amarna-kings-write-world",
+      "cardPrimaryEntityId": "amarna-letters-corpus"
+    },
+    {
+      "id": "amarna-kings-brothers",
+      "title": "一声“兄弟”确认彼此地位",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-met-amarna-letter-object",
+        "source-natural-earth"
+      ],
+      "cardId": "amarna-kings-write-world",
+      "cardPrimaryEntityId": "amarna-letters-corpus"
+    },
+    {
+      "id": "amarna-gifts-repeat-friendship",
+      "title": "礼物让友好变成反复的行动",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-wikimedia-tushratta-marriage-letter"
+      ],
+      "cardId": "amarna-kings-write-world",
+      "cardPrimaryEntityId": "amarna-letters-corpus"
+    },
+    {
+      "id": "amarna-small-kings-write",
+      "title": "小国也用书信争取生存空间",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-met-four-foreign-rulers"
+      ],
+      "cardId": "amarna-kings-write-world",
+      "cardPrimaryEntityId": "amarna-letters-corpus"
+    },
+    {
+      "id": "amarna-diplomacy-routine",
+      "title": "外交成为诸王世界的日常工作",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-natural-earth"
+      ],
+      "cardId": "amarna-kings-write-world",
+      "cardPrimaryEntityId": "amarna-letters-corpus"
+    },
+    {
+      "id": "amarna-palaces-stop-replying",
+      "title": "许多宫廷后来不再回信",
+      "timeSpan": {
+        "start": -1330,
+        "end": -1180,
+        "label": "约公元前1330—前1180年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates",
+        "event-hittite-central-kingdom-ends",
+        "event-ugarit-destruction"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-beckman-hittite-diplomatic-texts",
+        "source-yon-city-of-ugarit",
+        "source-knapp-manning-crisis",
+        "source-deger-jalkotzy-aftermath",
+        "source-bryce-hittite-kingdom",
+        "source-uee-early-mid-20th-dynasty",
+        "source-natural-earth"
+      ],
+      "cardId": "amarna-kings-write-world",
+      "cardPrimaryEntityId": "amarna-letters-corpus"
+    },
+    {
+      "id": "medinet-habu-temple-record",
+      "title": "法老把不同来敌刻上祭庙",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1150,
+        "label": "约公元前1180—前1150年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii",
+        "source-wikimedia-medinet-habu-temple"
+      ],
+      "cardId": "medinet-habu-sea-raiders",
+      "cardPrimaryEntityId": "medinet-habu-war-records"
+    },
+    {
+      "id": "medinet-habu-delta-battle",
+      "title": "战船在尼罗河口挤作一团",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1175,
+        "label": "约公元前1177—前1175年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-cifola-ramesses-sea-peoples",
+        "source-wikimedia-medinet-habu-naval"
+      ],
+      "cardId": "medinet-habu-sea-raiders",
+      "cardPrimaryEntityId": "medinet-habu-war-records"
+    },
+    {
+      "id": "medinet-habu-families-carts",
+      "title": "车辆带来了战士的家人",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1175,
+        "label": "约公元前1177—前1175年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-yasur-landau-philistines"
+      ],
+      "cardId": "medinet-habu-sea-raiders",
+      "cardPrimaryEntityId": "medinet-habu-war-records"
+    },
+    {
+      "id": "medinet-habu-king-order",
+      "title": "法老站在秩序的中心",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1150,
+        "label": "约公元前1180—前1150年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-cifola-ramesses-sea-peoples",
+        "source-hayes-scepter-ii",
+        "source-wikimedia-kadesh-relief"
+      ],
+      "cardId": "medinet-habu-sea-raiders",
+      "cardPrimaryEntityId": "medinet-habu-war-records"
+    },
+    {
+      "id": "medinet-habu-egypt-contracts",
+      "title": "埃及守住边境，旧帝国仍在收缩",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1100,
+        "label": "约公元前1177—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-uee-early-mid-20th-dynasty",
+        "source-yasur-landau-philistines",
+        "source-natural-earth"
+      ],
+      "cardId": "medinet-habu-sea-raiders",
+      "cardPrimaryEntityId": "medinet-habu-war-records"
+    },
+    {
+      "id": "palaces-connect-kingdoms",
+      "title": "晚青铜时代的宫殿世界崩塌",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1100,
+        "label": "约公元前1250—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-central-kingdom-ends",
+        "event-ugarit-destruction",
+        "event-mycenaean-palaces-end",
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-knapp-manning-crisis",
+        "source-deger-jalkotzy-aftermath",
+        "source-middleton-understanding-collapse",
+        "source-yon-city-of-ugarit",
+        "source-wikimedia-ugarit-throne-hall"
+      ],
+      "cardId": "late-bronze-palaces-go-dark",
+      "cardPrimaryEntityId": "late-bronze-palace-system"
+    },
+    {
+      "id": "palaces-hattusa-silent",
+      "title": "哈图沙不再发出大王的命令",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-central-kingdom-ends"
+      ],
+      "sourceIds": [
+        "source-knapp-manning-crisis",
+        "source-bryce-hittite-kingdom",
+        "source-wikimedia-hattusa-ruins"
+      ],
+      "cardId": "late-bronze-palaces-go-dark",
+      "cardPrimaryEntityId": "late-bronze-palace-system"
+    },
+    {
+      "id": "palaces-ugarit-tablets-stop",
+      "title": "乌加里特的泥版停在倒塌房间里",
+      "timeSpan": {
+        "start": -1190,
+        "end": -1180,
+        "label": "约公元前1190—前1180年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ugarit-destruction"
+      ],
+      "sourceIds": [
+        "source-knapp-manning-crisis",
+        "source-yon-city-of-ugarit",
+        "source-wikimedia-ugarit-admin-tablet"
+      ],
+      "cardId": "late-bronze-palaces-go-dark",
+      "cardPrimaryEntityId": "late-bronze-palace-system"
+    },
+    {
+      "id": "palaces-aegean-writing-stops",
+      "title": "爱琴海的宫殿也停止书写",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-mycenaean-palaces-end"
+      ],
+      "sourceIds": [
+        "source-knapp-manning-crisis",
+        "source-deger-jalkotzy-aftermath",
+        "source-wikimedia-pylos-linear-b-tablet"
+      ],
+      "cardId": "late-bronze-palaces-go-dark",
+      "cardPrimaryEntityId": "late-bronze-palace-system"
+    },
+    {
+      "id": "palaces-egypt-holds",
+      "title": "来敌抵达埃及，宫殿仍未熄灭",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1100,
+        "label": "约公元前1177—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-isac-medinet-habu-i",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-uee-early-mid-20th-dynasty",
+        "source-wikimedia-medinet-habu-naval"
+      ],
+      "cardId": "late-bronze-palaces-go-dark",
+      "cardPrimaryEntityId": "late-bronze-palace-system"
+    },
+    {
+      "id": "palaces-archaeologists-causes",
+      "title": "考古学家寻找秩序崩溃的原因",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1100,
+        "label": "约公元前1250—前1100年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-hittite-central-kingdom-ends",
+        "event-ugarit-destruction",
+        "event-mycenaean-palaces-end",
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-knapp-manning-crisis",
+        "source-middleton-understanding-collapse",
+        "source-natural-earth"
+      ],
+      "cardId": "late-bronze-palaces-go-dark",
+      "cardPrimaryEntityId": "late-bronze-palace-system"
+    },
+    {
+      "id": "palaces-life-reorganizes",
+      "title": "宫殿熄灭以后，生活仍在重组",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1050,
+        "label": "约公元前1180—前1050年",
+        "approximate": true
+      },
+      "timeDisplay": "year",
+      "eventIds": [
+        "event-aegean-localizes-after-palaces"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-middleton-understanding-collapse",
+        "source-bryce-neo-hittite-kingdoms",
+        "source-uee-early-mid-20th-dynasty",
+        "source-natural-earth"
+      ],
+      "cardId": "late-bronze-palaces-go-dark",
+      "cardPrimaryEntityId": "late-bronze-palace-system"
+    }
+  ],
+  "structuralEdges": [
+    {
+      "id": "edge-hittite-old-babylon-raid",
+      "family": "historicalNetwork",
+      "type": "raided",
+      "source": {
+        "kind": "entity",
+        "id": "hittite-empire"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "old-babylonian-kingdom"
+      },
+      "timeSpan": {
+        "start": -1595,
+        "end": -1595,
+        "label": "约公元前1595年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "突袭其都城",
+        "reverse": "遭到远征突袭"
+      },
+      "summaries": {
+        "canonical": "早期赫梯军队突袭巴比伦，古巴比伦第一王朝随后结束，但赫梯没有在当地建立长期统治。"
+      },
+      "qualifiers": [
+        "不表示赫梯长期统治巴比伦"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-isin-larsa-old-babylonian"
+      ]
+    },
+    {
+      "id": "edge-ugarit-hittite-vassal",
+      "family": "historicalNetwork",
+      "type": "vassal_treaty",
+      "source": {
+        "kind": "entity",
+        "id": "ugarit-kingdom"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "hittite-empire"
+      },
+      "timeSpan": {
+        "start": -1350,
+        "end": -1180,
+        "label": "约公元前1350—前1180年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "以条约承担义务",
+        "reverse": "以条约确认其王位与义务"
+      },
+      "summaries": {
+        "canonical": "乌加里特在赫梯主导的条约体系中保留地方王权，同时承担贡赋、忠诚和军事义务。"
+      },
+      "qualifiers": [
+        "条约规定不等于每项义务始终完整执行"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-met-ugarit"
+      ]
+    },
+    {
+      "id": "edge-kadesh-hittite-participant",
+      "family": "historicalNetwork",
+      "type": "participant_in",
+      "source": {
+        "kind": "entity",
+        "id": "hittite-empire"
+      },
+      "target": {
+        "kind": "event",
+        "id": "event-battle-of-kadesh"
+      },
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "参加卡迭石战役",
+        "reverse": "赫梯帝国参战"
+      },
+      "summaries": {
+        "canonical": "赫梯帝国在卡迭石附近以战车突袭尚未集结的埃及军队。"
+      },
+      "qualifiers": [],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-spalinger-war-egypt"
+      ]
+    },
+    {
+      "id": "edge-amarna-cuneiform",
+      "family": "historicalNetwork",
+      "type": "written_in",
+      "source": {
+        "kind": "entity",
+        "id": "amarna-letters-corpus"
+      },
+      "target": {
+        "kind": "entity",
+        "id": "cuneiform"
+      },
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "label": {
+        "forward": "以楔形文字书写",
+        "reverse": "被外交宫廷继续使用"
+      },
+      "summaries": {
+        "canonical": "阿玛尔纳外交泥版使用楔形文字和以阿卡德语为主的宫廷书写惯例，让不同语言的王国能够通信。"
+      },
+      "qualifiers": [
+        "共同书写惯例不表示各地居民日常使用同一种语言"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters"
+      ]
+    }
+  ]
+}

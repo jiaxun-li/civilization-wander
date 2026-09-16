@@ -1,0 +1,106 @@
+{
+  "reportVersion": 1,
+  "sourceSchemaVersion": 5,
+  "status": "noDrift",
+  "sourceSnapshotDigest": "8c050b3877308c5429974cec75d8640182952357668fcf38b6db4cb4e5cec82b",
+  "createdFiles": [],
+  "changedFiles": [],
+  "checkedFiles": [
+    {
+      "path": "baseline/aegean.json",
+      "status": "unchanged",
+      "previousDigest": "3b4b6888107be8630a2b1a00bf8ab74f735ba1882683a75bb694dfbd2b482f6e",
+      "currentDigest": "3b4b6888107be8630a2b1a00bf8ab74f735ba1882683a75bb694dfbd2b482f6e"
+    },
+    {
+      "path": "baseline/ancient-china.json",
+      "status": "unchanged",
+      "previousDigest": "89623d66b3aed43c19e46301c9b17a72b6b18641eecd7ed65c4afbdad5dfb368",
+      "currentDigest": "89623d66b3aed43c19e46301c9b17a72b6b18641eecd7ed65c4afbdad5dfb368"
+    },
+    {
+      "path": "baseline/ancient-egypt.json",
+      "status": "unchanged",
+      "previousDigest": "79d7e6c17106556f14527d0c4c1eb366ccdb3a47d054a5ede80b135ea5a2dd90",
+      "currentDigest": "79d7e6c17106556f14527d0c4c1eb366ccdb3a47d054a5ede80b135ea5a2dd90"
+    },
+    {
+      "path": "baseline/ancient-india.json",
+      "status": "unchanged",
+      "previousDigest": "8727d7758f3ae703a6a63fb34edce8248e25b3efdc304bc6bbe45f9483448300",
+      "currentDigest": "8727d7758f3ae703a6a63fb34edce8248e25b3efdc304bc6bbe45f9483448300"
+    },
+    {
+      "path": "baseline/atlas-v5-summary.json",
+      "status": "unchanged",
+      "previousDigest": "af69f13219d78aec5af3546c2f12aba99890a9517f0b5dbc38fb76b064a8c8ae",
+      "currentDigest": "af69f13219d78aec5af3546c2f12aba99890a9517f0b5dbc38fb76b064a8c8ae"
+    },
+    {
+      "path": "baseline/iron-age-near-east.json",
+      "status": "unchanged",
+      "previousDigest": "5b38fe6d4700f67e59804b81886624d4a0c534b1f797c9c190f338ad824e4003",
+      "currentDigest": "5b38fe6d4700f67e59804b81886624d4a0c534b1f797c9c190f338ad824e4003"
+    },
+    {
+      "path": "baseline/late-bronze-age.json",
+      "status": "unchanged",
+      "previousDigest": "965dd1190e9deb6ad6d9b48cedb99892f1f2c839b30244a3799442e64aca3fe6",
+      "currentDigest": "965dd1190e9deb6ad6d9b48cedb99892f1f2c839b30244a3799442e64aca3fe6"
+    },
+    {
+      "path": "baseline/mesopotamia.json",
+      "status": "unchanged",
+      "previousDigest": "3407908d8595b712e2c0c41e4d4c503777b77c625912ffaca86d5900cd5739c4",
+      "currentDigest": "3407908d8595b712e2c0c41e4d4c503777b77c625912ffaca86d5900cd5739c4"
+    },
+    {
+      "path": "baseline/sources-v5.json",
+      "status": "unchanged",
+      "previousDigest": "aa330d4dd0594217010ec4e439a9452ae0089f8424d31525912a7352e01c7953",
+      "currentDigest": "aa330d4dd0594217010ec4e439a9452ae0089f8424d31525912a7352e01c7953"
+    },
+    {
+      "path": "scene-phase/aegean.json",
+      "status": "unchanged",
+      "previousDigest": "3d060b00903ec000ad0945827ed1af80b7510fa633137c39bbfa2e91b2c2f485",
+      "currentDigest": "3d060b00903ec000ad0945827ed1af80b7510fa633137c39bbfa2e91b2c2f485"
+    },
+    {
+      "path": "scene-phase/ancient-china.json",
+      "status": "unchanged",
+      "previousDigest": "4f07473343af57bbe3c01f4468bb228ebb755edb5a9a7ffe4aeb5c6ba4c53aa3",
+      "currentDigest": "4f07473343af57bbe3c01f4468bb228ebb755edb5a9a7ffe4aeb5c6ba4c53aa3"
+    },
+    {
+      "path": "scene-phase/ancient-egypt.json",
+      "status": "unchanged",
+      "previousDigest": "7563c4b8fcd3cfab301b8087164db5419cddac05eeeac8f22898675282406890",
+      "currentDigest": "7563c4b8fcd3cfab301b8087164db5419cddac05eeeac8f22898675282406890"
+    },
+    {
+      "path": "scene-phase/ancient-india.json",
+      "status": "unchanged",
+      "previousDigest": "0a62b59d0d175cd72c43545967957e81551028034ff5cd0254af9f59c2cf6d6f",
+      "currentDigest": "0a62b59d0d175cd72c43545967957e81551028034ff5cd0254af9f59c2cf6d6f"
+    },
+    {
+      "path": "scene-phase/iron-age-near-east.json",
+      "status": "unchanged",
+      "previousDigest": "184328e22664344ce0b8b797589adb6b92cba115ab188a3389d1e687725399be",
+      "currentDigest": "184328e22664344ce0b8b797589adb6b92cba115ab188a3389d1e687725399be"
+    },
+    {
+      "path": "scene-phase/late-bronze-age.json",
+      "status": "unchanged",
+      "previousDigest": "43707a218cfae49015b47bc67cab39169bdc1952d9706de07664f4ba170203f3",
+      "currentDigest": "43707a218cfae49015b47bc67cab39169bdc1952d9706de07664f4ba170203f3"
+    },
+    {
+      "path": "scene-phase/mesopotamia.json",
+      "status": "unchanged",
+      "previousDigest": "696ee6b0a06233a6eaa65446e4f49a0dc4cecf8d77138aaaeb1c9b7f14cf394e",
+      "currentDigest": "696ee6b0a06233a6eaa65446e4f49a0dc4cecf8d77138aaaeb1c9b7f14cf394e"
+    }
+  ]
+}

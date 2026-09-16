@@ -1,0 +1,36 @@
+{
+  "handoffVersion": 1,
+  "sourceModule": "data/mesopotamia.ts",
+  "status": "readyForIntegration",
+  "coverage": {
+    "entities": 11,
+    "events": 19,
+    "scenes": 58,
+    "structuralEdges": 8
+  },
+  "v6RuntimeCounts": {
+    "entities": 8,
+    "entityPhases": 14,
+    "events": 3,
+    "temporalRelations": 2
+  },
+  "scenePhaseSignalCount": 58,
+  "entitySignalCount": 124,
+  "unresolvedRelationCandidateCount": 8,
+  "checks": {
+    "baselineGenerated": true,
+    "entityDecisionsComplete": true,
+    "eventDecisionsComplete": true,
+    "phasesReviewed": true,
+    "edgeDecisionsComplete": true,
+    "relationCandidatesReviewed": true
+  },
+  "notes": [
+    "已接受删除四个重复政权空间阶段的概括性 Event；独立 Event 及其预览简介均已移除，迁移决定记为 deferred，不进入待审过程集合。",
+    "原始 Scene 与关系候选的 V5 来源引用保持审计含义；原 eventOnly 去向改为对应已有政权 Phase，完整保留冻结基线。",
+    "《吉尔伽美什史诗》改为文学作品，只保留标准巴比伦版本约公元前12世纪的代表成文 Phase；早期故事与后世传播不再铺成长时段。",
+    "巴别塔故事改为文学作品，沿用既有近似文本形成范围；叙事中的塔、语言分化和传播不作为历史发生节点。",
+    "楔形文字与史诗关系仅表达代表版本的书写关联，关系时间同步收窄到作品节点。",
+    "原 V5 来源、Scene 信号和覆盖计数未改写；删除 Phase 的目标引用已经清理，传播材料仍可作为迁移审计阅读。"
+  ]
+}

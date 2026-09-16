@@ -1,0 +1,3070 @@
+{
+  "ledgerVersion": 1,
+  "sourceModule": "data/late-bronze-age.ts",
+  "scenePhaseSignals": [
+    {
+      "id": "signal-hittite-hattusa-center",
+      "v5SceneId": "hittite-hattusa-center",
+      "v5OwnerCardId": "hittite-syria-treaties",
+      "timeSpan": {
+        "start": -1650,
+        "end": -1595,
+        "label": "约公元前1650—前1595年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-central-kingship-consolidates"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-central-kingship-consolidates"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-isin-larsa-old-babylonian",
+        "source-unesco-hattusha",
+        "source-wikimedia-hattusa-wall"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hittite-early-central-kingship"
+      }
+    },
+    {
+      "id": "signal-hittite-throne-crises",
+      "v5SceneId": "hittite-throne-crises",
+      "v5OwnerCardId": "hittite-syria-treaties",
+      "timeSpan": {
+        "start": -1595,
+        "end": -1400,
+        "label": "约公元前1595—前1400年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-sack-babylon"
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-sack-babylon"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-sack-babylon",
+        "event-hittite-central-kingship-consolidates"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-isin-larsa-old-babylonian",
+        "source-unesco-hattusha",
+        "source-wikimedia-inandik-vase"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hittite-early-central-kingship"
+      }
+    },
+    {
+      "id": "signal-hittite-syria-princes",
+      "v5SceneId": "hittite-syria-princes",
+      "v5OwnerCardId": "hittite-syria-treaties",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1320,
+        "label": "约公元前1350—前1320年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-syrian-expansion"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-syrian-expansion"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-met-hittites",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hittite-syrian-control"
+      }
+    },
+    {
+      "id": "signal-hittite-kings-treaty",
+      "v5SceneId": "hittite-kings-treaty",
+      "v5OwnerCardId": "hittite-syria-treaties",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1250,
+        "label": "约公元前1350—前1250年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-ugarit-treaty"
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-ugarit-treaty"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-ugarit-treaty"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-british-museum-alaksandu-wilusa",
+        "source-cambridge-hittite-troy",
+        "source-met-ugarit",
+        "source-wikimedia-aleppo-treaty"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "hittite-early-central-kingship",
+          "hittite-syrian-control",
+          "ugarit-kingdom-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-hittite-carchemish-supervision",
+      "v5SceneId": "hittite-carchemish-supervision",
+      "v5OwnerCardId": "hittite-syria-treaties",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1258,
+        "label": "约公元前1274—前1258年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh",
+        "event-egypt-hatti-treaty"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-bm-kadesh-sallier",
+        "source-bryce-hittite-kingdom",
+        "source-hayes-scepter-ii",
+        "source-spalinger-war-egypt",
+        "source-un-egypt-hatti-treaty",
+        "source-wikimedia-kadesh-treaty"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "hittite-syrian-control",
+          "egypt-new-kingdom-imperial-court-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-hittite-network-ends",
+      "v5SceneId": "hittite-network-ends",
+      "v5OwnerCardId": "hittite-syria-treaties",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-central-kingdom-ends"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-central-kingdom-ends"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-bryce-neo-hittite-kingdoms",
+        "source-met-hittites",
+        "source-wikimedia-hattusa-ruins"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "hittite-syrian-control"
+      }
+    },
+    {
+      "id": "signal-ugarit-old-city-kingdom",
+      "v5SceneId": "ugarit-old-city-kingdom",
+      "v5OwnerCardId": "ugarit-kings-trade",
+      "timeSpan": {
+        "start": -1800,
+        "end": -1450,
+        "label": "约公元前1800—前1450年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-palace-port-network-operates"
+        }
+      ],
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-french-ugarit-texts",
+        "source-met-ugarit",
+        "source-wikimedia-ugarit-palace",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "ugarit-kingdom-presence"
+      }
+    },
+    {
+      "id": "signal-ugarit-port-inland",
+      "v5SceneId": "ugarit-port-inland",
+      "v5OwnerCardId": "ugarit-kings-trade",
+      "timeSpan": {
+        "start": -1450,
+        "end": -1200,
+        "label": "约公元前1450—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-palace-port-network-operates"
+        }
+      ],
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-french-ugarit-exchange",
+        "source-french-ugarit-texts",
+        "source-met-ugarit",
+        "source-natural-earth",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ugarit-kingdom-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-ugarit-treaty-tribute",
+      "v5SceneId": "ugarit-treaty-tribute",
+      "v5OwnerCardId": "ugarit-kings-trade",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1320,
+        "label": "约公元前1350—前1320年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-ugarit-treaty"
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-ugarit-treaty"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-ugarit-treaty",
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-french-ugarit-texts",
+        "source-met-ugarit",
+        "source-wikimedia-ugarit-law-tablet",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ugarit-kingdom-presence",
+          "hittite-early-central-kingship",
+          "hittite-syrian-control"
+        ]
+      }
+    },
+    {
+      "id": "signal-ugarit-merchants-palace",
+      "v5SceneId": "ugarit-merchants-palace",
+      "v5OwnerCardId": "ugarit-kings-trade",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1200,
+        "label": "约公元前1350—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-palace-port-network-operates"
+        }
+      ],
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-french-ugarit-texts",
+        "source-heltzer-ugarit-metal-trade",
+        "source-met-ugarit",
+        "source-wikimedia-uluburun-reconstruction",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "ugarit-kingdom-presence"
+      }
+    },
+    {
+      "id": "signal-ugarit-scribes-languages",
+      "v5SceneId": "ugarit-scribes-languages",
+      "v5OwnerCardId": "ugarit-kings-trade",
+      "timeSpan": {
+        "start": -1350,
+        "end": -1200,
+        "label": "约公元前1350—前1200年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-palace-port-network-operates"
+        }
+      ],
+      "eventIds": [
+        "event-ugarit-palace-port-network-operates"
+      ],
+      "sourceIds": [
+        "source-boyes-writing-ugarit",
+        "source-french-ugarit-texts",
+        "source-met-ugarit",
+        "source-wikimedia-ugarit-admin-tablet",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "ugarit-kingdom-presence"
+      }
+    },
+    {
+      "id": "signal-ugarit-destruction-layer",
+      "v5SceneId": "ugarit-destruction-layer",
+      "v5OwnerCardId": "ugarit-kings-trade",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1150,
+        "label": "约公元前1200—前1150年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-destruction"
+        }
+      ],
+      "eventIds": [
+        "event-ugarit-destruction"
+      ],
+      "sourceIds": [
+        "source-french-ugarit-history",
+        "source-leriche-ugarit-after-1180",
+        "source-wikimedia-ugarit-palace",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "ugarit-kingdom-presence"
+      }
+    },
+    {
+      "id": "signal-kadesh-two-powers-meet",
+      "v5SceneId": "kadesh-two-powers-meet",
+      "v5OwnerCardId": "kadesh-did-not-end-war",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-bryce-hittite-kingdom",
+        "source-hayes-scepter-ii",
+        "source-natural-earth",
+        "source-spalinger-war-egypt"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-battle-of-kadesh"
+        ]
+      }
+    },
+    {
+      "id": "signal-kadesh-false-message",
+      "v5SceneId": "kadesh-false-message",
+      "v5OwnerCardId": "kadesh-did-not-end-war",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-hayes-scepter-ii",
+        "source-spalinger-war-egypt",
+        "source-wikimedia-kadesh-spies"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-battle-of-kadesh"
+        ]
+      }
+    },
+    {
+      "id": "signal-kadesh-chariots-camp",
+      "v5SceneId": "kadesh-chariots-camp",
+      "v5OwnerCardId": "kadesh-did-not-end-war",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-hayes-scepter-ii",
+        "source-spalinger-war-egypt",
+        "source-wikimedia-kadesh-attack-map"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-battle-of-kadesh"
+        ]
+      }
+    },
+    {
+      "id": "signal-kadesh-city-not-taken",
+      "v5SceneId": "kadesh-city-not-taken",
+      "v5OwnerCardId": "kadesh-did-not-end-war",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1274,
+        "label": "约公元前1274年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-bryce-hittite-kingdom",
+        "source-hayes-scepter-ii",
+        "source-natural-earth",
+        "source-spalinger-war-egypt"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-battle-of-kadesh"
+        ]
+      }
+    },
+    {
+      "id": "signal-kadesh-temple-victory",
+      "v5SceneId": "kadesh-temple-victory",
+      "v5OwnerCardId": "kadesh-did-not-end-war",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1259,
+        "label": "约公元前1274—前1259年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh"
+      ],
+      "sourceIds": [
+        "source-bm-kadesh-sallier",
+        "source-hayes-scepter-ii",
+        "source-wikimedia-kadesh-relief"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-battle-of-kadesh"
+        ]
+      }
+    },
+    {
+      "id": "signal-kadesh-treaty-later",
+      "v5SceneId": "kadesh-treaty-later",
+      "v5OwnerCardId": "kadesh-did-not-end-war",
+      "timeSpan": {
+        "start": -1274,
+        "end": -1258,
+        "label": "约公元前1274—前1258年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-battle-of-kadesh"
+        }
+      ],
+      "eventIds": [
+        "event-battle-of-kadesh",
+        "event-egypt-hatti-treaty"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-bm-kadesh-sallier",
+        "source-bryce-hittite-kingdom",
+        "source-hayes-scepter-ii",
+        "source-langdon-gardiner-egypt-hatti-treaty",
+        "source-un-egypt-hatti-treaty",
+        "source-wikimedia-kadesh-treaty"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "hittite-syrian-control",
+          "egypt-new-kingdom-imperial-court-order"
+        ]
+      }
+    },
+    {
+      "id": "signal-amarna-letters-remain",
+      "v5SceneId": "amarna-letters-remain",
+      "v5OwnerCardId": "amarna-kings-write-world",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letter-object",
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "amarna-diplomatic-correspondence"
+      }
+    },
+    {
+      "id": "signal-amarna-shared-writing",
+      "v5SceneId": "amarna-shared-writing",
+      "v5OwnerCardId": "amarna-kings-write-world",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-runeberg-egypt-mail-carrier"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "amarna-diplomatic-correspondence"
+      }
+    },
+    {
+      "id": "signal-amarna-kings-brothers",
+      "v5SceneId": "amarna-kings-brothers",
+      "v5OwnerCardId": "amarna-kings-write-world",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letter-object",
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "amarna-diplomatic-correspondence"
+      }
+    },
+    {
+      "id": "signal-amarna-gifts-repeat-friendship",
+      "v5SceneId": "amarna-gifts-repeat-friendship",
+      "v5OwnerCardId": "amarna-kings-write-world",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-wikimedia-tushratta-marriage-letter"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "amarna-diplomatic-correspondence"
+      }
+    },
+    {
+      "id": "signal-amarna-small-kings-write",
+      "v5SceneId": "amarna-small-kings-write",
+      "v5OwnerCardId": "amarna-kings-write-world",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-met-four-foreign-rulers",
+        "source-moran-amarna-letters"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "amarna-diplomatic-correspondence"
+      }
+    },
+    {
+      "id": "signal-amarna-diplomacy-routine",
+      "v5SceneId": "amarna-diplomacy-routine",
+      "v5OwnerCardId": "amarna-kings-write-world",
+      "timeSpan": {
+        "start": -1360,
+        "end": -1330,
+        "label": "约公元前1360—前1330年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates"
+      ],
+      "sourceIds": [
+        "source-met-amarna-letters",
+        "source-moran-amarna-letters",
+        "source-natural-earth"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "amarna-diplomatic-correspondence"
+      }
+    },
+    {
+      "id": "signal-amarna-palaces-stop-replying",
+      "v5SceneId": "amarna-palaces-stop-replying",
+      "v5OwnerCardId": "amarna-kings-write-world",
+      "timeSpan": {
+        "start": -1330,
+        "end": -1180,
+        "label": "约公元前1330—前1180年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "basis": "eventParticipant",
+          "referenceId": "event-amarna-diplomatic-correspondence-operates"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-central-kingdom-ends"
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-destruction"
+        }
+      ],
+      "eventIds": [
+        "event-amarna-diplomatic-correspondence-operates",
+        "event-hittite-central-kingdom-ends",
+        "event-ugarit-destruction"
+      ],
+      "sourceIds": [
+        "source-beckman-hittite-diplomatic-texts",
+        "source-bryce-hittite-kingdom",
+        "source-deger-jalkotzy-aftermath",
+        "source-french-ugarit-history",
+        "source-knapp-manning-crisis",
+        "source-leriche-ugarit-after-1180",
+        "source-met-amarna-letters",
+        "source-met-hittites",
+        "source-moran-amarna-letters",
+        "source-natural-earth",
+        "source-uee-early-mid-20th-dynasty",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "amarna-diplomatic-correspondence",
+          "hittite-syrian-control",
+          "ugarit-kingdom-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-medinet-habu-temple-record",
+      "v5SceneId": "medinet-habu-temple-record",
+      "v5OwnerCardId": "medinet-habu-sea-raiders",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1150,
+        "label": "约公元前1180—前1150年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        }
+      ],
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii",
+        "source-isac-medinet-habu-i",
+        "source-wikimedia-medinet-habu-temple"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "medinet-habu-war-records-created"
+      }
+    },
+    {
+      "id": "signal-medinet-habu-delta-battle",
+      "v5SceneId": "medinet-habu-delta-battle",
+      "v5OwnerCardId": "medinet-habu-sea-raiders",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1175,
+        "label": "约公元前1177—前1175年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        }
+      ],
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-cifola-ramesses-sea-peoples",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii",
+        "source-isac-medinet-habu-i",
+        "source-wikimedia-medinet-habu-naval"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-ramesses-iii-northern-invasions"
+        ]
+      }
+    },
+    {
+      "id": "signal-medinet-habu-families-carts",
+      "v5SceneId": "medinet-habu-families-carts",
+      "v5OwnerCardId": "medinet-habu-sea-raiders",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1175,
+        "label": "约公元前1177—前1175年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        }
+      ],
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii",
+        "source-isac-medinet-habu-i",
+        "source-yasur-landau-philistines"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-ramesses-iii-northern-invasions"
+        ]
+      }
+    },
+    {
+      "id": "signal-medinet-habu-king-order",
+      "v5SceneId": "medinet-habu-king-order",
+      "v5OwnerCardId": "medinet-habu-sea-raiders",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1150,
+        "label": "约公元前1180—前1150年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        }
+      ],
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-cifola-ramesses-sea-peoples",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii",
+        "source-hayes-scepter-ii",
+        "source-isac-medinet-habu-i",
+        "source-wikimedia-kadesh-relief"
+      ],
+      "disposition": {
+        "kind": "merged",
+        "phaseId": "medinet-habu-war-records-created"
+      }
+    },
+    {
+      "id": "signal-medinet-habu-egypt-contracts",
+      "v5SceneId": "medinet-habu-egypt-contracts",
+      "v5OwnerCardId": "medinet-habu-sea-raiders",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1100,
+        "label": "约公元前1177—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        }
+      ],
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii",
+        "source-isac-medinet-habu-i",
+        "source-natural-earth",
+        "source-uee-early-mid-20th-dynasty",
+        "source-yasur-landau-philistines"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "medinet-habu-war-records-created",
+          "egypt-new-kingdom-imperial-court-order",
+          "egypt-new-kingdom-fragmentation"
+        ]
+      }
+    },
+    {
+      "id": "signal-palaces-connect-kingdoms",
+      "v5SceneId": "palaces-connect-kingdoms",
+      "v5OwnerCardId": "late-bronze-palaces-go-dark",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1100,
+        "label": "约公元前1250—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        },
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-central-kingdom-ends"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-destruction"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-central-kingdom-ends",
+        "event-ugarit-destruction",
+        "event-mycenaean-palaces-end",
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-deger-jalkotzy-aftermath",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-french-ugarit-history",
+        "source-grandet-ramesses-iii",
+        "source-isac-medinet-habu-i",
+        "source-knapp-manning-crisis",
+        "source-leriche-ugarit-after-1180",
+        "source-met-hittites",
+        "source-middleton-understanding-collapse",
+        "source-wikimedia-ugarit-throne-hall",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-hittite-central-kingdom-ends",
+          "event-ramesses-iii-northern-invasions"
+        ]
+      }
+    },
+    {
+      "id": "signal-palaces-hattusa-silent",
+      "v5SceneId": "palaces-hattusa-silent",
+      "v5OwnerCardId": "late-bronze-palaces-go-dark",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-central-kingdom-ends"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-central-kingdom-ends"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-knapp-manning-crisis",
+        "source-met-hittites",
+        "source-wikimedia-hattusa-ruins"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "hittite-syrian-control"
+        ]
+      }
+    },
+    {
+      "id": "signal-palaces-ugarit-tablets-stop",
+      "v5SceneId": "palaces-ugarit-tablets-stop",
+      "v5OwnerCardId": "late-bronze-palaces-go-dark",
+      "timeSpan": {
+        "start": -1190,
+        "end": -1180,
+        "label": "约公元前1190—前1180年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-destruction"
+        }
+      ],
+      "eventIds": [
+        "event-ugarit-destruction"
+      ],
+      "sourceIds": [
+        "source-french-ugarit-history",
+        "source-knapp-manning-crisis",
+        "source-leriche-ugarit-after-1180",
+        "source-wikimedia-ugarit-admin-tablet",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "mapped",
+        "phaseIds": [
+          "ugarit-kingdom-presence"
+        ]
+      }
+    },
+    {
+      "id": "signal-palaces-aegean-writing-stops",
+      "v5SceneId": "palaces-aegean-writing-stops",
+      "v5OwnerCardId": "late-bronze-palaces-go-dark",
+      "timeSpan": {
+        "start": -1200,
+        "end": -1180,
+        "label": "约公元前1200—前1180年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        }
+      ],
+      "eventIds": [
+        "event-mycenaean-palaces-end"
+      ],
+      "sourceIds": [
+        "source-deger-jalkotzy-aftermath",
+        "source-knapp-manning-crisis",
+        "source-wikimedia-pylos-linear-b-tablet"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "2026-09-15用户批准独立V6内容精简；原叙事及来源留在迁移审计，不为旧版映射重建已撤下的阶段或事件。"
+      }
+    },
+    {
+      "id": "signal-palaces-egypt-holds",
+      "v5SceneId": "palaces-egypt-holds",
+      "v5OwnerCardId": "late-bronze-palaces-go-dark",
+      "timeSpan": {
+        "start": -1177,
+        "end": -1100,
+        "label": "约公元前1177—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        }
+      ],
+      "eventIds": [
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-edgerton-wilson-ramesses-iii",
+        "source-grandet-ramesses-iii",
+        "source-isac-medinet-habu-i",
+        "source-uee-early-mid-20th-dynasty",
+        "source-wikimedia-medinet-habu-naval"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-ramesses-iii-northern-invasions"
+        ]
+      }
+    },
+    {
+      "id": "signal-palaces-archaeologists-causes",
+      "v5SceneId": "palaces-archaeologists-causes",
+      "v5OwnerCardId": "late-bronze-palaces-go-dark",
+      "timeSpan": {
+        "start": -1250,
+        "end": -1100,
+        "label": "约公元前1250—前1100年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ramesses-iii-northern-invasions"
+        },
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "hittite-empire",
+          "basis": "eventParticipant",
+          "referenceId": "event-hittite-central-kingdom-ends"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-mycenaean-palaces-end"
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "basis": "eventParticipant",
+          "referenceId": "event-ugarit-destruction"
+        }
+      ],
+      "eventIds": [
+        "event-hittite-central-kingdom-ends",
+        "event-ugarit-destruction",
+        "event-mycenaean-palaces-end",
+        "event-ramesses-iii-northern-invasions"
+      ],
+      "sourceIds": [
+        "source-bryce-hittite-kingdom",
+        "source-deger-jalkotzy-aftermath",
+        "source-edgerton-wilson-ramesses-iii",
+        "source-french-ugarit-history",
+        "source-grandet-ramesses-iii",
+        "source-isac-medinet-habu-i",
+        "source-knapp-manning-crisis",
+        "source-leriche-ugarit-after-1180",
+        "source-met-hittites",
+        "source-middleton-understanding-collapse",
+        "source-natural-earth",
+        "source-yon-city-of-ugarit"
+      ],
+      "disposition": {
+        "kind": "eventOnly",
+        "eventIds": [
+          "event-hittite-central-kingdom-ends",
+          "event-ramesses-iii-northern-invasions"
+        ]
+      }
+    },
+    {
+      "id": "signal-palaces-life-reorganizes",
+      "v5SceneId": "palaces-life-reorganizes",
+      "v5OwnerCardId": "late-bronze-palaces-go-dark",
+      "timeSpan": {
+        "start": -1180,
+        "end": -1050,
+        "label": "约公元前1180—前1050年",
+        "approximate": true
+      },
+      "entitySignals": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "basis": "eventParticipant",
+          "referenceId": "event-aegean-localizes-after-palaces"
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "basis": "eventParticipant",
+          "referenceId": "event-aegean-localizes-after-palaces"
+        }
+      ],
+      "eventIds": [
+        "event-aegean-localizes-after-palaces"
+      ],
+      "sourceIds": [
+        "source-bryce-neo-hittite-kingdoms",
+        "source-cambridge-mycenaean-transformation",
+        "source-deger-jalkotzy-aftermath",
+        "source-middleton-understanding-collapse",
+        "source-natural-earth",
+        "source-uee-early-mid-20th-dynasty"
+      ],
+      "disposition": {
+        "kind": "narrativeOnly",
+        "reason": "这一跨区域后宫殿综合不属于已经终结的宫殿体系，也不是单一继承社会的 EntityPhase。"
+      }
+    }
+  ],
+  "audit": [
+    {
+      "scenePhaseSignalId": "signal-hittite-hattusa-center",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "hittite-empire",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-central-kingship-consolidates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-central-kingship-consolidates",
+              "timeSpan": {
+                "start": -1650,
+                "end": -1350,
+                "label": "约公元前1650—前1350年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1650,
+            "end": -1595,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-hittite-throne-crises",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "hittite-empire",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-sack-babylon",
+            "event-hittite-central-kingship-consolidates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-sack-babylon",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1595,
+                "label": "约公元前1595年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-hittite-central-kingship-consolidates",
+              "timeSpan": {
+                "start": -1650,
+                "end": -1350,
+                "label": "约公元前1650—前1350年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "old-babylonian-kingdom",
+          "eventIds": [
+            "event-hittite-sack-babylon"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-sack-babylon",
+              "timeSpan": {
+                "start": -1595,
+                "end": -1595,
+                "label": "约公元前1595年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1595,
+            "end": -1595,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hittite-syria-princes",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "hittite-empire",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-syrian-expansion"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-syrian-expansion",
+              "timeSpan": {
+                "start": -1350,
+                "end": -1320,
+                "label": "约公元前1350—前1320年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1350,
+            "end": -1320,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-hittite-kings-treaty",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "hittite-empire",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-ugarit-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-ugarit-treaty",
+              "timeSpan": {
+                "start": -1350,
+                "end": -1330,
+                "label": "约公元前1350—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1350,
+            "end": -1330,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-hittite-ugarit-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-ugarit-treaty",
+              "timeSpan": {
+                "start": -1350,
+                "end": -1330,
+                "label": "约公元前1350—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1350,
+            "end": -1330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hittite-carchemish-supervision",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "hittite-empire",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh",
+            "event-egypt-hatti-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-egypt-hatti-treaty",
+              "timeSpan": {
+                "start": -1259,
+                "end": -1258,
+                "label": "约公元前1259年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh",
+            "event-egypt-hatti-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-egypt-hatti-treaty",
+              "timeSpan": {
+                "start": -1259,
+                "end": -1258,
+                "label": "约公元前1259年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-hittite-network-ends",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "hittite-empire",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-central-kingdom-ends"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-central-kingdom-ends",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ugarit-old-city-kingdom",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "ugarit-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-palace-port-network-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-palace-port-network-operates",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1200,
+                "label": "约公元前1800—前1200年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1800,
+            "end": -1450,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ugarit-port-inland",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "ugarit-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-palace-port-network-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-palace-port-network-operates",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1200,
+                "label": "约公元前1800—前1200年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1450,
+            "end": -1200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ugarit-treaty-tribute",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "ugarit-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-ugarit-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-ugarit-treaty",
+              "timeSpan": {
+                "start": -1350,
+                "end": -1330,
+                "label": "约公元前1350—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1350,
+            "end": -1330,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-hittite-ugarit-treaty",
+            "event-ugarit-palace-port-network-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-ugarit-treaty",
+              "timeSpan": {
+                "start": -1350,
+                "end": -1330,
+                "label": "约公元前1350—前1330年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-ugarit-palace-port-network-operates",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1200,
+                "label": "约公元前1800—前1200年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-ugarit-merchants-palace",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "ugarit-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-palace-port-network-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-palace-port-network-operates",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1200,
+                "label": "约公元前1800—前1200年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1350,
+            "end": -1200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ugarit-scribes-languages",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "ugarit-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-palace-port-network-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-palace-port-network-operates",
+              "timeSpan": {
+                "start": -1800,
+                "end": -1200,
+                "label": "约公元前1800—前1200年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1350,
+            "end": -1200,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-ugarit-destruction-layer",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "ugarit-kingdom",
+      "entityEvidence": [
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-destruction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-destruction",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-kadesh-two-powers-meet",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "battle-of-kadesh-war",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-kadesh-false-message",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "battle-of-kadesh-war",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-kadesh-chariots-camp",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "battle-of-kadesh-war",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-kadesh-city-not-taken",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "battle-of-kadesh-war",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-kadesh-temple-victory",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "battle-of-kadesh-war",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1274,
+            "end": -1274,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-kadesh-treaty-later",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "battle-of-kadesh-war",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-battle-of-kadesh",
+            "event-egypt-hatti-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-egypt-hatti-treaty",
+              "timeSpan": {
+                "start": -1259,
+                "end": -1258,
+                "label": "约公元前1259年",
+                "approximate": true
+              }
+            }
+          ]
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-battle-of-kadesh",
+            "event-egypt-hatti-treaty"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-battle-of-kadesh",
+              "timeSpan": {
+                "start": -1274,
+                "end": -1274,
+                "label": "约公元前1274年",
+                "approximate": true
+              }
+            },
+            {
+              "eventId": "event-egypt-hatti-treaty",
+              "timeSpan": {
+                "start": -1259,
+                "end": -1258,
+                "label": "约公元前1259年",
+                "approximate": true
+              }
+            }
+          ]
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-amarna-letters-remain",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "amarna-letters-corpus",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-amarna-shared-writing",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "amarna-letters-corpus",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-amarna-kings-brothers",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "amarna-letters-corpus",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-amarna-gifts-repeat-friendship",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "amarna-letters-corpus",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-amarna-small-kings-write",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "amarna-letters-corpus",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-amarna-diplomacy-routine",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "amarna-letters-corpus",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1360,
+            "end": -1330,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": []
+    },
+    {
+      "scenePhaseSignalId": "signal-amarna-palaces-stop-replying",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "amarna-letters-corpus",
+      "entityEvidence": [
+        {
+          "entityId": "amarna-letters-corpus",
+          "eventIds": [
+            "event-amarna-diplomatic-correspondence-operates"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-amarna-diplomatic-correspondence-operates",
+              "timeSpan": {
+                "start": -1360,
+                "end": -1330,
+                "label": "约公元前1360—前1330年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1330,
+            "end": -1330,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-central-kingdom-ends"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-central-kingdom-ends",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-destruction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-destruction",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-medinet-habu-temple-record",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "medinet-habu-war-records",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-medinet-habu-delta-battle",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "medinet-habu-war-records",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-medinet-habu-families-carts",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "medinet-habu-war-records",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-medinet-habu-king-order",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "medinet-habu-war-records",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-medinet-habu-egypt-contracts",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "medinet-habu-war-records",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-palaces-connect-kingdoms",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "late-bronze-palace-system",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-central-kingdom-ends"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-central-kingdom-ends",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-destruction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-destruction",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-palaces-hattusa-silent",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "late-bronze-palace-system",
+      "entityEvidence": [
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-central-kingdom-ends"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-central-kingdom-ends",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-palaces-ugarit-tablets-stop",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "late-bronze-palace-system",
+      "entityEvidence": [
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-destruction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-destruction",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1190,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-palaces-aegean-writing-stops",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "late-bronze-palace-system",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-palaces-egypt-holds",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "late-bronze-palace-system",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-palaces-archaeologists-causes",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "late-bronze-palace-system",
+      "entityEvidence": [
+        {
+          "entityId": "egypt-new-kingdom",
+          "eventIds": [
+            "event-ramesses-iii-northern-invasions"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ramesses-iii-northern-invasions",
+              "timeSpan": {
+                "start": -1177,
+                "end": -1175,
+                "label": "约公元前1177—前1175年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1177,
+            "end": -1175,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "hittite-empire",
+          "eventIds": [
+            "event-hittite-central-kingdom-ends"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-hittite-central-kingdom-ends",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-mycenaean-palaces-end"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-mycenaean-palaces-end",
+              "timeSpan": {
+                "start": -1250,
+                "end": -1180,
+                "label": "约公元前1250—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1250,
+            "end": -1180,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "ugarit-kingdom",
+          "eventIds": [
+            "event-ugarit-destruction"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-ugarit-destruction",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1180,
+                "label": "约公元前1200—前1180年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1200,
+            "end": -1180,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEvents",
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    },
+    {
+      "scenePhaseSignalId": "signal-palaces-life-reorganizes",
+      "sourceModule": "data/late-bronze-age.ts",
+      "cardPrimaryEntityId": "late-bronze-palace-system",
+      "entityEvidence": [
+        {
+          "entityId": "greek-dark-age-communities",
+          "eventIds": [
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1180,
+            "end": -1050,
+            "approximate": true
+          }
+        },
+        {
+          "entityId": "mycenaean-civilization",
+          "eventIds": [
+            "event-aegean-localizes-after-palaces"
+          ],
+          "eventTimeSpans": [
+            {
+              "eventId": "event-aegean-localizes-after-palaces",
+              "timeSpan": {
+                "start": -1200,
+                "end": -1050,
+                "label": "约公元前1200—前1050年",
+                "approximate": true
+              }
+            }
+          ],
+          "suggestedTimeSpan": {
+            "start": -1180,
+            "end": -1050,
+            "approximate": true
+          }
+        }
+      ],
+      "flags": [
+        "multipleEntities",
+        "cardPrimaryNotParticipant",
+        "crossModuleReference"
+      ]
+    }
+  ]
+}

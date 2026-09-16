@@ -30,6 +30,10 @@ Card → 按顺序阅读 Scene → 发现事件/实体/关系 → 进入另一 C
 
 样式由 `src/main.ts` 按 `styles.css`、`styles/v4/cards.css`、`styles/v4/map.css` 的顺序导入。仓库没有并行历史运行时或发布快照。V5 是当前数据契约；Vite/TypeScript 是构建和开发工作流变化，不构成 schema 版本变化。Cards、Reader 与 Map 的活动代码位于 `src/reader` 和 `src/map`；`styles/v4` 只保留稳定视觉类名，这个目录名不表示活动 schema 仍为 V4。
 
+仓库中的 `v6/` 是非运行时、仅迁移历史知识结构的 staging 工作区，不是第二套可部署网站。V5 仍是唯一正式运行时和 GitHub Pages 数据来源；由 `index.html`、`src/main.ts`、`src/app.ts`、`src/data/atlas-data.ts` 构成的正式依赖图、常规 V5 构建与 Pages workflow 均不得导入 `v6/`。当前另行批准了一个独立、本地开发专用的知识空间预览：它可以通过自己的 HTML／TypeScript 入口和命令只读消费已经通过门禁的 V6 knowledge core，但不得进入正式 V5 dependency graph、`dist/` Pages 产物或部署 workflow，也不表示 Card、Scene、Asset、导航或正式查询消费者已经迁移。当前 V6 权威知识核心只有 `sources`、`regions`、`entities`、`entityPhases`、`events`、`temporalRelations` 六个集合；各主题模块只提供后四个，共享 Source 与 Region 由 `v6/knowledge-core.ts` 统一注入。`RelationCandidate` 只属于非权威迁移审计，不能作为第七个集合进入知识核心。
+
+`v6/module-registry.ts` 保存当前七个迁移模块的唯一人工身份、顺序与已验收数据绑定，`v6/knowledge-core.ts` 直接消费该 registry，不再维护第二份模块清单。范围或顺序变化必须由唯一 Integration Agent 更新 registry 并通过 V6 门禁；本文不复制模块名称或实时对象数量作为另一份清单。V6 Source 来自 `v6/migration/baseline/sources-v5.json` 的冻结 V5 快照，后续 V5 变化只能由 drift check 报告并经审核处理，不能在验证时实时改变已接收的 V6 数据。
+
 ```mermaid
 flowchart TD
     HTML["index.html"] --> ENTRY["src/main.ts\nVite module entry"]
@@ -435,6 +439,15 @@ pnpm run test:browser:install # 每台机器首次运行一次
 pnpm run test:browser
 ```
 
+V6 structure-only migration staging 使用独立门禁，不替代以上 V5／Pages 验收：
+
+```powershell
+pnpm check:v6
+pnpm report:v6-coverage --require-complete
+```
+
+`check:v6` 依次执行 V6 TypeScript 检查、共享及模块测试和独立 validator；coverage 报告是单独的迁移闭环检查，必须同时输出 `valid: true` 与 `complete: true`。命令输出负责报告实时集合数量、迁移覆盖率和未决项，文档不手工保存这些易漂移数值。
+
 若 `node`/`pnpm` 未加入 PATH，可直接调用本机 Codex runtime 的 Node 与 pnpm，再传递 `package.json` 中相同参数。本文不保存某次运行的测试数量、通过数量、首载字节数或集合计数；这些结果必须在验收时由当前命令重新生成。
 
 全套 Node 测试覆盖 V5 schema/content/query/validation、独立内容模块汇总、Asset manifest、Cards/Reader、Map、E2E、应用 history、媒体继承与跨 Card 重置、图片比例与淡入淡出、地图覆盖 UI 隐藏、同步回顶、异步 restore 失效、overlay 差量与反转竞态、Vite 入口与聚合器单一内容清单、Pages 构建约束和 reduced motion。`pnpm test:browser` 则用真实 Chromium 打开 `dist/`，检查首页、Card 进入、Scene 滚动激活、主要图片、控制台错误和关键资源失败。
@@ -475,6 +488,53 @@ Reader 不拥有 React DOM，也不拼接 HTML、扫描导航控件或绑定 Car
 9. Scene 方向与媒体继承依赖当前 Card.sceneIds 和运行态激活顺序；它们没有 schema 字段。若未来需要可编辑的非线性 Scene 顺序，必须先设计正式模型，不能持久化当前派生 context。
 10. 活动本地底图与聚合内容仍使主 JavaScript 构建块较大；可在不引入远程运行时依赖的前提下继续压缩、分层或按页面需求拆分，但必须保持直达链接和首次渲染正确。
 11. 没有内容编辑器或 schema 生成器；V4→V5 提供一次性、显式映射的 `scripts/migrate-v4-content-to-v5.js`，后续破坏性变化仍须各自提供版本与迁移策略。数据维护依赖严格 validator 与测试。
+
+### 19.3 V6 知识空间的独立本地预览
+
+知识空间预览是已批准的本地开发消费者，但不是正式运行时切换。完整视觉契约由
+`docs/KNOWLEDGE_SPACE_VISUALIZATION.md` 单独维护；本文只记录架构边界：
+
+1. 源数据仍是通过 V6 门禁的六集合 knowledge core。可视化语义、布局结果与
+   SVG／未来 WebGL 对象都不能回写成第七个权威历史集合。
+2. 数据先转换为 renderer-neutral knowledge-space mark，再经过 slice projection
+   和局部布局，最后交给 SVG renderer。不得在历史数据或投影函数中保存 SVG
+   path、像素坐标、DOM 引用或 Three.js 对象。
+3. 三维概念空间固定为时间、Region、概念层三轴。第一版只渲染 Region×时间、
+   固定单一概念层的切片；概念×时间和 Region×概念只先保留数据契约。
+4. V6 Entity 与已接受的 Event 都必须显式保存唯一主要 `conceptLayerId`。
+   EntityPhase 不拥有概念层，只能继承所属 Entity；Entity 可以暂时没有 Phase，
+   不得制造抽象连续性条。当前全部 `historicalProcess` 位于非运行时待审注册表，
+   不进入六集合 core 或预览；未来获批过程的 kind 才决定 `trace` 时间形态。
+   EntityPhase 只表达 Region×时间中的空间状态，不表达王朝章节或叙事分期。
+   政权只有 Region 覆盖集合发生增减才可拆分；其他 Entity 至少要改变 Region
+   或 RegionalRole。相邻空间签名相同由 validator 拒绝。若 Region 粒度不足，
+   必须先细化 Region 或暂缓分期，不能靠“扩张期”“末期”等标题制造断点。
+   Region 可用 `associationPolicy: 'groupOnly'` 声明为纯分组节点；validator
+   拒绝 EntityPhase 或 Event 直接挂载这类大区，避免永久产生“未细分”伪行。
+5. 五种标记是实体块、菱形节点、实体轨迹、蜡笔细条和蜡笔场。持续性的传统、
+   技术、生产、贸易、艺术等默认使用蜡笔细条；只有逐 EntityPhase 审核为广泛
+   覆盖当地社会生活的 presence 才能使用蜡笔场。
+6. `approximate` 只影响时间端点或地域边缘的不确定性呈现，不能把实体形状自动
+   改成蜡笔，也不能把语言、文字或宗教类型自动升级为场。
+7. 第一版不消费 TemporalRelation 绘制关系，不做跨概念层投影，不显示 Card／
+   Scene 正文、图片、搜索、筛选或 3D 控件。未来 3D 总览必须复用同一中间模型，
+   只新增 renderer 和选择切面的交互。
+8. 独立预览已经通过 `knowledge-space-preview.html` 与 `pnpm dev:v6-preview`
+   实现；`pnpm check:v6-preview` 负责类型、生产构建及独立浏览器门禁。它不得
+   改变 `pnpm dev`、`pnpm build`、V5 browser gate 或 Pages 产物。
+9. Entity 标记始终以稳定 Entity 名称为主标签，Phase 标题只作为次级阶段标签；
+   不允许 Phase 标题在界面上取代乌鲁克、古王国等知识身份。当前第一版只在
+   `block` 内绘制常驻 Entity 名称，其他四种 mark 暂不绘制常驻标题。
+10. 预览的持久选择以唯一 Entity／Event 身份为单位，不以某个 Region 行中的
+    mark 实例为单位；选择一个 Entity 会同时高亮它的全部可见 Phase 片段。
+    大区展开状态以 Region ID 独立保存并跨概念切面复用，折叠状态仍渲染压缩
+    历史带。时间轴和正在浏览的大区标题保持粘性；不再增加单独的粘性概念切面
+    状态栏。hover 使用脱离文档流的浮层，持久选择详情使用桌面稳定侧栏或移动端
+    固定底部覆盖层，二者都不能移动图表。详情只列一次 Entity、一次每个 Phase，
+    并合并 Phase 的 Region 列表。
+11. 同一 Entity、同一 Region 行中首尾相接或重叠的 `block` Phase 在 renderer
+    中组成一条连续视觉带，并保留内部 Phase 边界和成员身份；真实时间空档必须
+    保持断开。该合并不得回写或合并 V6 EntityPhase 数据。
 
 ## 20. 文件职责总表
 
@@ -553,5 +613,22 @@ Reader 不拥有 React DOM，也不拼接 HTML、扫描导航控件或绑定 Car
 | `.github/workflows/deploy-pages.yml` | 测试、构建、运行生产浏览器门禁并将通过验收的 `dist/` 发布到 GitHub Pages。 |
 | `.nojekyll` | 构建时复制到 Pages 产物，避免 Jekyll 处理。 |
 | `.gitignore` | 仓库忽略规则。 |
+
+### 20.5 非运行时 V6 结构迁移工作区与隔离预览边界
+
+| 文件 | 当前职责/状态 |
+|---|---|
+| `v6/schema/knowledge-core.ts` | 定义 structure-only `V6KnowledgeCore`：Source、Region、Entity、EntityPhase、Event、TemporalRelation 六个权威集合；不含 Card、Scene、Asset、地图或导航。 |
+| `v6/module-registry.ts` | 当前七个 V5→V6 迁移模块的唯一人工身份、顺序、目标路径与已验收数据绑定；只有通过模块门禁的数据可以加入。 |
+| `v6/knowledge-core.ts` | V6 模块精确四集合接口、共享 Source／Region 注入，并按 registry 顺序聚合已接收模块；`currentV6KnowledgeCore` 只供迁移验证，不进入网站入口。 |
+| `v6/catalogs/` | 共享概念层、Region 与冻结 Source 目录；Migration Agent 只引用，变更由唯一 Integration Agent 管理。 |
+| `v6/data/<module>/` | 从对应 V5 模块迁移的 Entity、EntityPhase、Event 与 TemporalRelation 结构；不复制 Card／Scene 正文或图片。 |
+| `v6/migration/baseline/` | 从明确 V5 基线生成的模块摘要、Scene 信号和 Source 快照；digest／drift 报告防止 V5 变化静默改写 V6。 |
+| `v6/migration/*-decisions/`, `scene-phase/`, `relation-candidates/`, `handoffs/` | 机器可读迁移闭环与交接；`RelationCandidate` 是非权威审计数据，不进入知识核心。 |
+| `v6/validation/` 与 `v6/tests/` | 独立 schema／引用 validator、迁移 coverage 报告、共享负测及模块门禁。标准结构门禁为 `pnpm check:v6`，完整迁移还要求 coverage 的 `valid` 和 `complete` 均为 true。 |
+| `v6/README.md` | V5／V6 隔离边界、当前迁移范围、本地预览消费规则、所有权与未来切换条件。 |
+| `docs/KNOWLEDGE_SPACE_VISUALIZATION.md` | 知识空间三轴、三种切片、五种标记、条／场语义、局部分轨与本地预览验收的权威设计契约。 |
+
+V6 structure-only 门禁完成只证明历史知识结构能够独立验证；独立本地知识空间预览完成也只证明该数据可被隔离地探索，二者都不表示网站已升级。正式切换必须另立任务，迁移 Card、Scene、Asset、查询和官方 UI 消费者，并完成生产构建、浏览器、桌面／移动、直达链接与历史导航验收；只有用户批准最终切换后，才允许修改正式 V5 聚合器或 Pages 入口。正式 V5 内容生产的三阶段工作流在此之前保持不变。
 
 遇到冲突时采用以下证据优先级：活动 `index.html`、`src/main.ts`、聚合器、构建配置与 `package.json` → 可执行 validator/query/renderer/Reader 与一致性脚本 → 当前测试 → 本文与 README。本文不是 schema 执行器；代码变更后必须同步更新，而不是让文档替代校验器。

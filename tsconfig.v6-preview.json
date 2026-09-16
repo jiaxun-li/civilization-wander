@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowJs": false
+  },
+  "include": [
+    "src/knowledge-space/**/*.ts",
+    "src/knowledge-space/**/*.tsx",
+    "v6/**/*.ts",
+    "tests/knowledge-space/**/*.ts",
+    "vite.v6-preview.config.mts"
+  ],
+  "exclude": []
+}
